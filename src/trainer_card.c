@@ -1011,7 +1011,7 @@ static void PrintMoneyOnCard(void)
     else
         AddTextPrinterParameterized3(1, 1, 16, 57, gUnknown_0856FB0C, TEXT_SPEED_FF, gText_TrainerCardMoney);
 
-    ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, 0, 6);
+    ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, 0, 7);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
     if (!sData->isHoenn)
     {
