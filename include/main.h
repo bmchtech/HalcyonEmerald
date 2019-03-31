@@ -42,6 +42,8 @@ struct Main
 
 extern const u8 gGameVersion;
 extern const u8 gGameLanguage;
+extern const u8 RomHeaderGameCode[4];
+extern const u8 RomHeaderSoftwareVersion;
 
 extern u16 gKeyRepeatStartDelay;
 extern bool8 gLinkTransferringData;
@@ -68,7 +70,7 @@ void ClearPokemonCrySongs(void);
 void RestoreSerialTimer3IntrHandlers(void);
 void StartTimer1(void);
 void SeedRngAndSetTrainerId(void);
-extern u16 GetGeneratedTrainerIdLower(void);
+u16 GetGeneratedTrainerIdLower(void);
 
 
 #endif // GUARD_MAIN_H

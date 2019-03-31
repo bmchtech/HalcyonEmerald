@@ -16,6 +16,7 @@
 #include "palette.h"
 #include "pokeball.h"
 #include "pokemon.h"
+#include "recorded_battle.h"
 #include "reshow_battle_screen.h"
 #include "sound.h"
 #include "string_util.h"
@@ -26,12 +27,10 @@
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "recorded_battle.h"
 
 extern const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[];
 extern const struct CompressedSpritePalette gTrainerBackPicPaletteTable[];
-
-extern void sub_8172EF0(u8 battlerId, struct Pokemon *mon);
-extern void sub_81851A8(u8 *);
 
 // this file's functions
 static void LinkPartnerHandleGetMonData(void);
@@ -90,7 +89,7 @@ static void LinkPartnerHandleBattleAnimation(void);
 static void LinkPartnerHandleLinkStandbyMsg(void);
 static void LinkPartnerHandleResetActionMoveSelection(void);
 static void LinkPartnerHandleCmd55(void);
-static void SpriteCB_Null3(void);
+static void LinkPartnerCmdEnd(void);
 
 static void LinkPartnerBufferRunCommand(void);
 static void LinkPartnerBufferExecCompleted(void);
@@ -161,7 +160,7 @@ static void (*const sLinkPartnerBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
     LinkPartnerHandleLinkStandbyMsg,
     LinkPartnerHandleResetActionMoveSelection,
     LinkPartnerHandleCmd55,
-    SpriteCB_Null3
+    LinkPartnerCmdEnd
 };
 
 static void SpriteCB_Null2(void)
@@ -1687,6 +1686,6 @@ static void LinkPartnerHandleCmd55(void)
     gBattlerControllerFuncs[gActiveBattler] = sub_80587B0;
 }
 
-static void SpriteCB_Null3(void)
+static void LinkPartnerCmdEnd(void)
 {
 }

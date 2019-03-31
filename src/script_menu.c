@@ -1313,7 +1313,7 @@ static void Task_HandleMultichoiceGridInput(u8 taskId)
 
 #undef tWindowId
 
-bool8 ScrSpecial_CreatePCMenu(void)
+bool16 ScrSpecial_CreatePCMenu(void)
 {
     if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
     {

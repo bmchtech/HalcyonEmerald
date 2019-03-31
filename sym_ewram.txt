@@ -46,8 +46,7 @@ gUnknown_02022C68: @ 2022C68
 gUnknown_02022C6C: @ 2022C6C
 	.space 0x4
 
-gUnknown_02022C70: @ 2022C70
-	.space 0x4
+	.include "src/mevent2.o"
 
 gUnknown_02022C74: @ 2022C74
 	.space 0x4
@@ -73,9 +72,9 @@ gUnknown_02022C8C: @ 2022C8C
 gUnknown_02022C90: @ 2022C90
 	.space 0x4
 
-gUnknown_02022C94: @ 2022C94
-	.space 0x4
+	.include "src/berry_powder.o"
 
+	.align 2
 gUnknown_02022C98: @ 2022C98
 	.space 0x4
 
@@ -180,10 +179,10 @@ gPlayerFacingPosition: @ 203AB40
 	
 	.include "src/pokeblock.o"
 	.include "src/field_specials.o"
-    .include "src/battle_records.o"
-    .include "src/pokedex_area_screen.o"
-    .include "src/evolution_scene.o"
-    .include "src/roulette.o"
+	.include "src/battle_records.o"
+	.include "src/pokedex_area_screen.o"
+	.include "src/evolution_scene.o"
+	.include "src/roulette.o"
 	.include "src/pokedex_cry_screen.o"
 	.include "src/coins.o"
 	.include "src/battle_transition.o"
@@ -192,7 +191,7 @@ gPlayerFacingPosition: @ 203AB40
 	.include "src/rom_81520A8.o"
 	.include "src/save.o"
 	.include "src/mystery_event_script.o"
-	.include "src/learn_move.o"
+	.include "src/move_relearner.o"
 	.include "src/decoration_inventory.o"
 	.include "src/roamer.o"
 	.include "src/battle_tower.o"
@@ -237,11 +236,7 @@ gUnknown_0203CF40: @ 203CF40
 gUnknown_0203CF44: @ 203CF44
 	.space 0x4
 
-gUnknown_0203CF48: @ 203CF48
-	.space 0x4
-
-gUnknown_0203CF4C: @ 203CF4C
-	.space 0x4
+	.include "src/menu_specialized.o"
 
 gUnknown_0203CF50: @ 203CF50
 	.space 0x4
