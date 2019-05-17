@@ -36,6 +36,7 @@
 #include "new_game.h"
 #include "save.h"
 #include "link.h"
+#include "constants/rgb.h"
 
 #define BLENDER_SCORE_BEST      0
 #define BLENDER_SCORE_GOOD      1
@@ -404,10 +405,10 @@ static const struct OamData sOamData_8216314 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(32x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -547,10 +548,10 @@ static const struct OamData sOamData_821640C =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(16x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 1,
+    .size = SPRITE_SIZE(16x16),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 0,
@@ -616,10 +617,10 @@ static const struct OamData sOamData_8216474 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(8x8),
     .x = 0,
     .matrixNum = 0,
-    .size = 0,
+    .size = SPRITE_SIZE(8x8),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -703,10 +704,10 @@ static const struct OamData sOamData_8216514 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(32x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -761,10 +762,10 @@ static const struct OamData sOamData_8216560 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 1,
+    .shape = SPRITE_SHAPE(64x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 3,
+    .size = SPRITE_SIZE(64x32),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -940,7 +941,7 @@ static void InitBerryBlenderWindows(void)
             FillWindowPixelBuffer(i, PIXEL_FILL(0));
 
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 0x1E, 0x14);
-        sub_81978B0(0xE0);
+        Menu_LoadStdPalAt(0xE0);
     }
 }
 
@@ -996,7 +997,7 @@ static void sub_807FAC8(void)
             }
             if (gReceivedRemoteLinkPlayers != 0 && gWirelessCommType)
             {
-                sub_800E0E8();
+                LoadWirelessStatusIndicatorSpriteGfx();
                 CreateWirelessStatusIndicatorSprite(0, 0);
             }
             SetVBlankCallback(VBlankCB0_BerryBlender);
@@ -1004,7 +1005,7 @@ static void sub_807FAC8(void)
         }
         break;
     case 2:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         sub_8082D28();
         sBerryBlenderData->mainState++;
         break;
@@ -1018,7 +1019,7 @@ static void sub_807FAC8(void)
             sBerryBlenderData->mainState++;
         break;
     case 5:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         sBerryBlenderData->mainState++;
         break;
     case 6:
@@ -1202,13 +1203,13 @@ static void sub_8080018(void)
         }
         if (gReceivedRemoteLinkPlayers != 0 && gWirelessCommType)
         {
-            sub_800E0E8();
+            LoadWirelessStatusIndicatorSpriteGfx();
             CreateWirelessStatusIndicatorSprite(0, 0);
         }
         sBerryBlenderData->mainState++;
         break;
     case 3:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         sBerryBlenderData->mainState++;
         break;
     case 4:
@@ -1534,7 +1535,7 @@ static void sub_80808D4(void)
         sBerryBlenderData->mainState++;
         break;
     case 3:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         sBerryBlenderData->mainState++;
         sBerryBlenderData->framesToWait = 0;
         break;
@@ -2037,7 +2038,7 @@ static void sub_8081744(void)
             sBerryBlenderData->field_4C--;
         sBerryBlenderData->field_72 = 0;
     }
-    if (gUnknown_020322D5 && gMain.newKeys & L_BUTTON)
+    if (gEnableContestDebugging && gMain.newKeys & L_BUTTON)
         sBerryBlenderData->field_123 ^= 1;
 }
 
@@ -2700,7 +2701,7 @@ static void CB2_HandlePlayerLinkPlayAgainChoice(void)
     case 9:
         if (IsLinkTaskFinished())
         {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
             sBerryBlenderData->gameEndState++;
         }
         break;

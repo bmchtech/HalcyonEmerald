@@ -1,6 +1,6 @@
 SootopolisCity_MapScripts:: @ 81E565C
 	map_script MAP_SCRIPT_ON_LOAD, SootopolisCity_MapScript1_1E5676
-	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_MapScript1_1E56EF
+	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SootopolisCity_MapScript1_1E590B
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SootopolisCity_MapScript2_1E5914
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SootopolisCity_MapScript2_1E58DB
@@ -31,7 +31,7 @@ SootopolisCity_EventScript_1E56E5:: @ 81E56E5
 	setmetatile 31, 32, 592, 1
 	return
 
-SootopolisCity_MapScript1_1E56EF: @ 81E56EF
+SootopolisCity_OnTransition: @ 81E56EF
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	compare VAR_RAYQUAZA_STATE, 1
 	call_if_eq SootopolisCity_EventScript_1E5781
@@ -62,7 +62,7 @@ SootopolisCity_MapScript1_1E56EF: @ 81E56EF
 	end
 
 SootopolisCity_EventScript_1E5781:: @ 81E5781
-	setflag FLAG_SPECIAL_FLAG_0x4000
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 SootopolisCity_EventScript_1E5785:: @ 81E5785
@@ -272,7 +272,7 @@ SootopolisCity_EventScript_1E5946:: @ 81E5946
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_RAYQUAZA_STATE, 2
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -372,7 +372,7 @@ SootopolisCity_EventScript_1E5A82:: @ 81E5A82
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_RAYQUAZA_STATE, 2
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 
@@ -544,7 +544,7 @@ SootopolisCity_EventScript_1E5C1E:: @ 81E5C1E
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_RUNECITY
 	delay 120
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	warp8 MAP_SOOTOPOLIS_CITY, 255, 43, 32
 	waitstate
 	end
@@ -597,7 +597,7 @@ SootopolisCity_EventScript_1E5CCE:: @ 81E5CCE
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_NAMINORI
 	delay 120
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	warp8 MAP_SOOTOPOLIS_CITY, 255, 29, 53
 	waitstate
 	end

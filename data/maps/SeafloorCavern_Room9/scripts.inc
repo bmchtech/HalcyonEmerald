@@ -40,8 +40,8 @@ SeafloorCavern_Room9_EventScript_234DC9:: @ 8234DC9
 	setfieldeffectargument 0, 16
 	setfieldeffectargument 1, 42
 	setfieldeffectargument 2, 0
-	dofieldeffect 54
-	waitfieldeffect 54
+	dofieldeffect FLDEFF_SPARKLE
+	waitfieldeffect FLDEFF_SPARKLE
 	closemessage
 	setvar VAR_RESULT, 0
 	playfanfare MUS_ME_TAMA
@@ -140,7 +140,7 @@ SeafloorCavern_Room9_EventScript_234DC9:: @ 8234DC9
 	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS
 	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_1
 	setflag FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS
-	setflag FLAG_SPECIAL_FLAG_0x4000
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_ROUTE128, 255, 38, 22
 	waitstate
 	releaseall

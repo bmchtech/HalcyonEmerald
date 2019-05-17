@@ -1,28 +1,12 @@
-BattleFrontier_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-DewfordTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-EverGrandeCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-EverGrandeCity_PokemonLeague_2F_MapScript1_276ACF: @ 8276ACF
-FallarborTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-FortreeCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-LavaridgeTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-LilycoveCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-MauvilleCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-MossdeepCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-OldaleTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-PacifidlogTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-PetalburgCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-RustboroCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-SlateportCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-SootopolisCity_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-VerdanturfTown_PokemonCenter_2F_MapScript1_276ACF: @ 8276ACF
-	call OldaleTown_PokemonCenter_2F_EventScript_276AD5
+PokemonCenter_2F_OnTransition: @ 8276ACF
+	call OldaleTown_PokemonCenter_2F_EventScript_OnTransitionCheckMysteryGift
 	end
 
-OldaleTown_PokemonCenter_2F_EventScript_276AD5:: @ 8276AD5
+OldaleTown_PokemonCenter_2F_EventScript_OnTransitionCheckMysteryGift:: @ 8276AD5
 	specialvar VAR_RESULT, sub_813B514
 	compare VAR_RESULT, 1
 	goto_if_eq OldaleTown_PokemonCenter_2F_EventScript_276AFB
-	specialvar VAR_RESULT, sub_801B27C
+	specialvar VAR_RESULT, ValidateReceivedWonderCard
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleTown_PokemonCenter_2F_EventScript_276AFF
 	goto OldaleTown_PokemonCenter_2F_EventScript_276AFB
@@ -60,7 +44,7 @@ VerdanturfTown_PokemonCenter_2F_EventScript_276B03:: @ 8276B03
 	end
 
 OldaleTown_PokemonCenter_2F_EventScript_276B19:: @ 8276B19
-	execram
+	gotoram
 
 OldaleTown_PokemonCenter_2F_EventScript_276B1A:: @ 8276B1A
 	msgbox gUnknown_08273178, MSGBOX_NPC

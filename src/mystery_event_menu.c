@@ -18,6 +18,7 @@
 #include "gpu_regs.h"
 #include "text_window.h"
 #include "decompress.h"
+#include "constants/rgb.h"
 
 // this file's functions
 static void CB2_MysteryEventMenu(void);
@@ -94,7 +95,7 @@ void CB2_InitMysteryEventMenu(void)
 
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 0x1E, 0x14);
         LoadUserWindowBorderGfx(0, 1u, 0xD0u);
-        sub_81978B0(0xE0);
+        Menu_LoadStdPalAt(0xE0);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON);
         SetGpuReg(REG_OFFSET_BLDCNT, 0);
         CreateTask(Task_DestroySelf, 0);
@@ -137,7 +138,7 @@ static void CB2_MysteryEventMenu(void)
         PutWindowTilemap(0);
         CopyWindowToVram(0, 3);
         ShowBg(0);
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         gMain.state++;
         break;
     case 1:
@@ -280,7 +281,7 @@ static void CB2_MysteryEventMenu(void)
         }
         break;
     case 15:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         gMain.state++;
         break;
     case 16:

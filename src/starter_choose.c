@@ -1,6 +1,6 @@
 #include "global.h"
 #include "bg.h"
-#include "data2.h"
+#include "data.h"
 #include "decompress.h"
 #include "event_data.h"
 #include "gpu_regs.h"
@@ -22,6 +22,7 @@
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/species.h"
+#include "constants/rgb.h"
 
 #define STARTER_MON_COUNT   3
 
@@ -170,10 +171,10 @@ static const struct OamData gOamData_85B1E10 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(32x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -187,10 +188,10 @@ static const struct OamData gOamData_85B1E18 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(32x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -204,10 +205,10 @@ static const struct OamData gOamData_85B1E20 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(64x64),
     .x = 0,
     .matrixNum = 0,
-    .size = 3,
+    .size = SPRITE_SIZE(64x64),
     .tileNum = 0,
     .priority = 1,
     .paletteNum = 0,
@@ -296,21 +297,35 @@ static const union AffineAnimCmd * const gSpriteAffineAnimTable_85B1ED4[] = {gSp
 
 static const struct CompressedSpriteSheet gUnknown_085B1ED8[] =
 {
-    gUnknown_085B18AC, 0x0800, 0x1000,
-    NULL,
+    {
+        .data = gUnknown_085B18AC,
+        .size = 0x0800,
+        .tag = 0x1000
+    },
+    {}
 };
 
 static const struct CompressedSpriteSheet gUnknown_085B1EE8[] =
 {
-    gUnknown_085B1BCC, 0x0800, 0x1001,
-    NULL,
+    {
+        .data = gUnknown_085B1BCC,
+        .size = 0x0800,
+        .tag = 0x1001
+    },
+    {}
 };
 
 static const struct SpritePalette gUnknown_085B1EF8[] =
 {
-    gBirchBallarrow_Pal, 0x1000,
-    gBirchCircle_Pal, 0x1001,
-    NULL,
+    {
+        .data = gBirchBallarrow_Pal,
+        .tag = 0x1000
+    },
+    {
+        .data = gBirchCircle_Pal,
+        .tag = 0x1001
+    },
+    {},
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Hand =
@@ -415,7 +430,7 @@ void CB2_ChooseStarter(void)
     LoadCompressedSpriteSheet(&gUnknown_085B1ED8[0]);
     LoadCompressedSpriteSheet(&gUnknown_085B1EE8[0]);
     LoadSpritePalettes(gUnknown_085B1EF8);
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
 
     EnableInterrupts(DISPSTAT_VBLANK);
     SetVBlankCallback(VblankCB_StarterChoose);

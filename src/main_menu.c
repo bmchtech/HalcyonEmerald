@@ -23,7 +23,7 @@
 #include "palette.h"
 #include "pokeball.h"
 #include "pokedex.h"
-#include "pokemon_3.h"
+#include "pokemon.h"
 #include "random.h"
 #include "rtc.h"
 #include "save.h"
@@ -38,6 +38,7 @@
 #include "text_window.h"
 #include "title_screen.h"
 #include "window.h"
+#include "mystery_gift.h"
 
 /*
  * Main menu state machine
@@ -525,7 +526,7 @@ enum
     ACTION_OPTION,
     ACTION_MYSTERY_GIFT,
     ACTION_MYSTERY_EVENTS,
-    ACTION_UNKNOWN, // TODO: change when rom_8011DC0 decompiled
+    ACTION_EREADER,
     ACTION_INVALID
 };
 
@@ -583,9 +584,9 @@ static u32 InitMainMenu(bool8 returningFromOptionsMenu)
     ResetSpriteData();
     FreeAllSpritePalettes();
     if (returningFromOptionsMenu)
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0x0000); // fade to black
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK); // fade to black
     else
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0xFFFF); // fade to white
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_WHITEALPHA); // fade to white
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sMainMenuBgTemplates, ARRAY_COUNT(sMainMenuBgTemplates));
     ChangeBgX(0, 0, 0);
@@ -1033,7 +1034,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                         }
                         else
                         {
-                            action = ACTION_UNKNOWN;
+                            action = ACTION_EREADER;
                         }
                         break;
                     case 3:
@@ -1082,8 +1083,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 SetMainCallback2(CB2_InitMysteryEventMenu);
                 DestroyTask(taskId);
                 break;
-            case ACTION_UNKNOWN:
-                SetMainCallback2(sub_801867C);
+            case ACTION_EREADER:
+                SetMainCallback2(c2_ereader);
                 DestroyTask(taskId);
                 break;
             case ACTION_INVALID:
@@ -1097,7 +1098,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 SetGpuReg(REG_OFFSET_BG1VOFS, 0);
                 SetGpuReg(REG_OFFSET_BG0HOFS, 0);
                 SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-                BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, 0);
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
                 return;
         }
         FreeAllWindowBuffers();
@@ -1286,7 +1287,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     FreeAllSpritePalettes();
     ResetAllPicSprites();
     AddBirchSpeechObjects(taskId);
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
     gTasks[taskId].tBG1HOFS = 0;
     gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
     gTasks[taskId].tPlayerSpriteId = 0xFF;
@@ -1845,7 +1846,7 @@ static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void)
     gSprites[spriteId].invisible = FALSE;
     gTasks[taskId].tPlayerSpriteId = spriteId;
     SetGpuReg(REG_OFFSET_BG1HOFS, -60);
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
     SetGpuReg(REG_OFFSET_WIN0H, 0);
     SetGpuReg(REG_OFFSET_WIN0V, 0);
     SetGpuReg(REG_OFFSET_WININ, 0);

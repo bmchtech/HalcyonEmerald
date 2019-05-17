@@ -17,7 +17,7 @@
 #include "string_util.h"
 #include "international_string_util.h"
 #include "window.h"
-#include "data2.h"
+#include "data.h"
 #include "decompress.h"
 #include "pokemon_summary_screen.h"
 #include "sound.h"
@@ -385,10 +385,10 @@ static const struct OamData gUnknown_0861047C =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(32x32),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 3,
     .paletteNum = 0,
@@ -402,10 +402,10 @@ static const struct OamData gUnknown_08610484 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(16x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 1,
+    .size = SPRITE_SIZE(16x16),
     .tileNum = 0,
     .priority = 3,
     .paletteNum = 0,
@@ -419,10 +419,10 @@ static const struct OamData gUnknown_0861048C =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 1,
+    .shape = SPRITE_SHAPE(32x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x16),
     .tileNum = 0,
     .priority = 2,
     .paletteNum = 0,
@@ -436,10 +436,10 @@ static const struct OamData gUnknown_08610494 =
     .objMode = 1,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(64x64),
     .x = 0,
     .matrixNum = 0,
-    .size = 3,
+    .size = SPRITE_SIZE(64x64),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 0,
@@ -1166,7 +1166,7 @@ static void CB2_InitSelectScreen(void)
         ShowBg(0);
         ShowBg(1);
         SetVBlankCallback(Select_VblankCb);
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_1D_MAP);
         if (sFactorySelectScreen->fromSummaryScreen == TRUE)
         {
@@ -1405,7 +1405,7 @@ static void Task_FromSelectScreenToSummaryScreen(u8 taskId)
     {
     case 6:
         gPlttBufferUnfaded[228] = gPlttBufferFaded[228];
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].data[0] = 7;
         break;
     case 7:
@@ -1442,7 +1442,7 @@ static void Task_CloseSelectionScreen(u8 taskId)
         switch (gTasks[taskId].data[0])
         {
         case 0:
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
             gTasks[taskId].data[0]++;
             break;
         case 1:
@@ -1742,7 +1742,7 @@ static void Select_CopyMonsToPlayerParty(void)
                 gPlayerParty[i] = sFactorySelectScreen->mons[j].monData;
                 gSaveBlock2Ptr->frontier.rentalMons[i].monId = sFactorySelectScreen->mons[j].monSetId;
                 gSaveBlock2Ptr->frontier.rentalMons[i].personality = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL);
-                gSaveBlock2Ptr->frontier.rentalMons[i].abilityBit = GetBoxMonData(&gPlayerParty[i].box, MON_DATA_ALT_ABILITY, NULL);
+                gSaveBlock2Ptr->frontier.rentalMons[i].abilityNum = GetBoxMonData(&gPlayerParty[i].box, MON_DATA_ABILITY_NUM, NULL);
                 gSaveBlock2Ptr->frontier.rentalMons[i].ivs = GetBoxMonData(&gPlayerParty[i].box, MON_DATA_ATK_IV, NULL);
                 break;
             }
@@ -2266,7 +2266,7 @@ static void CopySwappedMonData(void)
     gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->playerMonId].monId = gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->enemyMonId + 3].monId;
     gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->playerMonId].ivs = gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->enemyMonId + 3].ivs;
     gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->playerMonId].personality = GetMonData(&gEnemyParty[sFactorySwapScreen->enemyMonId], MON_DATA_PERSONALITY, NULL);
-    gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->playerMonId].abilityBit = GetBoxMonData(&gEnemyParty[sFactorySwapScreen->enemyMonId].box, MON_DATA_ALT_ABILITY, NULL);
+    gSaveBlock2Ptr->frontier.rentalMons[sFactorySwapScreen->playerMonId].abilityNum = GetBoxMonData(&gEnemyParty[sFactorySwapScreen->enemyMonId].box, MON_DATA_ABILITY_NUM, NULL);
 }
 
 static void Task_FromSwapScreenToSummaryScreen(u8 taskId)
@@ -2274,7 +2274,7 @@ static void Task_FromSwapScreenToSummaryScreen(u8 taskId)
     switch (gTasks[taskId].data[0])
     {
     case 6:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         gTasks[taskId].data[0] = 7;
         break;
     case 7:
@@ -2327,7 +2327,7 @@ static void Task_CloseSwapScreen(u8 taskId)
             gTasks[taskId].data[0]++;
             break;
         case 2:
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
             gTasks[taskId].data[0]++;
             break;
         case 3:
@@ -3218,7 +3218,7 @@ static void CB2_InitSwapScreen(void)
         gMain.state++;
         break;
     case 14:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0x10, 0, RGB_BLACK);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
         ShowBg(0);
         ShowBg(1);

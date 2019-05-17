@@ -1,10 +1,10 @@
 SkyPillar_Outside_MapScripts:: @ 82392A8
-	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Outside_MapScript1_2392B8
+	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Outside_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_Outside_MapScript1_2392DD
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_Outside_MapScript2_2392FA
 	.byte 0
 
-SkyPillar_Outside_MapScript1_2392B8: @ 82392B8
+SkyPillar_Outside_OnTransition: @ 82392B8
 	compare VAR_RAYQUAZA_STATE, 3
 	call_if_eq SkyPillar_Outside_EventScript_2392CF
 	compare VAR_RAYQUAZA_STATE, 4
@@ -12,7 +12,7 @@ SkyPillar_Outside_MapScript1_2392B8: @ 82392B8
 	end
 
 SkyPillar_Outside_EventScript_2392CF:: @ 82392CF
-	setflag FLAG_SPECIAL_FLAG_0x4000
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 SkyPillar_Outside_EventScript_2392D3:: @ 82392D3
@@ -81,7 +81,7 @@ SkyPillar_Outside_EventScript_239304:: @ 8239304
 	closemessage
 	playse SE_KAIDAN
 	fadescreenswapbuffers 1
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_RAYQUAZA_STATE, 4
 	removeobject 1
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
