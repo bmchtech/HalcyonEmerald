@@ -1,6 +1,6 @@
 Route119_MapScripts:: @ 81F4424
 	map_script MAP_SCRIPT_ON_RESUME, Route119_MapScript1_1F442F
-	map_script MAP_SCRIPT_ON_TRANSITION, Route119_MapScript1_1F444D
+	map_script MAP_SCRIPT_ON_TRANSITION, Route119_OnTransition
 	.byte 0
 
 Route119_MapScript1_1F442F: @ 81F442F
@@ -14,7 +14,7 @@ Route119_EventScript_1F4439:: @ 81F4439
 	removeobject VAR_LAST_TALKED
 	return
 
-Route119_MapScript1_1F444D: @ 81F444D
+Route119_OnTransition: @ 81F444D
 	call Common_EventScript_SetupRivalGender
 	call Common_EventScript_SetupRivalOnBikeGender
 	compare VAR_WEATHER_INSTITUTE_STATE, 1
@@ -167,7 +167,7 @@ Route119_EventScript_1F460F:: @ 81F460F
 	addobject 43
 	applymovement 43, Route119_Movement_1F4752
 	waitmovement 0
-	addvar VAR_0x40D1, 1
+	addvar VAR_SCOTT_STATE, 1
 	msgbox Route119_Text_1F4E60, MSGBOX_DEFAULT
 	closemessage
 	compare VAR_TEMP_1, 1
@@ -491,7 +491,7 @@ Route119_EventScript_1F49EC:: @ 81F49EC
 	pokenavcall Route119_Text_1F4FBA
 	waitmessage
 	clearflag FLAG_REGISTER_WINONA_POKENAV
-	addvar VAR_0x40D1, 1
+	addvar VAR_SCOTT_STATE, 1
 	releaseall
 	end
 

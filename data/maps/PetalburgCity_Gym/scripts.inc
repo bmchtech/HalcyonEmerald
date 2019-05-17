@@ -1,11 +1,11 @@
 PetalburgCity_Gym_MapScripts:: @ 8204889
-	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_MapScript1_20489E
+	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_Gym_MapScript1_20492D
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, PetalburgCity_Gym_MapScript2_20498B
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCity_Gym_MapScript2_20499A
 	.byte 0
 
-PetalburgCity_Gym_MapScript1_20489E: @ 820489E
+PetalburgCity_Gym_OnTransition: @ 820489E
 	compare VAR_PETALBURG_GYM_STATE, 6
 	goto_if_eq PetalburgCity_Gym_EventScript_2048B5
 	compare VAR_PETALBURG_GYM_STATE, 7
@@ -60,7 +60,7 @@ PetalburgCity_Gym_EventScript_204955:: @ 8204955
 	return
 
 PetalburgCity_Gym_EventScript_20495D:: @ 820495D
-	setorcopyvar VAR_0x8015, 269
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, 269
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 	compare VAR_RESULT, 1
 	goto_if_eq PetalburgCity_Gym_EventScript_204985

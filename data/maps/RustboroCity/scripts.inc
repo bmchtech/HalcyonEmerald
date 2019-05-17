@@ -1,9 +1,9 @@
 RustboroCity_MapScripts:: @ 81E06BD
-	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_MapScript1_1E06C8
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RustboroCity_MapScript2_1E070B
 	.byte 0
 
-RustboroCity_MapScript1_1E06C8: @ 81E06C8
+RustboroCity_OnTransition: @ 81E06C8
 	setflag FLAG_VISITED_RUSTBORO_CITY
 	call Common_EventScript_SetupRivalGender
 	compare VAR_RUSTBORO_STATE, 6
@@ -24,7 +24,7 @@ RustboroCity_EventScript_1E06FF:: @ 81E06FF
 	end
 
 RustboroCity_EventScript_1E0707:: @ 81E0707
-	setflag FLAG_SPECIAL_FLAG_0x4000
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 RustboroCity_MapScript2_1E070B: @ 81E070B
@@ -100,7 +100,7 @@ RustboroCity_EventScript_1E07BD:: @ 81E07BD
 	removeobject 15
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
 	setvar VAR_RUSTBORO_STATE, 7
-	clearflag FLAG_SPECIAL_FLAG_0x4000
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
 

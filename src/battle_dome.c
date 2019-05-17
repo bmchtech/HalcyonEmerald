@@ -24,7 +24,7 @@
 #include "menu.h"
 #include "sound.h"
 #include "pokemon_icon.h"
-#include "data2.h"
+#include "data.h"
 #include "international_string_util.h"
 #include "trainer_pokemon_sprites.h"
 #include "scanline_effect.h"
@@ -58,9 +58,6 @@ struct UnkStruct_860DD10
     u8 y;
     u16 src;
 };
-
-// text
-extern const u8 gTrainerClassNames[][13];
 
 // This file's functions.
 static u8 GetDomeTrainerMonIvs(u16 trainerId);
@@ -872,10 +869,10 @@ static const struct OamData gUnknown_0860CF70 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 0,
+    .shape = SPRITE_SHAPE(16x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 1,
+    .size = SPRITE_SIZE(16x16),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 0,
@@ -889,10 +886,10 @@ static const struct OamData gUnknown_0860CF78 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 1,
+    .shape = SPRITE_SHAPE(32x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 2,
+    .size = SPRITE_SIZE(32x16),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 1,
@@ -906,10 +903,10 @@ static const struct OamData gUnknown_0860CF80 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 1,
+    .shape = SPRITE_SHAPE(16x8),
     .x = 0,
     .matrixNum = 0,
-    .size = 0,
+    .size = SPRITE_SIZE(16x8),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 2,
@@ -923,10 +920,10 @@ static const struct OamData gUnknown_0860CF88 =
     .objMode = 0,
     .mosaic = 0,
     .bpp = 0,
-    .shape = 2,
+    .shape = SPRITE_SHAPE(8x16),
     .x = 0,
     .matrixNum = 0,
-    .size = 0,
+    .size = SPRITE_SIZE(8x16),
     .tileNum = 0,
     .priority = 0,
     .paletteNum = 2,
@@ -2906,7 +2903,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
 
     defType1 = gBaseStats[targetSpecies].type1;
     defType2 = gBaseStats[targetSpecies].type2;
-    defAbility = gBaseStats[targetSpecies].ability1;
+    defAbility = gBaseStats[targetSpecies].abilities[0];
     moveType = gBattleMoves[move].type;
 
     if (defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
@@ -3794,7 +3791,7 @@ static void sub_8190CD4(u8 taskId)
             for (i = windowId; i < windowId + 9; i++)
             {
                 CopyWindowToVram(i, 2);
-                FillWindowPixelBuffer(i, 0);
+                FillWindowPixelBuffer(i, PIXEL_FILL(0));
             }
             gTasks[taskId].data[0] = 3;
             break;
@@ -5450,9 +5447,9 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
 
                 targetSpecies = gFacilityTrainerMons[gSaveBlock2Ptr->frontier.domeMonIds[loserTournamentId][k]].species;
                 if (var & 1)
-                    targetAbility = gBaseStats[targetSpecies].ability2;
+                    targetAbility = gBaseStats[targetSpecies].abilities[1];
                 else
-                    targetAbility = gBaseStats[targetSpecies].ability1;
+                    targetAbility = gBaseStats[targetSpecies].abilities[0];
 
                 var = AI_TypeCalc(moveIds[i * 4 + j], targetSpecies, targetAbility);
                 if (var & MOVE_RESULT_NOT_VERY_EFFECTIVE && var & MOVE_RESULT_SUPER_EFFECTIVE)

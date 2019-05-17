@@ -2,10 +2,10 @@ SootopolisCity_Gym_1F_MapScripts:: @ 8224E4C
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SootopolisCity_Gym_1F_MapScript2_224ECB
 	map_script MAP_SCRIPT_ON_RESUME, SootopolisCity_Gym_1F_MapScript1_224E67
 	map_script MAP_SCRIPT_ON_LOAD, SootopolisCity_Gym_1F_MapScript1_224E6A
-	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_Gym_1F_MapScript1_224E61
+	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_Gym_1F_OnTransition
 	.byte 0
 
-SootopolisCity_Gym_1F_MapScript1_224E61: @ 8224E61
+SootopolisCity_Gym_1F_OnTransition: @ 8224E61
 	setvar VAR_ICE_STEP_COUNT, 1
 	end
 
@@ -106,7 +106,7 @@ SootopolisCity_Gym_1F_EventScript_224F82:: @ 8224F82
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
-	setvar VAR_0x405E, 6
+	setvar VAR_RAYQUAZA_STATE, 6
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
 	setvar VAR_0x8008, 8
 	call SootopolisCity_Gym_1F_EventScript_271F43

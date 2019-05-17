@@ -1,9 +1,9 @@
 FortreeCity_Gym_MapScripts:: @ 82165AB
-	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_MapScript1_2165B6
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, FortreeCity_Gym_MapScript2_2165BA
 	.byte 0
 
-FortreeCity_Gym_MapScript1_2165B6: @ 82165B6
+FortreeCity_Gym_OnTransition: @ 82165B6
 	special RotatingGate_InitPuzzle
 	end
 
@@ -43,7 +43,7 @@ FortreeCity_Gym_EventScript_2165FD:: @ 82165FD
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
-	setvar VAR_0x40F3, 0
+	setvar VAR_WINONA_CALL_STEP_COUNTER, 0
 	setflag FLAG_REGISTER_WINONA_POKENAV
 	release
 	end

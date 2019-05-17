@@ -1,6 +1,6 @@
 Route110_TrickHouseEnd_MapScripts:: @ 826ACAF
 	map_script MAP_SCRIPT_ON_RESUME, Route110_TrickHouseEnd_MapScript1_26ACC4
-	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHouseEnd_MapScript1_26ACD0
+	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHouseEnd_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route110_TrickHouseEnd_MapScript2_26ACF5
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route110_TrickHouseEnd_MapScript2_26ACDE
 	.byte 0
@@ -10,7 +10,7 @@ Route110_TrickHouseEnd_MapScript1_26ACC4: @ 826ACC4
 	call_if_eq Route110_TrickHouseEnd_EventScript_26AD0D
 	end
 
-Route110_TrickHouseEnd_MapScript1_26ACD0: @ 826ACD0
+Route110_TrickHouseEnd_OnTransition: @ 826ACD0
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
 	special SetTrickHouseEndRoomFlag
@@ -45,7 +45,7 @@ Route110_TrickHouseEnd_EventScript_26AD17:: @ 826AD17
 	faceplayer
 	msgbox Route110_TrickHouseEnd_Text_26B08D, MSGBOX_DEFAULT
 	setvar VAR_TEMP_2, 1
-	switch VAR_0x4044
+	switch VAR_TRICK_HOUSE_LEVEL
 	case 0, Route110_TrickHouseEnd_EventScript_26AD84
 	case 1, Route110_TrickHouseEnd_EventScript_26ADC0
 	case 2, Route110_TrickHouseEnd_EventScript_26ADFC
@@ -196,7 +196,7 @@ Route110_TrickHouseEnd_EventScript_26AFCF:: @ 826AFCF
 	applymovement 1, Route110_TrickHouseEnd_Movement_269E3F
 	waitmovement 0
 	removeobject 1
-	addvar VAR_0x4044, 1
+	addvar VAR_TRICK_HOUSE_LEVEL, 1
 	return
 
 Route110_TrickHouseEnd_EventScript_26AFEF:: @ 826AFEF

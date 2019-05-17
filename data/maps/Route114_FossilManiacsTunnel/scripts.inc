@@ -1,9 +1,9 @@
 Route114_FossilManiacsTunnel_MapScripts:: @ 822AF28
-	map_script MAP_SCRIPT_ON_TRANSITION, Route114_FossilManiacsTunnel_MapScript1_22AF33
+	map_script MAP_SCRIPT_ON_TRANSITION, Route114_FossilManiacsTunnel_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, Route114_FossilManiacsTunnel_MapScript1_22AF49
 	.byte 0
 
-Route114_FossilManiacsTunnel_MapScript1_22AF33: @ 822AF33
+Route114_FossilManiacsTunnel_OnTransition: @ 822AF33
 	call_if_set FLAG_SYS_GAME_CLEAR, Route114_FossilManiacsTunnel_EventScript_22AF3D
 	end
 
@@ -27,7 +27,7 @@ Route114_FossilManiacsTunnel_EventScript_22AF66:: @ 822AF66
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox Route114_FossilManiacsTunnel_Text_22B1F7, MSGBOX_DEFAULT
-	setvar VAR_0x40CC, 2
+	setvar VAR_FOSSIL_MANIAC_STATE, 2
 	releaseall
 	end
 
