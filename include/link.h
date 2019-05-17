@@ -200,8 +200,6 @@ extern bool8 gLinkVSyncDisabled;
 extern u32 gLinkStatus;
 
 
-void c2_mystery_gift(void);
-void sub_801867C(void);
 bool8 IsWirelessAdapterConnected(void);
 void Task_DestroySelf(u8 taskId);
 void OpenLink(void);
@@ -237,7 +235,7 @@ void LinkVSync(void);
 void Timer3Intr(void);
 void SerialCB(void);
 bool32 InUnionRoom(void);
-void sub_800E0E8(void);
+void LoadWirelessStatusIndicatorSpriteGfx(void);
 bool8 IsLinkTaskFinished(void);
 void CreateWirelessStatusIndicatorSprite(u8, u8);
 void sub_800ADF8(void);

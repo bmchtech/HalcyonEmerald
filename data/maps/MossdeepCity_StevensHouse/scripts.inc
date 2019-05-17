@@ -1,6 +1,6 @@
 MossdeepCity_StevensHouse_MapScripts:: @ 8222784
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_StevensHouse_MapScript1_222794
-	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_StevensHouse_MapScript1_2227A8
+	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_StevensHouse_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_StevensHouse_MapScript2_2227C0
 	.byte 0
 
@@ -12,7 +12,7 @@ MossdeepCity_StevensHouse_EventScript_22279E:: @ 822279E
 	setmetatile 6, 4, 753, 1
 	return
 
-MossdeepCity_StevensHouse_MapScript1_2227A8: @ 82227A8
+MossdeepCity_StevensHouse_OnTransition: @ 82227A8
 	compare VAR_STEVENS_HOUSE_STATE, 2
 	call_if_eq MossdeepCity_StevensHouse_EventScript_2227B4
 	end
@@ -84,7 +84,7 @@ MossdeepCity_StevensHouse_EventScript_22285B:: @ 822285B
 	end
 
 MossdeepCity_StevensHouse_EventScript_222865:: @ 8222865
-	setvar VAR_TEMP_1, 398
+	setvar VAR_TEMP_1, SPECIES_BELDUM
 	givemon SPECIES_BELDUM, 5, ITEM_NONE, 0x0, 0x0, 0
 	compare VAR_RESULT, 0
 	goto_if_eq MossdeepCity_StevensHouse_EventScript_222895

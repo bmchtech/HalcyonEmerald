@@ -1,8 +1,8 @@
 RustboroCity_DevonCorp_2F_MapScripts:: @ 8211857
-	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_2F_MapScript1_21185D
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_2F_OnTransition
 	.byte 0
 
-RustboroCity_DevonCorp_2F_MapScript1_21185D: @ 821185D
+RustboroCity_DevonCorp_2F_OnTransition: @ 821185D
 	compare VAR_FOSSIL_RESURRECTION_STATE, 1
 	call_if_eq RustboroCity_DevonCorp_2F_EventScript_211869
 	end
@@ -156,7 +156,7 @@ RustboroCity_DevonCorp_2F_EventScript_211A2C:: @ 8211A2C
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_211A3E:: @ 8211A3E
-	setvar VAR_TEMP_1, 388
+	setvar VAR_TEMP_1, SPECIES_LILEEP
 	givemon SPECIES_LILEEP, 20, ITEM_NONE, 0x0, 0x0, 0
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_211A6E
@@ -205,7 +205,7 @@ RustboroCity_DevonCorp_2F_EventScript_211AD7:: @ 8211AD7
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_211AE1:: @ 8211AE1
-	setvar VAR_TEMP_1, 390
+	setvar VAR_TEMP_1, SPECIES_ANORITH
 	givemon SPECIES_ANORITH, 20, ITEM_NONE, 0x0, 0x0, 0
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_211B11

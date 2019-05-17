@@ -1184,7 +1184,7 @@ static void Task_HandleMultichoiceInput(u8 taskId)
                 {
                     gSpecialVar_Result = selection;
                 }
-                sub_80E2A78(tWindowId);
+                ClearToTransparentAndRemoveWindow(tWindowId);
                 DestroyTask(taskId);
                 EnableBothScriptContexts();
             }
@@ -1220,8 +1220,6 @@ bool8 IsScriptActive(void)
 
 static void Task_HandleYesNoInput(u8 taskId)
 {
-    u8 left, top;
-
     if (gTasks[taskId].tRight < 5)
     {
         gTasks[taskId].tRight++;
@@ -1230,9 +1228,9 @@ static void Task_HandleYesNoInput(u8 taskId)
 
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
-    case -2:
+    case MENU_NOTHING_CHOSEN:
         return;
-    case -1:
+    case MENU_B_PRESSED:
     case 1:
         PlaySE(SE_SELECT);
         gSpecialVar_Result = 0;
@@ -1248,8 +1246,6 @@ static void Task_HandleYesNoInput(u8 taskId)
 
 bool8 ScriptMenu_MultichoiceGrid(u8 left, u8 top, u8 multichoiceId, u8 ignoreBPress, u8 columnCount)
 {
-    u8 bottom = 0;
-
     if (FuncIsActiveTask(Task_HandleMultichoiceGridInput) == TRUE)
     {
         return FALSE;
@@ -1257,10 +1253,8 @@ bool8 ScriptMenu_MultichoiceGrid(u8 left, u8 top, u8 multichoiceId, u8 ignoreBPr
     else
     {
         u8 taskId;
-        u8 unk2;
-        int width;
-        int i;
-        u8 newWidth;
+        u8 rowCount, newWidth;
+        int i, width;
 
         gSpecialVar_Result = 0xFF;
         width = 0;
@@ -1273,15 +1267,15 @@ bool8 ScriptMenu_MultichoiceGrid(u8 left, u8 top, u8 multichoiceId, u8 ignoreBPr
         newWidth = convert_pixel_width_to_tile_width(width);
 
         left = sub_80E2D5C(left, columnCount * newWidth);
-        unk2 = gMultichoiceLists[multichoiceId].count / columnCount;
+        rowCount = gMultichoiceLists[multichoiceId].count / columnCount;
 
         taskId = CreateTask(Task_HandleMultichoiceGridInput, 80);
 
         gTasks[taskId].tIgnoreBPress = ignoreBPress;
-        gTasks[taskId].tWindowId = CreateWindowFromRect(left, top, columnCount * newWidth, unk2 * 2);
+        gTasks[taskId].tWindowId = CreateWindowFromRect(left, top, columnCount * newWidth, rowCount * 2);
         SetStandardWindowBorderStyle(gTasks[taskId].tWindowId, 0);
-        sub_81997AC(gTasks[taskId].tWindowId, newWidth * 8, columnCount, unk2, gMultichoiceLists[multichoiceId].list);
-        sub_8199944(gTasks[taskId].tWindowId, newWidth * 8, columnCount, unk2, 0);
+        PrintMenuGridTable(gTasks[taskId].tWindowId, newWidth * 8, columnCount, rowCount, gMultichoiceLists[multichoiceId].list);
+        sub_8199944(gTasks[taskId].tWindowId, newWidth * 8, columnCount, rowCount, 0);
         CopyWindowToVram(gTasks[taskId].tWindowId, 3);
         return TRUE;
     }
@@ -1292,23 +1286,24 @@ static void Task_HandleMultichoiceGridInput(u8 taskId)
     s16 *data = gTasks[taskId].data;
     s8 selection = Menu_ProcessInputGridLayout();
 
-    if (selection != -2)
+    switch (selection)
     {
-        if (selection == -1)
-        {
-            if (tIgnoreBPress)
-                return;
-            PlaySE(SE_SELECT);
-            gSpecialVar_Result = 0x7F;
-        }
-        else
-        {
-            gSpecialVar_Result = selection;
-        }
-        sub_80E2A78(tWindowId);
-        DestroyTask(taskId);
-        EnableBothScriptContexts();
+    case MENU_NOTHING_CHOSEN:
+        return;
+    case MENU_B_PRESSED:
+        if (tIgnoreBPress)
+            return;
+        PlaySE(SE_SELECT);
+        gSpecialVar_Result = 0x7F;
+        break;
+    default:
+        gSpecialVar_Result = selection;
+        break;
     }
+
+    ClearToTransparentAndRemoveWindow(tWindowId);
+    DestroyTask(taskId);
+    EnableBothScriptContexts();
 }
 
 #undef tWindowId
@@ -1565,7 +1560,7 @@ static void Task_PokemonPicWindow(u8 taskId)
         task->tState++;
         break;
     case 3:
-        sub_80E2A78(task->tWindowId);
+        ClearToTransparentAndRemoveWindow(task->tWindowId);
         DestroyTask(taskId);
         break;
     }
@@ -1629,7 +1624,7 @@ u8 CreateWindowFromRect(u8 x, u8 y, u8 width, u8 height)
     return windowId;
 }
 
-void sub_80E2A78(u8 windowId)
+void ClearToTransparentAndRemoveWindow(u8 windowId)
 {
     ClearStdWindowAndFrameToTransparent(windowId, TRUE);
     RemoveWindow(windowId);
@@ -1639,30 +1634,30 @@ static void sub_80E2A94(u8 multichoiceId)
 {
     switch (multichoiceId)
     {
-        case 77:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BBAC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
-        case 76:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BB9C[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
-        case 78:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BBBC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
-        case 79:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BBCC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
-        case 75:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BBEC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
-        case 74:
-            FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, 1, gUnknown_0858BBE0[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
-            break;
+    case 77:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BBAC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
+    case 76:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BB9C[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
+    case 78:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BBBC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
+    case 79:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BBCC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
+    case 75:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BBEC[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
+    case 74:
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gUnknown_0858BBE0[Menu_GetCursorPos()], 0, NULL, 2, 1, 3);
+        break;
     }
 }
 
