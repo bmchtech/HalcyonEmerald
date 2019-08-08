@@ -137,16 +137,20 @@ void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 {
-    u8 *txtPtr;
+    u8 *txtPtr = gStringVar4;
     s32 strLength;
 
-    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 7);
-
-    strLength = 7 - StringLength(gStringVar1);
-    txtPtr = gStringVar4;
-
-    while (strLength-- > 0)
-        *(txtPtr++) = 0x77;
+    if (amount > 999999)
+    {
+        ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 7);
+    }
+    else
+    {
+        ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 6);
+        strLength = 7 - StringLength(gStringVar1);
+        while (strLength-- > 0)
+            *(txtPtr++) = 0x77;
+    }
 
     StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, x, y, speed, NULL);
