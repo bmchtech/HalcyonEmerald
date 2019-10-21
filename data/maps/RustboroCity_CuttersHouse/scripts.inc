@@ -6,7 +6,7 @@ RustboroCity_CuttersHouse_EventScript_215BD4:: @ 8215BD4
 	faceplayer
 	goto_if_set FLAG_RECEIVED_HM01, RustboroCity_CuttersHouse_EventScript_215C00
 	msgbox RustboroCity_CuttersHouse_Text_215C13, MSGBOX_DEFAULT
-	giveitem_std ITEM_HM01
+	giveitem_std ITEM_HM01_CUT
 	setflag FLAG_RECEIVED_HM01
 	msgbox RustboroCity_CuttersHouse_Text_215D33, MSGBOX_DEFAULT
 	release

@@ -112,7 +112,7 @@ Route110_TrickHouseEnd_EventScript_26AE74:: @ 826AE74
 	msgbox Route110_TrickHouseEnd_Text_26B293, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_26B73D, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	giveitem_std ITEM_TM12
+	giveitem_std ITEM_TM12_TAUNT
 	compare VAR_RESULT, 0
 	call_if_eq Route110_TrickHouseEnd_EventScript_26AFEF
 	msgbox Route110_TrickHouseEnd_Text_26B7EF, MSGBOX_DEFAULT

@@ -159,7 +159,7 @@ SlateportCity_OceanicMuseum_1F_EventScript_20AEF8:: @ 820AEF8
 	applymovement 13, Common_Movement_Delay48
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_1F_Text_20B3AB, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM46
+	giveitem_std ITEM_TM46_THIEF
 	compare VAR_RESULT, 0
 	goto_if_eq SlateportCity_OceanicMuseum_1F_EventScript_20AFB5
 	setflag FLAG_RECEIVED_TM46

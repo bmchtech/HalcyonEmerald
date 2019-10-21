@@ -400,7 +400,7 @@ Route110_TrickHouseEntrance_EventScript_269F73:: @ 8269F73
 	end
 
 Route110_TrickHouseEntrance_EventScript_269F9F:: @ 8269F9F
-	giveitem_std ITEM_TM12
+	giveitem_std ITEM_TM12_TAUNT
 	compare VAR_RESULT, 1
 	goto_if_eq Route110_TrickHouseEntrance_EventScript_26A023
 	compare VAR_RESULT, 0

@@ -438,7 +438,7 @@ MauvilleCity_EventScript_1DF77A:: @ 81DF77A
 
 MauvilleCity_EventScript_1DF784:: @ 81DF784
 	msgbox MauvilleCity_Text_1E020E, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM24
+	giveitem_std ITEM_TM24_THUNDERBOLT
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_GOT_TM24_FROM_WATTSON

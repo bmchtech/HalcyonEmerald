@@ -89,7 +89,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2:: @ 81FE81D
-	giveitem_std ITEM_TM50
+	giveitem_std ITEM_TM50_OVERHEAT
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
@@ -98,7 +98,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2:: @ 81FE81D
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat:: @ 81FE841
-	giveitem_std ITEM_TM50
+	giveitem_std ITEM_TM50_OVERHEAT
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_BagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT

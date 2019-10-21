@@ -38,7 +38,7 @@ MossdeepCity_StevensHouse_EventScript_2227CA:: @ 82227CA
 	applymovement 1, MossdeepCity_StevensHouse_Movement_222833
 	waitmovement 0
 	msgbox MossdeepCity_StevensHouse_Text_222936, MSGBOX_DEFAULT
-	giveitem_std ITEM_HM08
+	giveitem_std ITEM_HM08_DIVE
 	setflag FLAG_RECEIVED_HM08
 	setflag FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
 	msgbox MossdeepCity_StevensHouse_Text_222A0E, MSGBOX_DEFAULT
@@ -148,7 +148,7 @@ MossdeepCity_StevensHouse_EventScript_22291B:: @ 822291B
 	end
 
 MossdeepCity_StevensHouse_EventScript_222926:: @ 8222926
-	giveitem_std ITEM_HM08, 1, 1
+	giveitem_std ITEM_HM08_DIVE, 1, 1
 	setflag FLAG_RECEIVED_HM08
 	end
 

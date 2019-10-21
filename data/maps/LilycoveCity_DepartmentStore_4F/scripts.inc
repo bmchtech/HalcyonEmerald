@@ -25,10 +25,10 @@ LilycoveCity_DepartmentStore_4F_EventScript_21FE06:: @ 821FE06
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_21FE20: @ 821FE20
-	.2byte ITEM_TM38
-	.2byte ITEM_TM25
-	.2byte ITEM_TM14
-	.2byte ITEM_TM15
+	.2byte ITEM_TM38_FIRE_BLAST
+	.2byte ITEM_TM25_THUNDER
+	.2byte ITEM_TM14_BLIZZARD
+	.2byte ITEM_TM15_HYPER_BEAM
 	.2byte ITEM_NONE
 	release
 	end
@@ -45,10 +45,10 @@ LilycoveCity_DepartmentStore_4F_EventScript_21FE2C:: @ 821FE2C
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_21FE44: @ 821FE44
-	.2byte ITEM_TM17
-	.2byte ITEM_TM20
-	.2byte ITEM_TM33
-	.2byte ITEM_TM16
+	.2byte ITEM_TM17_PROTECT
+	.2byte ITEM_TM20_SAFEGUARD
+	.2byte ITEM_TM33_REFLECT
+	.2byte ITEM_TM16_LIGHT_SCREEN
 	.2byte ITEM_NONE
 	release
 	end

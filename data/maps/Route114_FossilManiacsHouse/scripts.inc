@@ -11,7 +11,7 @@ Route114_FossilManiacsHouse_EventScript_22AD3A:: @ 822AD3A
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM28, Route114_FossilManiacsHouse_EventScript_22AD69
 	msgbox Route114_FossilManiacsHouse_Text_22AD85, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM28
+	giveitem_std ITEM_TM28_DIG
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM28
