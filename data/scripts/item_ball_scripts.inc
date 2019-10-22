@@ -59,7 +59,7 @@ Route110_EventScript_ItemElixir:: @ 8290D8E
 	end
 
 Route111_EventScript_ItemTM37:: @ 8290D9B
-	giveitem_std ITEM_TM37, 1, 1
+	giveitem_std ITEM_TM37_SANDSTORM, 1, 1
 	end
 
 Route111_EventScript_ItemStardust:: @ 8290DA8
@@ -107,7 +107,7 @@ Route115_EventScript_ItemSuperPotion:: @ 8290E2A
 	end
 
 Route115_EventScript_ItemTM01:: @ 8290E37
-	giveitem_std ITEM_TM01, 1, 1
+	giveitem_std ITEM_TM01_FOCUS_PUNCH, 1, 1
 	end
 
 Route115_EventScript_ItemIron:: @ 8290E44
@@ -375,11 +375,11 @@ FieryPath_EventScript_ItemFireStone:: @ 8291191
 	end
 
 FieryPath_EventScript_ItemTM06:: @ 829119E
-	giveitem_std ITEM_TM06, 1, 1
+	giveitem_std ITEM_TM06_TOXIC, 1, 1
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemTM23:: @ 82911AB
-	giveitem_std ITEM_TM23, 1, 1
+	giveitem_std ITEM_TM23_IRON_TAIL, 1, 1
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemFullHeal:: @ 82911B8
@@ -395,7 +395,7 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP:: @ 82911D2
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTM02:: @ 82911DF
-	giveitem_std ITEM_TM02, 1, 1
+	giveitem_std ITEM_TM02_DRAGON_CLAW, 1, 1
 	end
 
 NewMauville_Inside_EventScript_ItemUltraRope:: @ 82911EC
@@ -431,7 +431,7 @@ AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall:: @ 8291247
 	end
 
 AbandonedShip_Room_B1F_EventScript_ItemTM13:: @ 8291254
-	giveitem_std ITEM_TM13, 1, 1
+	giveitem_std ITEM_TM13_ICE_BEAM, 1, 1
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_ItemRevive:: @ 8291261
@@ -455,15 +455,15 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone:: @ 8291295
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemTM18:: @ 82912A2
-	giveitem_std ITEM_TM18, 1, 1
+	giveitem_std ITEM_TM18_RAIN_DANCE, 1, 1
 	end
 
 ScorchedSlab_EventScript_ItemTM11:: @ 82912AF
-	giveitem_std ITEM_TM11, 1, 1
+	giveitem_std ITEM_TM11_SUNNY_DAY, 1, 1
 	end
 
 SafariZone_Northwest_EventScript_ItemTM22:: @ 82912BC
-	giveitem_std ITEM_TM22, 1, 1
+	giveitem_std ITEM_TM22_SOLARBEAM, 1, 1
 	end
 
 SafariZone_North_EventScript_ItemCalcium:: @ 82912C9
@@ -499,7 +499,7 @@ MtPyre_5F_EventScript_ItemLaxIncense:: @ 8291324
 	end
 
 MtPyre_6F_EventScript_ItemTM30:: @ 8291331
-	giveitem_std ITEM_TM30, 1, 1
+	giveitem_std ITEM_TM30_SHADOW_BALL, 1, 1
 	end
 
 MtPyre_Exterior_EventScript_ItemMaxPotion:: @ 829133E
@@ -507,7 +507,7 @@ MtPyre_Exterior_EventScript_ItemMaxPotion:: @ 829133E
 	end
 
 MtPyre_Exterior_EventScript_ItemTM48:: @ 829134B
-	giveitem_std ITEM_TM48, 1, 1
+	giveitem_std ITEM_TM48_SKILL_SWAP, 1, 1
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall:: @ 8291358
@@ -555,7 +555,7 @@ ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal:: @ 82913DA
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemTM07:: @ 82913E7
-	giveitem_std ITEM_TM07, 1, 1
+	giveitem_std ITEM_TM07_HAIL, 1, 1
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce:: @ 82913F4
@@ -563,7 +563,7 @@ ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce:: @ 82913F4
 	end
 
 SeafloorCavern_Room9_EventScript_ItemTM26:: @ 8291401
-	giveitem_std ITEM_TM26, 1, 1
+	giveitem_std ITEM_TM26_EARTHQUAKE, 1, 1
 	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail:: @ 829140E
@@ -611,7 +611,7 @@ VictoryRoad_1F_EventScript_ItemPPUp:: @ 8291490
 	end
 
 VictoryRoad_B1F_EventScript_ItemTM29:: @ 829149D
-	giveitem_std ITEM_TM29, 1, 1
+	giveitem_std ITEM_TM29_PSYCHIC, 1, 1
 	end
 
 VictoryRoad_B1F_EventScript_ItemFullRestore:: @ 82914AA

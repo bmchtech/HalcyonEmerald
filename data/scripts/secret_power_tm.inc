@@ -44,7 +44,7 @@ Route111_EventScript_2765FF:: @ 82765FF
 	end
 
 Route111_EventScript_27661E:: @ 827661E
-	giveitem_std ITEM_TM43
+	giveitem_std ITEM_TM43_SECRET_POWER
 	compare VAR_RESULT, 0
 	goto_if_eq Route111_EventScript_276680
 	msgbox Route111_Text_27636E, MSGBOX_DEFAULT

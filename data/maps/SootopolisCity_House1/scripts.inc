@@ -6,7 +6,7 @@ SootopolisCity_House1_EventScript_22694D:: @ 822694D
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM31, SootopolisCity_House1_EventScript_226984
 	msgbox SootopolisCity_House1_Text_2269A1, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM31
+	giveitem_std ITEM_TM31_BRICK_BREAK
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM31

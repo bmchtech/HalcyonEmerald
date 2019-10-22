@@ -1312,7 +1312,7 @@ static u16 sub_819FF98(u8 arg0)
                 }
                 while (!valid);
 
-                moveId = ItemIdToBattleMoveId(ITEM_TM01 + id);
+                moveId = ItemIdToBattleMoveId(ITEM_TM01_FOCUS_PUNCH + id);
                 valid = TRUE;
 
                 if (knownMovesCount < 5)

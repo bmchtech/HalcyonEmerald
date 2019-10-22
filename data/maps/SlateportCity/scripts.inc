@@ -552,8 +552,8 @@ SlateportCity_EventScript_1DD1D8:: @ 81DD1D8
 
 	.align 2
 SlateportCity_Pokemart_1DD1F0: @ 81DD1F0
-	.2byte ITEM_TM10
-	.2byte ITEM_TM43
+	.2byte ITEM_TM10_HIDDEN_POWER
+	.2byte ITEM_TM43_SECRET_POWER
 	.2byte ITEM_NONE
 	release
 	end

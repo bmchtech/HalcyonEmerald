@@ -339,7 +339,7 @@ Route104_EventScript_1ED057:: @ 81ED057
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM09, Route104_EventScript_1ED086
 	msgbox Route104_Text_1ED838, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM09
+	giveitem_std ITEM_TM09_BULLET_SEED
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM09

@@ -19,7 +19,7 @@ PetalburgCity_WallysHouse_MapScript2_204247: @ 8204247
 PetalburgCity_WallysHouse_EventScript_204251:: @ 8204251
 	lockall
 	msgbox PetalburgCity_WallysHouse_Text_20446E, MSGBOX_DEFAULT
-	giveitem_std ITEM_HM03
+	giveitem_std ITEM_HM03_SURF
 	setflag FLAG_RECEIVED_HM03
 	msgbox PetalburgCity_WallysHouse_Text_20461A, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_CITY_STATE, 5

@@ -9,7 +9,7 @@ GraniteCave_StevensRoom_EventScript_22DC7B:: @ 822DC7B
 	call Common_EventScript_PlayerHandedOverTheItem
 	setflag FLAG_DELIVERED_STEVEN_LETTER
 	msgbox GraniteCave_StevensRoom_Text_22DDBD, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM47
+	giveitem_std ITEM_TM47_STEEL_WING
 	compare VAR_RESULT, 0
 	call_if_eq GraniteCave_StevensRoom_EventScript_22DD3C
 	msgbox GraniteCave_StevensRoom_Text_22DE6B, MSGBOX_DEFAULT

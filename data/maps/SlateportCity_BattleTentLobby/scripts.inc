@@ -247,7 +247,7 @@ SlateportCity_BattleTentLobby_EventScript_208A3D:: @ 8208A3D
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM41, SlateportCity_BattleTentLobby_EventScript_208A74
 	msgbox SlateportCity_BattleTentLobby_Text_208B4E, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM41
+	giveitem_std ITEM_TM41_TORMENT
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM41

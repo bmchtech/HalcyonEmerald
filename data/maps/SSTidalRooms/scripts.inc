@@ -6,7 +6,7 @@ SSTidalRooms_EventScript_23C9F2:: @ 823C9F2
 	faceplayer
 	goto_if_set FLAG_RECEIVED_TM49, SSTidalRooms_EventScript_23CA29
 	msgbox SSTidalRooms_Text_23D098, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM49
+	giveitem_std ITEM_TM49_SLEEP_TALK
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM49

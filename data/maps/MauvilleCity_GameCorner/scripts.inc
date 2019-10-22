@@ -259,31 +259,31 @@ MauvilleCity_GameCorner_EventScript_20FED9:: @ 820FED9
 
 MauvilleCity_GameCorner_EventScript_20FF2B:: @ 820FF2B
 	setvar VAR_TEMP_1, 1
-	bufferitemname 0, ITEM_TM32
+	bufferitemname 0, ITEM_TM32_DOUBLE_TEAM
 	setvar VAR_0x8004, 320
 	goto MauvilleCity_GameCorner_EventScript_20FF8A
 
 MauvilleCity_GameCorner_EventScript_20FF3E:: @ 820FF3E
 	setvar VAR_TEMP_1, 2
-	bufferitemname 0, ITEM_TM29
+	bufferitemname 0, ITEM_TM29_PSYCHIC
 	setvar VAR_0x8004, 317
 	goto MauvilleCity_GameCorner_EventScript_20FF8A
 
 MauvilleCity_GameCorner_EventScript_20FF51:: @ 820FF51
 	setvar VAR_TEMP_1, 3
-	bufferitemname 0, ITEM_TM35
+	bufferitemname 0, ITEM_TM35_FLAMETHROWER
 	setvar VAR_0x8004, 323
 	goto MauvilleCity_GameCorner_EventScript_20FF8A
 
 MauvilleCity_GameCorner_EventScript_20FF64:: @ 820FF64
 	setvar VAR_TEMP_1, 4
-	bufferitemname 0, ITEM_TM24
+	bufferitemname 0, ITEM_TM24_THUNDERBOLT
 	setvar VAR_0x8004, 312
 	goto MauvilleCity_GameCorner_EventScript_20FF8A
 
 MauvilleCity_GameCorner_EventScript_20FF77:: @ 820FF77
 	setvar VAR_TEMP_1, 5
-	bufferitemname 0, ITEM_TM13
+	bufferitemname 0, ITEM_TM13_ICE_BEAM
 	setvar VAR_0x8004, 301
 	goto MauvilleCity_GameCorner_EventScript_20FF8A
 
@@ -304,11 +304,11 @@ MauvilleCity_GameCorner_EventScript_20FFDD:: @ 820FFDD
 	checkcoins VAR_TEMP_2
 	compare VAR_TEMP_2, 1500
 	goto_if_lt MauvilleCity_GameCorner_EventScript_2100FF
-	checkitemspace ITEM_TM32, 1
+	checkitemspace ITEM_TM32_DOUBLE_TEAM, 1
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_GameCorner_EventScript_21010D
 	takecoins 1500
-	giveitem ITEM_TM32, 1
+	giveitem ITEM_TM32_DOUBLE_TEAM, 1
 	updatecoinsbox 1, 1
 	playse SE_REGI
 	msgbox MauvilleCity_GameCorner_Text_21071B, MSGBOX_DEFAULT
@@ -319,11 +319,11 @@ MauvilleCity_GameCorner_EventScript_210017:: @ 8210017
 	checkcoins VAR_TEMP_2
 	compare VAR_TEMP_2, 3500
 	goto_if_lt MauvilleCity_GameCorner_EventScript_2100FF
-	checkitemspace ITEM_TM29, 1
+	checkitemspace ITEM_TM29_PSYCHIC, 1
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_GameCorner_EventScript_21010D
 	takecoins 3500
-	giveitem ITEM_TM29, 1
+	giveitem ITEM_TM29_PSYCHIC, 1
 	updatecoinsbox 1, 1
 	playse SE_REGI
 	msgbox MauvilleCity_GameCorner_Text_21071B, MSGBOX_DEFAULT
@@ -334,11 +334,11 @@ MauvilleCity_GameCorner_EventScript_210051:: @ 8210051
 	checkcoins VAR_TEMP_2
 	compare VAR_TEMP_2, 4000
 	goto_if_lt MauvilleCity_GameCorner_EventScript_2100FF
-	checkitemspace ITEM_TM35, 1
+	checkitemspace ITEM_TM35_FLAMETHROWER, 1
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_GameCorner_EventScript_21010D
 	takecoins 4000
-	giveitem ITEM_TM35, 1
+	giveitem ITEM_TM35_FLAMETHROWER, 1
 	updatecoinsbox 1, 1
 	playse SE_REGI
 	msgbox MauvilleCity_GameCorner_Text_21071B, MSGBOX_DEFAULT
@@ -349,11 +349,11 @@ MauvilleCity_GameCorner_EventScript_21008B:: @ 821008B
 	checkcoins VAR_TEMP_2
 	compare VAR_TEMP_2, 4000
 	goto_if_lt MauvilleCity_GameCorner_EventScript_2100FF
-	checkitemspace ITEM_TM24, 1
+	checkitemspace ITEM_TM24_THUNDERBOLT, 1
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_GameCorner_EventScript_21010D
 	takecoins 4000
-	giveitem ITEM_TM24, 1
+	giveitem ITEM_TM24_THUNDERBOLT, 1
 	updatecoinsbox 1, 1
 	playse SE_REGI
 	msgbox MauvilleCity_GameCorner_Text_21071B, MSGBOX_DEFAULT
@@ -364,11 +364,11 @@ MauvilleCity_GameCorner_EventScript_2100C5:: @ 82100C5
 	checkcoins VAR_TEMP_2
 	compare VAR_TEMP_2, 4000
 	goto_if_lt MauvilleCity_GameCorner_EventScript_2100FF
-	checkitemspace ITEM_TM13, 1
+	checkitemspace ITEM_TM13_ICE_BEAM, 1
 	compare VAR_RESULT, 0
 	goto_if_eq MauvilleCity_GameCorner_EventScript_21010D
 	takecoins 4000
-	giveitem ITEM_TM13, 1
+	giveitem ITEM_TM13_ICE_BEAM, 1
 	updatecoinsbox 1, 1
 	playse SE_REGI
 	msgbox MauvilleCity_GameCorner_Text_21071B, MSGBOX_DEFAULT

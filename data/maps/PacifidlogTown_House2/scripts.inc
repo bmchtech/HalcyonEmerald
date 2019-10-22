@@ -41,7 +41,7 @@ PacifidlogTown_House2_EventScript_203812:: @ 8203812
 
 PacifidlogTown_House2_EventScript_203816:: @ 8203816
 	msgbox PacifidlogTown_House2_Text_20396D, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM27
+	giveitem_std ITEM_TM27_RETURN
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
@@ -57,7 +57,7 @@ PacifidlogTown_House2_EventScript_203845:: @ 8203845
 
 PacifidlogTown_House2_EventScript_20384F:: @ 820384F
 	msgbox PacifidlogTown_House2_Text_203A2F, MSGBOX_DEFAULT
-	giveitem_std ITEM_TM21
+	giveitem_std ITEM_TM21_FRUSTRATION
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK

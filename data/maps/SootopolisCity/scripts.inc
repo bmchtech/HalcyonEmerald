@@ -1350,7 +1350,7 @@ SootopolisCity_EventScript_1E6446:: @ 81E6446
 
 SootopolisCity_EventScript_1E646F:: @ 81E646F
 	msgbox SootopolisCity_Text_1E7ACF, MSGBOX_DEFAULT
-	giveitem_std ITEM_HM07
+	giveitem_std ITEM_HM07_WATERFALL
 	setflag FLAG_RECEIVED_HM07
 	msgbox SootopolisCity_Text_1E7B86, MSGBOX_DEFAULT
 	closemessage
