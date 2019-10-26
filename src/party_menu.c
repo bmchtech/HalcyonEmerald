@@ -244,7 +244,7 @@ static bool16 IsMonAllowedInPokemonJump(struct Pokemon*);
 static bool16 sub_81B2164(struct Pokemon*);
 static void sub_81B2248(u8);
 static void sub_81B227C(u8);
-static bool8 CanLearnTutorMove(u16, u8);
+static bool32 CanLearnTutorMove(u16, u8);
 static u16 GetTutorMove(u8);
 static bool8 sub_81B314C(void);
 static void CreateActionList(struct Pokemon*, u8);
@@ -3119,17 +3119,34 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
         return CAN_LEARN_MOVE;
 }
 
+
 static u16 GetTutorMove(u8 tutor)
 {
     return gTutorMoves[tutor];
 }
 
-static bool8 CanLearnTutorMove(u16 species, u8 tutor)
+static bool32 CanLearnTutorMove(u16 species, u8 tutor) // note the change to bool32
 {
-    if (sTutorLearnsets[species] & (1 << tutor))
-        return TRUE;
-    else
-        return FALSE;
+    if (tutor < 32)
+    {
+        u32 mask = 1 << tutor;
+
+        return sTutorLearnsets[species][0] & mask;
+    }
+
+    else if (tutor < 64)
+    {
+        u32 mask = 1 << (tutor - 32);
+
+        return sTutorLearnsets[species][1] & mask;
+    }
+
+    else // thanks to BluRose for suggesting this
+    {
+        u32 mask = 1 << (tutor - 64);
+
+        return sTutorLearnsets[species][2] & mask;
+    }
 }
 
 static void sub_81B239C(u8 a)
@@ -6172,7 +6189,7 @@ static void sub_81B7704(u8 taskId)
     if (WaitFanfare(0) && ((gMain.newKeys & A_BUTTON) || (gMain.newKeys & B_BUTTON)))
     {
         sub_81B3394();
-        result = MonTryLearningNewMove(&gPlayerParty[gUnknown_0203CEC8.slotId], 1);
+        result = MonTryLearningNewMove(&gPlayerParty[gUnknown_0203CEC8.slotId], 1, 0);
         gUnknown_0203CEC8.unk10 = 1;
         switch (result)
         {
@@ -6194,7 +6211,7 @@ static void sub_81B7704(u8 taskId)
 
 static void sub_81B77AC(u8 taskId)
 {
-    u16 result = MonTryLearningNewMove(&gPlayerParty[gUnknown_0203CEC8.slotId], 0);
+    u16 result = MonTryLearningNewMove(&gPlayerParty[gUnknown_0203CEC8.slotId], 0, 0);
 
     switch (result)
     {

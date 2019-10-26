@@ -189,23 +189,17 @@
 #define MON_DATA_VICTORY_RIBBON    69
 #define MON_DATA_ARTIST_RIBBON     70
 #define MON_DATA_EFFORT_RIBBON     71
-#define MON_DATA_GIFT_RIBBON_1     72
-#define MON_DATA_GIFT_RIBBON_2     73
-#define MON_DATA_GIFT_RIBBON_3     74
-#define MON_DATA_GIFT_RIBBON_4     75
-#define MON_DATA_GIFT_RIBBON_5     76
-#define MON_DATA_GIFT_RIBBON_6     77
-#define MON_DATA_GIFT_RIBBON_7     78
-#define MON_DATA_FATEFUL_ENCOUNTER 79
-#define MON_DATA_OBEDIENCE         80
-#define MON_DATA_KNOWN_MOVES       81
-#define MON_DATA_RIBBON_COUNT      82
-#define MON_DATA_RIBBONS           83
-#define MON_DATA_ATK2              84
-#define MON_DATA_DEF2              85
-#define MON_DATA_SPEED2            86
-#define MON_DATA_SPATK2            87
-#define MON_DATA_SPDEF2            88
+#define MON_DATA_FATEFUL_ENCOUNTER 72 // was 79
+#define MON_DATA_OBEDIENCE         75
+#define MON_DATA_KNOWN_MOVES       76
+#define MON_DATA_RIBBON_COUNT      77
+#define MON_DATA_RIBBONS           78
+#define MON_DATA_ATK2              79
+#define MON_DATA_DEF2              80
+#define MON_DATA_SPEED2            81
+#define MON_DATA_SPATK2            82
+#define MON_DATA_SPDEF2            83
+#define MON_DATA_NATURE            84 // New
 
 #define MIN_LEVEL 1
 #define MAX_LEVEL 100
@@ -313,6 +307,7 @@
 #define EVO_LEVEL_RAIN       0x001B // Pokémon reaches the specified level while it's raining
 #define EVO_SPECIFIC_MON_IN_PARTY  0x001C // Pokémon levels up with a specified Pokémon in party
 #define EVO_LEVEL_SPECIFIC_MON_TYPE_IN_PARTY  0x001D // Pokémon reaches the specified level with a specified Pokémon in party
+#define EVO_ITEM_HOLD       0x001E // Pokémon levels up, holds specified item
 
 #define EVOS_PER_MON 8
 

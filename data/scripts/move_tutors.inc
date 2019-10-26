@@ -154,7 +154,7 @@ FortreeCity_House2_EventScript_SleepTalkTutor:: @ 82C811E
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_SleepTalkDeclined
 	msgbox MoveTutor_Text_SleepTalkWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_SLEEP_TALK
+	setvar VAR_0x8005, 0
 	call MoveTutor_EventScript_OpenPartyMenu
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_SleepTalkDeclined
@@ -183,7 +183,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor:: @ 82C8186
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_SubstituteDeclined
 	msgbox MoveTutor_Text_SubstituteWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_SUBSTITUTE
+	setvar VAR_0x8005, 0
 	call MoveTutor_EventScript_OpenPartyMenu
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_SubstituteDeclined
@@ -270,7 +270,7 @@ PacifidlogTown_PokemonCenter_1F_EventScript_ExplosionTutor:: @ 82C82BE
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_ExplosionDeclined
 	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_EXPLOSION
+	setvar VAR_0x8005, 0
 	call MoveTutor_EventScript_OpenPartyMenu
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_ExplosionDeclined

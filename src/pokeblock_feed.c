@@ -772,7 +772,7 @@ static void Task_HandleMonAtePokeblock(u8 taskId)
     struct Pokemon *mon = &gPlayerParty[gPokeblockMonId];
     struct Pokeblock *pokeblock = &gSaveBlock1Ptr->pokeblocks[gSpecialVar_ItemId];
 
-    gPokeblockGain = PokeblockGetGain(GetNature(mon), pokeblock);
+    gPokeblockGain = PokeblockGetGain(GetMonData(mon, MON_DATA_NATURE), pokeblock);
     GetMonNickname(mon, gStringVar1);
     PokeblockCopyName(pokeblock, gStringVar2);
 
@@ -825,7 +825,7 @@ static u8 CreateMonSprite(struct Pokemon* mon)
 
     sPokeblockFeed->species = species;
     sPokeblockFeed->monSpriteId_ = spriteId;
-    sPokeblockFeed->nature = GetNature(mon);
+    sPokeblockFeed->nature = GetMonData(mon, MON_DATA_NATURE);
     gSprites[spriteId].tSpecies = species;
     gSprites[spriteId].callback = SpriteCallbackDummy;
 

@@ -228,7 +228,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
         {
             // Teach the mon new moves it learned while in the daycare.
             firstMove = TRUE;
-            while ((learnedMove = MonTryLearningNewMove(mon, firstMove)) != 0)
+            while ((learnedMove = MonTryLearningNewMove(mon, firstMove, 0)) != 0)
             {
                 firstMove = FALSE;
                 if (learnedMove == 0xFFFF)
@@ -476,7 +476,7 @@ static void _TriggerPendingDaycareEgg(struct DayCare *daycare)
     // inherit nature
     else
     {
-        u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY, NULL));
+        u8 wantedNature = GetMonData(&daycare->mons[parent].mon, MON_DATA_NATURE, NULL);
         u32 personality;
 
         do

@@ -41,8 +41,8 @@ struct PokemonSubstruct3
  /* 0x01 */ u8 metLocation;
 
  /* 0x02 */ u16 metLevel:7;
- /* 0x02 */ u16 metGame:4;
- /* 0x03 */ u16 pokeball:4;
+ /* 0x02 */ u16 metGame:3; // Was 4
+ /* 0x03 */ u16 nature:5;
  /* 0x03 */ u16 otGender:1;
 
  /* 0x04 */ u32 hpIV:5;
@@ -52,26 +52,21 @@ struct PokemonSubstruct3
  /* 0x05 */ u32 spAttackIV:5;
  /* 0x06 */ u32 spDefenseIV:5;
  /* 0x07 */ u32 isEgg:1;
+ /* 0x07 */ u32 UnusedBit:1; 
 
- /* 0x08 */ u32 coolRibbon:3;
- /* 0x08 */ u32 beautyRibbon:3;
- /* 0x08 */ u32 cuteRibbon:3;
- /* 0x09 */ u32 smartRibbon:3;
- /* 0x09 */ u32 toughRibbon:3;
- /* 0x09 */ u32 championRibbon:1;
- /* 0x0A */ u32 winningRibbon:1;
- /* 0x0A */ u32 victoryRibbon:1;
- /* 0x0A */ u32 artistRibbon:1;
- /* 0x0A */ u32 effortRibbon:1;
- /* 0x0A */ u32 giftRibbon1:1;
- /* 0x0A */ u32 giftRibbon2:1;
- /* 0x0A */ u32 giftRibbon3:1;
- /* 0x0A */ u32 giftRibbon4:1;
- /* 0x0B */ u32 giftRibbon5:1;
- /* 0x0B */ u32 giftRibbon6:1;
- /* 0x0B */ u32 giftRibbon7:1;
- /* 0x0B */ u32 fatefulEncounter:2;
- /* 0x0B */ u32 abilityNum:2;
+ /* 0x08 */	u32 pokeball:5;
+ /* 0x08 */	u32 abilityNum:2;
+ /* 0x09 */	u32 coolRibbon:3;
+ /* 0x09 */	u32 beautyRibbon:3; 
+ /* 0x09 */	u32 cuteRibbon:3; 
+ /* 0x0A */	u32 smartRibbon:3; 
+ /* 0x0A */	u32 toughRibbon:3;
+ /* 0x0A */	u32 championRibbon:1;
+ /* 0x0A */	u32 winningRibbon:1;
+ /* 0x0B */	u32 victoryRibbon:1;
+ /* 0x0B */ u32 artistRibbon:1;
+ /* 0x0B */ u32 effortRibbon:1;
+ /* 0x0B */ u32 fatefulEncounter:4;
  /* 0x0B */ u32 obedient:1;
 };
 
@@ -170,6 +165,7 @@ struct BattlePokemon
     /*0x4C*/ u32 status1;
     /*0x50*/ u32 status2;
     /*0x54*/ u32 otId;
+    /*0x58*/ u8 nature;
 };
 
 struct BaseStats
@@ -295,7 +291,7 @@ void SetMonMoveSlot(struct Pokemon *mon, u16 move, u8 slot);
 void SetBattleMonMoveSlot(struct BattlePokemon *mon, u16 move, u8 slot);
 void GiveMonInitialMoveset(struct Pokemon *mon);
 void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon);
-u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove);
+u16 MonTryLearningNewMove(struct Pokemon *mon, bool8 firstMove, bool8 isEvolving);
 void DeleteFirstMoveAndGiveMoveToMon(struct Pokemon *mon, u16 move);
 void DeleteFirstMoveAndGiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 
@@ -392,7 +388,7 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
 bool32 IsHMMove2(u16 move);
 bool8 IsMonSpriteNotFlipped(u16 species);
 s8 GetMonFlavorRelation(struct Pokemon *mon, u8 flavor);
-s8 GetFlavorRelationByPersonality(u32 personality, u8 flavor);
+s8 GetFlavorRelationByNature(u8 nature, u8 flavor);
 bool8 IsTradedMon(struct Pokemon *mon);
 bool8 IsOtherTrainer(u32 otId, u8 *otName);
 void MonRestorePP(struct Pokemon *mon);

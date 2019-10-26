@@ -2439,7 +2439,7 @@ static void InitDomeTrainers(void)
         for (j = 0; j < 6; j++)
             gSaveBlock2Ptr->frontier.field_EFC[i].evs[j] = GetMonData(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], MON_DATA_HP_EV + j, NULL);
 
-        gSaveBlock2Ptr->frontier.field_EFC[i].nature = GetNature(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1]);
+        gSaveBlock2Ptr->frontier.field_EFC[i].nature = GetMonData(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], MON_DATA_NATURE, NULL);
     }
 
     for (i = 1; i < DOME_TOURNAMENT_TRAINERS_COUNT; i++)

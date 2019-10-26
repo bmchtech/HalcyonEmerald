@@ -34,41 +34,37 @@ struct PokemonSubstruct2
 
 struct PokemonSubstruct3
 {
-    /*0x00*/ u8 pokerus;
-    /*0x01*/ u8 metLocation;
+ /* 0x00 */ u8 pokerus;
+ /* 0x01 */ u8 metLocation;
 
-    /*0x02*/ u16 metLevel:7;
-    /*0x02*/ u16 metGame:4;
-    /*0x03*/ u16 pokeball:4;
-    /*0x03*/ u16 otGender:1;
+ /* 0x02 */ u16 metLevel:7;
+ /* 0x02 */ u16 metGame:3; // Was 4
+ /* 0x03 */ u16 nature:5;
+ /* 0x03 */ u16 otGender:1;
 
-    /*0x04*/ u32 hpIV:5;
-    /*0x04*/ u32 attackIV:5;
-    /*0x05*/ u32 defenseIV:5;
-    /*0x05*/ u32 speedIV:5;
-    /*0x05*/ u32 spAttackIV:5;
-    /*0x06*/ u32 spDefenseIV:5;
-    /*0x07*/ u32 isEgg:1;
-    /*0x07*/ u32 altAbility:1;
+ /* 0x04 */ u32 hpIV:5;
+ /* 0x04 */ u32 attackIV:5;
+ /* 0x05 */ u32 defenseIV:5;
+ /* 0x05 */ u32 speedIV:5;
+ /* 0x05 */ u32 spAttackIV:5;
+ /* 0x06 */ u32 spDefenseIV:5;
+ /* 0x07 */ u32 isEgg:1;
+ /* 0x07 */ u32 UnusedBit:1; 
 
-    /*0x08*/ u32 coolRibbon:3;
-    /*0x08*/ u32 beautyRibbon:3;
-    /*0x08*/ u32 cuteRibbon:3;
-    /*0x09*/ u32 smartRibbon:3;
-    /*0x09*/ u32 toughRibbon:3;
-    /*0x09*/ u32 championRibbon:1;
-    /*0x0A*/ u32 winningRibbon:1;
-    /*0x0A*/ u32 victoryRibbon:1;
-    /*0x0A*/ u32 artistRibbon:1;
-    /*0x0A*/ u32 effortRibbon:1;
-    /*0x0A*/ u32 giftRibbon1:1;
-    /*0x0A*/ u32 giftRibbon2:1;
-    /*0x0A*/ u32 giftRibbon3:1;
-    /*0x0A*/ u32 giftRibbon4:1;
-    /*0x0B*/ u32 giftRibbon5:1;
-    /*0x0B*/ u32 giftRibbon6:1;
-    /*0x0B*/ u32 giftRibbon7:1;
-    /*0x0B*/ u32 fatefulEncounter:5; // unused in Ruby/Sapphire, but the high bit must be set for Mew/Deoxys to obey in FR/LG/Emerald
+ /* 0x08 */	u32 pokeball:5;
+ /* 0x08 */	u32 abilityNum:2;
+ /* 0x09 */	u32 coolRibbon:3;
+ /* 0x09 */	u32 beautyRibbon:3; 
+ /* 0x09 */	u32 cuteRibbon:3; 
+ /* 0x0A */	u32 smartRibbon:3; 
+ /* 0x0A */	u32 toughRibbon:3;
+ /* 0x0A */	u32 championRibbon:1;
+ /* 0x0A */	u32 winningRibbon:1;
+ /* 0x0B */	u32 victoryRibbon:1;
+ /* 0x0B */ u32 artistRibbon:1;
+ /* 0x0B */ u32 effortRibbon:1;
+ /* 0x0B */ u32 fatefulEncounter:4;
+ /* 0x0B */ u32 obedient:1;
 };
 
 union PokemonSubstruct

@@ -5544,9 +5544,9 @@ static void atk59_handlelearnnewmove(void)
     const u8 *jumpPtr1 = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     const u8 *jumpPtr2 = T1_READ_PTR(gBattlescriptCurrInstr + 5);
 
-    u16 ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], gBattlescriptCurrInstr[9]);
+    u16 ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], gBattlescriptCurrInstr[9], 0);
     while (ret == 0xFFFE)
-        ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], 0);
+        ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], 0, 0);
 
     if (ret == 0)
     {
