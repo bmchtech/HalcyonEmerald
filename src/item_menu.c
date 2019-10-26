@@ -423,11 +423,11 @@ const struct WindowTemplate gUnknown_086141AC[] =
 // .text
 
 struct ListBuffer1 {
-    struct ListMenuItem subBuffers[65];
+    struct ListMenuItem subBuffers[109]; // Set this to size of largest bag pocket +1
 };
 
 struct ListBuffer2 {
-    s8 name[65][24];
+    s8 name[109][24]; // Set this to size of largest bag pocket +1
 };
 
 struct TempWallyStruct {
