@@ -8,6 +8,7 @@
 #include "constants/species.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
+#include "constants/spreads.h"
 
 const u16 gUnknown_082FF1D8[] = INCBIN_U16("graphics/link/minigame_digits.gbapal");
 const u32 gUnknown_082FF1F8[] = INCBIN_U32("graphics/link/minigame_digits.4bpp.lz");

@@ -60,6 +60,7 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/trainers.h"
+#include "constants/spreads.h"
 #include "cable_club.h"
 
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
@@ -398,6 +399,68 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_YOUNG_COUPLE, 8},
     {TRAINER_CLASS_WINSTRATE, 10},
     {0xFF, 5},
+};
+
+// Determines which Poke Ball type is used by each trainer class
+const struct TrainerBall gTrainerBallTable[] =
+{
+    {TRAINER_CLASS_TEAM_AQUA, ITEM_NET_BALL},
+    {TRAINER_CLASS_AQUA_ADMIN, ITEM_NET_BALL},
+    {TRAINER_CLASS_AQUA_LEADER, ITEM_MASTER_BALL},
+    {TRAINER_CLASS_AROMA_LADY, ITEM_FRIEND_BALL},
+    {TRAINER_CLASS_RUIN_MANIAC, ITEM_DUSK_BALL},
+    {TRAINER_CLASS_INTERVIEWER, ITEM_REPEAT_BALL},
+    {TRAINER_CLASS_TUBER_F, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_TUBER_M, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_SIS_AND_BRO, ITEM_POKE_BALL},
+    {TRAINER_CLASS_COOLTRAINER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_HEX_MANIAC, ITEM_DUSK_BALL},
+    {TRAINER_CLASS_LADY, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_BEAUTY, ITEM_LOVE_BALL},
+    {TRAINER_CLASS_RICH_BOY, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_POKEMANIAC, ITEM_MOON_BALL},
+    {TRAINER_CLASS_SWIMMER_M, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_BLACK_BELT, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_GUITARIST, ITEM_FAST_BALL},
+    {TRAINER_CLASS_KINDLER, ITEM_POKE_BALL},
+    {TRAINER_CLASS_CAMPER, ITEM_NEST_BALL},
+    {TRAINER_CLASS_OLD_COUPLE, ITEM_POKE_BALL},
+    {TRAINER_CLASS_BUG_MANIAC, ITEM_NET_BALL},
+    {TRAINER_CLASS_PSYCHIC, ITEM_DREAM_BALL},
+    {TRAINER_CLASS_GENTLEMAN, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_ELITE_FOUR, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_LEADER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_SCHOOL_KID, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SR_AND_JR, ITEM_POKE_BALL},
+    {TRAINER_CLASS_POKEFAN, ITEM_POKE_BALL},
+    {TRAINER_CLASS_EXPERT, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_YOUNGSTER, ITEM_POKE_BALL},
+    {TRAINER_CLASS_CHAMPION, ITEM_CHERISH_BALL},
+    {TRAINER_CLASS_FISHERMAN, ITEM_LURE_BALL},
+    {TRAINER_CLASS_TRIATHLETE, ITEM_FAST_BALL},
+    {TRAINER_CLASS_DRAGON_TAMER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_BIRD_KEEPER, ITEM_QUICK_BALL},
+    {TRAINER_CLASS_NINJA_BOY, ITEM_QUICK_BALL},
+    {TRAINER_CLASS_BATTLE_GIRL, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_PARASOL_LADY, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SWIMMER_F, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_PICNICKER, ITEM_FRIEND_BALL},
+    {TRAINER_CLASS_TWINS, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SAILOR, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_COLLECTOR, ITEM_REPEAT_BALL},
+    {TRAINER_CLASS_PKMN_TRAINER_3, ITEM_PREMIER_BALL},
+    {TRAINER_CLASS_PKMN_BREEDER, ITEM_TIMER_BALL},
+    {TRAINER_CLASS_PKMN_RANGER, ITEM_SAFARI_BALL},
+    {TRAINER_CLASS_TEAM_MAGMA, ITEM_NEST_BALL},
+    {TRAINER_CLASS_MAGMA_ADMIN, ITEM_NEST_BALL},
+    {TRAINER_CLASS_MAGMA_LEADER, ITEM_MASTER_BALL},
+    {TRAINER_CLASS_LASS, ITEM_POKE_BALL},
+    {TRAINER_CLASS_BUG_CATCHER, ITEM_NET_BALL},
+    {TRAINER_CLASS_HIKER, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_YOUNG_COUPLE, ITEM_LOVE_BALL},
+    {TRAINER_CLASS_WINSTRATE, ITEM_GREAT_BALL},
+    {TRAINER_CLASS_PKMN_TRAINER_2, ITEM_HEAVY_BALL},
+    {0xFF, ITEM_POKE_BALL},
 };
 
 #include "data/text/abilities.h"
@@ -1899,11 +1962,22 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     nameHash += gSpeciesNames[partyData[i].species][j];
 
                 personalityValue += nameHash << 8;
-                fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 31, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+
+                SetMonData(&party[i], MON_DATA_NATURE, &gSets[partyData[i].spread].nature);
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                SetMonData(&party[i], MON_DATA_ABILITY_NUM, &partyData[i].ability);
 
+                // Set EVs and IVs from premade spreads
+                for (j = 0; j < 6; j++)
+                {
+                    SetMonData(&party[i], MON_DATA_HP_EV + j, &gSets[partyData[i].spread].EVs[j]);
+                    SetMonData(&party[i], MON_DATA_HP_IV + j, &gSets[partyData[i].spread].IVs[j]);
+                }
+
+                CalculateMonStats(&party[i]); // called twice; fix in future
+                
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
@@ -1912,6 +1986,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 break;
             }
             }
+            for (j = 0; gTrainerBallTable[j].classId != 0xFF; j++)
+            {
+                if (gTrainerBallTable[j].classId == gTrainers[trainerNum].trainerClass)
+                    break;
+            }
+            SetMonData(&party[i], MON_DATA_POKEBALL, &gTrainerBallTable[j].Ball);
         }
 
         gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
