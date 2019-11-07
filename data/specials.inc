@@ -535,3 +535,12 @@ gSpecials:: @ 81DBA64
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special sub_80B3BC4
+	def_special ChangePokemonNature
+	def_special BufferLeadMonNature
+	def_special ChangeLeadMonIVs
+	def_special IncreaseLeadMonEVs
+	def_special BufferLeadMonIV
+	def_special BufferLeadMonEV
+	def_special ResetLeadMonEVs
+	def_special ChangeLeadMonHiddenPower
+	def_special CheckLeadMonCanGainEVs
