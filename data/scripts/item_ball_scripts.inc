@@ -657,3 +657,43 @@ MagmaHideout_4F_EventScript_MaxRevive:: @ 829151F
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope:: @ 829152C
 	giveitem_std ITEM_ESCAPE_ROPE, 1, 1
 	end
+
+PetalburgWoods_2_Item_TM80Venoshock::
+	giveitem_std ITEM_TM80_VENOSHOCK, 1, 1
+	end
+
+PetalburgWoods_2_Item_SunStone::
+	giveitem_std ITEM_SUN_STONE, 1, 1
+	end
+
+PetalburgWoods_3_TM86_GrassKnot::
+	giveitem_std ITEM_TM86_GRASS_KNOT, 1, 1
+	end
+
+PetalburgWoods_3_TM34_SludgeWave::
+	giveitem_std ITEM_TM34_SLUDGE_WAVE, 1, 1
+	end
+
+PetalburgWoods_3_Beedrillite::
+	giveitem_std ITEM_BEEDRILLITE, 1, 1
+	end
+
+Seaspray_Cave_Lure_Ball::
+	giveitem_std ITEM_LURE_BALL, 1, 1
+	end
+
+Seaspray_Cave_Stealth_Rock::
+	giveitem_std ITEM_TM76_STEALTH_ROCK, 1, 1
+	end
+
+Seaspray_Cave_Water_Pulse::
+	giveitem_std ITEM_TM03_WATER_PULSE, 1, 1
+	end
+
+Seaspray_Cave_Blastoisinite::
+	giveitem_std ITEM_BLASTOISINITE, 1, 1
+	end
+
+Granite_Cave_TM31_Brick_Break::
+	giveitem_std ITEM_TM31_BRICK_BREAK, 1, 1
+	end

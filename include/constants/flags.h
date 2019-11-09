@@ -37,25 +37,25 @@
 #define FLAG_TEMP_1E    0x1E
 #define FLAG_TEMP_1F    0x1F
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_PETALBURG_WOODS_BIG_ROOT       0x20
+#define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x21 
+#define PETALBURG_WOODS_2_SUPER_POTION      0x22
+#define PETALBURG_WOODS_2_HEAL_BALL         0x23
+#define PETALBURG_WOODS_2_SUN_STONE         0x24
+#define PETALBURG_WOODS_2_VENOSHOCK         0x25
+#define PETALBURG_WOODS_3_GRASS_KNOT        0x26
+#define PETALBURG_WOODS_3_SLUDGE_WAVE       0x27
+#define PETALBURG_WOODS_3_BEEDRILLITE       0x28
+#define FLAG_LANDMARK_SEASPRAY_CAVE         0x29
+#define FLAG_SEASPRAY_CAVE_DAWN_STONE       0x2A
+#define FLAG_SEASPRAY_CAVE_RARE_CANDY       0x2B 
+#define FLAG_SEASPRAY_CAVE_STEALTH_ROCK     0x2C
+#define FLAG_SEASPRAY_CAVE_WATER_PULSE      0x2D
+#define FLAG_SEASPRAY_CAVE_LURE_BALL        0x2E
+#define FLAG_SEASPRAY_CAVE_BLASTOISINITE    0x2F
+#define FLAG_GRANITE_CAVE_BRICK_BREAK       0x30
+#define FLAG_ROUTE_106_BIG_PEARL            0x31
+#define FLAG_DEWFORD_GYM_FRESHWATER         0x32
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
