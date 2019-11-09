@@ -3,6 +3,7 @@
 
 extern bool8 gBikeCyclingChallenge;
 extern u8 gBikeCollisions;
+extern const u8 *const gNatureNamePointers[];
 
 u8 GetLeadMonIndex(void);
 u8 IsDestinationBoxFull(void);

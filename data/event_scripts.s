@@ -86,8 +86,8 @@ gStdScripts:: @ 81DC2A0
 	.4byte Std_RegisteredInMatchCall
 	.4byte Std_9
 	.4byte Std_10
-gStdScripts_End:: @ 81DC2CC
 
+gStdScripts_End::
 	.include "data/maps/PetalburgCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
@@ -338,6 +338,8 @@ gStdScripts_End:: @ 81DC2CC
 	.include "data/maps/GraniteCave_B2F/scripts.inc"
 	.include "data/maps/GraniteCave_StevensRoom/scripts.inc"
 	.include "data/maps/PetalburgWoods/scripts.inc"
+	.include "data/maps/PetalburgWoods_2/scripts.inc"
+	.include "data/maps/PetalburgWoods_3/scripts.inc"
 	.include "data/maps/MtChimney/scripts.inc"
 	.include "data/maps/JaggedPass/scripts.inc"
 	.include "data/maps/FieryPath/scripts.inc"
@@ -583,6 +585,7 @@ gStdScripts_End:: @ 81DC2CC
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
+	.include "data/maps/Seaspray_Cave/scripts.inc"
 
 Std_MsgboxNPC: @ 8271315
 	lock
