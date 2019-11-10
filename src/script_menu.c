@@ -766,41 +766,232 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width)
 }
 
 // Text displayed as options.
-static const u8 sText_Example1[] = _("Example 1");
-static const u8 sText_Example2[] = _("Example 2");
-static const u8 sText_Example3[] = _("Example 3");
-static const u8 sText_Example4[] = _("Example 4");
-static const u8 sText_Example5[] = _("Example 5");
-static const u8 sText_Example6[] = _("Example 6");
-static const u8 sText_Example7[] = _("Example 7");
-static const u8 sText_Example8[] = _("Example 8");
-static const u8 sText_Example9[] = _("Example 9");
+// Dewford tutors
+static const u8 sText_Fury_Cutter[] = _("Fury Cutter");
+static const u8 sText_Rollout[] = _("Rollout");
+static const u8 sText_Seismic_Toss[] = _("Seismic Toss");
+static const u8 sText_Covet[] = _("Covet");
+static const u8 sText_Vacuum_Wave[] = _("Vacuum Wave");
+static const u8 sText_Shock_Wave[] = _("Shock Wave");
+static const u8 sText_Bug_Bite[] = _("Bug Bite");
+static const u8 sText_Air_Cutter[] = _("Air Cutter");
+static const u8 sText_Swift[] = _("Swift");
+static const u8 sText_Snatch[] = _("Snatch");
+static const u8 sText_Mimic[] = _("Mimic");
+static const u8 sText_Mud_slap[] = _("Mud-slap");
+static const u8 sText_Metronome[] = _("Metronome");
+static const u8 sText_Ominous_Wind[] = _("Ominous Wind");
+static const u8 sText_Super_Fang[] = _("Super Fang");
+static const u8 sText_Uproar[] = _("Uproar");
+static const u8 sText_Gastro_Acid[] = _("Gastro Acid");
+static const u8 sText_Hone_Claws[] = _("Hone Claws");
+// Verdanturf tutors
+static const u8 sText_Counter[] = _("Counter");
+static const u8 sText_Signal_Beam[] = _("Signal Beam");
+static const u8 sText_Defog[] = _("Defog");
+static const u8 sText_Magic_Coat[] = _("Magic Coat");
+static const u8 sText_Gravity[] = _("Gravity");
+static const u8 sText_Seed_Bomb[] = _("Seed Bomb");
+static const u8 sText_Dynamic_Punch[] = _("DynamicPunch");
+static const u8 sText_Synthesis[] = _("Synthesis");
+static const u8 sText_Pain_Split[] = _("Pain Split");
+static const u8 sText_Role_Play[] = _("Role Play");
+static const u8 sText_Endeavor[] = _("Endeavor");
+static const u8 sText_Worry_Seed[] = _("Worry Seed");
+static const u8 sText_Psych_Up[] = _("Psych Up");
+static const u8 sText_Icy_Wind[] = _("Icy Wind");
+static const u8 sText_Electroweb[] = _("Electroweb");
+static const u8 sText_Low_Kick[] = _("Low Kick");
+static const u8 sText_Trick[] = _("Trick");
+// Lavaridge tutors
+static const u8 sText_Thunder_Punch[] = _("ThunderPunch");
+static const u8 sText_Fire_Punch[] = _("Fire Punch");
+static const u8 sText_Ice_Punch[] = _("Ice Punch");
+static const u8 sText_Iron_Defense[] = _("Iron Defense");
+static const u8 sText_Magnet_Rise[] = _("Magnet Rise");
+static const u8 sText_Tailwind[] = _("Tailwind");
+static const u8 sText_Zen_Headbutt[] = _("Zen Headbutt");
+static const u8 sText_Dual_Chop[] = _("Dual Chop");
+static const u8 sText_Body_Slam[] = _("Body Slam");
+static const u8 sText_Brine[] = _("Brine");
+static const u8 sText_Swagger[] = _("Swagger");
+static const u8 sText_Iron_Head[] = _("Iron Head");
+static const u8 sText_Soft_Boiled[] = _("Soft-Boiled");
+static const u8 sText_Drill_Run[] = _("Drill Run");
+static const u8 sText_Aqua_Tail[] = _("Aqua Tail");
+static const u8 sText_Heal_Bell[] = _("Heal Bell");
+static const u8 sText_Bounce[] = _("Bounce");
+// Pacifidlog tutors
+static const u8 sText_Last_Resort[] = _("Last Resort");
+static const u8 sText_Sky_Attack[] = _("Sky Attack");
+static const u8 sText_Foul_Play[] = _("Foul Play");
+static const u8 sText_Double_Edge[] = _("Double-Edge");
+static const u8 sText_Knock_Off[] = _("Knock Off");
+static const u8 sText_Superpower[] = _("Superpower");
+static const u8 sText_Helping_Hand[] = _("Helping Hand");
+static const u8 sText_Heat_Wave[] = _("Heat Wave");
+static const u8 sText_Liquidation[] = _("Liquidation");
+static const u8 sText_Hyper_Voice[] = _("Hyper Voice");
+static const u8 sText_Earth_Power[] = _("Earth Power");
+static const u8 sText_Gunk_Shot[] = _("Gunk Shot");
+static const u8 sText_Aura_Sphere[] = _("Aura Sphere");
+static const u8 sText_Throat_Chop[] = _("Throat Chop");
+static const u8 sText_Outrage[] = _("Outrage");
+static const u8 sText_Power_Gem[] = _("Power Gem");
+static const u8 sText_Hurricane[] = _("Hurricane");
+// IVs for the Hyper Training NPC
+static const u8 sText_31[] = _("31");
+static const u8 sText_30[] = _("30");
+static const u8 sText_29[] = _("29");
+static const u8 sText_28[] = _("28");
+static const u8 sText_27[] = _("27");
+static const u8 sText_26[] = _("26");
+static const u8 sText_25[] = _("25");
+static const u8 sText_24[] = _("24");
+static const u8 sText_23[] = _("23");
+static const u8 sText_22[] = _("22");
+static const u8 sText_21[] = _("21");
+static const u8 sText_20[] = _("20");
+static const u8 sText_19[] = _("19");
+static const u8 sText_18[] = _("18");
+static const u8 sText_17[] = _("17");
+static const u8 sText_16[] = _("16");
+static const u8 sText_15[] = _("15");
+static const u8 sText_14[] = _("14");
+static const u8 sText_13[] = _("13");
+static const u8 sText_12[] = _("12");
+static const u8 sText_11[] = _("11");
+static const u8 sText_10[] = _("10");
+static const u8 sText_9[] = _("9");
+static const u8 sText_8[] = _("8");
+static const u8 sText_7[] = _("7");
+static const u8 sText_6[] = _("6");
+static const u8 sText_5[] = _("5");
+static const u8 sText_4[] = _("4");
+static const u8 sText_3[] = _("3");
+static const u8 sText_2[] = _("2");
+static const u8 sText_1[] = _("1");
+static const u8 sText_0[] = _("0");
 
 // Sets of multichoices.
-static const struct ListMenuItem sSet1[] =
+static const struct ListMenuItem sTutor1[] =
 {
-    {sText_Example1, 0},
-    {sText_Example2, 1},
-    {sText_Example3, 2},
-    {sText_Example4, 3},
-    {sText_Example5, 4},
-    {sText_Example6, 5},
-    {sText_Example7, 6},
-    {sText_Example8, 7},
-    {sText_Example9, 8},
+	{sText_Fury_Cutter,	 0},
+	{sText_Rollout,  	 1},
+	{sText_Seismic_Toss, 2},
+	{sText_Covet,	 	 3},
+	{sText_Vacuum_Wave,  4},
+	{sText_Shock_Wave, 	 5},
+	{sText_Bug_Bite,	 6},
+	{sText_Air_Cutter, 	 7},
+	{sText_Swift,   	 8},
+	{sText_Snatch,  	 9},
+	{sText_Mimic, 		10},
+	{sText_Mud_slap,	11},	
+	{sText_Metronome, 	12},
+	{sText_Ominous_Wind,13},
+	{sText_Super_Fang,	14},
+	{sText_Uproar,		15},
+	{sText_Gastro_Acid,	16},
+	{sText_Hone_Claws,	17},
 };
 
-static const struct ListMenuItem sSet2[] =
+static const struct ListMenuItem sTutor2[] =
 {
-    {sText_Example9, 0},
-    {sText_Example8, 1},
-    {sText_Example7, 2},
-    {sText_Example6, 3},
-    {sText_Example5, 4},
-    {sText_Example4, 5},
-    {sText_Example3, 6},
-    {sText_Example2, 7},
-    {sText_Example1, 8},
+	{sText_Counter,		 0},
+	{sText_Signal_Beam,  1},
+	{sText_Defog, 	 	 2},
+	{sText_Magic_Coat,	 3},
+	{sText_Gravity,  	 4},
+	{sText_Seed_Bomb, 	 5},
+	{sText_Dynamic_Punch,6},
+	{sText_Synthesis, 	 7},
+	{sText_Pain_Split,   8},
+	{sText_Role_Play,  	 9},
+	{sText_Endeavor, 	10},
+	{sText_Worry_Seed,	11},	
+	{sText_Psych_Up, 	12},
+	{sText_Icy_Wind, 	13},
+	{sText_Electroweb,	14},
+	{sText_Low_Kick,	15},
+	{sText_Trick,		16},
+};
+static const struct ListMenuItem sTutor3[] =
+{
+	{sText_Thunder_Punch,0},
+	{sText_Fire_Punch, 	 1},
+	{sText_Ice_Punch, 	 2},
+	{sText_Iron_Defense, 3},
+	{sText_Magnet_Rise,  4},
+	{sText_Tailwind, 	 5},
+	{sText_Zen_Headbutt, 6},
+	{sText_Dual_Chop, 	 7},
+	{sText_Body_Slam,    8},
+	{sText_Brine,  		 9},
+	{sText_Swagger, 	10},
+	{sText_Iron_Head,	11},	
+	{sText_Soft_Boiled, 12},
+	{sText_Drill_Run, 	13},
+	{sText_Aqua_Tail,	14},
+	{sText_Heal_Bell,	15},
+	{sText_Bounce,		16},
+};
+
+static const struct ListMenuItem sTutor4[] =
+{
+	{sText_Last_Resort,	 0},
+	{sText_Sky_Attack, 	 1},
+	{sText_Foul_Play, 	 2},
+	{sText_Double_Edge,  3},
+	{sText_Knock_Off, 	 4},
+	{sText_Superpower, 	 5},
+	{sText_Helping_Hand, 6},
+	{sText_Heat_Wave, 	 7},
+	{sText_Liquidation,  8},
+	{sText_Hyper_Voice,  9},
+	{sText_Earth_Power, 10},
+	{sText_Gunk_Shot,	11},	
+	{sText_Aura_Sphere, 12},
+	{sText_Throat_Chop, 13},
+	{sText_Outrage,		14},
+	{sText_Power_Gem,	15},
+	{sText_Hurricane,	16},
+};
+
+static const struct ListMenuItem sHyperTraining[] =
+{
+    {sText_31, 	 0},
+    {sText_30,    1},
+    {sText_29,    2},
+    {sText_28,    3},
+    {sText_27,    4},
+    {sText_26,    5},
+    {sText_25,    6},
+    {sText_24, 	  7},
+    {sText_23,    8},
+    {sText_22, 	  9},
+    {sText_21, 	 10},
+    {sText_20,   11},
+	{sText_19, 	 12},
+    {sText_18, 	 13},
+	{sText_17,	 14},
+    {sText_16,	 15},
+    {sText_15,	 16},
+    {sText_14,	 17},
+    {sText_13,   18},
+    {sText_12,   19},
+    {sText_11,	 20},
+    {sText_10,   21},
+    {sText_9,    22},
+    {sText_8,    23},
+    {sText_7, 	 24},
+    {sText_6,    25},
+    {sText_5, 	 26},
+    {sText_4, 	 27},
+    {sText_3,    28},
+    {sText_2, 	 29},
+    {sText_1, 	 30},
+    {sText_0,	 31},	
 };
 
 // Table of your multichoice sets.
@@ -810,9 +1001,13 @@ struct
     int count;
 } static const sScrollingSets[] =
 {
-    {sSet1, ARRAY_COUNT(sSet1)},
-    {sSet2, ARRAY_COUNT(sSet2)},
+    {sTutor1, ARRAY_COUNT(sTutor1)}, //0
+    {sTutor2, ARRAY_COUNT(sTutor2)}, //1
+	{sTutor3, ARRAY_COUNT(sTutor3)}, //2
+    {sTutor4, ARRAY_COUNT(sTutor4)}, //3
+    {sHyperTraining, ARRAY_COUNT(sHyperTraining)}, //4
 };
+
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
 
