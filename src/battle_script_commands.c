@@ -11311,6 +11311,16 @@ static void atkEF_handleballthrow(void)
                     gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
                     SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
                 }
+                if (gLastUsedItem == ITEM_DREAM_BALL) // Give Pokemon their Hidden Ability when caught in a Dream Ball
+                {   
+                    u8 Ability = 2;
+                    SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_ABILITY_NUM, &Ability);
+                }  
+                if (gLastUsedItem == ITEM_FRIEND_BALL)
+                {   
+                    u8 Friendship= 200;
+                    SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_FRIENDSHIP, &Friendship);
+                }                 
             }
             else // not caught
             {
