@@ -961,37 +961,42 @@ static const union AffineAnimCmd *const gSpriteAffineAnimTable_8338ECC[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] = 
+    [INGAME_TRADE_PAWNIARD] = 
     {
-        .nickname = _("DOTS"), 
-        .species = SPECIES_SEEDOT,
-        .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1, 
+        .nickname = _("Rook"), 
+        .species = SPECIES_PAWNIARD,
+        .ivs = {31, 31, 31, 15, 15, 15},
+        .abilityNum = 1, // Defiant
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY, 
+        .heldItem = ITEM_MOON_STONE, 
         .mailNum = -1,
-        .otName = _("KOBE"), 
+        .otName = _("Kobe"), 
         .otGender = MALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_RALTS
+        .requestedSpecies = SPECIES_GOTHITA,
+        .nature = NATURE_ADAMANT,
+        .level = 13
+
     }, 
-    [INGAME_TRADE_PLUSLE] = 
+    [INGAME_TRADE_TROPIUS] = 
     {
-        .nickname = _("PLUSES"), 
-        .species = SPECIES_PLUSLE,
-        .ivs = {4, 4, 4, 5, 5, 4},
-        .abilityNum = 0, 
+        .nickname = _("Bananana"), 
+        .species = SPECIES_TROPIUS,
+        .ivs = {31, 15, 31, 15, 15, 31},
+        .abilityNum = 2, // Aerilate
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL, 
+        .heldItem = ITEM_LEFTOVERS, 
         .mailNum = 0,
         .otName = _("ROMAN"), 
         .otGender = MALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
+        .requestedSpecies = SPECIES_CROAGUNK,
+        .nature = NATURE_JOLLY,
+        .level = 17
     }, 
     [INGAME_TRADE_HORSEA] = 
     {
