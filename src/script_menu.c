@@ -846,10 +846,10 @@ void ScriptMenu_ScrollingMultichoice(void)
     int maxShowed = gSpecialVar_0x8007;
 
     for (i = 0; i < sScrollingSets[setId].count; i++)
-        width = display_text_and_get_width(sScrollingSets[setId].set[i].name, width);
+        width = DisplayTextAndGetWidth(sScrollingSets[setId].set[i].name, width);
 
-    width = convert_pixel_width_to_tile_width(width);
-    left = sub_80E2D5C(left, width);
+    width = ConvertPixelWidthToTileWidth(width);
+    left = ScriptMenu_AdjustLeftCoordFromWidth(left, width);
     windowId = CreateWindowFromRect(left, top, width, maxShowed * 2);
     SetStandardWindowBorderStyle(windowId, 0);
     CopyWindowToVram(windowId, 3);
