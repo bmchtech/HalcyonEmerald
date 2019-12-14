@@ -411,7 +411,7 @@ extern const u8 gText_CantBeUsedOnPkmn[];
 extern const u8 gText_CancelParticipation[];
 extern const u8 gText_PkmnWasGivenItem[];
 extern const u8 gText_ReceivedItemFromPkmn[];
-extern const u8 gText_SwitchPkmnItem[];
+extern const u8 gText_PkmnAlreadyHoldingItemSwitch[];
 extern const u8 gText_SwitchedPkmnItem[];
 extern const u8 gText_BagFullCouldNotRemoveItem[];
 extern const u8 gText_PkmnCantParticipate[];
@@ -427,7 +427,7 @@ extern const u8 gText_NoMoreThanVar1Pkmn[];
 extern const u8 gText_PkmnCantBeTradedNow[];
 extern const u8 gText_EggCantBeTradedNow[];
 extern const u8 gText_OnlyPkmnForBattle[];
-extern const u8 gJPText_PutVar1IntoSpinner[];
+extern const u8 gJPText_AreYouSureYouWantToSpinTradeMon[];
 extern const u8 gText_PauseUntilPress[];
 extern const u8 gText_CantUseUntilNewBadge[];
 extern const u8 gText_ReturnToHealingSpot[];
@@ -583,6 +583,8 @@ extern const u8 gText_BigGirl[];
 extern const u8 gText_Son[];
 extern const u8 gText_Daughter[];
 
+// Multichoice strings
+extern const u8 gText_Exit[];
 extern const u8 gText_1F[];
 extern const u8 gText_2F[];
 extern const u8 gText_3F[];
@@ -601,8 +603,6 @@ extern const u8 gText_B4F[];
 extern const u8 gText_Rooftop[];
 extern const u8 gText_ElevatorNowOn[];
 
-extern const u8 gText_Exit[];
-
 extern const u8 gText_BlueFlute[];
 extern const u8 gText_YellowFlute[];
 extern const u8 gText_RedFlute[];
@@ -610,7 +610,6 @@ extern const u8 gText_WhiteFlute[];
 extern const u8 gText_BlackFlute[];
 extern const u8 gText_PrettyChair[];
 extern const u8 gText_PrettyDesk[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_0Pts[];
 extern const u8 gText_10Pts[];
@@ -635,14 +634,12 @@ extern const u8 gText_DittoDoll48BP[];
 extern const u8 gText_CyndaquilDoll80BP[];
 extern const u8 gText_ChikoritaDoll80BP[];
 extern const u8 gText_TotodileDoll80BP[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_LaprasDoll128BP[];
 extern const u8 gText_SnorlaxDoll128BP[];
 extern const u8 gText_VenusaurDoll256BP[];
 extern const u8 gText_CharizardDoll256BP[];
 extern const u8 gText_BlastoiseDoll256BP[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_Protein1BP[];
 extern const u8 gText_Calcium1BP[];
@@ -650,7 +647,6 @@ extern const u8 gText_Iron1BP[];
 extern const u8 gText_Zinc1BP[];
 extern const u8 gText_Carbos1BP[];
 extern const u8 gText_HpUp1BP[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_Leftovers48BP[];
 extern const u8 gText_WhiteHerb48BP[];
@@ -661,7 +657,6 @@ extern const u8 gText_ChoiceBand64BP[];
 extern const u8 gText_KingsRock64BP[];
 extern const u8 gText_FocusBand64BP[];
 extern const u8 gText_ScopeLens64BP[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_EnergyPowder50[];
 extern const u8 gText_EnergyRoot80[];
@@ -674,7 +669,6 @@ extern const u8 gText_Calcium1000[];
 extern const u8 gText_Zinc1000[];
 extern const u8 gText_HPUp1000[];
 extern const u8 gText_PPUp3000[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_BattleTower2[];
 extern const u8 gText_BattleDome[];
@@ -685,8 +679,8 @@ extern const u8 gText_BattlePike[];
 extern const u8 gText_BattlePyramid[];
 extern const u8 gText_RankingHall[];
 extern const u8 gText_ExchangeService[];
-extern const u8 gText_Exit[];
 
+// Battle Frontier Move Tutors
 extern const u8 gText_Softboiled16BP[];
 extern const u8 gText_SeismicToss24BP[];
 extern const u8 gText_DreamEater24BP[];
@@ -697,8 +691,6 @@ extern const u8 gText_RockSlide48BP[];
 extern const u8 gText_Counter48BP[];
 extern const u8 gText_ThunderWave48BP[];
 extern const u8 gText_SwordsDance48BP[];
-extern const u8 gText_Exit[];
-
 extern const u8 gText_DefenseCurl16BP[];
 extern const u8 gText_Snore24BP[];
 extern const u8 gText_MudSlap24BP[];
@@ -709,7 +701,6 @@ extern const u8 gText_PsychUp48BP[];
 extern const u8 gText_IcePunch48BP[];
 extern const u8 gText_ThunderPunch48BP[];
 extern const u8 gText_FirePunch48BP[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_SlateportCity[];
 extern const u8 gText_BattleFrontier[];
@@ -717,7 +708,6 @@ extern const u8 gText_SouthernIsland[];
 extern const u8 gText_NavelRock[];
 extern const u8 gText_BirthIsland[];
 extern const u8 gText_FarawayIsland[];
-extern const u8 gText_Exit[];
 
 extern const u8 gText_BattleTrainers[];
 extern const u8 gText_BattleBasics[];
@@ -725,38 +715,34 @@ extern const u8 gText_PokemonNature[];
 extern const u8 gText_PokemonMoves[];
 extern const u8 gText_Underpowered[];
 extern const u8 gText_WhenInDanger[];
-extern const u8 gText_Exit[];
 
-extern const u8 BattleFrontier_Lounge2_Text_260971[];
-extern const u8 BattleFrontier_Lounge2_Text_260A1E[];
-extern const u8 BattleFrontier_Lounge2_Text_260AE7[];
-extern const u8 BattleFrontier_Lounge2_Text_2619AC[];
-extern const u8 BattleFrontier_Lounge2_Text_261A91[];
-extern const u8 BattleFrontier_Lounge2_Text_261B0C[];
-extern const u8 BattleFrontier_Lounge2_Text_261B95[];
-extern const u8 BattleFrontier_Lounge2_Text_261B95[];
-extern const u8 BattleFrontier_Lounge2_Text_261B95[];
-extern const u8 BattleFrontier_Lounge2_Text_261C1A[];
-extern const u8 BattleFrontier_Lounge2_Text_261C1A[];
-extern const u8 BattleFrontier_Lounge2_Text_261C1A[];
-extern const u8 BattleFrontier_Lounge2_Text_260BC4[];
-extern const u8 BattleFrontier_Lounge2_Text_260C6D[];
-extern const u8 BattleFrontier_Lounge2_Text_260D3A[];
-extern const u8 BattleFrontier_Lounge2_Text_260E1E[];
-extern const u8 BattleFrontier_Lounge2_Text_260EC7[];
-extern const u8 BattleFrontier_Lounge2_Text_260F74[];
-extern const u8 BattleFrontier_Lounge2_Text_2614E6[];
-extern const u8 BattleFrontier_Lounge2_Text_261591[];
-extern const u8 BattleFrontier_Lounge2_Text_26166F[];
-extern const u8 BattleFrontier_Lounge2_Text_261282[];
-extern const u8 BattleFrontier_Lounge2_Text_261329[];
-extern const u8 BattleFrontier_Lounge2_Text_261403[];
-extern const u8 BattleFrontier_Lounge2_Text_261026[];
-extern const u8 BattleFrontier_Lounge2_Text_2610CC[];
-extern const u8 BattleFrontier_Lounge2_Text_261194[];
-extern const u8 BattleFrontier_Lounge2_Text_26174D[];
-extern const u8 BattleFrontier_Lounge2_Text_2617F9[];
-extern const u8 BattleFrontier_Lounge2_Text_2618C4[];
+// Battle Frontier Maniac
+extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_DoubleBattleAdvice1[];
+extern const u8 BattleFrontier_Lounge2_Text_DoubleBattleAdvice2[];
+extern const u8 BattleFrontier_Lounge2_Text_DoubleBattleAdvice3[];
+extern const u8 BattleFrontier_Lounge2_Text_MultiBattleAdvice[];
+extern const u8 BattleFrontier_Lounge2_Text_LinkMultiBattleAdvice[];
+extern const u8 BattleFrontier_Lounge2_Text_DomeAceIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_DomeAceSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_DomeAceGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_FactoryHeadIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_FactoryHeadSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_FactoryHeadGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PalaceMavenIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_PalaceMavenSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PalaceMavenGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_ArenaTycoonIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_ArenaTycoonSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_ArenaTycoonGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PikeQueenIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_PikeQueenSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PikeQueenGoldMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PyramidKingIsThere[];
+extern const u8 BattleFrontier_Lounge2_Text_PyramidKingSilverMons[];
+extern const u8 BattleFrontier_Lounge2_Text_PyramidKingGoldMons[];
 
 // Battle Frontier Nature Girl
 extern const u8 BattleFrontier_Lounge5_Text_NatureGirlHardy[];
@@ -782,85 +768,83 @@ extern const u8 BattleFrontier_Lounge5_Text_NatureGirlGentle[];
 extern const u8 BattleFrontier_Lounge5_Text_NatureGirlSassy[];
 extern const u8 BattleFrontier_Lounge5_Text_NatureGirlCareful[];
 
-extern const u8 BattleFrontier_Lounge3_Text_262261[];
-extern const u8 BattleFrontier_Lounge3_Text_26230D[];
-extern const u8 BattleFrontier_Lounge3_Text_2623B9[];
-extern const u8 BattleFrontier_Lounge3_Text_262464[];
-extern const u8 BattleFrontier_Lounge3_Text_26250E[];
-extern const u8 BattleFrontier_Lounge3_Text_2625B8[];
-extern const u8 BattleFrontier_Lounge3_Text_26266A[];
-extern const u8 BattleFrontier_Lounge3_Text_26271C[];
-extern const u8 BattleFrontier_Lounge3_Text_2627C9[];
-extern const u8 BattleFrontier_Lounge3_Text_262876[];
-extern const u8 BattleFrontier_Lounge3_Text_26291A[];
-extern const u8 BattleFrontier_Lounge3_Text_2629BC[];
-
-extern const u8 BattleFrontier_Lounge3_Text_262C04[];
-extern const u8 BattleFrontier_Lounge3_Text_262C90[];
-extern const u8 BattleFrontier_Lounge3_Text_262D1C[];
-extern const u8 BattleFrontier_Lounge3_Text_262DA7[];
-extern const u8 BattleFrontier_Lounge3_Text_262E34[];
-extern const u8 BattleFrontier_Lounge3_Text_262EC1[];
-extern const u8 BattleFrontier_Lounge3_Text_262F56[];
-extern const u8 BattleFrontier_Lounge3_Text_262FEB[];
-extern const u8 BattleFrontier_Lounge3_Text_263078[];
-extern const u8 BattleFrontier_Lounge3_Text_263105[];
-extern const u8 BattleFrontier_Lounge3_Text_26318C[];
-extern const u8 BattleFrontier_Lounge3_Text_263211[];
+// Battle Frontier Gambler
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleTowerSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleTowerDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleTowerMulti[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleDomeSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleDomeDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleFactorySingle[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleFactoryDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattlePalaceSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattlePalaceDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattleArena[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattlePike[];
+extern const u8 BattleFrontier_Lounge3_Text_ChallengeBattlePyramid[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleTowerSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleTowerDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleTowerMulti[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleDomeSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleDomeDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleFactorySingle[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleFactoryDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePalaceSingle[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePalaceDouble[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattleArena[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePike[];
+extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePyramid[];
 
 extern const u8 gText_BP[];
 
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2601AA[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2601D0[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260201[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26022F[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26025B[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260287[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2602B5[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2602E0[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26030F[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26033E[];
+// Battle Frontier Exchange Corner
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_SmoochumDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MeowthDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ClefairyDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DittoDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_CyndaquilDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChikoritaDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_TotodileDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_CalciumDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_IronDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ZincDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_LeftoversDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_WhiteHerbDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
 
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26036C[];
-
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260397[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2603BE[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2603E6[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26040E[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260436[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26045C[];
-
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26047A[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2604AC[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2604D8[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_26050F[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260542[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260575[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2605A8[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_2605E2[];
-extern const u8 BattleFrontier_BattlePointExchangeServiceCorner_Text_260613[];
-
-extern const u8 BattleFrontier_Lounge7_Text_265E30[];
-extern const u8 BattleFrontier_Lounge7_Text_265E5B[];
-extern const u8 BattleFrontier_Lounge7_Text_265E8A[];
-extern const u8 BattleFrontier_Lounge7_Text_265EC0[];
-extern const u8 BattleFrontier_Lounge7_Text_265EED[];
-extern const u8 BattleFrontier_Lounge7_Text_265F1C[];
-extern const u8 BattleFrontier_Lounge7_Text_265F47[];
-extern const u8 BattleFrontier_Lounge7_Text_265F77[];
-extern const u8 BattleFrontier_Lounge7_Text_265FAA[];
-extern const u8 BattleFrontier_Lounge7_Text_265FDD[];
-
-extern const u8 BattleFrontier_Lounge7_Text_26600A[];
-extern const u8 BattleFrontier_Lounge7_Text_26603E[];
-extern const u8 BattleFrontier_Lounge7_Text_266070[];
-extern const u8 BattleFrontier_Lounge7_Text_2660A6[];
-extern const u8 BattleFrontier_Lounge7_Text_2660D0[];
-extern const u8 BattleFrontier_Lounge7_Text_2660FF[];
-extern const u8 BattleFrontier_Lounge7_Text_26612D[];
-extern const u8 BattleFrontier_Lounge7_Text_26615F[];
-extern const u8 BattleFrontier_Lounge7_Text_266185[];
-extern const u8 BattleFrontier_Lounge7_Text_2661B5[];
+// Battle Frontier Move Tutors
+extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SeismicTossDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DreamEaterDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MegaPunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MegaKickDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_BodySlamDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_RockSlideDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_CounterDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_ThunderWaveDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SwordsDanceDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_DefenseCurlDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SnoreDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_MudSlapDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_SwiftDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_IcyWindDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_EndureDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_PsychUpDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_IcePunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_ThunderPunchDesc[];
+extern const u8 BattleFrontier_Lounge7_Text_FirePunchDesc[];
 
 extern const u8 gText_YourPartnerHasRetired[];
 
@@ -1320,7 +1304,7 @@ extern const u8 gText_1st[];
 extern const u8 gText_SpaceAndSpace[];
 extern const u8 gText_CommaSpace[];
 extern const u8 gText_NewLine[];
-extern const u8 gText_ScrollTextUp[];
+extern const u8 gText_LineBreak[];
 extern const u8 gText_Space[];
 extern const u8 gText_Space2[];
 extern const u8 gText_Are[];
@@ -1328,11 +1312,11 @@ extern const u8 gText_Are2[];
 extern const u8 gText_123Dot[][3];
 
 // Frontier util.
-extern const u8 gUnknown_085ED164[];
-extern const u8 gUnknown_085ED170[];
-extern const u8 gUnknown_085ED17C[];
-extern const u8 gUnknown_085ED188[];
-extern const u8 gUnknown_085ED190[];
+extern const u8 gText_FacilitySingle[];
+extern const u8 gText_FacilityDouble[];
+extern const u8 gText_FacilityMulti[];
+extern const u8 gText_FacilityLink[];
+extern const u8 gText_Facility[];
 
 extern const u8 gText_RecordsLv50[];
 extern const u8 gText_RecordsOpenLevel[];
@@ -1342,34 +1326,35 @@ extern const u8 gText_FrontierFacilityRoomsCleared[];
 extern const u8 gText_FrontierFacilityKOsStreak[];
 extern const u8 gText_FrontierFacilityFloorsCleared[];
 
-extern const u8 gText_082C843F[];
-extern const u8 gText_082C848B[];
-extern const u8 gText_082C8628[];
-extern const u8 gText_082C85B4[];
-extern const u8 gText_082C8512[];
-extern const u8 gText_082C859D[];
-extern const u8 gText_082C86C3[];
-extern const u8 gText_082C8458[];
-extern const u8 gText_082C84C1[];
-extern const u8 gText_082C8662[];
-extern const u8 gText_082C85E3[];
-extern const u8 gText_082C853B[];
-extern const u8 gText_082C85A4[];
-extern const u8 gText_082C86FE[];
-extern const u8 gText_082C846C[];
-extern const u8 gText_082C84D0[];
-extern const u8 gText_082C8682[];
-extern const u8 gText_082C85F5[];
-extern const u8 gText_082C8561[];
-extern const u8 gText_082C85A9[];
-extern const u8 gText_082C8739[];
-extern const u8 gText_082C8480[];
-extern const u8 gText_082C84F7[];
-extern const u8 gText_082C86B3[];
-extern const u8 gText_082C8611[];
-extern const u8 gText_082C8589[];
-extern const u8 gText_082C85AE[];
-extern const u8 gText_082C877B[];
+// Frontier Brain
+extern const u8 gText_AnabelWonSilver[];
+extern const u8 gText_TuckerWonSilver[];
+extern const u8 gText_SpenserWonSilver[];
+extern const u8 gText_GretaWonSilver[];
+extern const u8 gText_NolandWonSilver[];
+extern const u8 gText_LucyWonSilver[];
+extern const u8 gText_BrandonWonSilver[];
+extern const u8 gText_AnabelDefeatSilver[];
+extern const u8 gText_TuckerDefeatSilver[];
+extern const u8 gText_SpenserDefeatSilver[];
+extern const u8 gText_GretaDefeatSilver[];
+extern const u8 gText_NolandDefeatSilver[];
+extern const u8 gText_LucyDefeatSilver[];
+extern const u8 gText_BrandonDefeatSilver[];
+extern const u8 gText_AnabelWonGold[];
+extern const u8 gText_TuckerWonGold[];
+extern const u8 gText_SpenserWonGold[];
+extern const u8 gText_GretaWonGold[];
+extern const u8 gText_NolandWonGold[];
+extern const u8 gText_LucyWonGold[];
+extern const u8 gText_BrandonWonGold[];
+extern const u8 gText_AnabelDefeatGold[];
+extern const u8 gText_TuckerDefeatGold[];
+extern const u8 gText_SpenserDefeatGold[];
+extern const u8 gText_GretaDefeatGold[];
+extern const u8 gText_NolandDefeatGold[];
+extern const u8 gText_LucyDefeatGold[];
+extern const u8 gText_BrandonDefeatGold[];
 
 // Battle Tower.
 extern const u8 BattleFrontier_BattleTowerMultiBattleRoom_Text_2479CE[];
@@ -2035,8 +2020,8 @@ extern const u8 gText_Confusion[];
 extern const u8 gText_Love[];
 
 // battle message
-extern const u8 gText_PkmnBoxSomeonesPCFull[];
-extern const u8 gText_PkmnBoxLanettesPCFull[];
+extern const u8 gText_PkmnTransferredSomeonesPCBoxFull[];
+extern const u8 gText_PkmnTransferredLanettesPCBoxFull[];
 extern const u8 gText_PkmnTransferredSomeonesPC[];
 extern const u8 gText_PkmnTransferredLanettesPC[];
 
@@ -2415,6 +2400,10 @@ extern const u8 gUnknown_085EDAF4[];
 extern const u8 gUnknown_085EDC45[];
 extern const u8 gUnknown_085EDB00[];
 extern const u8 gUnknown_085EDC84[];
+
+// Apprentice
+extern const u8 gText_Give[];
+extern const u8 gText_NoNeed[];
 
 // Easy Chat Entry
 extern const u8 gText_StopGivingPkmnMail[];

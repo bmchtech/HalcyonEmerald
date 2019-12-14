@@ -2015,7 +2015,7 @@ const struct SpriteTemplate gOctazookaSmokeSpriteTemplate =
     .anims = gOctazookaAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimSparklingParticle,
+    .callback = AnimSpriteOnMonPos,
 };
 
 const union AnimCmd gConversionAnimCmds[] =
@@ -2141,7 +2141,7 @@ const struct SpriteTemplate gHealingBlueStarSpriteTemplate =
     .anims = gHealingBlueStarAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimSparklingParticle,
+    .callback = AnimSpriteOnMonPos,
 };
 
 const struct SpriteTemplate gHornHitSpriteTemplate =
@@ -5988,8 +5988,8 @@ void AnimMoon(struct Sprite* sprite)
         sprite->pos1.y = gBattleAnimArgs[1];
     }
 
-    sprite->oam.shape = 0;
-    sprite->oam.size = 3;
+    sprite->oam.shape = SPRITE_SHAPE(64x64);
+    sprite->oam.size = SPRITE_SIZE(64x64);
     sprite->data[0] = 0;
     sprite->callback = AnimMoonStep;
 }

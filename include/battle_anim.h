@@ -102,7 +102,7 @@ void SetAnimSpriteInitialXOffset(struct Sprite *sprite, s16 a2);
 s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 a2);
 u8 GetBattlerYCoordWithElevation(u8 battlerId);
 void WaitAnimForDuration(struct Sprite *sprite);
-void sub_80A7938(struct Sprite *sprite);
+void AnimSnoreZ(struct Sprite *sprite);
 void InitAnimLinearTranslation(struct Sprite *sprite);
 void sub_80A6F98(struct Sprite *sprite);
 u8 GetBattlerSpriteBGPriority(u8 battlerId);
@@ -142,13 +142,13 @@ bool8 AnimFastTranslateLinear(struct Sprite *sprite);
 void InitAndRunAnimFastLinearTranslation(struct Sprite *sprite);
 void TranslateMonSpriteLinear(struct Sprite *sprite);
 void TranslateSpriteLinear(struct Sprite *sprite);
-void AnimSparklingParticle(struct Sprite *sprite);
+void AnimSpriteOnMonPos(struct Sprite *sprite);
 void sub_80A7000(struct Sprite *sprite);
 void TranslateSpriteInCircleOverDuration(struct Sprite *sprite);
 void SetGreyscaleOrOriginalPalette(u16 a1, bool8 a2);
 void PrepareAffineAnimInTaskData(struct Task *task, u8 spriteId, const union AffineAnimCmd *affineAnimCmds);
 bool8 RunAffineAnimFromTaskData(struct Task *task);
-void sub_80A78AC(struct Sprite *sprite);
+void AnimThrowProjectile(struct Sprite *sprite);
 void sub_80A6BFC(struct BattleAnimBgData *unk, u8 unused);
 u8 sub_80A8394(u16 species, bool8 isBackpic, u8 a3, s16 x, s16 y, u8 subpriority, u32 personality, u32 trainerId, u32 battlerId, u32 a10);
 void sub_80A749C(struct Sprite *sprite);
@@ -186,7 +186,7 @@ bool8 IsBattlerSpritePresent(u8 battlerId);
 void sub_80A6C68(u32 arg0);
 u8 GetAnimBattlerSpriteId(u8 wantedBattler);
 bool8 IsDoubleBattle(void);
-u8 sub_80A6D94(void);
+u8 GetBattleBgPaletteNum(void);
 u8 GetBattlerSpriteBGPriorityRank(u8 battlerId);
 void StoreSpriteCallbackInData6(struct Sprite *sprite, void (*spriteCallback)(struct Sprite*));
 void SetSpritePrimaryCoordsFromSecondaryCoords(struct Sprite *sprite);
@@ -231,7 +231,7 @@ extern const union AnimCmd *const gPowerAbsorptionOrbAnimTable[];
 extern const union AffineAnimCmd *const gPowerAbsorptionOrbAffineAnimTable[];
 
 // water.c
-void sub_8108C94(struct Sprite *sprite);
+void AnimWaterPulseRing(struct Sprite *sprite);
 
 // flying.c
 void sub_810E2C8(struct Sprite *sprite);
@@ -248,7 +248,7 @@ void sub_8112B78(struct Sprite *sprite);
 extern const union AffineAnimCmd *const gUnknown_08596894[];
 
 // smokescreen.c
-u8 sub_807521C(s16 x, s16 y, u8 a3);
+u8 SmokescreenImpact(s16 x, s16 y, u8 a3);
 
 u32 UnpackSelectedBattleAnimPalettes(s16);
 

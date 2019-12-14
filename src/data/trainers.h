@@ -27,7 +27,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Sawyer1},
     },
 
-    [TRAINER_GRUNT_1] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -41,7 +41,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt1},
     },
 
-    [TRAINER_GRUNT_2] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -55,7 +55,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt2},
     },
 
-    [TRAINER_GRUNT_3] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -69,7 +69,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt3},
     },
 
-    [TRAINER_GRUNT_4] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -83,7 +83,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt4},
     },
 
-    [TRAINER_GRUNT_5] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -97,7 +97,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt5},
     },
 
-    [TRAINER_GRUNT_6] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -111,7 +111,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt6},
     },
 
-    [TRAINER_GRUNT_7] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -139,7 +139,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Gabrielle1},
     },
 
-    [TRAINER_GRUNT_8] =
+    [TRAINER_GRUNT_PETALBURG_WOODS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -195,7 +195,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Ed},
     },
 
-    [TRAINER_GRUNT_9] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -223,7 +223,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Declan},
     },
 
-    [TRAINER_GRUNT_10] =
+    [TRAINER_GRUNT_RUSTURF_TUNNEL] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -237,7 +237,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt10},
     },
 
-    [TRAINER_GRUNT_11] =
+    [TRAINER_GRUNT_WEATHER_INST_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -251,7 +251,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt11},
     },
 
-    [TRAINER_GRUNT_12] =
+    [TRAINER_GRUNT_WEATHER_INST_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -265,7 +265,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt12},
     },
 
-    [TRAINER_GRUNT_13] =
+    [TRAINER_GRUNT_WEATHER_INST_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -279,7 +279,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt13},
     },
 
-    [TRAINER_GRUNT_14] =
+    [TRAINER_GRUNT_MUSEUM_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -293,7 +293,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt14},
     },
 
-    [TRAINER_GRUNT_15] =
+    [TRAINER_GRUNT_MUSEUM_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -307,7 +307,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt15},
     },
 
-    [TRAINER_GRUNT_16] =
+    [TRAINER_GRUNT_SPACE_CENTER_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -321,7 +321,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt16},
     },
 
-    [TRAINER_GRUNT_17] =
+    [TRAINER_GRUNT_MT_PYRE_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -335,7 +335,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt17},
     },
 
-    [TRAINER_GRUNT_18] =
+    [TRAINER_GRUNT_MT_PYRE_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -349,7 +349,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt18},
     },
 
-    [TRAINER_GRUNT_19] =
+    [TRAINER_GRUNT_MT_PYRE_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -363,7 +363,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt19},
     },
 
-    [TRAINER_GRUNT_20] =
+    [TRAINER_GRUNT_WEATHER_INST_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -377,7 +377,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt20},
     },
 
-    [TRAINER_GRUNT_21] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -391,7 +391,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt21},
     },
 
-    [TRAINER_GRUNT_22] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_6] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -1623,7 +1623,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Daphne},
     },
 
-    [TRAINER_GRUNT_23] =
+    [TRAINER_GRUNT_SPACE_CENTER_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -2043,7 +2043,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Mark},
     },
 
-    [TRAINER_GRUNT_24] =
+    [TRAINER_GRUNT_MT_CHIMNEY_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -2687,7 +2687,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Kirk},
     },
 
-    [TRAINER_GRUNT_25] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_7] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -2701,7 +2701,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt25},
     },
 
-    [TRAINER_GRUNT_26] =
+    [TRAINER_GRUNT_AQUA_HIDEOUT_8] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -7937,7 +7937,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Julio},
     },
 
-    [TRAINER_GRUNT_27] =
+    [TRAINER_GRUNT_SEAFLOOR_CAVERN_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -7951,7 +7951,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt27},
     },
 
-    [TRAINER_GRUNT_28] =
+    [TRAINER_GRUNT_UNUSED] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -7965,7 +7965,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt28},
     },
 
-    [TRAINER_GRUNT_29] =
+    [TRAINER_GRUNT_MT_PYRE_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -7979,7 +7979,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt29},
     },
 
-    [TRAINER_GRUNT_30] =
+    [TRAINER_GRUNT_JAGGED_PASS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8105,7 +8105,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Harrison},
     },
 
-    [TRAINER_GRUNT_31] =
+    [TRAINER_GRUNT_MT_CHIMNEY_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8203,7 +8203,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Nicholas},
     },
 
-    [TRAINER_GRUNT_32] =
+    [TRAINER_GRUNT_SPACE_CENTER_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8217,7 +8217,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt32},
     },
 
-    [TRAINER_GRUNT_33] =
+    [TRAINER_GRUNT_SPACE_CENTER_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8231,7 +8231,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt33},
     },
 
-    [TRAINER_GRUNT_34] =
+    [TRAINER_GRUNT_SPACE_CENTER_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8245,7 +8245,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt34},
     },
 
-    [TRAINER_GRUNT_35] =
+    [TRAINER_GRUNT_SPACE_CENTER_6] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8259,7 +8259,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt35},
     },
 
-    [TRAINER_GRUNT_36] =
+    [TRAINER_GRUNT_SPACE_CENTER_7] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -8343,7 +8343,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Isabella},
     },
 
-    [TRAINER_GRUNT_37] =
+    [TRAINER_GRUNT_WEATHER_INST_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
@@ -10023,7 +10023,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Deandre},
     },
 
-    [TRAINER_GRUNT_38] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10037,7 +10037,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt38},
     },
 
-    [TRAINER_GRUNT_39] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10051,7 +10051,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt39},
     },
 
-    [TRAINER_GRUNT_40] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10065,7 +10065,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt40},
     },
 
-    [TRAINER_GRUNT_41] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10079,7 +10079,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt41},
     },
 
-    [TRAINER_GRUNT_42] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10093,7 +10093,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt42},
     },
 
-    [TRAINER_GRUNT_43] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_6] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10107,7 +10107,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt43},
     },
 
-    [TRAINER_GRUNT_44] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_7] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10121,7 +10121,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt44},
     },
 
-    [TRAINER_GRUNT_45] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_8] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10135,7 +10135,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt45},
     },
 
-    [TRAINER_GRUNT_46] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_9] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10149,7 +10149,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt46},
     },
 
-    [TRAINER_GRUNT_47] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_10] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10163,7 +10163,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt47},
     },
 
-    [TRAINER_GRUNT_48] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_11] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10177,7 +10177,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt48},
     },
 
-    [TRAINER_GRUNT_49] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_12] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10191,7 +10191,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt49},
     },
 
-    [TRAINER_GRUNT_50] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_13] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10205,7 +10205,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt50},
     },
 
-    [TRAINER_GRUNT_51] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_14] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10219,7 +10219,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt51},
     },
 
-    [TRAINER_GRUNT_52] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_15] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
@@ -10233,7 +10233,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt52},
     },
 
-    [TRAINER_GRUNT_53] =
+    [TRAINER_GRUNT_MAGMA_HIDEOUT_16] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,

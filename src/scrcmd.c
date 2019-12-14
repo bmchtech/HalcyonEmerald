@@ -39,7 +39,6 @@
 #include "script_menu.h"
 #include "script_movement.h"
 #include "script_pokemon_80F8.h"
-#include "script_pokemon_81B9.h"
 #include "shop.h"
 #include "slot_machine.h"
 #include "sound.h"
@@ -68,7 +67,7 @@ extern const SpecialFunc gSpecials[];
 extern const u8 *gStdScripts[];
 extern const u8 *gStdScripts_End[];
 
-void sub_809BDB4(void);
+static void CloseBrailleWindow(void);
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
@@ -462,13 +461,13 @@ bool8 ScrCmd_compare_var_to_var(struct ScriptContext *ctx)
     return FALSE;
 }
 
+// Note: addvar doesn't support adding from a variable in vanilla. If you were to 
+// add a VarGet() to the above, make sure you change the `addvar VAR_*, -1`
+// in the contest scripts to `subvar VAR_*, 1`, else contests will break.
 bool8 ScrCmd_addvar(struct ScriptContext *ctx)
 {
     u16 *ptr = GetVarPointer(ScriptReadHalfword(ctx));
     *ptr += ScriptReadHalfword(ctx);
-    // Note: addvar doesn't support adding from a variable in vanilla. If you were to 
-    // add a VarGet() to the above, make sure you change the `addvar VAR_0x8006, 65535`
-    // in the contest scripts to `subvar VAR_0x8006, 1`, else contests will break.
     return FALSE;
 }
 
@@ -1468,10 +1467,10 @@ bool8 ScrCmd_hidemonpic(struct ScriptContext *ctx)
 
 bool8 ScrCmd_showcontestwinner(struct ScriptContext *ctx)
 {
-    u8 v1 = ScriptReadByte(ctx);
+    u8 contestWinnerId = ScriptReadByte(ctx);
+    if (contestWinnerId)
+        SetContestWinnerForPainting(contestWinnerId);
 
-    if (v1)
-        sub_812FDA8(v1);
     ShowContestWinner();
     ScriptContext1_Stop();
     return TRUE;
@@ -1528,9 +1527,9 @@ bool8 ScrCmd_braillemessage(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_cmdDA(struct ScriptContext *ctx)
+bool8 ScrCmd_closebraillemessage(struct ScriptContext *ctx)
 {
-    sub_809BDB4();
+    CloseBrailleWindow();
     return FALSE;
 }
 
@@ -1938,7 +1937,7 @@ bool8 ScrCmd_getpricereduction(struct ScriptContext *ctx)
 
 bool8 ScrCmd_choosecontestmon(struct ScriptContext *ctx)
 {
-    sub_81B9404();
+    ChooseContestMon();
     ScriptContext1_Stop();
     return TRUE;
 }
@@ -1946,7 +1945,7 @@ bool8 ScrCmd_choosecontestmon(struct ScriptContext *ctx)
 
 bool8 ScrCmd_startcontest(struct ScriptContext *ctx)
 {
-    sub_80F840C();
+    StartContest();
     ScriptContext1_Stop();
     return TRUE;
 }
@@ -2257,7 +2256,7 @@ bool8 ScrCmd_setmonmetlocation(struct ScriptContext *ctx)
     return FALSE;
 }
 
-void sub_809BDB4(void)
+static void CloseBrailleWindow(void)
 {
     ClearStdWindowAndFrame(gBrailleWindowId, 1);
     RemoveWindow(gBrailleWindowId);
@@ -2281,7 +2280,7 @@ bool8 ScrCmd_buffertrainername(struct ScriptContext *ctx)
     return FALSE;
 }
 
-void sub_809BE48(u16 npcId)
+void SetMovingNpcId(u16 npcId)
 {
     sMovingNpcId = npcId;
 }
