@@ -1963,7 +1963,7 @@ void sub_80BC8D4(u8 dexMode, u8 sortMode)
             {
                 temp_dexNum = gPokedexOrder_Alphabetical[i];
 
-                if (NationalToHoennOrder(temp_dexNum) != 0 && GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
+                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
                 {
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -1977,7 +1977,7 @@ void sub_80BC8D4(u8 dexMode, u8 sortMode)
             {
                 temp_dexNum = gPokedexOrder_Weight[i];
 
-                if (NationalToHoennOrder(temp_dexNum) != 0 && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
                 {
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -1991,7 +1991,7 @@ void sub_80BC8D4(u8 dexMode, u8 sortMode)
             {
                 temp_dexNum = gPokedexOrder_Weight[i];
 
-                if (NationalToHoennOrder(temp_dexNum) != 0 && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
                 {
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2005,7 +2005,7 @@ void sub_80BC8D4(u8 dexMode, u8 sortMode)
             {
                 temp_dexNum = gPokedexOrder_Height[i];
 
-                if (NationalToHoennOrder(temp_dexNum) != 0 && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
                 {
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -2019,7 +2019,7 @@ void sub_80BC8D4(u8 dexMode, u8 sortMode)
             {
                 temp_dexNum = gPokedexOrder_Height[i];
 
-                if (NationalToHoennOrder(temp_dexNum) != 0 && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
+                if ((!temp_isHoennDex || NationalToHoennOrder(temp_dexNum) != 0) && GetSetPokedexFlag(temp_dexNum, FLAG_GET_CAUGHT))
                 {
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].dexNum = temp_dexNum;
                     sPokedexView->pokedexList[sPokedexView->pokemonListCount].seen = TRUE;
@@ -4545,9 +4545,7 @@ static void PrintFootprint(u8 windowId, u16 dexNum)
 {
     u8 image[32 * 4] = {0};
     const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
-    u16 r5 = 0;
-    u16 i;
-    u16 j;
+    u32 i, j, r5 = 0;
 
     if (r12 != NULL)
     {
