@@ -6,10 +6,10 @@ RustboroCity_MapScripts:: @ 81E06BD
 RustboroCity_OnTransition: @ 81E06C8
 	setflag FLAG_VISITED_RUSTBORO_CITY
 	call Common_EventScript_SetupRivalGfxId
-	compare VAR_RUSTBORO_CITY_STATE, 6
+	compare VAR_RUSTBORO_CITY_STATE, 7
 	call_if_eq RustboroCity_EventScript_HideMapNamePopup
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_RUSTBORO_CITY_STATE, 6
+	compare VAR_RUSTBORO_CITY_STATE, 7
 	goto_if_eq RustboroCity_EventScript_PositionScientistForExit
 	end
 
@@ -28,7 +28,7 @@ RustboroCity_EventScript_HideMapNamePopup:: @ 81E0707
 	return
 
 RustboroCity_OnFrame: @ 81E070B
-	map_script_2 VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_ScientistAddMatchCall
+	map_script_2 VAR_RUSTBORO_CITY_STATE, 7, RustboroCity_EventScript_ScientistAddMatchCall
 	.2byte 0
 
 RustboroCity_EventScript_ScientistAddMatchCall:: @ 81E0715
@@ -99,7 +99,7 @@ RustboroCity_EventScript_MatchCallTutorial:: @ 81E07BD
 	playse SE_KAIDAN
 	removeobject 15
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
-	setvar VAR_RUSTBORO_CITY_STATE, 7
+	setvar VAR_RUSTBORO_CITY_STATE, 8
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
@@ -304,7 +304,7 @@ RustboroCity_EventScript_StolenGoodsScene:: @ 81E09CD
 	setobjectxyperm 9, 30, 10
 	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
 	setflag FLAG_DEVON_GOODS_STOLEN
-	setvar VAR_RUSTBORO_CITY_STATE, 2
+	setvar VAR_RUSTBORO_CITY_STATE, 4 @ Should be 3? Was 2
 	setvar VAR_RUSTURF_TUNNEL_STATE, 2
 	setvar VAR_ROUTE116_STATE, 1
 	clearflag FLAG_HIDE_ROUTE_116_MR_BRINEY
@@ -508,7 +508,7 @@ RustboroCity_EventScript_EmployeeAskToGetGoods:: @ 81E0B2E
 	compare VAR_TEMP_1, 3
 	call_if_eq RustboroCity_EventScript_EmployeeApproachPlayerDown1
 	setflag FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN
-	setvar VAR_RUSTBORO_CITY_STATE, 3
+	setvar VAR_RUSTBORO_CITY_STATE, 4
 	copyobjectxytoperm 9
 	msgbox RustboroCity_Text_HelpMeIWasRobbed, MSGBOX_DEFAULT
 	releaseall
@@ -612,7 +612,7 @@ RustboroCity_EventScript_ReturnGoods:: @ 81E0C5B
 	closemessage
 	setflag FLAG_RETURNED_DEVON_GOODS
 	setflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
-	setvar VAR_RUSTBORO_CITY_STATE, 5
+	setvar VAR_RUSTBORO_CITY_STATE, 6
 	delay 30
 	warp MAP_RUSTBORO_CITY_DEVON_CORP_3F, 255, 2, 2
 	waitstate
@@ -855,7 +855,7 @@ RustboroCity_EventScript_MayEncounter:: @ 81E100B
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	setvar VAR_RUSTBORO_CITY_STATE, 8
+	setvar VAR_RUSTBORO_CITY_STATE, 9
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
 	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_YESNO
@@ -926,7 +926,7 @@ RustboroCity_EventScript_BrendanEncounter:: @ 81E1114
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	setvar VAR_RUSTBORO_CITY_STATE, 8
+	setvar VAR_RUSTBORO_CITY_STATE, 9
 	setvar VAR_ROUTE104_STATE, 2
 	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
 	compare VAR_RESULT, YES

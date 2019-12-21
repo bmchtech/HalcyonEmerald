@@ -79,7 +79,7 @@ PetalburgWoods_EventScript_DevonResearcherIntro:: @ 822E124
 	closemessage
 	return
 
-PetalburgWoods_EventScript_DevonResearcherPostBattle:: @ 822E138
+PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	msgbox PetalburgWoods_Text_YouveGotSomeNerve, MSGBOX_DEFAULT
 	closemessage
 	applymovement 3, PetalburgWoods_Movement_AquaRunAway
@@ -88,7 +88,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle:: @ 822E138
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
-	giveitem_std ITEM_GREAT_BALL
+	giveitem_std ITEM_EXP_SHARE
 	compare VAR_RESULT, 0
 	goto_if_eq PetalburgWoods_EventScript_BagFull
 	goto PetalburgWoods_EventScript_DevonResearcherFinish
@@ -368,13 +368,18 @@ PetalburgWoods_Text_ThatWasAwfullyClose: @ 822E63D
 	.string "That was awfully close!\p"
 	.string "Thanks to you, he didn't rob me of\n"
 	.string "these important papers.\p"
-	.string "I know, I'll give you a GREAT BALL as\n"
-	.string "my thanks!$"
+	.string "I know, I'll give you an Exp. Share\n"
+	.string "as my thanks!$"
 
-PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro: @ 822E6C7
-	.string "Didn't that TEAM AQUA thug say\n"
+PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
+	.string "A Pokémon holding that Exp. Share\n"
+	.string "will get half the Exp points in\l"
+	.string "battle, even if it didn't participate.\p"
+	.string "It's quite useful for raising weak\n"
+	.string "Pokémon!\p"
+	.string "Didn't that Team Aqua thug say\n"
 	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
+	.string "Rustboro, too?$"
 
 PetalburgWoods_Text_ICantBeWastingTime: @ 822E712
 	.string "Uh-oh! It's a crisis!\n"
