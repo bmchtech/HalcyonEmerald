@@ -729,7 +729,7 @@ void ItemUseOutOfBattle_Medicine(u8 taskId)
 
 void ItemUseOutOfBattle_AbilityCapsule(u8 taskId)
 {
-    gUnknown_03006328 = ItemUseCB_AbilityCapsule;
+    gItemUseCB = ItemUseCB_AbilityCapsule;
     SetUpItemUseCallback(taskId);
 }
 
