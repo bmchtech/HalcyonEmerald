@@ -1691,6 +1691,7 @@
 	setvar VAR_0x8008, \b,
 	callnative ScriptMenu_ScrollingMultichoice
 	waitstate
+	.endm
 
 	.macro dofieldeffectsparkle x:req, y:req, priority:req
 	setfieldeffectargument 0, \x
