@@ -14,16 +14,16 @@ Route104_EventScript_ItemPPUp:: @ 8290CFF
 	giveitem_std ITEM_PP_UP, 1, 1
 	end
 
-Route104_EventScript_ItemPokeBall:: @ 8290D0C
-	giveitem_std ITEM_POKE_BALL, 1, 1
+Route104_EventScript_ItemPokeBall:: @ Changed
+	giveitem_std ITEM_FRIEND_BALL, 5
 	end
 
 Route104_EventScript_ItemXAccuracy:: @ 8290D19
 	giveitem_std ITEM_X_ACCURACY, 1, 1
 	end
 
-Route104_EventScript_ItemPotion:: @ 8290D26
-	giveitem_std ITEM_POTION, 1, 1
+Route104_EventScript_ItemPotion:: @ Changed
+	giveitem_std ITEM_SOOTHE_BELL, 1, 1
 	end
 
 Route105_EventScript_ItemIron:: @ 8290D33
@@ -126,8 +126,8 @@ Route115_EventScript_ItemPPUp:: @ 8290E6B
 	giveitem_std ITEM_PP_UP, 1, 1
 	end
 
-Route116_EventScript_ItemXSpecial:: @ 8290E78
-	giveitem_std ITEM_X_SP_ATK, 1, 1
+Route116_EventScript_ItemXSpecial:: @ Changed
+	giveitem_std ITEM_TM77_STRUGGLE_BUG, 1, 1
 	end
 
 Route116_EventScript_ItemEther:: @ 8290E85
@@ -143,7 +143,7 @@ Route116_EventScript_ItemHPUp:: @ 8290E9F
 	end
 
 Route116_EventScript_ItemPotion:: @ 8290EAC
-	giveitem_std ITEM_POTION, 1, 1
+	giveitem_std ITEM_SUPER_POTION, 1, 1
 	end
 
 Route117_EventScript_ItemGreatBall:: @ 8290EB9
@@ -314,8 +314,8 @@ MauvilleCity_EventScript_ItemXSpeed:: @ 82910CE
 	giveitem_std ITEM_X_SPEED, 1, 1
 	end
 
-RustboroCity_EventScript_ItemXDefend:: @ 82910DB
-	giveitem_std ITEM_X_DEFENSE, 1, 1
+RustboroCity_EventScript_ItemXDefend:: @ Changed
+	giveitem_std ITEM_ABILITY_CAPSULE, 1, 1
 	end
 
 LilycoveCity_EventScript_ItemMaxRepel:: @ 82910E8
