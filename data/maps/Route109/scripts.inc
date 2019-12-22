@@ -365,6 +365,33 @@ Route109_EventScript_Zigzagoon:: @ 81EEA18
 	release
 	end
 
+Route_109_EventScript_SandMound::
+	lockall
+	faceplayer
+	special RockSmashWildEncounter
+	delay 0x60
+	removeobject 25
+	releaseall
+	end
+
+Route_109_EventScript_SandMound1::
+	lockall
+	faceplayer
+	special RockSmashWildEncounter
+	delay 0x60
+	removeobject 26
+	releaseall
+	end
+
+Route_109_EventScript_SandMound2::
+	lockall
+	faceplayer
+	special RockSmashWildEncounter
+	delay 0x60
+	removeobject 27
+	releaseall
+	end
+
 Route109_EventScript_SeashoreHouseSign:: @ 81EEA2B
 	msgbox Route109_Text_SeashoreHouseSign, MSGBOX_SIGN
 	end
