@@ -3,20 +3,20 @@ General_Mart_Script::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	goto_if_set FLAG_BADGE06_GET, Mart_Feather_Badge
-	goto_if_set FLAG_BADGE05_GET, Mart_Balance_Badge
-	goto_if_set FLAG_BADGE04_GET, Mart_Heat_Badge
-	goto_if_set FLAG_BADGE03_GET, Mart_Dynamo_Badge
-	goto_if_set FLAG_BADGE02_GET, Mart_Knuckle_Badge
-	goto_if_set FLAG_BADGE01_GET, Mart_Stone_Badge
-	goto_if_set FLAG_VISITED_RUSTBORO_CITY, Mart_Rustboro
-	goto_if_set FLAG_ADVENTURE_STARTED, Mart_Pokedex
-	pokemart Pokemart_No_Badges
+	goto_if_set FLAG_BADGE06_GET, Mart_Poke_Center_Feather_Badge
+	goto_if_set FLAG_BADGE05_GET, Mart_Poke_Center_Balance_Badge
+	goto_if_set FLAG_BADGE04_GET, Mart_Poke_Center_Heat_Badge
+	goto_if_set FLAG_BADGE03_GET, Mart_Poke_Center_Dynamo_Badge
+	goto_if_set FLAG_BADGE02_GET, Mart_Poke_Center_Knuckle_Badge
+	goto_if_set FLAG_BADGE01_GET, Mart_Poke_Center_Stone_Badge
+	goto_if_set FLAG_VISITED_RUSTBORO_CITY, Mart_Poke_Center_Rustboro
+	goto_if_set FLAG_ADVENTURE_STARTED, Mart_Poke_Center_Pokedex
+	pokemart PokeMart_Poke_Center_No_Badges
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-Pokemart_No_Badges::
+PokeMart_Poke_Center_No_Badges::
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
@@ -25,14 +25,14 @@ Pokemart_No_Badges::
 	release
 	end
 
-Mart_Pokedex::
-	pokemart Pokemart_Pokedex
+Mart_Poke_Center_Pokedex::
+	pokemart PokeMart_Poke_Center_Pokedex
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Pokedex::
+PokeMart_Poke_Center_Pokedex::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
@@ -42,14 +42,14 @@ Pokemart_Pokedex::
 	release
 	end
 	
-Mart_Rustboro::
-	pokemart Pokemart_Rustboro
+Mart_Poke_Center_Rustboro::
+	pokemart PokeMart_Poke_Center_Rustboro
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Rustboro::
+PokeMart_Poke_Center_Rustboro::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION
@@ -60,14 +60,14 @@ Pokemart_Rustboro::
 	release
 	end
 	
-Mart_Stone_Badge::
-	pokemart Pokemart_Stone_Badge
+Mart_Poke_Center_Stone_Badge::
+	pokemart PokeMart_Poke_Center_Stone_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Stone_Badge::
+PokeMart_Poke_Center_Stone_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_POTION
@@ -79,14 +79,14 @@ Pokemart_Stone_Badge::
 	.2byte ITEM_NONE
 	release
 	
-Mart_Knuckle_Badge::
-	pokemart Pokemart_Knuckle_Badge
+Mart_Poke_Center_Knuckle_Badge::
+	pokemart PokeMart_Poke_Center_Knuckle_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Knuckle_Badge::
+PokeMart_Poke_Center_Knuckle_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_DREAM_BALL
@@ -104,14 +104,14 @@ Pokemart_Knuckle_Badge::
 	release
 	end	
 	
-Mart_Dynamo_Badge::
-	pokemart Pokemart_Dynamo_Badge
+Mart_Poke_Center_Dynamo_Badge::
+	pokemart PokeMart_Poke_Center_Dynamo_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Dynamo_Badge::
+PokeMart_Poke_Center_Dynamo_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
@@ -132,14 +132,14 @@ Pokemart_Dynamo_Badge::
 	release
 	end	
 
-Mart_Heat_Badge::
-	pokemart Pokemart_Heat_Badge
+Mart_Poke_Center_Heat_Badge::
+	pokemart PokeMart_Poke_Center_Heat_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Heat_Badge::
+PokeMart_Poke_Center_Heat_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
@@ -162,14 +162,14 @@ Pokemart_Heat_Badge::
 	release
 	end	
 	
-Mart_Balance_Badge::
-	pokemart Pokemart_Balance_Badge
+Mart_Poke_Center_Balance_Badge::
+	pokemart PokeMart_Poke_Center_Balance_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Balance_Badge::
+PokeMart_Poke_Center_Balance_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
@@ -193,14 +193,14 @@ Pokemart_Balance_Badge::
 	release
 	end	
 	
-Mart_Feather_Badge::
-	pokemart Pokemart_Feather_Badge
+Mart_Poke_Center_Feather_Badge::
+	pokemart PokeMart_Poke_Center_Feather_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-Pokemart_Feather_Badge::
+PokeMart_Poke_Center_Feather_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
