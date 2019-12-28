@@ -608,7 +608,7 @@
             "name": "PokemonCenter_1F_Layout",
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_PokemonCenter",
-            "width": 14
+            "width": 16
         },
         {
             "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin",
