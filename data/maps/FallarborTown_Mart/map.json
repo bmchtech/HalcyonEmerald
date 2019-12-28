@@ -64,7 +64,7 @@
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
             "x": 2,
-            "y": 5
+            "y": 6
         },
         {
             "elevation": 3,
@@ -78,6 +78,19 @@
             "trainer_type": "0",
             "x": 7,
             "y": 2
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_ROOFTOP_SALE_WOMAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+            "script": "FallarborTown_Mart_EventScript_Clerk",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 1,
+            "y": 4
         }
     ],
     "region_map_section": "MAPSEC_FALLARBOR_TOWN",

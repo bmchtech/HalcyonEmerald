@@ -11,21 +11,19 @@ MauvilleCity_Mart_EventScript_Clerk:: @ 82110E6
 	release
 	end
 
-	.align 2
-MauvilleCity_Mart_Pokemart: @ 8211100
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_X_ACCURACY
-	.2byte ITEM_NONE
+MauvilleCity_Mart_Pokemart:
+	.2byte ITEM_UP_GRADE
+	.2byte ITEM_METAL_POWDER
+	.2byte ITEM_STICK
+	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_THICK_CLUB
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_SACHET
+	.2byte ITEM_WHIPPED_DREAM
 	release
 	end
 

@@ -11,17 +11,25 @@ LavaridgeTown_Mart_EventScript_Clerk:: @ 81FF9CE
 	release
 	end
 
-	.align 2
 LavaridgeTown_Mart_Pokemart: @ 81FF9E8
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_BURN_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_SUPER_REPEL
-	.2byte ITEM_X_SPEED
+	.2byte ITEM_GRASS_GEM
+	.2byte ITEM_FIRE_GEM
+	.2byte ITEM_WATER_GEM
+	.2byte ITEM_ELECTRIC_GEM
+	.2byte ITEM_ICE_GEM
+	.2byte ITEM_DRAGON_GEM
+	.2byte ITEM_FAIRY_GEM
+	.2byte ITEM_PSYCHIC_GEM
+	.2byte ITEM_DARK_GEM
+	.2byte ITEM_GHOST_GEM
+	.2byte ITEM_BUG_GEM
+	.2byte ITEM_POISON_GEM
+	.2byte ITEM_FLYING_GEM
+	.2byte ITEM_GROUND_GEM
+	.2byte ITEM_ROCK_GEM
+	.2byte ITEM_STEEL_GEM
+	.2byte ITEM_FIGHTING_GEM
+	.2byte ITEM_NORMAL_GEM
 	.2byte ITEM_NONE
 	release
 	end
