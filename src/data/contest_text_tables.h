@@ -63,7 +63,7 @@ extern const u8 gText_Conversion[];
 extern const u8 gText_SunnyDay[];
 extern const u8 gText_Rest2[];
 extern const u8 gText_Vicegrip[];
-extern const u8 gText_DefenseCurl[];
+// extern const u8 gText_DefenseCurl[];
 extern const u8 gText_LockOn[];
 
 // gContestMoveTypeTextPointers
@@ -272,7 +272,7 @@ const u8 *const gContestEffectDescriptionPointers[] =
 // Unreferenced array of pointers to move names.
 // All of the moves except Conversion are combo starters, so this may have
 // been an early list of combo starters.
-static const u8 *const sUnusedComboMoveNameTexts[] =
+ static const u8 *const sUnusedComboMoveNameTexts[] =
 {
     gText_RainDance,
     gText_RainDance,
@@ -286,9 +286,9 @@ static const u8 *const sUnusedComboMoveNameTexts[] =
     gText_SunnyDay,
     gText_Rest2,
     gText_Vicegrip,
-    gText_DefenseCurl,
+    //gText_DefenseCurl,
     gText_LockOn
-};
+}; 
 
 const u8 *const gContestMoveTypeTextPointers[] =
 {

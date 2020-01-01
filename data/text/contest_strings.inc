@@ -179,8 +179,8 @@ gText_Rest2:: @ 827D4C7
 gText_Vicegrip:: @ 827D4CC
 	.string "VICEGRIP$"
 
-gText_DefenseCurl:: @ 827D4D5
-	.string "DEFENSE CURL$"
+@gText_DefenseCurl:: @ 827D4D5
+@	.string "DEFENSE CURL$"
 
 gText_LockOn:: @ 827D4E2
 	.string "LOCK-ON$"

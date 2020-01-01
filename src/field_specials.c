@@ -2428,6 +2428,31 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_PC_TUTOR_SET_1:
+        case SCROLL_MULTI_PC_TUTOR_SET_2:
+        case SCROLL_MULTI_PC_TUTOR_SET_3:
+        case SCROLL_MULTI_PC_TUTOR_SET_4:
+        case SCROLL_MULTI_PC_TUTOR_SET_5:
+        case SCROLL_MULTI_PC_TUTOR_SET_6:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 18;
+            task->tLeft = 17;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_PC_TUTOR_SET_7:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 16;
+            task->tLeft = 17;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         default:
             gSpecialVar_Result = MULTI_B_PRESSED;
             DestroyTask(taskId);
@@ -2588,7 +2613,152 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_1] = 
+    {
+        gText_FuryCutter,
+        gText_Rollout,
+        gText_SeismicToss,
+        gText_Covet,
+        gText_VacuumWave,
+        gText_ShockWave,
+        gText_BugBite,
+        gText_AirCutter,
+        gText_Swift,
+        gText_Snatch,
+        gText_Mimic,
+        gText_MudSlap,
+        gText_Metronome,
+        gText_OminousWind,
+        gText_SuperFang,
+        gText_HoneClaws,
+        gText_PsychUp,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_2] = 
+    {
+        gText_Counter,
+        gText_Endeavor,
+        gText_WorrySeed,
+        gText_DefenseCurl,
+        gText_Defog,
+        gText_MagicCoat,
+        gText_Uproar,
+        gText_Hex,
+        gText_GastroAcid,
+        gText_Synthesis,
+        gText_PainSplit,
+        gText_LowKick,
+        gText_IronDefense,
+        gText_MagnetRise,
+        gText_Swagger,
+        gText_PinMissile,
+        gText_MudShot,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_3] = 
+    {
+        gText_SignalBeam,
+        gText_Gravity,
+        gText_SeedBomb,
+        gText_PsychoCut,
+        gText_IcyWind,
+        gText_Electroweb,
+        gText_ThunderFang,
+        gText_FireFang,
+        gText_IceFang,
+        gText_Brine,
+        gText_RazorShell,
+        gText_Revenge,
+        gText_DrainingKiss,
+        gText_LeafBlade,
+        gText_RockBlast,
+        gText_SoftBoiled,
+        gText_AuroraBeam,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_4] = 
+    {
+        gText_ThunderPunch,
+        gText_FirePunch,
+        gText_IcePunch,
+        gText_Tailwind,
+        gText_ZenHeadbutt,
+        gText_BodySlam,
+        gText_IcicleSpear,
+        gText_DualChop,
+        gText_Reversal,
+        gText_BugBuzz,
+        gText_LastResort,
+        gText_RolePlay,
+        gText_DrillRun,
+        gText_BlazeKick,
+        gText_CrossPoison,
+        gText_WeatherBall,
+        gText_AirSlash,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_5] = 
+    {
+        gText_IronHead,
+        gText_AquaTail,
+        gText_PowerGem,
+        gText_Bounce,
+        gText_HealBell,
+        gText_Superpower,
+        gText_Crunch,
+        gText_MysticalFire,
+        gText_GunkShot,
+        gText_HyperVoice,
+        gText_SkyAttack,
+        gText_HeatCrash,
+        gText_StoredPower,
+        gText_Trick,
+        gText_DynamicPunch,
+        gText_HelpingHand,
+        gText_ToxicSpikes,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_6] = 
+    {
+        gText_Megahorn,
+        gText_AuraSphere,
+        gText_ThroatChop,
+        gText_EarthPower,
+        gText_HeatWave,
+        gText_Liquidation,
+        gText_BatonPass,
+        gText_FoulPlay,
+        gText_SolarBlade,
+        gText_PhantomForce,
+        gText_MeteorMash,
+        gText_PsychicFangs,
+        gText_Encore,
+        gText_GrassyTerrain,
+        gText_ElectricTerrain,
+        gText_MistyTerrain,
+        gText_PsychicTerrain,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PC_TUTOR_SET_7] = 
+    {
+        gText_DoubleEdge,
+        gText_PlayRough,
+        gText_NastyPlot,
+        gText_SelfDestruct,
+        gText_CloseCombat,
+        gText_FlareBlitz,
+        gText_BraveBird,
+        gText_LeafStorm,
+        gText_PowerWhip,
+        gText_Hurricane,
+        gText_HydroPump,
+        gText_DragonDance,
+        gText_Outrage,
+        gText_KnockOff,
+        gText_QuiverDance,
+        gText_Exit
+    },
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -3173,15 +3343,182 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_FIRE_PUNCH 
 };
 
+static const u16 sPokemonCenter_TutorMoves1[] =
+{
+	MOVE_FURY_CUTTER,
+	MOVE_ROLLOUT,
+	MOVE_SEISMIC_TOSS,
+	MOVE_COVET,
+	MOVE_VACUUM_WAVE,
+	MOVE_SHOCK_WAVE,
+	MOVE_BUG_BITE,
+	MOVE_AIR_CUTTER,
+	MOVE_SWIFT,
+	MOVE_SNATCH,
+	MOVE_MIMIC,
+	MOVE_MUD_SLAP,
+	MOVE_METRONOME,
+	MOVE_OMINOUS_WIND,
+	MOVE_SUPER_FANG,
+	MOVE_HONE_CLAWS,
+	MOVE_PSYCH_UP
+};
+
+static const u16 sPokemonCenter_TutorMoves2[] =
+{
+	MOVE_COUNTER,
+	MOVE_ENDEAVOR,
+	MOVE_WORRY_SEED,
+	MOVE_DEFENSE_CURL,
+	MOVE_DEFOG,
+	MOVE_MAGIC_COAT,
+	MOVE_UPROAR,
+	MOVE_HEX,
+	MOVE_GASTRO_ACID,
+	MOVE_SYNTHESIS,
+	MOVE_PAIN_SPLIT,
+	MOVE_LOW_KICK,
+	MOVE_IRON_DEFENSE,
+	MOVE_MAGNET_RISE,
+	MOVE_SWAGGER,
+	MOVE_PIN_MISSILE,
+	MOVE_MUD_SHOT
+};
+
+static const u16 sPokemonCenter_TutorMoves3[] =
+{
+	MOVE_SIGNAL_BEAM,
+	MOVE_GRAVITY,
+	MOVE_SEED_BOMB,
+	MOVE_PSYCHO_CUT,
+	MOVE_ICY_WIND,
+	MOVE_ELECTROWEB,
+	MOVE_THUNDER_FANG,
+	MOVE_FIRE_FANG,
+	MOVE_ICE_FANG,
+	MOVE_BRINE,
+	MOVE_RAZOR_SHELL,
+	MOVE_REVENGE,
+	MOVE_DRAINING_KISS,
+	MOVE_LEAF_BLADE,
+	MOVE_ROCK_BLAST,
+	MOVE_SOFT_BOILED,
+	MOVE_AURORA_BEAM
+};
+
+static const u16 sPokemonCenter_TutorMoves4[] =
+{
+	MOVE_THUNDER_PUNCH,
+	MOVE_FIRE_PUNCH,
+	MOVE_ICE_PUNCH,
+	MOVE_TAILWIND,
+	MOVE_ZEN_HEADBUTT,
+	MOVE_BODY_SLAM,
+	MOVE_ICICLE_SPEAR,
+	MOVE_DUAL_CHOP,
+	MOVE_REVERSAL,
+	MOVE_BUG_BUZZ,
+	MOVE_LAST_RESORT,
+	MOVE_ROLE_PLAY,
+	MOVE_DRILL_RUN,
+	MOVE_BLAZE_KICK,
+	MOVE_CROSS_POISON,
+	MOVE_WEATHER_BALL,
+	MOVE_AIR_SLASH
+};
+
+static const u16 sPokemonCenter_TutorMoves5[] =
+{
+	MOVE_IRON_HEAD,
+	MOVE_AQUA_TAIL,
+	MOVE_POWER_GEM,
+	MOVE_BOUNCE,
+	MOVE_HEAL_BELL,
+	MOVE_SUPERPOWER,
+	MOVE_CRUNCH,
+	MOVE_MYSTICAL_FIRE,
+	MOVE_GUNK_SHOT,
+	MOVE_HYPER_VOICE,
+	MOVE_SKY_ATTACK,
+	MOVE_HEAT_CRASH,
+	MOVE_STORED_POWER,
+	MOVE_TRICK,
+	MOVE_DYNAMIC_PUNCH,
+	MOVE_HELPING_HAND,
+	MOVE_TOXIC_SPIKES
+};
+
+static const u16 sPokemonCenter_TutorMoves6[] =
+{
+	MOVE_MEGAHORN,
+	MOVE_AURA_SPHERE,
+	MOVE_THROAT_CHOP,
+	MOVE_EARTH_POWER,
+	MOVE_HEAT_WAVE,
+	MOVE_LIQUIDATION,
+	MOVE_BATON_PASS,
+	MOVE_FOUL_PLAY,
+	MOVE_SOLAR_BLADE,
+	MOVE_PHANTOM_FORCE,
+	MOVE_METEOR_MASH,
+	MOVE_PSYCHIC_FANGS,
+	MOVE_ENCORE,
+	MOVE_GRASSY_TERRAIN,
+	MOVE_ELECTRIC_TERRAIN,
+	MOVE_MISTY_TERRAIN,
+	MOVE_PSYCHIC_TERRAIN
+};
+
+static const u16 sPokemonCenter_TutorMoves7[] =
+{
+	MOVE_DOUBLE_EDGE,
+	MOVE_PLAY_ROUGH,
+	MOVE_NASTY_PLOT,
+	MOVE_SELF_DESTRUCT,
+	MOVE_CLOSE_COMBAT,
+	MOVE_FLARE_BLITZ,
+	MOVE_BRAVE_BIRD,
+	MOVE_LEAF_STORM,
+	MOVE_POWER_WHIP,
+	MOVE_HURRICANE,
+	MOVE_HYDRO_PUMP,
+	MOVE_DRAGON_DANCE,
+	MOVE_OUTRAGE,
+	MOVE_KNOCK_OFF,
+	MOVE_QUIVER_DANCE
+};
+
 void BufferBattleFrontierTutorMoveName(void)
 {
-    if (gSpecialVar_0x8005 != 0)
+    switch (gSpecialVar_0x8005)
     {
-        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves2[gSpecialVar_0x8004]]);
-    }
-    else
-    {
+    case 0:
         StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves1[gSpecialVar_0x8004]]);
+        break;
+    case 1:
+        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves2[gSpecialVar_0x8004]]);
+        break;
+    case 2:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves1[gSpecialVar_0x8004]]);
+        break;
+    case 3:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves2[gSpecialVar_0x8004]]);
+        break;
+    case 4:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves3[gSpecialVar_0x8004]]);
+        break;
+    case 5:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves4[gSpecialVar_0x8004]]);
+        break;
+    case 6:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves5[gSpecialVar_0x8004]]);
+        break;
+    case 7:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves6[gSpecialVar_0x8004]]);
+        break;
+    case 8:
+        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves7[gSpecialVar_0x8004]]);
+        break;
     }
 }
 
@@ -3198,7 +3535,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7)))
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3241,16 +3578,199 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions1[] = 
+    {        
+		PokemonCenterMoveTutor_Text_FuryCutterDesc,
+        PokemonCenterMoveTutor_Text_RolloutDesc,
+        PokemonCenterMoveTutor_Text_SeismicTossDesc,
+        PokemonCenterMoveTutor_Text_CovetDesc,
+        PokemonCenterMoveTutor_Text_VacuumWaveDesc,
+        PokemonCenterMoveTutor_Text_ShockWaveDesc,
+        PokemonCenterMoveTutor_Text_BugBiteDesc,
+        PokemonCenterMoveTutor_Text_AirCutterDesc,
+        PokemonCenterMoveTutor_Text_SwiftDesc,
+        PokemonCenterMoveTutor_Text_SnatchDesc,
+        PokemonCenterMoveTutor_Text_MimicDesc,
+        PokemonCenterMoveTutor_Text_MudSlapDesc,
+        PokemonCenterMoveTutor_Text_MetronomeDesc,
+        PokemonCenterMoveTutor_Text_OminousWindDesc,
+        PokemonCenterMoveTutor_Text_SuperFangDesc,
+        PokemonCenterMoveTutor_Text_HoneClawsDesc,
+        PokemonCenterMoveTutor_Text_PsychUpDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions2[] = 
+    {        
+		PokemonCenterMoveTutor_Text_CounterDesc,
+        PokemonCenterMoveTutor_Text_EndeavorDesc,
+        PokemonCenterMoveTutor_Text_WorrySeedDesc,
+        PokemonCenterMoveTutor_Text_DefenseCurlDesc,
+        PokemonCenterMoveTutor_Text_DefogDesc,
+        PokemonCenterMoveTutor_Text_MagicCoatDesc,
+        PokemonCenterMoveTutor_Text_UproarDesc,
+        PokemonCenterMoveTutor_Text_HexDesc,
+        PokemonCenterMoveTutor_Text_GastroAcidDesc,
+        PokemonCenterMoveTutor_Text_SynthesisDesc,
+        PokemonCenterMoveTutor_Text_PainSplitDesc,
+        PokemonCenterMoveTutor_Text_LowKickDesc,
+        PokemonCenterMoveTutor_Text_IronDefenseDesc,
+        PokemonCenterMoveTutor_Text_MagnetRiseDesc,
+        PokemonCenterMoveTutor_Text_SwaggerDesc,
+        PokemonCenterMoveTutor_Text_PinMissileDesc,
+        PokemonCenterMoveTutor_Text_MudShotDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions3[] = 
+    {        
+		PokemonCenterMoveTutor_Text_SignalBeamDesc,
+        PokemonCenterMoveTutor_Text_GravityDesc,
+        PokemonCenterMoveTutor_Text_SeedBombDesc,
+        PokemonCenterMoveTutor_Text_PsychoCutDesc,
+        PokemonCenterMoveTutor_Text_IcyWindDesc,
+        PokemonCenterMoveTutor_Text_ElectroWebDesc,
+        PokemonCenterMoveTutor_Text_ThunderFangDesc,
+        PokemonCenterMoveTutor_Text_FireFangDesc,
+        PokemonCenterMoveTutor_Text_IceFangDesc,
+        PokemonCenterMoveTutor_Text_BrineDesc,
+        PokemonCenterMoveTutor_Text_RazorShellDesc,
+        PokemonCenterMoveTutor_Text_RevengeDesc,
+        PokemonCenterMoveTutor_Text_DrainingKissDesc,
+        PokemonCenterMoveTutor_Text_LeafBladeDesc,
+        PokemonCenterMoveTutor_Text_RockBlastDesc,
+        PokemonCenterMoveTutor_Text_SoftBoiledDesc,
+        PokemonCenterMoveTutor_Text_AuroraBeamDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions4[] = 
+    {        
+        PokemonCenterMoveTutor_Text_ThunderPunchDesc,
+        PokemonCenterMoveTutor_Text_FirePunchDesc,
+        PokemonCenterMoveTutor_Text_IcePunchDesc,
+        PokemonCenterMoveTutor_Text_TailwindDesc,
+        PokemonCenterMoveTutor_Text_ZenHeadbuttDesc,
+        PokemonCenterMoveTutor_Text_BodySlamDesc,
+        PokemonCenterMoveTutor_Text_IcicleSpearDesc,
+        PokemonCenterMoveTutor_Text_DualChopDesc,
+        PokemonCenterMoveTutor_Text_ReversalDesc,
+        PokemonCenterMoveTutor_Text_BugBuzzDesc,
+        PokemonCenterMoveTutor_Text_LastResortDesc,
+        PokemonCenterMoveTutor_Text_RolePlayDesc,
+        PokemonCenterMoveTutor_Text_DrillRunDesc,
+        PokemonCenterMoveTutor_Text_BlazeKickDesc,
+        PokemonCenterMoveTutor_Text_CrossPoisonDesc,
+        PokemonCenterMoveTutor_Text_WeatherBallDesc,
+        PokemonCenterMoveTutor_Text_AirSlashDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions5[] = 
+    {        
+        PokemonCenterMoveTutor_Text_IronHeadDesc,
+        PokemonCenterMoveTutor_Text_AquaTailDesc,
+        PokemonCenterMoveTutor_Text_PowerGemDesc,
+        PokemonCenterMoveTutor_Text_BounceDesc,
+        PokemonCenterMoveTutor_Text_HealBellDesc,
+        PokemonCenterMoveTutor_Text_SuperpowerDesc,
+        PokemonCenterMoveTutor_Text_CrunchDesc,
+        PokemonCenterMoveTutor_Text_MysticalFireDesc,
+        PokemonCenterMoveTutor_Text_GunkShotDesc,
+        PokemonCenterMoveTutor_Text_HyperVoiceDesc,
+        PokemonCenterMoveTutor_Text_SkyAttackDesc,
+        PokemonCenterMoveTutor_Text_HeatCrashDesc,
+        PokemonCenterMoveTutor_Text_StoredPowerDesc,
+        PokemonCenterMoveTutor_Text_TrickDesc,
+        PokemonCenterMoveTutor_Text_DynamicPunchDesc,
+        PokemonCenterMoveTutor_Text_HelpingHandDesc,
+        PokemonCenterMoveTutor_Text_ToxicSpikesDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions6[] = 
+    {        
+        PokemonCenterMoveTutor_Text_MegahornDesc,
+        PokemonCenterMoveTutor_Text_AuraSphereDesc,
+        PokemonCenterMoveTutor_Text_ThroatChopDesc,
+        PokemonCenterMoveTutor_Text_EarthPowerDesc,
+        PokemonCenterMoveTutor_Text_HeatWaveDesc,
+        PokemonCenterMoveTutor_Text_LiquidationDesc,
+        PokemonCenterMoveTutor_Text_BatonPassDesc,
+        PokemonCenterMoveTutor_Text_FoulPlayDesc,
+        PokemonCenterMoveTutor_Text_SolarBladeDesc,
+        PokemonCenterMoveTutor_Text_PhantomForceDesc,
+        PokemonCenterMoveTutor_Text_MeteorMashDesc,
+        PokemonCenterMoveTutor_Text_PsychicFangsDesc,
+        PokemonCenterMoveTutor_Text_EncoreDesc,
+        PokemonCenterMoveTutor_Text_GrassyTerrainDesc,
+        PokemonCenterMoveTutor_Text_ElectricTerrainDesc,
+        PokemonCenterMoveTutor_Text_MistyTerrainDesc,
+        PokemonCenterMoveTutor_Text_PsychicTerrainDesc,
+        gText_Exit,
+	};
+	
+	static const u8 *const sPokemonCenter_TutorMoveDescriptions7[] = 
+    {        
+        PokemonCenterMoveTutor_Text_DoubleEdgeDesc,
+        PokemonCenterMoveTutor_Text_PlayRoughDesc,
+        PokemonCenterMoveTutor_Text_NastyPlotDesc,
+        PokemonCenterMoveTutor_Text_SelfDestructDesc,
+        PokemonCenterMoveTutor_Text_CloseCombatDesc,
+        PokemonCenterMoveTutor_Text_FlareBlitzDesc,
+        PokemonCenterMoveTutor_Text_BraveBirdDesc,
+        PokemonCenterMoveTutor_Text_LeafStormDesc,
+        PokemonCenterMoveTutor_Text_PowerWhipDesc,
+        PokemonCenterMoveTutor_Text_HurricaneDesc,
+        PokemonCenterMoveTutor_Text_HydroPumpDesc,
+        PokemonCenterMoveTutor_Text_DragonDanceDesc,
+        PokemonCenterMoveTutor_Text_OutrageDesc,
+        PokemonCenterMoveTutor_Text_KnockOffDesc,
+        PokemonCenterMoveTutor_Text_QuiverDanceDesc,
+        gText_Exit,
+	};
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7)))
     {
-        FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
-        if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+        FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 120, 48);                                                            
+/*         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
         {
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
         }
         else
         {
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+        } */
+        // Replace this with switch case to accommodate new tutors
+        switch (menu)
+        {
+            case SCROLL_MULTI_BF_MOVE_TUTOR_1:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_BF_MOVE_TUTOR_2:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_1:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_2:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_3:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_4:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions4[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_5:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions5[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_6:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions6[selection], 0, 1, 0, NULL);
+                break;
+            case SCROLL_MULTI_PC_TUTOR_SET_7:
+                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions7[selection], 0, 1, 0, NULL);
+                break;        
         }
     }
 }
@@ -3294,31 +3814,116 @@ void GetBattleFrontierTutorMoveIndex(void)
     moveTutor = VarGet(VAR_TEMP_E);
     moveIndex = VarGet(VAR_TEMP_D);
 
-    if (moveTutor != 0)
+    switch (moveTutor)
     {
-        i = 0;
-        do
-        {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
+        case 0:
+            i = 0;
+            do
             {
-                gSpecialVar_0x8005 = i;
-                break;
-            }
-            i++;
-        } while (i < TUTOR_MOVE_COUNT);
-    }
-    else
-    {
-        i = 0;
-        do
-        {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
+                if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 1:
+            i = 0;
+            do
             {
-                gSpecialVar_0x8005 = i;
-                break;
-            }
-            i++;
-        } while (i < TUTOR_MOVE_COUNT);
+                if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 2:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves1[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 3:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves2[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 4:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves3[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 5:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves4[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 6:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves5[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 7:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves6[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
+        case 8:
+            i = 0;
+            do
+            {
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves7[moveIndex])
+                {
+                    gSpecialVar_0x8005 = i;
+                    break;
+                }
+                i++;
+            } while (i < TUTOR_MOVE_COUNT);
+            break;
     }
 }
 

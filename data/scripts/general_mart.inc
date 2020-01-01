@@ -223,5 +223,5 @@ PokeMart_Poke_Center_Feather_Badge::
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
 	release
-	end	
-    
+	end
+
