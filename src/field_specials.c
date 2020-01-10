@@ -3315,34 +3315,6 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
     }
 }
 
-static const u16 sBattleFrontier_TutorMoves1[] =
-{ 
-    MOVE_SOFT_BOILED, 
-    MOVE_SEISMIC_TOSS, 
-    MOVE_DREAM_EATER, 
-    MOVE_MEGA_PUNCH, 
-    MOVE_MEGA_KICK, 
-    MOVE_BODY_SLAM, 
-    MOVE_ROCK_SLIDE, 
-    MOVE_COUNTER, 
-    MOVE_THUNDER_WAVE, 
-    MOVE_SWORDS_DANCE 
-};
-
-static const u16 sBattleFrontier_TutorMoves2[] =
-{ 
-    MOVE_DEFENSE_CURL, 
-    MOVE_SNORE, 
-    MOVE_MUD_SLAP, 
-    MOVE_SWIFT, 
-    MOVE_ICY_WIND, 
-    MOVE_ENDURE, 
-    MOVE_PSYCH_UP, 
-    MOVE_ICE_PUNCH, 
-    MOVE_THUNDER_PUNCH, 
-    MOVE_FIRE_PUNCH 
-};
-
 static const u16 sPokemonCenter_TutorMoves1[] =
 {
 	MOVE_FURY_CUTTER,
@@ -3493,30 +3465,24 @@ void BufferBattleFrontierTutorMoveName(void)
     switch (gSpecialVar_0x8005)
     {
     case 0:
-        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves1[gSpecialVar_0x8004]]);
-        break;
-    case 1:
-        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves2[gSpecialVar_0x8004]]);
-        break;
-    case 2:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves1[gSpecialVar_0x8004]]);
         break;
-    case 3:
+    case 1:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves2[gSpecialVar_0x8004]]);
         break;
-    case 4:
+    case 2:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves3[gSpecialVar_0x8004]]);
         break;
-    case 5:
+    case 3:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves4[gSpecialVar_0x8004]]);
         break;
-    case 6:
+    case 4:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves5[gSpecialVar_0x8004]]);
         break;
-    case 7:
+    case 5:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves6[gSpecialVar_0x8004]]);
         break;
-    case 8:
+    case 6:
         StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves7[gSpecialVar_0x8004]]);
         break;
     }
@@ -3535,7 +3501,7 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7)))
+    if ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7))
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3548,36 +3514,6 @@ static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
 
 static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
 {
-    static const u8 *const sBattleFrontier_TutorMoveDescriptions1[] = 
-    {
-        BattleFrontier_Lounge7_Text_SoftboiledDesc,
-        BattleFrontier_Lounge7_Text_SeismicTossDesc,
-        BattleFrontier_Lounge7_Text_DreamEaterDesc,
-        BattleFrontier_Lounge7_Text_MegaPunchDesc,
-        BattleFrontier_Lounge7_Text_MegaKickDesc,
-        BattleFrontier_Lounge7_Text_BodySlamDesc,
-        BattleFrontier_Lounge7_Text_RockSlideDesc,
-        BattleFrontier_Lounge7_Text_CounterDesc,
-        BattleFrontier_Lounge7_Text_ThunderWaveDesc,
-        BattleFrontier_Lounge7_Text_SwordsDanceDesc,
-        gText_Exit,
-    };
-
-    static const u8 *const sBattleFrontier_TutorMoveDescriptions2[] = 
-    {
-        BattleFrontier_Lounge7_Text_DefenseCurlDesc,
-        BattleFrontier_Lounge7_Text_SnoreDesc,
-        BattleFrontier_Lounge7_Text_MudSlapDesc,
-        BattleFrontier_Lounge7_Text_SwiftDesc,
-        BattleFrontier_Lounge7_Text_IcyWindDesc,
-        BattleFrontier_Lounge7_Text_EndureDesc,
-        BattleFrontier_Lounge7_Text_PsychUpDesc,
-        BattleFrontier_Lounge7_Text_IcePunchDesc,
-        BattleFrontier_Lounge7_Text_ThunderPunchDesc,
-        BattleFrontier_Lounge7_Text_FirePunchDesc,
-        gText_Exit,
-    };
-
 	static const u8 *const sPokemonCenter_TutorMoveDescriptions1[] = 
     {        
 		PokemonCenterMoveTutor_Text_FuryCutterDesc,
@@ -3730,26 +3666,11 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         gText_Exit,
 	};
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7)))
+    if  ((menu >= SCROLL_MULTI_PC_TUTOR_SET_1) && (menu <= SCROLL_MULTI_PC_TUTOR_SET_7))
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 120, 48);                                                            
-/*         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
-        {
-            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-        }
-        else
-        {
-            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
-        } */
-        // Replace this with switch case to accommodate new tutors
         switch (menu)
         {
-            case SCROLL_MULTI_BF_MOVE_TUTOR_1:
-                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
-                break;
-            case SCROLL_MULTI_BF_MOVE_TUTOR_2:
-                AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
-                break;
             case SCROLL_MULTI_PC_TUTOR_SET_1:
                 AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, 1, sPokemonCenter_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
                 break;
@@ -3820,7 +3741,7 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves1[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
                     break;
@@ -3832,7 +3753,7 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves2[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
                     break;
@@ -3844,7 +3765,7 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sPokemonCenter_TutorMoves1[moveIndex])
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves3[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
                     break;
@@ -3856,7 +3777,7 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sPokemonCenter_TutorMoves2[moveIndex])
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves4[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
                     break;
@@ -3868,7 +3789,7 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sPokemonCenter_TutorMoves3[moveIndex])
+                if (gTutorMoves[i] == sPokemonCenter_TutorMoves5[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
                     break;
@@ -3880,30 +3801,6 @@ void GetBattleFrontierTutorMoveIndex(void)
             i = 0;
             do
             {
-                if (gTutorMoves[i] == sPokemonCenter_TutorMoves4[moveIndex])
-                {
-                    gSpecialVar_0x8005 = i;
-                    break;
-                }
-                i++;
-            } while (i < TUTOR_MOVE_COUNT);
-            break;
-        case 6:
-            i = 0;
-            do
-            {
-                if (gTutorMoves[i] == sPokemonCenter_TutorMoves5[moveIndex])
-                {
-                    gSpecialVar_0x8005 = i;
-                    break;
-                }
-                i++;
-            } while (i < TUTOR_MOVE_COUNT);
-            break;
-        case 7:
-            i = 0;
-            do
-            {
                 if (gTutorMoves[i] == sPokemonCenter_TutorMoves6[moveIndex])
                 {
                     gSpecialVar_0x8005 = i;
@@ -3912,7 +3809,7 @@ void GetBattleFrontierTutorMoveIndex(void)
                 i++;
             } while (i < TUTOR_MOVE_COUNT);
             break;
-        case 8:
+        case 6:
             i = 0;
             do
             {
