@@ -2724,8 +2724,9 @@ static void PlayerHandleHealthBarUpdate(void)
     LoadBattleBarGfx(0);
     hpVal = gBattleResources->bufferA[gActiveBattler][2] | (gBattleResources->bufferA[gActiveBattler][3] << 8);
 
+    // gPlayerPartyLostHP used by Battle Dome, but never read
     if (hpVal > 0)
-        gUnknown_0203CD70 += hpVal;
+        gPlayerPartyLostHP += hpVal;
 
     if (hpVal != INSTANT_HP_BAR_DROP)
     {
@@ -3141,7 +3142,7 @@ static void PlayerHandleCmd55(void)
 {
     sub_81851A8(&gBattleResources->bufferA[gActiveBattler][4]);
     gBattleOutcome = gBattleResources->bufferA[gActiveBattler][1];
-    gSaveBlock2Ptr->frontier.field_CA9_b = gBattleResources->bufferA[gActiveBattler][2];
+    gSaveBlock2Ptr->frontier.disableRecordBattle = gBattleResources->bufferA[gActiveBattler][2];
     FadeOutMapMusic(5);
     BeginFastPaletteFade(3);
     PlayerBufferExecCompleted();

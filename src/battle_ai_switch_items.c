@@ -420,44 +420,34 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
 static bool8 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
-    u8 *activeBattlerPtr; // Needed to match.
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
     s32 i;
     s32 availableToSwitch;
 
-    if (gBattleMons[*(activeBattlerPtr = &gActiveBattler)].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
+    if (gBattleMons[gActiveBattler].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
         return FALSE;
     if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
         return FALSE;
-    if (IsAbilityOnOpposingSide(gActiveBattler, ABILITY_SHADOW_TAG))
+    if (IsAbilityPreventingEscape(gActiveBattler))
         return FALSE;
-    if (IsAbilityOnOpposingSide(gActiveBattler, ABILITY_ARENA_TRAP)) // Misses the flying type and Levitate check.
-        return FALSE;
-    if (IsAbilityOnField(ABILITY_MAGNET_PULL))
-    {
-        if (gBattleMons[gActiveBattler].type1 == TYPE_STEEL)
-            return FALSE;
-        if (gBattleMons[gActiveBattler].type2 == TYPE_STEEL)
-            return FALSE;
-    }
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         return FALSE;
 
     availableToSwitch = 0;
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
     {
-        battlerIn1 = *activeBattlerPtr;
-        if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK)])
-            battlerIn2 = *activeBattlerPtr;
+        battlerIn1 = gActiveBattler;
+        if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK)])
+            battlerIn2 = gActiveBattler;
         else
-            battlerIn2 = GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK);
+            battlerIn2 = GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK);
     }
     else
     {
-        battlerIn1 = *activeBattlerPtr;
-        battlerIn2 = *activeBattlerPtr;
+        battlerIn1 = gActiveBattler;
+        battlerIn2 = gActiveBattler;
     }
 
     GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
@@ -784,9 +774,9 @@ static u8 GetAI_ItemType(u16 itemId, const u8 *itemEffect)
         return AI_ITEM_HEAL_HP;
     else if (itemEffect[3] & ITEM3_STATUS_ALL)
         return AI_ITEM_CURE_CONDITION;
-    else if (itemEffect[0] & (ITEM0_HIGH_CRIT | ITEM0_X_ATTACK) || itemEffect[1] != 0 || itemEffect[2] != 0)
+    else if (itemEffect[0] & (ITEM0_DIRE_HIT | ITEM0_X_ATTACK) || itemEffect[1] != 0 || itemEffect[2] != 0)
         return AI_ITEM_X_STAT;
-    else if (itemEffect[3] & ITEM3_MIST)
+    else if (itemEffect[3] & ITEM3_GUARD_SPEC)
         return AI_ITEM_GUARD_SPECS;
     else
         return AI_ITEM_NOT_RECOGNIZABLE;
@@ -904,7 +894,7 @@ static bool8 ShouldUseItem(void)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x8;
             if (itemEffects[2] & ITEM2_X_ACCURACY)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x20;
-            if (itemEffects[0] & ITEM0_HIGH_CRIT)
+            if (itemEffects[0] & ITEM0_DIRE_HIT)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x80;
             shouldUse = TRUE;
             break;

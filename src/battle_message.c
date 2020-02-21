@@ -426,19 +426,13 @@ static const u8 sText_ExclamationMark2[] = _("!");
 static const u8 sText_ExclamationMark3[] = _("!");
 static const u8 sText_ExclamationMark4[] = _("!");
 static const u8 sText_ExclamationMark5[] = _("!");
-static const u8 sText_HP2[] = _("HP");
-static const u8 sText_Attack2[] = _("ATTACK");
-static const u8 sText_Defense2[] = _("DEFENSE");
-const u8 gText_Speed[] = _("SPEED");
-static const u8 sText_SpAtk2[] = _("SP. ATK");
-static const u8 sText_SpDef2[] = _("SP. DEF");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 
 const u8 * const gStatNamesTable[] =
 {
-    sText_HP2, sText_Attack2, sText_Defense2,
-    gText_Speed, sText_SpAtk2, sText_SpDef2,
+    gText_HP3, gText_Attack, gText_Defense,
+    gText_Speed, gText_SpAtk, gText_SpDef,
     sText_Accuracy, sText_Evasiveness
 };
 
@@ -585,20 +579,20 @@ static const u8 sText_PsychicTerrainEnds[] = _("The weirdness disappeared\nfrom 
 static const u8 sText_GrassyTerrainEnds[] = _("The grass disappeared\nfrom the battlefield.");
 static const u8 sText_AngryPointActivates[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY} maxed\nits attack!");
 static const u8 sText_PoisonHealHpUp[] = _("The poisoning healed {B_ATK_NAME_WITH_PREFIX}\na little bit!");
-static const u8 sText_BadDreamsDmg[] = _("{B_DEF_NAME_WITH_PREFIX} is tormented\nby {B_DEF_ABILITY}!");
+static const u8 sText_BadDreamsDmg[] = _("{B_DEF_NAME_WITH_PREFIX} is tormented\nby {B_ATK_ABILITY}!");
 static const u8 sText_MoldBreakerEnters[] = _("{B_ATK_NAME_WITH_PREFIX} breaks the mold!");
 static const u8 sText_TeravoltEnters[] = _("{B_ATK_NAME_WITH_PREFIX} is radiating a bursting aura!");
 static const u8 sText_TurboblazeEnters[] = _("{B_ATK_NAME_WITH_PREFIX} is radiating a blazing aura!");
 static const u8 sText_SlowStartEnters[] = _("{B_ATK_NAME_WITH_PREFIX} can't get it going!");
 static const u8 sText_SlowStartEnd[] = _("{B_ATK_NAME_WITH_PREFIX} finally got its act together!");
 static const u8 sText_SolarPowerHpDrop[] = _("The {B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY}\ntakes its toll!");
-static const u8 sText_AftermathDmg[] = _("The {B_DEF_NAME_WITH_PREFIX}\nsuffers the {B_DEF_ABILITY}!");
+static const u8 sText_AftermathDmg[] = _("{B_ATK_NAME_WITH_PREFIX} is hurt!");
 static const u8 sText_AnticipationActivates[] = _("The {B_ATK_NAME_WITH_PREFIX} shuddered in {B_ATK_ABILITY}!");
 static const u8 sText_ForewarnActivates[] = _("{B_ATK_ABILITY} alerted the {B_ATK_NAME_WITH_PREFIX} to the\n{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1}!");
 static const u8 sText_IceBodyHpGain[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY}\nhealed it a little bit!");
 static const u8 sText_SnowWarningHail[] = _("It started to hail!");
 static const u8 sText_FriskActivates[] = _("{B_ATK_NAME_WITH_PREFIX} frisked {B_DEF_NAME_WITH_PREFIX} and\nfound its {B_LAST_ITEM}!");
-static const u8 sText_UnnerveEnters[] = _("{B_ATK_NAME_WITH_PREFIX} is too nervous to eat Berries!");
+static const u8 sText_UnnerveEnters[] = _("The opposing team is too nervous\nto eat Berries!");
 static const u8 sText_HarvestBerry[] = _("{B_ATK_NAME_WITH_PREFIX} harvested\nits {B_LAST_ITEM}!");
 static const u8 sText_MoxieAtkRise[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY} raised its Attack!");
 static const u8 sText_MagicBounceActivates[] = _("The {B_DEF_NAME_WITH_PREFIX} bounced the\n{B_ATK_NAME_WITH_PREFIX} back!");
@@ -1532,15 +1526,9 @@ const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
 const u8 gText_BattleSwitchWhich4[] = _("{ESCAPE 4}");
 const u8 gText_BattleSwitchWhich5[] = _("-");
 
-const u8 sText_HP[] = _("HP");
-const u8 gText_Attack[] = _("ATTACK");
-const u8 gText_Defense[] = _("DEFENSE");
-const u8 gText_SpAtk[] = _("SP. ATK");
-const u8 gText_SpDef[] = _("SP. DEF");
-
 const u8 * const gStatNamesTable2[] =
 {
-    sText_HP, gText_SpAtk, gText_Attack,
+    gText_HP3, gText_SpAtk, gText_Attack,
     gText_SpDef, gText_Defense, gText_Speed
 };
 

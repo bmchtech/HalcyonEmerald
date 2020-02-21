@@ -348,7 +348,7 @@ static void Task_HandleShopMenuBuy(u8 taskId)
     data[8] = (u32)CB2_InitBuyMenu >> 16;
     data[9] = (u32)CB2_InitBuyMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(1, 0);
+    FadeScreen(FADE_TO_BLACK, 0);
 }
 
 static void Task_HandleShopMenuSell(u8 taskId)
@@ -357,7 +357,7 @@ static void Task_HandleShopMenuSell(u8 taskId)
     data[8] = (u32)CB2_GoToSellMenu >> 16;
     data[9] = (u32)CB2_GoToSellMenu;
     gTasks[taskId].func = Task_GoToBuyOrSellMenu;
-    FadeScreen(1, 0);
+    FadeScreen(FADE_TO_BLACK, 0);
 }
 
 void CB2_ExitSellMenu(void)
@@ -390,7 +390,7 @@ static void Task_GoToBuyOrSellMenu(u8 taskId)
 
 static void MapPostLoadHook_ReturnToShopMenu(void)
 {
-    pal_fill_black();
+    FadeInFromBlack();
     CreateTask(Task_ReturnToShopMenu, 8);
 }
 
@@ -994,9 +994,9 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
 
     maxQuantity = GetMoney(&gSaveBlock1Ptr->money) / gShopDataPtr->totalCost;
 
-    if (maxQuantity > 99)
+    if (maxQuantity > MAX_BAG_ITEM_CAPACITY)
     {
-        gShopDataPtr->maxQuantity = 99;
+        gShopDataPtr->maxQuantity = MAX_BAG_ITEM_CAPACITY;
     }
     else
     {

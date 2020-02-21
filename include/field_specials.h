@@ -8,7 +8,7 @@ extern const u8 *const gNatureNamePointers[];
 u8 GetLeadMonIndex(void);
 u8 IsDestinationBoxFull(void);
 u16 GetPCBoxToSendMon(void);
-bool8 InMultiBattleRoom(void);
+bool8 InMultiPartnerRoom(void);
 void UpdateTrainerFansAfterLinkBattle(void);
 void IncrementBirthIslandRockStepCount(void);
 bool8 AbnormalWeatherHasExpired(void);

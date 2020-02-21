@@ -24,6 +24,7 @@
 #include "constants/field_poison.h"
 #include "constants/field_specials.h"
 #include "constants/field_tasks.h"
+#include "constants/field_weather.h"
 #include "constants/flags.h"
 #include "constants/frontier_util.h"
 #include "constants/game_stat.h"
@@ -86,16 +87,16 @@ gSpecialVars:: @ 81DBA0C
 	.include "data/specials.inc"
 
 gStdScripts:: @ 81DC2A0
-	.4byte Std_ObtainItem
-	.4byte Std_FindItem
-	.4byte Std_MsgboxNPC
-	.4byte Std_MsgboxSign
-	.4byte Std_MsgboxDefault
-	.4byte Std_MsgboxYesNo
-	.4byte Std_MsgboxAutoclose
-	.4byte Std_ObtainDecoration
-	.4byte Std_RegisteredInMatchCall
-	.4byte Std_MsgboxGetPoints
+	.4byte Std_ObtainItem              @ STD_OBTAIN_ITEM
+	.4byte Std_FindItem                @ STD_FIND_ITEM
+	.4byte Std_MsgboxNPC               @ MSGBOX_NPC
+	.4byte Std_MsgboxSign              @ MSGBOX_SIGN
+	.4byte Std_MsgboxDefault           @ MSGBOX_DEFAULT
+	.4byte Std_MsgboxYesNo             @ MSGBOX_YESNO
+	.4byte Std_MsgboxAutoclose         @ MSGBOX_AUTOCLOSE
+	.4byte Std_ObtainDecoration        @ STD_OBTAIN_DECORATION
+	.4byte Std_RegisteredInMatchCall   @ STD_REGISTER_MATCH_CALL
+	.4byte Std_MsgboxGetPoints         @ MSGBOX_GETPOINTS
 	.4byte Std_10
 
 gStdScripts_End::
@@ -448,10 +449,10 @@ gStdScripts_End::
 	.include "data/maps/AlteringCave/scripts.inc"
 	.include "data/maps/MeteorFalls_StevensCave/scripts.inc"
 	.include "data/scripts/shared_secret_base.inc"
-	.include "data/maps/BattleColosseum2P/scripts.inc"
+	.include "data/maps/BattleColosseum_2P/scripts.inc"
 	.include "data/maps/TradeCenter/scripts.inc"
 	.include "data/maps/RecordCorner/scripts.inc"
-	.include "data/maps/BattleColosseum4P/scripts.inc"
+	.include "data/maps/BattleColosseum_4P/scripts.inc"
 	.include "data/maps/ContestHall/scripts.inc"
 	.include "data/maps/InsideOfTruck/scripts.inc"
 	.include "data/maps/SSTidalCorridor/scripts.inc"
@@ -474,9 +475,9 @@ gStdScripts_End::
 	.include "data/maps/SafariZone_Northeast/scripts.inc"
 	.include "data/maps/SafariZone_Southeast/scripts.inc"
 	.include "data/maps/BattleFrontier_OutsideEast/scripts.inc"
+	.include "data/maps/BattleFrontier_BattleTowerMultiPartnerRoom/scripts.inc"
+	.include "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleTowerMultiBattleRoom/scripts.inc"
-	.include "data/maps/BattleFrontier_BattleTowerCorridor2/scripts.inc"
-	.include "data/maps/BattleFrontier_BattleTowerBattleRoom2/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleDomeLobby/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleDomeCorridor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleDomePreBattleRoom/scripts.inc"
@@ -485,7 +486,7 @@ gStdScripts_End::
 	.include "data/maps/BattleFrontier_BattlePalaceCorridor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePyramidLobby/scripts.inc"
-	.include "data/maps/BattleFrontier_BattlePyramidEmptySquare/scripts.inc"
+	.include "data/maps/BattleFrontier_BattlePyramidFloor/scripts.inc"
 	.include "data/maps/BattleFrontier_BattlePyramidTop/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleArenaLobby/scripts.inc"
 	.include "data/maps/BattleFrontier_BattleArenaCorridor/scripts.inc"
@@ -572,65 +573,8 @@ gStdScripts_End::
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
 	.include "data/maps/Seaspray_Cave/scripts.inc"
 
-@ Below could be split as std_msgbox.inc but autoclose straddles trainer_battle.inc
-Std_MsgboxNPC: @ 8271315
-	lock
-	faceplayer
-	message 0x0
-	waitmessage
-	waitbuttonpress
-	release
-	return
-
-Std_MsgboxSign: @ 8271320
-	lockall
-	message 0x0
-	waitmessage
-	waitbuttonpress
-	releaseall
-	return
-
-Std_MsgboxDefault: @ 827132A
-	message 0x0
-	waitmessage
-	waitbuttonpress
-	return
-
-Std_MsgboxYesNo: @ 8271332
-	message 0x0
-	waitmessage
-	yesnobox 20, 8
-	return
-
-Std_MsgboxGetPoints: @ 827133C
-	message 0x0
-	playfanfare MUS_ME_POINTGET
-	waitfanfare
-	waitmessage
-	return
-
-Std_10: @ 8271347
-	pokenavcall 0x0
-	waitmessage
-	return
-
-EventScript_UnusedReturn: @ 827134E
-	return
-
-Common_EventScript_SaveGame:: @ 827134F
-	special SaveGame
-	waitstate
-	return
-
+	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
-
-Std_MsgboxAutoclose:: @ 8271494
-	message 0x0
-	waitmessage
-	waitbuttonpress
-	release
-	return
-
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
 
@@ -726,9 +670,9 @@ Common_EventScript_ShowPokemonCenterSign:: @ 8271E73
 	end
 
 Common_ShowEasyChatScreen:: @ 8271E7C
-	fadescreen 1
+	fadescreen FADE_TO_BLACK
 	special ShowEasyChatScreen
-	fadescreen 0
+	fadescreen FADE_FROM_BLACK
 	return
 
 Common_EventScript_ReadyPetalburgGymForBattle:: @ 8271E84
@@ -779,17 +723,17 @@ Common_EventScript_PlayGymBadgeFanfare:: @ 827207E
 	return
 
 Common_EventScript_OutOfCenterPartyHeal:: @ 8272083
-	fadescreen 1
+	fadescreen FADE_TO_BLACK
 	playfanfare MUS_ME_ASA
 	waitfanfare
 	special HealPlayerParty
-	fadescreen 0
+	fadescreen FADE_FROM_BLACK
 	return
 
 EventScript_RegionMap:: @ 827208F
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT
-	fadescreen 1
+	fadescreen FADE_TO_BLACK
 	special FieldShowRegionMap
 	waitstate
 	releaseall
@@ -849,7 +793,7 @@ EventScript_UnusedBoardFerry:: @ 827222B
 	delay 30
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
-	showobjectat 255, MAP_PETALBURG_CITY
+	showobjectat EVENT_OBJ_ID_PLAYER, 0
 	delay 30
 	applymovement EVENT_OBJ_ID_PLAYER, Movement_UnusedBoardFerry
 	waitmovement 0
@@ -866,7 +810,7 @@ Common_EventScript_FerryDepartIsland:: @ 8272250
 	compare VAR_FACING, DIR_WEST
 	call_if_eq Ferry_EventScript_DepartIslandWest
 	delay 30
-	hideobjectat 255, MAP_PETALBURG_CITY
+	hideobjectat EVENT_OBJ_ID_PLAYER, 0
 	call Common_EventScript_FerryDepart
 	return
 
@@ -874,7 +818,7 @@ Common_EventScript_FerryDepartIsland:: @ 8272250
 	.include "data/scripts/kecleon.inc"
 
 Common_EventScript_NameReceivedPartyMon:: @ 82723DD
-	fadescreen 1
+	fadescreen FADE_TO_BLACK
 	special ChangePokemonNickname
 	waitstate
 	return
@@ -885,7 +829,7 @@ Common_EventScript_PlayerHandedOverTheItem:: @ 82723E4
 	message gText_PlayerHandedOverTheItem
 	waitmessage
 	waitfanfare
-	takeitem VAR_0x8004, 1
+	removeitem VAR_0x8004
 	return
 
 	.include "data/scripts/elite_four.inc"
@@ -1051,16 +995,16 @@ Common_EventScript_DirectCornerAttendant:: @ 8273767
 	end
 
 Common_EventScript_RemoveStaticPokemon:: @ 827376D
-	fadescreenswapbuffers 1
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers 0
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 
 Common_EventScript_LegendaryFlewAway:: @ 8273776
-	fadescreenswapbuffers 1
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers 0
+	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname 0, VAR_0x8004
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
 	release

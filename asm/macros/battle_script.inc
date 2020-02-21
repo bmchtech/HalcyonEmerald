@@ -1531,6 +1531,11 @@
 	.byte \case
 	.endm
 	
+	.macro handleformchange battler:req, case:req
+	various \battler, VARIOUS_HANDLE_FORM_CHANGE
+	.byte \case
+	.endm
+	
 	.macro jumpifcantuselastresort battler:req, ptr:req
 	various \battler, VARIOUS_TRY_LAST_RESORT
 	.4byte \ptr
@@ -1780,5 +1785,11 @@
 	1:
 	subbyte gBattlerTarget, 0x2
 	goto \jumpptr
+	.endm
+
+	.macro jumpifleafguard jumpptr:req
+	jumpifhalfword CMP_NO_COMMON_BITS, gBattleWeather, WEATHER_SUN_ANY, 1f
+	jumpifability BS_TARGET, ABILITY_LEAF_GUARD, \jumpptr
+	1:
 	.endm
 

@@ -178,11 +178,11 @@ const u8 gUnknown_085DFCC4[] =
     1  // Sour/Tough 
 };
 
-const u8 gUnknown_085DFCC9[] =
+static const u8 sNatureTextColors[] =
 {
-    0,
-    8,
-    1
+    TEXT_COLOR_TRANSPARENT,
+    TEXT_COLOR_BLUE,
+    TEXT_COLOR_WHITE
 };
 
 const struct BgTemplate gUnknown_085DFCCC[4] =
@@ -1399,7 +1399,7 @@ void sub_8167BA0(u16 arg0, u8 copyToVramMode)
         nature = GetMonData(&gPlayerParty[partyIndex], MON_DATA_NATURE);
         str = StringCopy(gUnknown_0203BCAC->info.field_7A, gText_NatureSlash);
         str = StringCopy(str, gNatureNamePointers[nature]);
-        AddTextPrinterParameterized3(1, 1, 2, 1, gUnknown_085DFCC9, 0, gUnknown_0203BCAC->info.field_7A);
+        AddTextPrinterParameterized3(1, 1, 2, 1, sNatureTextColors, 0, gUnknown_0203BCAC->info.field_7A);
     }
 
     if (copyToVramMode)
