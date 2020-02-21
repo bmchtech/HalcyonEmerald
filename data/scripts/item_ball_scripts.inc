@@ -659,41 +659,40 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope:: @ 829152C
 	end
 
 PetalburgWoods_2_Item_TM80Venoshock::
-	giveitem_std ITEM_TM80_VENOSHOCK, 1, 1
+	finditem ITEM_TM80_VENOSHOCK
 	end
 
 PetalburgWoods_2_Item_SunStone::
-	giveitem_std ITEM_SUN_STONE, 1, 1
+	finditem ITEM_SUN_STONE
 	end
 
 PetalburgWoods_3_TM86_GrassKnot::
-	giveitem_std ITEM_TM86_GRASS_KNOT, 1, 1
+	finditem ITEM_TM86_GRASS_KNOT
 	end
 
 PetalburgWoods_3_TM34_SludgeWave::
-	giveitem_std ITEM_TM34_SLUDGE_WAVE, 1, 1
+	finditem ITEM_TM34_SLUDGE_WAVE
 	end
 
 PetalburgWoods_3_Beedrillite::
-	giveitem_std ITEM_BEEDRILLITE, 1, 1
+	finditem ITEM_BEEDRILLITE
 	end
 
 Seaspray_Cave_Lure_Ball::
-	giveitem_std ITEM_LURE_BALL, 1, 1
+	finditem ITEM_LURE_BALL
 	end
 
 Seaspray_Cave_Stealth_Rock::
-	giveitem_std ITEM_TM76_STEALTH_ROCK, 1, 1
+	finditem ITEM_TM76_STEALTH_ROCK
 	end
 
 Seaspray_Cave_Water_Pulse::
-	giveitem_std ITEM_TM03_WATER_PULSE, 1, 1
+	finditem ITEM_TM03_WATER_PULSE
 	end
 
 Seaspray_Cave_Blastoisinite::
-	giveitem_std ITEM_BLASTOISINITE, 1, 1
+	finditem ITEM_BLASTOISINITE
 	end
 
 Granite_Cave_TM31_Brick_Break::
-	giveitem_std ITEM_TM31_BRICK_BREAK, 1, 1
-	end
+	finditem ITEM_TM31_BRICK_BREAK

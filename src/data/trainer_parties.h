@@ -8227,7 +8227,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute119Treecko[] = 
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Brendan9[] = { // Brendan Route 119
+static const struct TrainerMonItemCustomMoves sParty_BrendanRoute119Torchic[] = { // Brendan Route 119
     {
     .iv = 100,
     .lvl = 29,
@@ -12783,7 +12783,7 @@ static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Brendan16[] = {
+static const struct TrainerMonItemCustomMoves sParty_BrendanLinkPlaceholder[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -12791,7 +12791,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brendan16[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_May16[] = {
+static const struct TrainerMonItemCustomMoves sParty_MayLinkPlaceholder[] = {
     {
     .iv = 0,
     .lvl = 5,

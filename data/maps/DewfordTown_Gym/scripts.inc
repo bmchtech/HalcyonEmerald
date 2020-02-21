@@ -268,7 +268,7 @@ DewfordTown_Gym_EventScript_GymGuide::
 	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	goto_if_set FLAG_DEWFORD_GYM_FRESHWATER, DewfordTown_Gym_Guide2
 	msgbox DewfordTown_Gym_Text_Guide1, MSGBOX_DEFAULT
-	giveitem_std ITEM_FRESH_WATER, 10
+	giveitem ITEM_FRESH_WATER, 10
 	setflag FLAG_DEWFORD_GYM_FRESHWATER
 	msgbox DewfordTown_Gym_Text_Guide2, MSGBOX_DEFAULT
 	release
