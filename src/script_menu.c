@@ -24,6 +24,7 @@
 static EWRAM_DATA u8 sProcessInputDelay = 0;
 
 static u8 sLilycoveSSTidalSelections[SSTIDAL_SELECTION_COUNT];
+static u8 sPKMNCenterMoveTutorLists[PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT];
 
 static void Task_HandleMultichoiceInput(u8 taskId);
 static void Task_HandleYesNoInput(u8 taskId);
@@ -33,6 +34,7 @@ static void InitMultichoiceCheckWrap(bool8 ignoreBPress, u8 count, u8 windowId, 
 static void DrawLinkServicesMultichoiceMenu(u8 multichoiceId);
 static void CreatePCMultichoice(void);
 static void CreateLilycoveSSTidalMultichoice(void);
+static void CreatePKMNCenterMoveListMultichoice(void);
 static bool8 IsPicboxClosed(void);
 static void CreateStartMenuForPokenavTutorial(void);
 static void InitMultichoiceNoWrap(bool8 ignoreBPress, u8 unusedCount, u8 windowId, u8 multichoiceId);
@@ -544,6 +546,98 @@ void GetLilycoveSSTidalSelection(void)
     if (gSpecialVar_Result != MULTI_B_PRESSED)
     {
         gSpecialVar_Result = sLilycoveSSTidalSelections[gSpecialVar_Result];
+    }
+}
+
+bool8 ScriptMenu_CreatePKMNCenterMoveTutorMultichoice(void)
+{
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        CreatePKMNCenterMoveListMultichoice();
+        return TRUE;
+    }
+}
+
+// Used to add more move tutor options as the player earns more badges
+static void CreatePKMNCenterMoveListMultichoice(void)
+{
+    u8 selectionCount = 0;
+    u8 count;
+    u32 pixelWidth;
+    u8 width;
+    u8 windowId;
+    u32 i = 0;
+    u32 j;
+
+    for (i = 0; i < PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT; i++)
+    {
+        sPKMNCenterMoveTutorLists[i] = 0xFF;
+    }
+
+    GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH);
+
+    // Add one option to menu for each obtained badge
+
+    for (i = 0; i < 7; i++)
+    {
+        if (FlagGet(FLAG_BADGE01_GET + i))
+        {
+            sPKMNCenterMoveTutorLists[selectionCount] = i;
+            selectionCount++;
+        }
+    } 
+
+    sPKMNCenterMoveTutorLists[selectionCount] = PKMNCENTER_MOVE_TUTOR_SELECTION_EXIT;
+    selectionCount++;
+
+    count = selectionCount;
+    if (count == PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT)
+    {
+        gSpecialVar_0x8004 = SCROLL_MULTI_PC_TUTOR_SET_SELECT;
+        ShowScrollableMultichoice();
+    }
+    else
+    {
+        pixelWidth = 0;
+
+        for (j = 0; j < PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT; j++)
+        {
+            u8 selection = sPKMNCenterMoveTutorLists[j];
+            if (selection != 0xFF)
+            {
+                pixelWidth = DisplayTextAndGetWidth(sPKMNCenterTutorListOptions[selection], pixelWidth);
+            }
+        }
+
+        width = ConvertPixelWidthToTileWidth(pixelWidth);
+        windowId = CreateWindowFromRect(MAX_MULTICHOICE_WIDTH - width, (6 - count) * 2, width, count * 2);
+        SetStandardWindowBorderStyle(windowId, 0);
+
+        for (selectionCount = 0, i = 0; i < PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT; i++)
+        {
+            if (sPKMNCenterMoveTutorLists[i] != 0xFF)
+            {
+                AddTextPrinterParameterized(windowId, 1, sPKMNCenterTutorListOptions[sPKMNCenterMoveTutorLists[i]], 8, selectionCount * 16 + 1, TEXT_SPEED_FF, NULL);
+                selectionCount++;
+            }
+        }
+
+        InitMenuInUpperLeftCornerPlaySoundWhenAPressed(windowId, count, count - 1);
+        CopyWindowToVram(windowId, 3);
+        InitMultichoiceCheckWrap(FALSE, count, windowId, MULTI_PKMN_CENTER_TUTOR_SETS);
+    }
+}
+
+void GetPKMNCenterMoveListMultichoice(void)
+{
+    if (gSpecialVar_Result != MULTI_B_PRESSED)
+    {
+        gSpecialVar_Result = sPKMNCenterMoveTutorLists[gSpecialVar_Result];
     }
 }
 

@@ -1981,3 +1981,12 @@ const u8 gText_DragonDance[] = _("Dragon Dance");
 const u8 gText_Outrage[] = _("Outrage");
 const u8 gText_KnockOff[] = _("Knock Off");
 const u8 gText_QuiverDance[] = _("Quiver Dance");
+
+// Multichoice strings when selecting a set of tutor moves to choose from
+const u8 gText_TutorMoveSet1[] = _("Tutor Moves Set 1");
+const u8 gText_TutorMoveSet2[] = _("Tutor Moves Set 2");
+const u8 gText_TutorMoveSet3[] = _("Tutor Moves Set 3");
+const u8 gText_TutorMoveSet4[] = _("Tutor Moves Set 4");
+const u8 gText_TutorMoveSet5[] = _("Tutor Moves Set 5");
+const u8 gText_TutorMoveSet6[] = _("Tutor Moves Set 6");
+const u8 gText_TutorMoveSet7[] = _("Tutor Moves Set 7");

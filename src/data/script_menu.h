@@ -898,6 +898,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+    [MULTI_PKMN_CENTER_TUTOR_SETS]     = MULTICHOICE(MultichoiceList_Exit),
 };
 
 const u8 *const gStdStrings[] =
@@ -1003,4 +1004,16 @@ static const u8 *const sWirelessOptions_NoRecordMixBerryCrush[] =
     CableClub_Text_YouMayTradeHere,
     CableClub_Text_YouMayBattleHere,
     CableClub_Text_CancelSelectedItem,
+};
+
+static const u8 *const sPKMNCenterTutorListOptions[PKMNCENTER_MOVE_TUTOR_SELECTION_COUNT] =
+{
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_1]     = gText_TutorMoveSet1,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_2]     = gText_TutorMoveSet2,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_3]     = gText_TutorMoveSet3,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_4]     = gText_TutorMoveSet4,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_5]     = gText_TutorMoveSet5,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_6]     = gText_TutorMoveSet6,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_7]     = gText_TutorMoveSet7,
+    [PKMNCENTER_MOVE_TUTOR_SELECTION_EXIT]  = gText_Exit,
 };

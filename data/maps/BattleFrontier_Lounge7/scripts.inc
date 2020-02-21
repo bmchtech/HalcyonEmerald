@@ -118,6 +118,22 @@ BattleFrontier_Lounge7_EventScript_SwordsDance:: @ 826543A
 BattleFrontier_Lounge7_EventScript_RightMoveTutor:: @ 8265445
 	lock
 	faceplayer
+	special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
+	waitstate
+	special GetPKMNCenterMoveListMultichoice
+	switch VAR_RESULT
+	case 0, testBlock
+	case 1, testBlock
+	case 2, testBlock
+	case 3, testBlock
+	case 4, testBlock
+	case 5, testBlock
+	case 6, testBlock
+	case 7, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	end
+
+testBlock::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_7
 	goto_if_set FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR, BattleFrontier_Lounge7_EventScript_AlreadyMetRightTutor
 	msgbox BattleFrontier_Lounge7_Text_RightTutorIntro, MSGBOX_DEFAULT

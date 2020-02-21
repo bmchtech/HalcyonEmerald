@@ -544,3 +544,5 @@ gSpecials:: @ 81DBA64
 	def_special ResetLeadMonEVs
 	def_special ChangeLeadMonHiddenPower
 	def_special CheckLeadMonCanGainEVs
+	def_special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
+	def_special GetPKMNCenterMoveListMultichoice

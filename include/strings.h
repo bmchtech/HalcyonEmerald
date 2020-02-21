@@ -3064,4 +3064,13 @@ extern const u8 PokemonCenterMoveTutor_Text_OutrageDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_KnockOffDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_QuiverDanceDesc[];
 
+// Options used to select a set of tutor moves
+extern const u8 gText_TutorMoveSet1[];
+extern const u8 gText_TutorMoveSet2[];
+extern const u8 gText_TutorMoveSet3[];
+extern const u8 gText_TutorMoveSet4[];
+extern const u8 gText_TutorMoveSet5[];
+extern const u8 gText_TutorMoveSet6[];
+extern const u8 gText_TutorMoveSet7[];
+
 #endif // GUARD_STRINGS_H
