@@ -800,7 +800,7 @@ const u8 gEeveePokedexText[] = _(
     "An Eevee has an unstable genetic makeup\n"
     "that suddenly mutates due to its\n"
     "environment. Radiation from various\n"
-    "StoneS causes this Pokémon to evolve.");
+    "Stones causes this Pokémon to evolve.");
 
 const u8 gVaporeonPokedexText[] = _(
     "Vaporeon underwent a spontaneous\n"
@@ -905,7 +905,7 @@ const u8 gMewtwoPokedexText[] = _(
     "they failed to give it a warm heart.");
 
 const u8 gMewPokedexText[] = _(
-    "A MEW is said to possess the genes of all\n"
+    "A Mew is said to possess the genes of all\n"
     "Pokémon. It is capable of making itself\n"
     "invisible at will, so it entirely avoids\n"
     "notice even if it approaches people.");
@@ -4824,26 +4824,36 @@ const u8 gMarshadowPokedexText[] = _(
     "This Pokémon is craven and cowering.");
 
 const u8 gPoipolePokedexText[] = _(
-	"This Ultra Beast is well enough\n"
-	"liked to be chosen as a\n"
-	"first partner in its own world.");
+    "This Ultra Beast is well enough\n"
+    "liked to be chosen as a\n"
+    "first partner in its own world.");
 
 const u8 gNaganadelPokedexText[] = _(
-	"It stores hundreds of liters of poisonous\n"
-	"liquid inside its body. It is one of the\n"
-	"organisms known as UBs.");
+    "It stores hundreds of liters of poisonous\n"
+    "liquid inside its body. It is one of the\n"
+    "organisms known as UBs.");
 
 const u8 gStakatakaPokedexText[] = _(
-	"It appeared from an Ultra Wormhole. Each\n"
-	"one appears to be made up of many life-\n"
-	"forms stacked one on top of each other.");
+    "It appeared from an Ultra Wormhole. Each\n"
+    "one appears to be made up of many life-\n"
+    "forms stacked one on top of each other.");
 
 const u8 gBlacephalonPokedexText[] = _(
-	"It slithers toward people and explode\n"
-	"its head without warning. It is\n"
-	"one kind of Ultra Beast.");
+    "It slithers toward people and explode\n"
+    "its head without warning. It is\n"
+    "one kind of Ultra Beast.");
 
 const u8 gZeraoraPokedexText[] = _(
-	"It approaches its enemies at the speed\n"
-	"of lightning, then tears them limb from\n"
-	"limb with its sharp claws.");
+    "It approaches its enemies at the speed\n"
+    "of lightning, then tears them limb from\n"
+    "limb with its sharp claws.");
+
+const u8 gMeltanPokedexText[] = _(
+    "It melts particles of iron and other metals\n"
+    "found in the subsoil, so it can absorb them\n"
+    "into its body of molten steel.");
+
+const u8 gMelmetalPokedexText[] = _(
+    "Revered long ago for its capacity to create\n"
+    "iron from nothing, for some reason it has\n"
+    "come back to life after 3,000 years.");
