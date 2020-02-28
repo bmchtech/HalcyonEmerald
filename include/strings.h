@@ -3240,4 +3240,10 @@ extern const u8 gText_TutorMoveSet5[];
 extern const u8 gText_TutorMoveSet6[];
 extern const u8 gText_TutorMoveSet7[];
 
+// Pokemon Center move tutor/name rater
+extern const u8 gText_RememberAMove[];
+extern const u8 gText_ForgetAMove[];
+extern const u8 gText_LearnANewMove[];
+extern const u8 gText_RateANickname[];
+
 #endif // GUARD_STRINGS_H

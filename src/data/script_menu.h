@@ -771,6 +771,15 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_PKMNCentreMovetutor[] =
+{
+    {gText_RememberAMove},
+    {gText_ForgetAMove},
+    {gText_LearnANewMove},
+    {gText_RateANickname},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -899,6 +908,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_PKMN_CENTER_TUTOR_SETS]     = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_PKMN_CENTER_MOVE_TUTOR]     = MULTICHOICE(MultichoiceList_PKMNCentreMovetutor),
 };
 
 const u8 *const gStdStrings[] =

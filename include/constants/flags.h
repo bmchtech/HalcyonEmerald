@@ -60,7 +60,7 @@
 #define FLAG_GRANITE_CAVE_BRICK_BREAK       0x30
 #define FLAG_ROUTE_106_BIG_PEARL            0x31
 #define FLAG_DEWFORD_GYM_FRESHWATER         0x32
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_TALKED_TO_MOVE_TUTOR           0x33
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag

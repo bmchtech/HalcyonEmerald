@@ -1990,3 +1990,9 @@ const u8 gText_TutorMoveSet4[] = _("Tutor Moves Set 4");
 const u8 gText_TutorMoveSet5[] = _("Tutor Moves Set 5");
 const u8 gText_TutorMoveSet6[] = _("Tutor Moves Set 6");
 const u8 gText_TutorMoveSet7[] = _("Tutor Moves Set 7");
+
+// Pokemon center move tutor/name rater menu
+const u8 gText_RememberAMove[] = _("Remember a move");
+const u8 gText_ForgetAMove[] = _("Forget a move");
+const u8 gText_LearnANewMove[] = _("Learn a new move");
+const u8 gText_RateANickname[] = _("Rate a nickname");

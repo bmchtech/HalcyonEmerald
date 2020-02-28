@@ -585,7 +585,7 @@ static void CreatePKMNCenterMoveListMultichoice(void)
 
     for (i = 0; i < 7; i++)
     {
-        if (FlagGet(FLAG_BADGE01_GET + i))
+        if (!FlagGet(FLAG_BADGE01_GET + i))
         {
             sPKMNCenterMoveTutorLists[selectionCount] = i;
             selectionCount++;
