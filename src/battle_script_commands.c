@@ -16,6 +16,7 @@
 #include "random.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
+#include "battle_main.h"
 #include "constants/species.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -5913,7 +5914,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
             {
                 const struct TrainerMonItemCustomMoves *party = gTrainers[trainerId].party.ItemCustomMoves;
-                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
+                lastMonLevel = GetHighestPartyMemberLevel() + party[gTrainers[trainerId].partySize - 1].lvl;
             }
             break;
         }

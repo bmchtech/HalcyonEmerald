@@ -78,6 +78,7 @@ void RunBattleScriptCommands_PopCallbacksStack(void);
 void RunBattleScriptCommands(void);
 bool8 TryRunFromBattle(u8 battlerId);
 void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk);
+u8 GetHighestPartyMemberLevel(void);
 
 extern struct UnknownPokemonStruct4 gMultiPartnerParty[MULTI_PARTY_SIZE];
 
