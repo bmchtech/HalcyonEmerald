@@ -4,16 +4,61 @@ PKMN_Center_Move_Tutor::
 	waitmessage
 	multichoice 0, 0, MULTI_PKMN_CENTER_MOVE_TUTOR, 0
 	switch VAR_RESULT
-	case 0, PKMN_Center_Move_Tutor_MoveReminder
+	case 0, PKMN_Center_MoveReminder_EventScript
 	case 1, PKMN_Center_Move_Tutor_MoveDeleter
 	case 2, PKMN_Center_Move_Tutor_MoveTutorIntro
 	case 3, PKMN_Center_Move_Tutor_NameRater
 	case 4, PKMN_Center_Move_Tutor_Exit
 	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_Exit
 
-PKMN_Center_Move_Tutor_MoveReminder::
-	releaseall
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Move Reminder @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+PKMN_Center_MoveReminder_EventScript::
+	lockall
+	msgbox PKMN_Center_MoveReminder_Text_WantMeToTeachMove, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, PKMN_Center_Move_Tutor_Exit
+	goto PKMN_Center_MoveReminder_EventScriptChooseMon
 	end
+
+PKMN_Center_MoveReminder_EventScriptChooseMon:: @ 82013D6
+	msgbox PKMN_Center_MoveReminder_Text_TutorWhichMon, MSGBOX_DEFAULT
+	special ChooseMonForMoveRelearner
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq PKMN_Center_Move_Tutor_Exit
+	special IsSelectedMonEgg
+	compare VAR_RESULT, TRUE
+	goto_if_eq PKMN_Center_MoveReminder_EventScriptCantTeachEgg
+	compare VAR_0x8005, 0
+	goto_if_eq PKMN_Center_MoveReminder_EventScriptNoMoveToTeachMon
+	goto PKMN_Center_MoveReminder_EventScriptChooseMove
+	end
+
+PKMN_Center_MoveReminder_EventScriptChooseMove:: @ 820140C
+	msgbox PKMN_Center_MoveReminder_Text_TeachWhichMove, MSGBOX_DEFAULT
+	special TeachMoveRelearnerMove
+	waitstate
+	compare VAR_0x8004, 0
+	goto_if_eq PKMN_Center_MoveReminder_EventScriptChooseMon
+	goto PKMN_Center_MoveReminder_EventScriptRememberAnotherMove
+	end
+
+PKMN_Center_MoveReminder_EventScriptNoMoveToTeachMon:: @ 8201436
+	msgbox PKMN_Center_MoveReminder_Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
+	goto PKMN_Center_MoveReminder_EventScriptChooseMon
+	end
+
+PKMN_Center_MoveReminder_EventScriptCantTeachEgg:: @ 8201444
+	msgbox PKMN_Center_MoveReminder_Text_CantTeachEgg, MSGBOX_DEFAULT
+	goto PKMN_Center_MoveReminder_EventScriptChooseMon
+	end
+	
+PKMN_Center_MoveReminder_EventScriptRememberAnotherMove::
+	msgbox PKMN_Center_MoveReminder_Text_RememberAnotherMove, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PKMN_Center_Move_Tutor_Exit
+	goto PKMN_Center_MoveReminder_EventScriptChooseMon
 
 PKMN_Center_Move_Tutor_MoveDeleter::
 	releaseall
@@ -158,7 +203,7 @@ PKMN_Center_Move_Tutor_NameRater::
 	end
 
 PKMN_Center_Move_Tutor_Exit::
-    special CloseBattleFrontierTutorWindow
+    @ special CloseBattleFrontierTutorWindow
     msgbox PKMN_Center_Move_Tutor_Text_SeeYou, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -170,14 +215,13 @@ PKMN_Center_Move_Tutor_Text_HowCanHelp:
 
 PKMN_Center_Move_Tutor_Text_Explanation:
 	.string "I can teach your Pokémon moves\n"
-	.string "that they can't learn anywhere\l"
-	.string "else.\p"
-	.string "There's no charge, but you'll\n"
-	.string "only have access to some\l"
-	.string "moves to start with.\p"
-	.string "As you earn more Gym Badges,\n"
-	.string "I'll be able to teach you\l"
-	.string "more moves, so check back often!$"
+	.string "that they can't learn anywhere else.\p"
+	.string "There's no charge, but you'll only\n"
+	.string "have access to some moves to start\l"
+	.string "with.\p"
+	.string "As you earn more Gym Badges, I'll\n"
+	.string "be able to teach you more moves,\l"
+	.string "so please check back often!$"
 
 PKMN_Center_Move_Tutor_Text_WhichSetofMoves:
 	.string "Which set of moves would you\n"
@@ -200,3 +244,26 @@ PKMN_Center_Move_Tutor_Text_TeachAnotherMove:
 
 PKMN_Center_Move_Tutor_Text_SeeYou:
 	.string "See you later, then!$"
+
+PKMN_Center_MoveReminder_Text_WantMeToTeachMove:
+	.string "Would you like a Pokémon to remember\n"
+	.string "a move it has forgotten?$"
+
+PKMN_Center_MoveReminder_Text_TutorWhichMon:
+	.string "Which Pokémon is it?$"
+
+PKMN_Center_MoveReminder_Text_TeachWhichMove:
+	.string "Which move would you like it to\n"
+	.string "remember?$"
+
+PKMN_Center_MoveReminder_Text_DontHaveMoveToTeachPokemon:
+	.string "I'm sorry, that Pokémon doesn't have\n"
+	.string "any moves it can remember.$"
+
+PKMN_Center_MoveReminder_Text_CantTeachEgg:
+	.string "I'm sorry, an Egg can't remember any\n"
+	.string "moves.$"
+
+PKMN_Center_MoveReminder_Text_RememberAnotherMove:
+	.string "Would you like a Pokémon to remember\n"
+	.string "another move?$"
