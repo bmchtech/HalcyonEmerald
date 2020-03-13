@@ -128,7 +128,7 @@ Rustboro_Gym_Guide_Trigger2::
 	waitmovement 0
 	applymovement 4, Rustboro_Gym_Guide_Move2
 	waitmovement 0
-	applymovement EVENT_OBJ_ID_PLAYER, Rustboro_Gym_Player_Move2
+	applymovement OBJ_EVENT_ID_PLAYER, Rustboro_Gym_Player_Move2
 	waitmovement 0
 	goto Rustboro_Gym_Guide_Speech
 
@@ -152,10 +152,10 @@ Rustboro_Gym_Guide_Trigger4::
 	waitmovement 0
 	applymovement 4, Common_Movement_Delay48
 	waitmovement 0
-	applymovement EVENT_OBJ_ID_PLAYER, Rustboro_Gym_Player_Move_Face
+	applymovement OBJ_EVENT_ID_PLAYER, Rustboro_Gym_Player_Move_Face
 	applymovement 4, Rustboro_Gym_Guide_Move4
 	waitmovement 0
-	applymovement EVENT_OBJ_ID_PLAYER, Rustboro_Gym_Player_Move4
+	applymovement OBJ_EVENT_ID_PLAYER, Rustboro_Gym_Player_Move4
 	waitmovement 0
 	goto Rustboro_Gym_Guide_Speech
 

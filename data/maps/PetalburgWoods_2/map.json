@@ -5,20 +5,20 @@
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "bg_events": [
         {
-            "elevation": 3,
-            "flag": "PETALBURG_WOODS_2_SUPER_POTION",
-            "item": "ITEM_SUPER_POTION",
             "type": "hidden_item",
             "x": 45,
-            "y": 25
+            "y": 25,
+            "elevation": 3,
+            "item": "ITEM_SUPER_POTION",
+            "flag": "PETALBURG_WOODS_2_SUPER_POTION"
         },
         {
-            "elevation": 3,
-            "flag": "PETALBURG_WOODS_2_HEAL_BALL",
-            "item": "ITEM_HEAL_BALL",
             "type": "hidden_item",
             "x": 20,
-            "y": 16
+            "y": 16,
+            "elevation": 3,
+            "item": "ITEM_HEAL_BALL",
+            "flag": "PETALBURG_WOODS_2_HEAL_BALL"
         }
     ],
     "connections": null,
@@ -31,30 +31,30 @@
     "name": "PetalburgWoods_2",
     "object_events": [
         {
+            "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+            "x": 10,
+            "y": 8,
             "elevation": 3,
-            "flag": "PETALBURG_WOODS_2_VENOSHOCK ",
-            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
             "movement_range_x": 0,
             "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-            "script": "PetalburgWoods_2_Item_TM80Venoshock",
-            "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 10,
-            "y": 8
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "PetalburgWoods_2_Item_TM80Venoshock",
+            "flag": "PETALBURG_WOODS_2_VENOSHOCK" 
         },
         {
+            "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+            "x": 15,
+            "y": 40,
             "elevation": 3,
-            "flag": "PETALBURG_WOODS_2_SUN_STONE ",
-            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_type": "MOVEMENT_TYPE_FACE_UP",
             "movement_range_x": 0,
             "movement_range_y": 0,
-            "movement_type": "MOVEMENT_TYPE_FACE_UP",
-            "script": "PetalburgWoods_2_Item_SunStone",
-            "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
-            "x": 15,
-            "y": 40
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "PetalburgWoods_2_Item_SunStone",
+            "flag": "PETALBURG_WOODS_2_SUN_STONE"
         }
     ],
     "region_map_section": "MAPSEC_PETALBURG_WOODS",
