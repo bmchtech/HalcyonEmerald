@@ -12,7 +12,7 @@
 	.include "constants/constants.inc"
 
 	.section script_data, "aw", %progbits
-	
+
 .align 2
 gBattleScriptsForMoveEffects:: @ 82D86A8
 	.4byte BattleScript_EffectHit
@@ -2843,7 +2843,7 @@ BattleScript_GiveExp::
 	setbyte sGIVEEXP_STATE, 0x0
 	getexp BS_TARGET
 	end2
-	
+
 BattleScript_HandleFaintedMon::
 	atk24 BattleScript_82DA8F6
 	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_FaintedMonEnd
@@ -2961,11 +2961,19 @@ BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_EREADER_TRAINER, BattleScript_LocalBattleLostEnd
 	jumpifhalfword CMP_EQUAL, gTrainerBattleOpponent_A, 0x400, BattleScript_LocalBattleLostEnd
 BattleScript_LocalBattleLostPrintWhiteOut::
+	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_LocalBattleLostEnd
 	printstring STRINGID_PLAYERWHITEOUT
 	waitmessage 0x40
+	getmoneyreward
 	printstring STRINGID_PLAYERWHITEOUT2
 	waitmessage 0x40
+	end2
 BattleScript_LocalBattleLostEnd::
+	printstring STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER
+	waitmessage 0x40
+	getmoneyreward
+	printstring STRINGID_PLAYERPAIDPRIZEMONEY
+	waitmessage 0x40
 	end2
 BattleScript_CheckDomeDrew::
 	jumpifbyte CMP_EQUAL, gBattleOutcome, B_OUTCOME_DREW, BattleScript_LocalBattleLostEnd_
@@ -4058,7 +4066,7 @@ BattleScript_IntimidatePrevented:
 	printstring STRINGID_PREVENTEDFROMWORKING
 	waitmessage 0x40
 	goto BattleScript_IntimidateActivatesLoopIncrement
-	
+
 BattleScript_DroughtActivates::
 	pause 0x20
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
@@ -4469,7 +4477,7 @@ BattleScript_ArenaTurnBeginning::
 	various15 BS_ATTACKER
 	volumeup
 	end2
-	
+
 BattleScript_82DB8E0:: @ Unused battlescript
 	playse SE_PINPON
 	various14 BS_ATTACKER
