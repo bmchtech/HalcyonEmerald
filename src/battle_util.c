@@ -1677,7 +1677,7 @@ u8 DoBattlerEndTurnEffects(void)
                     if (!(gBattleMons[gActiveBattler].status2 & STATUS2_CONFUSION))
                     {
                         gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER;
-                        SetMoveEffect(1, 0);
+                        SetMoveEffect(TRUE, 0);
                         if (gBattleMons[gActiveBattler].status2 & STATUS2_CONFUSION)
                             BattleScriptExecute(BattleScript_ThrashConfuses);
                         effect++;
@@ -3618,8 +3618,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
 
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AbilityCuredStatus;
-                gBattleScripting.battler = battler;
-                gActiveBattler = battler;
+                gBattleScripting.battler = gActiveBattler = gBattlerAbility = battler;
                 BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
                 MarkBattlerForControllerExec(gActiveBattler);
                 return effect;
@@ -4521,7 +4520,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 {
                     gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
                     BattleScriptPushCursor();
-                    SetMoveEffect(0, 0);
+                    SetMoveEffect(FALSE, 0);
                     BattleScriptPop();
                 }
                 break;
@@ -5776,6 +5775,18 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     return ApplyModifier(modifier, atkStat);
 }
 
+static bool32 CanEvolve(u32 species)
+{
+    u32 i;
+
+    for (i = 0; i < EVOS_PER_MON; i++)
+    {
+        if (gEvolutionTable[species][i].method && gEvolutionTable[species][i].method != EVO_MEGA_EVOLUTION)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, bool32 isCrit)
 {
     bool32 usesDefStat;
@@ -5868,7 +5879,8 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_EVIOLITE:
-        // todo
+        if (CanEvolve(gBattleMons[battlerDef].species))
+            MulModifier(&modifier, UQ_4_12(1.5));
         break;
     case HOLD_EFFECT_ASSAULT_VEST:
         if (!usesDefStat)
