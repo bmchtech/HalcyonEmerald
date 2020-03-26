@@ -373,7 +373,7 @@ PetalburgWoods_Text_ThatWasAwfullyClose: @ 822E63D
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "A Pokémon holding that Exp. Share\n"
-	.string "will get half the Exp points in\l"
+	.string "will get 100% of the Exp. points from\l"
 	.string "battle, even if it didn't participate.\p"
 	.string "It's quite useful for raising weak\n"
 	.string "Pokémon!\p"
@@ -387,7 +387,7 @@ PetalburgWoods_Text_ICantBeWastingTime: @ 822E712
 
 PetalburgWoods_Text_YoureLoadedWithItems: @ 822E741
 	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "I can't give you this Exp. Share.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam: @ 822E77D
 	.string "I caught a whole bunch of POKéMON!\p"
