@@ -68,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 10,
+      "x": 12,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -95,14 +95,14 @@
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 8,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_EVER_GRANDE_CITY",
       "dest_warp_id": 1
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_EVER_GRANDE_CITY",

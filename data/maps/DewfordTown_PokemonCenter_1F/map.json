@@ -55,7 +55,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 10,
+      "x": 12,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 5,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
@@ -82,14 +82,14 @@
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 8,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_DEWFORD_TOWN",
       "dest_warp_id": 1
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_DEWFORD_TOWN",
