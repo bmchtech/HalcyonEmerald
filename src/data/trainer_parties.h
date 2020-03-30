@@ -509,13 +509,13 @@ static const struct TrainerMonItemCustomMoves sParty_Grunt53[] = {
 static const struct TrainerMonItemCustomMoves sParty_Calvin1[] = {
     {
     .iv = 0,
-    .lvl = 5,
+    .lvl = -2,
     .species = SPECIES_POOCHYENA,
     .moves = MOVE_HOWL, MOVE_TACKLE
     },
     {
     .iv = 0,
-    .lvl = 5,
+    .lvl = -2,
     .species = SPECIES_LILLIPUP,
     .moves = MOVE_LEER, MOVE_TACKLE, MOVE_ODOR_SLEUTH
     }
@@ -916,12 +916,12 @@ static const struct TrainerMonItemCustomMoves sParty_Lyle[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_James1[] = {
     {
-    .lvl = 9,
+    .lvl = -2,
     .species = SPECIES_NINCADA,
     .moves = MOVE_SAND_ATTACK, MOVE_ABSORB, MOVE_BUG_BITE
     },
     {
-    .lvl = 9,
+    .lvl = -1,
     .species = SPECIES_PARAS,
     .moves = MOVE_ABSORB, MOVE_POISON_POWDER, MOVE_STUN_SPORE, MOVE_SCRATCH
     }
