@@ -5907,7 +5907,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
         case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
             {
                 const struct TrainerMonItemCustomMoves *party = gTrainers[trainerId].party.ItemCustomMoves;
-                lastMonLevel = GetHighestPartyMemberLevel() + party[gTrainers[trainerId].partySize - 1].lvl;
+                lastMonLevel = GetHighestLevelInPlayerParty() + party[gTrainers[trainerId].partySize - 1].lvl;
             }
             break;
         }

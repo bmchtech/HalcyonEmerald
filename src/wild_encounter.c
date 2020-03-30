@@ -231,24 +231,25 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
-static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
+static u8 ChooseWildMonLevel(void)
 {
-    u8 min;
-    u8 max;
+    u8 playerMaxLevel = GetHighestLevelInPlayerParty();
+    u8 min = playerMaxLevel - 6;
+    u8 max = playerMaxLevel - 3;
     u8 range;
     u8 rand;
 
-    // Make sure minimum level is less than maximum level
-    if (wildPokemon->maxLevel >= wildPokemon->minLevel)
+    // ensure that min and max are reasonable values
+    if (min < 1)
     {
-        min = wildPokemon->minLevel;
-        max = wildPokemon->maxLevel;
+        min = 2;
     }
-    else
+
+    if (max < 1)
     {
-        min = wildPokemon->maxLevel;
-        max = wildPokemon->minLevel;
+        max = 4;
     }
+
     range = max - min + 1;
     rand = Random() % range;
 
@@ -335,8 +336,7 @@ static u8 PickWildMonNature(void)
     }
     // check synchronize for a pokemon with the same ability
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
-        && GetMonAbility(&gPlayerParty[0]) == ABILITY_SYNCHRONIZE
-        && Random() % 2 == 0)
+        && GetMonAbility(&gPlayerParty[0]) == ABILITY_SYNCHRONIZE)
     {
         return GetMonData(&gPlayerParty[0], MON_DATA_NATURE);
     }
@@ -420,7 +420,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
         break;
     }
 
-    level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
+    level = ChooseWildMonLevel();
     if (flags & WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
@@ -433,7 +433,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
 {
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
-    u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
+    u8 level = ChooseWildMonLevel();
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return wildMonInfo->wildPokemon[wildMonIndex].species;
@@ -765,7 +765,7 @@ void FishingWildEncounter(u8 rod)
 
     if (CheckFeebas() == TRUE)
     {
-        u8 level = ChooseWildMonLevel(&gWildFeebasRoute119Data);
+        u8 level = ChooseWildMonLevel();
 
         species = gWildFeebasRoute119Data.species;
         CreateWildMon(species, level);

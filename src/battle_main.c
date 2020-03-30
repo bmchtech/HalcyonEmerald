@@ -1866,24 +1866,6 @@ static void sub_8038538(struct Sprite *sprite)
     }
 }
 
-u8 GetHighestPartyMemberLevel(void)
-{
-    u8 highestLevel = 0;
-    u8 level;
-    u8 partyCount = CalculatePlayerPartyCount();
-    u8 i;
-
-    for (i = 0; i < partyCount; i++)
-    {
-       level =  GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
-       if (level > highestLevel)
-       {
-           highestLevel = level;
-       }
-    }
-    return highestLevel;
-}
-
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u32 nameHash = 0;
@@ -1983,7 +1965,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
 
-                level = GetHighestPartyMemberLevel() + partyData[i].lvl;
+                level = GetHighestLevelInPlayerParty() + partyData[i].lvl;
                 if (level > 100)
                 {
                     level = 100;
