@@ -637,20 +637,23 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
     {
     // speed 2 is fast, same speed as running
-        PlayerGoSpeed2(direction);
-        return;
+    // Hold B to surf at Mach Bike Speed (credit to ghoulslash)
+        if (heldKeys & B_BUTTON)
+            PlayerGoSpeed4(direction);
+        else
+            PlayerGoSpeed2(direction);
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
-        PlayerRun(direction);
-        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
-        return;
+        PlayerGoSpeed1(direction);
     }
     else
     {
-        PlayerGoSpeed1(direction);
+        PlayerRun(direction);
+        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        return;
     }
 }
 
