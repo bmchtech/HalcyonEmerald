@@ -304,7 +304,7 @@ RustboroCity_EventScript_StolenGoodsScene:: @ 81E09CD
 	setobjectxyperm 9, 30, 10
 	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
 	setflag FLAG_DEVON_GOODS_STOLEN
-	setvar VAR_RUSTBORO_CITY_STATE, 4 @ Should be 3? Was 2
+	setvar VAR_RUSTBORO_CITY_STATE, 3 @ Should be 3? Was 2
 	setvar VAR_RUSTURF_TUNNEL_STATE, 2
 	setvar VAR_ROUTE116_STATE, 1
 	clearflag FLAG_HIDE_ROUTE_116_MR_BRINEY
@@ -605,7 +605,7 @@ RustboroCity_EventScript_ReturnGoods:: @ 81E0C5B
 	compare VAR_TEMP_1, 4
 	call_if_eq RustboroCity_EventScript_EmployeeFacePlayerRight
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
-	giveitem ITEM_GREAT_BALL
+	giveitem ITEM_DREAM_BALL, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq RustboroCity_EventScript_BagFull
 	msgbox RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
@@ -1135,18 +1135,23 @@ RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel: @ 81E1904
 
 RustboroCity_Text_YouGotItThankYou: @ 81E194D
 	.string "Oh! How did it go?\n"
-	.string "The DEVON GOODS?\p"
+	.string "The Devon Goods?\p"
 	.string "You did!\n"
 	.string "You got them back!\p"
-	.string "You really are a great TRAINER!\p"
+	.string "You really are a great Trainer!\p"
 	.string "I know! As my thanks, I'll give you\n"
-	.string "another GREAT BALL!$"
+	.string "these Dream Balls!$"
 
 RustboroCity_Text_YoureLoadedWithItems: @ 81E19E5
 	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "I can't give you these Dream Balls.$"
 
 RustboroCity_Text_PleaseComeWithMe: @ 81E1A21
+	.string "Devon Corp. worked with a scientist\n"
+	.string "from the Unova Region to develop\l"
+	.string "those modified Dream Balls.\p"
+	.string "Any Pokémon captured in one will\n"
+	.string "receive its Hidden Ability!\p"
 	.string "Excuse me, please!\n"
 	.string "Please come with me!$"
 

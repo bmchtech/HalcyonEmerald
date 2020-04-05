@@ -282,7 +282,7 @@ RustboroCity_DevonCorp_2F_EventScript_MatchCallScientist:: @ 8211BCF
 	faceplayer
 	compare VAR_FOSSIL_RESURRECTION_STATE, 1
 	call_if_eq RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
-	compare VAR_RUSTBORO_CITY_STATE, 6
+	compare VAR_RUSTBORO_CITY_STATE, 7
 	goto_if_ge RustboroCity_DevonCorp_2F_EventScript_WorkOnNext
 	msgbox RustboroCity_DevonCorp_2F_Text_DevelopNewPokenavFeature, MSGBOX_DEFAULT
 	release

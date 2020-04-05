@@ -68,7 +68,7 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident:: @ 821246E
 	setvar VAR_BRINEY_LOCATION, 1
 	clearflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
 	setvar VAR_DEVON_CORP_3F_STATE, 1
-	setvar VAR_RUSTBORO_CITY_STATE, 6
+	setvar VAR_RUSTBORO_CITY_STATE, 7
 	releaseall
 	end
 

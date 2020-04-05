@@ -1361,7 +1361,7 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     .heldItem = ITEM_WATER_GEM,
     .ability = 0, // Battle Armor
     .spread = SPREAD_ROXANNE_ONE_MON,
-    .moves = MOVE_ROCK_TOMB, MOVE_CUT, MOVE_BUG_BITE, MOVE_AQUA_JET
+    .moves = MOVE_ROCK_TOMB, MOVE_CUT, MOVE_BUG_BITE//, MOVE_AQUA_JET
     },
     {
     .lvl = -3,
@@ -8023,6 +8023,12 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute103Torchic[] = 
 static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroTreecko[] = {
     {
     .lvl = -1,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },    
+    {
+    .lvl = -1,
     .species = SPECIES_DEWPIDER,
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_BUG_BITE, MOVE_BUBBLE, MOVE_INFESTATION, MOVE_WATER_SPORT
@@ -8046,6 +8052,12 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroTreecko[] = 
 static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroMudkip[] = {
     {
     .lvl = -1,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },
+    {
+    .lvl = -1,
     .species = SPECIES_DEWPIDER,
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_BUG_BITE, MOVE_BUBBLE, MOVE_INFESTATION, MOVE_WATER_SPORT
@@ -8054,7 +8066,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroMudkip[] = {
     .lvl = -1,
     .species = SPECIES_GROWLITHE,
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_LEER, MOVE_ROAR
+    .moves = MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_REVERSAL, MOVE_ROAR
     },
     {
     .lvl = 0,
@@ -8068,9 +8080,15 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroMudkip[] = {
 static const struct TrainerMonItemCustomMoves sParty_BrendanRustboroTorchic[] = {
     {
     .lvl = -1,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },
+    {
+    .lvl = -1,
     .species = SPECIES_GROWLITHE,
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_LEER, MOVE_ROAR
+    .moves = MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_REVERSAL, MOVE_ROAR
     },
     {
     .lvl = -1,
@@ -8298,6 +8316,12 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute103Torchic[] = { //
 static const struct TrainerMonItemCustomMoves sParty_MayRustboroMudkip[] = { // May Rustboro
     {
     .lvl = -1,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },
+    {
+    .lvl = -1,
     .species = SPECIES_STARYU,
     .ability = 1, // Natural Cure
     .spread = SPREAD_15_IV_0_EV,
@@ -8308,7 +8332,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayRustboroMudkip[] = { // 
     .species = SPECIES_PONYTA,
     .ability = 2, // Flame Body
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_FLAME_WHEEL, MOVE_TAIL_WHIP, MOVE_TACKLE, MOVE_GROWL
+    .moves = MOVE_FLAME_WHEEL, MOVE_TAIL_WHIP, MOVE_TACKLE, MOVE_DOUBLE_KICK
     },
     {
     .lvl = 0,
@@ -8322,6 +8346,12 @@ static const struct TrainerMonItemCustomMoves sParty_MayRustboroMudkip[] = { // 
 static const struct TrainerMonItemCustomMoves sParty_MayRustboroTreecko[] = {
     {
     .lvl = -1,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },
+    {
+    .lvl = -1,
     .species = SPECIES_STARYU,
     .ability = 1, // Natural Cure
     .spread = SPREAD_15_IV_0_EV,
@@ -8329,7 +8359,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayRustboroTreecko[] = {
     },
     {
     .lvl = -1,
-    .species = SPECIES_BOUNSWEET,
+    .species = SPECIES_STEENEE,
     .ability = 2, // Sweet Veil
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_RAZOR_LEAF, MOVE_CHARM, MOVE_ACUPRESSURE, MOVE_SYNTHESIS
@@ -8346,7 +8376,13 @@ static const struct TrainerMonItemCustomMoves sParty_MayRustboroTreecko[] = {
 static const struct TrainerMonItemCustomMoves sParty_MayRustboroTorchic[] = {
     {
     .lvl = -1,
-    .species = SPECIES_BOUNSWEET,
+    .species = SPECIES_SWELLOW,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_ROOST, MOVE_REFRESH
+    },
+    {
+    .lvl = -1,
+    .species = SPECIES_STEENEE,
     .ability = 2, // Sweet Veil
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_RAZOR_LEAF, MOVE_CHARM, MOVE_ACUPRESSURE, MOVE_SYNTHESIS
@@ -8356,7 +8392,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayRustboroTorchic[] = {
     .species = SPECIES_PONYTA,
     .ability = 2, // Flame Body
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_FLAME_WHEEL, MOVE_TAIL_WHIP, MOVE_TACKLE, MOVE_GROWL
+    .moves = MOVE_FLAME_WHEEL, MOVE_TAIL_WHIP, MOVE_TACKLE, MOVE_DOUBLE_KICK
     },
     {
     .lvl = 0,
