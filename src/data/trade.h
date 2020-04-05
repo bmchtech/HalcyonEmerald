@@ -983,7 +983,7 @@ static const struct InGameTrade sIngameTrades[] =
         .nickname = _("Rook"), 
         .species = SPECIES_PAWNIARD,
         .ivs = {31, 31, 31, 15, 15, 15},
-        .abilityNum = 1, // Defiant
+        .abilityNum = 0, // Defiant
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
@@ -994,7 +994,7 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_GOTHITA,
         .nature = NATURE_ADAMANT,
-        .level = 13
+        .level = 15
 
     }, 
     [INGAME_TRADE_TROPIUS] = 

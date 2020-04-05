@@ -4434,11 +4434,16 @@ static void _CreateInGameTradePokemon(u8 whichPlayerMon, u8 whichInGameTrade)
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
     u8 level = sIngameTrades[whichInGameTrade].level;
-
+    u8 playerMonLevel = GetMonData(&gPlayerParty[whichPlayerMon], MON_DATA_LEVEL);
     struct MailStruct mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;
     u8 isMail;
     struct Pokemon *pokemon = &gEnemyParty[0];
+  
+    if (level < playerMonLevel)
+    {
+        level = playerMonLevel;
+    }
 
     CreateMon(pokemon, inGameTrade->species, level, 32, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
 
