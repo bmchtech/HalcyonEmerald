@@ -287,9 +287,9 @@
 
 // Evolution type flags
 #define EVO_MEGA_EVOLUTION   0xffff // Not an actual evolution, used to temporarily mega evolve in battle.
-#define EVO_FRIENDSHIP       0x0001 // Pokémon levels up with friendship ≥ 220
-#define EVO_FRIENDSHIP_DAY   0x0002 // Pokémon levels up during the day with friendship ≥ 220
-#define EVO_FRIENDSHIP_NIGHT 0x0003 // Pokémon levels up at night with friendship ≥ 220
+#define EVO_FRIENDSHIP       0x0001 // Pokémon levels up with friendship ≥ 160
+#define EVO_FRIENDSHIP_DAY   0x0002 // Pokémon levels up during the day with friendship ≥ 160
+#define EVO_FRIENDSHIP_NIGHT 0x0003 // Pokémon levels up at night with friendship ≥ 160
 #define EVO_LEVEL            0x0004 // Pokémon reaches the specified level
 #define EVO_TRADE            0x0005 // Pokémon is traded
 #define EVO_TRADE_ITEM       0x0006 // Pokémon is traded while it's holding the specified item
