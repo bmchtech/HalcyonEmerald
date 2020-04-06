@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 45,
-      "y": 7,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -173,7 +173,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 33,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
