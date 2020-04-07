@@ -33,5 +33,6 @@
 #define SPREAD_ROXANNE_ONE_MON              29
 #define SPREAD_ROXANNE_NOSEPASS             30
 #define SPREAD_BRAWLY_ONE_MON             	31
+#define SPREAD_BRAWLY_HARIYAMA              32
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

@@ -515,7 +515,7 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_CAREFUL
 	},
-		[SPREAD_BRAWLY_ONE_MON] = {
+	[SPREAD_BRAWLY_ONE_MON] = {
 		.EVs = {
 			  0,	// HP
 			  0,	// Attack
@@ -523,6 +523,26 @@ const struct TrainerMonSpread gSets[] = {
 			  0,	// Speed
 			  0,	// Special Attack
 			  0		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+			31,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_ADAMANT
+	},
+
+	[SPREAD_BRAWLY_HARIYAMA] = {
+		.EVs = {
+			  100,	// HP
+			  0,	// Attack
+			  200,	// Defense
+			  0,	// Speed
+			  0,	// Special Attack
+			  200	// Special Defense
 		},
 		.IVs = {
 			31,		// HP

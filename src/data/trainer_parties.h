@@ -1787,39 +1787,39 @@ static const struct TrainerMonItemCustomMoves sParty_Takao[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
    {
-    .lvl = -2,
-    .species = SPECIES_MEDITITE,
+    .lvl = -1,
+    .species = SPECIES_MACHOKE,
     .heldItem = ITEM_LIGHT_CLAY,
-    .ability = 0, // Pure Power
+    .ability = 0, // Guts
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_DRAIN_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_SUBSTITUTE
+    .moves = MOVE_REVENGE, MOVE_LIGHT_SCREEN, MOVE_BULK_UP, MOVE_ICE_PUNCH
     },
     {
     .lvl = -2,
-    .species = SPECIES_SCRAGGY,
+    .species = SPECIES_HITMONTOP,
     .heldItem = ITEM_CHESTO_BERRY,
-    .ability = 0, // Shed Skin
+    .ability = 0, // Intimidate
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_REST, MOVE_FAINT_ATTACK
+    .moves = MOVE_REVENGE, MOVE_BULK_UP, MOVE_REST, MOVE_SUCKER_PUNCH
     },
     {
     .lvl = -2,
     .species = SPECIES_CROAGUNK,
-    .heldItem = ITEM_CHESTO_BERRY,
+    .heldItem = ITEM_POISON_BARB,
     .ability = 1, // Dry Skin
     .spread = SPREAD_BRAWLY_ONE_MON,
     .moves = MOVE_LOW_SWEEP, MOVE_BULK_UP, MOVE_POISON_JAB, MOVE_BULLET_PUNCH
     },
     {
     .lvl = -2,
-    .species = SPECIES_CRABRAWLER,
-    .heldItem = ITEM_COBA_BERRY,
-    .ability = 0, // Hyper Cutter
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_TOXIC_ORB,
+    .ability = 1, // Poison Heal
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_BRICK_BREAK, MOVE_BULK_UP, MOVE_SCALD, MOVE_ICE_PUNCH
+    .moves = MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_BULLET_SEED, MOVE_STUN_SPORE
     },
     {
-    .lvl = -2,
+    .lvl = -1,
     .species = SPECIES_DEWOTT,
     .heldItem = ITEM_EVIOLITE,
     .ability = 2, // Shell Armor
@@ -1831,8 +1831,8 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = 1, // Guts
-    .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_ARM_THRUST, MOVE_KNOCK_OFF, MOVE_SURF, MOVE_BULK_UP
+    .spread = SPREAD_BRAWLY_HARIYAMA,
+    .moves = MOVE_ARM_THRUST, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_BULK_UP
     }
 };
 
