@@ -41,8 +41,8 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_PETALBURG_WOODS_BIG_ROOT       0x20
-#define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x21 
+#define FLAG_UNUSED_0x020                   0x20  // Unused Flag
+#define FLAG_UNUSED_0x021                   0x21  // Unused Flag
 #define PETALBURG_WOODS_2_SUPER_POTION      0x22
 #define PETALBURG_WOODS_2_HEAL_BALL         0x23
 #define PETALBURG_WOODS_2_SUN_STONE         0x24
@@ -52,7 +52,7 @@
 #define PETALBURG_WOODS_3_BEEDRILLITE       0x28
 #define FLAG_LANDMARK_SEASPRAY_CAVE         0x29
 #define FLAG_SEASPRAY_CAVE_DAWN_STONE       0x2A
-#define FLAG_SEASPRAY_CAVE_RARE_CANDY       0x2B 
+#define FLAG_SEASPRAY_CAVE_RARE_CANDY       0x2B
 #define FLAG_SEASPRAY_CAVE_STEALTH_ROCK     0x2C
 #define FLAG_SEASPRAY_CAVE_WATER_PULSE      0x2D
 #define FLAG_SEASPRAY_CAVE_LURE_BALL        0x2E
@@ -61,8 +61,8 @@
 #define FLAG_ROUTE_106_BIG_PEARL            0x31
 #define FLAG_DEWFORD_GYM_FRESHWATER         0x32
 #define FLAG_TALKED_TO_MOVE_TUTOR           0x33
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_PETALBURG_WOODS_BIG_ROOT       0x34
+#define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x35
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
