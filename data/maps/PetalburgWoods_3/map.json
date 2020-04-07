@@ -6,16 +6,16 @@
     "bg_events": [
         {
             "type": "hidden_item",
-            "x": 17,
-            "y": 29,
+            "x": 2,
+            "y": 32,
             "elevation": 3,
             "item": "ITEM_BIG_ROOT",
             "flag": "FLAG_PETALBURG_WOODS_BIG_ROOT"
         },
         {
             "type": "hidden_item",
-            "x": 34,
-            "y": 25,
+            "x": 44,
+            "y": 41,
             "elevation": 3,
             "item": "ITEM_INSECT_PLATE",
             "flag": "FLAG_PETALBURG_WOODS_INSECT_PLATE "
@@ -32,8 +32,8 @@
     "object_events": [
         {
             "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-            "x": 3,
-            "y": 30,
+            "x": 22,
+            "y": 26,
             "elevation": 3,
             "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
             "movement_range_x": 0,
@@ -45,8 +45,8 @@
         },
         {
             "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-            "x": 25,
-            "y": 17,
+            "x": 22,
+            "y": 16,
             "elevation": 3,
             "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
             "movement_range_x": 0,
@@ -58,8 +58,8 @@
         },
         {
 			"graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-			"x": 34,
-            "y": 34,
+			"x": 32,
+            "y": 22,
             "elevation": 3,
 			"movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
 			"movement_range_x": 0,
@@ -71,8 +71,8 @@
         },
         {
 			"graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-			"x": 36,
-            "y": 35,
+			"x": 32,
+            "y": 23,
             "elevation": 3,
 			"movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
 			"movement_range_x": 0,
@@ -84,8 +84,8 @@
         },
         {
 			"graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-			"x": 39,
-            "y": 35,
+			"x": 26,
+            "y": 17,
             "elevation": 3,
 			"movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
 			"movement_range_x": 0,
@@ -97,8 +97,8 @@
         },
         {
 			"graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-			"x": 40,
-            "y": 35,
+			"x": 26,
+            "y": 16,
             "elevation": 3,
 			"movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
 			"movement_range_x": 0,
@@ -110,8 +110,8 @@
         },
         {
 			"graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-			"x": 17,
-            "y": 8,
+			"x": 38,
+            "y": 9,
             "elevation": 3,
 			"movement_type": "MOVEMENT_TYPE_FACE_DOWN",
 			"movement_range_x": 0,
@@ -120,19 +120,6 @@
 			"trainer_sight_or_berry_tree_id": "0",
 			"script": "PetalburgWoods_3_Beedrillite",
             "flag": "PETALBURG_WOODS_3_BEEDRILLITE"
-        },
-        {
-			"graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-			"x": 33,
-            "y": 33,
-            "elevation": 3,
-			"movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-			"movement_range_x": 0,
-            "movement_range_y": 0,
-			"trainer_type": "0",
-			"trainer_sight_or_berry_tree_id": "0",
-			"script": "EventScript_CutTree",
-            "flag": "FLAG_TEMP_15"
         }
     ],
     "region_map_section": "MAPSEC_PETALBURG_WOODS",
