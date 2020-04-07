@@ -139,6 +139,62 @@
             "elevation": 0,
             "x": 9,
             "y": 6
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 5,
+            "elevation": 0,
+            "x": 7,
+            "y": 21
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 6,
+            "elevation": 0,
+            "x": 22,
+            "y": 7
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 3,
+            "elevation": 0,
+            "x": 7,
+            "y": 39
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 9,
+            "elevation": 0,
+            "x": 10,
+            "y": 39
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 36,
+            "y": 35
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 8,
+            "elevation": 0,
+            "x": 39,
+            "y": 35
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 41,
+            "y": 6
+        },
+        {
+            "dest_map": "MAP_PETALBURG_WOODS_3",
+            "dest_warp_id": 3,
+            "elevation": 0,
+            "x": 22,
+            "y": 24
         }
     ],
     "weather": "WEATHER_SHADE"
