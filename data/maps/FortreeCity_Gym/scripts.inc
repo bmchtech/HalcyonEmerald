@@ -256,7 +256,7 @@ FortreeCity_Gym_Text_ReceivedFeatherBadge: @ 8216EEC
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis: @ 8216F17
 	.string "With the FEATHER BADGE, all POKéMON up\n"
-	.string "to LV 70, even those received through\l"
+	.string "to LV 80, even those received through\l"
 	.string "trades, will obey your every command.\p"
 	.string "You will also be able to use\n"
 	.string "the HM move FLY outside of battle.\p"
