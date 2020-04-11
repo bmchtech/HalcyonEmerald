@@ -234,20 +234,21 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
 static u8 ChooseWildMonLevel(void)
 {
     u8 playerMaxLevel = GetHighestLevelInPlayerParty();
-    u8 min = playerMaxLevel - 6;
-    u8 max = playerMaxLevel - 3;
+    u8 min;
+    u8 max;
     u8 range;
     u8 rand;
 
     // ensure that min and max are reasonable values
-    if (min < 1)
+    if (playerMaxLevel < 7)
     {
         min = 2;
-    }
-
-    if (max < 1)
-    {
         max = 4;
+    }
+    else
+    {
+        min = playerMaxLevel - 6;
+        max = playerMaxLevel - 3;
     }
 
     range = max - min + 1;

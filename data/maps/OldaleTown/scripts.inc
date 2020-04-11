@@ -71,7 +71,7 @@ OldaleTown_EventScript_GoToMartEast:: @ 81E8F75
 
 OldaleTown_EventScript_ExplainPokemonMart:: @ 81E8F8C
 	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
-	giveitem ITEM_POTION
+	giveitem ITEM_FOCUS_SASH
 	compare VAR_RESULT, 0
 	goto_if_eq OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
@@ -351,21 +351,22 @@ OldaleTown_Text_SavingMyProgress: @ 81E918E
 
 OldaleTown_Text_IWorkAtPokemonMart: @ 81E91C0
 	.string "Hi!\n"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Pokémon Mart.\p"
 	.string "Can I get you to come with me?$"
 
-OldaleTown_Text_ThisIsAPokemonMart: @ 81E91FD
-	.string "This is a POKéMON MART.\n"
+OldaleTown_Text_ThisIsAPokemonMart:
+	.string "This is a Pokémon Mart.\n"
 	.string "Just look for our blue roof.\p"
-	.string "We sell a variety of goods including\n"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "We sell a variety of consumable items\n"
+	.string "that Pokémon can hold in battle, as\l"
+	.string "well as items like evolution stones.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation: @ 81E92AF
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
-	.string "in certain situations.$"
+	.string "If you're after healing items like\n"
+	.string "Potions or Poké Balls, please see our\l"
+	.string "friendly clerks in any Pokémon Center.$"
 
 OldaleTown_Text_WaitDontComeInHere: @ 81E9313
 	.string "Aaaaah! Wait!\n"
