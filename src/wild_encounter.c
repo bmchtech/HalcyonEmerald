@@ -36,6 +36,7 @@ static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u8 ability, u8 *monIndex);
 static bool8 IsAbilityAllowingEncounter(u8 level);
+static u8 GetAverageLevelofPlayerParty(void);
 
 // EWRAM vars
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
@@ -231,24 +232,43 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
+static u8 GetAverageLevelofPlayerParty(void)
+{
+    u32 sumOfLevels = 0;
+    u8 averageLevel = 0;
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL)
+            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG)
+        {
+            sumOfLevels += GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
+        }
+    }
+    averageLevel = sumOfLevels/PARTY_SIZE;
+
+    return averageLevel;
+}
+
 static u8 ChooseWildMonLevel(void)
 {
-    u8 playerMaxLevel = GetHighestLevelInPlayerParty();
+    u8 playerAverageLevel = GetAverageLevelofPlayerParty();
     u8 min;
     u8 max;
     u8 range;
     u8 rand;
 
     // ensure that min and max are reasonable values
-    if (playerMaxLevel < 7)
+    if (playerAverageLevel < 8)
     {
         min = 2;
         max = 4;
     }
     else
     {
-        min = playerMaxLevel - 6;
-        max = playerMaxLevel - 3;
+        min = playerAverageLevel - 6;
+        max = playerAverageLevel - 3;
     }
 
     range = max - min + 1;
