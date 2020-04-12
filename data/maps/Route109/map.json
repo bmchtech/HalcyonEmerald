@@ -347,7 +347,7 @@
       "movement_range_y": 0,
       "trainer_type": "0",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route_109_EventScript_SandMound1",
+      "script": "Route_109_EventScript_SandMound",
       "flag": "FLAG_TEMP_12"
     },
     {
@@ -373,7 +373,7 @@
       "movement_range_y": 0,
       "trainer_type": "0",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route_109_EventScript_SandMound1",
+      "script": "Route_109_EventScript_SandMound2",
       "flag": "FLAG_TEMP_13"
     }
   ],

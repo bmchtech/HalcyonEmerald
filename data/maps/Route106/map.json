@@ -180,15 +180,15 @@
       "x": 53,
       "y": 12,
       "elevation": 0,
-      "item": "ITEM_STARDUST",
+      "item": "ITEM_BIG_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST"
     },
     {
       "type": "hidden_item",
-      "x": 68,
-      "y": 15,
+      "x": 55,
+      "y": 11,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_PRISM_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE"
     },
     {

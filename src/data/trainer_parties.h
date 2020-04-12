@@ -1786,40 +1786,40 @@ static const struct TrainerMonItemCustomMoves sParty_Takao[] = {
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
-   {
-    .lvl = -1,
-    .species = SPECIES_MACHOKE,
+{
+    .lvl = -2,
+    .species = SPECIES_MEDITITE,
     .heldItem = ITEM_LIGHT_CLAY,
-    .ability = 0, // Guts
+    .ability = 0, // Pure Power
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_REVENGE, MOVE_LIGHT_SCREEN, MOVE_BULK_UP, MOVE_ICE_PUNCH
+    .moves = MOVE_DRAIN_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_SUBSTITUTE
     },
     {
     .lvl = -2,
-    .species = SPECIES_HITMONTOP,
+    .species = SPECIES_SCRAGGY,
     .heldItem = ITEM_CHESTO_BERRY,
-    .ability = 0, // Intimidate
+    .ability = 0, // Shed Skin
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_REVENGE, MOVE_BULK_UP, MOVE_REST, MOVE_SUCKER_PUNCH
+    .moves = MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_REST, MOVE_FAINT_ATTACK
     },
     {
     .lvl = -2,
     .species = SPECIES_CROAGUNK,
-    .heldItem = ITEM_POISON_BARB,
+    .heldItem = ITEM_CHESTO_BERRY,
     .ability = 1, // Dry Skin
     .spread = SPREAD_BRAWLY_ONE_MON,
     .moves = MOVE_LOW_SWEEP, MOVE_BULK_UP, MOVE_POISON_JAB, MOVE_BULLET_PUNCH
     },
     {
     .lvl = -2,
-    .species = SPECIES_BRELOOM,
-    .heldItem = ITEM_TOXIC_ORB,
-    .ability = 1, // Poison Heal
+    .species = SPECIES_CRABRAWLER,
+    .heldItem = ITEM_COBA_BERRY,
+    .ability = 0, // Hyper Cutter
     .spread = SPREAD_BRAWLY_ONE_MON,
-    .moves = MOVE_DRAIN_PUNCH, MOVE_BULK_UP, MOVE_BULLET_SEED, MOVE_STUN_SPORE
+    .moves = MOVE_BRICK_BREAK, MOVE_BULK_UP, MOVE_SCALD, MOVE_ICE_PUNCH
     },
     {
-    .lvl = -1,
+    .lvl = -2,
     .species = SPECIES_DEWOTT,
     .heldItem = ITEM_EVIOLITE,
     .ability = 2, // Shell Armor
@@ -1831,8 +1831,8 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     .species = SPECIES_HARIYAMA,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = 1, // Guts
-    .spread = SPREAD_BRAWLY_HARIYAMA,
-    .moves = MOVE_ARM_THRUST, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_BULK_UP
+    .spread = SPREAD_BRAWLY_ONE_MON,
+    .moves = MOVE_ARM_THRUST, MOVE_KNOCK_OFF, MOVE_SURF, MOVE_BULK_UP
     }
 };
 

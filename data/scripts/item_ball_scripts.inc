@@ -358,8 +358,8 @@ GraniteCave_B1F_EventScript_ItemPokeBall:: @ 829115D
 	finditem ITEM_POKE_BALL
 	end
 
-GraniteCave_B2F_EventScript_ItemRepel:: @ 829116A
-	finditem ITEM_REPEL
+GraniteCave_B2F_EventScript_ItemSteelixite:: @ 829116A
+	finditem ITEM_STEELIXITE
 	end
 
 GraniteCave_B2F_EventScript_ItemRareCandy:: @ 8291177
@@ -694,5 +694,6 @@ Seaspray_Cave_Blastoisinite::
 	finditem ITEM_BLASTOISINITE
 	end
 
-Granite_Cave_TM31_Brick_Break::
+Granite_Cave_B2F_TM31_Brick_Break::
 	finditem ITEM_TM31_BRICK_BREAK
+	end

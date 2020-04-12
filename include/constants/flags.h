@@ -58,12 +58,12 @@
 #define FLAG_SEASPRAY_CAVE_LURE_BALL        0x2E
 #define FLAG_SEASPRAY_CAVE_BLASTOISINITE    0x2F
 #define FLAG_GRANITE_CAVE_BRICK_BREAK       0x30
-#define FLAG_ROUTE_106_BIG_PEARL            0x31
+#define FLAG_ROUTE_106_BIG_PEARL            0x31 // Unused Flag
 #define FLAG_DEWFORD_GYM_FRESHWATER         0x32
 #define FLAG_TALKED_TO_MOVE_TUTOR           0x33
 #define FLAG_PETALBURG_WOODS_BIG_ROOT       0x34
 #define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x35
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_DEWFORD_EVIOLITE               0x36
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag

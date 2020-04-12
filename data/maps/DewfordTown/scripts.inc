@@ -70,47 +70,21 @@ DewfordTown_EventScript_HallSign:: @ 81E95CC
 	msgbox DewfordTown_Text_HallSign, MSGBOX_SIGN
 	end
 
-DewfordTown_EventScript_OldRodFisherman:: @ 81E95D5
+DewfordTown_EventScript_OldRodFisherman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_OLD_ROD, DewfordTown_EventScript_HowsFishing
-	msgbox DewfordTown_Text_GettingItchToFish, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq DewfordTown_EventScript_GiveOldRod
-	compare VAR_RESULT, NO
-	goto_if_eq DewfordTown_EventScript_NotGettingItchToFish
-	end
-
-DewfordTown_EventScript_GiveOldRod:: @ 81E95FF
-	msgbox DewfordTown_Text_GiveYouOneOfMyRods, MSGBOX_DEFAULT
-	giveitem ITEM_OLD_ROD
-	setflag FLAG_RECEIVED_OLD_ROD
-	msgbox DewfordTown_Text_ThrowInFishingAdvice, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_EventScript_NotGettingItchToFish:: @ 81E9620
-	msgbox DewfordTown_Text_ThatsTooBadThen, MSGBOX_DEFAULT
-	release
-	end
-
-DewfordTown_EventScript_HowsFishing:: @ 81E962A
-	message DewfordTown_Text_HowsYourFishing
-	waitmessage
-	multichoice 20, 8, MULTI_HOWS_FISHING, 1
+	goto_if_set FLAG_DEWFORD_EVIOLITE, DewfordTown_EventScript_ReceivedEviolite
+	msgbox DewfordTown_Text_FishedUpEviolite
+	giveitem ITEM_EVIOLITE
 	compare VAR_RESULT, 0
-	goto_if_eq DewfordTown_EventScript_FishingExcellent
-	compare VAR_RESULT, 1
-	goto_if_eq DewfordTown_EventScript_FishingNotSoGood
-	end
-
-DewfordTown_EventScript_FishingExcellent:: @ 81E964C
-	msgbox DewfordTown_Text_GreatHaulInSomeBigOnes, MSGBOX_DEFAULT
+	goto_if_eq Common_EventScript_BagIsFull
+	msgbox DewfordTown_Text_ReceivedEviolite, MSGBOX_DEFAULT
+	setflag FLAG_DEWFORD_EVIOLITE
 	release
 	end
 
-DewfordTown_EventScript_FishingNotSoGood:: @ 81E9656
-	msgbox DewfordTown_Text_FishingAdvice, MSGBOX_DEFAULT
+DewfordTown_EventScript_ReceivedEviolite::
+	msgbox DewfordTown_Text_ReceivedEviolite, MSGBOX_DEFAULT
 	release
 	end
 
@@ -700,51 +674,6 @@ DewfordTown_Text_JustTellMeWhenYouNeedToSetSail: @ 81E9D8F
 	.string "MR. BRINEY: You just tell me whenever\n"
 	.string "you need to set sail again!$"
 
-DewfordTown_Text_GettingItchToFish: @ 81E9DD1
-	.string "This is a renowned fishing spot.\n"
-	.string "Are you getting the itch to fish?$"
-
-DewfordTown_Text_GiveYouOneOfMyRods: @ 81E9E14
-	.string "I hear you, and I like what\n"
-	.string "you're saying!\p"
-	.string "I'll give you one of my fishing RODS.$"
-
-DewfordTown_Text_ThrowInFishingAdvice: @ 81E9E65
-	.string "And, as an added bonus, I'll even throw\n"
-	.string "in a little fishing advice!\p"
-	.string "First, you want to face the water,\n"
-	.string "then use the ROD.\p"
-	.string "Focus your mind…\n"
-	.string "If you get a bite, pull on the ROD.\p"
-	.string "Sometimes you can snag something\n"
-	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your ROD\l"
-	.string "to haul them in.$"
-
-DewfordTown_Text_ThatsTooBadThen: @ 81E9F92
-	.string "Oh, is that so?\n"
-	.string "That's too bad, then.$"
-
-DewfordTown_Text_HowsYourFishing: @ 81E9FB8
-	.string "Yo!\n"
-	.string "How's your fishing?$"
-
-DewfordTown_Text_GreatHaulInSomeBigOnes: @ 81E9FD0
-	.string "Is that right! That's great!\n"
-	.string "Haul in some big ones!$"
-
-DewfordTown_Text_FishingAdvice: @ 81EA004
-	.string "Oh, hey, don't get down on yourself!\n"
-	.string "I'll give you a little fishing advice.\p"
-	.string "First, you want to face the water,\n"
-	.string "then use the ROD.\p"
-	.string "Focus your mind…\n"
-	.string "If you get a bite, pull the ROD.\p"
-	.string "Sometimes you can snag something\n"
-	.string "immediately, but with bigger catches,\l"
-	.string "you need to time the pulls on your ROD\l"
-	.string "to haul them in.$"
-
 DewfordTown_Text_XIsTheBiggestHappeningThingRight: @ 81EA136
 	.string "I like what's hip, happening, and trendy.\n"
 	.string "I'm always checking it out.\p"
@@ -798,3 +727,13 @@ DewfordTown_Text_YeahDefinitionOfInRightNow: @ 81EA491
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+DewfordTown_Text_FishedUpEviolite:
+	.string "I fished up this strange rock the other\n"
+	.string "day. It's of no use to me, so here,\l"
+	.string "you take it!$"
+
+DewfordTown_Text_ReceivedEviolite:
+	.string "Maybe it'll be more useful in the hands\n"
+	.string "of a Pokémon Trainer? It's no good as\l"
+	.string "bait, that's for sure.$"
