@@ -50,7 +50,6 @@ Route111_EventScript_GiveSecretPower:: @ 827661E
 	msgbox Route111_Text_ExplainSecretPower, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RECEIVED_SECRET_POWER
-	clearflag FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN
 	compare VAR_FACING, DIR_WEST
 	call_if_eq Route111_EventScript_SecretPowerManExit
 	compare VAR_FACING, DIR_EAST

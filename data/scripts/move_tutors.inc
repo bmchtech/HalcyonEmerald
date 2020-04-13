@@ -1,32 +1,3 @@
-SlateportCity_PokemonFanClub_EventScript_SwaggerTutor:: @ 82C7F16
-	lock
-	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SWAGGER, MoveTutor_EventScript_SwaggerTaught
-	msgbox MoveTutor_Text_SwaggerTeach, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_SwaggerDeclined
-	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_SwaggerDeclined
-	msgbox MoveTutor_Text_SwaggerWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_SWAGGER
-	call MoveTutor_EventScript_OpenPartyMenu
-	compare VAR_RESULT, 0
-	goto_if_eq MoveTutor_EventScript_SwaggerDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_SWAGGER
-	goto MoveTutor_EventScript_SwaggerTaught
-	end
-
-MoveTutor_EventScript_SwaggerDeclined:: @ 82C7F6A
-	msgbox MoveTutor_Text_SwaggerDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SwaggerTaught:: @ 82C7F74
-	msgbox MoveTutor_Text_SwaggerTaught, MSGBOX_DEFAULT
-	release
-	end
-
 MauvilleCity_EventScript_RolloutTutor:: @ 82C7F7E
 	lock
 	faceplayer

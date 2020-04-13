@@ -462,7 +462,7 @@
 #define FLAG_SHOWN_EON_TICKET                0x1AE
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
-#define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
+#define FLAG_UNUSED_0x1B1                    0x1B1 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
@@ -990,7 +990,7 @@
 #define FLAG_HIDE_ROUTE_128_MAXIE                                   0x3B1
 #define FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS                       0x3B2
 #define FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE                          0x3B3
-#define FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN                        0x3B4
+#define FLAG_UNUSED_0x3B4                                           0x3B4 // Unused Flag
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE              0x3B5
 #define FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY                       0x3B6
 #define FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER                       0x3B7

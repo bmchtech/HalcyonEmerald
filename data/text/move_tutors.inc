@@ -2,28 +2,6 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce: @ 82C6E05
 	.string "This move can be learned only\n"
 	.string "once. Is that okay?$"
 
-MoveTutor_Text_SwaggerTeach: @ 82C6E37
-	.string "Heh! My POKéMON totally rules!\n"
-	.string "It's cooler than any POKéMON!\p"
-	.string "I was lipping off with a swagger in\n"
-	.string "my step like that when the CHAIRMAN\l"
-	.string "chewed me out.\p"
-	.string "That took the swagger out of my step.\p"
-	.string "If you'd like, I'll teach the move\n"
-	.string "SWAGGER to a POKéMON of yours.$"
-
-MoveTutor_Text_SwaggerDeclined: @ 82C6F33
-	.string "What, no? Can't you get into\n"
-	.string "the spirit of things?$"
-
-MoveTutor_Text_SwaggerWhichMon: @ 82C6F66
-	.string "All right, which POKéMON wants to\n"
-	.string "learn how to SWAGGER?$"
-
-MoveTutor_Text_SwaggerTaught: @ 82C6F9E
-	.string "I'll just praise my POKéMON from now\n"
-	.string "on without the swagger.$"
-
 MoveTutor_Text_RolloutTeach: @ 82C6FDB
 	.string "Did you know that you can go from\n"
 	.string "here a long way in that direction\l"

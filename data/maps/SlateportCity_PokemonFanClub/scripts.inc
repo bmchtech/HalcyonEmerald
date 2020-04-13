@@ -216,7 +216,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveSootheBell:: @ 820A1A3
 	applymovement VAR_LAST_TALKED, Common_Movement_Delay48
 	waitmovement 0
 	msgbox SlateportCity_PokemonFanClub_Text_PokemonAdoresYou, MSGBOX_DEFAULT
-	giveitem ITEM_SOOTHE_BELL
+	giveitem ITEM_LOVE_BALL
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_SOOTHE_BELL
@@ -265,6 +265,38 @@ SlateportCity_PokemonFanClub_EventScript_Azumarill:: @ 820A220
 	waitmoncry
 	release
 	end
+
+SlateportCity_PokemonFanClub_EventScript_EndureTM::
+	lock
+	faceplayer
+	checkitem ITEM_TM58_ENDURE, 1
+	compare VAR_RESULT, 1
+	goto_if_eq SlateportCity_PokemonFanClub_EventScript_ReceivedTM58
+	msgbox SlateportCity_PokemonFanClub_Text_GiveTM58, MSGBOX_DEFAULT
+	giveitem ITEM_TM58_ENDURE
+	msgbox SlateportCity_PokemonFanClub_Text_HaveTM58, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_PokemonFanClub_EventScript_ReceivedTM58::
+	lock
+	faceplayer
+	msgbox SlateportCity_PokemonFanClub_Text_HaveTM58, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_PokemonFanClub_Text_GiveTM58:
+	.string "Check out my Azumarill! It's pretty\n"
+	.string "sturdy, right? Almost as sturdy as\l"
+	.string "a Roggenrola with Sturdy!\p"
+	.string "Your Pokémon can be sturdy too,\n"
+	.string "if you use this TM!$"
+
+SlateportCity_PokemonFanClub_Text_HaveTM58:
+	.string "Endure allows a Pokémon to withstand\n"
+	.string "any attack with one HP left.\p"
+	.string "It might not work if you use it too\n"
+	.string "many times in a row, though.$"
 
 SlateportCity_PokemonFanClub_Text_MeetChairman: @ 820A233
 	.string "Er-hem! I am the CHAIRMAN of the\n"
