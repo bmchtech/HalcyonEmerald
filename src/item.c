@@ -421,11 +421,19 @@ bool8 AddBagItem(u16 itemId, u16 count)
         newItems = AllocZeroed(itemPocket->capacity * sizeof(struct ItemSlot));
         memcpy(newItems, itemPocket->itemSlots, itemPocket->capacity * sizeof(struct ItemSlot));
 
-        if (pocket != BERRIES_POCKET)
-            slotCapacity = MAX_BAG_ITEM_CAPACITY;
-        else
+        if (pocket == BERRIES_POCKET)
+        {
             slotCapacity = MAX_BERRY_CAPACITY;
-
+        }
+        else if (pocket == TMHM_POCKET)
+        {
+            slotCapacity = MAX_TMHM_CAPACITY;
+        }
+        else
+        {
+            slotCapacity = MAX_BAG_ITEM_CAPACITY;
+        }    
+  
         for (i = 0; i < itemPocket->capacity; i++)
         {
             if (newItems[i].itemId == itemId)
