@@ -874,8 +874,8 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_MEGA_AUDINO] = sAudinoLevelUpLearnset,
     [SPECIES_MEGA_DIANCIE] = sDiancieLevelUpLearnset,
 	// Alolan Forms
-    [SPECIES_ALOLAN_RATTATA] = sAlolanRattataLevelUpLearnset,
-    [SPECIES_ALOLAN_RATICATE] = sAlolanRaticateLevelUpLearnset,
+    [SPECIES_ALOLAN_RATTATA] = sRattataLevelUpLearnset,
+    [SPECIES_ALOLAN_RATICATE] = sRaticateLevelUpLearnset,
     [SPECIES_ALOLAN_RAICHU] = sAlolanRaichuLevelUpLearnset,
     [SPECIES_ALOLAN_SANDSHREW] = sAlolanSandshrewLevelUpLearnset,
     [SPECIES_ALOLAN_SANDSLASH] = sAlolanSandslashLevelUpLearnset,
