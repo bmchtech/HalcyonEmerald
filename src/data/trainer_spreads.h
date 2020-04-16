@@ -476,6 +476,8 @@ const struct TrainerMonSpread gSets[] = {
 		.nature = NATURE_QUIET
 	},
 	
+	// Specialised spreads
+
 	[SPREAD_ROXANNE_ONE_MON] = {
 		.EVs = {
 			  0,	// HP
@@ -534,15 +536,14 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_ADAMANT
 	},
-
-	[SPREAD_BRAWLY_HARIYAMA] = {
+	[SPREAD_ARCHIE_ONE_MON] = {
 		.EVs = {
-			  100,	// HP
+			  20,	// HP
 			  0,	// Attack
-			  200,	// Defense
-			  0,	// Speed
+			  0,	// Defense
+			  20,	// Speed
 			  0,	// Special Attack
-			  200	// Special Defense
+			  0		// Special Defense
 		},
 		.IVs = {
 			31,		// HP
@@ -552,6 +553,6 @@ const struct TrainerMonSpread gSets[] = {
 			31,		// Special Attack
 			31		// Special Defense
 		},
-		.nature = NATURE_ADAMANT
+		.nature = NATURE_HARDY
 	},
 };

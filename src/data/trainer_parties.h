@@ -119,24 +119,44 @@ static const struct TrainerMonItemCustomMoves sParty_Grunt13[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Grunt14[] = {
+static const struct TrainerMonItemCustomMoves sParty_Grunt14[] = { // Slateport Museum
     {
-    .iv = 0,
-    .lvl = 15,
-    .species = SPECIES_CARVANHA,
+    .lvl = -2,
+    .species = SPECIES_PALPITOAD,
+    .ability = 2, // Water Absorb
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_BUBBLE_BEAM, MOVE_ACID, MOVE_MUD_SHOT, MOVE_ROUND
+    },
+    {
+    .lvl = -2,
+    .species = SPECIES_BASCULIN,
+    .ability = 1, // Adaptability
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AQUA_JET, MOVE_CRUNCH, MOVE_TAKE_DOWN, MOVE_REVENGE
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Grunt15[] = {
+static const struct TrainerMonItemCustomMoves sParty_Grunt15[] = { // Slateport
     {
-    .iv = 0,
-    .lvl = 14,
-    .species = SPECIES_ZUBAT,
+    .lvl = -3,
+    .species = SPECIES_GOLBAT,
+    .ability = 0, // Inner Focus
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_AERIAL_ACE, MOVE_POISON_FANG, MOVE_CONFUSE_RAY, MOVE_SCREECH
     },
     {
-    .iv = 0,
-    .lvl = 14,
-    .species = SPECIES_CARVANHA,
+    .lvl = -3,
+    .species = SPECIES_CLAUNCHER,
+    .ability = 0, // Mega Launcher
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_BUBBLE_BEAM, MOVE_AQUA_JET, MOVE_SMACK_DOWN, MOVE_VENOSHOCK
+    },
+    {
+    .lvl = -3,
+    .species = SPECIES_ALOLAN_GRIMER,
+    .ability = 0, // Poison Touch
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_POISON_FANG, MOVE_BITE, MOVE_DISABLE, MOVE_MINIMIZE
     }
 };
 
@@ -501,6 +521,32 @@ static const struct TrainerMonItemCustomMoves sParty_Grunt53[] = {
     .iv = 0,
     .lvl = 29,
     .species = SPECIES_BALTOY,
+    }
+};
+
+// Aqua and Magma bosses
+
+static const struct TrainerMonItemCustomMoves sParty_Archie1[] = { // Slateport
+    {
+    .lvl = 0,
+    .species = SPECIES_MIGHTYENA,
+    .ability = 0, // Intimidate
+    .spread = SPREAD_ARCHIE_ONE_MON,
+    .moves = MOVE_BITE, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_SCARY_FACE
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_CROBAT,
+    .ability = 0, // Inner Focus
+    .spread = SPREAD_ARCHIE_ONE_MON,
+    .moves = MOVE_AIR_CUTTER, MOVE_VENOSHOCK, MOVE_GIGA_DRAIN, MOVE_SUPER_FANG
+    },
+    {
+    .lvl = 1,
+    .species = SPECIES_SHARPEDO,
+    .ability = 2, // Speed Boost
+    .spread = SPREAD_ARCHIE_ONE_MON,
+    .moves = MOVE_POISON_FANG, MOVE_BITE, MOVE_AQUA_JET, MOVE_ICE_FANG
     }
 };
 
@@ -12787,20 +12833,6 @@ static const struct TrainerMonItemCustomMoves sParty_MayLinkPlaceholder[] = {
 };
 
 // Unused Trainers
-static const struct TrainerMonItemCustomMoves sParty_Mike1[] = { // Unused
-    {
-    .iv = 0,
-    .lvl = 10,
-    .species = SPECIES_PELIPPER,
-    .moves = MOVE_GUST, MOVE_GROWL, MOVE_NONE, MOVE_NONE
-    },
-    {
-    .iv = 0,
-    .lvl = 10,
-    .species = SPECIES_POOCHYENA,
-    .moves = MOVE_BITE, MOVE_SCARY_FACE, MOVE_NONE, MOVE_NONE
-    }
-};
 
 static const struct TrainerMonItemCustomMoves sParty_Mike2[] = { // Unused
     {

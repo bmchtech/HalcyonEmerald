@@ -58,6 +58,9 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern:: @ 820BB00
 	applymovement 2, SlateportCity_OceanicMuseum_2F_Movement_ArchieApproachPlayer
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
+	special HealPlayerParty
+	trainerbattle_no_intro TRAINER_ARCHIE_1, SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat
+	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieDefeated, MSGBOX_DEFAULT
 	closemessage
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -346,6 +349,22 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning: @ 820C059
 	.string "interfering with our plans again.\p"
 	.string "The consequences will cost you\n"
 	.string "dearly!\p"
+	.string "Hmph! That look on your face!\p"
+	.string "You're not taking this seriously,\n"
+	.string "are you?\p"
+	.string "Fine!\p
+	.string "I, Archie, will put a stop to\n"
+	.string "your meddling!$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat:
+	.string "What?!\n"
+	.string "I, Archie, was caught off guard?$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieDefeated:
+	.string "Ah, whatever. You can keep the parts\n"
+	.string "for the time being.\p"
+	.string "But no one can ever stop us!\n"
+	.string "Team Aqua will prevail!\p"
 	.string "And don't you forget it!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs: @ 820C2BE
