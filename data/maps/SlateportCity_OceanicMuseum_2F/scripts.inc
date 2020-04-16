@@ -352,7 +352,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning: @ 820C059
 	.string "Hmph! That look on your face!\p"
 	.string "You're not taking this seriously,\n"
 	.string "are you?\p"
-	.string "Fine!\p
+	.string "Fine!\p"
 	.string "I, Archie, will put a stop to\n"
 	.string "your meddling!$"
 
