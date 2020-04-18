@@ -2,8 +2,8 @@ Route102_EventScript_ItemPotion:: @ 8290CD8
 	finditem ITEM_POTION
 	end
 
-Route103_EventScript_ItemGuardSpec:: @ 8290CE5
-	finditem ITEM_GUARD_SPEC
+Route103_EventScript_ItemTM40AerialAce:: @ 8290CE5
+	finditem ITEM_TM40_AERIAL_ACE
 	end
 
 Route103_EventScript_ItemPPUp:: @ 8290CF2
@@ -50,8 +50,8 @@ Route110_EventScript_ItemRareCandy:: @ 8290D74
 	finditem ITEM_RARE_CANDY
 	end
 
-Route110_EventScript_ItemDireHit:: @ 8290D81
-	finditem ITEM_DIRE_HIT
+Route110_EventScript_ItemManectite:: @ 8290D81
+	finditem ITEM_MANECTITE
 	end
 
 Route110_EventScript_ItemElixir:: @ 8290D8E
@@ -566,8 +566,8 @@ SeafloorCavern_Room9_EventScript_ItemTM26:: @ 8291401
 	finditem ITEM_TM26_EARTHQUAKE
 	end
 
-Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail:: @ 829140E
-	finditem ITEM_ORANGE_MAIL
+Route110_TrickHousePuzzle1_EventScript_ItemDawnStone::
+	finditem ITEM_DAWN_STONE
 	end
 
 Route110_TrickHousePuzzle2_EventScript_ItemHarborMail:: @ 829141B
