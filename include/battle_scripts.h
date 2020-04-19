@@ -179,6 +179,7 @@ extern const u8 BattleScript_AbilityCuredStatus[];
 extern const u8 BattleScript_IgnoresWhileAsleep[];
 extern const u8 BattleScript_IgnoresAndUsesRandomMove[];
 extern const u8 BattleScript_MoveUsedLoafingAround[];
+extern const u8 BattleScript_TruantLoafingAround[];
 extern const u8 BattleScript_IgnoresAndFallsAsleep[];
 extern const u8 BattleScript_IgnoresAndHitsItself[];
 extern const u8 BattleScript_SubstituteFade[];
@@ -331,5 +332,8 @@ extern const u8 BattleScript_AftermathDmg[];
 extern const u8 BattleScript_StanceChangeActivates[];
 extern const u8 BattleScript_DisguiseBustedActivates[];
 extern const u8 BattleScript_AnticipationActivates[];
+extern const u8 BattleScript_SlowStartEnds[];
+extern const u8 BattleScript_HealerActivates[];
+extern const u8 BattleScript_ScriptingAbilityStatRaise[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H
