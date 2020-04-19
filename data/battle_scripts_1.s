@@ -6478,8 +6478,6 @@ BattleScript_IntimidateActivatesLoop:
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printstring STRINGID_PKMNCUTSATTACKWITH
 	waitmessage 0x40
-	jumpifability BS_TARGET, ABILITY_DEFIANT, BattleScript_IntimidateActivatesDefiant
-	jumpifability BS_TARGET, ABILITY_COMPETITIVE, BattleScript_IntimidateActivatesCompetitive
 BattleScript_IntimidateActivatesLoopIncrement:
 	addbyte gBattlerTarget, 0x1
 	goto BattleScript_IntimidateActivatesLoop
@@ -6490,16 +6488,6 @@ BattleScript_IntimidatePrevented:
 	printstring STRINGID_PREVENTEDFROMWORKING
 	waitmessage 0x40
 	goto BattleScript_IntimidateActivatesLoopIncrement
-BattleScript_IntimidateActivatesDefiant:
-	setstatchanger STAT_ATK, 2, FALSE
-	call BattleScript_DefiantActivates
-	setstatchanger STAT_ATK, 1, TRUE
-	goto BattleScript_IntimidateActivatesLoopIncrement
-BattleScript_IntimidateActivatesCompetitive:
-	setstatchanger STAT_SPATK, 2, FALSE
-	call BattleScript_DefiantActivates
-	setstatchanger STAT_ATK, 1, TRUE
- 	goto BattleScript_IntimidateActivatesLoopIncrement
 
 BattleScript_DroughtActivates::
 	pause 0x20
