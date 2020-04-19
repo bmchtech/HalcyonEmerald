@@ -2983,9 +2983,9 @@ static const struct TrainerMonItemCustomMoves sParty_Robin[] = {
 static const struct TrainerMonItemCustomMoves sParty_Eddie[] = {
     {
     .lvl = -2,
-    .species = SPECIES_FLETCHINDER,
+    .species = SPECIES_DUCKLETT,
     .spread = SPREAD_10_IV_0_EV,
-    .moves = MOVE_AERIAL_ACE, MOVE_FLAME_CHARGE, MOVE_STEEL_WING, MOVE_ROOST
+    .moves = MOVE_AIR_SLASH, MOVE_BUBBLE_BEAM, MOVE_STEEL_WING, MOVE_ROOST
     },
     {
     .lvl = -2,
@@ -8335,6 +8335,12 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute110Mudkip[] = {
     .moves = MOVE_FLAME_BURST, MOVE_BITE, MOVE_EXTREME_SPEED, MOVE_ROAR
     },
     {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
+    },
+    {
     .lvl = 1,
     .species = SPECIES_GROVYLE,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -8364,6 +8370,12 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute110Treecko[] = 
     .moves = MOVE_BULLET_SEED, MOVE_MACH_PUNCH, MOVE_ROCK_TOMB, MOVE_BULK_UP
     },
     {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
+    },
+    {
     .lvl = 1,
     .species = SPECIES_COMBUSKEN,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -8391,6 +8403,12 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute110Torchic[] = 
     .ability = 1, // Poison Heal
     .spread = SPREAD_25_IV_0_EV,
     .moves = MOVE_BULLET_SEED, MOVE_MACH_PUNCH, MOVE_ROCK_TOMB, MOVE_BULK_UP
+    },
+    {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
     },
     {
     .lvl = 1,
@@ -8666,6 +8684,12 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute110Mudkip[] = {
     .moves = MOVE_BLAZE_KICK, MOVE_TAIL_WHIP, MOVE_TAKE_DOWN, MOVE_DOUBLE_KICK
     },
     {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
+    },
+    {
     .lvl = 1,
     .species = SPECIES_GROVYLE,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -8693,7 +8717,13 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute110Treecko[] = {
     .species = SPECIES_TSAREENA,
     .ability = 1, // Queenly Majesty
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_TROP_KICK, MOVE_DOUBLE_KICK, MOVE_ACUPRESSURE, MOVE_SYNTHESIS
+    .moves = MOVE_TROP_KICK, MOVE_DOUBLE_KICK, MOVE_U_TURN, MOVE_SYNTHESIS
+    },
+    {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
     },
     {
     .lvl = 1,
@@ -8716,7 +8746,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute110Torchic[] = {
     .species = SPECIES_TSAREENA,
     .ability = 1, // Queenly Majesty
     .spread = SPREAD_15_IV_0_EV,
-    .moves = MOVE_TROP_KICK, MOVE_DOUBLE_KICK, MOVE_ACUPRESSURE, MOVE_SYNTHESIS
+    .moves = MOVE_TROP_KICK, MOVE_DOUBLE_KICK, MOVE_U_TURN, MOVE_SYNTHESIS
     },
     {
     .lvl = -1,
@@ -8724,6 +8754,12 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute110Torchic[] = {
     .ability = 2, // Flame Body
     .spread = SPREAD_25_IV_0_EV,
     .moves = MOVE_BLAZE_KICK, MOVE_TAIL_WHIP, MOVE_TAKE_DOWN, MOVE_DOUBLE_KICK
+    },
+    {
+    .lvl = -1,
+    .species = SPECIES_MIMIKYU,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_SHADOW_CLAW, MOVE_SHADOW_SNEAK, MOVE_HONE_CLAWS, MOVE_SLASH
     },
     {
     .lvl = 1,
