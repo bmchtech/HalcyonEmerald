@@ -14,6 +14,7 @@ SECTIONS {
         . = 0x1C000;
 
         src/*.o(ewram_data);
+        gflib/*.o(ewram_data);
 
         . = 0x40000;
 }
@@ -25,13 +26,14 @@ SECTIONS {
     {
         /* .bss starts at 0x3000000 */
         src/*.o(.bss);
-		asm/m4a_1.o(.bss);
+        gflib/*.o(.bss);
 
         /* .bss.code starts at 0x3001AA8 */
         src/m4a.o(.bss.code);
 
         /* COMMON starts at 0x30022A8 */
         src/*.o(COMMON);
+        gflib/*.o(COMMON);
         *libc.a:sbrkr.o(COMMON);
         end = .;
         . = 0x8000;
@@ -42,8 +44,9 @@ SECTIONS {
     .text :
     ALIGN(4)
     {
-        asm/crt0.o(.text);
+        src/crt0.o(.text);
         src/*.o(.text);
+        gflib/*.o(.text);
         asm/*.o(.text);
     } =0
 
@@ -56,8 +59,8 @@ SECTIONS {
     lib_text :
     ALIGN(4)
     {
-        asm/libgcnmultiboot.o(.text);
-        asm/m4a_1.o(.text);
+        src/libgcnmultiboot.o(.text);
+        src/m4a_1.o(.text);
         src/m4a.o(.text);
         src/agb_flash.o(.text);
         src/agb_flash_1m.o(.text);
@@ -65,10 +68,9 @@ SECTIONS {
         src/siirtc.o(.text);
         src/librfu_stwi.o(.text);
         src/librfu_intr.o(.text);
-        asm/librfu_intr.o(.text);
         src/librfu_rfu.o(.text);
-        asm/librfu.o(.text);
-        asm/libagbsyscall.o(.text);
+        src/librfu_sio32id.o(.text);
+        *libagbsyscall.a:*.o(.text*);
         *libgcc.a:*.o(.text*);
         *libc.a:*.o(.text*);
         src/libisagbprn.o(.text);
@@ -78,6 +80,7 @@ SECTIONS {
     ALIGN(4)
     {
         src/*.o(.rodata*);
+        gflib/*.o(.rodata*);
         data/*.o(.rodata*);
     } =0
 
@@ -96,7 +99,8 @@ SECTIONS {
         src/agb_flash_mx.o(.rodata);
         src/agb_flash_le.o(.rodata);
         src/siirtc.o(.rodata);
-        data/librfu_rodata.o(.rodata);
+        src/librfu_rfu.o(.rodata);
+        src/librfu_sio32id.o(.rodata);
         *libgcc.a:*.o(.rodata*);
         *libc.a:*.o(.rodata*);
         *libc.a:*.o(.data*);

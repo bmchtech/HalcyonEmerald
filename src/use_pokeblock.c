@@ -1,7 +1,7 @@
 #include "global.h"
 #include "main.h"
 #include "pokeblock.h"
-#include "alloc.h"
+#include "malloc.h"
 #include "decompress.h"
 #include "graphics.h"
 #include "palette.h"
@@ -178,11 +178,11 @@ const u8 gUnknown_085DFCC4[] =
     1  // Sour/Tough 
 };
 
-const u8 gUnknown_085DFCC9[] =
+static const u8 sNatureTextColors[] =
 {
-    0,
-    8,
-    1
+    TEXT_COLOR_TRANSPARENT,
+    TEXT_COLOR_BLUE,
+    TEXT_COLOR_WHITE
 };
 
 const struct BgTemplate gUnknown_085DFCCC[4] =
@@ -299,9 +299,9 @@ const s16 gUnknown_085DFD28[][2] =
 const struct OamData gOamData_085DFD3C = 
 {
     .y = 0,
-    .affineMode = 0,
-    .objMode = 0,
-    .bpp = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(32x16),
     .x = 0,
     .size = SPRITE_SIZE(32x16),
@@ -342,9 +342,9 @@ const struct SpriteTemplate gSpriteTemplate_085DFD5C =
 const struct OamData gOamData_085DFD74 = 
 {
     .y = 0,
-    .affineMode = 0,
-    .objMode = 0,
-    .bpp = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(64x32),
     .x = 0,
     .size = SPRITE_SIZE(64x32),
@@ -937,62 +937,24 @@ void Pokeblock_MenuWindowTextPrint(const u8 *message)
     AddTextPrinterParameterized(2, 1, gStringVar4, 0, 1, 0, NULL);
 }
 
-// This function is a joke.
-#ifdef NONMATCHING
 void Pokeblock_BufferEnhancedStatText(u8 *dest, u8 statId, s16 a2)
 {
-    if (a2 != 0)
+    switch (a2)
     {
+    case 1 ... 32767:
+        a2 = 0;
+        // fallthrough
+    case -32768 ... -1:
+        if (a2)
+            dest[(u16)a2] += 0; // something you can't imagine
         StringCopy(dest, sContestStatNames[statId]);
         StringAppend(dest, gText_WasEnhanced);
-    }
-    else
-    {
+        break;
+    case 0:
         StringCopy(dest, gText_NothingChanged);
+        break;
     }
 }
-#else
-NAKED
-void Pokeblock_BufferEnhancedStatText(u8 *dest, u8 statId, s16 a2)
-{
-    asm(".syntax unified\n\
-push {r4,lr}\n\
-    adds r4, r0, 0\n\
-    lsls r1, 24\n\
-    lsrs r3, r1, 24\n\
-    lsls r2, 16\n\
-    lsrs r0, r2, 16\n\
-    asrs r2, 16\n\
-    cmp r2, 0\n\
-    beq _08167010\n\
-    cmp r2, 0\n\
-    ble _08166FEC\n\
-    movs r0, 0\n\
-_08166FEC:\n\
-    lsls r0, 16\n\
-    ldr r1, =sContestStatNames\n\
-    lsls r0, r3, 2\n\
-    adds r0, r1\n\
-    ldr r1, [r0]\n\
-    adds r0, r4, 0\n\
-    bl StringCopy\n\
-    ldr r1, =gText_WasEnhanced\n\
-    adds r0, r4, 0\n\
-    bl StringAppend\n\
-    b _08167018\n\
-    .pool\n\
-_08167010:\n\
-    ldr r1, =gText_NothingChanged\n\
-    adds r0, r4, 0\n\
-    bl StringCopy\n\
-_08167018:\n\
-    pop {r4}\n\
-    pop {r0}\n\
-    bx r0\n\
-    .pool\n\
-    .syntax divided\n");
-}
-#endif
 
 void Pokeblock_GetMonContestStats(struct Pokemon *mon, u8 *data)
 {
@@ -1302,8 +1264,8 @@ void sub_8167760(void)
     if (spriteId != MAX_SPRITES)
     {
         gUnknown_0203BCAC->field_7B06[i] = spriteId;
-        gSprites[spriteId].oam.shape = 1;
-        gSprites[spriteId].oam.size = 2;
+        gSprites[spriteId].oam.shape = SPRITE_SHAPE(32x16);
+        gSprites[spriteId].oam.size = SPRITE_SIZE(32x16);
     }
     else
     {
@@ -1398,7 +1360,7 @@ void sub_8167BA0(u16 arg0, u8 copyToVramMode)
         nature = GetNature(&gPlayerParty[partyIndex]);
         str = StringCopy(gUnknown_0203BCAC->info.field_7A, gText_NatureSlash);
         str = StringCopy(str, gNatureNamePointers[nature]);
-        AddTextPrinterParameterized3(1, 1, 2, 1, gUnknown_085DFCC9, 0, gUnknown_0203BCAC->info.field_7A);
+        AddTextPrinterParameterized3(1, 1, 2, 1, sNatureTextColors, 0, gUnknown_0203BCAC->info.field_7A);
     }
 
     if (copyToVramMode)

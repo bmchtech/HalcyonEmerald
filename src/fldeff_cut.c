@@ -1,5 +1,5 @@
 #include "global.h"
-#include "event_obj_lock.h"
+#include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "faraway_island.h"
 #include "field_camera.h"
@@ -7,7 +7,7 @@
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "fldeff.h"
-#include "alloc.h"
+#include "malloc.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
 #include "party_menu.h"
@@ -25,7 +25,7 @@
 extern struct MapPosition gPlayerFacingPosition;
 
 extern const u8 EventScript_FldEffCut[];
-extern const u8 FarawayIsland_Interior_EventScript_267EDB[];
+extern const u8 FarawayIsland_Interior_EventScript_HideMewWhenGrassCut[];
 
 extern const u8 gFieldEffectPic_CutGrass[];
 extern const u16 gFieldEffectObjectPalette6[];
@@ -92,10 +92,10 @@ static const struct HyperCutterUnk sHyperCutStruct[] =
 static const struct OamData sOamData_CutGrass =
 {
     .y = 0,
-    .affineMode = 0,
-    .objMode = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
     .mosaic = 0,
-    .bpp = 0,
+    .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(8x8),
     .x = 0,
     .matrixNum = 0,
@@ -145,7 +145,7 @@ bool8 SetUpFieldMove_Cut(void)
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
 
-    if (CheckObjectGraphicsInFrontOfPlayer(EVENT_OBJ_GFX_CUTTABLE_TREE) == TRUE)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE)
     {
         // Standing in front of cuttable tree.
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
@@ -580,11 +580,11 @@ static void CutGrassSpriteCallbackEnd(struct Sprite *sprite)
 
     FieldEffectStop(&gSprites[sCutGrassSpriteArrayPtr[0]], FLDEFF_CUT_GRASS);
     FREE_AND_SET_NULL(sCutGrassSpriteArrayPtr);
-    ScriptUnfreezeEventObjects();
+    ScriptUnfreezeObjectEvents();
     ScriptContext2_Disable();
 
     if (IsMewPlayingHideAndSeek() == TRUE)
-        ScriptContext1_SetupScript(FarawayIsland_Interior_EventScript_267EDB);
+        ScriptContext1_SetupScript(FarawayIsland_Interior_EventScript_HideMewWhenGrassCut);
 }
 
 void FixLongGrassMetatilesWindowTop(s16 x, s16 y)
