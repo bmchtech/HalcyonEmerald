@@ -11,7 +11,7 @@ MauvilleCity_GameCorner_MapScripts:: @ 820FBB8
 	.set GRIMER_COINS,  	2000
 	.set DIGLETT_COINS,  	2000
 	.set GEODUDE_COINS,  	2000
-	.set STARTER_COINS, 	200
+	.set STARTER_COINS, 	2500
 	.set DOLL_COINS,  		1000
 
 	.set COINS_PRICE_50,  500
