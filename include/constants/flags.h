@@ -64,7 +64,7 @@
 #define FLAG_PETALBURG_WOODS_BIG_ROOT       0x34
 #define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x35
 #define FLAG_DEWFORD_EVIOLITE               0x36
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_TM93_WILD_CHARGE               0x37
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
@@ -463,7 +463,7 @@
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_UNUSED_0x1B1                    0x1B1 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
+#define FLAG_UNUSED_0x1B2                    0x1B2 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
 #define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5

@@ -1,32 +1,3 @@
-MauvilleCity_EventScript_RolloutTutor:: @ 82C7F7E
-	lock
-	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT, MoveTutor_EventScript_RolloutTaught
-	msgbox MoveTutor_Text_RolloutTeach, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_RolloutDeclined
-	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_RolloutDeclined
-	msgbox MoveTutor_Text_RolloutWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_ROLLOUT
-	call MoveTutor_EventScript_OpenPartyMenu
-	compare VAR_RESULT, 0
-	goto_if_eq MoveTutor_EventScript_RolloutDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT
-	goto MoveTutor_EventScript_RolloutTaught
-	end
-
-MoveTutor_EventScript_RolloutDeclined:: @ 82C7FD2
-	msgbox MoveTutor_Text_RolloutDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_RolloutTaught:: @ 82C7FDC
-	msgbox MoveTutor_Text_RolloutTaught, MSGBOX_DEFAULT
-	release
-	end
-
 VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor:: @ 82C7FE6
 	lock
 	faceplayer

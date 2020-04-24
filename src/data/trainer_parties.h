@@ -2807,7 +2807,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jaclyn[] = {
     {
     .lvl = -2,
     .species = SPECIES_SOLOSIS,
-    .spread = SPREAD_10_IV_0_EV,
+    .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_HIDDEN_POWER, MOVE_PSYSHOCK, MOVE_REFLECT, MOVE_LIGHT_SCREEN
     },
     {
@@ -2820,9 +2820,9 @@ static const struct TrainerMonItemCustomMoves sParty_Jaclyn[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Abigail1[] = {
     {
-    .lvl = -2,
+    .lvl = -0,
     .species = SPECIES_JOLTEON,
-    .spread = SPREAD_10_IV_0_EV,
+    .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_SWIFT, MOVE_BITE
     }
 };
@@ -2861,22 +2861,37 @@ static const struct TrainerMonItemCustomMoves sParty_Abigail5[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Anthony[] = {
     {
-    .iv = 0,
-    .lvl = 14,
+    .lvl = -2,
     .species = SPECIES_MAGNEMITE,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_MIRROR_SHOT, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_METAL_SOUND
     },
     {
-    .iv = 0,
-    .lvl = 14,
-    .species = SPECIES_MAGNEMITE,
+    .lvl = -2,
+    .species = SPECIES_CHARJABUG,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_BUG_BITE, MOVE_SPARK, MOVE_ACROBATICS, MOVE_STRING_SHOT
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Benjamin1[] = {
     {
-    .iv = 0,
-    .lvl = 16,
-    .species = SPECIES_MAGNEMITE,
+    .lvl = -2,
+    .species = SPECIES_PIKACHU,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_THUNDERBOLT, MOVE_NUZZLE, MOVE_NASTY_PLOT, MOVE_SWEET_KISS
+    },
+    {
+    .lvl = -2,
+    .species = SPECIES_ALOLAN_GEODUDE,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_THUNDER_PUNCH, MOVE_ROCK_THROW, MOVE_SELF_DESTRUCT, MOVE_ROCK_POLISH
+    },
+    {
+    .lvl = -2,
+    .species = SPECIES_FLAAFFY,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_ELECTRO_BALL, MOVE_COTTON_SPORE, MOVE_CHARGE, MOVE_TAKE_DOWN
     }
 };
 
@@ -2914,37 +2929,37 @@ static const struct TrainerMonItemCustomMoves sParty_Benjamin5[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Jacob[] = {
     {
-    .iv = 20,
-    .lvl = 6,
-    .species = SPECIES_VOLTORB,
+    .lvl = -1,
+    .species = SPECIES_GROWLITHE,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_FLAME_BURST, MOVE_TAKE_DOWN, MOVE_REVERSAL, MOVE_AGILITY
     },
     {
-    .iv = 20,
-    .lvl = 6,
-    .species = SPECIES_VOLTORB,
-    },
-    {
-    .iv = 200,
-    .lvl = 14,
-    .species = SPECIES_MAGNEMITE,
+    .lvl = -1,
+    .species = SPECIES_LYCANROC,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_ACCELEROCK, MOVE_ROCK_TOMB, MOVE_BITE, MOVE_ROAR
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Jasmine[] = {
     {
-    .iv = 80,
-    .lvl = 14,
-    .species = SPECIES_MAGNEMITE,
+    .lvl = -2,
+    .species = SPECIES_STARAVIA,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_WING_ATTACK, MOVE_REVENGE, MOVE_ENDEAVOR, MOVE_QUICK_ATTACK
     },
     {
-    .iv = 80,
-    .lvl = 14,
-    .species = SPECIES_MAGNEMITE,
+    .iv = -2,
+    .species = SPECIES_KLINK,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_GEAR_GRIND, MOVE_SCREECH, MOVE_DISCHARGE, MOVE_VICE_GRIP
     },
     {
-    .iv = 0,
-    .lvl = 6,
-    .species = SPECIES_VOLTORB,
+    .lvl = -2,
+    .species = SPECIES_HELIOPTILE,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_PARABOLIC_CHARGE, MOVE_MUD_SLAP, MOVE_THUNDER_WAVE, MOVE_RAZOR_WIND
     }
 };
 
@@ -2959,7 +2974,7 @@ static const struct TrainerMonItemCustomMoves sParty_Sally[] = {
     },
     {
     .lvl = -2,
-    .species = SPECIES_LITTEN,
+    .species = SPECIES_TORRACAT,
     .spread = SPREAD_10_IV_0_EV,
     .moves = MOVE_FIRE_FANG, MOVE_BITE, MOVE_DOUBLE_KICK, MOVE_LICK
     }

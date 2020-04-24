@@ -332,11 +332,19 @@ Route110_EventScript_CyclingChallengeResults:: @ 81EF673
 
 Route110_EventScript_ChallengeReactionBest:: @ 81EF6FD
 	msgbox Route110_Text_ChallengeReactionBest, MSGBOX_DEFAULT
+	goto_if_set FLAG_TM93_WILD_CHARGE, Route110_EventScript_EndChallenge
+	msgbox Route110_Text_GiveTM93, MSGBOX_DEFAULT
+	giveitem ITEM_TM93_WILD_CHARGE
 	goto Route110_EventScript_EndChallenge
 	end
 
 Route110_EventScript_ChallengeReactionGood:: @ 81EF70B
 	msgbox Route110_Text_ChallengeReactionGood, MSGBOX_DEFAULT
+	checkitem ITEM_TM83_FLAME_CHARGE, 1
+	compare VAR_RESULT, 1
+	goto_if_eq Route110_EventScript_EndChallenge
+	msgbox Route110_Text_GiveTM83, MSGBOX_DEFAULT
+	giveitem ITEM_TM83_FLAME_CHARGE
 	goto Route110_EventScript_EndChallenge
 	end
 
@@ -894,10 +902,18 @@ Route110_Text_ChallengeReactionBest: @ 81F0431
 	.string "within your heart.\l"
 	.string "You've shaken me to my very soul!$"
 
+Route110_Text_GiveTM93:
+	.string "Please, take this TM as a reward\n"
+	.string "for your cycling mastery!$"
+
 Route110_Text_ChallengeReactionGood: @ 81F04A4
 	.string "Your technique is remarkable.\p"
 	.string "I suggest you speed up a bit while\n"
 	.string "still avoiding collisions.$"
+
+Route110_Text_GiveTM83:
+	.string "Here, take this TM to commemorate\n"
+	.string "your success.$"
 
 Route110_Text_ChallengeReactionOk: @ 81F0500
 	.string "I would consider you a work in\n"

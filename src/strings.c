@@ -668,8 +668,8 @@ const u8 gText_GlassDesk[] = _("GLASS DESK");
 const u8 gText_TreeckoDollAndPrice[] = _("TREECKO DOLL 1,000 COINS");
 const u8 gText_TorchicDollAndPrice[] = _("TORCHIC DOLL 1,000 COINS");
 const u8 gText_MudkipDollAndPrice[] = _("MUDKIP DOLL   1,000 COINS");
-const u8 gText_50CoinsAndPrice[] = _("  50 COINS    ¥1,000");
-const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥10,000");
+const u8 gText_50CoinsAndPrice[] = _("  50 COINS    ¥500");
+const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥5,000");
 const u8 gText_Excellent2[] = _("Excellent");
 const u8 gText_NotSoGood[] = _("Not so good");
 const u8 gText_RedShard[] = _("RED SHARD");
@@ -1998,3 +1998,43 @@ const u8 gText_RememberAMove[] = _("Remember a move");
 const u8 gText_ForgetAMove[] = _("Forget a move");
 const u8 gText_LearnANewMove[] = _("Learn a new move");
 const u8 gText_RateANickname[] = _("Rate a nickname");
+
+// Game Corner Pokemon prizes
+// Rare Pokemon
+const u8 gText_GameCornerPorygon[] = 	_("Porygon{CLEAR_TO 0x48}5000 Coins");
+const u8 gText_GameCornerMunchlax[] = 	_("Munchlax{CLEAR_TO 0x48}4000 Coins");
+const u8 gText_GameCornerVulpix[] = 	_("Vulpix{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerSandshrew[] = 	_("Sandshrew{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerRattata[] = 	_("Rattata{CLEAR_TO 0x48}1000 Coins");
+const u8 gText_GameCornerMeowth[] = 	_("Meowth{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerGrimer[] = 	_("Grimer{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerDiglett[] = 	_("Diglett{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerGeodude[] = 	_("Geodude{CLEAR_TO 0x48}2000 Coins");
+// Grass Starters
+const u8 gText_GameCornerBulbasaur[] = 	_("Bulbasaur{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerChikorita[] = 	_("Chikorita{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerTreecko[] = 	_("Treecko{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerTurtwig[] = 	_("Turtwig{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerSnivy[] = 		_("Snivy{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerChespin[] = 	_("Chespin{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerRowlet[] = 	_("Rowlet{CLEAR_TO 0x48}2500 Coins");
+// Fire Starters
+const u8 gText_GameCornerCharmander[] = _("Charmander{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerCyndaquil[] = 	_("Cyndaquil{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerTorchic[] = 	_("Torchic{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerChimchar[] = 	_("Chimchar{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerTepig[] = 		_("Tepig{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerFennekin[] = 	_("Fennekin{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerLitten[] = 	_("Litten{CLEAR_TO 0x48}2500 Coins");
+// Water Starters
+const u8 gText_GameCornerSquirtle[] = 	_("Squirtle{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerTotodile[] = 	_("Totodile{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerMudkip[] = 	_("Mudkip{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerPiplup[] = 	_("Piplup{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerOshawott[] = 	_("Oshawott{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerFroakie[] = 	_("Froakie{CLEAR_TO 0x48}2500 Coins");
+const u8 gText_GameCornerPopplio[] = 	_("Popplio{CLEAR_TO 0x48}2500 Coins");
+// Starter type selection
+const u8 gText_GrassType[] = _("Grass-type");
+const u8 gText_FireType[] = _("Fire-type");
+const u8 gText_WaterType[] = _("Water-type");

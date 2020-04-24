@@ -18,6 +18,23 @@ MauvilleCity_EventScript_MoveWattsonBackToGym:: @ 81DF3A9
 	setflag FLAG_WATTSON_REMATCH_AVAILABLE
 	return
 
+MauvilleCity_EventScript_GyroBallTM::
+	lock
+	faceplayer
+	checkitem ITEM_TM74_GYRO_BALL, 1
+	compare VAR_RESULT, 1
+	goto_if_eq MauvilleCity_EventScript_ReceivedTM74
+	msgbox MauvilleCity_Text_GiveTM74, MSGBOX_DEFAULT
+	giveitem ITEM_TM74_GYRO_BALL
+	msgbox MauvilleCity_Text_HaveTM74, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_EventScript_ReceivedTM74::
+	msgbox MauvilleCity_Text_HaveTM74, MSGBOX_DEFAULT
+	release
+	end
+
 MauvilleCity_EventScript_Boy:: @ 81DF3B3
 	msgbox MauvilleCity_Text_NurseHurtMonBackToHealth, MSGBOX_NPC
 	end
@@ -669,3 +686,19 @@ MauvilleCity_Text_ExplainTV: @ 81E056A
 
 MauvilleCity_Text_BeenCheckingOutTV: @ 81E0699
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Text_GiveTM74:
+	.string "Did you know that you can go from\n"
+	.string "here a long way in that direction\l"
+	.string "without changing direction?\p"
+	.string "I might even be able to roll\n"
+	.string "that way.\p"
+	.string "Do you think your Pokémon will\n"
+	.string "want to roll, too?\p"
+	.string "Here, let them try out this TM\n"
+	.string "if you'd like.$"
+
+MauvilleCity_Text_HaveTM74:
+	.string "TM58 contains Gyro Ball, an attack\n"
+	.string "that does more damage the slower the\l"
+	.string "user is compared to the foe.$"

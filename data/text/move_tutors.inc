@@ -2,29 +2,6 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce: @ 82C6E05
 	.string "This move can be learned only\n"
 	.string "once. Is that okay?$"
 
-MoveTutor_Text_RolloutTeach: @ 82C6FDB
-	.string "Did you know that you can go from\n"
-	.string "here a long way in that direction\l"
-	.string "without changing direction?\p"
-	.string "I might even be able to roll\n"
-	.string "that way.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to roll, too?\p"
-	.string "I can teach one the move ROLLOUT\n"
-	.string "if you'd like.$"
-
-MoveTutor_Text_RolloutDeclined: @ 82C70C4
-	.string "You don't need to be shy about it.\n"
-	.string "Let's roll!$"
-
-MoveTutor_Text_RolloutWhichMon: @ 82C70F3
-	.string "Ehehe, sure thing! It'd be great if\n"
-	.string "the POKéMON looked like me.$"
-
-MoveTutor_Text_RolloutTaught: @ 82C7133
-	.string "Rolling around in the grass makes me\n"
-	.string "happy. Come on, let's roll!$"
-
 MoveTutor_Text_FuryCutterTeach: @ 82C7174
 	.string "There's a move that gets stronger\n"
 	.string "when you keep using it in a row.\p"
