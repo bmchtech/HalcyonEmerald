@@ -1871,7 +1871,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u32 nameHash = 0;
     u32 personalityValue;
     u8 fixedIV;
-    s32 i, j;
+    s32 i, j = 0;
     u8 monsCount;
     u8 level;
 

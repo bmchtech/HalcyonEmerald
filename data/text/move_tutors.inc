@@ -2,25 +2,6 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce: @ 82C6E05
 	.string "This move can be learned only\n"
 	.string "once. Is that okay?$"
 
-MoveTutor_Text_FuryCutterTeach: @ 82C7174
-	.string "There's a move that gets stronger\n"
-	.string "when you keep using it in a row.\p"
-	.string "It's a BUG-type move, and it is\n"
-	.string "wickedly cool.\p"
-	.string "It's called FURY CUTTER.\n"
-	.string "Want me to teach it to a POKéMON?$"
-
-MoveTutor_Text_FuryCutterDeclined: @ 82C7221
-	.string "We're not on the same wavelength.$"
-
-MoveTutor_Text_FuryCutterWhichMon: @ 82C7243
-	.string "Yay!\n"
-	.string "Show me which POKéMON I should teach.$"
-
-MoveTutor_Text_FuryCutterTaught: @ 82C726E
-	.string "I get a thrill watching to see if\n"
-	.string "the move keeps hitting in succession!$"
-
 MoveTutor_MimicTeach: @ 82C72B6
 	.string "Ah, young one!\p"
 	.string "I am also a young one, but I mimic\n"

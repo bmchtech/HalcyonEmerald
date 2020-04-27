@@ -378,8 +378,8 @@
       "x": 3,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_REPEL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_117_REPEL"
+      "item": "ITEM_MAWILITE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_117_MAWILITE"
     }
   ]
 }

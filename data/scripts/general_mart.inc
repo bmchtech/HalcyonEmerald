@@ -89,7 +89,6 @@ Mart_Poke_Center_Knuckle_Badge::
 PokeMart_Poke_Center_Knuckle_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_DREAM_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_HYPER_POTION
@@ -115,7 +114,6 @@ PokeMart_Poke_Center_Dynamo_Badge::
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_DREAM_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_HYPER_POTION
