@@ -12,56 +12,56 @@ const struct TrainerMonSpread gSets[] = {
 	[SPREAD_10_IV_0_EV] =
 	{
 		.EVs = {},
-		.IVs = {10},
+		.IVs = {10, 10, 10, 10, 10, 10},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_15_IV_0_EV] =
 	{
 		.EVs = {},
-		.IVs = {15},
+		.IVs = {15, 15, 15, 15, 15, 15},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_25_IV_0_EV] =
 	{
 		.EVs = {},
-		.IVs = {25},
+		.IVs = {25, 25, 25, 25, 25, 25},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_31_IV_0_EV] =
 	{
 		.EVs = {},
-		.IVs = {31},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_31_IV_20_EV] =
 	{
-		.EVs = {20},
-		.IVs = {31},
+		.EVs = {20, 20, 20, 20, 20, 20},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_31_IV_40_EV] =
 	{
-		.EVs = {40},
-		.IVs = {31},
+		.EVs = {40, 40, 40, 40, 40, 40},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_31_IV_60_EV] =
 	{
-		.EVs = {60},
-		.IVs = {31},
+		.EVs = {60, 60, 60, 60, 60, 60},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_HARDY
 	},
 	
 	[SPREAD_31_IV_80_EV] =
 	{
-		.EVs = {80},
-		.IVs = {31},
+		.EVs = {80, 80, 80, 80, 80, 80},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_HARDY
 	},
 	// Generic spreads
@@ -75,7 +75,7 @@ const struct TrainerMonSpread gSets[] = {
 			  0,	// Special Attack
 			  0		// Special Defense	
 		},
-		.IVs = {31},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_JOLLY
 	},
 	
@@ -89,7 +89,7 @@ const struct TrainerMonSpread gSets[] = {
 			  0,	// Special Attack
 			  0		// Special Defense
 		},
-		.IVs = {31},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_ADAMANT
 	},
 	
@@ -103,7 +103,7 @@ const struct TrainerMonSpread gSets[] = {
 			  0,	// Special Attack
 			  0		// Special Defense
 		},
-		.IVs = {31},
+		.IVs = {31, 31, 31, 31, 31, 31},
 		.nature = NATURE_ADAMANT
 	},
 
