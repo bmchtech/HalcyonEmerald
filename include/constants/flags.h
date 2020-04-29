@@ -65,7 +65,7 @@
 #define FLAG_PETALBURG_WOODS_INSECT_PLATE   0x35
 #define FLAG_DEWFORD_EVIOLITE               0x36
 #define FLAG_TM93_WILD_CHARGE               0x37
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_MAUVILLE_GYM_MOOMOOMILK        0x38
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
@@ -184,7 +184,7 @@
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
 #define FLAG_RECEIVED_TM39                   0xA5
 #define FLAG_RECEIVED_TM08                   0xA6
-#define FLAG_RECEIVED_TM34                   0xA7
+#define FLAG_RECEIVED_TM72                   0xA7
 #define FLAG_RECEIVED_TM50                   0xA8
 #define FLAG_RECEIVED_TM42                   0xA9
 #define FLAG_RECEIVED_TM40                   0xAA

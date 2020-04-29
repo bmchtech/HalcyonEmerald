@@ -275,7 +275,7 @@ DewfordTown_Gym_EventScript_GymGuide::
 	end
 
 DewfordTown_Gym_Guide2::
-	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	msgbox DewfordTown_Gym_Text_Guide2, MSGBOX_DEFAULT
 	release
 	end
 
@@ -306,25 +306,6 @@ DewfordTown_Gym_EventScript_GymStatue:: @ 81FC9CC
 	releaseall
 	end
 
-DewfordTown_Gym_Text_GymGuideAdvice::
-	.string "Hey, how's it going, Champion-\n"
-	.string "bound {PLAYER}?\p"
-	.string "Dewford's Gym Leader Brawly commands\n"
-	.string "Fighting-type Pokémon.\p"
-	.string "His strongest Pokémon is his Hariyama,\n"
-	.string "and the rest of his team is around\l"
-	.string "level 17, so be careful!\p"
-	.string "Bringing a Ghost-type Pokémon\n"
-	.string "could give you an advantage.\p"
-	.string "You can find wild Sableye in\n"
-	.string "Granite Cave, so try catching one\l"
-	.string "if you need a bit of an edge!\p"
-	.string "Also, the Gym is as dark as the\n"
-	.string "ocean floor.\p"
-	.string "But it will get brighter after defeating\n"
-	.string "the Trainers in your way.\p"
-	.string "Hey, okay, go for it!$"
-
 DewfordTown_Gym_Text_Guide1::
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
@@ -335,8 +316,7 @@ DewfordTown_Gym_Text_Guide2::
 	.string "Dewford's Gym Leader Brawly commands\n"
 	.string "Fighting-type Pokémon.\p"
 	.string "His strongest Pokémon is his Hariyama,\n"
-	.string "and the rest of his team is around\l"
-	.string "level 17, so be careful!\p"
+	.string "and the rest of his team are no joke!\p"
 	.string "Bringing a Ghost-type Pokémon\n"
 	.string "could give you an advantage.\p"
 	.string "You can find wild Sableye in\n"
