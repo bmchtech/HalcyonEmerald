@@ -38,7 +38,7 @@ static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u8 ability, u8 *monIndex);
 static bool8 IsAbilityAllowingEncounter(u8 level);
-static u8 GetAverageLevelofPlayerParty(void);
+static u8 GetMedianLevelOfPlayerParty(void);
 
 // EWRAM vars
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
@@ -234,43 +234,70 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
     return wildMonIndex;
 }
 
-static u8 GetAverageLevelofPlayerParty(void)
+// Used to scale wild Pokemon levels
+static u8 GetMedianLevelOfPlayerParty(void)
 {
-    u32 sumOfLevels = 0;
-    u8 averageLevel = 0;
-    u8 i;
+    u8 medianLevel = 0;
+    u8 i, j, temp = 0;
+    u8 playerPartyCount = CalculatePlayerBattlerPartyCount();
+    u8 partyLevels[PARTY_SIZE] = {0};
 
+    // Don't calculate anything if party size is 1
+    if (playerPartyCount == 1)
+    {
+        medianLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL, NULL);
+        return medianLevel;
+    }
+
+    // Store player levels in partyLevels array, skipping any Eggs
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL)
-            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG)
         {
-            sumOfLevels += GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
+            partyLevels[j] = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
+            j++;
         }
     }
-    averageLevel = sumOfLevels/PARTY_SIZE;
 
-    return averageLevel;
+    // Sort player levels in ascending order
+    for(i = 0 ; i < playerPartyCount ; i++)
+    {
+        for(j = 0 ; j < (playerPartyCount - 1) ; j++)
+        {
+            if(partyLevels[j] > partyLevels[j + 1])
+            {
+                temp = partyLevels[j];
+                partyLevels[j] = partyLevels[j + 1];
+                partyLevels[j + 1] = temp;
+            }
+        }
+    }
+    // Get the median level (not strictly the median if the player has an even party size;
+    // gets the higher middle value if this is the case.)
+
+    medianLevel = partyLevels[(playerPartyCount / 2) + 1];
+    
+    return medianLevel;
 }
 
 static u8 ChooseWildMonLevel(void)
 {
-    u8 playerAverageLevel = GetAverageLevelofPlayerParty();
+    u8 playerMedianLevel = GetMedianLevelOfPlayerParty();
     u8 min;
     u8 max;
     u8 range;
     u8 rand;
 
     // ensure that min and max are reasonable values
-    if (playerAverageLevel < 8)
+    if (playerMedianLevel < 8)
     {
         min = 2;
         max = 4;
     }
     else
     {
-        min = playerAverageLevel - 6;
-        max = playerAverageLevel - 3;
+        min = playerMedianLevel - 6;
+        max = playerMedianLevel - 3;
     }
 
     range = max - min + 1;
