@@ -346,8 +346,8 @@ RusturfTunnel_EventScript_ItemPokeBall:: @ 8291136
 	finditem ITEM_POKE_BALL
 	end
 
-RusturfTunnel_EventScript_ItemMaxEther:: @ 8291143
-	finditem ITEM_MAX_ETHER
+RusturfTunnel_EventScript_ItemSablenite:: @ 8291143
+	finditem ITEM_SABLENITE
 	end
 
 GraniteCave_1F_EventScript_ItemEscapeRope:: @ 8291150

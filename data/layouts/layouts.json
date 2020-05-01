@@ -1368,8 +1368,8 @@
       "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/PetalburgWoods_3/border.bin",  
-      "blockdata_filepath": "data/layouts/PetalburgWoods_3/map.bin"   
+      "border_filepath": "data/layouts/PetalburgWoods_3/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgWoods_3/map.bin"
     },
     {
       "id": "LAYOUT_MT_CHIMNEY",
