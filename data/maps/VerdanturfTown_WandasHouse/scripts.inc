@@ -41,31 +41,42 @@ VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend:: @ 8202913
 VerdanturfTown_WandasHouse_EventScript_Wanda::
 	lock
 	faceplayer
+	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WandaDontWorry
+	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_MeetWanda
+	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_MeetWanda::
+	msgbox VerdanturfTown_WandasHouse_Text_MeetWanda, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_HM04, VerdanturfTown_WandasHouse_EventScript_WandaGardevoirite
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WandaDontWorry::
+	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WandaGardevoirite::
 	goto_if_set FLAG_WANDA_GARDEVOIRITE, VerdanturfTown_WandasHouse_EventScript_WandaGaveStone
+	playse SE_PIN
+	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 5, Common_Movement_Delay48
+	waitmovement 0
 	msgbox VerdanturfTown_WandasHouse_Text_ReceiveGardevoirite, MSGBOX_DEFAULT
 	giveitem ITEM_GARDEVOIRITE
+	setflag FLAG_WANDA_GARDEVOIRITE
 	msgbox VerdanturfTown_WandasHouse_Text_PrettyStone, MSGBOX_DEFAULT
 	release
 	end
 
 VerdanturfTown_WandasHouse_EventScript_WandaGaveStone::
-	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WandaDontWorry
-	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_WallysBecomeHealthy
-	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
 	release
 	end
 
-VerdanturfTown_WandasHouse_EventScript_WallysBecomeHealthy::
-	msgbox VerdanturfTown_WandasHouse_Text_WallysBecomeHealthy, MSGBOX_DEFAULT
-	release
-	end
-
-VerdanturfTown_WandasHouse_EventScript_WandaDontWorry:: @ 8202944
-	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
-	release
-	end
-
-VerdanturfTown_WandasHouse_EventScript_WallysAunt:: @ 820294E
+VerdanturfTown_WandasHouse_EventScript_WallysAunt::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VerdanturfTown_WandasHouse_EventScript_WallysAuntEverGrande
@@ -130,29 +141,27 @@ VerdanturfTown_WandasHouse_Text_WallyGoneThatFar: @ 8202C4E
 	.string "Well, I have to give him credit--he is\n"
 	.string "my little brother's son.$"
 
-VerdanturfTown_WandasHouse_Text_MeetWanda: @ 8202CCF
+VerdanturfTown_WandasHouse_Text_MeetWanda:
 	.string "Wanda: You are?\n"
 	.string "Oh, right, I get it!\p"
 	.string "You're the {PLAYER} who Wally was\n"
 	.string "telling me about.\p"
 	.string "I'm Wally's cousin.\n"
 	.string "Glad to meet you!\p"
+	.string "I think Wally's become a lot more lively\n"
+	.string "and healthy since he came here.$"
 
 VerdanturfTown_WandasHouse_Text_ReceiveGardevoirite:
-	.string "I didn’t really thank you properly when\n"
+	.string "I didn't really thank you properly when\n"
 	.string "you helped smash those rocks in the\l"
 	.string "tunnel.\p"
 	.string "I was thinking that I wanted to give\n"
 	.string "this to you…$"
 
 VerdanturfTown_WandasHouse_Text_PrettyStone:
-	.string "It’s a pretty stone, and I’m sure your\n"
+	.string "It's a pretty stone, and I'm sure your\n"
 	.string "Pokémon would be delighted if you let\l"
 	.string "one of them hold it!$"
-
-VerdanturfTown_WandasHouse_Text_WallysBecomeHealthy:
-	.string "I think Wally's become a lot more lively\n"
-	.string "and healthy since he came here.$"
 
 VerdanturfTown_WandasHouse_Text_DontWorryAboutWally: @ 8202D91
 	.string "Wanda: Don't worry about Wally.\n"
