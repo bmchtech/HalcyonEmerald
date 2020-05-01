@@ -260,11 +260,11 @@ static u8 GetMedianLevelOfPlayerParty(void)
     }
 
     // Sort player levels in ascending order
-    for(i = 0 ; i < playerPartyCount ; i++)
+    for (i = 0 ; i < playerPartyCount ; i++)
     {
-        for(j = 0 ; j < (playerPartyCount - 1) ; j++)
+        for (j = 0 ; j < (playerPartyCount - 1) ; j++)
         {
-            if(partyLevels[j] > partyLevels[j + 1])
+            if (partyLevels[j] > partyLevels[j + 1])
             {
                 temp = partyLevels[j];
                 partyLevels[j] = partyLevels[j + 1];
