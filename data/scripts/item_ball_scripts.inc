@@ -570,12 +570,12 @@ Route110_TrickHousePuzzle1_EventScript_ItemDawnStone::
 	finditem ITEM_DAWN_STONE
 	end
 
-Route110_TrickHousePuzzle2_EventScript_ItemHarborMail:: @ 829141B
-	finditem ITEM_HARBOR_MAIL
+Route110_TrickHousePuzzle2_EventScript_ItemDuskStone:: @ 829141B
+	finditem ITEM_DUSK_STONE
 	end
 
-Route110_TrickHousePuzzle2_EventScript_ItemWaveMail:: @ 8291428
-	finditem ITEM_WAVE_MAIL
+Route110_TrickHousePuzzle2_EventScript_ItemHeavyBall:: @ 8291428
+	finditem ITEM_HEAVY_BALL
 	end
 
 Route110_TrickHousePuzzle3_EventScript_ItemShadowMail:: @ 8291435
