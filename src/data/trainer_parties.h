@@ -4965,14 +4965,14 @@ static const struct TrainerMonItemCustomMoves sParty_Wilton1[] = {
     {
     .lvl = -1,
     .species = SPECIES_DOUBLADE,
-    .helditem = ITEM_EVIOLITE,
+    .heldItem = ITEM_EVIOLITE,
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_SHADOW_CLAW, MOVE_IRON_HEAD, MOVE_PSYCHO_CUT, MOVE_SHADOW_SNEAK
     },
     {
     .lvl = -1,
     .species = SPECIES_REUNICLUS,
-    .helditem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_LEFTOVERS,
     .ability = 1, // Magic Guard
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_PSYSHOCK, MOVE_RECOVER, MOVE_SHOCK_WAVE, MOVE_SIGNAL_BEAM
@@ -4980,7 +4980,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wilton1[] = {
     {
     .lvl = -1,
     .species = SPECIES_GABITE,
-    .helditem = ITEM_ROCKY_HELMET,
+    .heldItem = ITEM_ROCKY_HELMET,
     .ability = 2, // Rough Skin
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_DIG, MOVE_DUAL_CHOP, MOVE_POISON_JAB, MOVE_FLAMETHROWER
@@ -5063,7 +5063,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brooke1[] = {
     {
     .lvl = -1,
     .species = SPECIES_GASTRODON,
-    .helditem = ITEM_RINDO_BERRY,
+    .heldItem = ITEM_RINDO_BERRY,
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_MUDDY_WATER, MOVE_MUD_SHOT, MOVE_RECOVER, MOVE_ANCIENT_POWER
     },
@@ -5076,7 +5076,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brooke1[] = {
     {
     .lvl = -1,
     .species = SPECIES_ROSERADE,
-    .helditem = ITEM_BIG_ROOT,
+    .heldItem = ITEM_BIG_ROOT,
     .ability = 2, // Technician
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_MEGA_DRAIN, MOVE_EXTRASENSORY, MOVE_TOXIC, MOVE_VENOSHOCK
@@ -5657,7 +5657,7 @@ static const struct TrainerMonItemCustomMoves sParty_Shayla[] = {
     {
     .lvl = -2,
     .species = SPECIES_CHERRIM,
-    .held_item = ITEM_HEAT_ROCK,
+    .heldItem = ITEM_HEAT_ROCK,
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_SUNNY_DAY, MOVE_WEATHER_BALL, MOVE_SOLAR_BEAM, MOVE_HELPING_HAND
     },
@@ -5934,6 +5934,12 @@ static const struct TrainerMonItemCustomMoves sParty_Madeline1[] = {
     .species = SPECIES_TROPIUS,
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_LEAF_TORNADO, MOVE_AIR_SLASH, MOVE_BODY_SLAM, MOVE_WHIRLWIND
+    },
+    {
+    .lvl = -3,
+    .species = SPECIES_SEALEO,
+    .spread = SPREAD_25_IV_0_EV,
+    .moves = MOVE_BRINE, MOVE_AURORA_BEAM, MOVE_HAIL, MOVE_SWAGGER
     }
 };
 

@@ -82,8 +82,8 @@ Route113_EventScript_ItemMaxEther:: @ 8290DDC
 	finditem ITEM_MAX_ETHER
 	end
 
-Route113_EventScript_ItemSuperRepel:: @ 8290DE9
-	finditem ITEM_SUPER_REPEL
+Route113_EventScript_ItemShinyStone:: @ 8290DE9
+	finditem ITEM_SHINY_STONE
 	end
 
 Route113_EventScript_ItemHyperPotion:: @ 8290DF6
