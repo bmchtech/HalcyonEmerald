@@ -4398,21 +4398,6 @@ u8 CalculateEnemyPartyCount(void)
     return gEnemyPartyCount;
 }
 
-// Similar to CalculatePlayerPartyCount, but ignores Eggs
-u8 CalculatePlayerBattlerPartyCount(void)
-{
-    u8 battlerCount = 0;
-
-    while (battlerCount < PARTY_SIZE
-        && (GetMonData(&gPlayerParty[battlerCount], MON_DATA_SPECIES, NULL) != SPECIES_NONE) && 
-        (GetMonData(&gPlayerParty[battlerCount], MON_DATA_SPECIES, NULL) != SPECIES_EGG))
-    {
-        battlerCount++;
-    }
-
-    return battlerCount;
-}
-
 u8 GetMonsStateToDoubles(void)
 {
     s32 aliveCount = 0;
