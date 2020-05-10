@@ -237,8 +237,7 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
 // Used to scale wild Pokemon levels
 static u8 GetMedianLevelOfPlayerParty(void)
 {
-    u8 medianLevel = 0;
-    u8 i, j, temp = 0;
+    u8 i, j, temp, medianLevel = 0;
     u8 playerPartyCount = CalculatePlayerBattlerPartyCount();
     u8 partyLevels[PARTY_SIZE] = {0};
 
@@ -250,12 +249,17 @@ static u8 GetMedianLevelOfPlayerParty(void)
     }
 
     // Store player levels in partyLevels array, skipping any Eggs
-    for (i = 0; i < PARTY_SIZE; i++)
+    // Double counters used as increasing j within the loop caused problems
+    // Should properly debug this some time
+    for (i = 0, j = 0; i < PARTY_SIZE; i++, j++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG)
         {
             partyLevels[j] = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
-            j++;
+        }
+        else
+        {
+            j--; // ???
         }
     }
 
@@ -273,9 +277,9 @@ static u8 GetMedianLevelOfPlayerParty(void)
         }
     }
     // Get the median level (not strictly the median if the player has an even party size;
-    // gets the higher middle value if this is the case.)
+    // gets the higher of the two middle values if this is the case.)
 
-    medianLevel = partyLevels[(playerPartyCount / 2) + 1];
+    medianLevel = partyLevels[playerPartyCount / 2];
     
     return medianLevel;
 }
