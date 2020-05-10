@@ -4401,11 +4401,11 @@ u8 CalculateEnemyPartyCount(void)
 // Similar to CalculatePlayerPartyCount, but ignores Eggs
 u8 CalculatePlayerBattlerPartyCount(void)
 {
-    u8 battlerCount = 0;
+    u8 battlerCount, i = 0;
 
-    while (battlerCount < PARTY_SIZE
-        && (GetMonData(&gPlayerParty[battlerCount], MON_DATA_SPECIES, NULL) != SPECIES_NONE) && 
-        (GetMonData(&gPlayerParty[battlerCount], MON_DATA_SPECIES, NULL) != SPECIES_EGG))
+    for (i = 0; i < PARTY_SIZE; i++)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE && 
+            GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_EGG)
     {
         battlerCount++;
     }
