@@ -382,12 +382,12 @@ MeteorFalls_1F_1R_EventScript_ItemTM23:: @ 82911AB
 	finditem ITEM_TM23_IRON_TAIL
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemFullHeal:: @ 82911B8
-	finditem ITEM_FULL_HEAL
+MeteorFalls_1F_1R_EventScript_ItemCometShard:: @ 82911B8
+	finditem ITEM_COMET_SHARD
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemMoonStone:: @ 82911C5
-	finditem ITEM_MOON_STONE
+MeteorFalls_1F_1R_EventScript_ItemTM59DragonPulse:: @ 82911C5
+	finditem ITEM_TM59_DRAGON_PULSE
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemPPUP:: @ 82911D2

@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MeteorFalls_1F_1R_EventScript_ItemMoonStone",
-      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE"
+      "script": "MeteorFalls_1F_1R_EventScript_ItemTM59DragonPulse",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_TM59_DRAGON_PULSE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MeteorFalls_1F_1R_EventScript_ItemFullHeal",
-      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL"
+      "script": "MeteorFalls_1F_1R_EventScript_ItemCometShard",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_COMET_SHARD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
