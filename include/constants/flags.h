@@ -69,8 +69,8 @@
 #define FLAG_WANDA_GARDEVOIRITE             0x39
 #define FLAG_ROUTE111_LEFT_BREAKABLE_ROCK   0x3A
 #define FLAG_ROUTE111_RIGHT_BREAKABLE_ROCK  0x3B
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_HIDE_FALLARBOR_RIVAL1          0x3C
+#define FLAG_HIDE_FALLARBOR_RIVAL2          0x3D
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
