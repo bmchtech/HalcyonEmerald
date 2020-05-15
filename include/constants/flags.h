@@ -70,7 +70,7 @@
 #define FLAG_ROUTE111_LEFT_BREAKABLE_ROCK   0x3A
 #define FLAG_ROUTE111_RIGHT_BREAKABLE_ROCK  0x3B
 #define FLAG_HIDE_FALLARBOR_RIVAL1          0x3C
-#define FLAG_HIDE_FALLARBOR_RIVAL2          0x3D
+#define FLAG_HIDE_FALLARBOR_RIVAL_ON_BIKE          0x3D
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag

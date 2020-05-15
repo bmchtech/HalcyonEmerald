@@ -82,6 +82,7 @@ FallarborTown_EventScript_RivalScene::
 	lockall
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	applymovement 5, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
@@ -93,9 +94,9 @@ FallarborTown_EventScript_RivalScene::
 
 FallarborTown_EventScript_MayScene::
 	playbgm MUS_GIRL_SUP, 1
-	msgbox FallarborTown_Text_MayComeHere, MSGBOX_DEFAULT
+	msgbox FallarborTown_Text_MayDisaster, MSGBOX_DEFAULT
 	closemessage
-	call FallarborTown_EventScript_MovePlayer
+	call FallarborTown_EventScript_MoveToPlayer
 	msgbox FallarborTown_Text_MayWeirdos, MSGBOX_DEFAULT
 	closemessage
 	goto FallarborTown_EventScript_RivalExit
@@ -104,14 +105,15 @@ FallarborTown_EventScript_BrendanScene::
 	playbgm MUS_BOY_SUP, 1
 	msgbox FallarborTown_Text_BrendanComeHere, MSGBOX_DEFAULT
 	closemessage
-	call FallarborTown_EventScript_MovePlayer
+	call FallarborTown_EventScript_MoveToPlayer
 	msgbox FallarborTown_Text_BrendanNuts, MSGBOX_DEFAULT
 	closemessage
 	goto FallarborTown_EventScript_RivalExit
 
 FallarborTown_EventScript_RivalExit::
-	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 6, 12, 10
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
 	removeobject 5
 	addobject 6
 	delay 45
@@ -124,7 +126,7 @@ FallarborTown_EventScript_RivalExit::
 	releaseall
 	end
 
-FallarborTown_EventScript_MovePlayer::
+FallarborTown_EventScript_MoveToPlayer::
 	compare VAR_0x8004, 1
 	call_if_eq FallarborTown_EventScript_PlayerApproach1
 	compare VAR_0x8004, 2
@@ -139,77 +141,71 @@ FallarborTown_EventScript_MovePlayer::
 
 FallarborTown_EventScript_PlayerApproach1::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerApproach1
+	applymovement 5, FallarborTown_Movement_RivalApproach
 	waitmovement 0
 	return
 
 FallarborTown_EventScript_PlayerApproach2::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerApproach2
+	applymovement 5, FallarborTown_Movement_RivalApproach
 	waitmovement 0
 	return
 
 FallarborTown_EventScript_PlayerApproach3::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerApproach3
+	applymovement 5, FallarborTown_Movement_RivalApproach
 	waitmovement 0
 	return
 
 FallarborTown_EventScript_PlayerApproach4::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerApproach4
+	applymovement 5, FallarborTown_Movement_RivalApproach
 	waitmovement 0
 	return
 
 FallarborTown_EventScript_PlayerApproach5::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerApproach5
+	applymovement 5, FallarborTown_Movement_RivalApproach
 	waitmovement 0
 	return
 
 FallarborTown_Movement_PlayerApproach1:
-	walk_left
 	walk_down
 	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	face_left
 	step_end
 
 FallarborTown_Movement_PlayerApproach2:
-	walk_left
 	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	face_left
 	step_end
 
 FallarborTown_Movement_PlayerApproach3:
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	face_left
 	step_end
 
 FallarborTown_Movement_PlayerApproach4:
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_up
+	face_left
 	step_end
 
 FallarborTown_Movement_PlayerApproach5:
-	walk_left
-	walk_down
-	walk_down
-	walk_down
+	walk_up
+	walk_up
+	face_left
+	step_end
+
+FallarborTown_Movement_RivalApproach:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	step_end
 
 FallarborTown_Movement_RivalExit:
-	walk_fast_down
-	walk_fast_down
+	walk_fast_left
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
@@ -219,17 +215,15 @@ FallarborTown_Movement_RivalExit:
 	walk_fast_left
 	step_end
 
-FallarborTown_Text_MayComeHere:
-	.string "Arghhh, what a disaster!\n"
-	.string "Oh! {PLAYER}{KUN}! Help!\p"
-	.string "You've got to come with me!$"
+FallarborTown_Text_MayDisaster:
+	.string "Oh! {PLAYER}{KUN}! Help!$"
 
 FallarborTown_Text_BrendanComeHere:
-	.string "{PLAYER}! C'mere!\n"
-	.string "Everything's a mess!$"
+	.string "{PLAYER}! C'mere!$"
 
 FallarborTown_Text_MayWeirdos:
-	.string "Y-you see…\p"
+	.string "You've got to come with me!\p"
+	.string "Y-you see…\n"
 	.string "Professor Cozmo…\p"
 	.string "He got abducted by some weirdos\n"
 	.string "calling themselves Team Magma!\p"
@@ -240,7 +234,8 @@ FallarborTown_Text_MayWeirdos:
 	.string "Let's meet up at Meteor Falls!$"
 
 FallarborTown_Text_BrendanNuts:
-	.string "It's ridiculous…\p"
+	.string "Everything's a mess!p"
+	.string "It's ridiculous…\n"
 	.string "Professor Cozmo…\p"
 	.string "They say that he was just up and\n"
 	.string "kidnapped by some nuts calling\l"
