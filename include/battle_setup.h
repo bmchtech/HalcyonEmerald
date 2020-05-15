@@ -3,7 +3,7 @@
 
 #include "gym_leader_rematch.h"
 
-#define REMATCHES_COUNT 5
+#define REMATCHES_COUNT 4
 
 struct RematchTrainer
 {

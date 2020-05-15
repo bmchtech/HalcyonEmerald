@@ -5136,10 +5136,16 @@ u8 IsMonDisobedient(void)
 
         if (FlagGet(FLAG_BADGE02_GET))
             obedienceLevel = 40;
+        if (FlagGet(FLAG_BADGE03_GET))
+            obedienceLevel = 50;
         if (FlagGet(FLAG_BADGE04_GET))
             obedienceLevel = 60;
+        if (FlagGet(FLAG_BADGE05_GET))
+            obedienceLevel = 70;
         if (FlagGet(FLAG_BADGE06_GET))
             obedienceLevel = 80;
+        if (FlagGet(FLAG_BADGE07_GET))
+            obedienceLevel = 90;
     }
 
     if (gBattleMons[gBattlerAttacker].level <= obedienceLevel)
