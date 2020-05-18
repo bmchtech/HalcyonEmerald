@@ -4404,10 +4404,12 @@ u8 CalculatePlayerBattlerPartyCount(void)
     u8 battlerCount, i = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
+    {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE && 
             GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_EGG)
-    {
-        battlerCount++;
+        {
+            battlerCount++;
+        }
     }
 
     return battlerCount;
