@@ -4398,18 +4398,21 @@ u8 CalculateEnemyPartyCount(void)
     return gEnemyPartyCount;
 }
 
-// Similar to CalculatePlayerPartyCount, but ignores Eggs
+// Basically GetMonsStateToDoubles, but includes fainted Pokemon
 u8 CalculatePlayerBattlerPartyCount(void)
 {
-    u8 battlerCount, i = 0;
+    s32 battlerCount = 0;
+    s32 i;
+    CalculatePlayerPartyCount();
 
-    for (i = 0; i < PARTY_SIZE; i++)
+    if (gPlayerPartyCount == 1)
+        return gPlayerPartyCount; // PLAYER_HAS_ONE_MON
+
+    for (i = 0; i < gPlayerPartyCount; i++)
     {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE && 
-            GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_EGG)
-        {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_EGG
+         && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, NULL) != SPECIES_NONE)
             battlerCount++;
-        }
     }
 
     return battlerCount;
