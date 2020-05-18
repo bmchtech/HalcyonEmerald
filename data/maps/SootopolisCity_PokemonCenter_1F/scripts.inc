@@ -46,6 +46,25 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries:: @ 8226558
 	release
 	end
 
+SootopolisCity_PokemonCenter_1F_EventScript_Clerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PokeMart_PokeCenterSootopolisCity
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PokeMart_PokeCenterSootopolisCity::
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_QUICK_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn: @ 8226562
 	.string "WALLACE is rumored to be the toughest\n"
 	.string "TRAINER in the whole HOENN region.\p"

@@ -32,6 +32,26 @@ VerdanturfTown_PokemonCenter_1F_EventScript_XscissorTM::
 	release
 	end
 
+VerdanturfTown_PokemonCenter_1F_EventScript_Clerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PokeMart_PokeCenterVerdanturfTown
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PokeMart_PokeCenterVerdanturfTown::
+	.2byte ITEM_HEAL_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
+
 VerdanturfTown_PokemonCenter_1F_EventScript_ReceivedTM81::
 	msgbox VerdanturfTown_PokemonCenter_1F_Text_HaveTM81, MSGBOX_DEFAULT
 	release

@@ -61,6 +61,25 @@ FallarborTown_PokemonCenter_1F_EventScript_LanetteExited:: @ 8200C48
 	release
 	end
 
+FallarborTown_PokemonCenter_1F_EventScript_Clerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PokeMart_PokeCenterFallarborTown
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PokeMart_PokeCenterFallarborTown::
+	.2byte ITEM_QUICK_BALL
+	.2byte ITEM_DUSK_BALL
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
 FallarborTown_PokemonCenter_1F_Movement_LanetteExitNorth:
 	walk_left
 	walk_left

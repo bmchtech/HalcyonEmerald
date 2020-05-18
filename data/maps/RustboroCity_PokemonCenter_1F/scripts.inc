@@ -17,6 +17,25 @@ RustboroCity_PokemonCenter_1F_EventScript_Nurse:: @ 8214D76
 	release
 	end
 
+RustboroCity_PokemonCenter_1F_EventScript_Clerk2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart PokeMart_PokeCenterRustboro
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PokeMart_PokeCenterRustboro::
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
 RustboroCity_PokemonCenter_1F_EventScript_Man:: @ 8214D84
 	msgbox RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities, MSGBOX_NPC
 	end
@@ -30,19 +49,19 @@ RustboroCity_PokemonCenter_1F_EventScript_Girl:: @ 8214D96
 	end
 
 RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities: @ 8214D9F
-	.string "My POKéMON has a NAIVE nature, and my\n"
-	.string "friend's has a JOLLY nature.\p"
-	.string "It's fascinating how POKéMON have\n"
+	.string "My Pokémon has a Naive nature, and my\n"
+	.string "friend's has a Jolly nature.\p"
+	.string "It's fascinating how Pokémon have\n"
 	.string "personalities!$"
 
 RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon: @ 8214E13
 	.string "Just like people, there are male and\n"
-	.string "female POKéMON.\p"
+	.string "female Pokémon.\p"
 	.string "But no one seems to have any idea how\n"
 	.string "they're different.$"
 
 RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor: @ 8214E81
 	.string "The man next door gave me an HM!\p"
-	.string "I used it to teach my POKéMON how to\n"
-	.string "CUT down skinny trees.$"
+	.string "I used it to teach my Pokémon how to\n"
+	.string "Cut down skinny trees.$"
 
