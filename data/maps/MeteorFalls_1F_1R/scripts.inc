@@ -246,6 +246,9 @@ MeteorFalls_1F_1R_EventScript_CancelMultiBattle::
     end
 
 MeteorFalls_1F_1R_EventScript_Lost::
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
 
 MeteorFalls_1F_1R_EventScript_MultiCancelled::
 	lockall
@@ -266,12 +269,6 @@ MeteorFalls_1F_1R_EventScript_RivalTalkAfterBattle::
 	release
 	end
 
-MeteorFalls_1F_1R_Movement_PlayerMoveDown:
-	walk_down
-	walk_down
-	face_left
-	step_end
-
 MeteorFalls_1F_1R_Movement_WalkDown2:
 	walk_down
 	walk_down
@@ -284,12 +281,6 @@ MeteorFalls_1F_1R_Movement_Camera2:
 
 MeteorFalls_1F_1R_Movement_WalkRight1:
 	walk_right
-	step_end
-
-MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer: @ 822BEC0
-	walk_right
-	walk_right
-	walk_in_place_fastest_up
 	step_end
 
 MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit: @ 822BEC4
