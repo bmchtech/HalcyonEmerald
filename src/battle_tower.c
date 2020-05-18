@@ -3064,7 +3064,7 @@ static void FillPartnerParty(u16 trainerId)
             {
                 const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.ItemCustomMoves;
 
-                level = GetHighestLevelInPlayerParty() + partyData[i].lvl;
+                level = GetHighestLevelInPlayerParty(); //+ partyData[i].lvl; Scaling not working as expected, but not needed anyway
                 if (level > 100)
                 {
                     level = 100;

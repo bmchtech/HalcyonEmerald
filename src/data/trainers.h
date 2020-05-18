@@ -601,18 +601,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Rose4},
     },
 
-    [TRAINER_ROSE_5] =
+    [TRAINER_GRUNT_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_AROMA_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .trainerName = _("Rose"),
+        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_M,
+        .trainerName = _("Grunt"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Rose5),
-        .party = {.ItemCustomMoves = sParty_Rose5},
+        .partySize = ARRAY_COUNT(sParty_GruntMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_GruntMeteorFalls},
     },
 
     [TRAINER_DUSTY_1] =
@@ -699,18 +699,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Dusty4},
     },
 
-    [TRAINER_DUSTY_5] =
+    [TRAINER_COURTNEY_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Dusty"),
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN_F,
+        .trainerName = _("Courtney"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Dusty5),
-        .party = {.ItemCustomMoves = sParty_Dusty5},
+        .partySize = ARRAY_COUNT(sParty_Courtney1),
+        .party = {.ItemCustomMoves = sParty_Courtney1},
     },
 
     [TRAINER_GABBY_AND_TY_1] =
@@ -881,18 +881,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Lola4},
     },
 
-    [TRAINER_LOLA_5] =
+    [MAY_TREECKO_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_TUBER_F,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_F,
-        .trainerName = _("Lola"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Lola5),
-        .party = {.ItemCustomMoves = sParty_Lola5},
+        .partySize = ARRAY_COUNT(sParty_MayTreeckoMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_MayTreeckoMeteorFalls},
     },
 
     [TRAINER_RICKY_1] =
@@ -979,18 +979,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Ricky4},
     },
 
-    [TRAINER_RICKY_5] =
+    [MAY_TORCHIC_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("Ricky"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Ricky5),
-        .party = {.ItemCustomMoves = sParty_Ricky5},
+        .partySize = ARRAY_COUNT(sParty_MayTorchicMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_MayTorchicMeteorFalls},
     },
 
     [TRAINER_RANDALL] =
@@ -1217,18 +1217,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Wilton4},
     },
 
-    [TRAINER_WILTON_5] =
+    [MAY_MUDKIP_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = _("Wilton"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
+        .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Wilton5),
-        .party = {.ItemCustomMoves = sParty_Wilton5},
+        .partySize = ARRAY_COUNT(sParty_MayMudkipMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_MayMudkipMeteorFalls},
     },
 
     [TRAINER_WARREN] =
@@ -1455,18 +1455,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Brooke4},
     },
 
-    [TRAINER_BROOKE_5] =
+    [BRENDAN_TREECKO_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = _("Brooke"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
+        .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Brooke5),
-        .party = {.ItemCustomMoves = sParty_Brooke5},
+        .partySize = ARRAY_COUNT(sParty_BrendanTreeckoMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_BrendanTreeckoMeteorFalls},
     },
 
     [TRAINER_PATRICIA] =
@@ -1581,18 +1581,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Valerie4},
     },
 
-    [TRAINER_VALERIE_5] =
+    [BRENDAN_TORCHIC_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .trainerName = _("Valerie"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Valerie5),
-        .party = {.ItemCustomMoves = sParty_Valerie5},
+        .partySize = ARRAY_COUNT(sParty_BrendanTorchicMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_BrendanTorchicMeteorFalls},
     },
 
     [TRAINER_CINDY_1] =
@@ -1707,18 +1707,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Cindy4},
     },
 
-    [TRAINER_CINDY_5] =
+    [BRENDAN_MUDKIP_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("Cindy"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
+        .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Cindy5),
-        .party = {.ItemCustomMoves = sParty_Cindy5},
+        .partySize = ARRAY_COUNT(sParty_BrendanMudkipMeteorFalls),
+        .party = {.ItemCustomMoves = sParty_BrendanMudkipMeteorFalls},
     },
 
     [TRAINER_CINDY_6] =
