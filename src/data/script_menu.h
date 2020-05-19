@@ -787,6 +787,69 @@ static const struct MenuAction MultichoiceList_GrassFireWater[] =
     {gText_WaterType},
     {gText_Exit},
 };
+const struct MenuAction MultichoiceList_Flavors[] =
+{
+    {gText_FlavourRed},
+    {gText_FlavourYellow},
+    {gText_FlavourPink},
+    {gText_FlavourBlue},
+    {gText_FlavourGreen},
+    {gText_Exit},
+};
+
+const struct MenuAction MultichoiceList_SuperTrainingMenu[] =
+{
+    {gText_Modify},
+    {gText_ResetEVs},
+    {gText_Exit},
+};
+
+const struct MenuAction MultichoiceList_HiddenPowerTypes[] =
+{
+    {gText_HPFire},
+    {gText_HPIce},
+    {gText_HPGrass},
+    {gText_HPRock},
+    {gText_HPGround},
+    {gText_HPFighting},
+};
+
+const struct MenuAction MultichoiceList_EVMenu[] =
+{
+    {gText_Add4toEV},
+    {gText_Add8toEV},
+    {gText_Add12toEV},
+    {gText_Add64toEV},
+    {gText_Add128toEV},
+    {gText_Add252toEV},
+};
+
+const struct MenuAction MultichoiceList_IVMenu[] =
+{
+    {gText_ChangeIVto0},
+    {gText_ChangeIVto1},
+    {gText_ChangeIVto14},
+    {gText_ChangeIVto15},
+    {gText_ChangeIVto30},
+    {gText_ChangeIVto31},
+};
+
+const struct MenuAction MultichoiceList_BaseStats[] =
+{
+    {gText_HP4},
+    {gText_Attack3},
+    {gText_Defense3},
+    {gText_Speed2},
+    {gText_SpAtk4},
+    {gText_SpDef4},
+};
+
+const struct MenuAction MultichoiceList_HyperTrainingMenu[] =
+{
+    {gText_ChangeIV},
+    {gText_HiddenPower},
+    {gText_Exit},
+};
 
 static const struct MenuAction MultichoiceList_Exit[] =
 {
@@ -918,6 +981,13 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_PKMN_CENTER_TUTOR_SETS]     = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_PKMN_CENTER_MOVE_TUTOR]     = MULTICHOICE(MultichoiceList_PKMNCentreMovetutor),
     [MULTI_GRASS_FIRE_WATER]           = MULTICHOICE(MultichoiceList_GrassFireWater),
+    [MULTI_FLAVORS]                    = MULTICHOICE(MultichoiceList_Flavors),
+    [MULTI_SUPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_SuperTrainingMenu),
+    [MULTI_HIDDEN_POWER_TYPES]         = MULTICHOICE(MultichoiceList_HiddenPowerTypes),
+    [MULTI_IV_MENU]                    = MULTICHOICE(MultichoiceList_IVMenu),
+    [MULTI_EV_MENU]                    = MULTICHOICE(MultichoiceList_EVMenu),
+    [MULTI_BASE_STATS]                 = MULTICHOICE(MultichoiceList_BaseStats),
+    [HYPER_TRAINING_MENU]              = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
 };
 
 const u8 *const gStdStrings[] =

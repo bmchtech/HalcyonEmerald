@@ -124,7 +124,14 @@
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_PKMN_CENTER_TUTOR_SETS       114
 #define MULTI_PKMN_CENTER_MOVE_TUTOR       115 
-#define MULTI_GRASS_FIRE_WATER             116        
+#define MULTI_GRASS_FIRE_WATER             116   
+#define MULTI_FLAVORS                      117
+#define MULTI_SUPER_TRAINING_MENU          118
+#define MULTI_HIDDEN_POWER_TYPES           119
+#define MULTI_IV_MENU                      120
+#define MULTI_EV_MENU                      121
+#define MULTI_BASE_STATS                   122
+#define HYPER_TRAINING_MENU                123     
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
