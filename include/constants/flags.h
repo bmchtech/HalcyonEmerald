@@ -1059,7 +1059,7 @@
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_ROUTE_113_SHINY_STONE                             0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
-#define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
+#define FLAG_ITEM_ROUTE_114_TM53_PSYSHOCK                                 0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_01                                   0x3F9
 #define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA

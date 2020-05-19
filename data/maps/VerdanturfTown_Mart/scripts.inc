@@ -36,21 +36,50 @@ VerdanturfTown_Mart_EventScript_Lass:: @ 82025CC
 	msgbox VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon, MSGBOX_NPC
 	end
 
+VerdanturfTown_Mart_EventScript_PaybackTM::
+	lock
+	faceplayer
+	checkitem ITEM_TM66_PAYBACK, 1
+	compare VAR_RESULT, 1
+	goto_if_eq VerdanturfTown_Mart_EventScript_ReceivedTM66
+	msgbox VerdanturfTown_Mart_Text_SlowPokemon, MSGBOX_DEFAULT
+	giveitem ITEM_TM66_PAYBACK
+	msgbox VerdanturfTown_Mart_Text_HaveTM66, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_Mart_EventScript_ReceivedTM66::
+	msgbox VerdanturfTown_Mart_Text_HaveTM66, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_Mart_Text_SlowPokemon:
+	.string "Do you think slow Pokémon ever get\n"
+	.string "tired of taking the first hit in every\l"
+	.string "battle?\p"
+	.string "I think they'd be itching for a little\n"
+	.string "payback!\p"
+	.string "If you've got any slow Pokémon, give\n"
+	.string "this TM a try.$"
+
+VerdanturfTown_Mart_Text_HaveTM66:
+	.string "TM66 contains Payback!\p"
+	.string "It's an attack that doubles in power\n"
+	.string "if the user moves after its target.$"
+
 VerdanturfTown_Mart_Text_XSpecialIsCrucial: @ 82025D5
-	.string "For any POKéMON match, X SPECIAL\n"
+	.string "For any Pokémon match, X Special\n"
 	.string "is crucial.\p"
 	.string "It jacks up the power of some moves\n"
 	.string "even though it's only for one battle.$"
 
 VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent: @ 820264C
 	.string "They don't seem to sell any winning\n"
-	.string "strategy guides for the BATTLE TENT…\p"
+	.string "strategy guides for the Battle Tent…\p"
 	.string "It seems one must rely on one's\n"
 	.string "own wits after all…$"
 
-VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon: @ 82026C9
-	.string "The NEST BALL works better on\n"
-	.string "weakened POKéMON.\p"
-	.string "VERDANTURF is the only place you can\n"
-	.string "buy it.$"
+VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon:
+	.string "The Nest Ball works better on\n"
+	.string "weaker Pokémon.$"
 

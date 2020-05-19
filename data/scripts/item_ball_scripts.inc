@@ -94,8 +94,8 @@ Route114_EventScript_ItemRareCandy:: @ 8290E03
 	finditem ITEM_RARE_CANDY
 	end
 
-Route114_EventScript_ItemProtein:: @ 8290E10
-	finditem ITEM_PROTEIN
+Route114_EventScript_ItemTM53Psyshock:: @ 8290E10
+	finditem ITEM_TM54_PSYSHOCK
 	end
 
 Route114_EventScript_ItemEnergyPowder:: @ 8290E1D

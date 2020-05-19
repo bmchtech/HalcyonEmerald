@@ -32,6 +32,16 @@ VerdanturfTown_PokemonCenter_1F_EventScript_XscissorTM::
 	release
 	end
 
+VerdanturfTown_PokemonCenter_1F_EventScript_ReceivedTM81::
+	msgbox VerdanturfTown_PokemonCenter_1F_Text_HaveTM81, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_PokemonCenter_1F_EventScript_DontLikeBugs::
+	msgbox VerdanturfTown_PokemonCenter_1F_Text_DontLikeBugs, MSGBOX_DEFAULT
+	release
+	end
+
 VerdanturfTown_PokemonCenter_1F_EventScript_Clerk2::
 	lock
 	faceplayer
@@ -48,17 +58,6 @@ PokeMart_PokeCenterVerdanturfTown::
 	.2byte ITEM_NEST_BALL
 	.2byte ITEM_LUXURY_BALL
 	.2byte ITEM_NONE
-	release
-	end
-
-
-VerdanturfTown_PokemonCenter_1F_EventScript_ReceivedTM81::
-	msgbox VerdanturfTown_PokemonCenter_1F_Text_HaveTM81, MSGBOX_DEFAULT
-	release
-	end
-
-VerdanturfTown_PokemonCenter_1F_EventScript_DontLikeBugs::
-	msgbox VerdanturfTown_PokemonCenter_1F_Text_DontLikeBugs, MSGBOX_DEFAULT
 	release
 	end
 
