@@ -987,7 +987,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_IV_MENU]                    = MULTICHOICE(MultichoiceList_IVMenu),
     [MULTI_EV_MENU]                    = MULTICHOICE(MultichoiceList_EVMenu),
     [MULTI_BASE_STATS]                 = MULTICHOICE(MultichoiceList_BaseStats),
-    [HYPER_TRAINING_MENU]              = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
+    [MULTI_HYPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
 };
 
 const u8 *const gStdStrings[] =
