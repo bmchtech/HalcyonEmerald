@@ -1,11 +1,80 @@
 FallarborTown_MoveRelearnersHouse_MapScripts:: @ 8201382
 	.byte 0
 
+FallarborTown_EventScript_IvyEvieIntro::
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart1, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart2, MSGBOX_DEFAULT
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart3, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart4, MSGBOX_DEFAULT
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart5, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	call_if_eq FallarborTown_Explain_EVs
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart6, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	call_if_eq FallarborTown_Explain_IVs
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart7, MSGBOX_DEFAULT
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	msgbox FallarborTown_Text_AnnoyingIntroPart8, MSGBOX_DEFAULT
+	return
+
+
+FallarborTown_Text_AnnoyingIntroPart1:
+	.string "Hey there, Trainer!\p"
+	.string "If you want your Pokémon to be the very\n"
+	.string "best in all of Hoenn, you've come to\l"
+	.string "the right place!\p"
+	.string "I'm Evie, and this is my sister, Ivy.$"
+
+FallarborTown_Text_AnnoyingIntroPart2:
+	.string "Ivy: We offer special training\n"
+	.string "programs that will seriously beef up\l"
+	.string "your team!$"
+
+FallarborTown_Text_AnnoyingIntroPart3:
+	.string "Evie: But our services don't come cheap.\n"
+	.string "Well, mine don't, at least.\p"
+	.string "You can pay Ivy with junk-$"
+
+FallarborTown_Text_AnnoyingIntroPart4:
+	.string "Ivy: Hey!\n"
+	.string "Those Bottle Caps aren't junk!\p"
+	.string "They're highly collectable, thank\n"
+	.string "you very much!$"
+
+FallarborTown_Text_AnnoyingIntroPart5:
+	.string "Evie: Yeah, yeah, if you say so…\p"
+	.string "Anyway, do you know about your Pokémon's\n"
+	.string "Effort Values, or EVs for short?$"
+
+FallarborTown_Text_AnnoyingIntroPart6:
+	.string "Ivy: OK! now, how about Individual\n"
+	.string "Values, or IVs?\p"
+	.string "Do you want me to explain them?$"
+
+FallarborTown_Text_AnnoyingIntroPart7:
+	.string "Evie: Right, here's the deal. For ¥100,\n"
+	.string "I'll increase a Pokémon's EVs by one.$"
+
+FallarborTown_Text_AnnoyingIntroPart8:
+	.string "Ivy: And for one Bottle Cap, I'll change\n"
+	.string "one of a Pokémon's IVs to whatever\l"
+	.string "you want.\p"
+	.string "I can also change the type of your\n"
+	.string "Pokémon's Hidden Power for five Caps.\p"
+
 @@@@@@@@@@@@@@@@ Super Training Script @@@@@@@@@@@@@@@@
 
 FallarborTown_SuperTrainer::
 	lockall
 	faceplayer
+	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
 	msgbox SuperTraining_String_1, MSGBOX_DEFAULT
 	bufferleadmonspeciesname 0
 	msgbox SuperTraining_String_2, MSGBOX_YESNO
@@ -27,7 +96,7 @@ FallarborTown_SuperMainMenu::
 
 FallarborTown_Explain_EVs::
 	msgbox SuperTraining_String_3, MSGBOX_DEFAULT
-	goto FallarborTown_SuperMainMenu
+	return
 
 FallarborTown_ChangeEV::
 	bufferleadmonspeciesname 0
@@ -299,6 +368,7 @@ FallarborTown_CantAfford_String::
 FallarborTown_HyperTrainer::
 	lockall
 	faceplayer
+	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
 	msgbox HyperTraining_String_1, MSGBOX_DEFAULT
 	bufferleadmonspeciesname 0
 	msgbox HyperTraining_String_2, MSGBOX_YESNO
@@ -320,7 +390,7 @@ FallarborTown_HyperMainMenu::
 
 FallarborTown_Explain_IVs::
 	msgbox HyperTraining_String_3, MSGBOX_DEFAULT
-	goto FallarborTown_HyperMainMenu
+	return
 
 FallarborTown_ChangeIV::
 	msgbox HyperTraining_String_5, MSGBOX_DEFAULT
