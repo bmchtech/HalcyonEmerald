@@ -1318,7 +1318,7 @@ void RemoveCameraObject(void)
 
 u8 GetPokeblockNameByMonNature(void)
 {
-    return CopyMonFavoritePokeblockName(GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NATURE), gStringVar1);
+    return CopyMonFavoritePokeblockName(GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NATURE), gStringVar1);
 }
 
 void GetSecretBaseNearbyMapName(void)
@@ -4955,78 +4955,85 @@ u8 Script_TryGainNewFanFromCounter(void)
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
 
-
+// Changes the selected Pokemon's nature.
+// gSpecialVar_0x8004 must be set to the party slot of the Pokemon whose nature should be changed
+// Set gSpecialVar_0x8005 to the stat to icrease, and gSpecialVar_0x8006 to the stat to decrease
 void ChangePokemonNature (void)
 {
     u8 newNature = 0;
-    struct Pokemon *leadMon;
 
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
-    newNature = (gSpecialVar_0x8004*5) + gSpecialVar_0x8005;
-	SetMonData(leadMon, MON_DATA_NATURE, &newNature);
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    newNature = (gSpecialVar_0x8005 * (NUM_STATS - 1)) + gSpecialVar_0x8006;
+	SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NATURE, &newNature);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-void BufferLeadMonNature (void)
+// Buffers the nature of a Pokemon chosen by the player.
+// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
+void BufferChosenMonNature (void)
 {
     u8 nature = 0;
-    struct Pokemon *leadMon;
 
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
-    nature = GetMonData(leadMon, MON_DATA_NATURE, NULL);
+    nature = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NATURE, NULL);
     StringCopy (gStringVar2, gNatureNamePointers[nature]);
 }
 
-void ChangeLeadMonIVs (void)
+// Changes one of the selected Pokemon's IVs.
+// gSpecialVar_0x8004 must be set to the party slot of the Pokemon whose IVs should be changed
+// gSpecialVar_0x8005 must be set to the index of the IV to be changed (0 for HP, 1 for Attack, etc.)
+// gSpecialVar_0x8006 must be set to the value to change the IV to
+void ChangeChosenMonIVs (void)
 {
-    u8 statToChange = gSpecialVar_0x8004;
-    u8 newIV = gSpecialVar_0x8005;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
+    u8 statToChange = gSpecialVar_0x8005;
+    u8 newIV = gSpecialVar_0x8006;
 
     switch (statToChange)
     {
-    case 0: SetMonData(leadMon, MON_DATA_HP_IV, &newIV);
+    case STAT_HP: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &newIV);
         break;
-    case 1: SetMonData(leadMon, MON_DATA_ATK_IV, &newIV);
+    case STAT_ATK: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &newIV);
         break;
-    case 2: SetMonData(leadMon, MON_DATA_DEF_IV, &newIV);
+    case STAT_DEF: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &newIV);
         break;
-    case 3: SetMonData(leadMon, MON_DATA_SPEED_IV, &newIV);
+    case STAT_SPEED: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &newIV);
         break;
-    case 4: SetMonData(leadMon, MON_DATA_SPATK_IV, &newIV);
+    case STAT_SPATK: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &newIV);
         break;
-    case 5: SetMonData(leadMon, MON_DATA_SPDEF_IV, &newIV);
+    case STAT_SPDEF: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &newIV);
         break;
     }
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-void IncreaseLeadMonEVs (void)
+// Adds EVs to one of the selected Pokemon's stats.
+// gSpecialVar_0x8004 must be set to the party slot of the Pokemon whose EVs should be increased
+// gSpecialVar_0x8005 must be set to the index of the EV to be changed (0 for HP, 1 for Attack, etc.)
+// gSpecialVar_0x8006 must be set to the number of EVs to add to that stat
+// Stores the new sum of the EVs in that stat in gSpecialVar_0x8007
+void IncreaseChosenMonEVs (void)
 {
-    u8 statToChange = gSpecialVar_0x8004;
-    u8 increment = gSpecialVar_0x8005;
+    u8 statToChange = gSpecialVar_0x8005;
+    u8 increment = gSpecialVar_0x8006;
     u8 oldEV;
     u8 newEV;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
 
+    // Get the number of EVs currently in the chosen stat
     switch (statToChange)
     {
-    case 0: oldEV = GetMonData(leadMon, MON_DATA_HP_EV, NULL);
+    case STAT_HP: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, NULL);
         break;
-    case 1: oldEV = GetMonData(leadMon, MON_DATA_ATK_EV, NULL);
+    case STAT_ATK: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, NULL);
        break;
-    case 2: oldEV = GetMonData(leadMon, MON_DATA_DEF_EV, NULL);
+    case STAT_DEF: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, NULL);
        break;
-    case 3: oldEV = GetMonData(leadMon, MON_DATA_SPEED_EV, NULL);
+    case STAT_SPEED: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, NULL);
        break;
-    case 4: oldEV = GetMonData(leadMon, MON_DATA_SPATK_EV, NULL);
+    case STAT_SPATK: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, NULL);
        break;
-    case 5: oldEV = GetMonData(leadMon, MON_DATA_SPDEF_EV, NULL);
+    case STAT_SPDEF: oldEV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, NULL);
        break;
     }
 
+    // Should replace 252 here with symbol for max EVs in a stat
     if ((oldEV + increment) > 252)
     {
         newEV = 252;
@@ -5038,166 +5045,169 @@ void IncreaseLeadMonEVs (void)
     
     switch (statToChange)
     {
-    case 0: SetMonData(leadMon, MON_DATA_HP_EV, &newEV);
+    case STAT_HP: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &newEV);
        break;
-    case 1: SetMonData(leadMon, MON_DATA_ATK_EV, &newEV);
+    case STAT_ATK: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &newEV);
        break;
-    case 2: SetMonData(leadMon, MON_DATA_DEF_EV, &newEV);
+    case STAT_DEF: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &newEV);
        break;
-    case 3: SetMonData(leadMon, MON_DATA_SPEED_EV, &newEV);
+    case STAT_SPEED: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &newEV);
        break;
-    case 4: SetMonData(leadMon, MON_DATA_SPATK_EV, &newEV);
+    case STAT_SPATK: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &newEV);
        break;
-    case 5: SetMonData(leadMon, MON_DATA_SPDEF_EV, &newEV);
+    case STAT_SPDEF: SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &newEV);
        break;
     }   
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 
     // Store new EV value in variable so it can be reported to the player
-    gSpecialVar_0x8006 = newEV;
+    gSpecialVar_0x8007 = newEV;
 }
 
-void BufferLeadMonIV (void)
+// Buffers the IV of a Pokemon's stat chosen by the player.
+// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
+// gSpecialVar_0x8005 must be set to the index of the IV to be shown (0 for HP, 1 for Attack, etc.)
+// Result is stored in gSpecialVar_0x8006
+void BufferChosenMonIV (void)
 {
-    u8 statToRead = gSpecialVar_0x8004;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
+    u8 statToRead = gSpecialVar_0x8005;
 
     switch (statToRead)
     {
-    case 0: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_HP_IV, NULL);
+    case STAT_HP: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, NULL);
        break;
-    case 1: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_ATK_IV, NULL);
+    case STAT_ATK: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, NULL);
        break;
-    case 2: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_DEF_IV, NULL);
+    case STAT_DEF: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, NULL);
        break;
-    case 3: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPEED_IV, NULL);
+    case STAT_SPEED: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, NULL);
        break;
-    case 4: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPATK_IV, NULL);
+    case STAT_SPATK: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, NULL);
        break;
-    case 5: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPDEF_IV, NULL);
+    case STAT_SPDEF: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, NULL);
        break;
     }
 }
 
-void BufferLeadMonEV (void)
+// Buffers the EVs of a Pokemon's stat chosen by the player.
+// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
+// gSpecialVar_0x8005 must be set to the index of the EV to be shown (0 for HP, 1 for Attack, etc.)
+// Result is stored in gSpecialVar_0x8006
+void BufferChosenMonEV (void)
 {
-    u8 statToRead = gSpecialVar_0x8004;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
+    u8 statToRead = gSpecialVar_0x8005;
 
     switch (statToRead)
     {
-    case 0: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_HP_EV, NULL);
+    case STAT_HP: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, NULL);
        break;
-    case 1: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_ATK_EV, NULL);
+    case STAT_ATK: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, NULL);
        break;
-    case 2: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_DEF_EV, NULL);
+    case STAT_DEF: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, NULL);
        break;
-    case 3: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPEED_EV, NULL);
+    case STAT_SPEED: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, NULL);
        break;
-    case 4: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPATK_EV, NULL);
+    case STAT_SPATK: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, NULL);
        break;
-    case 5: gSpecialVar_0x8005 = GetMonData(leadMon, MON_DATA_SPDEF_EV, NULL);
+    case STAT_SPDEF: gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, NULL);
        break;
     }
 }
 
-void ResetLeadMonEVs (void)
+// Removes all of a chosen Pokemon's EVs
+void ResetChosenMonEVs (void)
 {
     u8 i;
     u8 clearEVs = 0;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < NUM_STATS; i++)
     {
-        SetMonData(leadMon, (MON_DATA_HP_EV + i), &clearEVs);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], (MON_DATA_HP_EV + i), &clearEVs);
     }
-
 }
 
 // Changes a Pokemon's Hidden Power to one of six types:
 // Fire (0), Ice (1), Grass (2), Rock (3), Ground (4) or Fighting (5)
-void ChangeLeadMonHiddenPower (void) 
+// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
+// gSpecialVar_0x8007 must be set to the type of Hidden Power to change to (see values above)
+void ChangeChosenMonHiddenPower (void) 
 {
-    u8 hiddenPowerType = gSpecialVar_0x8006;
+    u8 hiddenPowerType = gSpecialVar_0x8007;
     // Potato code @ 12:37am because pointers are hard
     u8 thirtyOne = 31;
     u8 thirty = 30;
     u8 zero = 0;
     u8 one = 1;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
 
     switch (hiddenPowerType)
     {
 	case 0: // HP Fire
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &zero);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
        break;
     case 1: // HP Ice
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &zero);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
        break;
     case 2: // HP Grass
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &zero);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
        break;
     case 3: // HP Rock
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &one);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
        break;
     case 4: // HP Ground
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &one);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
        break;
     case 5: // HP Fighting
-        SetMonData(leadMon, MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(leadMon, MON_DATA_ATK_IV, &one);
-        SetMonData(leadMon, MON_DATA_DEF_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPEED_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPATK_IV, &thirty);
-        SetMonData(leadMon, MON_DATA_SPDEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
        break;
     }
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
 // Used for the Super Training NPC; checks that the requested
 // number of EVS to add won't exceed the 510 EV limit
 // Sets VAR_RESULT to 1 if the addition is OK, or 0 if it isn't
-void CheckLeadMonCanGainEVs (void)
+// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
+// gSpecialVar_0x8006 must be set to the number of EVs to add to that stat
+void CheckChosenMonCanGainEVs (void)
 {
     u8 i = 0;
-    u8 increment = gSpecialVar_0x8005;
+    u8 increment = gSpecialVar_0x8006;
     u16 sumEVs = 0;
-    struct Pokemon *leadMon;
-    leadMon = &gPlayerParty[GetLeadMonIndex()];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < NUM_STATS; i++)
     {
-        sumEVs = sumEVs + GetMonData(leadMon, (MON_DATA_HP_EV + i), NULL);
+        sumEVs = sumEVs + GetMonData(&gPlayerParty[gSpecialVar_0x8004], (MON_DATA_HP_EV + i), NULL);
     }
 
     if ((sumEVs + increment) > 510 )
@@ -5209,5 +5219,14 @@ void CheckLeadMonCanGainEVs (void)
         gSpecialVar_Result = 1;
     }
     // Store total EVs in a variable so it can be reported to the player
-    gSpecialVar_0x8007 = sumEVs;
+    gSpecialVar_0x8008 = sumEVs;
+}
+
+bool8 AreChosenMonEVsMaxedOut(void)
+{
+    if (GetMonEVCount(&gPlayerParty[gSpecialVar_0x8004]) >= 510)
+    {
+        return TRUE;
+    }
+    return FALSE;
 }

@@ -17,11 +17,12 @@ FallarborTown_EventScript_IvyEvieIntro::
 	applymovement 2, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart6, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	call_if_eq FallarborTown_Explain_IVs
+	call_if_eq FallarborTown_EventScript_Explain_IVs
 	applymovement 1, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart7, MSGBOX_DEFAULT
 	applymovement 2, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart8, MSGBOX_DEFAULT
+	setflag FLAG_MET_IVY_AND_EVIE
 	return
 
 
@@ -66,21 +67,29 @@ FallarborTown_Text_AnnoyingIntroPart8:
 	.string "Ivy: And for one Bottle Cap, I'll change\n"
 	.string "one of a Pokémon's IVs to whatever\l"
 	.string "you want.\p"
-	.string "I can also change the type of your\n"
-	.string "Pokémon's Hidden Power for five Caps.\p"
+	.string "Also, for five Caps, I'll change all\n"
+	.string "of a Pokémon's IVs to give them a new\l"
+	.string "Hidden Power type.$"
 
 @@@@@@@@@@@@@@@@ Super Training Script @@@@@@@@@@@@@@@@
 
 FallarborTown_SuperTrainer::
-	lockall
+	lock
 	faceplayer
 	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
-	msgbox SuperTraining_String_1, MSGBOX_DEFAULT
-	bufferleadmonspeciesname 0
-	msgbox SuperTraining_String_2, MSGBOX_YESNO
+	msgbox FallarborTown_Text_ChoosePokemon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge SuperTraining_Refuse
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq SuperTraining_Egg
+	bufferpartymonnick 0, VAR_0x8004
+	msgbox SuperTraining_Text_RememberEvs, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq FallarborTown_Explain_EVs
-	msgbox SuperTraining_String_4, MSGBOX_DEFAULT
+	call_if_eq FallarborTown_Explain_EVs
+	msgbox SuperTraining_Text_TakeALookatEVs, MSGBOX_DEFAULT
 	goto FallarborTown_SuperMainMenu
 
 FallarborTown_SuperMainMenu::
@@ -95,12 +104,12 @@ FallarborTown_SuperMainMenu::
 	end
 
 FallarborTown_Explain_EVs::
-	msgbox SuperTraining_String_3, MSGBOX_DEFAULT
+	msgbox FallarborTown_Text_ExplainEvs, MSGBOX_DEFAULT
 	return
 
 FallarborTown_ChangeEV::
-	bufferleadmonspeciesname 0
-	specialvar VAR_RESULT, Special_AreLeadMonEVsMaxedOut
+	bufferpartymonnick 0, VAR_0x8004
+	specialvar VAR_RESULT, AreChosenMonEVsMaxedOut
 	compare VAR_RESULT, 1
 	goto_if_eq FallarborTown_EVsMaxedOut
 	msgbox SuperTraining_String_5, MSGBOX_DEFAULT
@@ -117,55 +126,55 @@ FallarborTown_ChangeEV::
 	end
 
 FallarborTown_ChangeHPEV::
-	setvar VAR_0x8004, 0
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 0
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportHP
 	goto FallarborTown_ChooseNewEV
 
 FallarborTown_ChangeATKEV::
-	setvar VAR_0x8004, 1
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 1
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportAtk
 	goto FallarborTown_ChooseNewEV
 
 FallarborTown_ChangeDEFEV::
-	setvar VAR_0x8004, 2
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 2
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportDef
 	goto FallarborTown_ChooseNewEV
 
 FallarborTown_ChangeSPEEDEV::
-	setvar VAR_0x8004, 3
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 3
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportSpeed
 	goto FallarborTown_ChooseNewEV
 
 FallarborTown_ChangeSPATKEV::
-	setvar VAR_0x8004, 4
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 4
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportSpAtk
 	goto FallarborTown_ChooseNewEV
 
 FallarborTown_ChangeSPDEFEV::
-	setvar VAR_0x8004, 5
-	special BufferLeadMonEV
-	buffernumberstring 1, VAR_0x8005
-	compare VAR_0x8005, 252
+	setvar VAR_0x8005, 5
+	special BufferChosenMonEV
+	buffernumberstring 1, VAR_0x8006
+	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
 	msgbox SuperTraining_ReportSpDef
 	goto FallarborTown_ChooseNewEV
@@ -190,66 +199,66 @@ FallarborTown_ChooseNewEV::
 	case 127, FallarborTown_ChangeEV
 
 FallarborTown_ChangeEV4::
-	setvar VAR_0x8005, 4
-	setvar VAR_0x8008, 400
+	setvar VAR_0x8006, 4
+	setvar VAR_0x8009, 400
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ChangeEV8::
-	setvar VAR_0x8005, 8
-	setvar VAR_0x8008, 800
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8009, 800
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ChangeEV12::
-	setvar VAR_0x8005, 12
-	setvar VAR_0x8008, 1200
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8009, 1200
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ChangeEV64::
-	setvar VAR_0x8005, 64
-	setvar VAR_0x8008, 6400
+	setvar VAR_0x8006, 64
+	setvar VAR_0x8009, 6400
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ChangeEV128::
-	setvar VAR_0x8005, 128
-	setvar VAR_0x8008, 12800
+	setvar VAR_0x8006, 128
+	setvar VAR_0x8009, 12800
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ChangeEV252::
-	setvar VAR_0x8005, 252
-	setvar VAR_0x8008, 25200
+	setvar VAR_0x8006, 252
+	setvar VAR_0x8009, 25200
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ResetEVs::
 	msgbox SuperTraining_String_7, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_SuperMainMenu
-	special ResetLeadMonEVs
+	special ResetChosenMonEVs
 	msgbox SuperTraining_String_9, MSGBOX_DEFAULT
 	goto FallarborTown_SuperMainMenu
 	
 FallarborTown_DoSuperTraining::
-	special CheckLeadMonCanGainEVs
+	special CheckChosenMonCanGainEVs
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_CantExceedEVLimit
 	showmoneybox 15, 0, 0
-	buffernumberstring 2, VAR_0x8008
+	buffernumberstring 2, VAR_0x8009
 	msgbox SuperTraining_ShowPrice, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_WontPay
-	checkmoney VAR_0x8008, 0
+	checkmoney VAR_0x8009, 0
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_CantAfford
-	removemoney VAR_0x8008, 0
+	removemoney VAR_0x8009, 0
 	updatemoneybox 0, 0
-	special IncreaseLeadMonEVs
-	bufferleadmonspeciesname 0
-	buffernumberstring 1, VAR_0x8006
+	special IncreaseChosenMonEVs
+	bufferpartymonnick 0, VAR_0x8004
+	buffernumberstring 1, VAR_0x8007
 	msgbox SuperTraining_String6
 	hidemoneybox
 	goto FallarborTown_ChangeEV
 
 FallarborTown_CantExceedEVLimit::
-	buffernumberstring 1, VAR_0x8007
+	buffernumberstring 1, VAR_0x8008
 	msgbox SuperTraining_TooManyEVs, MSGBOX_DEFAULT
 	goto FallarborTown_ChangeEV
 
@@ -266,36 +275,53 @@ FallarborTown_DoNothing::
 	releaseall
 	end
 
-SuperTraining_String_1::
-	.string "Hey, you! Trainer! Is regular training\n"
-	.string "not good enough for your Pokémon?\l"
-	.string "Then you need SUPER Training!$"
+SuperTraining_Egg::
+	msgbox FallarborTown_Text_CantTrainEgg, MSGBOX_DEFAULT
+	releaseall
+	end
 
-SuperTraining_String_2::
-	.string "Super Training can boost your Pokémon's\n"
-	.string "EVs without even battling! Do you know\l"
-	.string "about EVs, or Effort Values?$"
+SuperTraining_Refuse::
+	msgbox FallarborTown_Text_SomeOtherTime, MSGBOX_DEFAULT
+	releaseall
+	end
 
-SuperTraining_String_3::
-	.string "Every time your Pokémon defeats a foe,\n"
-	.string "it gains EVs. The amount and type of EV\l"
-	.string "gained depends on the foe's species.\p"
-	.string "For example, defeating Zubat will give\n"
-	.string "your Pokémon Speed EVs.\p"
+FallarborTown_Text_ChoosePokemon:
+	.string "Evie: Which Pokémon would you like me\n"
+	.string "to train?$"
+
+FallarborTown_Text_CantTrainEgg:
+	.string "Oh come on, I can't train an Egg!\n"
+	.string "Bring it back once it's hatched.$"
+
+FallarborTown_Text_SomeOtherTime:
+	.string "Oh, OK.\n"
+	.string "Some other time, then?$"
+
+SuperTraining_Text_RememberEvs:
+	.string "And you remember how EVs work, right?$"
+
+FallarborTown_Text_ExplainEvs:
+	.string "Evie: EVs are part of every stat a\n"
+	.string "a Pokémon has.\p"
+	.string "They can have HP EVs, Attack EVs,\n"
+	.string "Defense EVs… you get the idea.\p"
+	.string "Every time your Pokémon gains\n"
+	.string "experience in battle, it also gains EVs.\p"
+	.string "The kind of EVs gained depends on the\n"
+	.string "kind of Pokémon you defeated.\p"
+	.string "For example, beating a Zubat will give\n"
+	.string "your Pokémon one Speed EV.\p"
 	.string "Once you have enough EVs in a stat,\n"
 	.string "that stat will go up!\p"
 	.string "You can have up to 252 EVs in one stat,\n"
 	.string "but you can only have 510 EVs in total.\p"
 	.string "It's normally good to put 252 EVs in\n"
 	.string "two of your Pokémon's best stats,\l"
-	.string "but you can get creative with EVs too!\p"
-	.string "OK! I charge ¥100 per EV added.\n"
-	.string "Now, Let's take a look at your\l"
-	.string "{STR_VAR_1}'s EVs.$"
+	.string "but you can get creative with EVs too!$"
 
-SuperTraining_String_4::
-	.string "OK! I charge ¥100 per EV added.\n"
-	.string "Now, Let's take a look at your\l"
+SuperTraining_Text_TakeALookatEVs::
+	.string "OK! Again, I charge ¥100 per EV\n"
+	.string "added. Now let's take a look at your\l"
 	.string "{STR_VAR_1}'s EVs.$"
 
 SuperTraining_String_5::
@@ -333,9 +359,9 @@ SuperTraining_String6::
 SuperTraining_String_7::
 	.string "I can completely reset your\n"
 	.string "{STR_VAR_1}'s EVs for free!\p"
-	.string "This will remove all of its EVs so\n"
-	.string "that you can add more to the stats\l"
-	.string "you want {STR_VAR_1} to focus on.\p"
+	.string "This will remove all of its EVs, so\n"
+	.string "you can add more to the stats you want\l"
+	.string "{STR_VAR_1} to focus on.\p"
 	.string "Would you like me to reset\n"
 	.string "{STR_VAR_1}'s EVs?$"
 
@@ -369,11 +395,18 @@ FallarborTown_HyperTrainer::
 	lockall
 	faceplayer
 	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
-	msgbox HyperTraining_String_1, MSGBOX_DEFAULT
-	bufferleadmonspeciesname 0
+	msgbox FallarborTown_Text_ChoosePokemon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge SuperTraining_Refuse
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq SuperTraining_Egg
+	bufferpartymonnick 0, VAR_0x8004
 	msgbox HyperTraining_String_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq FallarborTown_Explain_IVs
+	goto_if_eq FallarborTown_EventScript_Explain_IVs
 	msgbox HyperTraining_String_4, MSGBOX_DEFAULT
 	goto FallarborTown_HyperMainMenu
 
@@ -388,7 +421,7 @@ FallarborTown_HyperMainMenu::
 	releaseall
 	end
 
-FallarborTown_Explain_IVs::
+FallarborTown_EventScript_Explain_IVs::
 	msgbox HyperTraining_String_3, MSGBOX_DEFAULT
 	return
 
@@ -407,44 +440,44 @@ FallarborTown_ChangeIV::
 	end
 
 FallarborTown_ChangeHPIV::
-	setvar VAR_0x8004, 0
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 0
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportHP
 	goto FallarborTown_ChooseNewIV
 
 FallarborTown_ChangeATKIV::
-	setvar VAR_0x8004, 1
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 1
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportAtk
 	goto FallarborTown_ChooseNewIV
 
 FallarborTown_ChangeDEFIV::
-	setvar VAR_0x8004, 2
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 2
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportDef
 	goto FallarborTown_ChooseNewIV
 
 FallarborTown_ChangeSPEEDIV::
-	setvar VAR_0x8004, 3
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 3
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpeed
 	goto FallarborTown_ChooseNewIV
 
 FallarborTown_ChangeSPATKIV::
-	setvar VAR_0x8004, 4
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 4
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpAtk
 	goto FallarborTown_ChooseNewIV
 
 FallarborTown_ChangeSPDEFIV::
-	setvar VAR_0x8004, 5
-	special BufferLeadMonIV
-	buffernumberstring 1, VAR_0x8005
+	setvar VAR_0x8005, 5
+	special BufferChosenMonIV
+	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpDef
 	goto FallarborTown_ChooseNewIV
 
@@ -460,33 +493,33 @@ FallarborTown_ChooseNewIV::
 	case 127, FallarborTown_ChangeIV
 
 FallarborTown_ChangeIV0::
-	setvar VAR_0x8005, 0
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 0
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeIV1::
-	setvar VAR_0x8005, 1
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 1
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeIV14::
-	setvar VAR_0x8005, 14
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 14
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeIV15::
-	setvar VAR_0x8005, 15
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 15
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeIV30::
-	setvar VAR_0x8005, 30
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 30
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeIV31::
-	setvar VAR_0x8005, 31
-	special ChangeLeadMonIVs
+	setvar VAR_0x8006, 31
+	special ChangeChosenMonIVs
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHiddenPower::
@@ -504,33 +537,33 @@ FallarborTown_ChangeHiddenPower::
 	end
 
 FallarborTown_ChangeHPFire::
-	setvar 0x8006, 0
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 0
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHPIce::
-	setvar 0x8006, 1
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 1
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHPGrass::
-	setvar 0x8006, 2
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 2
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHPRock::
-	setvar 0x8006, 3
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 3
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHPGround::
-	setvar 0x8006, 4
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 4
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_ChangeHPFighting::
-	setvar 0x8006, 5
-	special ChangeLeadMonHiddenPower
+	setvar 0x8007, 5
+	special ChangeChosenMonHiddenPower
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_DoHyperTraining::
@@ -538,18 +571,12 @@ FallarborTown_DoHyperTraining::
 	releaseall
 	end
 
-HyperTraining_String_1::
-	.string "I'm the Hyper Trainer!\p"
-	.string "I can help your Pokémon reach their\n"
-	.string "full potential by changing their IVs\l"
-	.string "through Hyper Training!$"
-
-HyperTraining_String_2::
+HyperTraining_String_2:
 	.string "Are you aware of Individual Values,\n"
 	.string "or IVs for short?$"
 
-HyperTraining_String_3::
-	.string "IVs are a hidden part of your\n"
+HyperTraining_String_3:
+	.string "Ivy: IVs are a hidden part of your\n"
 	.string "Pokémon's stats that can only be\l"
 	.string "changed with special training.\p"
 	.string "They can be any value between\n"
@@ -559,46 +586,44 @@ HyperTraining_String_3::
 	.string "higher stats aren't always better!\p"
 	.string "Example: If your Pokémon relies on\n"
 	.string "Special Attacks, a low Attack IV may\l"
-	.string "help when it's confused.\p"
+	.string "help when it's confused in battle.$"
+
+HyperTraining_String_4:
 	.string "OK! Let's take a look at your\n"
 	.string "{STR_VAR_1}'s IVs.$"
 
-HyperTraining_String_4::
-	.string "OK! Let's take a look at your\n"
-	.string "{STR_VAR_1}'s IVs.$"
-
-HyperTraining_String_5::
+HyperTraining_String_5:
 	.string "Which of {STR_VAR_1}'s IVs\n"
 	.string "would you like to change?$"
 
-HyperTraining_ReportHP::
+HyperTraining_ReportHP:
 	.string "{STR_VAR_1}'s HP IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_ReportAtk::
+HyperTraining_ReportAtk:
 	.string "{STR_VAR_1}'s Attack IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_ReportDef::
+HyperTraining_ReportDef:
 	.string "{STR_VAR_1}'s Defense IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_ReportSpeed::
+HyperTraining_ReportSpeed:
 	.string "{STR_VAR_1}'s Speed IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_ReportSpAtk::
+HyperTraining_ReportSpAtk:
 	.string "{STR_VAR_1}'s Sp. Atk IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_ReportSpDef::
+HyperTraining_ReportSpDef:
 	.string "{STR_VAR_1}'s Sp. Def IV is {STR_VAR_2}.\n"
 	.string "What would you like to change it to?$"
 
-HyperTraining_String6::
+HyperTraining_String6:
 	.string "THE PAIN GOES HERE!$"
 
-HyperTraining_String_7::
+HyperTraining_String_7:
 	.string "For five Bottle Caps, I can change all\n"
 	.string "of a Pokémon's IVs at once to give them\l"
 	.string "a new Hidden Power type.\p"

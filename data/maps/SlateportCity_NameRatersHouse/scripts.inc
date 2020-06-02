@@ -5,8 +5,16 @@ SlateportCity_NameRatersHouse_NatureChanger::
 	lockall
 	faceplayer
 	call_if_unset FLAG_MET_NATURE_CHANGER, SlateportCity_NameRatersHouse_NatureChangerIntro
-	special BufferLeadMonNature
-	bufferleadmonspeciesname 0
+	msgbox NatureChanger_Text_ChoosePokemon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_SIZE
+	goto_if_ge Nature_Changer_No
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq Nature_Changer_Egg
+	special BufferChosenMonNature
+	bufferpartymonnick 0, VAR_0x8004
 	msgbox NatureChanger_Text_MonHasNature, MSGBOX_DEFAULT
 	specialvar VAR_RESULT, GetPokeblockNameByMonNature
 	compare VAR_RESULT, 0
@@ -42,6 +50,11 @@ Nature_Changer_No::
 	releaseall
 	end
 
+Nature_Changer_Egg::
+	msgbox NatureChanger_Text_ThisIsEgg, MSGBOX_DEFAULT
+	releaseall
+	end
+
 Nature_Changer_Berry_Poor::
 	msgbox NatureChanger_Text_NeedMoreBerries, MSGBOX_DEFAULT
 	releaseall
@@ -60,23 +73,23 @@ Nature_Changer_Stat_Up::
 	case 127, Nature_Changer_No
 
 Nature_Up_ATK::
-	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 0
 	goto Nature_Changer_Stat_Down
 
 Nature_Up_DEF::
-	setvar VAR_0x8004, 1
+	setvar VAR_0x8005, 1
 	goto Nature_Changer_Stat_Down
 	
 Nature_Up_SPEED::
-	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
 	goto Nature_Changer_Stat_Down
 	
 Nature_Up_SPATK::
-	setvar VAR_0x8004, 3
+	setvar VAR_0x8005, 3
 	goto Nature_Changer_Stat_Down
 	
 Nature_Up_SPDEF::
-	setvar VAR_0x8004, 4
+	setvar VAR_0x8005, 4
 	goto Nature_Changer_Stat_Down
 	
 Nature_Changer_Stat_Down::
@@ -92,35 +105,36 @@ Nature_Changer_Stat_Down::
 	case 127, Nature_Changer_No
 
 Nature_Down_ATK::
-	setvar VAR_0x8005, 0
+	setvar VAR_0x8006, 0
 	goto Nature_Changer_Nature_Change
 
 Nature_Down_DEF::
-	setvar VAR_0x8005, 1
+	setvar VAR_0x8006, 1
 	goto Nature_Changer_Nature_Change
 	
 Nature_Down_SPEED::
-	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 2
 	goto Nature_Changer_Nature_Change
 	
 Nature_Down_SPATK::
-	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 3
 	goto Nature_Changer_Nature_Change
 	
 Nature_Down_SPDEF::
-	setvar VAR_0x8005, 4
+	setvar VAR_0x8006, 4
 	goto Nature_Changer_Nature_Change
 
 Nature_Changer_Nature_Change::
 	removeitem ITEM_ORAN_BERRY, 10
-	bufferleadmonspeciesname 0
+	bufferpartymonnick 0, VAR_0x8004
 	msgbox NatureChanger_Text_SpecialPokeblock, MSGBOX_DEFAULT
 	fadescreen 1
 	special ChangePokemonNature
-	special BufferLeadMonNature
+	special BufferChosenMonNature
 	msgbox NatureChanger_Text_Pause, MSGBOX_AUTOCLOSE
 	fadescreen 0
 	playfanfare 0x173
+	waitfanfare
 	msgbox NatureChanger_Text_MonHasNature1, MSGBOX_AUTOCLOSE
 	waitfanfare
 	msgbox NatureChanger_Text_ItIsDone MSGBOX_AUTOCLOSE
@@ -146,6 +160,10 @@ NatureChanger_Text_Intro:
 	.string"flavor I have given them, their Nature\l"
 	.string"will change!$"
 
+NatureChanger_Text_ChoosePokemon:
+	.string"Which Pokémon needs the help of my\n"
+	.string"special {POKEBLOCK}s?$"
+
 NatureChanger_Text_MonHasNature:
 	.string"Ohohoho! I see your {STR_VAR_1} has\n"
 	.string"a {STR_VAR_2} Nature, yes?$"
@@ -162,8 +180,12 @@ NatureChanger_Text_HowAboutIt:
 	.string"We will change your Pokémon's Nature?$"
 
 NatureChanger_Text_SomeOtherTime:
-	.string"No?!\n$"
+	.string"No?!\n"
 	.string"Surely you cannot mean this!$"
+
+NatureChanger_Text_ThisIsEgg:
+	.string"This is but an Egg!\p$"
+	.string"An Egg cannot eat a {POKEBLOCK}!$"
 
 NatureChanger_Text_NeedMoreBerries:
 	.string"I need more Oran Berries than that.\n"

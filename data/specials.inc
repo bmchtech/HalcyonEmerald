@@ -536,13 +536,14 @@ gSpecials:: @ 81DBA64
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special ChangePokemonNature
-	def_special BufferLeadMonNature
-	def_special ChangeLeadMonIVs
-	def_special IncreaseLeadMonEVs
-	def_special BufferLeadMonIV
-	def_special BufferLeadMonEV
-	def_special ResetLeadMonEVs
-	def_special ChangeLeadMonHiddenPower
-	def_special CheckLeadMonCanGainEVs
+	def_special BufferChosenMonNature
+	def_special ChangeChosenMonIVs
+	def_special IncreaseChosenMonEVs
+	def_special BufferChosenMonIV
+	def_special BufferChosenMonEV
+	def_special ResetChosenMonEVs
+	def_special ChangeChosenMonHiddenPower
+	def_special CheckChosenMonCanGainEVs
 	def_special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
 	def_special GetPKMNCenterMoveListMultichoice
+	def_special AreChosenMonEVsMaxedOut
