@@ -399,6 +399,7 @@
 #define MAP_ALTERING_CAVE                            (108 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (109 | (24 << 8))
 #define MAP_SEASPRAY_CAVE                            (110 | (24 << 8))
+#define MAP_SEASPRAY_CAVE_B1F                        (111 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))
