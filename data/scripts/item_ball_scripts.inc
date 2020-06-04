@@ -94,7 +94,7 @@ Route114_EventScript_ItemRareCandy:: @ 8290E03
 	finditem ITEM_RARE_CANDY
 	end
 
-Route114_EventScript_ItemTM53Psyshock:: @ 8290E10
+Route114_EventScript_ItemTM54Psyshock:: @ 8290E10
 	finditem ITEM_TM54_PSYSHOCK
 	end
 
@@ -692,6 +692,26 @@ Seaspray_Cave_Water_Pulse::
 
 Seaspray_Cave_Blastoisinite::
 	finditem ITEM_BLASTOISINITE
+	end
+
+Seaspray_Cave_ItemStoneEdge::
+	finditem ITEM_TM71_STONE_EDGE
+	end
+
+Seaspray_Cave_B1F_ItemFreezeDry::
+	finditem ITEM_TM79_FREEZE_DRY
+	end
+
+Seaspray_Cave_B1F_ItemAbomasite::
+	finditem ITEM_ABOMASITE
+	end
+
+Seaspray_Cave_B1F_ItemRevive::
+	finditem ITEM_REVIVE
+	end
+
+Seaspray_Cave_B1F_ItemKingsRock::
+	finditem ITEM_KINGS_ROCK
 	end
 
 Granite_Cave_B2F_TM31_Brick_Break::
