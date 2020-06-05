@@ -2,7 +2,7 @@
   "id": "MAP_SEASPRAY_CAVE",
   "name": "Seaspray_Cave",
   "layout": "LAYOUT_SEASPRAY_CAVE",
-  "music": "MUS_DAN01",
+  "music": "MUS_M_DUNGON",
   "region_map_section": "MAPSEC_SEASPRAY_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
