@@ -541,6 +541,8 @@ gSpecials:: @ 81DBA64
 	def_special IncreaseChosenMonEVs
 	def_special BufferChosenMonIV
 	def_special BufferChosenMonEV
+	def_special BufferChosenMonAllIVs
+	def_special BufferChosenMonAllEVs
 	def_special ResetChosenMonEVs
 	def_special ChangeChosenMonHiddenPower
 	def_special CheckChosenMonCanGainEVs

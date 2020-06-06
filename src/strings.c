@@ -2072,3 +2072,10 @@ const u8 gText_3[] = _("3");
 const u8 gText_2[] = _("2");
 const u8 gText_1[] = _("1");
 const u8 gText_0[] = _("0");
+
+const u8 gText_HP_Placeholder[] =       _("HP{CLEAR_TO 0x36}{STR_VAR_1}");
+const u8 gText_Attack_Placeholder[] =   _("Attack{CLEAR_TO 0x36}{STR_VAR_2}");
+const u8 gText_Defense_Placeholder[] =  _("Defense{CLEAR_TO 0x36}{STR_VAR_3}");
+const u8 gText_Speed_Placeholder[] =    _("Speed{CLEAR_TO 0x36}{EXTRA_STR_VAR_1}");
+const u8 gText_SpAtk_Placeholder[] =    _("Sp. Atk{CLEAR_TO 0x36}{EXTRA_STR_VAR_2}");
+const u8 gText_SpDef_Placeholder[] =    _("Sp. Def{CLEAR_TO 0x36}{EXTRA_STR_VAR_3}");

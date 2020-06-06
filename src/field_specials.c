@@ -5115,6 +5115,42 @@ void BufferChosenMonEV (void)
     }
 }
 
+void BufferChosenMonAllEVs (void)
+{
+    u8 i;
+    u8 EV[NUM_STATS] = {0};
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        EV[i] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i, NULL);
+    }
+
+    ConvertIntToDecimalStringN(gStringVar1, EV[0], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, EV[1], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar3, EV[2], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar1, EV[3], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar2, EV[4], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar3, EV[5], STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+void BufferChosenMonAllIVs (void)
+{
+    u8 i;
+    u8 IV[NUM_STATS] = {0};
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        IV[i] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + i, NULL);
+    }
+
+    ConvertIntToDecimalStringN(gStringVar1, IV[0], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, IV[1], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar3, IV[2], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar1, IV[3], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar2, IV[4], STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gExtraStringVar3, IV[5], STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
 // Removes all of a chosen Pokemon's EVs
 void ResetChosenMonEVs (void)
 {

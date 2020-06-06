@@ -836,12 +836,12 @@ const struct MenuAction MultichoiceList_IVMenu[] =
 
 const struct MenuAction MultichoiceList_BaseStats[] =
 {
-    {gText_HP4},
-    {gText_Attack3},
-    {gText_Defense3},
-    {gText_Speed2},
-    {gText_SpAtk4},
-    {gText_SpDef4},
+    {gText_HP_Placeholder},
+    {gText_Attack_Placeholder},
+    {gText_Defense_Placeholder},
+    {gText_Speed_Placeholder},
+    {gText_SpAtk_Placeholder},
+    {gText_SpDef_Placeholder},
 };
 
 const struct MenuAction MultichoiceList_HyperTrainingMenu[] =

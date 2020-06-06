@@ -3302,4 +3302,11 @@ extern const u8 gText_GrassType[];
 extern const u8 gText_FireType[];
 extern const u8 gText_WaterType[];
 
+extern const u8 gText_HP_Placeholder[];
+extern const u8 gText_Attack_Placeholder[];
+extern const u8 gText_Defense_Placeholder[];
+extern const u8 gText_Speed_Placeholder[];
+extern const u8 gText_SpAtk_Placeholder[];
+extern const u8 gText_SpDef_Placeholder[];
+
 #endif // GUARD_STRINGS_H
