@@ -4,6 +4,9 @@
 extern u8 gStringVar1[];
 extern u8 gStringVar2[];
 extern u8 gStringVar3[];
+extern u8 gExtraStringVar1[];
+extern u8 gExtraStringVar2[];
+extern u8 gExtraStringVar3[];
 extern u8 gStringVar4[];
 
 enum StringConvertMode
