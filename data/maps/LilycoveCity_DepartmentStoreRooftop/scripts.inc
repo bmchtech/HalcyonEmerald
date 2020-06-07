@@ -151,7 +151,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink:: @ 822032F
 	bufferitemname 1, VAR_TEMP_0
 	bufferstdstring 2, STDSTRING_ITEMS
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 chance of an additional drink dropping
+	random 32  @ 1/32 chance of an additional drink dropping
 	compare VAR_RESULT, 0
 	goto_if_ne LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
 	checkitemspace VAR_TEMP_0, 1
@@ -163,7 +163,7 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink:: @ 822032F
 	bufferitemname 1, VAR_TEMP_0
 	bufferstdstring 2, STDSTRING_ITEMS
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 * the prev 1/64 chance of a third additional drink dropping, ~ 0.02% chance
+	random 32  @ 1/32 * the prev 1/32 chance of a third additional drink dropping, ~ 0.1% chance
 	compare VAR_RESULT, 0
 	goto_if_ne LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
 	checkitemspace VAR_TEMP_0, 1

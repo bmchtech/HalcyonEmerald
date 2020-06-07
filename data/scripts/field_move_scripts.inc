@@ -29,6 +29,115 @@ EventScript_CutTreeDown:: @ 8290710
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
+	random 3
+	switch VAR_RESULT
+	case 0, EventScript_CutTreeEncounter
+	case 1, EventScript_CutTreeItem
+	case 2, EventScript_CancelCut
+	releaseall
+	end
+
+EventScript_CutTreeEncounter::
+	special RockSmashWildEncounter
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_CancelCut
+	waitstate
+	releaseall
+	end
+
+EventScript_CutTreeItem::
+	random 14
+	switch VAR_RESULT
+	case 0, EventScript_CutTreeMiracleSeed
+	case 1, EventScript_CutTreeCharcoal
+	case 2, EventScript_CutTreeMentalHerb
+	case 3, EventScript_CutTreePowerHerb
+	case 4, EventScript_CutTreeWhiteHerb
+	case 5, EventScript_CutTreeRevivalHerb
+	case 6, EventScript_CutTreeEnergyRoot
+	case 7, EventScript_CutTreeTerrainSeed
+	case 8, EventScript_CutTreeTinyMushroom
+	case 9, EventScript_CutTreeBigMushroom
+	case 10, EventScript_CutTreeTypeBerry
+	case 11, EventScript_CutTreeEVBerry
+	case 12, EventScript_CutTreeStick
+	case 13, EventScript_CutTreeBigRoot
+	releaseall
+	end
+
+EventScript_CutTreeMiracleSeed::
+	finditem ITEM_MIRACLE_SEED
+	releaseall
+	end
+
+EventScript_CutTreeCharcoal::
+	finditem ITEM_CHARCOAL
+	releaseall
+	end
+
+EventScript_CutTreeMentalHerb::
+	finditem ITEM_MENTAL_HERB
+	releaseall
+	end
+	
+EventScript_CutTreePowerHerb::
+	finditem ITEM_POWER_HERB
+	releaseall
+	end
+	
+EventScript_CutTreeWhiteHerb::
+	finditem ITEM_WHITE_HERB
+	releaseall
+	end
+	
+EventScript_CutTreeRevivalHerb::
+	finditem ITEM_REVIVAL_HERB
+	releaseall
+	end
+	
+EventScript_CutTreeEnergyRoot::
+	finditem ITEM_ENERGY_ROOT
+	releaseall
+	end
+	
+EventScript_CutTreeTerrainSeed::
+	random 4
+	addvar VAR_RESULT, ITEM_ELECTRIC_SEED
+	finditem VAR_RESULT
+	releaseall
+	end
+	
+EventScript_CutTreeTinyMushroom::
+	finditem ITEM_TINY_MUSHROOM
+	releaseall
+	end
+	
+EventScript_CutTreeBigMushroom::
+	finditem ITEM_BIG_MUSHROOM
+	releaseall
+	end
+	
+EventScript_CutTreeTypeBerry::
+	random 18
+	addvar VAR_RESULT, ITEM_OCCA_BERRY
+	finditem VAR_RESULT
+	releaseall
+	end
+
+EventScript_CutTreeEVBerry::
+	random 6
+	addvar VAR_RESULT, ITEM_POMEG_BERRY
+	finditem VAR_RESULT
+	releaseall
+	end
+
+EventScript_CutTreeStick::
+	finditem ITEM_STICK
+	releaseall
+	end
+
+EventScript_CutTreeBigRoot::
+	finditem ITEM_BIG_ROOT
 	releaseall
 	end
 
@@ -47,16 +156,15 @@ EventScript_CancelCut:: @ 829072B
 	end
 
 Text_WantToCut: @ 829072E
-	.string "This tree looks like it can be\n"
-	.string "CUT down!\p"
-	.string "Would you like to CUT it?$"
+	.string "This tree looks like it can be Cut down!\n"
+	.string "Would you like to Cut it?$"
 
 Text_MonUsedFieldMove: @ 8290771
 	.string "{STR_VAR_1} used {STR_VAR_2}!$"
 
 Text_CantCut: @ 829077D
 	.string "This tree looks like it can be\n"
-	.string "CUT down!$"
+	.string "Cut down!$"
 
 EventScript_RockSmash:: @ 82907A6
 	lockall
@@ -84,13 +192,22 @@ EventScript_FldEffRockSmash:: @ 82907F0
 	goto EventScript_SmashRock
 	end
 
-EventScript_SmashRock:: @ 82907FB
+EventScript_SmashRock::
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
 	compare VAR_RESULT, 1
 	goto_if_eq EventScript_EndSmash
+	random 3
+	switch VAR_RESULT
+	case 0, EventScript_EndSmash
+	case 1, EventScript_RockSmashItem
+	case 2, EventScript_RockSmashEncounter
+	releaseall
+	end
+
+EventScript_RockSmashEncounter::
 	special RockSmashWildEncounter
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_EndSmash
@@ -98,11 +215,94 @@ EventScript_SmashRock:: @ 82907FB
 	releaseall
 	end
 
-EventScript_EndSmash:: @ 8290829
+EventScript_RockSmashItem::
+	random 11
+	switch VAR_RESULT
+	case 0, EventScript_RockSmashPearl
+	case 1, EventScript_RockSmashBigPearl
+	case 2, EventScript_RockSmashEther
+	case 3, EventScript_RockSmashMaxEther
+	case 4, EventScript_RockSmashSoftSand
+	case 5, EventScript_RockSmashHardStone
+	case 6, EventScript_RockSmashRevive
+	case 7, EventScript_RockSmashMaxRevive
+	case 8, EventScript_RockSmashStarPiece
+	case 9, EventScript_RockSmashGem
+	case 10, EventScript_RockSmashFossil
 	releaseall
 	end
 
-Movement_SmashRock: @ 829082B
+EventScript_RockSmashPearl::
+	finditem ITEM_PEARL
+	releaseall
+	end
+
+EventScript_RockSmashBigPearl::
+	finditem ITEM_BIG_PEARL
+	releaseall
+	end
+
+EventScript_RockSmashEther::
+	finditem ITEM_ETHER
+	releaseall
+	end
+	
+EventScript_RockSmashMaxEther::
+	finditem ITEM_MAX_ETHER
+	releaseall
+	end
+	
+EventScript_RockSmashSoftSand::
+	finditem ITEM_SOFT_SAND
+	releaseall
+	end
+	
+EventScript_RockSmashHardStone::
+	finditem ITEM_HARD_STONE
+	releaseall
+	end
+	
+EventScript_RockSmashRevive::
+	finditem ITEM_REVIVE
+	releaseall
+	end
+	
+EventScript_RockSmashMaxRevive::
+	finditem ITEM_MAX_REVIVE
+	releaseall
+	end
+	
+EventScript_RockSmashStarPiece::
+	finditem ITEM_STAR_PIECE
+	releaseall
+	end
+	
+EventScript_RockSmashGem::
+	random 19
+	addvar VAR_RESULT, ITEM_BUG_GEM
+	finditem VAR_RESULT
+	releaseall
+	end
+	
+EventScript_RockSmashFossil::
+	random 12
+	compare VAR_RESULT, 11
+	goto_if_eq EventScript_RockSmashOldAmber
+	addvar VAR_RESULT, ITEM_ARMOR_FOSSIL
+	finditem VAR_RESULT
+	releaseall
+	end
+
+EventScript_RockSmashOldAmber::
+	finditem ITEM_OLD_AMBER
+	releaseall
+	end
+
+EventScript_EndSmash::
+	releaseall
+	end
+
+Movement_SmashRock::
 	rock_smash_break
 	step_end
 
@@ -118,10 +318,10 @@ EventScript_CancelSmash:: @ 8290837
 
 Text_WantToSmash: @ 829083A
 	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use ROCK SMASH?$"
+	.string "Would you like to use Rock Smash?$"
 
 Text_CantSmash: @ 829087F
-	.string "It's a rugged rock, but a POKéMON\n"
+	.string "It's a rugged rock, but a Pokémon\n"
 	.string "may be able to smash it.$"
 
 EventScript_StrengthBoulder:: @ 82908BA
@@ -170,21 +370,21 @@ EventScript_CancelStrength:: @ 8290929
 	end
 
 Text_WantToStrength: @ 829092C
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 	.string "may be able to push it aside.\p"
-	.string "Would you like to use STRENGTH?$"
+	.string "Would you like to use Strength?$"
 
 Text_MonUsedStrength: @ 829098C
-	.string "{STR_VAR_1} used STRENGTH!\p"
-	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "{STR_VAR_1} used Strength!\p"
+	.string "{STR_VAR_1}'s Strength made it\n"
 	.string "possible to move boulders around!$"
 
 Text_CantStrength: @ 82909D6
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated: @ 8290A16
-	.string "STRENGTH made it possible to move\n"
+	.string "Strength made it possible to move\n"
 	.string "boulders around.$"
 
 EventScript_UseWaterfall:: @ 8290A49
@@ -217,10 +417,10 @@ Text_CantWaterfall: @ 8290A8E
 
 Text_WantToWaterfall: @ 8290AC3
 	.string "It's a large waterfall.\n"
-	.string "Would you like to use WATERFALL?$"
+	.string "Would you like to use Waterfall?$"
 
 Text_MonUsedWaterfall: @ 8290AFC
-	.string "{STR_VAR_1} used WATERFALL.$"
+	.string "{STR_VAR_1} used Waterfall.$"
 
 EventScript_UseDive:: @ 8290B0F
 	lockall
@@ -274,23 +474,23 @@ EventScript_EndSurface:: @ 8290BA8
 	end
 
 Text_CantDive: @ 8290BAA
-	.string "The sea is deep here. A POKéMON\n"
+	.string "The sea is deep here. A Pokémon\n"
 	.string "may be able to go underwater.$"
 
 Text_WantToDive: @ 8290BE8
 	.string "The sea is deep here.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 Text_MonUsedDive: @ 8290C1A
-	.string "{STR_VAR_1} used DIVE.$"
+	.string "{STR_VAR_1} used Dive.$"
 
 Text_CantSurface: @ 8290C28
 	.string "Light is filtering down from above.\n"
-	.string "A POKéMON may be able to surface.$"
+	.string "A Pokémon may be able to surface.$"
 
 Text_WantToSurface: @ 8290C6E
 	.string "Light is filtering down from above.\n"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 
 EventScript_FailSweetScent:: @ 8290CAE
 	msgbox Text_FailSweetScent, MSGBOX_SIGN
