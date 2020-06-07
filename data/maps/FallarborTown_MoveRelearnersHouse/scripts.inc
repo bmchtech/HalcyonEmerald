@@ -113,6 +113,7 @@ FallarborTown_ChangeEV::
 	compare VAR_RESULT, 1
 	goto_if_eq FallarborTown_EVsMaxedOut
 	msgbox SuperTraining_String_5, MSGBOX_DEFAULT
+	special BufferChosenMonAllEVs
 	multichoice 0, 0, MULTI_BASE_STATS, 0
 	switch VAR_RESULT
 	case 0, FallarborTown_ChangeHPEV
@@ -128,6 +129,7 @@ FallarborTown_ChangeEV::
 FallarborTown_ChangeHPEV::
 	setvar VAR_0x8005, 0
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -137,6 +139,7 @@ FallarborTown_ChangeHPEV::
 FallarborTown_ChangeATKEV::
 	setvar VAR_0x8005, 1
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -146,6 +149,7 @@ FallarborTown_ChangeATKEV::
 FallarborTown_ChangeDEFEV::
 	setvar VAR_0x8005, 2
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -155,6 +159,7 @@ FallarborTown_ChangeDEFEV::
 FallarborTown_ChangeSPEEDEV::
 	setvar VAR_0x8005, 3
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -164,6 +169,7 @@ FallarborTown_ChangeSPEEDEV::
 FallarborTown_ChangeSPATKEV::
 	setvar VAR_0x8005, 4
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -173,6 +179,7 @@ FallarborTown_ChangeSPATKEV::
 FallarborTown_ChangeSPDEFEV::
 	setvar VAR_0x8005, 5
 	special BufferChosenMonEV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	compare VAR_0x8006, 252
 	goto_if_eq FallarborTown_MaxEVs
@@ -325,8 +332,9 @@ SuperTraining_Text_TakeALookatEVs::
 	.string "{STR_VAR_1}'s EVs.$"
 
 SuperTraining_String_5::
-	.string "Which of {STR_VAR_1}'s stats\n"
-	.string "would you like to increase?$"
+	.string "This is {STR_VAR_1}'s current EV\n"
+	.string "spread.\p"
+	.string "Which stat would you like it to train?"
 
 SuperTraining_ReportHP::
 	.string "{STR_VAR_1} has {STR_VAR_2} HP EVs.\n"
@@ -404,14 +412,15 @@ FallarborTown_HyperTrainer::
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq SuperTraining_Egg
 	bufferpartymonnick 0, VAR_0x8004
-	msgbox HyperTraining_String_2, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq FallarborTown_EventScript_Explain_IVs
+	msgbox HyperTraining_Text_WantMeExplainIVs, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	call_if_eq FallarborTown_EventScript_Explain_IVs
 	msgbox HyperTraining_String_4, MSGBOX_DEFAULT
 	goto FallarborTown_HyperMainMenu
 
 FallarborTown_HyperMainMenu::
 	msgbox HyperTraining_String_8, MSGBOX_DEFAULT
+	special BufferChosenMonAllIVs
 	multichoice 0, 0, MULTI_HYPER_TRAINING_MENU, 0
 	switch VAR_RESULT
 	case 0, FallarborTown_ChangeIV
@@ -422,7 +431,7 @@ FallarborTown_HyperMainMenu::
 	end
 
 FallarborTown_EventScript_Explain_IVs::
-	msgbox HyperTraining_String_3, MSGBOX_DEFAULT
+	msgbox HyperTraining_Text_ExplainIVs, MSGBOX_DEFAULT
 	return
 
 FallarborTown_ChangeIV::
@@ -442,6 +451,7 @@ FallarborTown_ChangeIV::
 FallarborTown_ChangeHPIV::
 	setvar VAR_0x8005, 0
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportHP
 	goto FallarborTown_ChooseNewIV
@@ -449,6 +459,7 @@ FallarborTown_ChangeHPIV::
 FallarborTown_ChangeATKIV::
 	setvar VAR_0x8005, 1
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportAtk
 	goto FallarborTown_ChooseNewIV
@@ -456,6 +467,7 @@ FallarborTown_ChangeATKIV::
 FallarborTown_ChangeDEFIV::
 	setvar VAR_0x8005, 2
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportDef
 	goto FallarborTown_ChooseNewIV
@@ -463,6 +475,7 @@ FallarborTown_ChangeDEFIV::
 FallarborTown_ChangeSPEEDIV::
 	setvar VAR_0x8005, 3
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpeed
 	goto FallarborTown_ChooseNewIV
@@ -470,6 +483,7 @@ FallarborTown_ChangeSPEEDIV::
 FallarborTown_ChangeSPATKIV::
 	setvar VAR_0x8005, 4
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpAtk
 	goto FallarborTown_ChooseNewIV
@@ -477,6 +491,7 @@ FallarborTown_ChangeSPATKIV::
 FallarborTown_ChangeSPDEFIV::
 	setvar VAR_0x8005, 5
 	special BufferChosenMonIV
+	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8006
 	msgbox HyperTraining_ReportSpDef
 	goto FallarborTown_ChooseNewIV
@@ -567,15 +582,21 @@ FallarborTown_ChangeHPFighting::
 	goto FallarborTown_DoHyperTraining
 
 FallarborTown_DoHyperTraining::
-	msgbox HyperTraining_String6
+	msgbox HyperTraining_Text_StartHyperTraining, MSGBOX_AUTOCLOSE
+	fadescreen 1
+	playfanfare 0x173
+	waitfanfare
+	fadescreen 0
+	msgbox HyperTraining_String6, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq FallarborTown_HyperTrainer
 	releaseall
 	end
 
-HyperTraining_String_2:
-	.string "Are you aware of Individual Values,\n"
-	.string "or IVs for short?$"
+HyperTraining_Text_WantMeExplainIVs:
+	.string "Would you like me to explain IVs again?$"
 
-HyperTraining_String_3:
+HyperTraining_Text_ExplainIVs:
 	.string "Ivy: IVs are a hidden part of your\n"
 	.string "Pokémon's stats that can only be\l"
 	.string "changed with special training.\p"
@@ -621,7 +642,9 @@ HyperTraining_ReportSpDef:
 	.string "What would you like to change it to?$"
 
 HyperTraining_String6:
-	.string "THE PAIN GOES HERE!$"
+	.string "The Hyper Training made {STR_VAR_1}\n"
+	.string "stronger!\p"
+	.string "Would you like to train some more?$"
 
 HyperTraining_String_7:
 	.string "For five Bottle Caps, I can change all\n"
@@ -632,3 +655,12 @@ HyperTraining_String_7:
 
 HyperTraining_String_8::
 	.string "How can I help {STR_VAR_1} today?$"
+
+HyperTraining_Text_StartHyperTraining:
+	.string "Got it! Let's do some Hyper Training!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
+	.string "… … … … … …\n"
+	.string "… … … … … …$"

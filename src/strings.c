@@ -1832,26 +1832,37 @@ const u8 gText_FlavourGreen[] = _("Green");
 const u8 gText_View[] = _("View");
 const u8 gText_Modify[] = _("Add EVs");
 const u8 gText_ResetEVs[] = _("Reset EVs");
+
 const u8 gText_ChangeIVto0[] = _(" 0");
 const u8 gText_ChangeIVto1[] = _(" 1");
 const u8 gText_ChangeIVto14[] = _("14");
 const u8 gText_ChangeIVto15[] = _("15");
 const u8 gText_ChangeIVto30[] = _("30");
 const u8 gText_ChangeIVto31[] = _("31");
+
 const u8 gText_Add4toEV[] = _(" 4 EVs");
 const u8 gText_Add8toEV[] = _(" 8 EVs");
 const u8 gText_Add12toEV[] = _("12 EVs");
 const u8 gText_Add64toEV[] = _("64 EVs");
 const u8 gText_Add128toEV[] = _("128 EVs");
 const u8 gText_Add252toEV[] = _("252 EVs");
+
 const u8 gText_HiddenPower[] = _("Change Hidden Power");
 const u8 gText_ChangeIV[] = _("Change IVs");
+
 const u8 gText_HPFire[] = _("Fire");
 const u8 gText_HPIce[] = _("Ice");
 const u8 gText_HPGrass[] = _("Grass");
 const u8 gText_HPRock[] = _("Rock");
 const u8 gText_HPGround[] = _("Ground");
 const u8 gText_HPFighting[] = _("Fighting");
+
+const u8 gText_HP_Placeholder[] =       _("HP{CLEAR_TO 0x36}{STR_VAR_1}");
+const u8 gText_Attack_Placeholder[] =   _("Attack{CLEAR_TO 0x36}{STR_VAR_2}");
+const u8 gText_Defense_Placeholder[] =  _("Defense{CLEAR_TO 0x36}{STR_VAR_3}");
+const u8 gText_Speed_Placeholder[] =    _("Speed{CLEAR_TO 0x36}{EXTRA_STR_VAR_1}");
+const u8 gText_SpAtk_Placeholder[] =    _("Sp. Atk{CLEAR_TO 0x36}{EXTRA_STR_VAR_2}");
+const u8 gText_SpDef_Placeholder[] =    _("Sp. Def{CLEAR_TO 0x36}{EXTRA_STR_VAR_3}");
 
 // Move Tutors
 // Unlocked after beating Roxanne
@@ -2072,10 +2083,3 @@ const u8 gText_3[] = _("3");
 const u8 gText_2[] = _("2");
 const u8 gText_1[] = _("1");
 const u8 gText_0[] = _("0");
-
-const u8 gText_HP_Placeholder[] =       _("HP{CLEAR_TO 0x36}{STR_VAR_1}");
-const u8 gText_Attack_Placeholder[] =   _("Attack{CLEAR_TO 0x36}{STR_VAR_2}");
-const u8 gText_Defense_Placeholder[] =  _("Defense{CLEAR_TO 0x36}{STR_VAR_3}");
-const u8 gText_Speed_Placeholder[] =    _("Speed{CLEAR_TO 0x36}{EXTRA_STR_VAR_1}");
-const u8 gText_SpAtk_Placeholder[] =    _("Sp. Atk{CLEAR_TO 0x36}{EXTRA_STR_VAR_2}");
-const u8 gText_SpDef_Placeholder[] =    _("Sp. Def{CLEAR_TO 0x36}{EXTRA_STR_VAR_3}");
