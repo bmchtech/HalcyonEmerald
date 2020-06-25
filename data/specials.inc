@@ -60,6 +60,10 @@ gSpecials:: @ 81DBA64
 	def_special ObjectEventInteractionPickBerryTree
 	def_special ObjectEventInteractionRemoveBerryTree
 	def_special ObjectEventInteractionWaterBerryTree
+	def_special ObjectEventInteractionBerryTreePokemonEncounter
+	def_special SetBerryEncounters
+	def_special GetBerryEncounter
+	def_special DoBerryEncounter
 	def_special PlayerHasBerries
 	def_special IsEnigmaBerryValid
 	def_special GetTrainerBattleMode

@@ -14,6 +14,7 @@
 #include "constants/berry.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
+#include "wild_encounter.h"
 
 static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry);
 static bool32 BerryTreeGrow(struct BerryTree *tree);
@@ -24,6 +25,7 @@ static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water);
 static u8 CalcBerryYield(struct BerryTree *tree);
 static u8 GetBerryCountByBerryTreeId(u8 id);
 static u16 GetStageDurationByBerryType(u8);
+
 
 //.rodata
 static const u8 sBerryDescriptionPart1_Cheri[] = _("Blooms with delicate pretty flowers.");
@@ -928,7 +930,7 @@ const struct Berry gBerries[] =
 
     [ITEM_OCCA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("OCCA"),
+        .name = _("Occa"),
         .firmness = BERRY_FIRMNESS_SUPER_HARD,
         .size = 89,
         .maxYield = 10,
@@ -946,7 +948,7 @@ const struct Berry gBerries[] =
 
     [ITEM_PASSHO_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("PASSHO"),
+        .name = _("Passho"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 33,
         .maxYield = 10,
@@ -964,7 +966,7 @@ const struct Berry gBerries[] =
 
     [ITEM_WACAN_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("WACAN"),
+        .name = _("Wacan"),
         .firmness = BERRY_FIRMNESS_VERY_SOFT,
         .size = 250,
         .maxYield = 10,
@@ -982,7 +984,7 @@ const struct Berry gBerries[] =
 
     [ITEM_RINDO_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("RINDO"),
+        .name = _("Rindo"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 155,
         .maxYield = 10,
@@ -1000,7 +1002,7 @@ const struct Berry gBerries[] =
 
     [ITEM_YACHE_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("YACHE"),
+        .name = _("Yache"),
         .firmness = BERRY_FIRMNESS_VERY_HARD,
         .size = 135,
         .maxYield = 10,
@@ -1018,7 +1020,7 @@ const struct Berry gBerries[] =
 
     [ITEM_CHOPLE_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("CHOPLE"),
+        .name = _("Chople"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 77,
         .maxYield = 10,
@@ -1036,7 +1038,7 @@ const struct Berry gBerries[] =
 
     [ITEM_KEBIA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("KEBIA"),
+        .name = _("Kebia"),
         .firmness = BERRY_FIRMNESS_HARD,
         .size = 89,
         .maxYield = 10,
@@ -1054,7 +1056,7 @@ const struct Berry gBerries[] =
 
     [ITEM_SHUCA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("SHUCA"),
+        .name = _("Shuca"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 42,
         .maxYield = 10,
@@ -1072,7 +1074,7 @@ const struct Berry gBerries[] =
 
     [ITEM_COBA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("COBA"),
+        .name = _("Coba"),
         .firmness = BERRY_FIRMNESS_VERY_HARD,
         .size = 277,
         .maxYield = 10,
@@ -1090,7 +1092,7 @@ const struct Berry gBerries[] =
 
     [ITEM_PAYAPA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("PAYAPA"),
+        .name = _("Payapa"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 251,
         .maxYield = 10,
@@ -1108,7 +1110,7 @@ const struct Berry gBerries[] =
 
     [ITEM_TANGA_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("TANGA"),
+        .name = _("Tanga"),
         .firmness = BERRY_FIRMNESS_VERY_SOFT,
         .size = 43,
         .maxYield = 10,
@@ -1126,7 +1128,7 @@ const struct Berry gBerries[] =
 
     [ITEM_CHARTI_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("CHARTI"),
+        .name = _("Charti"),
         .firmness = BERRY_FIRMNESS_VERY_SOFT,
         .size = 28,
         .maxYield = 5,
@@ -1144,7 +1146,7 @@ const struct Berry gBerries[] =
 
     [ITEM_KASIB_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("KASIB"),
+        .name = _("Kasib"),
         .firmness = BERRY_FIRMNESS_HARD,
         .size = 144,
         .maxYield = 10,
@@ -1162,7 +1164,7 @@ const struct Berry gBerries[] =
 
     [ITEM_HABAN_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("HABAN"),
+        .name = _("Haban"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 23,
         .maxYield = 10,
@@ -1180,7 +1182,7 @@ const struct Berry gBerries[] =
 
     [ITEM_COLBUR_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("COLBUR"),
+        .name = _("Colbur"),
         .firmness = BERRY_FIRMNESS_SUPER_HARD,
         .size = 38,
         .maxYield = 10,
@@ -1198,7 +1200,7 @@ const struct Berry gBerries[] =
 
     [ITEM_BABIRI_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("BABIRI"),
+        .name = _("Babiri"),
         .firmness = BERRY_FIRMNESS_SUPER_HARD,
         .size = 265,
         .maxYield = 10,
@@ -1216,7 +1218,7 @@ const struct Berry gBerries[] =
 
     [ITEM_CHILAN_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("CHILAN"),
+        .name = _("Chilan"),
         .firmness = BERRY_FIRMNESS_VERY_SOFT,
         .size = 33,
         .maxYield = 10,
@@ -1234,7 +1236,7 @@ const struct Berry gBerries[] =
 
     [ITEM_ROSELI_BERRY - FIRST_BERRY_INDEX] =
     {
-        .name = _("ROSELI"),
+        .name = _("Roseli"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 35,
         .maxYield = 10,
@@ -1378,6 +1380,114 @@ bool32 ObjectEventInteractionWaterBerryTree(void)
         return FALSE;
     }
     return TRUE;
+}
+
+// Used when encountering a Pokemon on a growing berry tree to set the encounter to "done"
+bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
+{
+    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+
+    switch (tree->stage)
+    {
+    case BERRY_STAGE_SPROUTED:
+        tree->EncounterSproutStage = TRUE;
+        break;
+    case BERRY_STAGE_TALLER:
+        tree->EncounterTallerStage = TRUE;
+        break;
+    case BERRY_STAGE_FLOWERING:
+        tree->EncounterFlowerStage = TRUE;
+        break;     
+    case BERRY_STAGE_BERRIES:
+        tree->EncounterBerryStage = TRUE;
+        break;
+    default:
+        return FALSE;
+    }
+    return TRUE;
+}
+
+// Sets encounter bits for a Berry tree. If true, the player won't encounter a Pokemon at that stage.
+// Should be called when a berry is planted.
+void SetBerryEncounters(void)
+{
+    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+
+    u8 encounterStages = Random() % 16;
+    u8 mask = 1;
+
+    // Surely there's a better way to do this
+    if (encounterStages && mask)
+    {
+        tree->EncounterSproutStage = TRUE;
+    }
+    if (encounterStages && mask << 1)
+    {
+        tree->EncounterTallerStage = TRUE;
+    }
+    if (encounterStages && mask << 2)
+    {
+        tree->EncounterFlowerStage = TRUE;
+    }
+    if (encounterStages && mask << 3)
+    {
+        tree->EncounterBerryStage = TRUE;
+    }
+}
+
+// Checks whether the player should encounter a Pokemon when interacting with a berry tree.
+// Result is stored in gSpecialVar_Result, and is either true or false.
+void GetBerryEncounter(void)
+{
+    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+
+    if (tree->EncounterSproutStage && tree->stage == BERRY_STAGE_SPROUTED)
+    {
+        gSpecialVar_Result = FALSE;
+    }
+    else if (tree->EncounterTallerStage && tree->stage == BERRY_STAGE_TALLER)
+    {
+        gSpecialVar_Result = FALSE;
+    }
+    else if (tree->EncounterFlowerStage && tree->stage == BERRY_STAGE_FLOWERING)
+    {
+        gSpecialVar_Result = FALSE;
+    }
+    else if (tree->EncounterBerryStage && tree->stage == BERRY_STAGE_BERRIES)
+    {
+        gSpecialVar_Result = FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = TRUE;
+    }
+}
+
+void DoBerryEncounter(void)
+{
+    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+    // Get encounter list based on growth stage of berry
+
+    u8 berryStage;
+
+    if (tree->stage == BERRY_STAGE_SPROUTED)
+    {
+        berryStage = 0;
+    }
+    else if (tree->stage == BERRY_STAGE_TALLER)
+    {
+        berryStage = 1;
+    }   
+    else if (tree->stage == BERRY_STAGE_FLOWERING)
+    {
+        berryStage = 2;
+    }
+    else
+    {
+        berryStage = 3;
+    }
+
+    BerryWildEncounter(berryStage);
 }
 
 bool8 IsPlayerFacingEmptyBerryTreePatch(void)

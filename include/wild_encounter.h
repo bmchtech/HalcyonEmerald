@@ -37,10 +37,12 @@ void DisableWildEncounters(bool8 disabled);
 bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior);
 void ScrSpecial_RockSmashWildEncounter(void);
 bool8 SweetScentWildEncounter(void);
+void BerryWildEncounter(u8 headerId);
 bool8 DoesCurrentMapHaveFishingMons(void);
 void FishingWildEncounter(u8 rod);
 u16 GetLocalWildMon(bool8 *isWaterMon);
 u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
+bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 flags);
 
 #endif // GUARD_WILD_ENCOUNTER_H

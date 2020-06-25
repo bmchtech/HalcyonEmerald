@@ -60,13 +60,26 @@ BerryTree_EventScript_CheckBerryStage1:: @ 82743B1
 	waitbuttonpress
 	goto BerryTree_EventScript_WantToWater
 
-BerryTree_EventScript_CheckBerryStage2:: @ 82743C1
+BerryTree_EventScript_CheckBerryStage2::
 	lockall
 	special ObjectEventInteractionGetBerryName
 	message BerryTree_Text_BerryGrowthStage2
 	waitmessage
 	waitbuttonpress
-	goto BerryTree_EventScript_WantToWater
+	special GetBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_WantToWater
+	special ObjectEventInteractionBerryTreePokemonEncounter
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	message BerryTree_Text_BerryEncounterStage2
+	waitmessage
+	waitbuttonpress
+	special DoBerryEncounter
+	waitstate
+	releaseall
+	end
 
 BerryTree_EventScript_CheckBerryStage3:: @ 82743D1
 	lockall
@@ -74,7 +87,20 @@ BerryTree_EventScript_CheckBerryStage3:: @ 82743D1
 	message BerryTree_Text_BerryGrowthStage3
 	waitmessage
 	waitbuttonpress
-	goto BerryTree_EventScript_WantToWater
+	special GetBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_WantToWater
+	special ObjectEventInteractionBerryTreePokemonEncounter
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	message BerryTree_Text_BerryEncounterStage3
+	waitmessage
+	waitbuttonpress
+	special DoBerryEncounter
+	waitstate
+	releaseall
+	end
 
 BerryTree_EventScript_CheckBerryStage4:: @ 82743E1
 	call BerryTree_EventScript_GetCareAdverb
@@ -83,7 +109,33 @@ BerryTree_EventScript_CheckBerryStage4:: @ 82743E1
 	message BerryTree_Text_BerryGrowthStage4
 	waitmessage
 	waitbuttonpress
-	goto BerryTree_EventScript_WantToWater
+	special GetBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_WantToWater
+	special ObjectEventInteractionBerryTreePokemonEncounter
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	message BerryTree_Text_BerryEncounterStage4
+	waitmessage
+	waitbuttonpress
+	special DoBerryEncounter
+	waitstate
+	releaseall
+	end
+
+BerryTreeBerriesEncounter::
+	special ObjectEventInteractionBerryTreePokemonEncounter
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	message BerryTree_Text_BerryEncounterStage5
+	waitmessage
+	waitbuttonpress
+	special DoBerryEncounter
+	waitstate
+	releaseall
+	end
 
 @ VAR_0x8005 here is the number of times watered
 @ Buffered by ObjectEventInteractionGetBerryTreeData
@@ -116,6 +168,9 @@ BerryTree_EventScript_CheckBerryFullyGrown:: @ 8274421
 	goto_if_eq BerryTree_EventScript_CancelPickingBerry
 
 BerryTree_EventScript_PickBerry:: @ 8274448
+	special GetBerryEncounter
+	compare VAR_RESULT, TRUE
+	goto_if_eq BerryTreeBerriesEncounter
 	special ObjectEventInteractionPickBerryTree
 	compare VAR_0x8004, 0
 	goto_if_eq BerryTree_EventScript_BerryPocketFull
@@ -189,6 +244,7 @@ BerryTree_EventScript_PlantBerry:: @ 82744DD
 	incrementgamestat GAME_STAT_PLANTED_BERRIES
 	special IncrementDailyPlantedBerries
 	special ObjectEventInteractionGetBerryCountString
+	special SetBerryEncounters
 	message BerryTree_Text_PlantedOneBerry
 	waitmessage
 	waitbuttonpress
@@ -199,7 +255,7 @@ BerryTree_Text_ItsSoftLoamySoil: @ 82744F0
 
 BerryTree_Text_WantToPlant: @ 8274507
 	.string "It's soft, loamy soil.\n"
-	.string "Want to plant a BERRY?$"
+	.string "Want to plant a Berry?$"
 
 BerryTree_Text_PlantedOneBerry: @ 8274535
 	.string "{PLAYER} planted one {STR_VAR_1} in\n"
@@ -237,12 +293,12 @@ BerryTree_Text_PickedTheBerry: @ 827461B
 
 BerryTree_Text_PutAwayBerry: @ 8274630
 	.string "{PLAYER} put away the {STR_VAR_1}\n"
-	.string "in the BAG's BERRIES POCKET.\p"
+	.string "in the Bag's Berries Pocket.\p"
 	.string "The soil returned to its soft and\n"
 	.string "loamy state.$"
 
 BerryTree_Text_BerryPocketFull: @ 827468F
-	.string "The BAG's BERRIES POCKET is full.\p"
+	.string "The Bag's Berries Pocket is full.\p"
 	.string "The {STR_VAR_1} couldn't be taken.$"
 
 BerryTree_Text_BerryLeftUnpicked: @ 82746CB
@@ -251,7 +307,7 @@ BerryTree_Text_BerryLeftUnpicked: @ 82746CB
 
 BerryTree_Text_WantToWater: @ 82746E4
 	.string "Want to water the {STR_VAR_1} with the\n"
-	.string "WAILMER PAIL?$"
+	.string "Wailmer Pail?$"
 
 BerryTree_Text_WateredTheBerry: @ 8274710
 	.string "{PLAYER} watered the {STR_VAR_1}.$"
@@ -261,3 +317,19 @@ BerryTree_Text_PlantIsDelighted: @ 8274723
 
 BerryTree_Text_ExclamationPoint: @ 8274744
 	.string "!$"
+
+BerryTree_Text_BerryEncounterStage2:
+	.string "A Pokémon was nibbling on the\n"
+	.string "{STR_VAR_1} sprout's leaves!$"
+
+BerryTree_Text_BerryEncounterStage3:
+	.string "A Pokémon was hiding in the\n"
+	.string "{STR_VAR_1} tree!$"
+
+BerryTree_Text_BerryEncounterStage4:
+	.string "A Pokémon was drawn to the\n"
+	.string "{STR_VAR_1} flowers!$"
+
+BerryTree_Text_BerryEncounterStage5:
+	.string "A Pokémon was feeding on the\n"
+	.string "{STR_VAR_1}!$"

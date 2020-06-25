@@ -456,7 +456,7 @@ enum
 #define WILD_CHECK_REPEL    0x1
 #define WILD_CHECK_KEEN_EYE 0x2
 
-static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 flags)
+bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 flags)
 {
     u8 wildMonIndex = 0;
     u8 level;
@@ -757,6 +757,19 @@ void RockSmashWildEncounter(void)
         {
             gSpecialVar_Result = FALSE;
         }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void BerryWildEncounter(u8 headerId)
+{
+    if (TryGenerateWildMon(gBerryTreeWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+    {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
     }
     else
     {
