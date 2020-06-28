@@ -3480,12 +3480,12 @@ static void Cmd_getexp(void)
 
             // Exp share effect always on. Any Pokemon that was sent in gets 100% of the exp, the rest get 50%
 
-            *exp = calculatedExp / 2;// viaSentIn;
+            *exp = calculatedExp * 3 / 4; // Portion of EXP given to Pokemon that appeared in battle
             if (*exp == 0)
                 *exp = 1;
 
             viaExpShare = gSaveBlock1Ptr->playerPartyCount;
-            gExpShareExp = calculatedExp / 2;
+            gExpShareExp = calculatedExp / 4; // Portion of EXP given to all Pokemon, whether they battled or not
             if (gExpShareExp == 0)
                 gExpShareExp = 1;
 
@@ -3532,7 +3532,7 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage = 0;
                         gBattleMoveDamage += gExpShareExp;  
                     if (holdEffect == HOLD_EFFECT_EXP_SHARE)
-                        gBattleMoveDamage = gExpShareExp*2;
+                        gBattleMoveDamage = gExpShareExp * 4; // Determines how much EXP a Pokemon holding an EXP Share receives
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                     // if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && B_TRAINER_EXP_MULTIPLIER != GEN_7)
