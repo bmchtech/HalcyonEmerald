@@ -183,10 +183,11 @@ static u8 ChooseWildMonIndex_WaterRock(void)
         return 1;
     else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_2)
         return 2;
-    else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_3)
-        return 3;
+    // else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_3)
+    //     return 3;
+    // Encounter slots for surf and rock smash reduced to 4 (60%, 30%, 5%, 5%)
     else
-        return 4;
+        return 3;
 }
 
 enum
