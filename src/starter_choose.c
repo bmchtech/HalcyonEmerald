@@ -124,11 +124,53 @@ static const u8 sStarterLabelCoords[][2] =
     {8, 4},
 };
 
-static const u16 sStarterMon[STARTER_MON_COUNT] =
+static const u16 sStarterMonKanto[STARTER_MON_COUNT] =
+{
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+};
+
+static const u16 sStarterMonJohto[STARTER_MON_COUNT] =
+{
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+};
+
+static const u16 sStarterMonHoenn[STARTER_MON_COUNT] =
 {
     SPECIES_TREECKO,
     SPECIES_TORCHIC,
     SPECIES_MUDKIP,
+};
+
+static const u16 sStarterMonSinnoh[STARTER_MON_COUNT] =
+{
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_PIPLUP,
+};
+
+static const u16 sStarterMonUnova[STARTER_MON_COUNT] =
+{
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_OSHAWOTT,
+};
+
+static const u16 sStarterMonKalos[STARTER_MON_COUNT] =
+{
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_FROAKIE,
+};
+
+static const u16 sStarterMonAlola[STARTER_MON_COUNT] =
+{
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_POPPLIO,
 };
 
 static const struct BgTemplate gUnknown_085B1E00[3] =
@@ -366,7 +408,27 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    switch (gSpecialVar_0x800A)
+    {
+    case 0:
+        return sStarterMonHoenn[chosenStarterId];
+    case 1:
+        return sStarterMonKanto[chosenStarterId];
+    case 2:
+        return sStarterMonJohto[chosenStarterId];
+    case 3:
+        return sStarterMonHoenn[chosenStarterId];
+    case 4:
+        return sStarterMonSinnoh[chosenStarterId];
+    case 5:
+        return sStarterMonUnova[chosenStarterId];
+    case 6:
+        return sStarterMonKalos[chosenStarterId];
+    case 7:
+        return sStarterMonAlola[chosenStarterId];
+    default:
+        return sStarterMonHoenn[chosenStarterId];
+    } 
 }
 
 static void VblankCB_StarterChoose(void)

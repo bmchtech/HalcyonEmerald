@@ -225,6 +225,7 @@ Route101_EventScript_BirchsBag:: @ 81EBE16
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
+	copyvar VAR_0x800A, VAR_STARTER_GEN
 	special ChooseStarter
 	waitstate
 	applymovement 2, Route101_Movement_BirchApproachPlayer

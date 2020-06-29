@@ -96,6 +96,8 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth:: @ 81F8507
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_BrendansHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_BrendanSomeOtherTime, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
 	applymovement 1, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth
@@ -108,6 +110,8 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth:: @ 81F8536
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_BrendansHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_BrendanSomeOtherTime, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
 	applymovement 1, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth
@@ -120,6 +124,8 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest:: @ 81F8565
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_BrendansHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_BrendanSomeOtherTime, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
 	applymovement 1, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest
@@ -132,9 +138,61 @@ LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast:: @ 81F8594
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_BrendansHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_BrendanSomeOtherTime, MSGBOX_DEFAULT
 	closemessage
 	applymovement 1, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast
 	waitmovement 0
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_ChooseStarterSet::
+	setvar VAR_0x8004, SCROLL_MULTI_REGION_NAMES
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, LittlerootTown_BrendansHouse_2F_EventScript_Kanto
+	case 1, LittlerootTown_BrendansHouse_2F_EventScript_Johto
+	case 2, LittlerootTown_BrendansHouse_2F_EventScript_Hoenn
+	case 3, LittlerootTown_BrendansHouse_2F_EventScript_Sinnoh
+	case 4, LittlerootTown_BrendansHouse_2F_EventScript_Unova
+	case 5, LittlerootTown_BrendansHouse_2F_EventScript_Kalos
+	case 6, LittlerootTown_BrendansHouse_2F_EventScript_Alola
+	goto LittlerootTown_BrendansHouse_2F_EventScript_Hoenn
+	end
+
+LittlerootTown_BrendansHouse_2F_EventScript_Kanto:
+	setvar VAR_STARTER_GEN, 1
+	bufferstring 1, StarterRegionStringKanto
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Johto:
+	setvar VAR_STARTER_GEN, 2
+	bufferstring 1, StarterRegionStringJohto
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Hoenn:
+	setvar VAR_STARTER_GEN, 3
+	bufferstring 1, StarterRegionStringHoenn
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Sinnoh:
+	setvar VAR_STARTER_GEN, 4
+	bufferstring 1, StarterRegionStringSinnoh
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Unova:
+	setvar VAR_STARTER_GEN, 5
+	bufferstring 1, StarterRegionStringUnova
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Kalos:
+	setvar VAR_STARTER_GEN, 6
+	bufferstring 1, StarterRegionStringKalos
+	return
+
+LittlerootTown_BrendansHouse_2F_EventScript_Alola:
+	setvar VAR_STARTER_GEN, 7
+	bufferstring 1, StarterRegionStringAlola
 	return
 
 LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters: @ 81F85BC
@@ -289,26 +347,26 @@ PlayersHouse_2F_Text_ClockIsStopped: @ 81F8668
 	.string "Better set it and start it!$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom: @ 81F869A
-	.string "MOM: {PLAYER}, how do you like your\n"
+	.string "Mom: {PLAYER}, how do you like your\n"
 	.string "new room?\p"
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"
 	.string "downstairs, too.\p"
-	.string "POKéMON movers are so convenient!\p"
+	.string "Pokémon movers are so convenient!\p"
 	.string "Oh, you should make sure that\n"
 	.string "everything's all there on your desk.$"
 
 PlayersHouse_2F_Text_Notebook: @ 81F877F
 	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
+	.string "Adventure Rule No. 1\n"
+	.string "Open the Menu with Start.\p"
+	.string "Adventure Rule No. 2\n"
+	.string "Record your progress with Save.\p"
 	.string "The remaining pages are blank…$"
 
 Common_Text_LookCloserAtMap: @ 81F8820
 	.string "{PLAYER} took a closer look at the\n"
-	.string "HOENN region map.$"
+	.string "Hoenn region map.$"
 
 PlayersHouse_2F_Text_ItsAGameCube: @ 81F884F
 	.string "It's a Nintendo GameCube.\p"
