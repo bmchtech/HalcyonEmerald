@@ -722,7 +722,7 @@ PetalburgCity_Text_WhereIsWally: @ 81DC837
 PetalburgCity_Text_AreYouRookieTrainer: @ 81DC881
 	.string "Hiya! Are you maybe…\n"
 	.string "A rookie Trainer?\p"
-	.string "Do you know what Pokémon TRAINERS\n"
+	.string "Do you know what Pokémon Trainers\n"
 	.string "do when they reach a new town?\p"
 	.string "They first check what kind of Gym\n"
 	.string "is in the town.$"
@@ -773,5 +773,5 @@ PetalburgCity_Text_WellMaybeNot: @ 81DCB82
 
 PetalburgCity_Text_ImLookingForTalentedTrainers: @ 81DCC09
 	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
+	.string "talented Trainers.\p"
 	.string "I'm sorry to have taken your time.$"

@@ -49,7 +49,7 @@ VictoryRoad_B1F_Text_ShannonDefeat: @ 823664D
 
 VictoryRoad_B1F_Text_ShannonPostBattle: @ 8236678
 	.string "By being together all the time, trust\n"
-	.string "grows between Pokémon and TRAINERS.$"
+	.string "grows between Pokémon and Trainers.$"
 
 VictoryRoad_B1F_Text_MichelleIntro: @ 82366C2
 	.string "This isn't the goal. It's only a place\n"

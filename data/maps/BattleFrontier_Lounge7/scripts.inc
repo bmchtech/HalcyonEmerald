@@ -363,7 +363,7 @@ BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong: @ 8265C6F
 BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful: @ 8265D17
 	.string "When I was just a wee YOUNGSTER,\n"
 	.string "those ladies were strong and beautiful.\p"
-	.string "They were idols among us TRAINERS.\p"
+	.string "They were idols among us Trainers.\p"
 	.string "Even now, age hasn't dulled their\n"
 	.string "abilities.\p"
 	.string "In fact, their Pokémon moves have\n"

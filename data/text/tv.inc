@@ -111,7 +111,7 @@ gTVBravoTrainerText08:: @ 0827F6E6
 BattleFrontier_BattleTowerLobby_Text_InterviewRequest:: @ 0827F704
 	.string "Hello! You're the Trainer who just had\n"
 	.string "a battle, right?\p"
-	.string "I'm gathering interviews with TRAINERS\n"
+	.string "I'm gathering interviews with Trainers\n"
 	.string "all over the place.\p"
 	.string "May I get a few words from you about\n"
 	.string "your impressions on battling?$"
@@ -1200,7 +1200,7 @@ gTVTodaysRivalTrainerText10:: @ 082847F7
 	.string "$"
 
 gTVTodaysRivalTrainerText01:: @ 0828485F
-	.string "And how many BADGES does our rival\n"
+	.string "And how many Badges does our rival\n"
 	.string "have? The number is {STR_VAR_1}!$"
 
 gTVTodaysRivalTrainerText02:: @ 0828489A
@@ -2717,7 +2717,7 @@ GabbyAndTy_Text_WhoAreYouInterview: @ 0828B042
 	.string "when we spotted you!\p"
 	.string "Oh, please let me explain. We travel\n"
 	.string "around everywhere interviewing all\l"
-	.string "sorts of TRAINERS.\p"
+	.string "sorts of Trainers.\p"
 	.string "So, would you give us a bit of your time\n"
 	.string "for an interview?$"
 

@@ -1201,7 +1201,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenMultis: @ 824046B
 	.string "Please come see me when you are ready.$"
 
 BattleFrontier_BattleTowerLobby_Text_WelcomSingleBattle: @ 8240537
-	.string "Where the talents of TRAINERS\n"
+	.string "Where the talents of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the SINGLE\n"
@@ -1231,7 +1231,7 @@ BattleFrontier_BattleTowerLobby_Text_SelectThreeMons: @ 82407A6
 	.string "that are to be entered.$"
 
 BattleFrontier_BattleTowerLobby_Text_WelcomeDoubleBattle: @ 82407E2
-	.string "Where the talents of TRAINERS\n"
+	.string "Where the talents of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the DOUBLE\n"
@@ -1261,7 +1261,7 @@ BattleFrontier_BattleTowerLobby_Text_PleaseSelectFourMons: @ 8240A50
 	.string "that are to be entered.$"
 
 BattleFrontier_BattleTowerLobby_Text_WelcomeMultiBattle: @ 8240A8B
-	.string "Where the talents of TRAINERS\n"
+	.string "Where the talents of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the MULTI\n"
@@ -1280,7 +1280,7 @@ BattleFrontier_BattleTowerLobby_Text_ExplainMultisChallenge: @ 8240B3E
 	.string "with two Pokémon each.\p"
 	.string "Inside the TOWER is a room named\n"
 	.string "the BATTLE SALON where you may meet\l"
-	.string "other TRAINERS.\p"
+	.string "other Trainers.\p"
 	.string "There, you must find a Trainer to act\n"
 	.string "as your partner in MULTI BATTLES.\p"
 	.string "Once you have partnered up, you will\n"
@@ -1299,7 +1299,7 @@ BattleFrontier_BattleTowerLobby_Text_PleaseSelectTwoMons: @ 8240DDB
 	.string "that are to be entered.$"
 
 BattleFrontier_BattleTowerLobby_Text_WelcomeLinkMultiBattle: @ 8240E15
-	.string "Where the talents of TRAINERS\n"
+	.string "Where the talents of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the LINK MULTI\n"

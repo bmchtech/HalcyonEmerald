@@ -199,7 +199,7 @@ Route114_Text_Poochyena: @ 81F28A6
 	.string "Bow! Bowwow!$"
 
 Route114_Text_MeteorFallsSign: @ 81F28B3
-	.string "METEOR FALLS\n"
+	.string "Meteor Falls\n"
 	.string "Rustboro City THROUGH HERE$"
 
 Route114_Text_FossilManiacsHouseSign: @ 81F28DB

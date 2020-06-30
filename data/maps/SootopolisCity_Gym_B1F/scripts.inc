@@ -53,7 +53,7 @@ SootopolisCity_Gym_B1F_EventScript_Daphne:: @ 8225D5A
 
 SootopolisCity_Gym_B1F_Text_AndreaIntro: @ 8225D71
 	.string "I'll show you the sublime techniques\n"
-	.string "I learned from our LEADER JUAN!$"
+	.string "I learned from our Leader JUAN!$"
 
 SootopolisCity_Gym_B1F_Text_AndreaDefeat: @ 8225DB6
 	.string "Please forgive me, JUAN…$"

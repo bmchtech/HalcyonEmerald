@@ -532,7 +532,7 @@ BattleFrontier_BattlePyramidLobby_EventScript_ExitRules:: @ 8250F2F
 	end
 
 BattleFrontier_BattlePyramidLobby_Text_WelcomeToBattlePyramid: @ 8250F31
-	.string "Where the courage of TRAINERS\n"
+	.string "Where the courage of Trainers\n"
 	.string "is put to the test!\p"
 	.string "Welcome to the BATTLE PYRAMID!\p"
 	.string "I am your guide to\n"
@@ -810,9 +810,9 @@ BattleFrontier_BattlePyramidLobby_Text_HintWater: @ 8252206
 	.string "from WATER-type moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintGhost: @ 825225A
-	.string "I see GHOST-type Pokémon…\p"
+	.string "I see Ghost-type Pokémon…\p"
 	.string "…And, I see your Pokémon suffering\n"
-	.string "from GHOST-type moves…$"
+	.string "from Ghost-type moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintSteel: @ 82522AE
 	.string "I see STEEL-type Pokémon…\p"
@@ -885,7 +885,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainTrainerRules: @ 82527A9
 	.string "Trainers are lying in wait for you\n"
 	.string "inside the PYRAMID.\p"
 	.string "On each floor, there are up to\n"
-	.string "eight TRAINERS.\p"
+	.string "eight Trainers.\p"
 	.string "When you defeat a Trainer, you will\n"
 	.string "get a helpful hint for your adventure.$"
 

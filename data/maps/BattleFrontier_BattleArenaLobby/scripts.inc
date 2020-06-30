@@ -358,7 +358,7 @@ BattleFrontier_BattleArenaLobby_EventScript_ExitRules:: @ 8256164
 	end
 
 BattleFrontier_BattleArenaLobby_Text_WelcomeToBattleArena: @ 8256166
-	.string "Where the battling spirit of TRAINERS\n"
+	.string "Where the battling spirit of Trainers\n"
 	.string "is put to the test!\p"
 	.string "I welcome you to the BATTLE ARENA!\p"
 	.string "I am your guide to the Set KO Tourney!$"

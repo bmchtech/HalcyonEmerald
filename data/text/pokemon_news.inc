@@ -63,7 +63,7 @@ gPokeNewsTextGameCorner_Ongoing:: @ 0828D66F
 	.string "arrived!\p"
 	.string "Could you be lucky at the SLOTS \n"
 	.string "and ROULETTE?\p"
-	.string "The location is MAUVILLE CITY.\n"
+	.string "The location is Mauville City.\n"
 	.string "This is the place!\p"
 	.string "That's the news on Pokémon NEWS.$"
 
@@ -77,7 +77,7 @@ gPokeNewsTextGameCorner_Ending:: @ 0828D768
 	.string "Could you be lucky at the SLOTS\n"
 	.string "and ROULETTE?\p"
 	.string "Time is limited and has almost run out.\n"
-	.string "The location is MAUVILLE CITY.\p"
+	.string "The location is Mauville City.\p"
 	.string "That's the news on Pokémon NEWS.$"
 
 gPokeNewsTextLilycove_Upcoming:: @ 0828D875

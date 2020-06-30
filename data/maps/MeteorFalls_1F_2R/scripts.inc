@@ -139,7 +139,7 @@ MeteorFalls_1F_2R_Text_JayPostBattle: @ 822CA70
 
 MeteorFalls_1F_2R_Text_JayNotEnoughMons: @ 822CACD
 	.string "JAY: Well, well, aren't you a young\n"
-	.string "TRAINER?\p"
+	.string "Trainer?\p"
 	.string "If you'd care to battle with us, you'll\n"
 	.string "have to come back with more Pokémon.$"
 
@@ -180,7 +180,7 @@ MeteorFalls_1F_2R_Text_JayPostRematch: @ 822CD34
 
 MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons: @ 822CDAB
 	.string "JAY: Well, well, aren't you a young\n"
-	.string "TRAINER?\p"
+	.string "Trainer?\p"
 	.string "If you'd care to battle with us, you'll\n"
 	.string "have to come back with more Pokémon.$"
 

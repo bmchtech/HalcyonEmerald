@@ -409,7 +409,7 @@ static const u8 sXSpecialAttackDesc[] = _(
 
 static const u8 sXSpecialDefenseDesc[] = _(
     "Raises the stat\n"
-    "SP. DEF during one\n"
+    "Sp. Def during one\n"
     "battle.");
 
 static const u8 sPokeDollDesc[] = _(
@@ -1299,12 +1299,12 @@ static const u8 sPowerBeltDesc[] = _(
 
 static const u8 sPowerLensDesc[] = _(
     "Hold item that pro-\n"
-    "motes SP. ATK gain,\n"
+    "motes Sp. Atk gain,\n"
     "but reduces SPEED.");
 
 static const u8 sPowerBandDesc[] = _(
     "Hold item that pro-\n"
-    "motes SP. DEF gain,\n"
+    "motes Sp. Def gain,\n"
     "but reduces SPEED.");
 
 static const u8 sPowerAnkletDesc[] = _(
@@ -2636,7 +2636,7 @@ static const u8 sEjectButtonDesc[] = _(
     "by the foe.");
 
 static const u8 sAbsorbBulbDesc[] = _(
-    "Raises SP. ATK if\n"
+    "Raises Sp. Atk if\n"
     "the holder is hit by\n"
     "a Water-type move.");
 
@@ -2646,7 +2646,7 @@ static const u8 sCellBatteryDesc[] = _(
     "Electric-type move.");
 
 static const u8 sLuminousMossDesc[] = _(
-    "Raises SP. DEF if\n"
+    "Raises Sp. Def if\n"
     "the holder is hit by\n"
     "a Water-type move.");
 
@@ -2658,7 +2658,7 @@ static const u8 sSnowballDesc[] = _(
 static const u8 sWeaknessPolicyDesc[] = _(
     "If hit by a Super\n"
     "Effective move, ups\n"
-    "ATK and SP. ATK.");
+    "ATK and Sp. Atk.");
 
 static const u8 sDouseDriveDesc[] = _(
     "Changes Genesect's\n"
@@ -3072,12 +3072,12 @@ static const u8 sResistWingDesc[] = _(
 
 static const u8 sGeniusWingDesc[] = _(
     "An item that raises\n"
-    "the base SP. ATK.\n"
+    "the base Sp. Atk.\n"
     "of a Pokémon.");
 
 static const u8 sCleverWingDesc[] = _(
     "An item that raises\n"
-    "the base SP. DEF.\n"
+    "the base Sp. Def.\n"
     "of a Pokémon.");
 
 static const u8 sSwiftWingDesc[] = _(

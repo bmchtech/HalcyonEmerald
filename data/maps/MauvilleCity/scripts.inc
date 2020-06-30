@@ -585,7 +585,7 @@ MauvilleCity_Text_RegisteredWally: @ 81DFEB4
 	.string "in the PokéNav.$"
 
 MauvilleCity_Text_ScottYouDidntHoldBack: @ 81DFED5
-	.string "SCOTT: Hehe…\n"
+	.string "Scott: Hehe…\n"
 	.string "I was watching that match!\p"
 	.string "You're friends with that boy WALLY,\n"
 	.string "aren't you?\p"
@@ -603,7 +603,7 @@ MauvilleCity_Text_WattsonNeedFavorTakeKey: @ 81DFFE4
 	.string "That's a good thing, wahahahaha!\p"
 	.string "Fine! I've decided!\n"
 	.string "I need a favor, {PLAYER}{KUN}!\p"
-	.string "MAUVILLE CITY has an underground\n"
+	.string "Mauville City has an underground\n"
 	.string "sector called NEW MAUVILLE.\p"
 	.string "{PLAYER}{KUN}, I'd like you to go there and\n"
 	.string "switch off the GENERATOR.\p"
@@ -655,11 +655,11 @@ MauvilleCity_Text_PokemonCanJumpYouOnBike: @ 81E044A
 	.string "wild Pokémon could jump you.$"
 
 MauvilleCity_Text_CitySign: @ 81E0485
-	.string "MAUVILLE CITY\n"
+	.string "Mauville City\n"
 	.string "“The bright and shiny city of fun!”$"
 
 MauvilleCity_Text_GymSign: @ 81E04B7
-	.string "MAUVILLE CITY Pokémon Gym\n"
+	.string "Mauville City Pokémon Gym\n"
 	.string "Leader: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 

@@ -633,8 +633,8 @@ BattleFrontier_ExchangeServiceCorner_Text_WishIHadAllDolls: @ 825FF5D
 	.string "Oh, they're so nice!\n"
 	.string "I wish I had them!\l"
 	.string "Cute cushions!\l"
-	.string "Big plush DOLLS!\l"
-	.string "Little plush DOLLS!\l"
+	.string "Big plush Dolls!\l"
+	.string "Little plush Dolls!\l"
 	.string "I wish I had them all!$"
 
 BattleFrontier_ExchangeServiceCorner_Text_GetYouAnythingYouWant: @ 825FFD0
@@ -710,7 +710,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc:: @ 8260397
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_CalciumDesc:: @ 82603BE
-	.string "Raises the stat SP. ATK of one\n"
+	.string "Raises the stat Sp. Atk of one\n"
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_IronDesc:: @ 82603E6
@@ -718,7 +718,7 @@ BattleFrontier_ExchangeServiceCorner_Text_IronDesc:: @ 82603E6
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ZincDesc:: @ 826040E
-	.string "Raises the stat SP. DEF of one\n"
+	.string "Raises the stat Sp. Def of one\n"
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc:: @ 8260436

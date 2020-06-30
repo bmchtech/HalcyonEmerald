@@ -153,7 +153,7 @@ LilycoveCity_DepartmentStore_5F_EventScript_LittleGirl:: @ 82200BC
 	end
 
 LilycoveCity_DepartmentStore_5F_Text_PlaceFullOfCuteDolls: @ 82200C5
-	.string "This place is full of cute DOLLS.\p"
+	.string "This place is full of cute Dolls.\p"
 	.string "I should buy some for me, instead of\n"
 	.string "just for my children.$"
 

@@ -519,7 +519,7 @@ Route119_Text_MayExplainFly: @ 81F4B56
 	.string "instantly carry you to any town you've\l"
 	.string "already visited.\p"
 	.string "But, to use FLY, you have to get\n"
-	.string "the Gym BADGE from FORTREE CITY.\l"
+	.string "the Gym Badge from Fortree City.\l"
 	.string "That's important, so don't forget.\p"
 	.string "You should FLY home and visit\n"
 	.string "Littleroot for a change.\p"
@@ -549,12 +549,12 @@ Route119_Text_BrendanExplainFly: @ 81F4DB5
 	.string "Brendan: Use FLY, and your Pokémon\n"
 	.string "instantly carries you to any town\l"
 	.string "you've already visited.\p"
-	.string "But you need the FORTREE Gym BADGE \n"
+	.string "But you need the Fortree Gym Badge \n"
 	.string "to do that.\p"
 	.string "Anyway, I have to move along.$"
 
 Route119_Text_ScottWayToGoBeSeeingYou: @ 81F4E60
-	.string "SCOTT: Hahahah!\n"
+	.string "Scott: Hahahah!\n"
 	.string "Way to go, {PLAYER}{KUN}!\p"
 	.string "I just passed by a Trainer riding\n"
 	.string "a Bike.\p"
@@ -563,7 +563,7 @@ Route119_Text_ScottWayToGoBeSeeingYou: @ 81F4E60
 	.string "The kid looked really upset with\n"
 	.string "a face all red from anger.\p"
 	.string "I sure seem to run into you often.\n"
-	.string "Are you off to FORTREE Gym next?\p"
+	.string "Are you off to Fortree Gym next?\p"
 	.string "I expect that you'll do well at the Gym.\n"
 	.string "Well, I'll be seeing you!$"
 
@@ -571,9 +571,9 @@ Route119_Text_ScottWayToGoBeSeeingYou: @ 81F4E60
 Route119_Text_ScottYouWonAtFortreeGym: @ 81F4FBA
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "SCOTT: Hiya, {PLAYER}{KUN}, it's me!\p"
+	.string "Scott: Hiya, {PLAYER}{KUN}, it's me!\p"
 	.string "Just as I thought, you won at\n"
-	.string "the FORTREE Gym.\p"
+	.string "the Fortree Gym.\p"
 	.string "Your strength…\n"
 	.string "Perhaps you really are the Trainer\l"
 	.string "that I've been searching for.\p"
@@ -595,7 +595,7 @@ Route119_Text_DontGoNearWeatherInstitute: @ 81F5147
 
 Route119_Text_ThoughtFlyByCatchingBirdMons: @ 81F51A2
 	.string "I thought you FLY by catching a whole\n"
-	.string "flock of BIRD Pokémon, and then\l"
+	.string "flock of Bird Pokémon, and then\l"
 	.string "hanging on to them somehow.\p"
 	.string "But it turns out there's an HM move\n"
 	.string "called FLY!\p"
@@ -615,7 +615,7 @@ Route119_Text_CanYourMonMakeSecretBase: @ 81F52B9
 
 Route119_Text_RouteSignFortree: @ 81F530E
 	.string "Route 119\n"
-	.string "{RIGHT_ARROW} FORTREE CITY$"
+	.string "{RIGHT_ARROW} Fortree City$"
 
 Route119_Text_WeatherInstitute: @ 81F5327
 	.string "WEATHER INSTITUTE$"

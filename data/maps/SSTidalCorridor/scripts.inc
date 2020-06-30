@@ -257,7 +257,7 @@ SSTidalCorridor_Movement_SailorReturn: @ 823C28B
 	step_end
 
 SSTidalCorridor_Text_ScottBattleFrontierInvite: @ 823C28F
-	.string "SCOTT: Well, hi, hi!\n"
+	.string "Scott: Well, hi, hi!\n"
 	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
 	.string "Something's come up, so I have to\n"
 	.string "disembark, but am I glad to see you!\p"

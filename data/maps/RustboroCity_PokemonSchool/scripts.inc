@@ -310,7 +310,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut: @ 82148C0
 	.string "Let me introduce myself.\n"
 	.string "My name's SCOTT.\p"
 	.string "I've been traveling everywhere in\n"
-	.string "search of outstanding TRAINERS.\p"
+	.string "search of outstanding Trainers.\p"
 	.string "More specifically, I'm looking for\n"
 	.string "Pokémon battle experts.\p"
 	.string "So, what brings you to this School?\n"
@@ -321,12 +321,12 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut: @ 82148C0
 	.string "this town has CUT.$"
 
 RustboroCity_PokemonSchool_Text_StudentTalentLevelUnknown: @ 8214A5F
-	.string "SCOTT: Hmm…\p"
+	.string "Scott: Hmm…\p"
 	.string "The talent levels of the students here\n"
 	.string "are unknown. The potential's there.$"
 
 RustboroCity_PokemonSchool_Text_ScottStoneBadge: @ 8214AB6
-	.string "SCOTT: Oh, what's that?\p"
+	.string "Scott: Oh, what's that?\p"
 	.string "It's a STONE BADGE, isn't it?\n"
 	.string "That's pretty impressive, I'd say.\p"
 	.string "But, you know, I would've loved to see\n"
@@ -340,7 +340,7 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge: @ 8214B8A
 	.string "Let me introduce myself.\n"
 	.string "My name's SCOTT.\p"
 	.string "I've been traveling everywhere in\n"
-	.string "search of outstanding TRAINERS.\p"
+	.string "search of outstanding Trainers.\p"
 	.string "More specifically, I'm looking for\n"
 	.string "Pokémon battle experts.\p"
 	.string "Oh, what's that?\n"

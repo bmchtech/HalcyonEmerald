@@ -326,7 +326,7 @@ SlateportCity_PokemonFanClub_Text_AllowMeToExamineYourPokemon: @ 820A445
 	.string "Please! Allow me to examine how you\n"
 	.string "have raised your Pokémon.\p"
 	.string "It delights me no end to see Pokémon\n"
-	.string "raised by other TRAINERS.\p"
+	.string "raised by other Trainers.\p"
 	.string "The happy expressions of Pokémon\n"
 	.string "raised with proper care…\p"
 	.string "The kindly eyes of the Trainer that\n"
@@ -402,9 +402,9 @@ SlateportCity_PokemonFanClub_Text_NothingElseToGiveYou: @ 820A9E1
 
 SlateportCity_PokemonFanClub_Text_ShowMePokemonThatLoveYou: @ 820AA77
 	.string "I love seeing Pokémon that love\n"
-	.string "their TRAINERS.\p"
+	.string "their Trainers.\p"
 	.string "Pokémon are very sensitive to\n"
-	.string "the feelings of their TRAINERS.\p"
+	.string "the feelings of their Trainers.\p"
 	.string "If you treat your Pokémon with love\n"
 	.string "and care, they'll love you back.\p"
 	.string "When your Pokémon grow to love you,\n"
@@ -413,11 +413,11 @@ SlateportCity_PokemonFanClub_Text_ShowMePokemonThatLoveYou: @ 820AA77
 SlateportCity_PokemonFanClub_Text_PokemonAdoresYou: @ 820AB63
 	.string "Your Pokémon really adores you.\p"
 	.string "For you, a most compassionate\n"
-	.string "TRAINER, a gift from the FAN CLUB!$"
+	.string "Trainer, a gift from the FAN CLUB!$"
 
 SlateportCity_PokemonFanClub_Text_TreatPokemonWithLove: @ 820ABC4
 	.string "Pokémon are very sensitive to\n"
-	.string "the feelings of their TRAINERS.\p"
+	.string "the feelings of their Trainers.\p"
 	.string "If you treat your Pokémon with love\n"
 	.string "and care, they'll love you back.$"
 

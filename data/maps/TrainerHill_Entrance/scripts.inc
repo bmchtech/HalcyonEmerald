@@ -431,7 +431,7 @@ TrainerHill_Entrance_Text_ChallengeTime: @ 8268D47
 	.string "{STR_VAR_1} min. {STR_VAR_2}.{STR_VAR_3} sec.$"
 
 TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead: @ 8268D5A
-	.string "Who knows what sort of TRAINERS\n"
+	.string "Who knows what sort of Trainers\n"
 	.string "and Pokémon combos are ahead?\p"
 	.string "All I know is that I'll knock aside\n"
 	.string "anyone that stands in my way!$"

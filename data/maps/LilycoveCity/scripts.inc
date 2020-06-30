@@ -423,7 +423,7 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender:: @ 81E3058
 LilycoveCity_Text_MayShoppingLetsBattle: @ 81E3061
 	.string "May: Oh, hey?\n"
 	.string "{PLAYER}{KUN}, are you shopping, too?\p"
-	.string "I bought a whole bunch of DOLLS and\n"
+	.string "I bought a whole bunch of Dolls and\n"
 	.string "POSTERS.\p"
 	.string "Of course, I've also caught a lot of\n"
 	.string "Pokémon, and I'm raising them\l"
@@ -463,9 +463,9 @@ LilycoveCity_Text_MayGoingBackToLittleroot: @ 81E32FB
 
 LilycoveCity_Text_MayYouGoingToCollectBadges: @ 81E3398
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Collect all the Gym BADGES and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon League challenge?\p"
-	.string "Well, while you're collecting BADGES,\n"
+	.string "Well, while you're collecting Badges,\n"
 	.string "{PLAYER}{KUN}, I'm going to work on my\l"
 	.string "Pokédex. I'll complete it before you!\p"
 	.string "See you!$"
@@ -493,7 +493,7 @@ LilycoveCity_Text_MayYouGoingToBattleFrontier: @ 81E353A
 LilycoveCity_Text_BrendanShoppingLetsBattle: @ 81E3608
 	.string "Brendan: Oh, hey, it's {PLAYER}.\p"
 	.string "I'm running an errand for my dad.\n"
-	.string "No, I'm not buying any DOLLS.\p"
+	.string "No, I'm not buying any Dolls.\p"
 	.string "Anyways, it's been a while.\p"
 	.string "Want to have a battle to see who's been\n"
 	.string "raising Pokémon better?$"
@@ -525,7 +525,7 @@ LilycoveCity_Text_BrendanGoingBackToLittleroot: @ 81E37D7
 
 LilycoveCity_Text_BrendanYouGoingToCollectBadges: @ 81E3876
 	.string "{PLAYER}, what are you going to do?\p"
-	.string "Collect all the Gym BADGES and take\n"
+	.string "Collect all the Gym Badges and take\n"
 	.string "the Pokémon League challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"

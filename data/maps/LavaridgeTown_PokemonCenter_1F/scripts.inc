@@ -45,5 +45,5 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo: @ 81FFC21
 	.string "Hohoho! Hey, kid, you can reach\n"
 	.string "the hot springs from here.\p"
 	.string "If Pokémon are getting rest, so too\n"
-	.string "should their TRAINERS.$"
+	.string "should their Trainers.$"
 

@@ -599,37 +599,37 @@ BattlePyramid_Text_OneTrainersRemaining2:: @ 82546CC
 
 BattlePyramid_Text_ZeroTrainersRemaining2:: @ 825471E
 	.string "This is so upsetting!\p"
-	.string "But there are no more TRAINERS\n"
+	.string "But there are no more Trainers\n"
 	.string "who can engage you!$"
 
 BattlePyramid_Text_SevenTrainersRemaining3:: @ 8254767
 	.string "That's pretty impressive!\p"
-	.string "But there are seven more TRAINERS\n"
+	.string "But there are seven more Trainers\n"
 	.string "on this floor. Can you beat them all?$"
 
 BattlePyramid_Text_SixTrainersRemaining3:: @ 82547C9
 	.string "That's pretty impressive!\p"
-	.string "But there are six more TRAINERS\n"
+	.string "But there are six more Trainers\n"
 	.string "on this floor. Can you beat them all?$"
 
 BattlePyramid_Text_FiveTrainersRemaining3:: @ 8254829
 	.string "That's pretty impressive!\p"
-	.string "But there are five more TRAINERS\n"
+	.string "But there are five more Trainers\n"
 	.string "on this floor. Can you beat them all?$"
 
 BattlePyramid_Text_FourTrainersRemaining3:: @ 825488A
 	.string "That's pretty impressive!\p"
-	.string "But there are four more TRAINERS\n"
+	.string "But there are four more Trainers\n"
 	.string "on this floor. Can you beat them all?$"
 
 BattlePyramid_Text_ThreeTrainersRemaining3:: @ 82548EB
 	.string "That's pretty impressive!\p"
-	.string "But there are three more TRAINERS\n"
+	.string "But there are three more Trainers\n"
 	.string "on this floor. Can you beat them all?$"
 
 BattlePyramid_Text_TwoTrainersRemaining3:: @ 825494D
 	.string "That's pretty impressive!\p"
-	.string "But there are two more TRAINERS\n"
+	.string "But there are two more Trainers\n"
 	.string "on this floor. Can you beat them both?$"
 
 BattlePyramid_Text_OneTrainersRemaining3:: @ 82549AE
@@ -639,7 +639,7 @@ BattlePyramid_Text_OneTrainersRemaining3:: @ 82549AE
 
 BattlePyramid_Text_ZeroTrainersRemaining3:: @ 8254A0B
 	.string "That's pretty impressive!\p"
-	.string "You've gone through all the TRAINERS\n"
+	.string "You've gone through all the Trainers\n"
 	.string "on this floor.$"
 
 BattlePyramid_Text_SevenTrainersRemaining4:: @ 8254A59

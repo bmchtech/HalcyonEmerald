@@ -238,7 +238,7 @@ BattleFrontier_OutsideEast_EventScript_Camper:: @ 8242E08
 BattleFrontier_OutsideEast_Text_BattleTowerSign: @ 8242E11
 	.string "This is the Battle Tower!\n"
 	.string "Keep the win streak as the toughest\l"
-	.string "TRAINER!$"
+	.string "Trainer!$"
 
 BattleFrontier_OutsideEast_Text_BattlePalaceSign: @ 8242E58
 	.string "This is the BATTLE PALACE!\n"
@@ -413,7 +413,7 @@ BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome: @ 8243A53
 
 BattleFrontier_OutsideEast_Text_FrontierNotExclusivelyForToughTrainers: @ 8243B68
 	.string "The BATTLE FRONTIER isn't exclusively\n"
-	.string "for tough TRAINERS.\p"
+	.string "for tough Trainers.\p"
 	.string "Many people with special abilities\n"
 	.string "have been invited, it seems.\p"
 	.string "That man SCOTT…\p"

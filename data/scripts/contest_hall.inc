@@ -1554,7 +1554,7 @@ LilycoveCity_ContestLobby_Text_MonNotQualifiedForRank: @ 827B471
 	.string "Rank yet…$"
 
 LilycoveCity_ContestLobby_Text_EggCannotTakePart: @ 827B4C4
-	.string "I'm sorry, but an EGG cannot take part\n"
+	.string "I'm sorry, but an Egg cannot take part\n"
 	.string "in a Pokémon CONTEST.$"
 
 LilycoveCity_ContestLobby_Text_MonInNoConditionForContest: @ 827B501
@@ -1775,7 +1775,7 @@ LilycoveCity_ContestLobby_Text_MonInNoCondition2: @ 827C140
 	.string "condition to take part in a CONTEST…$"
 
 LilycoveCity_ContestLobby_Text_EggCannotTakePart2: @ 827C186
-	.string "I'm sorry, but an EGG cannot take part\n"
+	.string "I'm sorry, but an Egg cannot take part\n"
 	.string "in a Pokémon CONTEST.$"
 
 LilycoveCity_ContestLobby_Text_EnterWhichPokemon3: @ 827C1C3
@@ -1783,7 +1783,7 @@ LilycoveCity_ContestLobby_Text_EnterWhichPokemon3: @ 827C1C3
 
 LilycoveCity_ContestLobby_Text_PleaseDecideLinkLeader: @ 827C1EA
 	.string "Please decide which of you will\n"
-	.string "become the GROUP LEADER.\p"
+	.string "become the GROUP Leader.\p"
 	.string "The other players must then choose\n"
 	.string "“JOIN GROUP.”$"
 

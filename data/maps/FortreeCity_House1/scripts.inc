@@ -87,9 +87,9 @@ FortreeCity_House1_Text_YouWontTradeMe: @ 821649F
 	.string "Even after I bared my heart to you?$"
 
 FortreeCity_House1_Text_GoingToMakeVolbeatStrong: @ 82164DB
-	.string "I'm going to make VOLBEAT super\n"
+	.string "I'm going to make Volbeat super\n"
 	.string "strong from this moment on!\p"
-	.string "I hope you do the same with PLUSLE!$"
+	.string "I hope you do the same with Plusle!$"
 
 FortreeCity_House1_Text_TradingMemoriesWithOthers: @ 821653B
 	.string "Trading Pokémon with others…\p"

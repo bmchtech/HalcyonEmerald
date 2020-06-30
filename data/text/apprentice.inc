@@ -139,7 +139,7 @@ gText_ApprenticePleaseTeach2:: @ 82B76AC
 gText_ApprenticeRejectTeaching2:: @ 82B7772
 	.string "Oh, but…\p"
 	.string "I sincerely want to become a Pokémon\n"
-	.string "TRAINER!\p"
+	.string "Trainer!\p"
 	.string "Please, can you answer my questions?$"
 
 gText_ApprenticeWhichLevelMode2:: @ 82B77CE

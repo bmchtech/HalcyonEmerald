@@ -330,7 +330,7 @@ BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay: @ 8266733
 	.string "Good day to you, sir!$"
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere: @ 8266764
-	.string "SCOTT: It's great to see you here,\n"
+	.string "Scott: It's great to see you here,\n"
 	.string "it really is!\p"
 	.string "I hope you'll take your time and\n"
 	.string "explore everywhere.\p"

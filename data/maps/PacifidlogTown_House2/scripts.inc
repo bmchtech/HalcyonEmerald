@@ -141,7 +141,7 @@ PacifidlogTown_House2_Text_Rurii: @ 8203B8D
 
 PacifidlogTown_House2_Text_VeryFriendlyWithTrainer: @ 8203B9D
 	.string "It appears to be very friendly with the\n"
-	.string "TRAINER.$"
+	.string "Trainer.$"
 
 PacifidlogTown_House2_Text_Rururi: @ 8203BCE
 	.string "AZURILL: Rururi!$"

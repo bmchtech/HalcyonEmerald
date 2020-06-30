@@ -331,7 +331,7 @@ BattleFrontier_BattleFactoryLobby_EventScript_ExitRules:: @ 82588EC
 	end
 
 BattleFrontier_BattleFactoryLobby_Text_WelcomeForSingleBattle: @ 82588EE
-	.string "Where the intelligence of TRAINERS\n"
+	.string "Where the intelligence of Trainers\n"
 	.string "is put to the test!\p"
 	.string "Welcome to the BATTLE FACTORY!\p"
 	.string "I am your guide to the Battle Swap\n"
@@ -427,7 +427,7 @@ BattleFrontier_BattleFactoryLobby_Text_ReceivedPrizeItem: @ 8258F79
 	.string "{STR_VAR_1}.$"
 
 BattleFrontier_BattleFactoryLobby_Text_WelcomeForDoubleBattle: @ 8258F93
-	.string "Where the intelligence of TRAINERS\n"
+	.string "Where the intelligence of Trainers\n"
 	.string "is put to the test!\p"
 	.string "Welcome to the BATTLE FACTORY!\p"
 	.string "I am your guide to the Battle Swap\n"

@@ -164,7 +164,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenSilverMons:: @ 8260A1E
 	.string "When she's measuring up her opponent,\n"
 	.string "she apparently uses these Pokémon:\p"
 	.string "A PSYCHIC-type PSI Pokémon,\n"
-	.string "a FIRE-type VOLCANO Pokémon,\l"
+	.string "a Fire-type VOLCANO Pokémon,\l"
 	.string "and a NORMAL-type SLEEPING Pokémon.$"
 
 BattleFrontier_Lounge2_Text_SalonMaidenGoldMons:: @ 8260AE7
@@ -247,7 +247,7 @@ BattleFrontier_Lounge2_Text_PikeQueenGoldMons:: @ 8261194
 	.string "she uses these three Pokémon:\p"
 	.string "A POISON-type FANG SNAKE Pokémon,\n"
 	.string "a STEEL & GROUND IRON SNAKE Pokémon,\l"
-	.string "and a WATER- & FLYING-type ATROCIOUS\l"
+	.string "and a WATER- & Flying-type ATROCIOUS\l"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_ArenaTycoonIsThere:: @ 8261282
@@ -288,7 +288,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenSilverMons:: @ 8261591
 	.string "before?\p"
 	.string "When he's testing the opponent's\n"
 	.string "spirit, he's said to use these Pokémon:\p"
-	.string "A POISON & FLYING-type BAT Pokémon,\n"
+	.string "A POISON & Flying-type BAT Pokémon,\n"
 	.string "a NORMAL-type LAZY Pokémon, and a\l"
 	.string "WATER- & ICE-type TRANSPORT Pokémon.$"
 
@@ -297,7 +297,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenGoldMons:: @ 826166F
 	.string "when he's serious?\p"
 	.string "When he throws his entire might into\n"
 	.string "battle, he's said to use these Pokémon:\p"
-	.string "A FIRE-type LEGENDARY Pokémon,\n"
+	.string "A Fire-type LEGENDARY Pokémon,\n"
 	.string "a NORMAL-type LAZY Pokémon,\l"
 	.string "and a WATER-type AURORA Pokémon.$"
 
@@ -324,7 +324,7 @@ BattleFrontier_Lounge2_Text_PyramidKingGoldMons:: @ 82618C4
 	.string "he apparently uses these Pokémon:\p"
 	.string "An ICE & FLYING FREEZE Pokémon, an\n"
 	.string "ELECTRIC & FLYING ELECTRIC Pokémon,\l"
-	.string "and a FIRE- & FLYING-type FLAME\l"
+	.string "and a FIRE- & Flying-type FLAME\l"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice1:: @ 82619AC

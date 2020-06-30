@@ -700,7 +700,7 @@ MatchCall_PersonalizedText7:: @ 82AC446
 	.string "I've grown a little jaded with this\n"
 	.string "whole COOLTRAINER thing…\p"
 	.string "Everyone thinks I'm a perfect\n"
-	.string "TRAINER, and that makes me try to\l"
+	.string "Trainer, and that makes me try to\l"
 	.string "live up to that expectation.\p"
 	.string "But I guess that goes with being\n"
 	.string "a COOLTRAINER.\p"
@@ -813,7 +813,7 @@ MatchCall_PersonalizedText16:: @ 82ACD2F
 	.string "I've done nothing but lose to them!\p"
 	.string "But even though I may lose to\n"
 	.string "Pokémon, I won't lose to another\l"
-	.string "TRAINER, no sir!\p"
+	.string "Trainer, no sir!\p"
 	.string "We have to battle again!\n"
 	.string "Ugwaah!$"
 
@@ -991,7 +991,7 @@ MatchCall_PersonalizedText31:: @ 82ADB9B
 	.string "I'm glad to chat with you!\p"
 	.string "I am feeling alive and refreshed\n"
 	.string "soaking in this hot-spring tub.\p"
-	.string "I've been battling young TRAINERS\n"
+	.string "I've been battling young Trainers\n"
 	.string "since we met, but you're still\l"
 	.string "the best of the lot.\p"
 	.string "I imagine you'll become an EXPERT\n"
@@ -2132,7 +2132,7 @@ MatchCall_Text_Wattson4:: @ 82B2B01
 	.string "with shocking power!$"
 
 MatchCall_Text_Flannery1:: @ 82B2B4D
-	.string "FLANNERY: {PLAYER}…\p"
+	.string "Flannery: {PLAYER}…\p"
 	.string "When we battled, I learned exactly\n"
 	.string "how immature I was.\p"
 	.string "But I'm not done yet!\p"
@@ -2142,7 +2142,7 @@ MatchCall_Text_Flannery1:: @ 82B2B4D
 	.string "please challenge us again.$"
 
 MatchCall_Text_Flannery2:: @ 82B2C0E
-	.string "FLANNERY: Hello, {PLAYER}?\n"
+	.string "Flannery: Hello, {PLAYER}?\n"
 	.string "Congratulations!\p"
 	.string "Word of your success has reached\n"
 	.string "us like the heat of a volcano!\p"
@@ -2150,40 +2150,40 @@ MatchCall_Text_Flannery2:: @ 82B2C0E
 	.string "well here.\p"
 	.string "When the Gym's ready, a mark will\n"
 	.string "appear beside my name in the\l"
-	.string "MATCH CALL list.$"
+	.string "Match Call list.$"
 
 MatchCall_Text_Flannery3:: @ 82B2CF1
-	.string "FLANNERY: Oh, {PLAYER}?\n"
+	.string "Flannery: Oh, {PLAYER}?\n"
 	.string "Our Gym's ready!\p"
 	.string "Come to LAVARIDGE for a soak\n"
 	.string "in the hot spring and a challenge!$"
 
 MatchCall_Text_Flannery4:: @ 82B2D54
-	.string "FLANNERY: {PLAYER}…\n"
+	.string "Flannery: {PLAYER}…\n"
 	.string "I'm positive that you keep getting\l"
 	.string "better at training every time.$"
 
 MatchCall_Text_Winona1:: @ 82B2DA4
-	.string "WINONA: Hello, {PLAYER}!\p"
+	.string "Winona: Hello, {PLAYER}!\p"
 	.string "Thanks to our battle, I've come\n"
 	.string "to understand my weak points!\p"
 	.string "When I reopen the Gym, I won't go\n"
 	.string "down in defeat again!$"
 
 MatchCall_Text_Winona2:: @ 82B2E2B
-	.string "WINONA: You've done it, {PLAYER}!\p"
+	.string "Winona: You've done it, {PLAYER}!\p"
 	.string "News about the new Champion\n"
 	.string "has reached us in FORTREE!\p"
 	.string "But… The next time we battle,\n"
 	.string "it's not going to end the same way.$"
 
 MatchCall_Text_Winona3:: @ 82B2EC2
-	.string "WINONA: Is this {PLAYER}?\n"
+	.string "Winona: Is this {PLAYER}?\n"
 	.string "Our Gym is back in operation!\p"
 	.string "We're waiting for you in FORTREE!$"
 
 MatchCall_Text_Winona4:: @ 82B2F16
-	.string "WINONA: {PLAYER}…\n"
+	.string "Winona: {PLAYER}…\n"
 	.string "Though I have lost, my wings will\l"
 	.string "never break.\p"
 	.string "Yes, in exactly the same way that\n"
@@ -2197,7 +2197,7 @@ MatchCall_Text_TateLiza1:: @ 82B2F97
 	.string "TATE: When our Gym is ready…\n"
 	.string "LIZA: When our Gym is ready…\p"
 	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+	.string "LIZA: On the Match Call list.$"
 
 MatchCall_Text_TateLiza2:: @ 82B306E
 	.string "TATE: {PLAYER}, congratulations!\n"
@@ -2207,7 +2207,7 @@ MatchCall_Text_TateLiza2:: @ 82B306E
 	.string "TATE: We need some more time, but…\n"
 	.string "LIZA: When our Gym is ready…\p"
 	.string "TATE: A mark'll appear by our name…\n"
-	.string "LIZA: On the MATCH CALL list.$"
+	.string "LIZA: On the Match Call list.$"
 
 MatchCall_Text_TateLiza3:: @ 82B3158
 	.string "TATE: {PLAYER}!\n"
@@ -2345,11 +2345,11 @@ MatchCall_Text_May1:: @ 2B3AB3
 MatchCall_Text_May2:: @ 2B3B3F
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "You know how little towns like\n"
-	.string "Petalburg and Dewford have GYMS?\p"
+	.string "Petalburg and Dewford have Gyms?\p"
 	.string "For some reason, the big port of\n"
 	.string "Slateport doesn't have a Gym.\p"
 	.string "When they finally build a Gym there,\n"
-	.string "I should apply to be the LEADER.$"
+	.string "I should apply to be the Leader.$"
 
 MatchCall_Text_May3:: @ 2B3C13
 	.string "May: Hi, {PLAYER}{KUN}!\p"
@@ -2397,7 +2397,7 @@ MatchCall_Text_May8:: @ 2B3ECD
 	.string "Mt. Pyre is a memorial to Pokémon\n"
 	.string "whose lives have ended.\p"
 	.string "Maybe as a result, it's infested\n"
-	.string "with many GHOST-type Pokémon!$"
+	.string "with many Ghost-type Pokémon!$"
 
 MatchCall_Text_May9:: @ 2B3F2B
 	.string "May: Hi, {PLAYER}{KUN}!\p"
@@ -2471,11 +2471,11 @@ MatchCall_Text_Brendan1:: @ 2B43EF
 MatchCall_Text_Brendan2:: @ 2B4486
 	.string "Brendan: Hey, {PLAYER}!\p"
 	.string "I don't get how little towns like\n"
-	.string "Petalburg and Dewford have GYMS.\p"
+	.string "Petalburg and Dewford have Gyms.\p"
 	.string "I mean, not when the big port of\n"
 	.string "Slateport doesn't have a Gym.\p"
 	.string "When they finally build a Gym there,\n"
-	.string "I should apply to be the LEADER.$"
+	.string "I should apply to be the Leader.$"
 
 MatchCall_Text_Brendan3:: @ 2B4560
 	.string "Brendan: Yo, {PLAYER}!\p"
@@ -2524,13 +2524,13 @@ MatchCall_Text_Brendan8:: @ 2B4882
 	.string "Mt. Pyre is a memorial to Pokémon\n"
 	.string "whose lives have ended.\p"
 	.string "That's probably why it's infested\n"
-	.string "with many GHOST-type Pokémon!$"
+	.string "with many Ghost-type Pokémon!$"
 
 MatchCall_Text_Brendan9:: @ 2B4909
 	.string "Brendan: Hey there, {PLAYER}.\p"
 	.string "I was on my way back to the hot\n"
 	.string "spring in LAVARIDGE.\p"
-	.string "But around JAGGED PASS, I ran into\n"
+	.string "But around Jagged Pass, I ran into\n"
 	.string "some nasty-looking characters.\p"
 	.string "Those creeps…\n"
 	.string "I think they were Team Magma.$"
@@ -2641,7 +2641,7 @@ MatchCall_Text_Wally7:: @ 2B5100
 	.string "Thank you…$"
 
 MatchCall_Text_Scott1:: @ 2B5184
-	.string "SCOTT: Howdy, {PLAYER}{KUN}!\p"
+	.string "Scott: Howdy, {PLAYER}{KUN}!\p"
 	.string "You know how Pokémon can be found\n"
 	.string "everywhere?\p"
 	.string "Like in the mountains, in the sea,\n"
@@ -2652,7 +2652,7 @@ MatchCall_Text_Scott1:: @ 2B5184
 	.string "everywhere, too. Busy, busy!$"
 
 MatchCall_Text_Scott2:: @ 2B5275
-	.string "SCOTT: I'm on Route 119 right now.\n"
+	.string "Scott: I'm on Route 119 right now.\n"
 	.string "It's teeming with TRAINERS!\p"
 	.string "It's also overgrown with tall grass\n"
 	.string "everywhere, it seems.\p"
@@ -2660,7 +2660,7 @@ MatchCall_Text_Scott2:: @ 2B5275
 	.string "makes me all ticklish!$"
 
 MatchCall_Text_Scott3:: @ 2B5323
-	.string "SCOTT: Hi, hi, {PLAYER}{KUN}!\p"
+	.string "Scott: Hi, hi, {PLAYER}{KUN}!\p"
 	.string "Have you had the chance to climb\n"
 	.string "Mt. Pyre?\p"
 	.string "The place is a memorial to Pokémon\n"
@@ -2669,7 +2669,7 @@ MatchCall_Text_Scott3:: @ 2B5323
 	.string "should climb to the top of once.$"
 
 MatchCall_Text_Scott4:: @ 2B53DB
-	.string "SCOTT: Hi, {PLAYER}{KUN}!\p"
+	.string "Scott: Hi, {PLAYER}{KUN}!\p"
 	.string "I've been hearing about these odd\n"
 	.string "gangs being a nuisance.\p"
 	.string "Team Magma and Team Aqua,\n"
@@ -2679,18 +2679,18 @@ MatchCall_Text_Scott4:: @ 2B53DB
 	.string "…But if they're thugs…$"
 
 MatchCall_Text_Scott5:: @ 2B54A5
-	.string "SCOTT: Oh, hi, {PLAYER}{KUN}.\p"
-	.string "Might there be tough TRAINERS\n"
+	.string "Scott: Oh, hi, {PLAYER}{KUN}.\p"
+	.string "Might there be tough Trainers\n"
 	.string "at the bottom of the sea?\p"
 	.string "I can't go check for myself.\n"
 	.string "I can't swim, for one.\l"
 	.string "And I don't raise Pokémon…$"
 
 MatchCall_Text_Scott6:: @ 2B5541
-	.string "SCOTT: Hi, hi, {PLAYER}{KUN}!\p"
+	.string "Scott: Hi, hi, {PLAYER}{KUN}!\p"
 	.string "You know that you can challenge\n"
 	.string "the Pokémon League when you've\l"
-	.string "collected all the Gym BADGES?\p"
+	.string "collected all the Gym Badges?\p"
 	.string "With your talent, becoming the\n"
 	.string "Champion isn't a pipe dream.\p"
 	.string "But did you know?\n"
@@ -2727,7 +2727,7 @@ MatchCall_Text_Norman2:: @ 82B5795
 
 MatchCall_Text_Norman3:: @ 82B584D
 	.string "Dad: I see…\n"
-	.string "You've collected four Gym BADGES…\p"
+	.string "You've collected four Gym Badges…\p"
 	.string "There's no avoiding it now.\n"
 	.string "We will battle like I promised.\p"
 	.string "Come anytime.\n"
@@ -2835,7 +2835,7 @@ MatchCall_Text_BirchRegisterCall: @ 82B5F52
 	.string "Prof. Birch: Oh, {PLAYER}{KUN}!\n"
 	.string "I've already heard about you!\p"
 	.string "It seems your PokéNav's been\n"
-	.string "upgraded with MATCH CALL.\p"
+	.string "upgraded with Match Call.\p"
 	.string "Well, I should register, too!\p"
 	.string "That way, I'd be able to examine\n"
 	.string "your Pokédex even while you're\l"

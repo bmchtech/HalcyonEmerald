@@ -408,7 +408,7 @@ MossdeepCity_Text_SpaceCenterSign: @ 81E541F
 	.string "“The closest place to space.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown: @ 81E5453
-	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
+	.string "Scott: {PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
 	.string "I'd heard MOSSDEEP's Gym Leader is\n"
 	.string "pretty strong, so I decided to come\l"
@@ -426,7 +426,7 @@ MossdeepCity_Text_SootopolisNewGymLeader: @ 81E5581
 	.string "Speaking of the waves, you know that\n"
 	.string "island city SOOTOPOLIS?\p"
 	.string "I think the Gym there had a new\n"
-	.string "LEADER come in.\p"
-	.string "People tell me the new LEADER once\n"
+	.string "Leader come in.\p"
+	.string "People tell me the new Leader once\n"
 	.string "mentored Wallace.$"
 

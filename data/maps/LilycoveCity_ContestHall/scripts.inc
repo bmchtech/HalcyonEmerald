@@ -383,7 +383,7 @@ LilycoveCity_ContestHall_Text_AllSeemToUseDifferentMoves: @ 821BC89
 
 LilycoveCity_ContestHall_Text_PokemonSmarterThanTrainers: @ 821BD30
 	.string "I think the Pokémon look smarter\n"
-	.string "than their TRAINERS. By a lot.$"
+	.string "than their Trainers. By a lot.$"
 
 LilycoveCity_ContestHall_Text_StillLoveSmartnessContests: @ 821BD70
 	.string "When all's said and done, I still love\n"

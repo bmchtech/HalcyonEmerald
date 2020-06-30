@@ -87,7 +87,7 @@ VerdanturfTown_Text_AirCleanHere: @ 81EB736
 VerdanturfTown_Text_MakeBattleTentDebut: @ 81EB7E2
 	.string "My Pokémon and I, we've been riding\n"
 	.string "a hot winning streak.\p"
-	.string "So I decided to make my BATTLE TENT\n"
+	.string "So I decided to make my Battle Tent\n"
 	.string "debut in this town.$"
 
 VerdanturfTown_Text_GuyTryingToBustThroughCave: @ 81EB854
@@ -114,7 +114,7 @@ VerdanturfTown_Text_WandasHouse: @ 81EBA11
 	.string "WANDA'S HOUSE$"
 
 VerdanturfTown_Text_BattleTentSign: @ 81EBA1F
-	.string "BATTLE TENT VERDANTURF SITE\n"
+	.string "Battle Tent VERDANTURF SITE\n"
 	.string "“Feast Your Eyes on Battles!”$"
 
 VerdanturfTown_Text_RusturfTunnelSign: @ 81EBA59

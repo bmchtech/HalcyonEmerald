@@ -663,7 +663,7 @@ Route111_Text_WinstrateFamilyDestroyedMe: @ 81F186E
 
 Route111_Text_RouteSignMauville: @ 81F18CE
 	.string "ROUTE 111\n"
-	.string "{DOWN_ARROW} MAUVILLE CITY$"
+	.string "{DOWN_ARROW} Mauville City$"
 
 Route111_Text_WinstrateHouseSign: @ 81F18E8
 	.string "“Our family's hearts beat as one!”\n"
@@ -684,9 +684,9 @@ Route111_Text_OldLadysRestStopSign: @ 81F194D
 Route111_Text_TrainerTipsSpAtkSpDef: @ 81F1987
 	.string "Trainer Tips\p"
 	.string "One of the indicators of a Pokémon's\n"
-	.string "powerfulness is SP. ATK. It stands for\l"
+	.string "powerfulness is Sp. Atk. It stands for\l"
 	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, SP. DEF stands for “SPECIAL\n"
+	.string "Likewise, Sp. Def stands for “SPECIAL\n"
 	.string "DEFENSE.”$"
 
 Route111_Text_ShouldBeMirageTowerAroundHere: @ 81F1A22

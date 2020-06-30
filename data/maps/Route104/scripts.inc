@@ -1100,7 +1100,7 @@ Route104_Text_TrainerTipsDoubleBattles: @ 81EDAEF
 Route104_Text_MayWeShouldRegister: @ 81EDBFF
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
 	.string "DEVON upgraded your PokéNav with\n"
-	.string "the MATCH CALL system, huh?\p"
+	.string "the Match Call system, huh?\p"
 	.string "We should register each other so we\n"
 	.string "can get in contact anytime.$"
 

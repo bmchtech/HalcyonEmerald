@@ -1307,8 +1307,8 @@ PetalburgCity_Gym_Text_DadGoCollectBadges: @ 8205C40
 	.string "There, you should challenge\n"
 	.string "the Gym Leader, ROXANNE.\p"
 	.string "After her, go on to other Pokémon\n"
-	.string "GYMS and defeat their LEADERS.\p"
-	.string "Collect BADGES from them,\n"
+	.string "GYMS and defeat their LeaderS.\p"
+	.string "Collect Badges from them,\n"
 	.string "understood?\p"
 	.string "Of course, I'm a Gym Leader, too.\n"
 	.string "We'll battle one day, {PLAYER}.\p"
@@ -1323,12 +1323,12 @@ PetalburgCity_Gym_Text_NormanGoToRustboro: @ 8205DB4
 	.string "{PLAYER}, I want you to challenge me\n"
 	.string "when you become a lot stronger.\p"
 	.string "I'll battle you, {PLAYER}, when you\n"
-	.string "can show me four Gym BADGES, okay?$"
+	.string "can show me four Gym Badges, okay?$"
 
 PetalburgCity_Gym_Text_NormanGoToDewford: @ 8205EAE
 	.string "Dad: I see… So, you've beaten\n"
 	.string "the Gym Leader in Rustboro City.\p"
-	.string "But there are many more TRAINERS\n"
+	.string "But there are many more Trainers\n"
 	.string "who are stronger than you, {PLAYER}.\p"
 	.string "Across the sea in Dewford Town is a\n"
 	.string "Gym Leader named Brawly.\p"
@@ -1337,12 +1337,12 @@ PetalburgCity_Gym_Text_NormanGoToDewford: @ 8205EAE
 PetalburgCity_Gym_Text_YouHaveGottenStronger: @ 8205F87
 	.string "Dad: Hm… {PLAYER}, you have gotten\n"
 	.string "stronger.\p"
-	.string "I can tell by the number of BADGES\n"
+	.string "I can tell by the number of Badges\n"
 	.string "that you've earned.$"
 
 PetalburgCity_Gym_Text_NormanIntro: @ 8205FE5
 	.string "Dad: Hm…\n"
-	.string "So, you did get four Gym BADGES.\p"
+	.string "So, you did get four Gym Badges.\p"
 	.string "Fine, as I promised, we will have\n"
 	.string "a Pokémon battle.\p"
 	.string "{PLAYER}…\p"
@@ -1416,7 +1416,7 @@ PetalburgCity_Gym_Text_GymGuideAdvice: @ 8206542
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "The doors in this Gym open when you\n"
-	.string "beat the awaiting TRAINERS.\p"
+	.string "beat the awaiting Trainers.\p"
 	.string "Whoops! The doors in this room are\n"
 	.string "already open, so don't attack me!\p"
 	.string "The Trainers of Petalburg Gym\n"
@@ -1473,7 +1473,7 @@ PetalburgCity_Gym_Text_ParkerPostBattle: @ 8206996
 	.string "Can you withstand brute force?$"
 
 PetalburgCity_Gym_Text_ParkerPostBadge: @ 82069D9
-	.string "After you beat our LEADER, the\n"
+	.string "After you beat our Leader, the\n"
 	.string "training has become a lot tougher.$"
 
 PetalburgCity_Gym_Text_GeorgeIntro: @ 8206A1B
@@ -1490,7 +1490,7 @@ PetalburgCity_Gym_Text_GeorgeDefeat: @ 8206AB8
 
 PetalburgCity_Gym_Text_GeorgePostBattle: @ 8206AE9
 	.string "I should have expected no less from\n"
-	.string "our LEADER's kid.\p"
+	.string "our Leader's kid.\p"
 	.string "No, wait! A Trainer's abilities are\n"
 	.string "earned only through effort.\p"
 	.string "I lost because my own efforts\n"
@@ -1498,12 +1498,12 @@ PetalburgCity_Gym_Text_GeorgePostBattle: @ 8206AE9
 	.string "Go on! The ONE-HIT KO ROOM is next.$"
 
 PetalburgCity_Gym_Text_GeorgePostBadge: @ 8206BB1
-	.string "I'm going to keep training at GYMS.\n"
-	.string "One day, I'll become a LEADER.$"
+	.string "I'm going to keep training at Gyms.\n"
+	.string "One day, I'll become a Leader.$"
 
 PetalburgCity_Gym_Text_BerkeIntro: @ 8206BF4
 	.string "I'm not going to take it easy just\n"
-	.string "because you're our LEADER's kid.\p"
+	.string "because you're our Leader's kid.\p"
 	.string "I'll show you how horrid it is for\n"
 	.string "a Pokémon to take a critical hit!$"
 
@@ -1520,7 +1520,7 @@ PetalburgCity_Gym_Text_BerkePostBattle: @ 8206C9F
 	.string "battle with your father!$"
 
 PetalburgCity_Gym_Text_BerkePostBadge: @ 8206D56
-	.string "Since your dad became the LEADER,\n"
+	.string "Since your dad became the Leader,\n"
 	.string "the Trainers of Petalburg City have\l"
 	.string "become a lot tougher.$"
 
@@ -1637,7 +1637,7 @@ PetalburgCity_Gym_Text_GymStatue: @ 820744C
 
 PetalburgCity_Gym_Text_GymStatueCertified: @ 8207467
 	.string "Petalburg City Pokémon Gym\p"
-	.string "NORMAN'S CERTIFIED TRAINERS:\n"
+	.string "NORMAN's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch: @ 82074A2

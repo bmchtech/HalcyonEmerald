@@ -453,7 +453,7 @@ BattleFrontier_BattleDomeLobby_EventScript_ExitRules:: @ 8249EB5
 	end
 
 BattleFrontier_BattleDomeLobby_Text_WelcomeSingleBattle: @ 8249EB7
-	.string "Where the strategies of TRAINERS\n"
+	.string "Where the strategies of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the BATTLE DOME!\p"
 	.string "I am your guide to the SINGLE BATTLE\n"
@@ -479,7 +479,7 @@ BattleFrontier_BattleDomeLobby_Text_ExplainSinglesChallenge: @ 8249F8E
 	.string "Choose the two battling Pokémon after\n"
 	.string "examining the opponent's trio.\p"
 	.string "You win the tournament by defeating\n"
-	.string "four TRAINERS.\p"
+	.string "four Trainers.\p"
 	.string "Battle Points are awarded to\n"
 	.string "the tournament winner.\p"
 	.string "If you want to interrupt your\n"
@@ -564,7 +564,7 @@ BattleFrontier_BattleDomeLobby_Text_OkayToSaveBeforeChallenge2: @ 824A61A
 	.string "I must save the data. Is that okay?$"
 
 BattleFrontier_BattleDomeLobby_Text_WelcomeDoubleBattle: @ 824A664
-	.string "Where the strategies of TRAINERS\n"
+	.string "Where the strategies of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the BATTLE DOME!\p"
 	.string "I am your guide to the DOUBLE BATTLE\n"
@@ -587,7 +587,7 @@ BattleFrontier_BattleDomeLobby_Text_ExplainDoublesChallenge: @ 824A721
 	.string "Choose the two battling Pokémon after\n"
 	.string "examining the opponent's trio.\p"
 	.string "You win the tournament by defeating\n"
-	.string "four TRAINERS.\p"
+	.string "four Trainers.\p"
 	.string "Battle Points are awarded to\n"
 	.string "the tournament winner.\p"
 	.string "If you want to interrupt your\n"
@@ -679,7 +679,7 @@ BattleFrontier_BattleDomeLobby_Text_ReadWhichHeading: @ 824AE8B
 BattleFrontier_BattleDomeLobby_Text_ExplainMatchupRules: @ 824AEAE
 	.string "The tournament matchups are drawn up\n"
 	.string "based on the toughness of Pokémon\l"
-	.string "held by TRAINERS.\p"
+	.string "held by Trainers.\p"
 	.string "The matchups avoid having tough\n"
 	.string "Trainers face each other right away.$"
 

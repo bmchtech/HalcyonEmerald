@@ -1051,13 +1051,13 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner: @ 81E12AC
 RustboroCity_Text_HaveYouChallengedGym: @ 81E130D
 	.string "Have you taken the Pokémon Gym\n"
 	.string "challenge?\p"
-	.string "When you get that shiny Gym BADGE\n"
+	.string "When you get that shiny Gym Badge\n"
 	.string "in hand, I guess Trainers begin to\l"
 	.string "realize what is required of them.$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge: @ 81E139E
-	.string "Hey, that's Rustboro's Gym BADGE!\p"
-	.string "Out of all the Pokémon Gym BADGES,\n"
+	.string "Hey, that's Rustboro's Gym Badge!\p"
+	.string "Out of all the Pokémon Gym Badges,\n"
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere: @ 81E1407
@@ -1069,8 +1069,8 @@ RustboroCity_Text_YoureNewAroundHere: @ 81E1407
 RustboroCity_Text_GymLeaderIsntEasyWithFire: @ 81E1480
 	.string "I challenged the Gym Leader, but…\p"
 	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type Pokémon…\p"
-	.string "FIRE-type Pokémon don't match up\n"
+	.string "my Fire-type Pokémon…\p"
+	.string "Fire-type Pokémon don't match up\n"
 	.string "well against ROCK-type Pokémon…$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel: @ 81E1520
@@ -1157,7 +1157,7 @@ RustboroCity_Text_PleaseComeWithMe: @ 81E1A21
 
 RustboroCity_Text_MayHiLetsRegister: @ 81E1A49
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "You had a MATCH CALL feature put\n"
+	.string "You had a Match Call feature put\n"
 	.string "on your PokéNav!\p"
 	.string "Let's register each other so we can\n"
 	.string "contact one another anytime!\p"
@@ -1204,7 +1204,7 @@ RustboroCity_Text_MayMrBrineyHint: @ 81E1CE7
 
 RustboroCity_Text_BrendanHiLetsRegister: @ 81E1D7D
 	.string "Brendan: Oh, hey, {PLAYER}!\p"
-	.string "You had a MATCH CALL feature put\n"
+	.string "You had a Match Call feature put\n"
 	.string "on your PokéNav! Cool!\p"
 	.string "Let's register each other so we can\n"
 	.string "get in touch anytime!\p"
@@ -1293,8 +1293,8 @@ RustboroCity_Text_DevelopedNewPokenavFeature: @ 81E22A5
 RustboroCity_Text_AddedMatchCallPleaseCallMrStone: @ 81E2331
 	.string "There you go, {PLAYER}!\p"
 	.string "I added a new feature named\n"
-	.string "MATCH CALL to your PokéNav.\p"
-	.string "Using the MATCH CALL feature,\n"
+	.string "Match Call to your PokéNav.\p"
+	.string "Using the Match Call feature,\n"
 	.string "you can chat with people who have\l"
 	.string "been registered in your PokéNav.\p"
 	.string "{PLAYER}, our PRESIDENT STONE should\n"
@@ -1313,7 +1313,7 @@ RustboroCity_Text_YouCanHave2On2Battle: @ 81E249D
 	.string "Did you know this?\p"
 	.string "You can have a 2-on-2 battle even\n"
 	.string "if you're not with another Trainer.\p"
-	.string "If you catch the eyes of two TRAINERS\n"
+	.string "If you catch the eyes of two Trainers\n"
 	.string "when you have two or more Pokémon,\l"
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"

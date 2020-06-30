@@ -292,7 +292,7 @@ LavaridgeTown_EventScript_HerbShopSign:: @ 81EA7B7
 LavaridgeTown_Text_MayNiceBadgesTakeThis: @ 81EA7C0
 	.string "May: {PLAYER}{KUN}! Long time no see!\p"
 	.string "Oh? While I visited the hot springs,\n"
-	.string "you got the LAVARIDGE Gym BADGE.\p"
+	.string "you got the LAVARIDGE Gym Badge.\p"
 	.string "You must have collected\n"
 	.string "good Pokémon…\l"
 	.string "No, I believe you raised some.\p"
@@ -300,11 +300,11 @@ LavaridgeTown_Text_MayNiceBadgesTakeThis: @ 81EA7C0
 	.string "have this.$"
 
 LavaridgeTown_Text_MayExplainGoGogglesChallengeDad: @ 81EA897
-	.string "May: With those GO-GOGGLES, you'll\n"
+	.string "May: With those Go-Goggles, you'll\n"
 	.string "have no trouble getting through the\l"
 	.string "desert near Route 111.\p"
 	.string "But, wow, {PLAYER}{KUN}…\n"
-	.string "Challenging GYMS…\p"
+	.string "Challenging Gyms…\p"
 	.string "You're trying hard because you don't\n"
 	.string "want to lose to me, I bet!\p"
 	.string "{PLAYER}{KUN}, I think I should challenge\n"
@@ -315,7 +315,7 @@ LavaridgeTown_Text_BrendanNiceBadgesTakeThis: @ 81EA9A2
 	.string "Brendan: {PLAYER}, hey, it's been a while.\n"
 	.string "How's it going?\p"
 	.string "Hmm…\n"
-	.string "That's a decent collection of BADGES.\p"
+	.string "That's a decent collection of Badges.\p"
 	.string "All right, then.\n"
 	.string "You may as well have this.$"
 
@@ -334,7 +334,7 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad: @ 81EAA2E
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt: @ 81EAB80
-	.string "I have here an EGG.\p"
+	.string "I have here an Egg.\p"
 	.string "I'd hoped to hatch it by covering it in\n"
 	.string "hot sand by the hot springs.\l"
 	.string "But that doesn't seem to be enough…\p"
@@ -344,27 +344,27 @@ LavaridgeTown_Text_HaveEggWillYouTakeIt: @ 81EAB80
 	.string "You are a Trainer, yes?\n"
 	.string "And your Pokémon radiate vitality.\p"
 	.string "So, what say you?\n"
-	.string "Will you take this EGG to hatch?$"
+	.string "Will you take this Egg to hatch?$"
 
 LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg: @ 81EACC0
 	.string "Good! I hope you'll walk plenty with\n"
-	.string "this here EGG!$"
+	.string "this here Egg!$"
 
 LavaridgeTown_Text_ReceivedTheEgg: @ 81EACF4
-	.string "{PLAYER} received the EGG.$"
+	.string "{PLAYER} received the Egg.$"
 
 LavaridgeTown_Text_NoRoomForThisEgg: @ 81EAD09
 	.string "Oh? You've too many Pokémon.\n"
-	.string "There's no room for this EGG…$"
+	.string "There's no room for this Egg…$"
 
 LavaridgeTown_Text_AsYouWishThen: @ 81EAD44
 	.string "As you wish, then…\p"
 	.string "If you have a change of heart about\n"
-	.string "hatching this EGG, I will be here.$"
+	.string "hatching this Egg, I will be here.$"
 
 LavaridgeTown_Text_EverySoOftenEggFoundAtDayCare: @ 81EAD9E
-	.string "Every so often, an EGG will be found at\n"
-	.string "the Pokémon DAY CARE.\p"
+	.string "Every so often, an Egg will be found at\n"
+	.string "the Pokémon Day Care.\p"
 	.string "Or at least that's how the rumor goes.$"
 
 LavaridgeTown_Text_HotSpringsNeverRunDry: @ 81EAE03
@@ -391,7 +391,7 @@ LavaridgeTown_Text_OhYouLikeHotSprings: @ 81EAF4E
 LavaridgeTown_Text_BatheInHotSpringsEveryDay: @ 81EAF9B
 	.string "I bathe in the hot springs every day.\p"
 	.string "I want to become a beautiful and strong\n"
-	.string "Gym Leader like FLANNERY.$"
+	.string "Gym Leader like Flannery.$"
 
 LavaridgeTown_Text_IfPokemonInHotSprings: @ 81EB003
 	.string "If people put Pokémon in hot springs,\n"
@@ -407,16 +407,16 @@ LavaridgeTown_Text_HotSpringsClaims: @ 81EB092
 	.string "money…$"
 
 LavaridgeTown_Text_TownSign: @ 81EB12B
-	.string "LAVARIDGE TOWN\p"
-	.string "“Pokémon Center HOT SPRINGS\n"
+	.string "Lavaridge Town\p"
+	.string "“Pokémon Center Hot Springs\n"
 	.string "An excellent place for relaxing!”$"
 
 LavaridgeTown_Text_GymSign: @ 81EB178
-	.string "LAVARIDGE TOWN Pokémon Gym\n"
-	.string "Leader: FLANNERY\l"
+	.string "Lavaridge Town Pokémon Gym\n"
+	.string "Leader: Flannery\l"
 	.string "“One with a fiery passion that burns!”$"
 
 LavaridgeTown_Text_HerbShopSign: @ 81EB1CB
-	.string "Pokémon HERB SHOP\n"
+	.string "Pokémon Herb Shop\n"
 	.string "“Bitter taste--better cure!”$"
 

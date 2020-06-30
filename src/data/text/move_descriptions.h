@@ -295,7 +295,7 @@ static const u8 sLeechSeedDescription[] = _(
 
 static const u8 sGrowthDescription[] = _(
     "Forces the body to grow\n"
-    "and heightens SP. ATK.");
+    "and heightens Sp. Atk.");
 
 static const u8 sRazorLeafDescription[] = _(
     "Cuts the enemy with leaves.\n"
@@ -375,7 +375,7 @@ static const u8 sConfusionDescription[] = _(
 
 static const u8 sPsychicDescription[] = _(
     "A powerful psychic attack\n"
-    "that may lower SP. DEF.");
+    "that may lower Sp. Def.");
 
 static const u8 sHypnosisDescription[] = _(
     "A hypnotizing move that\n"
@@ -451,7 +451,7 @@ static const u8 sBarrierDescription[] = _(
 
 static const u8 sLightScreenDescription[] = _(
     "Creates a wall of light that\n"
-    "lowers SP. ATK damage.");
+    "lowers Sp. Atk damage.");
 
 static const u8 sHazeDescription[] = _(
     "Creates a black haze that\n"
@@ -531,7 +531,7 @@ static const u8 sConstrictDescription[] = _(
 
 static const u8 sAmnesiaDescription[] = _(
     "Forgets about something\n"
-    "and sharply raises SP. DEF.");
+    "and sharply raises Sp. Def.");
 
 static const u8 sKinesisDescription[] = _(
     "Distracts the foe.\n"
@@ -987,7 +987,7 @@ static const u8 sAncientPowerDescription[] = _(
 
 static const u8 sShadowBallDescription[] = _(
     "Hurls a black blob that may\n"
-    "lower the foe's SP. DEF.");
+    "lower the foe's Sp. Def.");
 
 static const u8 sFutureSightDescription[] = _(
     "Heightens inner power to\n"
@@ -1039,7 +1039,7 @@ static const u8 sTormentDescription[] = _(
 
 static const u8 sFlatterDescription[] = _(
     "Confuses the foe, but\n"
-    "raises its SP. ATK.");
+    "raises its Sp. Atk.");
 
 static const u8 sWillOWispDescription[] = _(
     "Inflicts a burn on the foe\n"
@@ -1175,15 +1175,15 @@ static const u8 sCamouflageDescription[] = _(
 
 static const u8 sTailGlowDescription[] = _(
     "Flashes a light that sharply\n"
-    "raises SP. ATK.");
+    "raises Sp. Atk.");
 
 static const u8 sLusterPurgeDescription[] = _(
     "Attacks with a burst of\n"
-    "light. May lower SP. DEF.");
+    "light. May lower Sp. Def.");
 
 static const u8 sMistBallDescription[] = _(
     "Attacks with a flurry of\n"
-    "down. May lower SP. ATK.");
+    "down. May lower Sp. Atk.");
 
 static const u8 sFeatherDanceDescription[] = _(
     "Envelops the foe with down\n"
@@ -1251,7 +1251,7 @@ static const u8 sAromatherapyDescription[] = _(
 
 static const u8 sFakeTearsDescription[] = _(
     "Feigns crying to sharply\n"
-    "lower the foe's SP. DEF.");
+    "lower the foe's Sp. Def.");
 
 static const u8 sAirCutterDescription[] = _(
     "Hacks with razorlike wind.\n"
@@ -1259,7 +1259,7 @@ static const u8 sAirCutterDescription[] = _(
 
 static const u8 sOverheatDescription[] = _(
     "Allows a full-power attack,\n"
-    "but sharply lowers SP. ATK.");
+    "but sharply lowers Sp. Atk.");
 
 static const u8 sOdorSleuthDescription[] = _(
     "Negates the foe's efforts\n"
@@ -1275,7 +1275,7 @@ static const u8 sSilverWindDescription[] = _(
 
 static const u8 sMetalSoundDescription[] = _(
     "Emits a horrible screech\n"
-    "that sharply lowers SP. DEF.");
+    "that sharply lowers Sp. Def.");
 
 static const u8 sGrassWhistleDescription[] = _(
     "Lulls the foe into sleep\n"
@@ -1286,7 +1286,7 @@ static const u8 sTickleDescription[] = _(
     "lower ATTACK and DEFENSE.");
 
 static const u8 sCosmicPowerDescription[] = _(
-    "Raises DEFENSE and SP. DEF\n"
+    "Raises DEFENSE and Sp. Def\n"
     "with a mystic power.");
 
 static const u8 sWaterSpoutDescription[] = _(
@@ -1386,7 +1386,7 @@ static const u8 sWaterSportDescription[] = _(
     "raise resistance to fire.");
 
 static const u8 sCalmMindDescription[] = _(
-    "Raises SP. ATK and SP. DEF\n"
+    "Raises Sp. Atk and Sp. Def\n"
     "by focusing the mind.");
 
 static const u8 sLeafBladeDescription[] = _(
@@ -1415,7 +1415,7 @@ static const u8 sDoomDesireDescription[] = _(
 
 static const u8 sPsychoBoostDescription[] = _(
     "Allows a full-power attack,\n"
-    "but sharply lowers SP. ATK.");
+    "but sharply lowers Sp. Atk.");
 
 static const u8 sROOSTDescription[] = _(
     "Restores the user's HP by\n"

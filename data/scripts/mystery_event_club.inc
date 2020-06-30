@@ -99,7 +99,7 @@ MysteryEventClub_Text_CollectTrainerProfiles: @ 8291687
 	.string "Hello there, Trainer!\n"
 	.string "You've got a wonderful smile, there.\p"
 	.string "I have a hobby--collecting the profiles\n"
-	.string "of Pokémon TRAINERS.$"
+	.string "of Pokémon Trainers.$"
 
 MysteryEventClub_Text_MayISeeYourProfile: @ 82916FF
 	.string "So, how about it?\n"

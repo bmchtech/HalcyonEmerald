@@ -61,13 +61,13 @@ LilycoveCity_DepartmentStore_3F_Text_ItemsBestForTougheningPokemon: @ 821FCD1
 	.string "For quickly toughening up Pokémon,\n"
 	.string "items are the best.\p"
 	.string "PROTEIN boosts ATTACK,\n"
-	.string "and CALCIUM raises SP. ATK.$"
+	.string "and CALCIUM raises Sp. Atk.$"
 
 LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance: @ 821FD3B
 	.string "I want my Pokémon to have more\n"
 	.string "endurance.\p"
 	.string "I'm trying to decide whether to raise\n"
-	.string "DEFENSE with IRON, or SP. DEF with ZINC.$"
+	.string "DEFENSE with IRON, or Sp. Def with ZINC.$"
 
 LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon: @ 821FDB4
 	.string "I gave a CARBOS to my Pokémon,\n"

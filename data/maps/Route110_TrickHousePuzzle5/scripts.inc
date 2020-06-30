@@ -1065,7 +1065,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz1: @ 826DB94
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz2: @ 826DBD7
 	.string "MECHADOLL 4 QUIZ.\p"
-	.string "In LAVARIDGE TOWN, were there more\n"
+	.string "In Lavaridge Town, were there more\n"
 	.string "elderly men or elderly women?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz3: @ 826DC2A
@@ -1086,7 +1086,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz1: @ 826DCCB
 
 Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz2: @ 826DD1B
 	.string "MECHADOLL 5 QUIZ.\p"
-	.string "In FORTREE CITY, how many\n"
+	.string "In Fortree City, how many\n"
 	.string "tree houses were there?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz3: @ 826DD5F

@@ -356,34 +356,34 @@ CableClub_Text_UseBerryCrush: @ 8279114
 
 CableClub_Text_ExplainBattleModes: @ 8279142
 	.string "There are three Battle Modes.\p"
-	.string "SINGLE BATTLE is for two TRAINERS\n"
+	.string "SINGLE BATTLE is for two Trainers\n"
 	.string "with one or more Pokémon each.\p"
 	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.\p"
-	.string "DOUBLE BATTLE is for two TRAINERS\n"
+	.string "DOUBLE BATTLE is for two Trainers\n"
 	.string "with two or more Pokémon each.\p"
 	.string "Each Trainer will send out two\n"
 	.string "Pokémon in battle at a time.\p"
-	.string "MULTI BATTLE is for four TRAINERS\n"
+	.string "MULTI BATTLE is for four Trainers\n"
 	.string "with one or more Pokémon each.\p"
 	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.$"
 
 CableClub_Text_ChooseGroupLeaderOfTwo: @ 82792CD
 	.string "Please decide which of you two\n"
-	.string "will become the LEADER.\p"
+	.string "will become the Leader.\p"
 	.string "The other player must then choose\n"
 	.string "“JOIN GROUP.”$"
 
 CableClub_Text_ChooseGroupLeaderOfFour: @ 8279334
 	.string "Please decide which of you four\n"
-	.string "will become the GROUP LEADER.\p"
+	.string "will become the GROUP Leader.\p"
 	.string "The other players must then choose\n"
 	.string "“JOIN GROUP.”$"
 
 CableClub_Text_ChooseGroupLeader: @ 82793A3
 	.string "Please decide which of you will\n"
-	.string "become the GROUP LEADER.\p"
+	.string "become the GROUP Leader.\p"
 	.string "The other players must then choose\n"
 	.string "“JOIN GROUP.”$"
 
@@ -429,7 +429,7 @@ CableClub_Text_ExplainWirelessClubFirstTime: @ 8279718
 	.string "rooms.\p"
 	.string "First, the room on the left.\n"
 	.string "It's the UNION ROOM.\p"
-	.string "You may link up with TRAINERS\n"
+	.string "You may link up with Trainers\n"
 	.string "around you who have also entered\l"
 	.string "the UNION ROOM.\p"
 	.string "With them, you may do things like\n"
@@ -460,7 +460,7 @@ CableClub_Text_ExplainWirelessClub: @ 82799AA
 	.string "two rooms.\p"
 	.string "First, the room on the left.\n"
 	.string "It's the UNION ROOM.\p"
-	.string "You may link up with TRAINERS\n"
+	.string "You may link up with Trainers\n"
 	.string "around you who have also entered\l"
 	.string "the UNION ROOM.\p"
 	.string "With them, you may do things like\n"

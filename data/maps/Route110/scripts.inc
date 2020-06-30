@@ -976,7 +976,7 @@ Route110_Text_SeasideParkingSign: @ 81F08E3
 
 Route110_Text_MauvilleCitySign: @ 81F08F3
 	.string "ROUTE 110\n"
-	.string "{UP_ARROW} MAUVILLE CITY$"
+	.string "{UP_ARROW} Mauville City$"
 
 Route110_Text_TrainerTipsPrlzSleep: @ 81F090D
 	.string "Trainer Tips\p"
@@ -1014,7 +1014,7 @@ Route110_Text_HeardYouInstallMatchCall: @ 81F0AFF
 	.string "You two are running separately.\l"
 	.string "Well, that's fine.\p"
 	.string "Oh, yes, I heard that your PokéNav\n"
-	.string "had the MATCH CALL system installed.\p"
+	.string "had the Match Call system installed.\p"
 	.string "Well, then, I should register you in\n"
 	.string "my PokéNav as well.\p"
 	.string "That way, even when we're apart,\n"

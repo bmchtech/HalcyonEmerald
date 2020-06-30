@@ -1032,7 +1032,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier: @ 81F
 LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall: @ 81FBD1A
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "SCOTT: Hi, hi, {PLAYER}!\n"
+	.string "Scott: Hi, hi, {PLAYER}!\n"
 	.string "It's me, SCOTT.\p"
 	.string "I'm aboard the S.S. TIDAL now.\n"
 	.string "It feels great to be on the sea!\p"

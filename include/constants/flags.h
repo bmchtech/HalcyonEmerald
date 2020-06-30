@@ -242,7 +242,7 @@
 
 #define FLAG_RECEIVED_GO_GOGGLES             0xDD
 #define FLAG_WINGULL_SENT_ON_ERRAND          0xDE
-#define FLAG_RECEIVED_MENTAL_HERB            0xDF
+#define FLAG_RECEIVED_CHOICE_SCARF            0xDF
 #define FLAG_WINGULL_DELIVERED_MAIL          0xE0
 #define FLAG_RECEIVED_20_COINS               0xE1
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2

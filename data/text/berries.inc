@@ -12,7 +12,7 @@ Route104_Text_PlantBerriesInSoilTakeThis: @ 82A6D86
 
 Route104_Text_TrainersOftenMakeMonHoldBerries: @ 82A6E32
 	.string "The way you look, you must be a\n"
-	.string "TRAINER, no?\p"
+	.string "Trainer, no?\p"
 	.string "Trainers often make Pokémon hold\n"
 	.string "BERRIES.\p"
 	.string "It's up to you whether to grow BERRIES\n"

@@ -270,7 +270,7 @@ BattleFrontier_BattlePike_EventScript_CloseCurtain:: @ 825BB49
 	return
 
 BattleFrontier_BattlePikeLobby_Text_WelcomeToBattlePike: @ 825BB52
-	.string "Where the luck of TRAINERS\n"
+	.string "Where the luck of Trainers\n"
 	.string "is put to the test…\p"
 	.string "Welcome to the BATTLE PIKE…\p"
 	.string "I am your guide to the BATTLE PIKE…$"

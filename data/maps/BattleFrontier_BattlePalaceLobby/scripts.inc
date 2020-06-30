@@ -389,7 +389,7 @@ BattleFrontier_BattlePalaceLobby_EventScript_ExitRules:: @ 824DD59
 	end
 
 BattleFrontier_BattlePalaceLobby_Text_WelcomeForSingleBattle: @ 824DD5B
-	.string "Where the hearts of TRAINERS\n"
+	.string "Where the hearts of Trainers\n"
 	.string "are put to the test.\p"
 	.string "I welcome you to the BATTLE PALACE.\p"
 	.string "I accept challenges to the SINGLE\n"
@@ -559,7 +559,7 @@ BattleFrontier_BattlePalaceLobby_Text_WhatNatureFavorsChippingAway: @ 824EA4B
 	.string "But, nah, that can't be right.$"
 
 BattleFrontier_BattlePalaceLobby_Text_WelcomeForDoubleBattle: @ 824EB06
-	.string "Where the hearts of TRAINERS\n"
+	.string "Where the hearts of Trainers\n"
 	.string "are put to the test.\p"
 	.string "I welcome you to the BATTLE PALACE.\p"
 	.string "I accept challenges to the DOUBLE\n"

@@ -266,7 +266,7 @@ MauvilleCity_PokemonCenter_1F_Text_WhichTaleToTell: @ 828E673
 	.string "Which tale will you have me tell?$"
 
 MauvilleCity_PokemonCenter_1F_Text_IKnowNoTales: @ 828E6AE
-	.string "But, I know of no legendary TRAINERS.\n"
+	.string "But, I know of no legendary Trainers.\n"
 	.string "Hence, I know no tales.\p"
 	.string "Where does one find a Trainer worthy\n"
 	.string "of a legendary tale?$"
@@ -417,7 +417,7 @@ MauvilleCity_PokemonCenter_1F_Text_FishingPokemonCaughtStory:: @ 828EDCF
 	.string "expert!$"
 
 MauvilleCity_PokemonCenter_1F_Text_EggsHatchedTitle:: @ 828EE45
-	.string "The EGG-Warming Trainer$"
+	.string "The Egg-Warming Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_EggsHatchedAction:: @ 828EE5D
 	.string "Hatched EGGS$"
@@ -766,16 +766,16 @@ MauvilleCity_PokemonCenter_1F_Text_WonLotteryStory:: @ 828FE88
 	.string "to trade Pokémon with!$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedDaycareTitle:: @ 828FF0C
-	.string "The DAY CARE-Using Trainer$"
+	.string "The Day Care-Using Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedDaycareAction:: @ 828FF27
-	.string "Left Pokémon at the DAY CARE$"
+	.string "Left Pokémon at the Day Care$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedDaycareStory:: @ 828FF44
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
 	.string "This Trainer left Pokémon with the\n"
-	.string "DAY CARE {STR_VAR_1} times!\p"
+	.string "Day Care {STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must be a real go-getter\n"
 	.string "who raises Pokémon aggressively!$"
 

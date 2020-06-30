@@ -371,16 +371,16 @@ VerdanturfTown_BattleTentLobby_Text_TaughtWhatKindsOfMoves: @ 8201EB1
 	.string "heal or protect themselves.$"
 
 VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers: @ 8201F3F
-	.string "SCOTT: Hey there, {PLAYER}{KUN}!\n"
+	.string "Scott: Hey there, {PLAYER}{KUN}!\n"
 	.string "I thought I might see you here.\p"
-	.string "A BATTLE TENT's a place where\n"
-	.string "you can meet tough TRAINERS.\p"
+	.string "A Battle Tent's a place where\n"
+	.string "you can meet tough Trainers.\p"
 	.string "It doesn't matter what the rules are,\n"
 	.string "or how battles are waged, either.\p"
 	.string "{PLAYER}{KUN}, I expect you to do\n"
 	.string "the best you can!$"
 
 VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly: @ 8202025
-	.string "SCOTT: I visit here regularly in hopes\n"
+	.string "Scott: I visit here regularly in hopes\n"
 	.string "of seeing tough Trainers in action\l"
 	.string "in whatever the situation.$"

@@ -318,7 +318,7 @@ DewfordTown_Hall_Text_CollectTrendMerchandise: @ 81FDAC4
 	.string "“{STR_VAR_1}”\l"
 	.string "licensed merchandise.\p"
 	.string "I have official\n"
-	.string "“{STR_VAR_1}” DOLLS…\p"
+	.string "“{STR_VAR_1}” Dolls…\p"
 	.string "Official “{STR_VAR_1}”\n"
 	.string "brand clothing…\p"
 	.string "And officially licensed\n"

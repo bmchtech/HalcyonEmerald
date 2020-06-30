@@ -91,7 +91,7 @@ Route103_Text_AmyDefeated: @ 8294A3D
 Route103_Text_AmyPostBattle: @ 8294A52
 	.string "AMY: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
-	.string "against two TRAINERS.$"
+	.string "against two Trainers.$"
 
 Route103_Text_AmyNotEnoughPokemon: @ 8294AAE
 	.string "AMY: Uh-oh, you have only one\n"
@@ -131,7 +131,7 @@ Route103_Text_AmyRematchDefeated: @ 8294C6D
 Route103_Text_AmyRematchPostBattle: @ 8294C93
 	.string "AMY: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
-	.string "against two TRAINERS.$"
+	.string "against two Trainers.$"
 
 Route103_Text_AmyRematchNotEnoughPokemon: @ 8294CEF
 	.string "AMY: Uh-oh, you have only one\n"
@@ -1089,7 +1089,7 @@ Route110_Text_JasmineDefeated: @ 8297FD0
 	.string "I'm worried about muscle cramps…$"
 
 Route110_Text_JasminePostBattle: @ 8297FF1
-	.string "Oh, you have some Gym BADGES?\n"
+	.string "Oh, you have some Gym Badges?\n"
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro: @ 829802B
@@ -1129,7 +1129,7 @@ Route110_Text_EdwinPostBattle: @ 82981B3
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_EdwinRegister: @ 8298201
-	.string "I like collecting MATCH CALL\n"
+	.string "I like collecting Match Call\n"
 	.string "registrations, too…$"
 
 Route110_Text_EdwinRematchIntro: @ 8298232
@@ -1233,17 +1233,17 @@ Route110_Text_KalebPostBattle: @ 8298755
 	.string "could, my pretties.$"
 
 Route111_Text_DrewIntro: @ 829878E
-	.string "Oh, hey! Those GO-GOGGLES suit you.\n"
+	.string "Oh, hey! Those Go-Goggles suit you.\n"
 	.string "But I think they look better on me.\p"
 	.string "Let's decide who they look better on\n"
 	.string "with a battle!$"
 
 Route111_Text_DrewDefeat: @ 829880A
 	.string "I couldn't see what was happening at\n"
-	.string "my sides because of the GO-GOGGLES.$"
+	.string "my sides because of the Go-Goggles.$"
 
 Route111_Text_DrewPostBattle: @ 8298853
-	.string "The GO-GOGGLES make it possible to\n"
+	.string "The Go-Goggles make it possible to\n"
 	.string "get through sandstorms.\l"
 	.string "That makes me happy!$"
 
@@ -1262,7 +1262,7 @@ Route111_Text_HeidiPostBattle: @ 829891B
 	.string "an eye on it!$"
 
 Route111_Text_BeauIntro: @ 829898E
-	.string "Wearing these GO-GOGGLES makes me\n"
+	.string "Wearing these Go-Goggles makes me\n"
 	.string "feel like a superhero.\l"
 	.string "Right now, nobody can beat me!$"
 
@@ -1435,7 +1435,7 @@ Route111_Text_CeliaDefeat: @ 8299384
 Route111_Text_CeliaPostBattle: @ 82993A7
 	.string "In a sandstorm like this, I can't set\n"
 	.string "the places for a picnic even with my\l"
-	.string "GO-GOGGLES on…$"
+	.string "Go-Goggles on…$"
 
 Route111_Text_BryanIntro: @ 8299401
 	.string "How tough are you?\n"
@@ -1907,7 +1907,7 @@ Route114_Text_ClaudeDefeat: @ 829AD0A
 
 Route114_Text_ClaudePostBattle: @ 829AD2E
 	.string "I think I'll try my luck at landing\n"
-	.string "a big one at METEOR FALLS.\p"
+	.string "a big one at Meteor Falls.\p"
 	.string "There has to be something in there.\n"
 	.string "I just know it.$"
 
@@ -2233,13 +2233,13 @@ Route116_Text_JerryPostBattle: @ 829BD92
 
 Route116_Text_JerryRegister1: @ 829BDEF
 	.string "I learned at the Trainer's School\n"
-	.string "that a PokéNav can register TRAINERS.\p"
+	.string "that a PokéNav can register Trainers.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
 Route116_Text_JerryRegister2: @ 829BE71
 	.string "I learned at the Trainer's School\n"
-	.string "that a PokéNav can register TRAINERS.\p"
+	.string "that a PokéNav can register Trainers.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
@@ -2361,7 +2361,7 @@ Route117_Text_IsaacRematchIntro: @ 829C549
 
 Route117_Text_IsaacRematchDefeat: @ 829C58B
 	.string "You know how to raise them properly.\n"
-	.string "You might have DAY CARE skills…$"
+	.string "You might have Day Care skills…$"
 
 Route117_Text_IsaacPostRematch: @ 829C5D0
 	.string "Your Pokémon are growing good!\n"
@@ -2606,7 +2606,7 @@ Route118_Text_RosePostRematch: @ 829D3D9
 	.string "Pokémon will be attracted by it.$"
 
 Route118_Text_PerryIntro: @ 829D41D
-	.string "BIRD Pokémon that FLY elegantly in\n"
+	.string "Bird Pokémon that FLY elegantly in\n"
 	.string "the sky… They're the best!$"
 
 Route118_Text_PerryDefeat: @ 829D45B
@@ -2619,7 +2619,7 @@ Route118_Text_PerryPostBattle: @ 829D46C
 
 Route118_Text_ChesterIntro: @ 829D4A6
 	.string "Take flight!\n"
-	.string "My BIRD Pokémon!$"
+	.string "My Bird Pokémon!$"
 
 Route118_Text_ChesterDefeat: @ 829D4C4
 	.string "They did take flight…$"
@@ -2835,19 +2835,19 @@ Route119_Text_HughDefeat: @ 829E063
 	.string "Down and out!$"
 
 Route119_Text_HughPostBattle: @ 829E071
-	.string "My BIRD Pokémon made my dreams of\n"
+	.string "My Bird Pokémon made my dreams of\n"
 	.string "flying come true!$"
 
 Route119_Text_PhilIntro: @ 829E0A5
 	.string "I'll show you the true potential of me\n"
-	.string "and my BIRD Pokémon!$"
+	.string "and my Bird Pokémon!$"
 
 Route119_Text_PhilDefeat: @ 829E0E1
 	.string "We lacked potential…$"
 
 Route119_Text_PhilPostBattle: @ 829E0F6
 	.string "Ever since I was a little kid, I always\n"
-	.string "admired BIRD Pokémon…$"
+	.string "admired Bird Pokémon…$"
 
 Route119_Text_YasuIntro: @ 829E134
 	.string "To lurk in shadows, and live in\n"
@@ -3041,7 +3041,7 @@ Route120_Text_JeffreyPostRematch: @ 829EAA9
 Route120_Text_JenniferIntro: @ 829EAEF
 	.string "Pokémon have many special abilities.\n"
 	.string "If you want to become a first-class\l"
-	.string "TRAINER, learn about them.$"
+	.string "Trainer, learn about them.$"
 
 Route120_Text_JenniferDefeat: @ 829EB53
 	.string "You're obviously thinking.$"
@@ -3350,15 +3350,15 @@ Route123_Text_WendyPostBattle: @ 829FC42
 
 Route123_Text_BraxtonIntro: @ 829FC6F
 	.string "You seem to have a big collection\n"
-	.string "of Gym BADGES.\p"
+	.string "of Gym Badges.\p"
 	.string "Let me see if you're actually worthy of\n"
-	.string "those BADGES!$"
+	.string "those Badges!$"
 
 Route123_Text_BraxtonDefeat: @ 829FCD6
 	.string "Oh, you're worthy, all right!$"
 
 Route123_Text_BraxtonPostBattle: @ 829FCF4
-	.string "You did your BADGES proud in that\n"
+	.string "You did your Badges proud in that\n"
 	.string "match!$"
 
 Route123_Text_VioletIntro: @ 829FD1D
@@ -3540,19 +3540,19 @@ Route123_Text_FrederickPostBattle: @ 82A0672
 	.string "Wasn't the prize money enough?$"
 
 Route123_Text_AlbertoIntro: @ 82A06AF
-	.string "I have to tell you, BIRD Pokémon\n"
+	.string "I have to tell you, Bird Pokémon\n"
 	.string "are my obsession!\p"
 	.string "Birds are cool!\n"
 	.string "They're the best!$"
 
 Route123_Text_AlbertoDefeat: @ 82A0704
-	.string "Even in defeat, BIRD Pokémon are cool!$"
+	.string "Even in defeat, Bird Pokémon are cool!$"
 
 Route123_Text_AlbertoPostBattle: @ 82A072B
-	.string "I gather BIRD Pokémon feathers that\n"
+	.string "I gather Bird Pokémon feathers that\n"
 	.string "scatter during battles.\p"
 	.string "I'm going to make a hat with\n"
-	.string "BIRD Pokémon feathers.$"
+	.string "Bird Pokémon feathers.$"
 
 Route123_Text_EdIntro: @ 82A079B
 	.string "When there are no Trainers around,\n"
@@ -4094,7 +4094,7 @@ Route127_Text_RogerPostBattle: @ 82A2538
 	.string "The tangle tango! Hahaha, snarl!$"
 
 Route127_Text_AidanIntro: @ 82A257A
-	.string "BIRD Pokémon have excellent vision.\n"
+	.string "Bird Pokémon have excellent vision.\n"
 	.string "They spot prey from great heights.$"
 
 Route127_Text_AidanDefeat: @ 82A25C1
@@ -4238,7 +4238,7 @@ Route128_Text_WayneDefeat: @ 82A2DA9
 Route128_Text_WaynePostBattle: @ 82A2DBA
 	.string "Awww, phooey!\p"
 	.string "My Pokémon knows WATERFALL, but\n"
-	.string "I don't have the SOOTOPOLIS Gym BADGE!$"
+	.string "I don't have the SOOTOPOLIS Gym Badge!$"
 
 Route128_Text_HarrisonIntro: @ 82A2E0F
 	.string "You're looking awfully tough.\n"
@@ -4637,7 +4637,7 @@ Route133_Text_WarrenPostBattle: @ 82A4304
 
 Route133_Text_BeckIntro: @ 82A436A
 	.string "I came all the way out here with my\n"
-	.string "BIRD Pokémon.$"
+	.string "Bird Pokémon.$"
 
 Route133_Text_BeckDefeat: @ 82A439C
 	.string "You…\n"
@@ -4700,7 +4700,7 @@ Route134_Text_AlexDefeat: @ 82A46BE
 	.string "Tuckered out again…$"
 
 Route134_Text_AlexPostBattle: @ 82A46D2
-	.string "My BIRD Pokémon get tired quickly after\n"
+	.string "My Bird Pokémon get tired quickly after\n"
 	.string "a long flight…$"
 
 Route134_Text_HitoshiIntro: @ 82A4709
@@ -4724,7 +4724,7 @@ Route134_Text_AaronDefeat: @ 82A47E1
 
 Route134_Text_AaronPostBattle: @ 82A47FD
 	.string "We will return for more training at\n"
-	.string "METEOR FALLS.\p"
+	.string "Meteor Falls.\p"
 	.string "If you'd like, you should go, too.\n"
 	.string "It will definitely toughen you up!$"
 

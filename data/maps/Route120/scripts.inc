@@ -409,7 +409,7 @@ Route120_Text_StevenShowMeYourPower: @ 81F5B0F
 	.string "power as a Trainer!$"
 
 Route120_Text_StevenUsedDevonScope: @ 81F5B43
-	.string "STEVEN used the DEVON SCOPE.\p"
+	.string "STEVEN used the Devon Scope.\p"
 	.string "An invisible Pokémon became completely\n"
 	.string "visible!\p"
 	.string "The startled Pokémon attacked!$"
@@ -420,13 +420,13 @@ Route120_Text_StevenGiveDevonScope: @ 81F5BAF
 	.string "Your Pokémon have obviously grown\n"
 	.string "since I first met you in Dewford.\p"
 	.string "I'd like you to have this\n"
-	.string "DEVON SCOPE.\p"
+	.string "Devon Scope.\p"
 	.string "Who knows, there may be other\n"
 	.string "concealed Pokémon.$"
 
 Route120_Text_StevenGoodbye: @ 81F5C7B
 	.string "Steven: {PLAYER}{KUN}.\p"
-	.string "I enjoy seeing Pokémon and TRAINERS\n"
+	.string "I enjoy seeing Pokémon and Trainers\n"
 	.string "who strive together.\p"
 	.string "I think you're doing great.\p"
 	.string "Well, let's meet again somewhere.$"
@@ -436,17 +436,17 @@ Kecleon_Text_SomethingUnseeable: @ 81F5D00
 
 Kecleon_Text_WantToUseDevonScope: @ 81F5D23
 	.string "Something unseeable is in the way.\p"
-	.string "Want to use the DEVON SCOPE?$"
+	.string "Want to use the Devon Scope?$"
 
 Kecleon_Text_UseDevonScopeMonAttacked: @ 81F5D63
-	.string "{PLAYER} used the DEVON SCOPE.\p"
+	.string "{PLAYER} used the Devon Scope.\p"
 	.string "An invisible Pokémon became completely\n"
 	.string "visible!\p"
 	.string "The startled Pokémon attacked!$"
 
 Route120_Text_RouteSignFortree: @ 81F5DCB
 	.string "ROUTE 120\n"
-	.string "{LEFT_ARROW} FORTREE CITY$"
+	.string "{LEFT_ARROW} Fortree City$"
 
 Route120_Text_RouteSign121: @ 81F5DE4
 	.string "{RIGHT_ARROW} ROUTE 121\n"

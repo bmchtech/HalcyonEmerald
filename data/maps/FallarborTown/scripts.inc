@@ -285,6 +285,6 @@ FallarborTown_Text_TownSign: @ 81EB4FE
 	.string "“A farm community with small gardens.”$"
 
 FallarborTown_Text_MoveTutorSign: @ 81EB534
-	.string "MOVE TUTOR'S HOUSE\n"
-	.string "“New moves taught to Pokémon.”$"
+	.string "Ivy and Evie's House\n"
+	.string "“Special training for Pokémon.”$"
 

@@ -592,7 +592,7 @@ MtChimney_Text_TabithaIntro: @ 822F6AA
 	.string "So you've come all the way here!\p"
 	.string "But you're too late!\n"
 	.string "I've already delivered the METEORITE\l"
-	.string "from METEOR FALLS to the Boss!$"
+	.string "from Meteor Falls to the Boss!$"
 
 MtChimney_Text_TabithaDefeat: @ 822F72C
 	.string "Hehehe…\p"
@@ -638,7 +638,7 @@ MtChimney_Text_TeamAquaAlwaysMessingWithPlans: @ 822F978
 	.string "They always mess with our plans!$"
 
 MtChimney_Text_MeteoritesPackAmazingPower: @ 822F9B2
-	.string "METEORITES pack amazing power!$"
+	.string "Meteorites pack amazing power!$"
 
 MtChimney_Text_YouBetterNotMessWithUs: @ 822F9D1
 	.string "You'd better not mess with us!\p"
@@ -723,22 +723,22 @@ MtChimney_Text_OhFineThen: @ 822FE9B
 	.string "Oh, fine then.$"
 
 MtChimney_Text_MetoriteFittedOnMachine: @ 822FEAA
-	.string "A METEORITE is fitted on a mysterious\n"
+	.string "A Meteorite is fitted on a mysterious\n"
 	.string "machine…\p"
 	.string "The machine seems to be storing\n"
 	.string "energy in the METEORITE.$"
 
 MtChimney_Text_RemoveTheMeteorite: @ 822FF12
-	.string "A METEORITE is fitted on a mysterious\n"
+	.string "A Meteorite is fitted on a mysterious\n"
 	.string "machine…\p"
 	.string "Do you want to remove the METEORITE?$"
 
 MtChimney_Text_PlayerRemovedMeteorite: @ 822FF66
-	.string "{PLAYER} removed the METEORITE from\n"
+	.string "{PLAYER} removed the Meteorite from\n"
 	.string "the mysterious machine.$"
 
 MtChimney_Text_PlayerLeftMeteorite: @ 822FF9C
-	.string "{PLAYER} left the METEORITE where\n"
+	.string "{PLAYER} left the Meteorite where\n"
 	.string "it was.$"
 
 MtChimney_Text_MachineMakesNoResponse: @ 822FFC0
@@ -747,7 +747,7 @@ MtChimney_Text_MachineMakesNoResponse: @ 822FFC0
 
 MtChimney_Text_RouteSign: @ 822FFFA
 	.string "{DOWN_ARROW} JAGGED PATH\n"
-	.string "LAVARIDGE TOWN AHEAD$"
+	.string "Lavaridge Town AHEAD$"
 
 MtChimney_Text_ShelbyIntro: @ 823001D
 	.string "I've been to the hot springs and\n"

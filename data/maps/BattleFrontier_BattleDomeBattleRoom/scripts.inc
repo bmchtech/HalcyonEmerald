@@ -1045,7 +1045,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_TheInvincibleChampion: @ 824CD72
 
 BattleFrontier_BattleDomeBattleRoom_Text_CanAnyoneHopeToBeatTrainer: @ 824CD8C
 	.string "Can anyone hope to beat this\n"
-	.string "TRAINER?\p"
+	.string "Trainer?\p"
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_DoBattlesExistSolelyForTrainer: @ 824CDB3
