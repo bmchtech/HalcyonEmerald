@@ -58,5 +58,5 @@ MossdeepCity_House4_Text_MakeSecretBase: @ 8222EF7
 	.string "somewhere. I'll go find it!$"
 
 MossdeepCity_House4_Text_Skitty: @ 8222F31
-	.string "SKITTY: Miyaan?$"
+	.string "Skitty: Miyaan?$"
 

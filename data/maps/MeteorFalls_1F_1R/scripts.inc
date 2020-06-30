@@ -453,11 +453,11 @@ MeteorFalls_1F_1R_EventScript_MetCozmo:: @ 822BF3D
 	end
 
 MeteorFalls_1F_1R_Text_MayBozos:
-	.string "Give it up, you bozos!\n"
+	.string "May: Give it up, you bozos!\n"
 	.string "Let the professor go!$"
 
 MeteorFalls_1F_1R_Text_BrendanJerks:
-	.string "Hey! You jerks!\n"
+	.string "Brendan: Hey! You jerks!\n"
 	.string "Let Professor Cozmo go!$"
 
 MeteorFalls_1F_1R_Text_Brat:
@@ -466,7 +466,7 @@ MeteorFalls_1F_1R_Text_Brat:
 	.string "Who is this spoiled brat?$"
 
 MeteorFalls_1F_1R_Text_MayPlayerHere:
-	.string "{PLAYER}{KUN}! You came!\p"
+	.string "May: {PLAYER}{KUN}! You came!\p"
 	.string "We've got to save Professor Cozmo\n"
 	.string "from these people!\p"
 	.string "There are two of them…\n"
@@ -475,7 +475,8 @@ MeteorFalls_1F_1R_Text_MayPlayerHere:
 	.string "Battle together with me!$"
 
 MeteorFalls_1F_1R_Text_BrendanPlayerHere:
-	.string "{PLAYER}! You finally made it, huh!\p"
+	.string "Brendan:{PLAYER}! You finally made it,\n" 
+	.string "huh!\p"
 	.string "We've gotta protect the professor\n"
 	.string "from these lunatics!\p"
 	.string "There's two of them…\n"

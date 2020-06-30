@@ -100,7 +100,7 @@ Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother: @ 82A7428
 	.string "Take another!$"
 
 Route123_BerryMastersHouse_Text_VisitPrettyPetalFlowerShop: @ 82A7445
-	.string "Be sure to visit the PRETTY PETAL\n"
+	.string "Be sure to visit the Pretty Petal\n"
 	.string "flower shop near Rustboro.\p"
 	.string "Let flowers fill the world!$"
 
@@ -136,7 +136,7 @@ Route123_BerryMastersHouse_Text_Ah: @ 82A7682
 
 Route104_PrettyPetalFlowerShop_Text_ThisIsPrettyPetalFlowerShop: @ 82A7686
 	.string "Hello!\p"
-	.string "This is the PRETTY PETAL flower shop.\n"
+	.string "This is the Pretty Petal flower shop.\n"
 	.string "Spreading flowers all over the world!$"
 
 Route104_PrettyPetalFlowerShop_Text_LearnAboutBerries: @ 82A76D9

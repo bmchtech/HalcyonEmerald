@@ -508,13 +508,13 @@ DewfordTown_Text_BrineyLandedInSlateportDeliverGoods: @ 81EEC1D
 	.string "Mr. Briney: Ahoy!\n"
 	.string "We've made land in Slateport!\p"
 	.string "I suppose you're going to visit CAPT.\n"
-	.string "STERN and deliver the DEVON GOODS?$"
+	.string "STERN and deliver the Devon Goods?$"
 
 Route109_Text_BrineySailToDewfordQuestion: @ 81EEC96
 	.string "Mr. Briney: I thought you're supposed\n"
-	.string "to deliver the DEVON GOODS.\p"
+	.string "to deliver the Devon Goods.\p"
 	.string "Would you like to sail back to\n"
-	.string "DEWFORD, then?$"
+	.string "Dewford, then?$"
 
 Route109_Text_BrineyDewfordItIs: @ 81EED06
 	.string "Mr. Briney: Dewford it is, then!\p"
@@ -523,11 +523,11 @@ Route109_Text_BrineyDewfordItIs: @ 81EED06
 
 Route109_Text_BrineyDeliverDevonGoods: @ 81EED5E
 	.string "Mr. Briney: Then you go on and deliver\n"
-	.string "the DEVON GOODS. I'll be waiting.$"
+	.string "the Devon Goods. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInSlateport: @ 81EEDA7
 	.string "Mr. Briney: Ahoy! We've made land in\n"
-	.string "SLATEPORT!\p"
+	.string "Slateport!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
@@ -541,7 +541,7 @@ Route109_Text_BrineyTellMeWhenYouNeedToSail: @ 81EEE72
 	.string "you need to set sail again!$"
 
 Route109_Text_ChillAtMyPapasSpot: @ 81EEEB4
-	.string "Yo, TRAINERS!\n"
+	.string "Yo, Trainers!\n"
 	.string "Whether you're hot to trot,\l"
 	.string "or cool cat not,\l"
 	.string "chill at my papa's spot!$"
@@ -569,7 +569,7 @@ Route109_Text_WereGoingToMakeBigCastle: @ 81EEFF1
 
 Route109_Text_ZigzagoonPicksUpLitter: @ 81EF080
 	.string "The water around these parts is clean.\p"
-	.string "But, I get my ZIGZAGOON to pick up\n"
+	.string "But, I get my Zigzagoon to pick up\n"
 	.string "litter from the shoreline at times.\p"
 	.string "Dirty water becomes rain and joins our\n"
 	.string "rivers, which we drink from…\p"
@@ -580,9 +580,9 @@ Route109_Text_ZigzagoonCry: @ 81EF173
 	.string "Zigzagoon: Guguu?$"
 
 Route109_Text_SeashoreHouseSign: @ 81EF185
-	.string "SEASHORE HOUSE\p"
+	.string "Seashore House\p"
 	.string "“May hot battles rage on hot sands!\n"
-	.string "The place for hot TRAINERS!”$"
+	.string "The place for hot Trainers!”$"
 
 Route109_Text_TrainerTipsSign: @ 81EF1D5
 	.string "Trainer Tips\p"

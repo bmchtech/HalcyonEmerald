@@ -1059,47 +1059,47 @@ Route104_Text_TMsAreOneTimeUse:
 	.string "want!$"
 
 Route104_Text_DontNeedThisTakeIt: @ 81ED96A
-	.string "This FLOWER SHOP started selling\n"
+	.string "This Flower Shop started selling\n"
 	.string "saplings recently.\p"
 	.string "It made me so happy, I went overboard\n"
 	.string "shopping.\p"
-	.string "I don't need this WHITE HERB anymore.\n"
+	.string "I don't need this White Herb anymore.\n"
 	.string "Would you take it, please?$"
 
 Route104_Text_FlowerShopSellingSaplings: @ 81EDA0F
-	.string "This FLOWER SHOP started selling\n"
+	.string "This Flower Shop started selling\n"
 	.string "saplings recently.\p"
 	.string "It made me so happy, I went overboard\n"
 	.string "shopping. Where should I put them?$"
 
 Route104_Text_MrBrineysCottage: @ 81EDA8C
-	.string "Mr. Briney'S COTTAGE$"
+	.string "Mr. Briney'S Cottage$"
 
 Route104_Text_RouteSignPetalburg: @ 81EDAA1
-	.string "ROUTE 1O4\n"
+	.string "Route 104\n"
 	.string "{RIGHT_ARROW} Petalburg City$"
 
 Route104_Text_RouteSignRustboro: @ 81EDABC
-	.string "ROUTE 1O4\n"
+	.string "Route 104\n"
 	.string "{UP_ARROW} Rustboro City$"
 
 Route104_Text_PrettyPetalFlowShop: @ 81EDAD6
-	.string "PRETTY PETAL FLOWER SHOP$"
+	.string "Pretty Petal Flower Shop$"
 
 Route104_Text_TrainerTipsDoubleBattles: @ 81EDAEF
 	.string "Trainer Tips\p"
 	.string "In the Hoenn region there are pairs\n"
 	.string "of Trainers who challenge others\l"
 	.string "for 2-on-2 Pokémon battles called\l"
-	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the Trainer must\n"
+	.string "Double Battles.\p"
+	.string "In a Double Battle, the Trainer must\n"
 	.string "send out two Pokémon, the one at the\l"
 	.string "left of the list and the top one.\l"
 	.string "Watch how Pokémon are lined up.$"
 
 Route104_Text_MayWeShouldRegister: @ 81EDBFF
 	.string "May: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "DEVON upgraded your PokéNav with\n"
+	.string "Devon upgraded your PokéNav with\n"
 	.string "the Match Call system, huh?\p"
 	.string "We should register each other so we\n"
 	.string "can get in contact anytime.$"
@@ -1145,8 +1145,8 @@ Route104_Text_MayPostBattle: @ 81EDE3E
 
 Route104_Text_BrendanWeShouldRegister: @ 81EDF04
 	.string "Brendan: Oh, hey, {PLAYER}!\p"
-	.string "Cool, you had DEVON install the MATCH\n"
-	.string "CALL system on your PokéNav!\p"
+	.string "Cool, you had Devon install the Match\n"
+	.string "Call system on your PokéNav!\p"
 	.string "Let's register each other in our\n"
 	.string "PokéNavS so we can keep in touch.$"
 

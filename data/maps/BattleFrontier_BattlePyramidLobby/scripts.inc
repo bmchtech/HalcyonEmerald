@@ -772,7 +772,7 @@ BattleFrontier_BattlePyramidLobby_Text_HintExplosion: @ 8251F6E
 	.string "to them…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintPsychic: @ 8251FC7
-	.string "I see PSYCHIC-type Pokémon…\p"
+	.string "I see Psychic-type Pokémon…\p"
 	.string "…And, I see your Pokémon in torment\n"
 	.string "from PSYCHIC moves…$"
 

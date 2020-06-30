@@ -447,7 +447,7 @@ BattleFrontier_BattleArenaLobby_Text_DidntSaveBeforeShuttingDown: @ 8256811
 
 BattleFrontier_BattleArenaLobby_Text_CongratsOnSevenWins: @ 82568E7
 	.string "We congratulate you for your splendid\n"
-	.string "string of wins over seven TRAINERS!$"
+	.string "string of wins over seven Trainers!$"
 
 BattleFrontier_BattleArenaLobby_Text_RecordAchievement: @ 8256931
 	.string "Your achievement will be recorded.\n"

@@ -163,7 +163,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenSilverMons:: @ 8260A1E
 	.string "Have you battled the SALON MAIDEN?\p"
 	.string "When she's measuring up her opponent,\n"
 	.string "she apparently uses these Pokémon:\p"
-	.string "A PSYCHIC-type PSI Pokémon,\n"
+	.string "A Psychic-type PSI Pokémon,\n"
 	.string "a Fire-type VOLCANO Pokémon,\l"
 	.string "and a NORMAL-type SLEEPING Pokémon.$"
 
@@ -198,7 +198,7 @@ BattleFrontier_Lounge2_Text_DomeAceGoldMons:: @ 8260D3A
 	.string "he uses these three Pokémon:\p"
 	.string "A DRAGON & FLYING EON Pokémon,\n"
 	.string "a WATER & GROUND MUD FISH Pokémon,\l"
-	.string "and a STEEL- & PSYCHIC-type IRON LEG\l"
+	.string "and a STEEL- & Psychic-type IRON LEG\l"
 	.string "Pokémon.$"
 
 BattleFrontier_Lounge2_Text_FactoryHeadIsThere:: @ 8260E1E
@@ -329,24 +329,24 @@ BattleFrontier_Lounge2_Text_PyramidKingGoldMons:: @ 82618C4
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice1:: @ 82619AC
 	.string "Sure, there are several places where\n"
-	.string "you can enter DOUBLE BATTLES.\p"
-	.string "But the DOUBLE BATTLE ROOMS of\n"
+	.string "you can enter Double Battles.\p"
+	.string "But the Double Battle ROOMS of\n"
 	.string "the Battle Tower are, like, basic!\p"
 	.string "They're where you should learn about\n"
-	.string "how DOUBLE BATTLES are played here\l"
+	.string "how Double Battles are played here\l"
 	.string "in the Battle Frontier.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice2:: @ 8261A91
 	.string "Watch yourself in the battles here.\p"
 	.string "I hear there are Trainers that have\n"
 	.string "strategies they developed just for\l"
-	.string "DOUBLE BATTLES.$"
+	.string "Double Battles.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice3:: @ 8261B0C
 	.string "Once you're confident and comfortable\n"
-	.string "with DOUBLE BATTLES here, you should\l"
+	.string "with Double Battles here, you should\l"
 	.string "think about challenging other places\l"
-	.string "offering DOUBLE BATTLES.$"
+	.string "offering Double Battles.$"
 
 BattleFrontier_Lounge2_Text_MultiBattleAdvice:: @ 8261B95
 	.string "All sorts of Trainers gather in\n"

@@ -439,12 +439,12 @@ BattleFrontier_BattleFactoryLobby_Text_TakeDoublesChallenge: @ 825901F
 
 BattleFrontier_BattleFactoryLobby_Text_ExplainDoublesChallenge: @ 8259058
 	.string "The Battle Swap Double Tournament\n"
-	.string "is a DOUBLE BATTLE competition using\l"
+	.string "is a Double Battle competition using\l"
 	.string "only rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
 	.string "Pokémon specifically for this event.\p"
 	.string "Using the supplied rental Pokémon,\n"
-	.string "you must conduct a DOUBLE BATTLE.\p"
+	.string "you must conduct a Double Battle.\p"
 	.string "If you win, you are permitted to trade\n"
 	.string "one of your rental Pokémon.\p"
 	.string "Repeat this cycle of battling and\n"

@@ -658,12 +658,12 @@ MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderTitle:: @ 828F9D1
 	.string "The Item-Finding Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderAction:: @ 828F9EA
-	.string "Used an ITEMFINDER$"
+	.string "Used an Itemfinder$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedItemFinderStory:: @ 828F9FD
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer used an ITEMFINDER\n"
+	.string "This Trainer used an Itemfinder\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must enjoy scouring the\n"
 	.string "ground for hidden items!$"
@@ -780,15 +780,15 @@ MauvilleCity_PokemonCenter_1F_Text_UsedDaycareStory:: @ 828FF44
 	.string "who raises Pokémon aggressively!$"
 
 MauvilleCity_PokemonCenter_1F_Text_RodeCableCarTitle:: @ 828FFDD
-	.string "The CABLE CAR-Loving Trainer$"
+	.string "The Cable Car-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_RodeCableCarAction:: @ 828FFFA
-	.string "Rode the CABLE CAR$"
+	.string "Rode the Cable Car$"
 
 MauvilleCity_PokemonCenter_1F_Text_RodeCableCarStory:: @ 829000D
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer rode the CABLE CAR\n"
+	.string "This Trainer rode the Cable Car\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must be a busy Trainer\n"
 	.string "who's up and down all the time!$"

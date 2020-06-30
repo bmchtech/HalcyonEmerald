@@ -632,7 +632,7 @@ Route104_Text_LandedInDewfordDeliverLetter: @ 81E9AAF
 	.string "Mr. Briney: Ahoy!\n"
 	.string "We've hit land in Dewford.\p"
 	.string "I suppose you're off to deliver that\n"
-	.string "Letter to, who was it now, STEVEN!$"
+	.string "Letter to, who was it now, Steven!$"
 
 DewfordTown_Text_SetSailBackToPetalburg: @ 81E9B24
 	.string "Mr. Briney: Have you delivered your\n"

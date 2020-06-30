@@ -1649,15 +1649,15 @@ SootopolisCity_Text_YouBroughtFlyingMon: @ 81E728C
 	.string "Well, aren't you amazing!$"
 
 SootopolisCity_Text_GroudonPleaseStop: @ 81E72DB
-	.string "MAXIE: G… GROUDON…\n"
+	.string "Maxie: G… Groudon…\n"
 	.string "Please! Stop what you're doing!\p"
 	.string "I know the extent of your power now!\p"
 	.string "If you keep going, all Hoenn, not just\n"
 	.string "Sootopolis, will be utterly ruined!$"
 
 SootopolisCity_Text_AfterAllOurScheming: @ 81E737E
-	.string "MAXIE: So the super-ancient Pokémon\n"
-	.string "weren't only GROUDON and Kyogre…\p"
+	.string "Maxie: So the super-ancient Pokémon\n"
+	.string "weren't only Groudon and Kyogre…\p"
 	.string "After all our fruitless scheming and\n"
 	.string "frantic efforts, that one Pokémon's\l"
 	.string "simple action puts everything right\l"
@@ -1666,8 +1666,8 @@ SootopolisCity_Text_AfterAllOurScheming: @ 81E737E
 	.string "Fuhahaha…$"
 
 SootopolisCity_Text_KyogreCalmDown: @ 81E7460
-	.string "ARCHIE: Kyogre! What's wrong?!\n"
-	.string "Look over here! It's the RED ORB!\l"
+	.string "Archie: Kyogre! What's wrong?!\n"
+	.string "Look over here! It's the Red Orb!\l"
 	.string "Calm down! Kyogre!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
@@ -1675,7 +1675,7 @@ SootopolisCity_Text_KyogreCalmDown: @ 81E7460
 	.string "It's not responding at all!$"
 
 SootopolisCity_Text_TryingMeaninglessToPokemon: @ 81E74F6
-	.string "ARCHIE: Kyogre and GROUDON both\n"
+	.string "Archie: Kyogre and Groudon both\n"
 	.string "flew off to who knows where.\p"
 	.string "The weather in Hoenn has returned\n"
 	.string "to its normal state…\p"
@@ -1702,7 +1702,7 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe: @ 81E75CB
 
 SootopolisCity_Text_DoesThisMakeYourFearPokemon: @ 81E7737
 	.string "Steven: Listen, {PLAYER}{KUN}.\p"
-	.string "Does seeing GROUDON and Kyogre make\n"
+	.string "Does seeing Groudon and Kyogre make\n"
 	.string "you think Pokémon are to be feared?\p"
 	.string "But that's not true.\n"
 	.string "Pokémon are really more…\p"
@@ -1731,8 +1731,8 @@ SootopolisCity_Text_SoThatsRayquaza: @ 81E78E5
 	.string "Pokémon would flee from it in fear…$"
 
 SootopolisCity_Text_MaxieArchieLeft: @ 81E794B
-	.string "Steven: It looks like both MAXIE and\n"
-	.string "ARCHIE have gone away somewhere.\p"
+	.string "Steven: It looks like both Maxie and\n"
+	.string "Archie have gone away somewhere.\p"
 	.string "Perhaps they've gone to Mt. Pyre to\n"
 	.string "return those ORBS…$"
 

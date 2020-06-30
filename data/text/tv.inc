@@ -1169,7 +1169,7 @@ gTVWorldOfMastersText02:: @ 0828455B
 
 gTVTodaysRivalTrainerText00:: @ 08284641
 	.string "TODAY'S RIVAL Trainer!\p"
-	.string "Hello, fellow Pokémon TRAINERS!\n"
+	.string "Hello, fellow Pokémon Trainers!\n"
 	.string "How are we all doing today?\p"
 	.string "Today, like every other day,\n"
 	.string "we'll examine one of our rivals!$"
@@ -1225,7 +1225,7 @@ gTVTodaysRivalTrainerText06:: @ 082849AE
 	.string "So, how did you measure up in\n"
 	.string "comparison to {STR_VAR_1}?\p"
 	.string "The adventure rolls on!\p"
-	.string "Fellow TRAINERS!\p"
+	.string "Fellow Trainers!\p"
 	.string "Let's all keep moving forward\n"
 	.string "and ahead of our rivals!$"
 
@@ -1310,7 +1310,7 @@ gTVHoennTreasureInvestigatorsText01:: @ 08284FA1
 	.string "{STR_VAR_1}. It made me envious.\p"
 	.string "…Well, good going, {STR_VAR_2}!\p"
 	.string "Viewers, let that motivate you to\n"
-	.string "fire up your ITEMFINDERS and search!\p"
+	.string "fire up your ItemfinderS and search!\p"
 	.string "I'll be waiting for exciting news\n"
 	.string "from all of you!$"
 
@@ -1324,7 +1324,7 @@ gTVHoennTreasureInvestigatorsText02:: @ 082850F5
 	.string "{STR_VAR_1}. It made me envious.\p"
 	.string "…Well, good going, {STR_VAR_2}!\p"
 	.string "Viewers, let that motivate you to\n"
-	.string "fire up your ITEMFINDERS and search!\p"
+	.string "fire up your ItemfinderS and search!\p"
 	.string "I'll be waiting for exciting news\n"
 	.string "from all of you!$"
 
@@ -1893,7 +1893,7 @@ gTVPokemonNewsBattleFrontierText01:: @ 0828783D
 gTVPokemonNewsBattleFrontierText02:: @ 082878B3
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the Battle Tower's DOUBLE BATTLE\l"
+	.string "the Battle Tower's Double Battle\l"
 	.string "ROOM challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
@@ -1922,7 +1922,7 @@ gTVPokemonNewsBattleFrontierText06:: @ 08287A97
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-championship-streak record\l"
 	.string "competing in the BATTLE DOME's\l"
-	.string "DOUBLE BATTLE Tournaments.\p"
+	.string "Double Battle Tournaments.\p"
 	.string "Here's to {STR_VAR_1}!$"
 
 gTVPokemonNewsBattleFrontierText07:: @ 08287B16
@@ -1963,7 +1963,7 @@ gTVPokemonNewsBattleFrontierText11:: @ 08287CF3
 gTVPokemonNewsBattleFrontierText12:: @ 08287D6A
 	.string "The Trainer {STR_VAR_1} set a new\n"
 	.string "{STR_VAR_2}-win-streak record while on\l"
-	.string "the BATTLE PALACE's DOUBLE BATTLE\l"
+	.string "the BATTLE PALACE's Double Battle\l"
 	.string "HALL challenge.\p"
 	.string "Here's to {STR_VAR_1}!$"
 

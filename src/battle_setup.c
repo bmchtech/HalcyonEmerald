@@ -543,7 +543,7 @@ void StartGroudonKyogreBattle(void)
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON;
 
     if (gGameVersion == VERSION_RUBY)
-        CreateBattleStartTask(B_TRANSITION_SHARDS, MUS_BATTLE34); // GROUDON
+        CreateBattleStartTask(B_TRANSITION_SHARDS, MUS_BATTLE34); // Groudon
     else
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_BATTLE34); // Kyogre
 

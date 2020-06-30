@@ -515,13 +515,13 @@ Route119_Text_MayPresentForYou: @ 81F4AF3
 	.string "And, here! I have a present for you.$"
 
 Route119_Text_MayExplainFly: @ 81F4B56
-	.string "May: Use FLY, and your Pokémon will\n"
+	.string "May: Use Fly, and your Pokémon will\n"
 	.string "instantly carry you to any town you've\l"
 	.string "already visited.\p"
-	.string "But, to use FLY, you have to get\n"
+	.string "But, to use Fly, you have to get\n"
 	.string "the Gym Badge from Fortree City.\l"
 	.string "That's important, so don't forget.\p"
-	.string "You should FLY home and visit\n"
+	.string "You should Fly home and visit\n"
 	.string "Littleroot for a change.\p"
 	.string "I bet your mom's worried about you,\n"
 	.string "{PLAYER}{KUN}.\p"
@@ -546,7 +546,7 @@ Route119_Text_BrendanIllGiveYouThis: @ 81F4D4B
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly: @ 81F4DB5
-	.string "Brendan: Use FLY, and your Pokémon\n"
+	.string "Brendan: Use Fly, and your Pokémon\n"
 	.string "instantly carries you to any town\l"
 	.string "you've already visited.\p"
 	.string "But you need the Fortree Gym Badge \n"
@@ -585,20 +585,20 @@ Route119_Text_ScottYouWonAtFortreeGym: @ 81F4FBA
 
 Route119_Text_StayAwayFromWeatherInstitute: @ 81F50EB
 	.string "We're standing lookout here.\p"
-	.string "Hey, you! Stay away from the WEATHER\n"
-	.string "INSTITUTE. It's not safe.$"
+	.string "Hey, you! Stay away from the Weather\n"
+	.string "Institute. It's not safe.$"
 
 Route119_Text_DontGoNearWeatherInstitute: @ 81F5147
 	.string "Lookout duty is surprisingly boring.\p"
 	.string "Hey, you! Please don't go near the\n"
-	.string "WEATHER INSTITUTE.$"
+	.string "Weather Institute.$"
 
 Route119_Text_ThoughtFlyByCatchingBirdMons: @ 81F51A2
-	.string "I thought you FLY by catching a whole\n"
+	.string "I thought you Fly by catching a whole\n"
 	.string "flock of Bird Pokémon, and then\l"
 	.string "hanging on to them somehow.\p"
 	.string "But it turns out there's an HM move\n"
-	.string "called FLY!\p"
+	.string "called Fly!\p"
 	.string "I wish I'd known about that a long\n"
 	.string "time ago…$"
 
@@ -618,7 +618,7 @@ Route119_Text_RouteSignFortree: @ 81F530E
 	.string "{RIGHT_ARROW} Fortree City$"
 
 Route119_Text_WeatherInstitute: @ 81F5327
-	.string "WEATHER INSTITUTE$"
+	.string "Weather Institute$"
 
 Route119_Text_TrainerTipsDecoration: @ 81F5339
 	.string "Trainer Tips\p"

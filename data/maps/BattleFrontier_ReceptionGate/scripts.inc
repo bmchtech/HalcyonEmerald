@@ -366,7 +366,7 @@ BattleFrontier_ReceptionGate_Text_BattlePalaceInfo: @ 8266A34
 	.string "The BATTLE PALACE is the red building\n"
 	.string "on the right of the Battle Frontier.\p"
 	.string "There are two kinds of BATTLE HALLS\n"
-	.string "for SINGLE and DOUBLE BATTLES.$"
+	.string "for SINGLE and Double Battles.$"
 
 BattleFrontier_ReceptionGate_Text_BattleArenaInfo: @ 8266AC2
 	.string "The BATTLE ARENA is the dojo-like\n"

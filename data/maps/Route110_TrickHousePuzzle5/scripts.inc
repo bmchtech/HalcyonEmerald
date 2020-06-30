@@ -971,7 +971,7 @@ Route110_TrickHousePuzzle5_Movement_MechadollShake: @ 826D632
 Route110_TrickHousePuzzle5_Text_WroteSecretCodeLockOpened: @ 826D660
 	.string "{PLAYER} wrote down the secret code\n"
 	.string "on the door.\p"
-	.string "“TRICK MASTER is a genius.”\n"
+	.string "“Trick Master is a genius.”\n"
 	.string "… … … … … … … …\p"
 	.string "The lock clicked open!$"
 
@@ -985,17 +985,17 @@ Route110_TrickHousePuzzle5_Text_Mechadoll1Intro: @ 826D6CE
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz1: @ 826D757
 	.string "MECHADOLL 1 QUIZ.\p"
 	.string "One of these Pokémon is not found\n"
-	.string "on ROUTE 110. Which one is it?$"
+	.string "on Route 110. Which one is it?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz2: @ 826D7AA
 	.string "MECHADOLL 1 QUIZ.\p"
 	.string "One of these Pokémon is not of the\n"
-	.string "WATER type. Which one is it?$"
+	.string "Water type. Which one is it?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz3: @ 826D7FC
 	.string "MECHADOLL 1 QUIZ.\p"
 	.string "One of these Pokémon does not use\n"
-	.string "LEECH LIFE. Which one is it?$"
+	.string "Leech Life. Which one is it?$"
 
 Route110_TrickHousePuzzle5_Text_CorrectGoThrough: @ 826D84D
 	.string "CONGRATULATIONS. CORRECT YOU ARE.\n"
@@ -1020,7 +1020,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll2Intro: @ 826D8EA
 
 Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz1: @ 826D940
 	.string "MECHADOLL 2 QUIZ.\p"
-	.string "Which of these Pokémon did WALLY\n"
+	.string "Which of these Pokémon did Wally\n"
 	.string "borrow from your father?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz2: @ 826D98C
@@ -1031,7 +1031,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz2: @ 826D98C
 Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz3: @ 826D9CE
 	.string "MECHADOLL 2 QUIZ.\p"
 	.string "Which of these Pokémon did Team Aqua\n"
-	.string "use in Petalburg FOREST?$"
+	.string "use in Petalburg Forest?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll3Intro: @ 826DA1E
 	.string "CLICKETY-CLACK…\n"
@@ -1041,17 +1041,17 @@ Route110_TrickHousePuzzle5_Text_Mechadoll3Intro: @ 826DA1E
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz1: @ 826DA64
 	.string "MECHADOLL 3 QUIZ.\p"
 	.string "Which costs more?\n"
-	.string "Three HARBOR MAILS or one BURN HEAL?$"
+	.string "Three Harbor Mails or one Burn Heal?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz2: @ 826DAAD
 	.string "MECHADOLL 3 QUIZ.\p"
-	.string "Sell one GREAT BALL and buy\n"
+	.string "Sell one Great Ball and buy\n"
 	.string "one Potion. How much money remains?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz3: @ 826DAFF
 	.string "MECHADOLL 3 QUIZ.\p"
-	.string "Do one REPEL and SODA POP cost\n"
-	.string "more than one SUPER Potion?$"
+	.string "Do one Repel and Soda Pop cost\n"
+	.string "more than one Super Potion?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Intro: @ 826DB4C
 	.string "CLICKETY-CLACK…\n"
@@ -1060,7 +1060,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll4Intro: @ 826DB4C
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz1: @ 826DB94
 	.string "MECHADOLL 4 QUIZ.\p"
-	.string "In SEASHORE HOUSE, were there more men\n"
+	.string "In Seashore House, were there more men\n"
 	.string "or women?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz2: @ 826DBD7
@@ -1091,5 +1091,5 @@ Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz2: @ 826DD1B
 
 Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz3: @ 826DD5F
 	.string "MECHADOLL 5 QUIZ.\p"
-	.string "On the CYCLING ROAD, how many\n"
-	.string "TRIATHLETES were there?$"
+	.string "On the Cycling Road, how many\n"
+	.string "Triathletes were there?$"

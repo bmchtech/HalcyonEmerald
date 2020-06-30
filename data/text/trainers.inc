@@ -464,7 +464,7 @@ Route105_Text_DominikDefeated: @ 8295EEA
 Route105_Text_DominikPostBattle: @ 8295F08
 	.string "Why is the sea blue?\p"
 	.string "I learned about that at the Museum in\n"
-	.string "SLATEPORT, but I forgot.$"
+	.string "Slateport, but I forgot.$"
 
 Route105_Text_BeverlyIntro: @ 8295F5C
 	.string "My body feels lighter in the water.\n"
@@ -646,7 +646,7 @@ Route107_Text_TonyRematchPostBattle: @ 8296923
 
 Route107_Text_DeniseIntro: @ 8296974
 	.string "Do you know a little town called\n"
-	.string "DEWFORD?$"
+	.string "Dewford?$"
 
 Route107_Text_DeniseDefeated: @ 829699E
 	.string "I hate this!$"
@@ -847,8 +847,8 @@ Route109_Text_EdmondPostBattle: @ 82972ED
 	.string "I'm a SAILOR, but…$"
 
 Route109_Text_RickyIntro: @ 829733B
-	.string "I'm thirsty… I could go for a SODA POP\n"
-	.string "at the SEASHORE HOUSE…$"
+	.string "I'm thirsty… I could go for a Soda Pop\n"
+	.string "at the Seashore House…$"
 
 Route109_Text_RickyDefeated: @ 8297379
 	.string "Groan…$"
@@ -1067,7 +1067,7 @@ Route110_Text_AbigailPostBattle: @ 8297E88
 
 Route110_Text_AbigailRegister: @ 8297ECD
 	.string "You know, I like you!\n"
-	.string "Let's have a rematch on CYCLING ROAD.$"
+	.string "Let's have a rematch on Cycling Road.$"
 
 Route110_Text_AbigailRematchIntro: @ 8297F09
 	.string "Isn't it neat to hold a battle while\n"
@@ -1198,7 +1198,7 @@ Route110_Text_TimmyPostBattle: @ 8298579
 	.string "just caught.$"
 
 Route110_Text_AlyssaIntro: @ 82985AB
-	.string "I fell off CYCLING ROAD…\p"
+	.string "I fell off Cycling Road…\p"
 	.string "I'll get over my embarrassment by\n"
 	.string "battling with you!$"
 
@@ -1498,7 +1498,7 @@ Route111_Text_HaydenPostBattle: @ 82996C5
 	.string "Maybe I can grill some BERRIES…$"
 
 Route111_Text_BiancaIntro: @ 82996FE
-	.string "Did you come from MAUVILLE?\n"
+	.string "Did you come from Mauville?\n"
 	.string "Then you should be full of energy!$"
 
 Route111_Text_BiancaDefeat: @ 829973D
@@ -2916,7 +2916,7 @@ Route119_Text_FabianPostBattle: @ 829E492
 
 Route119_Text_DaytonIntro: @ 829E4DF
 	.string "Hohoho!\n"
-	.string "I like kid TRAINERS!\l"
+	.string "I like kid Trainers!\l"
 	.string "Let's have a good one!$"
 
 Route119_Text_DaytonDefeat: @ 829E513
@@ -3645,7 +3645,7 @@ Route124_Text_JennyRematchDefeat: @ 82A0CA0
 
 Route124_Text_JennyPostRematch: @ 82A0CBE
 	.string "This has nothing to do with anything,\n"
-	.string "but maybe I'll visit the TRICK HOUSE.$"
+	.string "but maybe I'll visit the Trick House.$"
 
 Route124_Text_GraceIntro: @ 82A0D0A
 	.string "I'm growing bored of swimming…\n"
@@ -3670,7 +3670,7 @@ Route124_Text_ChadDefeat: @ 82A0DFF
 
 Route124_Text_ChadPostBattle: @ 82A0E1E
 	.string "I have it on good authority that\n"
-	.string "there's a DIVE spot around here.\p"
+	.string "there's a Dive spot around here.\p"
 	.string "It gives me the urge to go deep\n"
 	.string "again…$"
 
@@ -4116,7 +4116,7 @@ Route127_Text_KojiDefeat: @ 82A2685
 
 Route127_Text_KojiPostBattle: @ 82A26AC
 	.string "Going barefoot feels great.\n"
-	.string "But your RUNNING SHOES are cool, too.$"
+	.string "But your Running Shoes are cool, too.$"
 
 Route127_Text_KojiRegister: @ 82A26EE
 	.string "This is what I do to people who beat me!\n"
@@ -4132,7 +4132,7 @@ Route127_Text_KojiRematchDefeat: @ 82A276B
 
 Route127_Text_KojiPostRematch: @ 82A278E
 	.string "Want to go barefoot for a while?\n"
-	.string "So I can try your RUNNING SHOES?$"
+	.string "So I can try your Running Shoes?$"
 
 Route127_Text_AthenaIntro: @ 82A27D0
 	.string "We should have a slow and methodical\n"

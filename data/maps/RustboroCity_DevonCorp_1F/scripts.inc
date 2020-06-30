@@ -89,7 +89,7 @@ RustboroCity_DevonCorp_1F_Text_StaffGotRobbed: @ 821138B
 	.string "got robbed of an important parcel.$"
 
 RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct: @ 82113D1
-	.string "Hey, those RUNNING SHOES!\n"
+	.string "Hey, those Running Shoes!\n"
 	.string "They're one of our products!\p"
 	.string "It makes me happy when I see someone\n"
 	.string "using something we made.$"
@@ -103,7 +103,7 @@ RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright: @ 8211446
 
 RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered: @ 82114DE
 	.string "It sounds like they've recovered\n"
-	.string "the ripped-off DEVON GOODS.$"
+	.string "the ripped-off Devon Goods.$"
 
 RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter: @ 821151B
 	.string "I'm sorry, only authorized people\n"

@@ -198,7 +198,7 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay:: @ 8212600
 	end
 
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor: @ 8212609
-	.string "I'm MR. STONE, the PRESIDENT of\n"
+	.string "I'm Mr. Stone, the PRESIDENT of\n"
 	.string "the Devon Corporation.\p"
 	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
@@ -210,10 +210,10 @@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor: @ 8212609
 	.string "Well, on the way, could you stop off in\n"
 	.string "Dewford Town?\p"
 	.string "I was hoping that you'd deliver a\n"
-	.string "LETTER to STEVEN in Dewford.$"
+	.string "LETTER to Steven in Dewford.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis: @ 821277C
-	.string "MR. STONE: Now, you should know that\n"
+	.string "Mr. Stone: Now, you should know that\n"
 	.string "I am a great PRESIDENT.\p"
 	.string "So, I'd never be so cheap as to ask\n"
 	.string "a favor for nothing in return.\p"
@@ -223,7 +223,7 @@ RustboroCity_DevonCorp_3F_Text_ReceivedPokenav: @ 8212820
 	.string "{PLAYER} received a PokéNav.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp: @ 8212837
-	.string "MR. STONE: That device…\p"
+	.string "Mr. Stone: That device…\p"
 	.string "It's a Pokémon NAVIGATOR, or PokéNav\n"
 	.string "for short.\p"
 	.string "It's an indispensable tool for any\n"
@@ -238,20 +238,20 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp: @ 8212837
 	.string "up before you go on your way.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare: @ 82129D2
-	.string "MR. STONE: Well, then, {PLAYER}{KUN},\n"
+	.string "Mr. Stone: Well, then, {PLAYER}{KUN},\n"
 	.string "go with caution and care!$"
 
 RustboroCity_DevonCorp_3F_Text_CountingOnYou: @ 8212A09
-	.string "MR. STONE: I'm counting on you!$"
+	.string "Mr. Stone: I'm counting on you!$"
 
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter: @ 8212A29
-	.string "MR. STONE: You delivered my LETTER?\n"
+	.string "Mr. Stone: You delivered my LETTER?\n"
 	.string "Thank you kindly!\p"
 	.string "This is my way of thanking you.\n"
 	.string "It should help you, a Trainer.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare: @ 8212A9E
-	.string "MR. STONE: A Pokémon holding that\n"
+	.string "Mr. Stone: A Pokémon holding that\n"
 	.string "EXP. SHARE will be given some of the\l"
 	.string "EXP Points from battle.\p"
 	.string "It will get EXP Points even if it didn't\n"
@@ -260,7 +260,7 @@ RustboroCity_DevonCorp_3F_Text_ExplainExpShare: @ 8212A9E
 	.string "for raising weak Pokémon.$"
 
 RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends: @ 8212B78
-	.string "MR. STONE: Since my youth, I've immersed\n"
+	.string "Mr. Stone: Since my youth, I've immersed\n"
 	.string "myself in work.\p"
 	.string "Consequently, I'm not familiar with\n"
 	.string "trends and that sort of thing.\p"

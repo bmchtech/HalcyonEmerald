@@ -538,7 +538,7 @@ MtChimney_EventScript_SawyerRematch:: @ 822F253
 	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano: @ 822F26A
-	.string "The power contained in the METEORITE…\p"
+	.string "The power contained in the Meteorite…\p"
 	.string "By amplifying its power with this\n"
 	.string "machine, Mt. Chimney's volcanic\l"
 	.string "activity will instantly intensify…\p"
@@ -547,11 +547,11 @@ MtChimney_Text_MeteoriteWillActivateVolcano: @ 822F26A
 	.string "Fufufu…$"
 
 MtChimney_Text_MaxieIntro: @ 822F32E
-	.string "MAXIE: Hm?\n"
+	.string "Maxie: Hm?\n"
 	.string "Who are you?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "I'd heard ARCHIE bemoaning a child\n"
+	.string "I'd heard Archie bemoaning a child\n"
 	.string "who's been meddling in Team Aqua's\l"
 	.string "affairs.\p"
 	.string "It must be you he meant.\p"
@@ -576,22 +576,22 @@ MtChimney_Text_MaxieIntro: @ 822F32E
 
 MtChimney_Text_MaxieDefeat: @ 822F5CF
 	.string "What?!\p"
-	.string "I, MAXIE, was caught off guard?!$"
+	.string "I, Maxie, was caught off guard?!$"
 
 MtChimney_Text_MaxieYouHaventSeenLastOfMagma: @ 822F5F7
-	.string "MAXIE: But, enough.\n"
+	.string "Maxie: But, enough.\n"
 	.string "I will back off this time.\p"
 	.string "But don't think that this is the last\n"
 	.string "you've seen of Team Magma.\p"
 	.string "Fufufu…\p"
-	.string "Even without the METEORITE, if we\n"
+	.string "Even without the Meteorite, if we\n"
 	.string "obtain that ORB… Fufufu…$"
 
 MtChimney_Text_TabithaIntro: @ 822F6AA
 	.string "Hehehe!\p"
 	.string "So you've come all the way here!\p"
 	.string "But you're too late!\n"
-	.string "I've already delivered the METEORITE\l"
+	.string "I've already delivered the Meteorite\l"
 	.string "from Meteor Falls to the Boss!$"
 
 MtChimney_Text_TabithaDefeat: @ 822F72C
@@ -600,8 +600,8 @@ MtChimney_Text_TabithaDefeat: @ 822F72C
 	.string "awakens that thing…$"
 
 MtChimney_Text_TabithaPostBattle: @ 822F76D
-	.string "BOSS, hurry!\n"
-	.string "Give it the METEORITE's energy!\p"
+	.string "Boss, hurry!\n"
+	.string "Give it the Meteorite's energy!\p"
 	.string "Hehehe…$"
 
 MtChimney_Text_Grunt2Intro: @ 822F7A2
@@ -662,24 +662,24 @@ MtChimney_Text_Bufoh: @ 822FACB
 	.string "Bufoh!$"
 
 MtChimney_Text_ArchieGoStopTeamMagma: @ 822FAD2
-	.string "ARCHIE: Grr, {PLAYER}!\n"
+	.string "Archie: Grr, {PLAYER}!\n"
 	.string "I should've guessed you'd show up!\p"
 	.string "See for yourself what the fanatics\n"
 	.string "of Team Magma are up to!\p"
 	.string "They're trying to inject the stolen\n"
-	.string "METEORITE's power into the volcano!\p"
+	.string "Meteorite's power into the volcano!\p"
 	.string "Doing something like that will cause\n"
 	.string "the volcano's eruption!$"
 
 MtChimney_Text_ArchieIHaveMyHandsFull: @ 822FBC7
-	.string "ARCHIE: Grrr…\p"
-	.string "I want to stop that MAXIE,\n"
+	.string "Archie: Grrr…\p"
+	.string "I want to stop that Maxie,\n"
 	.string "but I can't!\p"
 	.string "Not when I have my hands full battling\n"
 	.string "three opponents at once!$"
 
 MtChimney_Text_ArchieThankYou: @ 822FC3D
-	.string "ARCHIE: {PLAYER}!\n"
+	.string "Archie: {PLAYER}!\n"
 	.string "Thank you!\p"
 	.string "With your help, we thwarted TEAM\n"
 	.string "MAGMA's destructive plan!\p"
@@ -708,7 +708,7 @@ MtChimney_Text_Bushaa: @ 822FDFC
 	.string "Bushaa!$"
 
 MtChimney_Text_LavaCookiesJust200: @ 822FE04
-	.string "LAVA COOKIES are Mt. Chimney's local\n"
+	.string "Lava Cookies are Mt. Chimney's local\n"
 	.string "specialty.\p"
 	.string "Try one. It's just ¥200.$"
 
@@ -726,12 +726,12 @@ MtChimney_Text_MetoriteFittedOnMachine: @ 822FEAA
 	.string "A Meteorite is fitted on a mysterious\n"
 	.string "machine…\p"
 	.string "The machine seems to be storing\n"
-	.string "energy in the METEORITE.$"
+	.string "energy in the Meteorite.$"
 
 MtChimney_Text_RemoveTheMeteorite: @ 822FF12
 	.string "A Meteorite is fitted on a mysterious\n"
 	.string "machine…\p"
-	.string "Do you want to remove the METEORITE?$"
+	.string "Do you want to remove the Meteorite?$"
 
 MtChimney_Text_PlayerRemovedMeteorite: @ 822FF66
 	.string "{PLAYER} removed the Meteorite from\n"
@@ -760,7 +760,7 @@ MtChimney_Text_ShelbyDefeat: @ 8230076
 
 MtChimney_Text_ShelbyPostBattle: @ 82300A2
 	.string "Well, well, I've lost. I can't call\n"
-	.string "myself an EXPERT now, can I?$"
+	.string "myself an Expert now, can I?$"
 
 MtChimney_Text_ShelbyRegister: @ 82300E3
 	.string "Thank you, child. It was fun, as if\n"
@@ -805,7 +805,7 @@ MtChimney_Text_SheilaPostBattle: @ 823033A
 	.string "Mt. Chimney. It would be a shame if\l"
 	.string "I only do a little sightseeing…\p"
 	.string "I want to get in some battles and buy\n"
-	.string "COOKIES as souvenirs.$"
+	.string "Cookies as souvenirs.$"
 
 MtChimney_Text_ShirleyIntro: @ 82303DF
 	.string "Since I bathed in the hot springs,\n"
@@ -829,8 +829,8 @@ MtChimney_Text_SawyerDefeat: @ 82304F7
 	.string "Oh, you're a real firebrand, too!$"
 
 MtChimney_Text_SawyerPostBattle: @ 8230519
-	.string "I think I need a dip in LAVARIDGE\n"
-	.string "HOT SPRING with the locals!$"
+	.string "I think I need a dip in Lavaridge\n"
+	.string "Hot Spring with the locals!$"
 
 MtChimney_Text_SawyerRegister: @ 8230557
 	.string "I like little fireballs like you.\n"

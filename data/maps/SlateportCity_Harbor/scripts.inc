@@ -444,10 +444,10 @@ SlateportCity_Harbor_Text_AbnormalWeather: @ 820D08E
 	.string "For a ship to sail safely, we need to\n"
 	.string "know about the weather!\p"
 	.string "Speaking of weather, I heard something\n"
-	.string "from a guy at the WEATHER INSTITUTE.\p"
+	.string "from a guy at the Weather Institute.\p"
 	.string "He was saying abnormal weather has\n"
 	.string "been reported all over the place!\p"
-	.string "You should visit the WEATHER INSTITUTE\n"
+	.string "You should visit the Weather Institute\n"
 	.string "and ask around!$"
 
 SlateportCity_Harbor_Text_SubTooSmallForMe: @ 820D194
@@ -460,10 +460,10 @@ SlateportCity_Harbor_Text_SubTooSmallForMe: @ 820D194
 SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum: @ 820D232
 	.string "Capt. Stern: Those thugs…\p"
 	.string "They're the same lot who tried to rob\n"
-	.string "the DEVON GOODS at the Museum.$"
+	.string "the Devon Goods at the Museum.$"
 
 SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove: @ 820D291
-	.string "ARCHIE: Oh?\n"
+	.string "Archie: Oh?\n"
 	.string "Not you again…\p"
 	.string "You are tenacious to track us here,\n"
 	.string "that much I will give you.\p"
@@ -491,7 +491,7 @@ SlateportCity_Harbor_Text_TeamAquaLeftNeedDive: @ 820D42B
 	.string "Trying to catch a submarine…\n"
 	.string "It's impossible for most people.\p"
 	.string "You would need a Pokémon that knows\n"
-	.string "how to DIVE…\p"
+	.string "how to Dive…\p"
 	.string "Perhaps if you went out to\n"
 	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"
@@ -501,7 +501,7 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub: @ 820D58A
 	.string "Capt. Stern: Trying to catch a\n"
 	.string "submarine… It's impossible.\p"
 	.string "You would need a Pokémon that knows\n"
-	.string "how to DIVE…\p"
+	.string "how to Dive…\p"
 	.string "Perhaps if you went out to\n"
 	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"

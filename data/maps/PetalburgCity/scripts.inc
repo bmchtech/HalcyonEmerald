@@ -715,8 +715,8 @@ PetalburgCity_EventScript_Boy2:: @ 81DC82E
 	end
 
 PetalburgCity_Text_WhereIsWally: @ 81DC837
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
+	.string "Where has our Wally gone?\p"
+	.string "We have to leave for Verdanturf Town\n"
 	.string "very soon…$"
 
 PetalburgCity_Text_AreYouRookieTrainer: @ 81DC881
@@ -744,12 +744,12 @@ PetalburgCity_Text_WaterReflection: @ 81DC985
 PetalburgCity_Text_FullPartyExplanation: @ 81DCA30
 	.string "Let's say you have six Pokémon.\n"
 	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "It is automatically sent to a Storage\n"
+	.string "Box over a PC connection.$"
 
 PetalburgCity_Text_GymSign: @ 81DCAAA
 	.string "Petalburg City Pokémon Gym\n"
-	.string "Leader: NORMAN\l"
+	.string "Leader: Norman\l"
 	.string "“A man in pursuit of power!”$"
 
 PetalburgCity_Text_CitySign: @ 81DCAF1
@@ -757,7 +757,7 @@ PetalburgCity_Text_CitySign: @ 81DCAF1
 	.string "“Where people mingle with nature.”$"
 
 PetalburgCity_Text_WallyHouseSign: @ 81DCB23
-	.string "WALLY'S HOUSE$"
+	.string "Wally'S House$"
 
 PetalburgCity_Text_AreYouATrainer: @ 81DCB31
 	.string "Excuse me!\p"

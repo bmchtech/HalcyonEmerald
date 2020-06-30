@@ -977,7 +977,7 @@ BattleFrontier_BattleTowerLobby_Text_DidntSaveBeforeQuitting: @ 823F583
 
 BattleFrontier_BattleTowerLobby_Text_CongratsBeatenSeven: @ 823F60D
 	.string "Congratulations!\n"
-	.string "You've beaten all seven TRAINERS!\p"
+	.string "You've beaten all seven Trainers!\p"
 	.string "$"
 
 @ Unused
@@ -1077,7 +1077,7 @@ BattleFrontier_BattleTowerLobby_Text_CanLeaveUntilLossOrSevenWins: @ 823FB26
 @ Unused
 BattleFrontier_BattleTowerLobby_Text_DoubleBattleRoomConstruction: @ 823FBCE
 	.string "Welcome to the Battle Tower\n"
-	.string "DOUBLE BATTLE CORNER!\p"
+	.string "Double Battle CORNER!\p"
 	.string "Unfortunately, the BATTLE ROOMS\n"
 	.string "are still under construction.\p"
 	.string "Please come back when the work\n"
@@ -1242,12 +1242,12 @@ BattleFrontier_BattleTowerLobby_Text_TakeDoublesChallenge: @ 824085E
 	.string "BATTLE ROOM challenge?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainDoublesChallenge: @ 8240897
-	.string "The Battle Tower's DOUBLE BATTLE\n"
+	.string "The Battle Tower's Double Battle\n"
 	.string "ROOMS are facilities for conducting\l"
-	.string "DOUBLE BATTLES with four Pokémon.\p"
-	.string "There are many DOUBLE BATTLE ROOMS\n"
+	.string "Double Battles with four Pokémon.\p"
+	.string "There are many Double Battle ROOMS\n"
 	.string "in the Battle Tower for team battles.\p"
-	.string "In each of the DOUBLE BATTLE ROOMS,\n"
+	.string "In each of the Double Battle ROOMS,\n"
 	.string "seven Trainers await your challenge.\p"
 	.string "If you manage to defeat all seven,\n"
 	.string "you will earn Battle Points.\p"
@@ -1384,7 +1384,7 @@ BattleFrontier_BattleTowerLobby_Text_SaveGameBeforeShowingIn: @ 824144D
 BattleFrontier_BattleTowerLobby_Text_CongratsDefeatedMaiden: @ 8241486
 	.string "Congratulations!\n"
 	.string "You have defeated the SALON MAIDEN\l"
-	.string "and swept seven TRAINERS!$"
+	.string "and swept seven Trainers!$"
 
 BattleFrontier_BattleTowerLobby_Text_AwardYouTheseBattlePoints: @ 82414D4
 	.string "In recognition of your infinite talent,\n"
@@ -1402,7 +1402,7 @@ BattleFrontier_BattleTowerLobby_Text_ReadWhichHeading: @ 8241563
 BattleFrontier_BattleTowerLobby_Text_ExplainTowerRules: @ 8241586
 	.string "The Battle Tower is a facility where\n"
 	.string "four types of battles are waged--\l"
-	.string "SINGLE BATTLE, DOUBLE BATTLE, MULTI\l"
+	.string "SINGLE BATTLE, Double Battle, MULTI\l"
 	.string "BATTLE, and LINK MULTI BATTLE.\p"
 	.string "For each of these types, there are\n"
 	.string "separate BATTLE ROOMS.\p"
@@ -1415,7 +1415,7 @@ BattleFrontier_BattleTowerLobby_Text_ExplainMonRules: @ 8241693
 	.string "a certain number of Pokémon.\p"
 	.string "The SINGLE BATTLE mode requires\n"
 	.string "three Pokémon.\p"
-	.string "The DOUBLE BATTLE mode requires four,\n"
+	.string "The Double Battle mode requires four,\n"
 	.string "and the MULTI modes both require two.$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainSalonRules: @ 8241777

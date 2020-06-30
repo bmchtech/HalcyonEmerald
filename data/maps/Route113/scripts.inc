@@ -159,12 +159,12 @@ Route113_Text_RouteSignFallarbor: @ 81F2456
 
 Route113_Text_TrainerTipsRegisterKeyItems: @ 81F2471
 	.string "Trainer Tips\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your Bag as SELECT.\p"
-	.string "Simply press SELECT to use\n"
+	.string "You may register one of the Key Items\n"
+	.string "in your Bag as Select.\p"
+	.string "Simply press Select to use\n"
 	.string "the registered item conveniently.$"
 
 Route113_Text_GlassWorkshopSign: @ 81F24F8
-	.string "GLASS WORKSHOP\n"
+	.string "Glass Workshop\n"
 	.string "“Turning Volcanic Ash into Glass Items”$"
 

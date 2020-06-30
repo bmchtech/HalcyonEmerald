@@ -325,17 +325,17 @@ PetalburgWoods_Text_NotAOneToBeFound: @ 822E332
 
 PetalburgWoods_Text_HaveYouSeenShroomish: @ 822E34F
 	.string "Hello, have you seen any Pokémon\n"
-	.string "called SHROOMISH around here?\p"
+	.string "called Shroomish around here?\p"
 	.string "I really love that Pokémon.$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou: @ 822E3AA
 	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in Petalburg WOODS\l"
+	.string "had to dawdle in Petalburg Woods\l"
 	.string "forever, didn't you?\p"
 	.string "I got sick of waiting, so here I am!$"
 
 PetalburgWoods_Text_HandOverThosePapers: @ 822E428
-	.string "You! DEVON RESEARCHER!\p"
+	.string "You! Devon Researcher!\p"
 	.string "Hand over those papers!$"
 
 PetalburgWoods_Text_YouHaveToHelpMe: @ 822E457
@@ -392,7 +392,7 @@ PetalburgWoods_Text_YoureLoadedWithItems: @ 822E741
 PetalburgWoods_Text_GoBugPokemonTeam: @ 822E77D
 	.string "I caught a whole bunch of Pokémon!\p"
 	.string "Go, go, go!\n"
-	.string "My BUG Pokémon team!$"
+	.string "My Bug Pokémon team!$"
 
 PetalburgWoods_Text_ICouldntWin: @ 822E7C1
 	.string "I have all these Pokémon,\n"
@@ -403,7 +403,7 @@ PetalburgWoods_Text_ImOutOfPokeBalls: @ 822E7EF
 	.string "Now I'm out of Poké Balls.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon: @ 822E827
-	.string "If you take BUG Pokémon to school,\n"
+	.string "If you take Bug Pokémon to school,\n"
 	.string "you get to be instantly popular!$"
 
 PetalburgWoods_Text_CantBePopularIfILose: @ 822E86B
@@ -450,15 +450,15 @@ PetalburgWoods_Text_HiddenItemsExplanation: @ 822EA8B
 
 PetalburgWoods_Text_TryUsingThisItem: @ 822EAFE
 	.string "Oh, neat!\n"
-	.string "That's the BADGE from Rustboro Gym!\p"
+	.string "That's the Badge from Rustboro Gym!\p"
 	.string "You must be a Trainer.\n"
 	.string "You should try using this item.$"
 
 PetalburgWoods_Text_MiracleSeedExplanation: @ 822EB63
-	.string "It's a MIRACLE SEED.\n"
+	.string "It's a Miracle Seed.\n"
 	.string "If a Pokémon holds that item, its\l"
-	.string "GRASS-type moves become stronger.\p"
-	.string "Besides MIRACLE SEED, I think there are\n"
+	.string "Grass-type moves become stronger.\p"
+	.string "Besides Miracle Seed, I think there are\n"
 	.string "other convenient items for Pokémon\l"
 	.string "to hold.$"
 

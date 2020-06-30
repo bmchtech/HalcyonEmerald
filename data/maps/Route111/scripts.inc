@@ -657,44 +657,44 @@ Route111_Text_ToughToKeepWinningUpTheRanks: @ 81F17BA
 	.string "any Gym Leader.$"
 
 Route111_Text_WinstrateFamilyDestroyedMe: @ 81F186E
-	.string "I challenged the WINSTRATE family,\n"
+	.string "I challenged the Winstrate family,\n"
 	.string "but four matches in a row is tough\l"
 	.string "going… They destroyed me.$"
 
 Route111_Text_RouteSignMauville: @ 81F18CE
-	.string "ROUTE 111\n"
+	.string "Route 111\n"
 	.string "{DOWN_ARROW} Mauville City$"
 
 Route111_Text_WinstrateHouseSign: @ 81F18E8
 	.string "“Our family's hearts beat as one!”\n"
-	.string "THE WINSTRATE'S HOUSE$"
+	.string "The Winstrate's House$"
 
 Route111_Text_RouteSign112: @ 81F1921
-	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 112$"
+	.string "Route 111\n"
+	.string "{LEFT_ARROW} Route 112$"
 
 Route111_Text_RouteSign113: @ 81F1937
-	.string "ROUTE 111\n"
-	.string "{LEFT_ARROW} ROUTE 113$"
+	.string "Route 111\n"
+	.string "{LEFT_ARROW} Route 113$"
 
 Route111_Text_OldLadysRestStopSign: @ 81F194D
-	.string "OLD LADY'S REST STOP\n"
+	.string "Old Lady's Rest Stop\n"
 	.string "“Come in and rest your tired bones.”$"
 
 Route111_Text_TrainerTipsSpAtkSpDef: @ 81F1987
 	.string "Trainer Tips\p"
 	.string "One of the indicators of a Pokémon's\n"
 	.string "powerfulness is Sp. Atk. It stands for\l"
-	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, Sp. Def stands for “SPECIAL\n"
-	.string "DEFENSE.”$"
+	.string "“Special Attack.”\p"
+	.string "Likewise, Sp. Def stands for “Special\n"
+	.string "Defense.”$"
 
 Route111_Text_ShouldBeMirageTowerAroundHere: @ 81F1A22
 	.string "There should be a tower made of sand\n"
 	.string "around here somewhere.\p"
 	.string "But for some reason, it can be seen\n"
 	.string "sometimes, and sometimes not.\p"
-	.string "That's why I call it the MIRAGE TOWER.$"
+	.string "That's why I call it the Mirage Tower.$"
 
 Route111_Text_MirageTowerClearlyVisible: @ 81F1AC7
 	.string "I see it!\n"
@@ -718,7 +718,7 @@ Route111_Text_MirageTowerHasntBeenSeenSince: @ 81F1C12
 	.string "Since I spoke to you, the tower of sand\n"
 	.string "hasn't been seen.\p"
 	.string "Perhaps it really was\n"
-	.string "the MIRAGE TOWER…$"
+	.string "the Mirage Tower…$"
 
 Route111_Text_ClawFossilDisappeared: @ 81F1C74
 	.string "The Claw Fossil disappeared into\n"
@@ -730,14 +730,14 @@ Route111_Text_RootFossilDisappeared: @ 81F1C9F
 
 Route111_Text_MauvilleUncleToldMeToTakeRockSmash: @ 81F1CCA
 	.string "Oh, no!\p"
-	.string "My uncle in MAUVILLE told me to take\n"
+	.string "My uncle in Mauville told me to take\n"
 	.string "Rock Smash with me if I was going to\l"
-	.string "ROUTE 111!\p"
+	.string "Route 111!\p"
 	.string "My uncle? He lives across from\n"
-	.string "the bike shop in MAUVILLE.$"
+	.string "the bike shop in Mauville.$"
 
 Route111_Text_TrainerHillSign: @ 81F1D61
-	.string "{RIGHT_ARROW} Trainer HILL ENTRANCE\p"
+	.string "{RIGHT_ARROW} Trainer Hill Entrance\p"
 	.string "“Scale the heights, you hot-blooded\n"
-	.string "TRAINERS!”$"
+	.string "Trainers!”$"
 

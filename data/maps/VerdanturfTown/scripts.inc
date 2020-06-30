@@ -106,7 +106,7 @@ VerdanturfTown_Text_EasyToGetToRustboroNow: @ 81EB935
 	.string "new DEVON products in Rustboro now.$"
 
 VerdanturfTown_Text_TownSign: @ 81EB9C4
-	.string "VERDANTURF TOWN\p"
+	.string "Verdanturf Town\p"
 	.string "“The windswept highlands with the\n"
 	.string "sweet fragrance of grass.”$"
 
@@ -114,11 +114,11 @@ VerdanturfTown_Text_WandasHouse: @ 81EBA11
 	.string "WANDA'S HOUSE$"
 
 VerdanturfTown_Text_BattleTentSign: @ 81EBA1F
-	.string "Battle Tent VERDANTURF SITE\n"
+	.string "Battle Tent Verdanturf SITE\n"
 	.string "“Feast Your Eyes on Battles!”$"
 
 VerdanturfTown_Text_RusturfTunnelSign: @ 81EBA59
-	.string "RUSTURF TUNNEL\n"
+	.string "Rusturf Tunnel\n"
 	.string "“Linking Rustboro and VERDANTURF\p"
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"

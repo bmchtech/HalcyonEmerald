@@ -434,7 +434,7 @@ RusturfTunnel_Text_ComeAndGetSome: @ 822D1C8
 	.string "Come and get some, then!$"
 
 RusturfTunnel_Text_Peeko: @ 822D1F7
-	.string "PEEKO: Pii pihyoh!$"
+	.string "Peeko: Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro: @ 822D20A
 	.string "Grah, keelhaul it all!\p"
@@ -463,7 +463,7 @@ RusturfTunnel_Text_PeekoGladToSeeYouSafe: @ 822D395
 	.string "Am I glad to see you're safe!$"
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko: @ 822D3BA
-	.string "PEEKO owes her life to you!\p"
+	.string "Peeko owes her life to you!\p"
 	.string "They call me Mr. Briney.\n"
 	.string "And, you are?\p"
 	.string "… … … … … … … …\n"
@@ -473,10 +473,10 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko: @ 822D3BA
 	.string "Now, if there's anything that troubles\n"
 	.string "you, don't hesitate to tell me!\p"
 	.string "You can usually find me in my cottage\n"
-	.string "by the sea near Petalburg WOODS.\p"
+	.string "by the sea near Petalburg Woods.\p"
 	.string "Come, Peeko, we should make our way\n"
 	.string "home.\p"
-	.string "PEEKO: Pihyoh!$"
+	.string "Peeko: Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 	.string "… …\p"
@@ -484,7 +484,7 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 	.string "Is the bedrock too hard?\p"
 	.string "My beloved awaits me in VERDANTURF\n"
 	.string "TOWN just beyond here…\p"
-	.string "If Rustboro and VERDANTURF were\n"
+	.string "If Rustboro and Verdanturf were\n"
 	.string "joined by this tunnel, I could visit\l"
 	.string "her every day…\p"
 	.string "But this…\n"
@@ -493,7 +493,7 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 RusturfTunnel_Text_ToGetToVerdanturf: @ 822D5F3
 	.string "To get from Rustboro to VERDANTURF,\n"
 	.string "you need to go to Dewford, then pass\l"
-	.string "through Slateport and MAUVILLE…$"
+	.string "through Slateport and Mauville…$"
 
 RusturfTunnel_Text_YouShatteredBoulderTakeHM: @ 822D65C
 	.string "Wow! You shattered that boulder\n"

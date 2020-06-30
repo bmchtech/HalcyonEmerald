@@ -33,7 +33,7 @@ MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst: @ 823B1E1
 	.string "just a rock maniac?\p"
 	.string "No, that can't be right.\p"
 	.string "We battled alongside each other at\n"
-	.string "the Sootopolis SPACE CENTER.\p"
+	.string "the Sootopolis Space Center.\p"
 	.string "You should have a very good idea\n"
 	.string "about how good I am.\p"
 	.string "Okay, {PLAYER}{KUN}, if you're going to mount\n"
@@ -45,8 +45,8 @@ MeteorFalls_StevensCave_Text_StevenDefeat: @ 823B32D
 
 MeteorFalls_StevensCave_Text_MyPredictionCameTrue: @ 823B358
 	.string "Steven: Come to think of it, ever since\n"
-	.string "our paths first crossed in GRANITE\l"
-	.string "CAVE in Dewford, I had this feeling.\p"
+	.string "our paths first crossed in Granite\l"
+	.string "Cave in Dewford, I had this feeling.\p"
 	.string "I thought that you would eventually\n"
 	.string "become the Champion.\p"
 	.string "My predictions usually come true.\p"

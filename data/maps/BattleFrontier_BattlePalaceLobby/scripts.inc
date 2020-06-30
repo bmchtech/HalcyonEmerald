@@ -567,13 +567,13 @@ BattleFrontier_BattlePalaceLobby_Text_WelcomeForDoubleBattle: @ 824EB06
 
 BattleFrontier_BattlePalaceLobby_Text_TakeDoubleBattleChallenge: @ 824EB8C
 	.string "Do you wish to take\n"
-	.string "the DOUBLE BATTLE HALL challenge?$"
+	.string "the Double Battle HALL challenge?$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainDoubleBattleChallenge: @ 824EBC2
 	.string "In the BATTLE PALACE, there are\n"
-	.string "several auditoriums for DOUBLE BATTLES\l"
-	.string "that are named DOUBLE BATTLE HALLS.\p"
-	.string "The DOUBLE BATTLES are conducted in\n"
+	.string "several auditoriums for Double Battles\l"
+	.string "that are named Double Battle HALLS.\p"
+	.string "The Double Battles are conducted in\n"
 	.string "the usual way, except with one crucial\l"
 	.string "rule that must be obeyed.\p"
 	.string "Trainers are permitted only to switch\n"

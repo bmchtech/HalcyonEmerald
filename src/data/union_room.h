@@ -455,7 +455,7 @@ ALIGNED(4) const u8 sText_EggTrade[] = _("EGG TRADE");
 ALIGNED(4) const u8 sText_ChooseJoinCancel[] = _("{DPAD_UPDOWN}CHOOSE  {A_BUTTON}JOIN  {B_BUTTON}CANCEL");
 ALIGNED(4) const u8 sText_ChooseTrainer[] = _("Please choose a Trainer.");
 ALIGNED(4) const u8 sText_ChooseTrainerSingleBattle[] = _("Please choose a Trainer for\na SINGLE BATTLE.");
-ALIGNED(4) const u8 sText_ChooseTrainerDoubleBattle[] = _("Please choose a Trainer for\na DOUBLE BATTLE.");
+ALIGNED(4) const u8 sText_ChooseTrainerDoubleBattle[] = _("Please choose a Trainer for\na Double Battle.");
 ALIGNED(4) const u8 sText_ChooseLeaderMultiBattle[] = _("Please choose the Leader\nfor a MULTI BATTLE.");
 ALIGNED(4) const u8 sText_ChooseTrainerToTradeWith[] = _("Please choose the Trainer to\ntrade with.");
 ALIGNED(4) const u8 sText_ChooseTrainerToShareWonderCards[] = _("Please choose the Trainer who is\nsharing WONDER CARDS.");
@@ -500,7 +500,7 @@ static const u8 *const sChooseTrainerTexts[NUM_LINK_GROUP_TYPES] =
 };
 
 ALIGNED(4) const u8 sText_SearchingForWirelessSystemWait[] = _("Searching for a WIRELESS\nCOMMUNICATION SYSTEM. Wait...");
-ALIGNED(4) const u8 sText_MustHaveTwoMonsForDoubleBattle[] = _("For a DOUBLE BATTLE, you must have\nat least two Pokémon.\p"); // Unused
+ALIGNED(4) const u8 sText_MustHaveTwoMonsForDoubleBattle[] = _("For a Double Battle, you must have\nat least two Pokémon.\p"); // Unused
 ALIGNED(4) const u8 sText_AwaitingPlayersResponse[] = _("Awaiting {STR_VAR_1}'s response…");
 ALIGNED(4) const u8 sText_PlayerHasBeenAskedToRegisterYouPleaseWait[] = _("{STR_VAR_1} has been asked to register\nyou as a member. Please wait.");
 ALIGNED(4) const u8 sText_AwaitingResponseFromWirelessSystem[] = _("Awaiting a response from the\nWIRELESS COMMUNICATION SYSTEM.");
@@ -521,7 +521,7 @@ ALIGNED(4) const u8 sText_Exit2[] = _("EXIT");
 ALIGNED(4) const u8 sText_Info[] = _("INFO");
 ALIGNED(4) const u8 sText_NameWantedOfferLv[] = _("NAME{CLEAR_TO 0x3C}WANTED{CLEAR_TO 0x6E}OFFER{CLEAR_TO 0xC6}LV.");
 ALIGNED(4) const u8 sText_SingleBattle[] = _("SINGLE BATTLE");
-ALIGNED(4) const u8 sText_DoubleBattle[] = _("DOUBLE BATTLE");
+ALIGNED(4) const u8 sText_DoubleBattle[] = _("Double Battle");
 ALIGNED(4) const u8 sText_MultiBattle[] = _("MULTI BATTLE");
 ALIGNED(4) const u8 sText_PokemonTrades[] = _("Pokémon TRADES");
 ALIGNED(4) const u8 sText_Chat[] = _("CHAT");

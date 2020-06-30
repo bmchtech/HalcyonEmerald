@@ -567,23 +567,23 @@ BattleFrontier_BattleDomeLobby_Text_WelcomeDoubleBattle: @ 824A664
 	.string "Where the strategies of Trainers\n"
 	.string "are put to the test!\p"
 	.string "Welcome to the BATTLE DOME!\p"
-	.string "I am your guide to the DOUBLE BATTLE\n"
+	.string "I am your guide to the Double Battle\n"
 	.string "Tournament.$"
 
 BattleFrontier_BattleDomeLobby_Text_TakeDoublesChallenge: @ 824A6E7
 	.string "Would you like to challenge\n"
-	.string "the DOUBLE BATTLE Tournament?$"
+	.string "the Double Battle Tournament?$"
 
 BattleFrontier_BattleDomeLobby_Text_ExplainDoublesChallenge: @ 824A721
-	.string "The DOUBLE BATTLE Tournament\n"
+	.string "The Double Battle Tournament\n"
 	.string "is exactly as the name suggests--\l"
-	.string "a tournament of DOUBLE BATTLES.\p"
+	.string "a tournament of Double Battles.\p"
 	.string "All participating Trainers must\n"
 	.string "enter three Pokémon each.\p"
 	.string "In each battle, one of the three\n"
 	.string "Pokémon must be held in reserve.\p"
 	.string "The remaining two Pokémon must take\n"
-	.string "part in a DOUBLE BATTLE.\p"
+	.string "part in a Double Battle.\p"
 	.string "Choose the two battling Pokémon after\n"
 	.string "examining the opponent's trio.\p"
 	.string "You win the tournament by defeating\n"
@@ -601,7 +601,7 @@ BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsSinglesLv50: @ 824A966
 
 BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsDoublesLv50: @ 824A9A9
 	.string "They're the results of the last\n"
-	.string "Level 50 DOUBLE BATTLE Tournament.$"
+	.string "Level 50 Double Battle Tournament.$"
 
 BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsSinglesLvOpen: @ 824A9EC
 	.string "They're the results of the last\n"
@@ -609,7 +609,7 @@ BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsSinglesLvOpen: @ 824A9EC
 
 BattleFrontier_BattleDomeLobby_Text_PrevTourneyResultsDoublesLvOpen: @ 824AA31
 	.string "They're the results of the last\n"
-	.string "Open Level DOUBLE BATTLE Tournament.$"
+	.string "Open Level Double Battle Tournament.$"
 
 BattleFrontier_BattleDomeLobby_Text_LastWinnerWasTough: @ 824AA76
 	.string "Did you see it?\n"

@@ -280,7 +280,7 @@ SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts: @ 820BD8D
 	.string "Yes? If you're looking for STERN,\n"
 	.string "that would be me.\p"
 	.string "Ah! Those must be the parts I ordered\n"
-	.string "from MR. STONE of DEVON.\p"
+	.string "from Mr. Stone of DEVON.\p"
 	.string "Thank you! That's great!\n"
 	.string "We can prepare for our expedition now.$"
 

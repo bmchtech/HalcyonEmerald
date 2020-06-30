@@ -371,11 +371,11 @@ Route116_EventScript_Johnson:: @ 81F3086
 
 Route116_Text_ScoundrelMadeOffWithPeeko: @ 81F309D
 	.string "Ohhh, what am I to do?\p"
-	.string "We were on our walk, PEEKO and I, when\n"
+	.string "We were on our walk, Peeko and I, when\n"
 	.string "we were jumped by an odd thug…\p"
 	.string "The scoundrel made off with my\n"
-	.string "darling PEEKO!\p"
-	.string "Wrrrooooooaaaar! PEEKO!$"
+	.string "darling Peeko!\p"
+	.string "Wrrrooooooaaaar! Peeko!$"
 
 Route116_Text_WantToDigTunnel: @ 81F3140
 	.string "Nnn… Roar!\p"
@@ -403,7 +403,7 @@ Route116_Text_GoonHightailedItOutOfTunnel: @ 81F32C1
 Route116_Text_ThankYouTokenOfAppreciation: @ 81F3317
 	.string "Oh! It's you!\p"
 	.string "You're that person who not only helped\n"
-	.string "me in Petalburg WOODS, but also got\l"
+	.string "me in Petalburg Woods, but also got\l"
 	.string "back my stolen package and then even\l"
 	.string "graciously delivered it to Slateport!\p"
 	.string "Capt. Stern informed us that the\n"
@@ -445,7 +445,7 @@ Route116_Text_MayISeeThoseGlasses: @ 81F3688
 
 Route116_Text_NotWhatImLookingForMaybeTheyArentHere: @ 81F36B4
 	.string "Hmm…\n"
-	.string "These are BLACKGLASSES.\l"
+	.string "These are BlackGlasses.\l"
 	.string "They're not what I'm looking for…\p"
 	.string "Maybe my glasses aren't around\n"
 	.string "here…$"
@@ -457,7 +457,7 @@ Route116_Text_CantFindGlassesNotHere: @ 81F3718
 
 Route116_Text_NotWhatImLookingFor: @ 81F375E
 	.string "Hmm…\n"
-	.string "These are BLACKGLASSES.\l"
+	.string "These are BlackGlasses.\l"
 	.string "They're not what I'm looking for…$"
 
 Route116_Text_RouteSignRustboro: @ 81F379D
@@ -465,13 +465,13 @@ Route116_Text_RouteSignRustboro: @ 81F379D
 	.string "{LEFT_ARROW} Rustboro City$"
 
 Route116_Text_RusturfTunnelSign: @ 81F37B7
-	.string "RUSTURF TUNNEL\n"
-	.string "“Linking Rustboro and VERDANTURF\p"
+	.string "Rusturf Tunnel\n"
+	.string "“Linking Rustboro and Verdanturf\p"
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"
 
 Route116_Text_TunnelersRestHouse: @ 81F380F
-	.string "TUNNELER'S REST HOUSE$"
+	.string "Tunneler's Rest House$"
 
 Route116_Text_TrainerTipsBToStopEvolution: @ 81F3825
 	.string "Trainer Tips\p"
@@ -483,9 +483,9 @@ Route116_Text_TrainerTipsBToStopEvolution: @ 81F3825
 
 Route116_Text_TrainerTipsBagHasPockets: @ 81F38D4
 	.string "Trainer Tips\p"
-	.string "Your Bag has several POCKETS.\p"
+	.string "Your Bag has several Pockets.\p"
 	.string "Items you obtain are automatically\n"
-	.string "placed in the appropriate POCKETS.\p"
+	.string "placed in the appropriate Pockets.\p"
 	.string "No Trainer can afford to be without\n"
 	.string "a Bag of their own.$"
 

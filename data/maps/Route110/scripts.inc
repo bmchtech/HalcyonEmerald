@@ -809,7 +809,7 @@ Route110_Text_MayTakeThis: @ 81EFCF1
 	.string "This is from me!$"
 
 Route110_Text_MayExplainItemfinder: @ 81EFD58
-	.string "May: That's an ITEMFINDER.\p"
+	.string "May: That's an Itemfinder.\p"
 	.string "Try it out. If there is an item that's\n"
 	.string "not visible, it emits a sound.\p"
 	.string "Okay, {PLAYER}{KUN}, let's meet again!\p"
@@ -835,7 +835,7 @@ Route110_Text_BrendanTakeThis: @ 81EFECD
 	.string "Here, take this.$"
 
 Route110_Text_BrendanExplainItemfinder: @ 81EFF1C
-	.string "Brendan: That's an ITEMFINDER.\p"
+	.string "Brendan: That's an Itemfinder.\p"
 	.string "Use it to root around for items that\n"
 	.string "aren't visible.\p"
 	.string "If it senses something, it emits\n"
@@ -845,7 +845,7 @@ Route110_Text_BrendanExplainItemfinder: @ 81EFF1C
 
 Route110_Text_RideBikeAtFullSpeed: @ 81EFFC3
 	.string "Wouldn't it be great to ride a Bike\n"
-	.string "at full speed on CYCLING ROAD?$"
+	.string "at full speed on Cycling Road?$"
 
 Route110_Text_HairStreamsBehindMe: @ 81F0006
 	.string "How do you like the way my raven-\n"
@@ -853,18 +853,22 @@ Route110_Text_HairStreamsBehindMe: @ 81F0006
 	.string "I grew my hair out just for that.$"
 
 Route110_Text_YouGotBikeFromRydel: @ 81F006A
-	.string "Oh, hey, you got that Bike from RYDEL!\p"
+	.string "Oh, hey, you got that Bike from Rydel!\p"
 	.string "Oh, it's glaringly obvious.\n"
 	.string "It says right on your bike…\p"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\p"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\p"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\p"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\p"
-	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL…\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\n"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel,\p"
+	.string "Rydel, Rydel, Rydel, Rydel, Rydel…\n"
 	.string "That name's everywhere.\p"
 	.string "You should ride it around all over\n"
 	.string "the place--it's good advertising!$"
@@ -886,8 +890,8 @@ Route110_Text_BikeTechniques: @ 81F030E
 
 Route110_Text_WhichShouldIChoose: @ 81F0390
 	.string "Which should I choose?\p"
-	.string "Make a beeline for MAUVILLE on\n"
-	.string "CYCLING ROAD, or take the low road\l"
+	.string "Make a beeline for Mauville on\n"
+	.string "Cycling Road, or take the low road\l"
 	.string "and look for Pokémon?$"
 
 Route110_Text_CyclingChallengeResultSummary: @ 81F03FF
@@ -932,12 +936,12 @@ Route110_Text_ChallengeReactionWorst: @ 81F05CE
 	.string "You're perhaps not cut out for this\n"
 	.string "unfortunate cycling business.\p"
 	.string "You ought to give serious thought to\n"
-	.string "returning that Bike to RYDEL.$"
+	.string "returning that Bike to Rydel.$"
 
 Route110_Text_RatedForNumberOfCollisions: @ 81F0661
-	.string "This is CYCLING ROAD.\p"
-	.string "If you were to ride from MAUVILLE to\n"
-	.string "Slateport on a MACH Bike, you would\l"
+	.string "This is Cycling Road.\p"
+	.string "If you were to ride from Mauville to\n"
+	.string "Slateport on a Mach Bike, you would\l"
 	.string "be rated for the number of collisions\l"
 	.string "and your total time.$"
 
@@ -947,18 +951,18 @@ Route110_Text_AlwaysAimHigher: @ 81F06FB
 	.string "Always aim higher!$"
 
 Route110_Text_AcroBikesDoNotQualify: @ 81F0755
-	.string "On this CYCLING ROAD, those riding\n"
-	.string "MACH Bikes are rated for their number\l"
+	.string "On this Cycling Road, those riding\n"
+	.string "Mach Bikes are rated for their number\l"
 	.string "of collisions and their total times.\p"
-	.string "ACRO Bikes do not qualify for rating.\n"
+	.string "Acro Bikes do not qualify for rating.\n"
 	.string "They are easy to turn, so it's not fair.$"
 
 Route110_Text_SlateportCitySign: @ 81F0812
-	.string "ROUTE 110\n"
+	.string "Route 110\n"
 	.string "{DOWN_ARROW} Slateport City$"
 
 Route110_Text_CyclingRoadSign: @ 81F082D
-	.string "SEASIDE CYCLING ROAD$"
+	.string "Seaside Cycling Road$"
 
 Route110_Text_AquaWasHere: @ 81F0842
 	.string "“Team Aqua was here!”\p"
@@ -968,14 +972,14 @@ Route110_Text_AquaWasHere: @ 81F0842
 	.string "says now.$"
 
 Route110_Text_Route103Sign: @ 81F08CD
-	.string "ROUTE 110\n"
-	.string "{LEFT_ARROW} ROUTE 103$"
+	.string "Route 110\n"
+	.string "{LEFT_ARROW} Route 103$"
 
 Route110_Text_SeasideParkingSign: @ 81F08E3
-	.string "SEASIDE PARKING$"
+	.string "Seaside Parking$"
 
 Route110_Text_MauvilleCitySign: @ 81F08F3
-	.string "ROUTE 110\n"
+	.string "Route 110\n"
 	.string "{UP_ARROW} Mauville City$"
 
 Route110_Text_TrainerTipsPrlzSleep: @ 81F090D
@@ -988,11 +992,11 @@ Route110_Text_TrainerTipsPrlzSleep: @ 81F090D
 Route110_Text_TrainerTipsRegisterItems: @ 81F0992
 	.string "Trainer Tips\p"
 	.string "The items in the Bag can be reorganized\n"
-	.string "by pressing SELECT.$"
+	.string "by pressing Select.$"
 
 Route110_Text_TrickHouseSign: @ 81F09DB
 	.string "“Three steps {RIGHT_ARROW} and two steps {UP_ARROW}\n"
-	.string "to reach the wondrous TRICK HOUSE.”$"
+	.string "to reach the wondrous Trick House.”$"
 
 Route110_Text_BestRecord: @ 81F0A1E
 	.string "THE BEST RECORD TO DATE…\p"

@@ -206,7 +206,7 @@ JaggedPass_Text_EthanDefeat: @ 8230B50
 	.string "trying to find a good footing…$"
 
 JaggedPass_Text_EthanPostBattle: @ 8230B93
-	.string "If I had an ACRO Bike, I'd be able to\n"
+	.string "If I had an Acro Bike, I'd be able to\n"
 	.string "jump ledges.$"
 
 JaggedPass_Text_EthanRegister: @ 8230BC6
@@ -223,7 +223,7 @@ JaggedPass_Text_EthanRematchDefeat: @ 8230C60
 	.string "bumpy ground…$"
 
 JaggedPass_Text_EthanPostRematch: @ 8230C94
-	.string "I should get an ACRO Bike from RYDEL\n"
+	.string "I should get an Acro Bike from RYDEL\n"
 	.string "in Mauville City…$"
 
 JaggedPass_Text_GruntIntro: @ 8230CCB

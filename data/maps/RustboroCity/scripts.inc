@@ -1083,9 +1083,9 @@ RustboroCity_Text_MrBrineyLovesPeeko: @ 81E1589
 	.string "The old sailor Mr. Briney lives in\n"
 	.string "a cottage by the sea.\p"
 	.string "He said he was going shopping in\n"
-	.string "Slateport for his pet, PEEKO.\p"
+	.string "Slateport for his pet, Peeko.\p"
 	.string "That old sea dog, he must really love\n"
-	.string "that PEEKO.$"
+	.string "that Peeko.$"
 
 RustboroCity_Text_WowYouHavePokemon: @ 81E1633
 	.string "Wow, you have Pokémon with you, too.\p"
@@ -1123,9 +1123,9 @@ RustboroCity_Text_WaitDontTakeMyGoods: @ 81E1817
 RustboroCity_Text_HelpMeIWasRobbed: @ 81E183E
 	.string "Oh, it's you!\p"
 	.string "You're that fantastic Trainer who\n"
-	.string "helped me in Petalburg WOODS!\p"
+	.string "helped me in Petalburg Woods!\p"
 	.string "Help me! I was robbed by Team Aqua!\n"
-	.string "I have to get the DEVON GOODS back!\p"
+	.string "I have to get the Devon Goods back!\p"
 	.string "If I don't…\n"
 	.string "I'm going to be in serious trouble.$"
 
@@ -1169,7 +1169,7 @@ RustboroCity_Text_RegisteredMay: @ 81E1ADB
 
 RustboroCity_Text_MayPassedBrineyWantToBattle: @ 81E1AFA
 	.string "May: Oh, by the way, I passed\n"
-	.string "Mr. Briney in Petalburg WOODS.\p"
+	.string "Mr. Briney in Petalburg Woods.\p"
 	.string "I guess he's on his way home to his\n"
 	.string "cottage by the sea.\p"
 	.string "How's your Pokédex coming along,\n"
@@ -1216,7 +1216,7 @@ RustboroCity_Text_RegisteredBrendan: @ 81E1E11
 
 RustboroCity_Text_BrendanPassedBrineyWantToBattle: @ 81E1E34
 	.string "Brendan: By the way, {PLAYER}, I walked\n"
-	.string "by Mr. Briney in Petalburg WOODS.\p"
+	.string "by Mr. Briney in Petalburg Woods.\p"
 	.string "I bet he was on his way home to his\n"
 	.string "cottage by the sea.\p"
 	.string "{PLAYER}, how's your Pokédex?\n"

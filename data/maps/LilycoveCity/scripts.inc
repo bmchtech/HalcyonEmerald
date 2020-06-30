@@ -450,7 +450,7 @@ LilycoveCity_Text_MayWontBeBeaten: @ 81E3234
 LilycoveCity_Text_MayDefeat: @ 81E3275
 	.string "… … … … … … … …\p"
 	.string "I remember the battle I had with you,\n"
-	.string "{PLAYER}{KUN}, on ROUTE 103.\p"
+	.string "{PLAYER}{KUN}, on Route 103.\p"
 	.string "That battle helped you become this\n"
 	.string "strong, {PLAYER}{KUN}, didn't it?$"
 

@@ -306,7 +306,7 @@ TrainerHill_Entrance_Text_WelcomeToTrainerHill: @ 82684C6
 	.string "Welcome!\p"
 	.string "This is the Trainer HILL where\n"
 	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS!$"
+	.string "Trainers!$"
 
 TrainerHill_Entrance_Text_SaveGameBeforeEnter: @ 826851C
 	.string "Is this your first visit here?\p"
