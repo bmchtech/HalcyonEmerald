@@ -335,24 +335,24 @@ MossdeepCity_Text_WailmerWatching: @ 81E4E22
 	.string "WAILMER watching!$"
 
 MossdeepCity_Text_SpaceCenterReceivedLetter: @ 81E4E90
-	.string "The island's SPACE CENTER has been\n"
+	.string "The island's Space Center has been\n"
 	.string "launching huge rockets.\p"
 	.string "There's been some kind of an uproar\n"
 	.string "over a letter they received recently.$"
 
 MossdeepCity_Text_SpaceCenterLaunchingRockets: @ 81E4F15
-	.string "The island's SPACE CENTER has been\n"
+	.string "The island's Space Center has been\n"
 	.string "launching huge rockets.$"
 
 MossdeepCity_Text_MossdeepTargetedByMagma: @ 81E4F50
 	.string "I heard from a SAILOR buddy that\n"
-	.string "TEAM AQUA set up shop in LILYCOVE.\p"
+	.string "Team Aqua set up shop in LILYCOVE.\p"
 	.string "I also heard that someone came along\n"
 	.string "and wiped the floor with them!\p"
 	.string "But MOSSDEEP here's been targeted\n"
-	.string "by that TEAM MAGMA.\p"
+	.string "by that Team Magma.\p"
 	.string "If you want to know what they're up to,\n"
-	.string "go visit the SPACE CENTER.$"
+	.string "go visit the Space Center.$"
 
 MossdeepCity_Text_FeelReliefOnLand: @ 81E5051
 	.string "I'm a SAILOR, so the sea's obviously\n"
@@ -383,7 +383,7 @@ MossdeepCity_Text_SurfExhilarating: @ 81E5213
 
 MossdeepCity_Text_SpecialSpaceCenterRock: @ 81E529D
 	.string "This rock has a special meaning to\n"
-	.string "the people at the SPACE CENTER.\p"
+	.string "the people at the Space Center.\p"
 	.string "They put it here as their wish for\n"
 	.string "their rockets to fly safely.\p"
 	.string "When you make a wish, what do you use?\n"
@@ -395,7 +395,7 @@ MossdeepCity_Text_ItsAWhiteRock: @ 81E5396
 	.string "It's a white rock.$"
 
 MossdeepCity_Text_GymSign: @ 81E53A9
-	.string "MOSSDEEP CITY Pokémon GYM\n"
+	.string "MOSSDEEP CITY Pokémon Gym\n"
 	.string "LEADERS: LIZA & TATE\p"
 	.string "“The mystic combination!”$"
 
@@ -404,7 +404,7 @@ MossdeepCity_Text_CitySign: @ 81E53F2
 	.string "“Our slogan: Cherish Pokémon!”$"
 
 MossdeepCity_Text_SpaceCenterSign: @ 81E541F
-	.string "MOSSDEEP SPACE CENTER\n"
+	.string "MOSSDEEP Space Center\n"
 	.string "“The closest place to space.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown: @ 81E5453
@@ -416,7 +416,7 @@ MossdeepCity_Text_ScottSomethingWrongWithTown: @ 81E5453
 	.string "But there's something wrong about\n"
 	.string "this town.\p"
 	.string "People are going on about a warning\n"
-	.string "letter and the SPACE CENTER…\p"
+	.string "letter and the Space Center…\p"
 	.string "I don't think it concerns me in any\n"
 	.string "way, though.$"
 

@@ -102,7 +102,7 @@ MoveTutor_Text_SubstituteTaught: @ 82C794B
 MoveTutor_Text_DynamicPunchTeach: @ 82C79A6
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
-	.string "I'm a FIGHTING-type TRAINER,\n"
+	.string "I'm a FIGHTING-type Trainer,\n"
 	.string "so I can't win at the MOSSDEEP GYM\l"
 	.string "no matter how hard I try!\p"
 	.string "Argh! Punch! Punch! Punch!\n"

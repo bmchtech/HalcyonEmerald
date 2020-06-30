@@ -368,7 +368,7 @@ MossdeepCity_Gym_EventScript_RedFloorSwitch:: @ 8220CBF
 	end
 
 MossdeepCity_Gym_Text_GymGuideAdvice: @ 8220CD5
-	.string "Yo, how's it going, CHAMPION-bound\n"
+	.string "Yo, how's it going, Champion-bound\n"
 	.string "{PLAYER}?\p"
 	.string "The Gym Leaders here use\n"
 	.string "PSYCHIC-type Pokémon.\p"
@@ -383,7 +383,7 @@ MossdeepCity_Gym_Text_GymGuideAdvice: @ 8220CD5
 
 MossdeepCity_Gym_Text_GymGuidePostVictory: @ 8220E2A
 	.string "Wow, you're astounding!\n"
-	.string "You're one great TRAINER!$"
+	.string "You're one great Trainer!$"
 
 MossdeepCity_Gym_Text_PrestonIntro: @ 8220E5C
 	.string "Battles hinge on the strength of your\n"
@@ -609,10 +609,10 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons: @ 8221BCE
 	.string "bring some more Pokémon.$"
 
 MossdeepCity_Gym_Text_GymStatue: @ 8221CB0
-	.string "MOSSDEEP CITY Pokémon GYM$"
+	.string "MOSSDEEP CITY Pokémon Gym$"
 
 MossdeepCity_Gym_Text_GymStatueCertified: @ 8221CCA
-	.string "MOSSDEEP CITY Pokémon GYM\p"
+	.string "MOSSDEEP CITY Pokémon Gym\p"
 	.string "LIZA AND TATE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 

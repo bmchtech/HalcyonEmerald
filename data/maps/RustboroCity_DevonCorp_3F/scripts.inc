@@ -199,7 +199,7 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay:: @ 8212600
 
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor: @ 8212609
 	.string "I'm MR. STONE, the PRESIDENT of\n"
-	.string "the DEVON CORPORATION.\p"
+	.string "the Devon Corporation.\p"
 	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
 	.string "but twice!\p"
@@ -227,7 +227,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp: @ 8212837
 	.string "It's a Pokémon NAVIGATOR, or PokéNav\n"
 	.string "for short.\p"
 	.string "It's an indispensable tool for any\n"
-	.string "TRAINER on an adventure.\p"
+	.string "Trainer on an adventure.\p"
 	.string "It has a map of the Hoenn region.\p"
 	.string "You can check the locations of\n"
 	.string "DEWFORD and SLATEPORT easily!\p"
@@ -248,7 +248,7 @@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter: @ 8212A29
 	.string "MR. STONE: You delivered my LETTER?\n"
 	.string "Thank you kindly!\p"
 	.string "This is my way of thanking you.\n"
-	.string "It should help you, a TRAINER.$"
+	.string "It should help you, a Trainer.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare: @ 8212A9E
 	.string "MR. STONE: A Pokémon holding that\n"
@@ -265,10 +265,10 @@ RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends: @ 8212B78
 	.string "Consequently, I'm not familiar with\n"
 	.string "trends and that sort of thing.\p"
 	.string "But do young people all want to be\n"
-	.string "TRAINERS in the Pokémon LEAGUE?$"
+	.string "TRAINERS in the Pokémon League?$"
 
 RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere: @ 8212C37
-	.string "This is the DEVON CORPORATION's\n"
+	.string "This is the Devon Corporation's\n"
 	.string "third floor.\p"
 	.string "Our PRESIDENT's OFFICE is on\n"
 	.string "this floor.\p"

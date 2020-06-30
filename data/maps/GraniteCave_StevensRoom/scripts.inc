@@ -104,7 +104,7 @@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister: @ 822DE6B
 	.string "STEVEN: Your Pokémon appear quite\n"
 	.string "capable.\p"
 	.string "If you keep training, you could even\n"
-	.string "become the CHAMPION of the Pokémon\l"
+	.string "become the Champion of the Pokémon\l"
 	.string "LEAGUE one day. That's what I think.\p"
 	.string "I know, since we've gotten to know each\n"
 	.string "other, let's register one another in\l"
@@ -119,6 +119,6 @@ GraniteCave_StevensRoom_Text_IveGotToHurryAlong: @ 822DF8C
 	.string "Now, I've got to hurry along.$"
 
 GraniteCave_StevensRoom_Text_OhBagIsFull: @ 822DFAA
-	.string "Oh, your BAG is full…\n"
+	.string "Oh, your Bag is full…\n"
 	.string "That's too bad, then.$"
 

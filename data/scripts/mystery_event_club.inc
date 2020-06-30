@@ -96,7 +96,7 @@ MysteryEventClub_EventScript_Ret:: @ 8291686
 	return
 
 MysteryEventClub_Text_CollectTrainerProfiles: @ 8291687
-	.string "Hello there, TRAINER!\n"
+	.string "Hello there, Trainer!\n"
 	.string "You've got a wonderful smile, there.\p"
 	.string "I have a hobby--collecting the profiles\n"
 	.string "of Pokémon TRAINERS.$"
@@ -138,7 +138,7 @@ MysteryEventClub_Text_NotIntoItRightNow: @ 82919DC
 	.string "Well, anytime is good by me!$"
 
 MysteryEventClub_Text_YouHaveWonderfulSmile: @ 8291A1B
-	.string "Hello there, TRAINER!\n"
+	.string "Hello there, Trainer!\n"
 	.string "You've got a wonderful smile.$"
 
 MysteryEventClub_Text_MayISeeYourNewProfile: @ 8291A4F
@@ -167,4 +167,4 @@ MysteryEventClub_Text_YouKnowSecretSaying: @ 8291BB7
 	.string "Oh?\n"
 	.string "You know the secret saying!\p"
 	.string "That means you're now a fellow member\n"
-	.string "of the MYSTERY EVENT CLUB!$"
+	.string "of the Mystery Event CLUB!$"

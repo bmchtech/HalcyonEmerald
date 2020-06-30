@@ -556,9 +556,9 @@ Route119_Text_BrendanExplainFly: @ 81F4DB5
 Route119_Text_ScottWayToGoBeSeeingYou: @ 81F4E60
 	.string "SCOTT: Hahahah!\n"
 	.string "Way to go, {PLAYER}{KUN}!\p"
-	.string "I just passed by a TRAINER riding\n"
+	.string "I just passed by a Trainer riding\n"
 	.string "a BIKE.\p"
-	.string "You just beat that TRAINER, didn't you?\n"
+	.string "You just beat that Trainer, didn't you?\n"
 	.string "It was pretty obvious that you did.\p"
 	.string "The kid looked really upset with\n"
 	.string "a face all red from anger.\p"
@@ -575,7 +575,7 @@ Route119_Text_ScottYouWonAtFortreeGym: @ 81F4FBA
 	.string "Just as I thought, you won at\n"
 	.string "the FORTREE GYM.\p"
 	.string "Your strength…\n"
-	.string "Perhaps you really are the TRAINER\l"
+	.string "Perhaps you really are the Trainer\l"
 	.string "that I've been searching for.\p"
 	.string "Remember, you have a fan in me.\n"
 	.string "I'll be cheering from the sidelines.\l"
@@ -621,7 +621,7 @@ Route119_Text_WeatherInstitute: @ 81F5327
 	.string "WEATHER INSTITUTE$"
 
 Route119_Text_TrainerTipsDecoration: @ 81F5339
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "Up to sixteen decorations and\n"
 	.string "furniture items can be placed in\l"
 	.string "a SECRET BASE.\p"

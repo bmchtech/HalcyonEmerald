@@ -136,7 +136,7 @@ FortreeCity_Gym_EventScript_GymStatue:: @ 821677B
 	end
 
 FortreeCity_Gym_Text_GymGuideAdvice: @ 8216785
-	.string "Yo, how's it going, CHAMPION-\n"
+	.string "Yo, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "FORTREE Gym Leader WINONA is\n"
 	.string "a master of FLYING-type Pokémon.\p"
@@ -159,7 +159,7 @@ FortreeCity_Gym_Text_JaredDefeat: @ 82168D3
 	.string "You're strong…$"
 
 FortreeCity_Gym_Text_JaredPostBattle: @ 82168E7
-	.string "A TRAINER has to be smart to keep\n"
+	.string "A Trainer has to be smart to keep\n"
 	.string "up with unexpected turns of events.\p"
 	.string "Do you have the smarts to get to\n"
 	.string "our LEADER?$"
@@ -235,7 +235,7 @@ FortreeCity_Gym_Text_DariusPostBattle: @ 8216D0F
 
 FortreeCity_Gym_Text_WinonaIntro: @ 8216D75
 	.string "I am WINONA. I am the LEADER of\n"
-	.string "the FORTREE Pokémon GYM.\p"
+	.string "the FORTREE Pokémon Gym.\p"
 	.string "I have become one with BIRD Pokémon\n"
 	.string "and have soared the skies…\p"
 	.string "However grueling the battle, we have\n"
@@ -244,7 +244,7 @@ FortreeCity_Gym_Text_WinonaIntro: @ 8216D75
 	.string "of BIRD Pokémon and I!$"
 
 FortreeCity_Gym_Text_WinonaDefeat: @ 8216E60
-	.string "Never before have I seen a TRAINER\n"
+	.string "Never before have I seen a Trainer\n"
 	.string "command Pokémon with more grace\l"
 	.string "than I…\p"
 	.string "In recognition of your prowess,\n"
@@ -278,10 +278,10 @@ FortreeCity_Gym_Text_WinonaPostBattle: @ 8217071
 	.string "devoted to BIRD Pokémon.$"
 
 FortreeCity_Gym_Text_GymStatue: @ 82170AE
-	.string "FORTREE CITY Pokémon GYM$"
+	.string "FORTREE CITY Pokémon Gym$"
 
 FortreeCity_Gym_Text_GymStatueCertified: @ 82170C7
-	.string "FORTREE CITY Pokémon GYM\p"
+	.string "FORTREE CITY Pokémon Gym\p"
 	.string "WINONA'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
@@ -291,7 +291,7 @@ FortreeCity_Gym_Text_WinonaPreRematch: @ 8217100
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
 	.string "You have scaled the pinnacle as\n"
-	.string "the reigning CHAMPION.\p"
+	.string "the reigning Champion.\p"
 	.string "Please, allow me to see your power\n"
 	.string "at full flight!$"
 
@@ -311,7 +311,7 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons: @ 8217292
 	.string "But by striving for excellence,\n"
 	.string "we have the power to soar!\p"
 	.string "You have scaled the pinnacle as\n"
-	.string "the reigning CHAMPION.\p"
+	.string "the reigning Champion.\p"
 	.string "Please, allow me to see your power\n"
 	.string "at full flight!\p"
 	.string "Oh, no… Do you have but one\n"

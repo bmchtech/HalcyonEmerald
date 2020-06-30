@@ -871,7 +871,7 @@ static const u8 sPresentDescription[] = _(
 
 static const u8 sFrustrationDescription[] = _(
     "An attack that is stronger\n"
-    "if the TRAINER is disliked.");
+    "if the Trainer is disliked.");
 
 static const u8 sSafeguardDescription[] = _(
     "A mystical force prevents\n"

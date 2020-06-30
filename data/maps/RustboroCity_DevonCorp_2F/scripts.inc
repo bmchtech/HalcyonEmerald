@@ -311,7 +311,7 @@ RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls: @ 8211C99
 	.string "The TIMER BALL gets better at catching\n"
 	.string "Pokémon the longer a battle runs.\p"
 	.string "Both are proudly developed by\n"
-	.string "the DEVON CORPORATION.\p"
+	.string "the Devon Corporation.\p"
 	.string "Please give them a try!$"
 
 RustboroCity_DevonCorp_2F_Text_IMadePokenav: @ 8211D9F

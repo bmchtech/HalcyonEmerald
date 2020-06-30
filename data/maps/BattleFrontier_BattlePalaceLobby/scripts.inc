@@ -493,7 +493,7 @@ BattleFrontier_BattlePalaceLobby_Text_NoSpaceForPrize: @ 824E57B
 	.string "You seem to have no space for\n"
 	.string "our prize.\p"
 	.string "You should return when you have\n"
-	.string "organized your BAG.$"
+	.string "organized your Bag.$"
 
 BattleFrontier_BattlePalaceLobby_Text_WeHaveBeenWaiting: @ 824E5D8
 	.string "We have been waiting for you…$"
@@ -646,7 +646,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves: @ 824F190
 	.string "these three categories.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered: @ 824F2E8
-	.string "When not under command by its TRAINER,\n"
+	.string "When not under command by its Trainer,\n"
 	.string "a Pokémon may be unable to effectively\l"
 	.string "use certain moves.\p"
 	.string "A Pokémon is not good at using any\n"

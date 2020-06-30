@@ -466,7 +466,7 @@ BattleFrontier_BattleArenaLobby_Text_ReceivedPrize: @ 82569BE
 @ Unused
 BattleFrontier_BattleArenaLobby_Text_BagFullReturnForPrize: @ 82569D8
 	.string "Oh?\n"
-	.string "Your BAG seems to be full.\p"
+	.string "Your Bag seems to be full.\p"
 	.string "I urge you to clear space and\n"
 	.string "return for your prize.$"
 
@@ -571,7 +571,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainBodyRules: @ 8257202
 
 BattleFrontier_BattleArenaLobby_Text_CongratsOnDefeatingTycoon: @ 82572D9
 	.string "A victory snatched from the ARENA\n"
-	.string "TYCOON, and a seven-TRAINER sweep!\p"
+	.string "TYCOON, and a seven-Trainer sweep!\p"
 	.string "We congratulate you on your most\n"
 	.string "splendid challenge!$"
 

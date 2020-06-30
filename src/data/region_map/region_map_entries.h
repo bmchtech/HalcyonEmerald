@@ -1,17 +1,17 @@
 #ifndef GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 #define GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 
-static const u8 sMapName_LittlerootTown[] = _("LITTLEROOT TOWN");
-static const u8 sMapName_OldaleTown[] = _("OLDALE TOWN");
+static const u8 sMapName_LittlerootTown[] = _("Littleroot Town");
+static const u8 sMapName_OldaleTown[] = _("Oldale Town");
 static const u8 sMapName_DewfordTown[] = _("DEWFORD TOWN");
 static const u8 sMapName_LavaridgeTown[] = _("LAVARIDGE TOWN");
 static const u8 sMapName_FallarborTown[] = _("FALLARBOR TOWN");
 static const u8 sMapName_VerdanturfTown[] = _("VERDANTURF TOWN");
 static const u8 sMapName_PacifidlogTown[] = _("PACIFIDLOG TOWN");
-static const u8 sMapName_PetalburgCity[] = _("PETALBURG CITY");
+static const u8 sMapName_PetalburgCity[] = _("Petalburg City");
 static const u8 sMapName_SlateportCity[] = _("SLATEPORT CITY");
 static const u8 sMapName_MauvilleCity[] = _("MAUVILLE CITY");
-static const u8 sMapName_RustboroCity[] = _("RUSTBORO CITY");
+static const u8 sMapName_RustboroCity[] = _("Rustboro City");
 static const u8 sMapName_FortreeCity[] = _("FORTREE CITY");
 static const u8 sMapName_LilycoveCity[] = _("LILYCOVE CITY");
 static const u8 sMapName_MossdeepCity[] = _("MOSSDEEP CITY");
@@ -129,7 +129,7 @@ static const u8 sMapName_RocketHideout[] = _("ROCKET HIDEOUT");
 static const u8 sMapName_SilphCo[] = _("SILPH CO.");
 static const u8 sMapName_PokemonMansion[] = _("Pokémon MANSION");
 static const u8 sMapName_KantoSafariZone[] = _("SAFARI ZONE");
-static const u8 sMapName_PokemonLeague[] = _("Pokémon LEAGUE");
+static const u8 sMapName_PokemonLeague[] = _("Pokémon League");
 static const u8 sMapName_RockTunnel[] = _("ROCK TUNNEL");
 static const u8 sMapName_SeafoamIslands[] = _("SEAFOAM ISLANDS");
 static const u8 sMapName_PokemonTower[] = _("Pokémon TOWER");
@@ -159,7 +159,7 @@ static const u8 sMapName_OutcastIsland[] = _("OUTCAST ISLAND");
 static const u8 sMapName_GreenPath[] = _("GREEN PATH");
 static const u8 sMapName_WaterPath[] = _("WATER PATH");
 static const u8 sMapName_RuinValley[] = _("RUIN VALLEY");
-static const u8 sMapName_TrainerTower[] = _("TRAINER TOWER");
+static const u8 sMapName_TrainerTower[] = _("Trainer TOWER");
 static const u8 sMapName_CanyonEntrance[] = _("CANYON ENTRANCE");
 static const u8 sMapName_SevaultCanyon[] = _("SEVAULT CANYON");
 static const u8 sMapName_TanobyRuins[] = _("TANOBY RUINS");
@@ -171,7 +171,7 @@ static const u8 sMapName_MtEmber[] = _("MT. EMBER");
 static const u8 sMapName_BerryForest[] = _("BERRY FOREST");
 static const u8 sMapName_IcefallCave[] = _("ICEFALL CAVE");
 static const u8 sMapName_RocketWarehouse[] = _("ROCKET WAREHOUSE");
-static const u8 sMapName_TrainerTower2[] = _("TRAINER TOWER");
+static const u8 sMapName_TrainerTower2[] = _("Trainer TOWER");
 static const u8 sMapName_DottedHole[] = _("DOTTED HOLE");
 static const u8 sMapName_LostCave[] = _("LOST CAVE");
 static const u8 sMapName_PatternBush[] = _("PATTERN BUSH");
@@ -197,7 +197,7 @@ static const u8 sMapName_ArtisanCave[] = _("ARTISAN CAVE");
 static const u8 sMapName_MarineCave[] = _("MARINE CAVE");
 static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
 static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
-static const u8 sMapName_TrainerHill[] = _("TRAINER HILL");
+static const u8 sMapName_TrainerHill[] = _("Trainer HILL");
 static const u8 sMapName_Seaspray_Cave[] = _("Seaspray Cave");
 
 const struct RegionMapLocation gRegionMapEntries[] = {

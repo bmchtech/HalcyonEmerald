@@ -225,7 +225,7 @@ SafariZone_South_Text_Youngster: @ 82A553E
 	.string "without me noticing.$"
 
 Route121_SafariZoneEntrance_Text_TrainerTip: @ 82A55BB
-	.string "SAFARI ZONE TRAINER TIP!\p"
+	.string "SAFARI ZONE Trainer TIP!\p"
 	.string "Throw {POKEBLOCK}S at wild Pokémon to make\n"
 	.string "them less likely to flee.$"
 

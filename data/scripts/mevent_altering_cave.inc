@@ -14,8 +14,8 @@ MysteryEventScript_AlteringCave_: @ 86756FD
 	end
 
 sText_MysteryGiftAlteringCave::
-	.string "Thank you for using the MYSTERY\n"
-	.string "GIFT System.\p"
+	.string "Thank you for using the Mystery\n"
+	.string "Gift System.\p"
 	.string "There appears to be a rumor about\n"
 	.string "rare Pokémon sightings.\p"
 	.string "The sightings reportedly came from\n"

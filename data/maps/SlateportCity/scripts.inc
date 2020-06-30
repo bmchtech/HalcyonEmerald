@@ -1041,7 +1041,7 @@ SlateportCity_Text_QuitPushing: @ 81DDC4F
 	.string "This is the line, can't you see?$"
 
 SlateportCity_Text_AquaHasPolicy: @ 81DDC8A
-	.string "TEAM AQUA has a policy of\n"
+	.string "Team Aqua has a policy of\n"
 	.string "assembling and dispersing at\l"
 	.string "the operation site.$"
 
@@ -1122,7 +1122,7 @@ SlateportCity_Text_GetNameRaterToHelpYou: @ 81DE10E
 SlateportCity_Text_CantChangeTradeMonName: @ 81DE16C
 	.string "Any Pokémon you get in a trade,\n"
 	.string "you can't change its nickname.\p"
-	.string "The original TRAINER's love for that\n"
+	.string "The original Trainer's love for that\n"
 	.string "Pokémon is in the nickname.$"
 
 SlateportCity_Text_BattleTentBuiltRecently: @ 81DE1EC
@@ -1201,7 +1201,7 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery: @ 81DE64F
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine: @ 81DE724
 	.string "Fufufu…\n"
 	.string "CAPT. STERN, I presume.\p"
-	.string "We of TEAM AQUA will assume\n"
+	.string "We of Team Aqua will assume\n"
 	.string "control of your submarine!\p"
 	.string "Your objections are meaningless!\n"
 	.string "We expect your total cooperation!\p"
@@ -1296,7 +1296,7 @@ SlateportCity_Text_ExplainBerries: @ 81DEBCE
 
 SlateportCity_Text_ExplainBerryPowder: @ 81DED27
 	.string "I recently had machines installed at\n"
-	.string "Pokémon CENTERS for crushing BERRIES.\p"
+	.string "Pokémon Centers for crushing BERRIES.\p"
 	.string "The BERRY CRUSH machines are at\n"
 	.string "the DIRECT CORNER upstairs.\p"
 	.string "Did you know?\p"
@@ -1342,7 +1342,7 @@ SlateportCity_Text_YouDroveTeamAquaAway: @ 81DF032
 	.string "I'm sure I met you somewhere before.\p"
 	.string "Have I introduced myself to you?\n"
 	.string "If not, my name's SCOTT.\p"
-	.string "I just saw TEAM AQUA run away from\n"
+	.string "I just saw Team Aqua run away from\n"
 	.string "here like they were stung.\p"
 	.string "Let me guess--you drove them away?$"
 
@@ -1376,6 +1376,6 @@ SlateportCity_Text_TakingBattleTentChallenge: @ 81DF28C
 	.string "to take the BATTLE TENT challenge?\p"
 	.string "Yeah! That's a good idea!\n"
 	.string "That's a really great idea!\p"
-	.string "After all, a tough TRAINER is\n"
+	.string "After all, a tough Trainer is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"

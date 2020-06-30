@@ -925,7 +925,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_BugCatcherReject:: @ 82462E4
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_SchoolKidMIntro:: @ 824631F
 	.string "Good day!\n"
-	.string "I'm SCHOOL KID {STR_VAR_1}!$"
+	.string "I'm School Kid {STR_VAR_1}!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_SchoolKidMMon1:: @ 824633C
 	.string "What I've been raising are one\n"
@@ -1665,7 +1665,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_PsychicFReject:: @ 8248614
 	.string "to forge an alliance.$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_SchoolKidFIntro:: @ 824864E
-	.string "I'm SCHOOL KID {STR_VAR_1}!$"
+	.string "I'm School Kid {STR_VAR_1}!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_SchoolKidFMon1:: @ 8248661
 	.string "One {STR_VAR_1}-using {STR_VAR_2}$"

@@ -99,7 +99,7 @@ FortreeCity_Text_SawGiganticPokemonInSky: @ 81E2676
 	.string "Were you at a volcano or something?$"
 
 FortreeCity_Text_SomethingBlockingGym: @ 81E2738
-	.string "I want to go to the Pokémon GYM,\n"
+	.string "I want to go to the Pokémon Gym,\n"
 	.string "but something's blocking the way.\p"
 	.string "After all the bother I went through\n"
 	.string "training on Route 120…$"
@@ -151,7 +151,7 @@ FortreeCity_Text_CitySign: @ 81E2AAC
 	.string "nature.”$"
 
 FortreeCity_Text_GymSign: @ 81E2AE6
-	.string "FORTREE CITY Pokémon GYM\n"
+	.string "FORTREE CITY Pokémon Gym\n"
 	.string "LEADER: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"

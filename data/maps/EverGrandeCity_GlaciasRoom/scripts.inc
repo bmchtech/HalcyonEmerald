@@ -80,5 +80,5 @@ EverGrandeCity_GlaciasRoom_Text_Defeat: @ 82285B4
 EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech: @ 8228640
 	.string "Advance to the next room.\p"
 	.string "And there, confirm the truly fearsome\n"
-	.string "side of the Pokémon LEAGUE.$"
+	.string "side of the Pokémon League.$"
 

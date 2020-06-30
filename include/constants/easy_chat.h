@@ -52,7 +52,7 @@
 #define EC_GROUP_POKEMON_2      0x15
 #define EC_NUM_GROUPS           0x16
 
-// TRAINER
+// Trainer
 #define EC_WORD_I_CHOOSE_YOU  (EC_GROUP_TRAINER << 9) | 0x0
 #define EC_WORD_GOTCHA        (EC_GROUP_TRAINER << 9) | 0x1
 #define EC_WORD_TRADE         (EC_GROUP_TRAINER << 9) | 0x2

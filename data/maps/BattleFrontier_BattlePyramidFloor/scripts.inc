@@ -555,7 +555,7 @@ BattlePyramid_Text_TwoTrainersRemaining1:: @ 825440B
 BattlePyramid_Text_OneTrainersRemaining1:: @ 825445A
 	.string "You were really awesome!\p"
 	.string "But there's still one tough\n"
-	.string "TRAINER other than me!$"
+	.string "Trainer other than me!$"
 
 BattlePyramid_Text_ZeroTrainersRemaining1:: @ 82544A6
 	.string "You were really awesome!\p"
@@ -594,7 +594,7 @@ BattlePyramid_Text_TwoTrainersRemaining2:: @ 825467C
 
 BattlePyramid_Text_OneTrainersRemaining2:: @ 82546CC
 	.string "This is so upsetting!\p"
-	.string "But there's one TRAINER left!\n"
+	.string "But there's one Trainer left!\n"
 	.string "I'm sure you will be humbled!$"
 
 BattlePyramid_Text_ZeroTrainersRemaining2:: @ 825471E
@@ -634,7 +634,7 @@ BattlePyramid_Text_TwoTrainersRemaining3:: @ 825494D
 
 BattlePyramid_Text_OneTrainersRemaining3:: @ 82549AE
 	.string "That's pretty impressive!\p"
-	.string "But there's still one more TRAINER\n"
+	.string "But there's still one more Trainer\n"
 	.string "on this floor. Can you prevail?$"
 
 BattlePyramid_Text_ZeroTrainersRemaining3:: @ 8254A0B
@@ -668,7 +668,7 @@ BattlePyramid_Text_TwoTrainersRemaining4:: @ 8254BAE
 
 BattlePyramid_Text_OneTrainersRemaining4:: @ 8254BF1
 	.string "Maybe you could complete your sweep\n"
-	.string "with the one TRAINER left on this floor.$"
+	.string "with the one Trainer left on this floor.$"
 
 BattlePyramid_Text_ZeroTrainersRemaining4:: @ 8254C3E
 	.string "There isn't a single person left who\n"
@@ -700,7 +700,7 @@ BattlePyramid_Text_TwoTrainersRemaining5:: @ 8254DE0
 
 BattlePyramid_Text_OneTrainersRemaining5:: @ 8254E27
 	.string "You may have what it takes to beat\n"
-	.string "the one expert TRAINER who remains.$"
+	.string "the one expert Trainer who remains.$"
 
 BattlePyramid_Text_ZeroTrainersRemaining5:: @ 8254E6E
 	.string "Your skills are beyond reproach.\p"
@@ -733,7 +733,7 @@ BattlePyramid_Text_TwoTrainersRemaining6:: @ 8254FF6
 
 BattlePyramid_Text_OneTrainersRemaining6:: @ 825502F
 	.string "Can you keep winning against\n"
-	.string "the last remaining TRAINER?$"
+	.string "the last remaining Trainer?$"
 
 BattlePyramid_Text_ZeroTrainersRemaining6:: @ 8255068
 	.string "There aren't any TRAINERS left that\n"

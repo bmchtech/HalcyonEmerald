@@ -546,10 +546,10 @@ MauvilleCity_Text_WallyIllGoBackToVerdanturf: @ 81DFBC3
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle: @ 81DFBED
 	.string "{PLAYER}, thank you.\n"
-	.string "Being a TRAINER is tough, isn't it?\p"
+	.string "Being a Trainer is tough, isn't it?\p"
 	.string "It's not enough just to have Pokémon\n"
 	.string "and make them battle. That isn't what\l"
-	.string "being a real TRAINER is about.$"
+	.string "being a real Trainer is about.$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown: @ 81DFC8A
 	.string "UNCLE: WALLY, there's no need to be so\n"
@@ -561,7 +561,7 @@ MauvilleCity_Text_UncleNoNeedToBeDown: @ 81DFC8A
 
 MauvilleCity_Text_UncleVisitUsSometime: @ 81DFD34
 	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me\n"
-	.string "that you must be the TRAINER who kept\l"
+	.string "that you must be the Trainer who kept\l"
 	.string "an eye out for WALLY when he caught\l"
 	.string "his Pokémon.\p"
 	.string "Why don't you visit us in VERDANTURF\n"
@@ -659,7 +659,7 @@ MauvilleCity_Text_CitySign: @ 81E0485
 	.string "“The bright and shiny city of fun!”$"
 
 MauvilleCity_Text_GymSign: @ 81E04B7
-	.string "MAUVILLE CITY Pokémon GYM\n"
+	.string "MAUVILLE CITY Pokémon Gym\n"
 	.string "LEADER: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 

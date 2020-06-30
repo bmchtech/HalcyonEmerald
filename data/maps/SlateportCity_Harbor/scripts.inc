@@ -475,7 +475,7 @@ SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove: @ 820D291
 
 SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine: @ 820D35A
 	.string "CAPT. STERN: Why…\p"
-	.string "Why would TEAM AQUA steal my\n"
+	.string "Why would Team Aqua steal my\n"
 	.string "SUBMARINE EXPLORER 1?\p"
 	.string "They can't be after the slumbering\n"
 	.string "Pokémon at the bottom of the sea…\p"
@@ -484,7 +484,7 @@ SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine: @ 820D35A
 
 SlateportCity_Harbor_Text_TeamAquaLeftNeedDive: @ 820D42B
 	.string "CAPT. STERN: Oh, {PLAYER}{KUN}…\p"
-	.string "Okay… So TEAM AQUA left before you\n"
+	.string "Okay… So Team Aqua left before you\n"
 	.string "could stop them…\p"
 	.string "Oh, no, don't blame yourself.\n"
 	.string "You're not responsible for this.\p"

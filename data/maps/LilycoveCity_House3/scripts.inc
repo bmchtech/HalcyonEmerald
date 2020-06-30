@@ -155,7 +155,7 @@ LilycoveCity_House3_Text_GoingToWinMultiBattles: @ 821F4A7
 
 LilycoveCity_House3_Text_LikeMixingAtRecordCorner: @ 821F4E0
 	.string "We like mixing stuff at\n"
-	.string "the RECORD CORNER.\p"
+	.string "the Record Corner.\p"
 	.string "But what gets mixed up?$"
 
 LilycoveCity_House3_Text_MakePokeblocksWithBerryBlender: @ 821F523

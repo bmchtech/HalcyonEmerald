@@ -341,7 +341,7 @@ LavaridgeTown_Text_HaveEggWillYouTakeIt: @ 81EAB80
 	.string "I've heard it would be best if it were\n"
 	.string "kept together with Pokémon and\l"
 	.string "carried about.\p"
-	.string "You are a TRAINER, yes?\n"
+	.string "You are a Trainer, yes?\n"
 	.string "And your Pokémon radiate vitality.\p"
 	.string "So, what say you?\n"
 	.string "Will you take this EGG to hatch?$"
@@ -408,11 +408,11 @@ LavaridgeTown_Text_HotSpringsClaims: @ 81EB092
 
 LavaridgeTown_Text_TownSign: @ 81EB12B
 	.string "LAVARIDGE TOWN\p"
-	.string "“Pokémon CENTER HOT SPRINGS\n"
+	.string "“Pokémon Center HOT SPRINGS\n"
 	.string "An excellent place for relaxing!”$"
 
 LavaridgeTown_Text_GymSign: @ 81EB178
-	.string "LAVARIDGE TOWN Pokémon GYM\n"
+	.string "LAVARIDGE TOWN Pokémon Gym\n"
 	.string "LEADER: FLANNERY\l"
 	.string "“One with a fiery passion that burns!”$"
 

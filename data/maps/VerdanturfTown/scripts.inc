@@ -92,7 +92,7 @@ VerdanturfTown_Text_MakeBattleTentDebut: @ 81EB7E2
 
 VerdanturfTown_Text_GuyTryingToBustThroughCave: @ 81EB854
 	.string "Did you see the cave next to the\n"
-	.string "Pokémon MART?\p"
+	.string "Pokémon Mart?\p"
 	.string "There's a guy in there who's trying to\n"
 	.string "bust up boulders so he can bust out\l"
 	.string "through to the other side.\p"
@@ -100,7 +100,7 @@ VerdanturfTown_Text_GuyTryingToBustThroughCave: @ 81EB854
 	.string "It'll make it easy to visit RUSTBORO.$"
 
 VerdanturfTown_Text_EasyToGetToRustboroNow: @ 81EB935
-	.string "That cave next to the Pokémon MART\n"
+	.string "That cave next to the Pokémon Mart\n"
 	.string "is now a tunnel to the other side.\p"
 	.string "It's great--it's easy to go shop for\n"
 	.string "new DEVON products in RUSTBORO now.$"

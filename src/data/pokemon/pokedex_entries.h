@@ -3806,7 +3806,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_SWALOT] =
     {
-        .categoryName = _("POISON BAG"),
+        .categoryName = _("POISON Bag"),
         .height = 17,
         .weight = 800,
         .description = gSwalotPokedexText,

@@ -123,7 +123,7 @@ Route109_SeashoreHouse_Text_TakeTheseSodaPopBottles: @ 8269685
 	.string "It's half a dozen bottles of SODA POP!$"
 
 Route109_SeashoreHouse_Text_BagFull: @ 826973A
-	.string "Oh, but hey, your BAG's jammed full.\n"
+	.string "Oh, but hey, your Bag's jammed full.\n"
 	.string "I'll hang on to these for you.$"
 
 Route109_SeashoreHouse_Text_WantToBuySodaPop: @ 826977E
@@ -145,7 +145,7 @@ Route109_SeashoreHouse_Text_ThatsTooBad: @ 82697EF
 Route109_SeashoreHouse_Text_DwayneIntro: @ 8269803
 	.string "If you're looking for a battle in the\n"
 	.string "SEASHORE HOUSE, you'll find no\l"
-	.string "hotter TRAINER than me, matey!$"
+	.string "hotter Trainer than me, matey!$"
 
 Route109_SeashoreHouse_Text_DwayneDefeated: @ 8269867
 	.string "That was a hot battle!\n"

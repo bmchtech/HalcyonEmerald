@@ -1010,7 +1010,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_RisingStar: @ 824CC1C
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_WillTheyRaceToChampionship: @ 824CC2E
-	.string "Will this TRAINER race to\n"
+	.string "Will this Trainer race to\n"
 	.string "the championship?\p"
 	.string "$"
 
@@ -1025,12 +1025,12 @@ BattleFrontier_BattleDomeBattleRoom_Text_CanLossBeAvenged: @ 824CC99
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_OnFireForChampionship: @ 824CCC5
-	.string "The TRAINER is on fire for\n"
+	.string "The Trainer is on fire for\n"
 	.string "the first championship try!\p"
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_WinHereAdvancesToFinal: @ 824CCFD
-	.string "A win here means this TRAINER\n"
+	.string "A win here means this Trainer\n"
 	.string "advances to the final!\p"
 	.string "$"
 
@@ -1050,7 +1050,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_CanAnyoneHopeToBeatTrainer: @ 824CD8C
 
 BattleFrontier_BattleDomeBattleRoom_Text_DoBattlesExistSolelyForTrainer: @ 824CDB3
 	.string "Do battles exist solely for\n"
-	.string "this TRAINER?\p"
+	.string "this Trainer?\p"
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_CurrentChampAimingToRetainTitle: @ 824CDDE
@@ -1067,7 +1067,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_FormerToughnessReturned: @ 824CE33
 	.string "$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_WillDoExpectedAdvanceToFinals: @ 824CE57
-	.string "Will this TRAINER do as expected\n"
+	.string "Will this Trainer do as expected\n"
 	.string "and advance to the finals?\p"
 	.string "$"
 
@@ -1080,7 +1080,7 @@ BattleFrontier_BattleDomeBattleRoom_Text_FeelGlowOfTrueMaster: @ 824CEBE
 	.string "Feel the glow of a true master!$"
 
 BattleFrontier_BattleDomeBattleRoom_Text_MakeWayForDomeAceTucker: @ 824CEDE
-	.string "And now… The TRAINER standing in\n"
+	.string "And now… The Trainer standing in\n"
 	.string "{PLAYER}'s record-setting path…\p"
 	.string "Yes! The one and only!\n"
 	.string "The BATTLE DOME COMMISSIONER!\l"

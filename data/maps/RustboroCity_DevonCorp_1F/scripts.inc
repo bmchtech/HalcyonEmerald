@@ -122,7 +122,7 @@ RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay: @ 82115AC
 	.string "displayed in the glass case.\p"
 	.string "There's a panel with some writing\n"
 	.string "on it…\p"
-	.string "“DEVON CORPORATION got its start as\n"
+	.string "“Devon Corporation got its start as\n"
 	.string "a producer of stones from quarries.\p"
 	.string "“The company also produced iron from\n"
 	.string "filings in the sand.\p"

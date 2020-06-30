@@ -464,7 +464,7 @@ LilycoveCity_Text_MayGoingBackToLittleroot: @ 81E32FB
 LilycoveCity_Text_MayYouGoingToCollectBadges: @ 81E3398
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
 	.string "Collect all the GYM BADGES and take\n"
-	.string "the Pokémon LEAGUE challenge?\p"
+	.string "the Pokémon League challenge?\p"
 	.string "Well, while you're collecting BADGES,\n"
 	.string "{PLAYER}{KUN}, I'm going to work on my\l"
 	.string "Pokédex. I'll complete it before you!\p"
@@ -472,7 +472,7 @@ LilycoveCity_Text_MayYouGoingToCollectBadges: @ 81E3398
 
 LilycoveCity_Text_MayYouGoingToPokemonLeague: @ 81E346D
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Are you taking the Pokémon LEAGUE\n"
+	.string "Are you taking the Pokémon League\n"
 	.string "challenge?\p"
 	.string "Or, are you going to complete your\n"
 	.string "Pokédex?\p"
@@ -526,14 +526,14 @@ LilycoveCity_Text_BrendanGoingBackToLittleroot: @ 81E37D7
 LilycoveCity_Text_BrendanYouGoingToCollectBadges: @ 81E3876
 	.string "{PLAYER}, what are you going to do?\p"
 	.string "Collect all the GYM BADGES and take\n"
-	.string "the Pokémon LEAGUE challenge?\p"
+	.string "the Pokémon League challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"
 
 LilycoveCity_Text_BrendanYouGoingToPokemonLeague: @ 81E390C
 	.string "{PLAYER}, what are you going to do?\p"
 	.string "Since you're that strong, are you\n"
-	.string "taking the Pokémon LEAGUE challenge?\p"
+	.string "taking the Pokémon League challenge?\p"
 	.string "Heh, even me--if I trained my Pokémon\n"
 	.string "a bit more, I should be stronger than\l"
 	.string "you, {PLAYER}.\p"
@@ -563,7 +563,7 @@ LilycoveCity_Text_MovedLootIntoHideoutToday: @ 81E3B2C
 LilycoveCity_Text_ChanceToDoBigThings: @ 81E3B95
 	.string "I'm just a GRUNT, so I don't know what\n"
 	.string "the BOSS is thinking…\p"
-	.string "But being on TEAM AQUA, I know I'll get\n"
+	.string "But being on Team Aqua, I know I'll get\n"
 	.string "the chance to do big things!\p"
 	.string "Wh-who are you?!\n"
 	.string "I was just talking to myself!$"
@@ -576,7 +576,7 @@ LilycoveCity_Text_DontGoNearCaveInCove: @ 81E3C46
 
 LilycoveCity_Text_IfWorldBecomesOurs: @ 81E3CBE
 	.string "If this whole wide world becomes ours,\n"
-	.string "TEAM AQUA's, it will be a happier\l"
+	.string "Team Aqua's, it will be a happier\l"
 	.string "place for Pokémon, too.$"
 
 LilycoveCity_Text_WailmerLeapOutOfWater: @ 81E3D1F
@@ -614,14 +614,14 @@ LilycoveCity_Text_ImFromKanto: @ 81E3F05
 	.string "only in this area?$"
 
 LilycoveCity_Text_TeamAquaBeenTrainingWailmer: @ 81E3FAB
-	.string "TEAM AQUA's been training their\n"
+	.string "Team Aqua's been training their\n"
 	.string "WAILMER in the cove.\p"
 	.string "We SAILORS can't get our boats out\n"
 	.string "to sea with them in the way!$"
 
 LilycoveCity_Text_SomeonePuntedTeamAquaOut: @ 81E4020
 	.string "Ahoy, did you know?\p"
-	.string "Someone punted TEAM AQUA out of\n"
+	.string "Someone punted Team Aqua out of\n"
 	.string "the way for us!\p"
 	.string "That got the WAILMER out of the cove,\n"
 	.string "so we can get our boats out again.$"
@@ -631,7 +631,7 @@ LilycoveCity_Text_SomeoneStoleMyPokemon: @ 81E40AD
 	.string "seaside inn to the sound of waves…\p"
 	.string "When someone stole my Pokémon!\p"
 	.string "Who's the abductor?\n"
-	.string "TEAM AQUA? Is it TEAM AQUA?$"
+	.string "Team Aqua? Is it Team Aqua?$"
 
 LilycoveCity_Text_MissingPokemonCameBack: @ 81E4145
 	.string "My missing Pokémon…\n"
@@ -660,10 +660,10 @@ LilycoveCity_Text_TeamAquaRenovatedCavern: @ 81E42FC
 	.string "Hm, you know of the peculiar cavern\n"
 	.string "in this cove?\p"
 	.string "That had been a natural formation,\n"
-	.string "but then that TEAM AQUA lot came\l"
+	.string "but then that Team Aqua lot came\l"
 	.string "along and made their renovations.\p"
 	.string "They call themselves\n"
-	.string "the “nature-loving TEAM AQUA”!\p"
+	.string "the “nature-loving Team Aqua”!\p"
 	.string "But what they do and what they say\n"
 	.string "don't match at all!$"
 
@@ -671,7 +671,7 @@ LilycoveCity_Text_TeamAquaLotGoneForGood: @ 81E43FF
 	.string "That cave in the cove…\p"
 	.string "I didn't notice it right away,\n"
 	.string "but it's completely empty now.\p"
-	.string "That TEAM AQUA lot, they must\n"
+	.string "That Team Aqua lot, they must\n"
 	.string "have gone away for good.$"
 
 LilycoveCity_Text_CitySign: @ 81E448B
@@ -711,12 +711,12 @@ LilycoveCity_Text_HarborSign: @ 81E4624
 	.string "the ferry S.S. TIDAL.”$"
 
 LilycoveCity_Text_TrainerFanClubSign: @ 81E466E
-	.string "Pokémon TRAINER FAN CLUB\p"
+	.string "Pokémon Trainer FAN CLUB\p"
 	.string "The names of TRAINERS are scribbled\n"
 	.string "all over the sign…$"
 
 LilycoveCity_Text_DepartmentStoreSign: @ 81E46BE
-	.string "LILYCOVE DEPARTMENT STORE\p"
+	.string "Lilycove Department Store\p"
 	.string "“Overflowing with great merchandise\n"
 	.string "and excitement!\p"
 	.string "“A great place to find that something\n"

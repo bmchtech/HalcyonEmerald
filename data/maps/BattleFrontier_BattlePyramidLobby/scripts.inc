@@ -555,9 +555,9 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainBattlePyramid: @ 825100C
 	.string "You must enter with three Pokémon,\n"
 	.string "none of them holding an item.\p"
 	.string "On your ascent, you will be provided\n"
-	.string "with a BATTLE BAG for items.\p"
+	.string "with a BATTLE Bag for items.\p"
 	.string "If you fail in your challenge, any item\n"
-	.string "placed in the BATTLE BAG disappears.\p"
+	.string "placed in the BATTLE Bag disappears.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, you must select “REST”\l"
 	.string "and save the game.\p"
@@ -604,7 +604,7 @@ BattleFrontier_BattlePyramidLobby_Text_ShowYouIntoPyramid: @ 8251531
 	.string "the BATTLE PYRAMID.$"
 
 BattleFrontier_BattlePyramidLobby_Text_WeWillHoldBagForSafekeeping: @ 8251569
-	.string "We will hold your BAG for safekeeping,\n"
+	.string "We will hold your Bag for safekeeping,\n"
 	.string "{PLAYER}, while you are exploring.$"
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakePreviousBattleBag: @ 82515AD
@@ -613,11 +613,11 @@ BattleFrontier_BattlePyramidLobby_Text_PleaseTakePreviousBattleBag: @ 82515AD
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakeThisBattleBag: @ 82515F4
 	.string "In exchange, please take this\n"
-	.string "BATTLE BAG.$"
+	.string "BATTLE Bag.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExchangedBagForBattleBag: @ 825161E
-	.string "{PLAYER} exchanged the BAG for\n"
-	.string "the BATTLE BAG.$"
+	.string "{PLAYER} exchanged the Bag for\n"
+	.string "the BATTLE Bag.$"
 
 BattleFrontier_BattlePyramidLobby_Text_StepOnFloorPanel: @ 8251647
 	.string "When you step on this floor panel,\n"
@@ -632,9 +632,9 @@ BattleFrontier_BattlePyramidLobby_Text_DidntSaveBeforeQuittingTakeBag: @ 82516D6
 	.string "your challenge the last time.\p"
 	.string "Consequently, your challenge has\n"
 	.string "been disqualified, I'm sorry to say.\p"
-	.string "Here is the BAG we've been holding\n"
+	.string "Here is the Bag we've been holding\n"
 	.string "for you.\p"
-	.string "{PLAYER} got the BAG back.$"
+	.string "{PLAYER} got the Bag back.$"
 
 BattleFrontier_BattlePyramidLobby_Text_YouveConqueredPyramid: @ 82517B5
 	.string "Excellent to see you back!\p"
@@ -650,13 +650,13 @@ BattleFrontier_BattlePyramidLobby_Text_MonHoldingItemCannotTake: @ 82517FC
 
 BattleFrontier_BattlePyramidLobby_Text_HeldItemsMovedToBag: @ 8251881
 	.string "All items held by your Pokémon will be\n"
-	.string "moved to your BATTLE BAG, {PLAYER}.$"
+	.string "moved to your BATTLE Bag, {PLAYER}.$"
 
 BattleFrontier_BattlePyramidLobby_Text_BagCannotHoldPickItemsToKeep: @ 82518C6
-	.string "The BATTLE BAG cannot hold all your\n"
+	.string "The BATTLE Bag cannot hold all your\n"
 	.string "items, I'm sorry to say.\p"
 	.string "Please pick the items you'll keep in the\n"
-	.string "BATTLE BAG, and with your Pokémon.$"
+	.string "BATTLE Bag, and with your Pokémon.$"
 
 BattleFrontier_BattlePyramidLobby_Text_LeastOneMonHoldingItem: @ 825194F
 	.string "At least one Pokémon is still\n"
@@ -664,7 +664,7 @@ BattleFrontier_BattlePyramidLobby_Text_LeastOneMonHoldingItem: @ 825194F
 
 BattleFrontier_BattlePyramidLobby_Text_PickItemsToKeep: @ 825197E
 	.string "Please pick the items you'll keep in the\n"
-	.string "BATTLE BAG, and with your Pokémon.$"
+	.string "BATTLE Bag, and with your Pokémon.$"
 
 @ Unused
 BattleFrontier_BattlePyramidLobby_Text_ReturnedEverythingMonsHeld: @ 82519CA
@@ -672,10 +672,10 @@ BattleFrontier_BattlePyramidLobby_Text_ReturnedEverythingMonsHeld: @ 82519CA
 	.string "the Pokémon held.$"
 
 BattleFrontier_BattlePyramidLobby_Text_UsedBattleBagWillBeKept: @ 82519F8
-	.string "The BATTLE BAG you used will be kept\n"
+	.string "The BATTLE Bag you used will be kept\n"
 	.string "in readiness for your next challenge.\p"
-	.string "{PLAYER} turned the BATTLE BAG over\n"
-	.string "for the BAG's return.$"
+	.string "{PLAYER} turned the BATTLE Bag over\n"
+	.string "for the Bag's return.$"
 
 BattleFrontier_BattlePyramidLobby_Text_RecordResultsWait: @ 8251A77
 	.string "I must record your results.\n"
@@ -694,15 +694,15 @@ BattleFrontier_BattlePyramidLobby_Text_ReceivedPrizeItem: @ 8251AE2
 @ Unused
 BattleFrontier_BattlePyramidLobby_Text_BagIsFull: @ 8251AFC
 	.string "…Ah…\n"
-	.string "Your BAG appears to be filled.\p"
+	.string "Your Bag appears to be filled.\p"
 	.string "Please return after you've organized\n"
-	.string "your BAG's contents.$"
+	.string "your Bag's contents.$"
 
 BattleFrontier_BattlePyramidLobby_Text_DisappointingHereIsBag: @ 8251B5A
 	.string "How disappointing for you…\p"
-	.string "Here is the BAG we've been holding\n"
+	.string "Here is the Bag we've been holding\n"
 	.string "for you.\p"
-	.string "{PLAYER} got the BAG back.$"
+	.string "{PLAYER} got the Bag back.$"
 
 BattleFrontier_BattlePyramidLobby_Text_LookForwardToNextChallenge: @ 8251BB6
 	.string "We look forward to your\n"
@@ -886,7 +886,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainTrainerRules: @ 82527A9
 	.string "inside the PYRAMID.\p"
 	.string "On each floor, there are up to\n"
 	.string "eight TRAINERS.\p"
-	.string "When you defeat a TRAINER, you will\n"
+	.string "When you defeat a Trainer, you will\n"
 	.string "get a helpful hint for your adventure.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainMazeRules: @ 825285A
@@ -895,16 +895,16 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainMazeRules: @ 825285A
 	.string "The mazes are poorly lit.\n"
 	.string "You must advance with caution.\p"
 	.string "The light grows brighter whenever you\n"
-	.string "defeat a wild Pokémon or a TRAINER.$"
+	.string "defeat a wild Pokémon or a Trainer.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainBagRules: @ 8252924
-	.string "The BATTLE BAG serves as your BAG\n"
+	.string "The BATTLE Bag serves as your Bag\n"
 	.string "while in the PYRAMID.\p"
 	.string "There are two separate BATTLE BAGS--\n"
 	.string "one each for the Level 50 and\l"
 	.string "Open Level adventures.\p"
 	.string "They each can hold up to 99 pieces\n"
 	.string "of ten kinds of items.\p"
-	.string "The contents of the BATTLE BAG are\n"
+	.string "The contents of the BATTLE Bag are\n"
 	.string "lost if you fail in your quest.$"
 

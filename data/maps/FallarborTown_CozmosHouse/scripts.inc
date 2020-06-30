@@ -70,7 +70,7 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsHappy:: @ 8200FE4
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow: @ 8200FEE
 	.string "PROF. COZMO: Oh…\n"
 	.string "I never should have let myself be\l"
-	.string "conned into telling TEAM MAGMA where\l"
+	.string "conned into telling Team Magma where\l"
 	.string "you can find METEORITES…\p"
 	.string "That METEORITE from METEOR FALLS…\n"
 	.string "It's never going to be mine now…$"
@@ -80,7 +80,7 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt: @ 82010A2
 	.string "Hah?\p"
 	.string "That item…\p"
 	.string "Could it be?\p"
-	.string "Is it the METEORITE that TEAM MAGMA\n"
+	.string "Is it the METEORITE that Team Magma\n"
 	.string "took from METEOR FALLS?\p"
 	.string "Please, may I have it?\p"
 	.string "I'm not asking for it for free.\n"
@@ -109,7 +109,7 @@ FallarborTown_CozmosHouse_Text_MayIHaveMeteorite: @ 8201249
 FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls: @ 82012BC
 	.string "PROF. COZMO went off to METEOR FALLS\n"
 	.string "on Route 114 with some people from\l"
-	.string "TEAM MAGMA.$"
+	.string "Team Magma.$"
 
 FallarborTown_CozmosHouse_Text_FeelSorryForCozmo: @ 8201310
 	.string "Poor PROF. COZMO…\n"

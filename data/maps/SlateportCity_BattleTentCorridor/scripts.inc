@@ -210,7 +210,7 @@ SlateportCity_ContestHall_Text_MCStepUpTakePartInContest: @ 82093ED
 @ Unused
 SlateportCity_ContestHall_Text_JudgeWouldntDoToMissContest: @ 82094A1
 	.string "JUDGE: Well, hello there!\n"
-	.string "I see that you're a TRAINER!\p"
+	.string "I see that you're a Trainer!\p"
 	.string "Then, it just wouldn't do for you\n"
 	.string "to miss a Pokémon CONTEST!\p"
 	.string "Get a CONTEST PASS in VERDANTURF\n"

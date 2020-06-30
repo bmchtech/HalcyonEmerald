@@ -28,14 +28,14 @@ VictoryRoad_B1F_EventScript_Halle:: @ 8236541
 
 VictoryRoad_B1F_Text_SamuelIntro: @ 8236558
 	.string "The thought that I'm getting closer to\n"
-	.string "the Pokémon LEAGUE…\p"
+	.string "the Pokémon League…\p"
 	.string "I'm getting stage fright…$"
 
 VictoryRoad_B1F_Text_SamuelDefeat: @ 82365AD
 	.string "I couldn't do a thing…$"
 
 VictoryRoad_B1F_Text_SamuelPostBattle: @ 82365C4
-	.string "The Pokémon LEAGUE became distant\n"
+	.string "The Pokémon League became distant\n"
 	.string "again… What a letdown…$"
 
 VictoryRoad_B1F_Text_ShannonIntro: @ 82365FD
@@ -53,7 +53,7 @@ VictoryRoad_B1F_Text_ShannonPostBattle: @ 8236678
 
 VictoryRoad_B1F_Text_MichelleIntro: @ 82366C2
 	.string "This isn't the goal. It's only a place\n"
-	.string "on the way to the Pokémon LEAGUE.$"
+	.string "on the way to the Pokémon League.$"
 
 VictoryRoad_B1F_Text_MichelleDefeat: @ 823670B
 	.string "That's the way!$"

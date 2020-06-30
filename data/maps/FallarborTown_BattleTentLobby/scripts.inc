@@ -338,7 +338,7 @@ FallarborTown_BattleTentLobby_Text_ScottLookingForSomeone: @ 8200501
 	.string "How should I say this?\p"
 	.string "Someone bursting with the desire\n"
 	.string "and the drive to win.\p"
-	.string "If there were a TRAINER like that,\n"
+	.string "If there were a Trainer like that,\n"
 	.string "I'd immediately…\p"
 	.string "Whoops! Never mind!\n"
 	.string "Keep working at it!$"

@@ -135,11 +135,11 @@ SootopolisCity_LotadAndSeedotHouse_Text_GoshMightBeBiggerThanLotad: @ 8227480
 
 @ Unused
 SootopolisCity_LotadAndSeedotHouse_Text_ReceivedPotion1: @ 822750E
-	.string "{PLAYER} received a POTION.$"
+	.string "{PLAYER} received a Potion.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull1: @ 8227524
 	.string "Hunh?\n"
-	.string "Your BAG is crammed full.$"
+	.string "Your Bag is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerSeedot: @ 8227544
 	.string "{STR_VAR_2} inches, is it?\p"
@@ -183,11 +183,11 @@ SootopolisCity_LotadAndSeedotHouse_Text_WowMightBeBiggerThanSeedot: @ 822776C
 
 @ Unused
 SootopolisCity_LotadAndSeedotHouse_Text_ReceivedPotion2: @ 82277F4
-	.string "{PLAYER} received a POTION.$"
+	.string "{PLAYER} received a Potion.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_BagCrammedFull2: @ 822780A
 	.string "Hunh?\n"
-	.string "Your BAG is crammed full.$"
+	.string "Your Bag is crammed full.$"
 
 SootopolisCity_LotadAndSeedotHouse_Text_SeenBiggerLotad: @ 822782A
 	.string "{STR_VAR_2} inches?\p"

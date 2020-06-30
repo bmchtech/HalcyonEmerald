@@ -1537,7 +1537,7 @@ LilycoveCity_ContestLobby_Text_ExplainContestRanks: @ 827B221
 	.string "the MASTER Rank in the same category.\p"
 	.string "A Pokémon that won in the MASTER Rank\n"
 	.string "may compete in the MASTER Rank as\l"
-	.string "often as its TRAINER wants.$"
+	.string "often as its Trainer wants.$"
 
 LilycoveCity_ContestLobby_Text_EnterWhichRank: @ 827B3FF
 	.string "Which Rank would you like to enter?$"

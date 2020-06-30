@@ -359,7 +359,7 @@ BattleFrontier_OutsideEast_Text_SometimesImportantOldManInThere: @ 8243668
 BattleFrontier_OutsideEast_Text_LegendOfBattlePyramid: @ 82436F2
 	.string "Do you know it?\n"
 	.string "The legend of the BATTLE PYRAMID?\p"
-	.string "When there comes a confident TRAINER\n"
+	.string "When there comes a confident Trainer\n"
 	.string "reaching for the golden pinnacle,\l"
 	.string "there shall appear a man among men.\p"
 	.string "Don't know that legend?\n"
@@ -378,7 +378,7 @@ BattleFrontier_OutsideEast_Text_GotWipedOut: @ 8243809
 
 BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower: @ 8243895
 	.string "This guy ran into a horribly tough\n"
-	.string "TRAINER while he was on the BATTLE\l"
+	.string "Trainer while he was on the BATTLE\l"
 	.string "TOWER challenge.\p"
 	.string "Now look at him…\p"
 	.string "You need to be cautious if you ever\n"

@@ -66,7 +66,7 @@ MeteorFalls_1F_2R_EventScript_RematchJay:: @ 822C5ED
 MeteorFalls_1F_2R_Text_NicolasIntro: @ 822C608
 	.string "This is where we DRAGON users do our\n"
 	.string "training.\p"
-	.string "The CHAMPION even visits.\n"
+	.string "The Champion even visits.\n"
 	.string "Now do you see how special it is here?$"
 
 MeteorFalls_1F_2R_Text_NicolasDefeat: @ 822C678
@@ -114,12 +114,12 @@ MeteorFalls_1F_2R_Text_JohnPostBattle: @ 822C8C1
 	.string "my dear wife in a battle.$"
 
 MeteorFalls_1F_2R_Text_JohnNotEnoughMons: @ 822C92B
-	.string "JOHN: Well, well, what a young TRAINER!\p"
+	.string "JOHN: Well, well, what a young Trainer!\p"
 	.string "Will you battle with us? If so, you'll\n"
 	.string "have to return with more Pokémon.$"
 
 MeteorFalls_1F_2R_Text_JohnRegister: @ 822C99C
-	.string "JOHN: Young TRAINER, if the chance\n"
+	.string "JOHN: Young Trainer, if the chance\n"
 	.string "arises, will you battle with us again?$"
 
 MeteorFalls_1F_2R_Text_JayIntro: @ 822C9E6
@@ -158,7 +158,7 @@ MeteorFalls_1F_2R_Text_JohnPostRematch: @ 822CBC5
 	.string "we battled day in and day out…$"
 
 MeteorFalls_1F_2R_Text_JohnRematchNotEnoughMons: @ 822CC27
-	.string "JOHN: Well, well, what a young TRAINER!\p"
+	.string "JOHN: Well, well, what a young Trainer!\p"
 	.string "Will you battle with us? If so, you'll\n"
 	.string "have to return with more Pokémon.$"
 

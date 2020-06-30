@@ -13,11 +13,11 @@ CableClub_Text_TradeUsingLinkCable:: @ 8277F1B
 	.string "using a GBA Game Link cable.$"
 
 CableClub_Text_BattleUsingLinkCable:: @ 8277F5A
-	.string "You may battle another TRAINER\n"
+	.string "You may battle another Trainer\n"
 	.string "using a GBA Game Link cable.$"
 
 CableClub_Text_RecordCornerUsingLinkCable:: @ 8277F96
-	.string "You can use the RECORD CORNER with\n"
+	.string "You can use the Record Corner with\n"
 	.string "others using a GBA Game Link cable.$"
 
 @ Unused
@@ -111,16 +111,16 @@ Text_TerminateLinkPleaseWait: @ 82783E9
 	.string "the room. Please wait.$"
 
 CableClub_Text_TooBusyToNotice: @ 827842E
-	.string "This TRAINER is too busy to\n"
+	.string "This Trainer is too busy to\n"
 	.string "notice…$"
 
 CableClub_Text_GotToLookAtTrainerCard: @ 8278452
 	.string "Score! Got to look at {STR_VAR_1}'s\n"
-	.string "TRAINER CARD!$"
+	.string "Trainer CARD!$"
 
 CableClub_Text_GotToLookAtColoredTrainerCard: @ 827847B
 	.string "Score! Got to look at {STR_VAR_1}'s\n"
-	.string "TRAINER CARD!\p"
+	.string "Trainer CARD!\p"
 	.string "It's a {STR_VAR_2} card!$"
 
 BattleColosseum_2P_Text_TakePlaceStartBattle: @ 82784B4
@@ -135,7 +135,7 @@ RecordCorner_Text_ThanksForComing: @ 827850E
 	.string "Thanks for coming.$"
 
 CableClub_Text_TrainerCardDataOverwritten: @ 8278521
-	.string "The TRAINER CARD data will\n"
+	.string "The Trainer CARD data will\n"
 	.string "be overwritten.$"
 
 CableClub_Text_HopeToSeeYouAgain: @ 827854C
@@ -148,7 +148,7 @@ CableClub_Text_NotSetUpForFarAwayRegion: @ 8278565
 	.string "region yet…$"
 
 CableClub_Text_OtherTrainerNotReady: @ 82785C9
-	.string "The other TRAINER is not ready.$"
+	.string "The other Trainer is not ready.$"
 
 CableClub_Text_YouHaveAMonThatCantBeTaken: @ 82785E9
 	.string "You have at least one Pokémon\n"
@@ -187,7 +187,7 @@ CableClub_Text_PleaseWait: @ 8278792
 
 CableClub_Text_YouMayTradeHere:: @ 827879F
 	.string "You may trade your Pokémon here\n"
-	.string "with another TRAINER.$"
+	.string "with another Trainer.$"
 
 CableClub_Text_YouMayBattleHere:: @ 82787D5
 	.string "You may battle with your friends\n"
@@ -203,7 +203,7 @@ CableClub_Text_CanMixRecords:: @ 8278831
 
 @ Unused
 CableClub_Text_GuideToVariousServices: @ 827886B
-	.string "A guide to the WIRELESS CLUB's\n"
+	.string "A guide to the Wireless Club's\n"
 	.string "various services.$"
 
 CableClub_Text_CancelSelectedItem:: @ 827889C
@@ -230,7 +230,7 @@ CableClub_Text_NoEnigmaBerryInUnionRoom: @ 827897B
 	.string "BERRY may enter the UNION ROOM.$"
 
 CableClub_Text_UnionRoomAdapterNotConnected: @ 82789B5
-	.string "This is the Pokémon WIRELESS CLUB\n"
+	.string "This is the Pokémon Wireless Club\n"
 	.string "UNION ROOM.\p"
 	.string "Unfortunately, your Wireless\n"
 	.string "Adapter is not connected properly.\p"
@@ -348,7 +348,7 @@ CableClub_Text_PlayWhichBattleMode: @ 82790BE
 
 CableClub_Text_AccessRecordCorner: @ 82790E8
 	.string "Would you like to access\n"
-	.string "the RECORD CORNER?$"
+	.string "the Record Corner?$"
 
 CableClub_Text_UseBerryCrush: @ 8279114
 	.string "Would you like to use the\n"
@@ -358,15 +358,15 @@ CableClub_Text_ExplainBattleModes: @ 8279142
 	.string "There are three Battle Modes.\p"
 	.string "SINGLE BATTLE is for two TRAINERS\n"
 	.string "with one or more Pokémon each.\p"
-	.string "Each TRAINER can have one Pokémon\n"
+	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.\p"
 	.string "DOUBLE BATTLE is for two TRAINERS\n"
 	.string "with two or more Pokémon each.\p"
-	.string "Each TRAINER will send out two\n"
+	.string "Each Trainer will send out two\n"
 	.string "Pokémon in battle at a time.\p"
 	.string "MULTI BATTLE is for four TRAINERS\n"
 	.string "with one or more Pokémon each.\p"
-	.string "Each TRAINER can have one Pokémon\n"
+	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.$"
 
 CableClub_Text_ChooseGroupLeaderOfTwo: @ 82792CD
@@ -421,7 +421,7 @@ CableClub_Text_FirstTimeRightThisWay: @ 827964A
 	.string "I'll show you how the Wireless\n"
 	.string "Communication System works.\p"
 	.string "First, I need to show you this\n"
-	.string "floor of our Pokémon CENTER.\p"
+	.string "floor of our Pokémon Center.\p"
 	.string "Right this way, please.$"
 
 CableClub_Text_ExplainWirelessClubFirstTime: @ 8279718
@@ -449,13 +449,13 @@ CableClub_Text_ExplainWirelessClubFirstTime: @ 8279718
 CableClub_Text_AskAboutLinking: @ 8279937
 	.string "Hello, {PLAYER}!\p"
 	.string "It's me, TEALA, the Pokémon\n"
-	.string "CENTER 2F attendant.\p"
+	.string "Center 2F attendant.\p"
 	.string "Is there something you needed to\n"
 	.string "ask me about linking?$"
 
 CableClub_Text_ExplainWirelessClub: @ 82799AA
 	.string "Let me explain how the Pokémon\n"
-	.string "WIRELESS CLUB works.\p"
+	.string "Wireless Club works.\p"
 	.string "On this, the top floor, there are\n"
 	.string "two rooms.\p"
 	.string "First, the room on the left.\n"

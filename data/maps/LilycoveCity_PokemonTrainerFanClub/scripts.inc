@@ -646,10 +646,10 @@ LilycoveCity_PokemonTrainerFanClub_Text_OthersDontKnowYoureTheBest: @ 821D0BB
 	.string "Show them you've got guts!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainersPowerIsOutOfTheOrdinary: @ 821D12A
-	.string "I hate to say this, but the TRAINER\n"
+	.string "I hate to say this, but the Trainer\n"
 	.string "everybody's talking about is\l"
 	.string "{STR_VAR_1}, no question about it!\p"
-	.string "That TRAINER's power…\n"
+	.string "That Trainer's power…\n"
 	.string "It's out of the ordinary.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsBestNoOneWantsToListen: @ 821D1B5
@@ -659,11 +659,11 @@ LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsBestNoOneWantsToListen: @ 821D1
 
 LilycoveCity_PokemonTrainerFanClub_Text_HearingAboutToughNewTrainer: @ 821D20C
 	.string "I've been hearing things about\n"
-	.string "a tough new TRAINER.\p"
-	.string "This TRAINER's supposed to be beating\n"
+	.string "a tough new Trainer.\p"
+	.string "This Trainer's supposed to be beating\n"
 	.string "Gym Leaders, even.\p"
 	.string "Do you know anything about this\n"
-	.string "new TRAINER?$"
+	.string "new Trainer?$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ImPullingForYou: @ 821D2A6
 	.string "Oh!\n"
@@ -693,7 +693,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly: @ 821D377
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly: @ 821D3EE
 	.string "Whatever anyone says, my favorite\n"
-	.string "TRAINER is DEWFORD's Gym Leader\l"
+	.string "Trainer is DEWFORD's Gym Leader\l"
 	.string "BRAWLY!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather: @ 821D438
@@ -754,14 +754,14 @@ LilycoveCity_PokemonTrainerFanClub_Text_TrainerIsReallyCoolItsJustMe: @ 821D857
 	.string "{STR_VAR_1} really is cool, don't\n"
 	.string "you think so?\p"
 	.string "Even if it's just me, I'm going to keep\n"
-	.string "cheering my favorite TRAINER.$"
+	.string "cheering my favorite Trainer.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WishThereWasTrainerLikeThat: @ 821D8C4
-	.string "My favorite TRAINER is…\p"
+	.string "My favorite Trainer is…\p"
 	.string "Cool…\p"
 	.string "Strong…\p"
 	.string "And really nice…\p"
-	.string "I wish there was a TRAINER like that…$"
+	.string "I wish there was a Trainer like that…$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WantToBeStrongLikeYou: @ 821D921
 	.string "Whoa! It's {PLAYER}!\n"
@@ -800,7 +800,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_ImInYourCorner: @ 821DAF5
 	.string "out there and battle like always.$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_ThinkTrainerIsNumberOne: @ 821DB69
-	.string "You're a pretty decent TRAINER,\n"
+	.string "You're a pretty decent Trainer,\n"
 	.string "I think.\p"
 	.string "But I also think that {STR_VAR_1}\n"
 	.string "is number one right now.\p"

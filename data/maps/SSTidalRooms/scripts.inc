@@ -112,7 +112,7 @@ SSTidalRooms_Text_JedDefeat: @ 823CD54
 SSTidalRooms_Text_JedPostBattle: @ 823CD5F
 	.string "JED: It's the first time that our lovey-\n"
 	.string "dovey power couldn't prevail!\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_JedNotEnoughMons: @ 823CDC6
 	.string "JED: You only have one Pokémon?\n"
@@ -128,7 +128,7 @@ SSTidalRooms_Text_LeaDefeat: @ 823CE4B
 SSTidalRooms_Text_LeaPostBattle: @ 823CE59
 	.string "LEA: I can't believe it!\n"
 	.string "Our lovey-dovey power failed…\l"
-	.string "You must be an awesome TRAINER!$"
+	.string "You must be an awesome Trainer!$"
 
 SSTidalRooms_Text_LeaNotEnoughMons: @ 823CEB0
 	.string "LEA: I wanted to battle…\n"
@@ -148,7 +148,7 @@ SSTidalRooms_Text_GarretPostBattle: @ 823CF45
 	.string "A yacht for me and Pokémon!$"
 
 SSTidalRooms_Text_NaomiIntro: @ 823CF97
-	.string "Oh, you're such an adorable TRAINER.\n"
+	.string "Oh, you're such an adorable Trainer.\n"
 	.string "Would you like to have tea?\l"
 	.string "Or would you rather battle?$"
 

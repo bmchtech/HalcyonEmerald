@@ -779,7 +779,7 @@ SecretBase_Text_WhatWouldYouLikeToDo: @ 827681A
 
 SecretBase_Text_RegistryInfo: @ 8276835
 	.string "Once registered, a SECRET BASE will not\n"
-	.string "disappear unless the other TRAINER\l"
+	.string "disappear unless the other Trainer\l"
 	.string "moves it to a different location.\p"
 	.string "If a SECRET BASE is deleted from the\n"
 	.string "registered list, another one may take\l"

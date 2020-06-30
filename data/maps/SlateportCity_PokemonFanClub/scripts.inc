@@ -316,7 +316,7 @@ SlateportCity_PokemonFanClub_Text_MeetChairman: @ 820A233
 	.string "show us theirs.$"
 
 SlateportCity_PokemonFanClub_Text_LikeToSeeEnteredContestPokemon: @ 820A3EE
-	.string "The Pokémon of a TRAINER who has\n"
+	.string "The Pokémon of a Trainer who has\n"
 	.string "entered a Pokémon CONTEST…\l"
 	.string "That, I would like to see.$"
 
@@ -329,7 +329,7 @@ SlateportCity_PokemonFanClub_Text_AllowMeToExamineYourPokemon: @ 820A445
 	.string "raised by other TRAINERS.\p"
 	.string "The happy expressions of Pokémon\n"
 	.string "raised with proper care…\p"
-	.string "The kindly eyes of the TRAINER that\n"
+	.string "The kindly eyes of the Trainer that\n"
 	.string "nurtured and raised the Pokémon…\p"
 	.string "The very thought fills my heart to\n"
 	.string "overwhelming with joy.\p"
@@ -349,7 +349,7 @@ SlateportCity_PokemonFanClub_Text_HmHmISee: @ 820A65F
 SlateportCity_PokemonFanClub_Text_GiveMonMorePokeblocks: @ 820A66E
 	.string "Hmmm… It's not bad, but it's not\n"
 	.string "good, either…\p"
-	.string "You, the TRAINER, must put more\n"
+	.string "You, the Trainer, must put more\n"
 	.string "effort into raising this Pokémon!\p"
 	.string "For instance, may I suggest that\n"
 	.string "you give it more {POKEBLOCK}S?$"
@@ -359,7 +359,7 @@ SlateportCity_PokemonFanClub_Text_NoSpaceForReward: @ 820A719
 	.string "Your Pokémon is growing quite well,\n"
 	.string "so you deserve a reward.\p"
 	.string "Unfortunately, you have no space for\n"
-	.string "this in your BAG.$"
+	.string "this in your Bag.$"
 
 SlateportCity_PokemonFanClub_Text_MonMostImpressiveGiveItThis: @ 820A795
 	.string "Your {STR_VAR_1}, it is growing in\n"
@@ -425,7 +425,7 @@ SlateportCity_PokemonFanClub_Text_PokemonDontLikeFainting: @ 820AC47
 	.string "If you keep letting a Pokémon faint\n"
 	.string "in battle, it'll come to resent it.\p"
 	.string "Soon, it will become less trusting\n"
-	.string "of the TRAINER.\p"
+	.string "of the Trainer.\p"
 	.string "In other words, it certainly won't\n"
 	.string "like you very much.$"
 

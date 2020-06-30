@@ -512,10 +512,10 @@ BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers: @ 823E410
 	.string "They used to be incredibly tough,\n"
 	.string "and they were famous, too.\p"
 	.string "But they were obliterated by this\n"
-	.string "certain TRAINER at a tournament.\p"
+	.string "certain Trainer at a tournament.\p"
 	.string "They were so thoroughly whipped,\n"
-	.string "they became smitten by the TRAINER.\p"
-	.string "Now they're just fans of the TRAINER.\n"
+	.string "they became smitten by the Trainer.\p"
+	.string "Now they're just fans of the Trainer.\n"
 	.string "They go cheer for their idol at the\l"
 	.string "BATTLE DOME every day now.$"
 

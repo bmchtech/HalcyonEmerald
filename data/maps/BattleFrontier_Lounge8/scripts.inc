@@ -14,7 +14,7 @@ BattleFrontier_Lounge8_EventScript_NinjaBoy:: @ 82676DC
 	end
 
 BattleFrontier_Lounge8_Text_WhatATrainerNeeds: @ 82676E5
-	.string "What a TRAINER needs…\p"
+	.string "What a Trainer needs…\p"
 	.string "Knowledge…\n"
 	.string "Strategy…\l"
 	.string "Luck…\l"

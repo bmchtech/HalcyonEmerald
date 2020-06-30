@@ -21,7 +21,7 @@ SootopolisCity_House3_EventScript_Girl:: @ 8226B9B
 	end
 
 SootopolisCity_House3_Text_JuanHasManyFansDoYou: @ 8226BA4
-	.string "You're a Pokémon TRAINER, aren't you?\p"
+	.string "You're a Pokémon Trainer, aren't you?\p"
 	.string "SOOTOPOLIS's JUAN has many fans.\n"
 	.string "Even more than his student WALLACE!\p"
 	.string "Do you have any?$"
@@ -39,5 +39,5 @@ SootopolisCity_House3_Text_TrainerFanClubWasWild: @ 8226C9C
 	.string "Dedicated fans come over from even\n"
 	.string "outside of Hoenn.\p"
 	.string "It was really wild when I went to the\n"
-	.string "TRAINER FAN CLUB in LILYCOVE.$"
+	.string "Trainer FAN CLUB in LILYCOVE.$"
 

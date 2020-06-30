@@ -670,7 +670,7 @@ LilycoveCity_PokemonCenter_1F_Text_YouDontHaveSpaceForIt: @ 82A8DBD
     .string "Oh, you can't have it if you don't have\n"
     .string "the space for it.\p"
     .string "Please come see me when you get\n"
-    .string "your BAG organized…$"
+    .string "your Bag organized…$"
 
 LilycoveCity_PokemonCenter_1F_Text_ImTheQuizLady: @ 82A8E2B
     .string "I'm the QUIZ LADY!\n"
@@ -724,7 +724,7 @@ LilycoveCity_PokemonCenter_1F_Text_XReceivedOneY: @ 82A9056
     .string "one {STR_VAR_2}!$"
 
 LilycoveCity_PokemonCenter_1F_Text_YourBagIsFilledUp: @ 82A906A
-    .string "Oh? Your BAG is filled up!\n"
+    .string "Oh? Your Bag is filled up!\n"
     .string "Come see me when you have room.$"
 
 LilycoveCity_PokemonCenter_1F_Text_WrongTheCorrectAnswerIs: @ 82A90A5

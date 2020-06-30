@@ -1,5 +1,5 @@
 const u8 gRibbonDescriptionPart1_Champion[] = _("CHAMPION-beating, HALL");
-const u8 gRibbonDescriptionPart2_Champion[] = _("OF FAME Member RIBBON");
+const u8 gRibbonDescriptionPart2_Champion[] = _("OF FAME Member Ribbon");
 const u8 gRibbonDescriptionPart1_CoolContest[] = _("COOL CONTEST");
 const u8 gRibbonDescriptionPart1_BeautyContest[] = _("BEAUTY CONTEST");
 const u8 gRibbonDescriptionPart1_CuteContest[] = _("CUTE CONTEST");

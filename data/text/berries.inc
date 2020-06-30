@@ -81,7 +81,7 @@ LilycoveCity_Text_BerrySuitsYou: @ 82A7244
 
 LilycoveCity_Text_BecauseYoureTrainer: @ 82A72E3
 	.string "When it gets right down to it…\p"
-	.string "It's because you're a TRAINER!$"
+	.string "It's because you're a Trainer!$"
 
 LilycoveCity_Text_PokeblocksSuitPokemon: @ 82A7321
 	.string "When it gets right down to it…\p"
@@ -177,7 +177,7 @@ Route104_PrettyPetalFlowerShop_Text_YouCanHaveThis: @ 82A7916
 
 Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation: @ 82A79A6
 	.string "While BERRY plants are growing,\n"
-	.string "water them with the WAILMER PAIL.\p"
+	.string "water them with the Wailmer Pail.\p"
 	.string "Oh, another thing.\p"
 	.string "If you don't pick BERRIES for a while,\n"
 	.string "they'll drop off onto the ground.\l"

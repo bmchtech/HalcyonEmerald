@@ -1038,7 +1038,7 @@ Route104_Text_OnlyThrowBallAtWildPokemon: @ 81ED735
 	.string "wild Pokémon.$"
 
 Route104_Text_ImNotATrainer: @ 81ED7A2
-	.string "Oh, no, I'm not a TRAINER.\p"
+	.string "Oh, no, I'm not a Trainer.\p"
 	.string "But that's right, if TRAINERS lock eyes,\n"
 	.string "it's a challenge to battle.\p"
 	.string "If you don't want to battle, stay out\n"
@@ -1077,22 +1077,22 @@ Route104_Text_MrBrineysCottage: @ 81EDA8C
 
 Route104_Text_RouteSignPetalburg: @ 81EDAA1
 	.string "ROUTE 1O4\n"
-	.string "{RIGHT_ARROW} PETALBURG CITY$"
+	.string "{RIGHT_ARROW} Petalburg City$"
 
 Route104_Text_RouteSignRustboro: @ 81EDABC
 	.string "ROUTE 1O4\n"
-	.string "{UP_ARROW} RUSTBORO CITY$"
+	.string "{UP_ARROW} Rustboro City$"
 
 Route104_Text_PrettyPetalFlowShop: @ 81EDAD6
 	.string "PRETTY PETAL FLOWER SHOP$"
 
 Route104_Text_TrainerTipsDoubleBattles: @ 81EDAEF
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "In the Hoenn region there are pairs\n"
 	.string "of TRAINERS who challenge others\l"
 	.string "for 2-on-2 Pokémon battles called\l"
 	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the TRAINER must\n"
+	.string "In a DOUBLE BATTLE, the Trainer must\n"
 	.string "send out two Pokémon, the one at the\l"
 	.string "left of the list and the top one.\l"
 	.string "Watch how Pokémon are lined up.$"
@@ -1121,14 +1121,14 @@ Route104_Text_MayHaventRaisedPokemon: @ 81EDD2A
 	.string "May: Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
 	.string "Pokémon very much?\p"
-	.string "That's not very good for a TRAINER!$"
+	.string "That's not very good for a Trainer!$"
 
 Route104_Text_MayLetsBattle: @ 81EDD9F
 	.string "May: So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 Route104_Text_MayIntro: @ 81EDDDB
-	.string "May: You just became a TRAINER,\n"
+	.string "May: You just became a Trainer,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 Route104_Text_MayDefeat: @ 81EDE18
@@ -1173,7 +1173,7 @@ Route104_Text_BrendanLetsBattle: @ 81EE094
 
 Route104_Text_BrendanIntro: @ 81EE0C7
 	.string "Brendan: I know you just became\n"
-	.string "a TRAINER, but I won't go easy!$"
+	.string "a Trainer, but I won't go easy!$"
 
 Route104_Text_BrendanDefeat: @ 81EE107
 	.string "Hmm…\n"

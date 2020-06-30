@@ -269,7 +269,7 @@ BattleFrontier_ScottsHouse_Text_ExpectingGreatThings: @ 8263DB8
 	.string "I'm expecting great things from you!$"
 
 BattleFrontier_ScottsHouse_Text_WhyIGoSeekingTrainers: @ 8263DDD
-	.string "SCOTT: Every TRAINER is an individual.\n"
+	.string "SCOTT: Every Trainer is an individual.\n"
 	.string "They all lead lives of their own.\p"
 	.string "But when they're in a battle,\n"
 	.string "it doesn't matter who they are.\p"
@@ -332,7 +332,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols: @ 8264216
 
 BattleFrontier_ScottsHouse_Text_SoGladIBroughtYouHere: @ 8264373
 	.string "I must say I have the gift of knowing\n"
-	.string "a good TRAINER when I see one.\p"
+	.string "a good Trainer when I see one.\p"
 	.string "I'm so glad I had the foresight to\n"
 	.string "bring you here!$"
 

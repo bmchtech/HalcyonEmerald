@@ -545,8 +545,8 @@ BattleFrontier_BattleDomeLobby_Text_ReceivedPrize: @ 824A554
 
 @ Unused
 BattleFrontier_BattleDomeLobby_Text_BagFullMakeRoom: @ 824A56E
-	.string "Oh, your BAG appears to be full.\p"
-	.string "Please make room in your BAG, then come\n"
+	.string "Oh, your Bag appears to be full.\p"
+	.string "Please make room in your Bag, then come\n"
 	.string "see me.$"
 
 BattleFrontier_BattleDomeLobby_Text_ThankYouForPlaying: @ 824A5BF
@@ -634,12 +634,12 @@ BattleFrontier_OutsideWest_Text_QuestionMarkUnderConstruction: @ 824AB75
 	.string "Under Construction!$"
 
 BattleFrontier_BattleDomeLobby_Text_WinnersGainReputation: @ 824AB94
-	.string "When a TRAINER chains tournament\n"
+	.string "When a Trainer chains tournament\n"
 	.string "wins at the BATTLE DOME, he or she\l"
 	.string "gains a reputation as a star.\p"
 	.string "Tough TRAINERS are drawn by that\n"
 	.string "reputation to the BATTLE DOME.\p"
-	.string "A true superstar is a TRAINER who\n"
+	.string "A true superstar is a Trainer who\n"
 	.string "can keep winning tournaments.$"
 
 BattleFrontier_BattleDomeLobby_Text_TrashedInFirstRound: @ 824AC76

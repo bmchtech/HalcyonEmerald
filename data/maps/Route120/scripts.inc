@@ -406,7 +406,7 @@ Route120_Text_StevenReadyForBattle: @ 81F5ADE
 
 Route120_Text_StevenShowMeYourPower: @ 81F5B0F
 	.string "STEVEN: {PLAYER}{KUN}, show me your true\n"
-	.string "power as a TRAINER!$"
+	.string "power as a Trainer!$"
 
 Route120_Text_StevenUsedDevonScope: @ 81F5B43
 	.string "STEVEN used the DEVON SCOPE.\p"

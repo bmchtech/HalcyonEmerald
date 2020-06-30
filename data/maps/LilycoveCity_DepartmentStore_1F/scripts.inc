@@ -150,7 +150,7 @@ LilycoveCity_DepartmentStore_1F_EventScript_FloorNamesSign:: @ 821F85D
 	end
 
 LilycoveCity_DepartmentStore_1F_Text_WelcomeToDeptStore: @ 821F866
-	.string "Welcome to LILYCOVE DEPARTMENT STORE.$"
+	.string "Welcome to Lilycove Department Store.$"
 
 LilycoveCity_DepartmentStore_1F_Text_IBuyAllSortsOfThings: @ 821F88C
 	.string "Whenever I come to the DEPARTMENT\n"
@@ -171,7 +171,7 @@ LilycoveCity_DepartmentStore_1F_Text_Azumarill: @ 821F974
 LilycoveCity_DepartmentStore_1F_Text_FloorNamesSign: @ 821F98A
 	.string "1F: SERVICE COUNTER\n"
 	.string "    LOTTERY CORNER\p"
-	.string "2F: TRAINER'S ZONE\p"
+	.string "2F: Trainer'S ZONE\p"
 	.string "3F: BATTLE COLLECTION\p"
 	.string "4F: TM CORNER\p"
 	.string "5F: POKé DOLL FLOOR\p"

@@ -293,7 +293,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou: @ 820BE69
 	.string "Who are you people?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua: @ 820BE93
-	.string "We're TEAM AQUA!\p"
+	.string "We're Team Aqua!\p"
 	.string "Our BOSS wants those parts!\n"
 	.string "Shut your yap and fork them over!$"
 
@@ -325,20 +325,20 @@ SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong: @ 820BFF2
 	.string "simps are held up by a mere child?$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieWarning: @ 820C059
-	.string "We are TEAM AQUA,\n"
+	.string "We are Team Aqua,\n"
 	.string "and we love the sea!\p"
-	.string "And I am TEAM AQUA's leader,\n"
+	.string "And I am Team Aqua's leader,\n"
 	.string "ARCHIE!\p"
 	.string "What makes you interfere with us?\p"
 	.string "…No! You can't be!\n"
-	.string "You're not one of TEAM MAGMA?\p"
+	.string "You're not one of Team Magma?\p"
 	.string "Wait, that can't be right.\n"
 	.string "You're not dressed for the part.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Pokémon, people… All life depends on\n"
 	.string "the sea.\p"
-	.string "So, TEAM AQUA is dedicated to\n"
+	.string "So, Team Aqua is dedicated to\n"
 	.string "the expansion of the sea.\p"
 	.string "Don't you agree? What we are doing\n"
 	.string "is a magnificent undertaking.\p"
@@ -425,7 +425,7 @@ SlateportCity_OceanicMuseum_2F_Text_HoennModel: @ 820C6C7
 	.string "“MODEL OF Hoenn REGION”\p"
 	.string "It's a miniature diorama of the\n"
 	.string "Hoenn region.\p"
-	.string "Where is LITTLEROOT TOWN on this?$"
+	.string "Where is Littleroot Town on this?$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay: @ 820C72F
 	.string "It's a display on the flow of seawater.\p"

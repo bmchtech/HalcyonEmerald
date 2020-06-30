@@ -66,7 +66,7 @@ MtPyre_3F_Text_GabrielleIntro: @ 8231952
 
 MtPyre_3F_Text_GabrielleDefeat: @ 823196A
 	.string "That was amazing!\n"
-	.string "You're a very special TRAINER.$"
+	.string "You're a very special Trainer.$"
 
 MtPyre_3F_Text_GabriellePostBattle: @ 823199B
 	.string "Pokémon no longer of this world.\n"

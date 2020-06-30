@@ -1458,7 +1458,7 @@ SootopolisCity_Movement_DestroyTask:: @ 81E656D
 	step_end
 
 SootopolisCity_Text_GymSign: @ 81E656F
-	.string "SOOTOPOLIS CITY Pokémon GYM\n"
+	.string "SOOTOPOLIS CITY Pokémon Gym\n"
 	.string "LEADER: JUAN\p"
 	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
@@ -1589,11 +1589,11 @@ SootopolisCity_Text_CaveOfOriginPleaseLeave: @ 81E6D77
 SootopolisCity_Text_LeadSuperiorTrainerToCave: @ 81E6DFE
 	.string "A person with a strong will and\n"
 	.string "superior talent…\p"
-	.string "A TRAINER who has knowledge and\n"
+	.string "A Trainer who has knowledge and\n"
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
 	.string "instructed by WALLACE to lead that\l"
-	.string "TRAINER to this CAVE.$"
+	.string "Trainer to this CAVE.$"
 
 SootopolisCity_Text_AwakenedPokemonClash: @ 81E6ED4
 	.string "Oh, my…\p"
@@ -1746,7 +1746,7 @@ SootopolisCity_Text_HaventYouScaledSkyPillar: @ 81E79C8
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm: @ 81E7A3E
 	.string "WALLACE: {PLAYER}{KUN}…\p"
-	.string "The leaders of TEAM MAGMA and AQUA,\n"
+	.string "The leaders of Team Magma and AQUA,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
 	.string "have to say for themselves.$"

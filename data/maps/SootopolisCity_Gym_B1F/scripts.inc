@@ -79,7 +79,7 @@ SootopolisCity_Gym_B1F_Text_DaphneIntro: @ 8225ED6
 	.string "The sight of JUAN conducting\n"
 	.string "a battle…\p"
 	.string "The very beauty of it compelled me to\n"
-	.string "become a TRAINER.$"
+	.string "become a Trainer.$"
 
 SootopolisCity_Gym_B1F_Text_DaphneDefeat: @ 8225F35
 	.string "You battled with more beauty than\n"
@@ -105,7 +105,7 @@ SootopolisCity_Gym_B1F_Text_ConniePostBattle: @ 8225FFE
 	.string "need to walk on each floor tile once.$"
 
 SootopolisCity_Gym_B1F_Text_BridgetIntro: @ 8226061
-	.string "The Pokémon GYM of the highest level\n"
+	.string "The Pokémon Gym of the highest level\n"
 	.string "in the Hoenn region…\p"
 	.string "That's the SOOTOPOLIS GYM.$"
 
@@ -133,7 +133,7 @@ SootopolisCity_Gym_B1F_Text_OliviaPostBattle: @ 82261B5
 SootopolisCity_Gym_B1F_Text_TiffanyIntro: @ 82261F7
 	.string "A graceful glide across the ice while\n"
 	.string "crossing no lines…\p"
-	.string "A TRAINER putting on that performance\n"
+	.string "A Trainer putting on that performance\n"
 	.string "would be elegantly beautiful!$"
 
 SootopolisCity_Gym_B1F_Text_TiffanyDefeat: @ 8226274
@@ -141,7 +141,7 @@ SootopolisCity_Gym_B1F_Text_TiffanyDefeat: @ 8226274
 
 SootopolisCity_Gym_B1F_Text_TiffanyPostBattle: @ 8226286
 	.string "This is really obvious, but how strong\n"
-	.string "you are as a TRAINER has nothing to do\l"
+	.string "you are as a Trainer has nothing to do\l"
 	.string "with how young or old you are.$"
 
 SootopolisCity_Gym_B1F_Text_BethanyIntro: @ 82262F3

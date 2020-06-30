@@ -1030,7 +1030,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz2: @ 826D98C
 
 Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz3: @ 826D9CE
 	.string "MECHADOLL 2 QUIZ.\p"
-	.string "Which of these Pokémon did TEAM AQUA\n"
+	.string "Which of these Pokémon did Team Aqua\n"
 	.string "use in PETALBURG FOREST?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll3Intro: @ 826DA1E
@@ -1046,12 +1046,12 @@ Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz1: @ 826DA64
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz2: @ 826DAAD
 	.string "MECHADOLL 3 QUIZ.\p"
 	.string "Sell one GREAT BALL and buy\n"
-	.string "one POTION. How much money remains?$"
+	.string "one Potion. How much money remains?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz3: @ 826DAFF
 	.string "MECHADOLL 3 QUIZ.\p"
 	.string "Do one REPEL and SODA POP cost\n"
-	.string "more than one SUPER POTION?$"
+	.string "more than one SUPER Potion?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Intro: @ 826DB4C
 	.string "CLICKETY-CLACK…\n"
@@ -1070,7 +1070,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz2: @ 826DBD7
 
 Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz3: @ 826DC2A
 	.string "MECHADOLL 4 QUIZ.\p"
-	.string "In the TRAINER'S SCHOOL, how many\n"
+	.string "In the Trainer's School, how many\n"
 	.string "girl students were there?$"
 
 Route110_TrickHousePuzzle5_Text_Mechadoll5Intro: @ 826DC78

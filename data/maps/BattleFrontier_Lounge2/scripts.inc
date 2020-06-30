@@ -127,7 +127,7 @@ BattleFrontier_Lounge2_Text_FrontierManiacIntro:: @ 8260766
 	.string "the BATTLE FRONTIER, I'm no. 1.\p"
 	.string "You can think of me as\n"
 	.string "the FRONTIER MANIAC.\p"
-	.string "Just checking, but you are a TRAINER,\n"
+	.string "Just checking, but you are a Trainer,\n"
 	.string "isn't that right?\p"
 	.string "I'll happily share the hottest news\n"
 	.string "I gathered about the BATTLE FRONTIER.$"
@@ -156,7 +156,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenIsThere:: @ 8260971
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this mysterious TRAINER called\n"
+	.string "It's this mysterious Trainer called\n"
 	.string "the SALON MAIDEN that runs the place.$"
 
 BattleFrontier_Lounge2_Text_SalonMaidenSilverMons:: @ 8260A1E
@@ -180,7 +180,7 @@ BattleFrontier_Lounge2_Text_DomeAceIsThere:: @ 8260BC4
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this flamboyant TRAINER called\n"
+	.string "It's this flamboyant Trainer called\n"
 	.string "the DOME ACE that runs the place.$"
 
 BattleFrontier_Lounge2_Text_DomeAceSilverMons:: @ 8260C6D
@@ -205,7 +205,7 @@ BattleFrontier_Lounge2_Text_FactoryHeadIsThere:: @ 8260E1E
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this freaky TRAINER called\n"
+	.string "It's this freaky Trainer called\n"
 	.string "the FACTORY HEAD that runs the place.$"
 
 BattleFrontier_Lounge2_Text_FactoryHeadSilverMons:: @ 8260EC7
@@ -228,7 +228,7 @@ BattleFrontier_Lounge2_Text_PikeQueenIsThere:: @ 8261026
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this scary TRAINER called\n"
+	.string "It's this scary Trainer called\n"
 	.string "the PIKE QUEEN that runs the place.$"
 
 BattleFrontier_Lounge2_Text_PikeQueenSilverMons:: @ 82610CC
@@ -254,7 +254,7 @@ BattleFrontier_Lounge2_Text_ArenaTycoonIsThere:: @ 8261282
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this cute TRAINER called\n"
+	.string "It's this cute Trainer called\n"
 	.string "the ARENA TYCOON that runs the place.$"
 
 BattleFrontier_Lounge2_Text_ArenaTycoonSilverMons:: @ 8261329
@@ -280,7 +280,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenIsThere:: @ 82614E6
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this sinister TRAINER called\n"
+	.string "It's this sinister Trainer called\n"
 	.string "the PALACE MAVEN that runs the place.$"
 
 BattleFrontier_Lounge2_Text_PalaceMavenSilverMons:: @ 8261591
@@ -305,7 +305,7 @@ BattleFrontier_Lounge2_Text_PyramidKingIsThere:: @ 826174D
 	.string "Bet you didn't know this!\p"
 	.string "One of those top TRAINERS that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
-	.string "It's this fiery-hot TRAINER called\n"
+	.string "It's this fiery-hot Trainer called\n"
 	.string "the PYRAMID KING that runs the place.$"
 
 BattleFrontier_Lounge2_Text_PyramidKingSilverMons:: @ 82617F9

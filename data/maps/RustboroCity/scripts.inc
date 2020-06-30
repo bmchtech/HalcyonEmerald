@@ -1038,7 +1038,7 @@ RustboroCity_EventScript_Boy1:: @ 81E1236
 	end
 
 RustboroCity_Text_WeShortenItToDevon: @ 81E123F
-	.string "The DEVON CORPORATION…\n"
+	.string "The Devon Corporation…\n"
 	.string "We all just shorten it to DEVON.\p"
 	.string "That company makes all sorts of\n"
 	.string "convenient products.$"
@@ -1049,7 +1049,7 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner: @ 81E12AC
 	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym: @ 81E130D
-	.string "Have you taken the Pokémon GYM\n"
+	.string "Have you taken the Pokémon Gym\n"
 	.string "challenge?\p"
 	.string "When you get that shiny GYM BADGE\n"
 	.string "in hand, I guess TRAINERS begin to\l"
@@ -1057,14 +1057,14 @@ RustboroCity_Text_HaveYouChallengedGym: @ 81E130D
 
 RustboroCity_Text_HeyThatsRustborosGymBadge: @ 81E139E
 	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
-	.string "Out of all the Pokémon GYM BADGES,\n"
+	.string "Out of all the Pokémon Gym BADGES,\n"
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere: @ 81E1407
 	.string "Oh? Who might you be?\n"
 	.string "You're a new face around these parts.\p"
 	.string "Have you just transferred into the\n"
-	.string "Pokémon TRAINER'S SCHOOL?$"
+	.string "Pokémon Trainer's School?$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire: @ 81E1480
 	.string "I challenged the Gym Leader, but…\p"
@@ -1093,7 +1093,7 @@ RustboroCity_Text_WowYouHavePokemon: @ 81E1633
 	.string "places with Pokémon, too.$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool: @ 81E1695
-	.string "Pokémon TRAINER'S SCHOOL!\p"
+	.string "Pokémon Trainer's School!\p"
 	.string "If I go to this school, will I be able\n"
 	.string "to catch rare Pokémon easily?$"
 
@@ -1122,9 +1122,9 @@ RustboroCity_Text_WaitDontTakeMyGoods: @ 81E1817
 
 RustboroCity_Text_HelpMeIWasRobbed: @ 81E183E
 	.string "Oh, it's you!\p"
-	.string "You're that fantastic TRAINER who\n"
+	.string "You're that fantastic Trainer who\n"
 	.string "helped me in PETALBURG WOODS!\p"
-	.string "Help me! I was robbed by TEAM AQUA!\n"
+	.string "Help me! I was robbed by Team Aqua!\n"
 	.string "I have to get the DEVON GOODS back!\p"
 	.string "If I don't…\n"
 	.string "I'm going to be in serious trouble.$"
@@ -1181,14 +1181,14 @@ RustboroCity_Text_MayOhHaventRaisedPokemonEnough: @ 81E1BD3
 	.string "May: Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
 	.string "Pokémon very much?\p"
-	.string "That's not very good for a TRAINER!$"
+	.string "That's not very good for a Trainer!$"
 
 RustboroCity_Text_MayWantToBattle: @ 81E1C48
 	.string "May: So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 RustboroCity_Text_MayImNotGoingToLose: @ 81E1C84
-	.string "May: You just became a TRAINER,\n"
+	.string "May: You just became a Trainer,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 RustboroCity_Text_MayDefeat: @ 81E1CC1
@@ -1235,7 +1235,7 @@ RustboroCity_Text_BrendanWantToBattle: @ 81E1F76
 
 RustboroCity_Text_BrendanIWontGoEasy: @ 81E1FA9
 	.string "Brendan: I know you just became\n"
-	.string "a TRAINER, but I won't go easy!$"
+	.string "a Trainer, but I won't go easy!$"
 
 RustboroCity_Text_BrendanDefeat: @ 81E1FE9
 	.string "Hmm…\n"
@@ -1256,12 +1256,12 @@ RustboroCity_Text_TunnelNearingCompletion: @ 81E20A6
 	.string "across it in red paint…$"
 
 RustboroCity_Text_DevonCorpSign: @ 81E2128
-	.string "DEVON CORPORATION\p"
+	.string "Devon Corporation\p"
 	.string "“For all your living needs, we make\n"
 	.string "it all.”$"
 
 RustboroCity_Text_GymSign: @ 81E2167
-	.string "RUSTBORO CITY Pokémon GYM\n"
+	.string "Rustboro City Pokémon Gym\n"
 	.string "LEADER: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
 
@@ -1271,12 +1271,12 @@ RustboroCity_Text_DevonCorpBranchOfficeSign: @ 81E21B3
 	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign: @ 81E220B
-	.string "RUSTBORO CITY\p"
+	.string "Rustboro City\p"
 	.string "“The city probing the integration of\n"
 	.string "nature and science.”$"
 
 RustboroCity_Text_TrainersSchoolSign: @ 81E2253
-	.string "Pokémon TRAINER'S SCHOOL\p"
+	.string "Pokémon Trainer's School\p"
 	.string "“We'll teach you anything about\n"
 	.string "Pokémon!”$"
 
@@ -1312,7 +1312,7 @@ RustboroCity_Text_IdBetterGetBackToWork: @ 81E2464
 RustboroCity_Text_YouCanHave2On2Battle: @ 81E249D
 	.string "Did you know this?\p"
 	.string "You can have a 2-on-2 battle even\n"
-	.string "if you're not with another TRAINER.\p"
+	.string "if you're not with another Trainer.\p"
 	.string "If you catch the eyes of two TRAINERS\n"
 	.string "when you have two or more Pokémon,\l"
 	.string "they'll both challenge you.\p"

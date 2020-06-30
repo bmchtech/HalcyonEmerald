@@ -261,7 +261,7 @@ SSTidalCorridor_Text_ScottBattleFrontierInvite: @ 823C28F
 	.string "{PLAYER}{KUN}, {PLAYER}{KUN}!\p"
 	.string "Something's come up, so I have to\n"
 	.string "disembark, but am I glad to see you!\p"
-	.string "Congratulations, LEAGUE CHAMPION!\p"
+	.string "Congratulations, League Champion!\p"
 	.string "There's a place I'd like to invite\n"
 	.string "someone like you.\p"
 	.string "It's the…\n"
