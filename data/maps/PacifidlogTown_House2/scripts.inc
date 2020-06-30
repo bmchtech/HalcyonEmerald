@@ -97,7 +97,7 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill:: @ 82038AC
 
 PacifidlogTown_House2_Text_ChairmansYoungerBrotherOnVacation: @ 82038C7
 	.string "Er-hem!\p"
-	.string "I am the Pokémon FAN CLUB's most\n"
+	.string "I am the Pokémon Fan Club's most\n"
 	.string "important person, the CHAIRMAN's\l"
 	.string "younger brother.\p"
 	.string "I'm here enjoying my vacation with\n"

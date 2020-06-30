@@ -329,16 +329,16 @@ BattleFrontier_OutsideWest_Text_ThisIsBattleTower: @ 823D7A6
 
 BattleFrontier_OutsideWest_Text_MayISeeYourTicket: @ 823D808
 	.string "Hello, are you here for the ferry?\n"
-	.string "May I see your TICKET?$"
+	.string "May I see your Ticket?$"
 
 BattleFrontier_OutsideWest_Text_MustHaveTicketToBoard: @ 823D842
-	.string "{PLAYER} doesn't have the TICKET…\p"
+	.string "{PLAYER} doesn't have the Ticket…\p"
 	.string "I'm terribly sorry.\p"
-	.string "You must have a TICKET to board\n"
+	.string "You must have a Ticket to board\n"
 	.string "the ferry.$"
 
 BattleFrontier_OutsideWest_Text_WhereWouldYouLikeToGo: @ 823D89D
-	.string "{PLAYER} flashed the TICKET.\p"
+	.string "{PLAYER} flashed the Ticket.\p"
 	.string "Perfect! That's all you need!\p"
 	.string "And where would you like to go?$"
 
@@ -366,7 +366,7 @@ BattleFrontier_OutsideWest_Text_BestOutOfAllMyFriends: @ 823D99C
 BattleFrontier_OutsideWest_Text_CantFindBattleTower: @ 823D9DD
 	.string "I want to go to the Battle Tower,\n"
 	.string "but I can't find it even though I have\l"
-	.string "a map of the BATTLE FRONTIER.\p"
+	.string "a map of the Battle Frontier.\p"
 	.string "This place is just too big!$"
 
 BattleFrontier_OutsideWest_Text_GotSeasickOnWayHere: @ 823DA60
@@ -381,7 +381,7 @@ BattleFrontier_OutsideWest_Text_OnlyToughTrainersBroughtHere: @ 823DABF
 	.string "Only those Trainers who've been\n"
 	.string "recognized as tough are brought here.\p"
 	.string "That's why many Trainers don't even\n"
-	.string "know about the BATTLE FRONTIER.$"
+	.string "know about the Battle Frontier.$"
 
 BattleFrontier_OutsideWest_Text_SureWeCanChallengeWithNoMons: @ 823DB7D
 	.string "Hey, bro…\p"
@@ -522,7 +522,7 @@ BattleFrontier_OutsideWest_Text_FansOverThereUsedToBeTrainers: @ 823E410
 BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier: @ 823E5A5
 	.string "I heard a rumor that someone saw\n"
 	.string "a Pokémon with an unusually long tail\l"
-	.string "somewhere in the BATTLE FRONTIER.\p"
+	.string "somewhere in the Battle Frontier.\p"
 	.string "It must be adorable. I'm sure of it…\p"
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"

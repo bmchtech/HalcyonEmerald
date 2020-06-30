@@ -69,7 +69,7 @@ SSTidalRooms_Text_TakeRestOnBed: @ 823CAF2
 
 SSTidalRooms_Text_ColtonIntro: @ 823CB14
 	.string "I often sail to Lilycove City.\p"
-	.string "I enjoy attending CONTESTS,\n"
+	.string "I enjoy attending Contests,\n"
 	.string "you see.$"
 
 SSTidalRooms_Text_ColtonDefeat: @ 823CB58

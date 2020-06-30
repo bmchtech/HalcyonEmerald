@@ -665,7 +665,7 @@ MatchCall_PersonalizedText3:: @ 82AC18C
 	.string "Hello! It's {STR_VAR_1}.\p"
 	.string "I love where I am now.\n"
 	.string "It's pleasant with sweet aromas!\p"
-	.string "I think someone planted BERRIES,\n"
+	.string "I think someone planted Berries,\n"
 	.string "and they burst into bloom.\p"
 	.string "See you again sometime!$"
 
@@ -946,7 +946,7 @@ MatchCall_PersonalizedText27:: @ 82AD642
 
 MatchCall_PersonalizedText28:: @ 82AD801
 	.string "I love Pokémon!\n"
-	.string "It's {STR_VAR_1} from the FAN CLUB!\p"
+	.string "It's {STR_VAR_1} from the Fan Club!\p"
 	.string "You have to hear this!\n"
 	.string "My sweet Pokémon…\p"
 	.string "Snort! Wahaha!\n"
@@ -2215,7 +2215,7 @@ MatchCall_Text_TateLiza3:: @ 82B3158
 	.string "TATE: Our Gym is ready!\n"
 	.string "LIZA: Our Gym is ready!\p"
 	.string "TATE: Please come visit…\n"
-	.string "LIZA: MOSSDEEP anytime!$"
+	.string "LIZA: Mossdeep anytime!$"
 
 MatchCall_Text_TateLiza4:: @ 82B31CD
 	.string "TATE: {PLAYER}, the battle we had…\n"
@@ -2243,7 +2243,7 @@ MatchCall_Text_Juan2:: @ 82B32EC
 
 MatchCall_Text_Juan3:: @ 82B33AA
 	.string "JUAN: Hoho… {PLAYER}{KUN}…\p"
-	.string "Our SOOTOPOLIS Gym has finally\n"
+	.string "Our Sootopolis Gym has finally\n"
 	.string "reopened.\p"
 	.string "If you wish to see me, you are\n"
 	.string "welcome to visit anytime.$"
@@ -2361,7 +2361,7 @@ MatchCall_Text_May3:: @ 2B3C13
 	.string "Can you guess his name?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "The ROCK SMASH GUY!$"
+	.string "The Rock Smash GUY!$"
 
 MatchCall_Text_May4:: @ 2B3CF3
 	.string "May: {PLAYER}{KUN}?\p"
@@ -2447,7 +2447,7 @@ MatchCall_Text_May13:: @ 2B4228
 MatchCall_Text_May14:: @ 2B42E0
 	.string "May: {PLAYER}{KUN}!\n"
 	.string "I heard the rumors!\p"
-	.string "You beat the SOOTOPOLIS Gym\n"
+	.string "You beat the Sootopolis Gym\n"
 	.string "LEADER?\p"
 	.string "That means you don't have far\n"
 	.string "to go, do you?$"
@@ -2487,7 +2487,7 @@ MatchCall_Text_Brendan3:: @ 2B4560
 	.string "Can you guess his name?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "The ROCK SMASH GUY!$"
+	.string "The Rock Smash GUY!$"
 
 MatchCall_Text_Brendan4:: @ 2B463F
 	.string "Brendan: This voice… {PLAYER}?\p"
@@ -2574,7 +2574,7 @@ MatchCall_Text_Brendan13:: @ 2B4C15
 MatchCall_Text_Brendan14:: @ 2B4CD8
 	.string "Brendan: {PLAYER}!\n"
 	.string "I heard the rumors!\p"
-	.string "You beat the SOOTOPOLIS Gym\n"
+	.string "You beat the Sootopolis Gym\n"
 	.string "LEADER? Awesome!\p"
 	.string "You're getting awful close now!$"
 

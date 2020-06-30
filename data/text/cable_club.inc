@@ -218,8 +218,8 @@ CableClub_Text_ReturnsToPreviousStep: @ 82788DE
 	.string "Returns to the previous step.$"
 
 CableClub_Text_NeedBerryForBerryCrush: @ 82788FC
-	.string "To use the BERRY CRUSH service,\n"
-	.string "you must have at least one BERRY.$"
+	.string "To use the Berry CRUSH service,\n"
+	.string "you must have at least one Berry.$"
 
 CableClub_Text_NeedTwoMonsForUnionRoom: @ 827893E
 	.string "To enter the UNION ROOM, you must\n"
@@ -265,9 +265,9 @@ MossdeepCity_GameCorner_1F_Text_PokemonJumpInfo: @ 8278ACB
 	.string "jumps in time.$"
 
 MossdeepCity_GameCorner_1F_Text_DodrioBerryPickingInfo: @ 8278BF1
-	.string "“DODRIO BERRY-PICKING”\p"
+	.string "“DODRIO Berry-PICKING”\p"
 	.string "Command DODRIO's three heads to\n"
-	.string "catch falling BERRIES.\p"
+	.string "catch falling Berries.\p"
 	.string "Press right, up, or left on the\n"
 	.string "{PLUS} Control Pad to move the heads.\p"
 	.string "To play this game, you must have\n"
@@ -323,7 +323,7 @@ MossdeepCity_GameCorner_1F_Text_ShortJumpingPokemonAllowed: @ 8278EDC
 	.string "That's all you need to know.$"
 
 MossdeepCity_GameCorner_1F_Text_OnlyDodrioAllowed: @ 8278FA4
-	.string "DODRIO BERRY-PICKING is a game that \n"
+	.string "DODRIO Berry-PICKING is a game that \n"
 	.string "only DODRIO may enter.$"
 
 @ Unused

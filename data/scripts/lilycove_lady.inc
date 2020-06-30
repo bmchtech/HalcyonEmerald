@@ -780,8 +780,8 @@ LilycoveCity_PokemonCenter_1F_Text_IllLookForAChallenger: @ 82A9336
     .string "your quiz challenge right away.$"
 
 LilycoveCity_PokemonCenter_1F_Text_ImTheContestLady: @ 82A93A7
-    .string "I'm the CONTEST LADY!\n"
-    .string "I sure do love CONTESTS!$"
+    .string "I'm the Contest LADY!\n"
+    .string "I sure do love Contests!$"
 
 LilycoveCity_PokemonCenter_1F_Text_ThankForPokeblock: @ 82A93D6
     .string "Thanks for your {POKEBLOCK} before!$"
@@ -836,7 +836,7 @@ LilycoveCity_PokemonCenter_1F_Text_ReallyImprovedThanks: @ 82A9605
 LilycoveCity_PokemonCenter_1F_Text_ReadyToEnterContests: @ 82A9669
     .string "Hmm…\p"
     .string "I think we may be ready to enter\n"
-    .string "some CONTESTS.\p"
+    .string "some Contests.\p"
     .string "If you see us in one somewhere,\n"
     .string "I hope you'll cheer for us.$"
 

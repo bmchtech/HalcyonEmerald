@@ -253,7 +253,7 @@ BattleFrontier_OutsideEast_Text_BattlePyramidSign: @ 8242ECF
 	.string "Advance through the Battle Quest!$"
 
 BattleFrontier_OutsideEast_Text_RankingHallSign: @ 8242F0D
-	.string "BATTLE FRONTIER RANKING HALL\n"
+	.string "Battle Frontier RANKING HALL\n"
 	.string "Set your sights on new records!$"
 
 BattleFrontier_OutsideEast_Text_ExchangeCornerSign: @ 8242F4A
@@ -268,7 +268,7 @@ BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial: @ 8242F8C
 
 BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier: @ 8242FDC
 	.string "My grand ambition is to conquer both\n"
-	.string "the BATTLE FRONTIER and the Pokémon\l"
+	.string "the Battle Frontier and the Pokémon\l"
 	.string "LEAGUE.\p"
 	.string "And if my dream comes true…\p"
 	.string "I… I'm going to ask MIMI next door\n"
@@ -412,7 +412,7 @@ BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome: @ 8243A53
 	.string "will topple like dominoes!$"
 
 BattleFrontier_OutsideEast_Text_FrontierNotExclusivelyForToughTrainers: @ 8243B68
-	.string "The BATTLE FRONTIER isn't exclusively\n"
+	.string "The Battle Frontier isn't exclusively\n"
 	.string "for tough Trainers.\p"
 	.string "Many people with special abilities\n"
 	.string "have been invited, it seems.\p"

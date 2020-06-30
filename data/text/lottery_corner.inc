@@ -1,12 +1,12 @@
 LilycoveCity_DepartmentStore_1F_Text_LotteryCornerDrawTicket: @ 82A6390
 	.string "This is the Pokémon LOTTERY CORNER.\p"
 	.string "All shoppers at our DEPARTMENT STORE\n"
-	.string "get to draw a Pokémon LOTO TICKET.\p"
-	.string "If the LOTO TICKET's number matches\n"
+	.string "get to draw a Pokémon LOTO Ticket.\p"
+	.string "If the LOTO Ticket's number matches\n"
 	.string "the ID number of any of your Pokémon,\l"
 	.string "you will receive a fabulous gift.\p"
 	.string "Would you like to draw a Pokémon\n"
-	.string "LOTO TICKET?$"
+	.string "LOTO Ticket?$"
 
 LilycoveCity_DepartmentStore_1F_Text_ComeBackTomorrow: @ 82A6496
 	.string "Please come back tomorrow.$"
@@ -15,11 +15,11 @@ LilycoveCity_DepartmentStore_1F_Text_PleaseVisitAgain: @ 82A64B1
 	.string "Please do visit again.$"
 
 LilycoveCity_DepartmentStore_1F_Text_PleasePickTicket: @ 82A64C8
-	.string "Please pick a LOTO TICKET.\n"
+	.string "Please pick a LOTO Ticket.\n"
 	.string "…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}…{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}{PAUSE 0x0F}$"
 
 LilycoveCity_DepartmentStore_1F_Text_TicketNumberIsXPleaseWait: @ 82A650B
-	.string "The LOTO TICKET number is {STR_VAR_1}.\p"
+	.string "The LOTO Ticket number is {STR_VAR_1}.\p"
 	.string "I need to run a check on this number\n"
 	.string "to see if it matches any of your\l"
 	.string "Pokémon's ID numbers. Please wait.$"
@@ -28,13 +28,13 @@ LilycoveCity_DepartmentStore_1F_Text_TicketMatchesPartyMon: @ 82A6592
 	.string "Congratulations!\p"
 	.string "The ID number of your team's\n"
 	.string "{STR_VAR_1} matches your\l"
-	.string "LOTO TICKET's number!$"
+	.string "LOTO Ticket's number!$"
 
 LilycoveCity_DepartmentStore_1F_Text_TicketMatchesPCMon: @ 82A65E6
 	.string "Congratulations!\p"
 	.string "The ID number of your PC-boxed\n"
 	.string "{STR_VAR_1} matches your\l"
-	.string "LOTO TICKET's number!$"
+	.string "LOTO Ticket's number!$"
 
 LilycoveCity_DepartmentStore_1F_Text_NoNumbersMatched: @ 82A663C
 	.string "I'm sorry.\n"

@@ -463,7 +463,7 @@ Route105_Text_DominikDefeated: @ 8295EEA
 
 Route105_Text_DominikPostBattle: @ 8295F08
 	.string "Why is the sea blue?\p"
-	.string "I learned about that at the MUSEUM in\n"
+	.string "I learned about that at the Museum in\n"
 	.string "SLATEPORT, but I forgot.$"
 
 Route105_Text_BeverlyIntro: @ 8295F5C
@@ -1166,7 +1166,7 @@ Route110_Text_IsabelDefeated: @ 8298389
 
 Route110_Text_IsabelPostBattle: @ 82983A2
 	.string "Rather than battling, perhaps I should\n"
-	.string "show off my Pokémon at the FAN CLUB.$"
+	.string "show off my Pokémon at the Fan Club.$"
 
 Route110_Text_IsabelRegister: @ 82983EE
 	.string "That wasn't close to what I could\n"
@@ -2365,7 +2365,7 @@ Route117_Text_IsaacRematchDefeat: @ 829C58B
 
 Route117_Text_IsaacPostRematch: @ 829C5D0
 	.string "Your Pokémon are growing good!\n"
-	.string "You should enter them in CONTESTS.$"
+	.string "You should enter them in Contests.$"
 
 Route117_Text_LydiaIntro: @ 829C612
 	.string "Please, allow me to evaluate if you\n"
@@ -3146,7 +3146,7 @@ Route121_Text_VanessaDefeat: @ 829F11F
 	.string "This isn't what I meant!$"
 
 Route121_Text_VanessaPostBattle: @ 829F138
-	.string "I'm going to a CONTEST in LILYCOVE.\p"
+	.string "I'm going to a Contest in Lilycove.\p"
 	.string "My Pokémon should have no problem\n"
 	.string "sweeping the MASTER CLASS.$"
 
@@ -3298,7 +3298,7 @@ Route121_Text_CaleDefeat: @ 829F97B
 
 Route121_Text_CalePostBattle: @ 829F9AE
 	.string "I bought too much stuff at\n"
-	.string "the LILYCOVE DEPT. STORE.\p"
+	.string "the Lilycove DEPT. STORE.\p"
 	.string "It's up the road from here.\n"
 	.string "I wish I had a Bag like yours.$"
 
@@ -3328,14 +3328,14 @@ Route121_Text_PatPostBattle: @ 829FAEA
 Route121_Text_MarcelIntro: @ 829FB35
 	.string "My Pokémon have never tasted defeat!\n"
 	.string "On their next win, I'm entering them\l"
-	.string "in CONTESTS.$"
+	.string "in Contests.$"
 
 Route121_Text_MarcelDefeat: @ 829FB8C
 	.string "Oh, now what happened here?$"
 
 Route121_Text_MarcelPostBattle: @ 829FBA8
 	.string "I may have to train my gang some more\n"
-	.string "before entering any CONTEST.$"
+	.string "before entering any Contest.$"
 
 Route123_Text_WendyIntro: @ 829FBEB
 	.string "Want to determine how strong you are?\n"
@@ -3370,7 +3370,7 @@ Route123_Text_VioletDefeat: @ 829FD53
 	.string "I smell the bitter scent of misery…$"
 
 Route123_Text_VioletPostBattle: @ 829FD7B
-	.string "The BERRY MASTER's garden is filled\n"
+	.string "The Berry MASTER's garden is filled\n"
 	.string "with uplifting fragrances.$"
 
 Route123_Text_CameronIntro: @ 829FDBA
@@ -3812,7 +3812,7 @@ Route125_Text_TanyaDefeat: @ 82A164D
 
 Route125_Text_TanyaPostBattle: @ 82A165E
 	.string "Whew…\n"
-	.string "Which way is it to MOSSDEEP CITY?$"
+	.string "Which way is it to Mossdeep City?$"
 
 Route125_Text_SharonIntro: @ 82A1686
 	.string "How would you like to take on the\n"
@@ -4238,7 +4238,7 @@ Route128_Text_WayneDefeat: @ 82A2DA9
 Route128_Text_WaynePostBattle: @ 82A2DBA
 	.string "Awww, phooey!\p"
 	.string "My Pokémon knows WATERFALL, but\n"
-	.string "I don't have the SOOTOPOLIS Gym Badge!$"
+	.string "I don't have the Sootopolis Gym Badge!$"
 
 Route128_Text_HarrisonIntro: @ 82A2E0F
 	.string "You're looking awfully tough.\n"

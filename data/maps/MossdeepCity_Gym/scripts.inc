@@ -609,10 +609,10 @@ MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons: @ 8221BCE
 	.string "bring some more Pokémon.$"
 
 MossdeepCity_Gym_Text_GymStatue: @ 8221CB0
-	.string "MOSSDEEP CITY Pokémon Gym$"
+	.string "Mossdeep City Pokémon Gym$"
 
 MossdeepCity_Gym_Text_GymStatueCertified: @ 8221CCA
-	.string "MOSSDEEP CITY Pokémon Gym\p"
+	.string "Mossdeep City Pokémon Gym\p"
 	.string "LIZA AND TATE's Certified Trainers:\n"
 	.string "{PLAYER}$"
 

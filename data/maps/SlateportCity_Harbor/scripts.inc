@@ -405,16 +405,16 @@ SlateportCity_Harbor_Text_FerryServiceUnavailable: @ 820CE20
 
 SlateportCity_Harbor_Text_MayISeeYourTicket: @ 820CE87
 	.string "Hello, are you here for the ferry?\n"
-	.string "May I see your TICKET?$"
+	.string "May I see your Ticket?$"
 
 SlateportCity_Harbor_Text_YouMustHaveTicket: @ 820CEC1
-	.string "{PLAYER} doesn't have the TICKET…\p"
+	.string "{PLAYER} doesn't have the Ticket…\p"
 	.string "I'm terribly sorry.\p"
-	.string "You must have a TICKET to board\n"
+	.string "You must have a Ticket to board\n"
 	.string "the ferry.$"
 
 SlateportCity_Harbor_Text_FlashedTicketWhereTo: @ 820CF1C
-	.string "{PLAYER} flashed the TICKET.\p"
+	.string "{PLAYER} flashed the Ticket.\p"
 	.string "Perfect! That's all you need!\p"
 	.string "And where would you like to go?$"
 
@@ -425,7 +425,7 @@ SlateportCity_Harbor_Text_LilycoveItIs: @ 820CF93
 	.string "Lilycove City it is, then!$"
 
 SlateportCity_Harbor_Text_BattleFrontierItIs: @ 820CFAE
-	.string "BATTLE FRONTIER it is, then!$"
+	.string "Battle Frontier it is, then!$"
 
 SlateportCity_Harbor_Text_PleaseBoardFerry: @ 820CFCB
 	.string "Please board the ferry and wait for\n"
@@ -460,7 +460,7 @@ SlateportCity_Harbor_Text_SubTooSmallForMe: @ 820D194
 SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum: @ 820D232
 	.string "Capt. Stern: Those thugs…\p"
 	.string "They're the same lot who tried to rob\n"
-	.string "the DEVON GOODS at the MUSEUM.$"
+	.string "the DEVON GOODS at the Museum.$"
 
 SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove: @ 820D291
 	.string "ARCHIE: Oh?\n"
@@ -493,7 +493,7 @@ SlateportCity_Harbor_Text_TeamAquaLeftNeedDive: @ 820D42B
 	.string "You would need a Pokémon that knows\n"
 	.string "how to DIVE…\p"
 	.string "Perhaps if you went out to\n"
-	.string "MOSSDEEP CITY…\p"
+	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"
 	.string "someone might teach you…$"
 
@@ -503,7 +503,7 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub: @ 820D58A
 	.string "You would need a Pokémon that knows\n"
 	.string "how to DIVE…\p"
 	.string "Perhaps if you went out to\n"
-	.string "MOSSDEEP CITY…\p"
+	.string "Mossdeep City…\p"
 	.string "A lot of divers live out there, so\n"
 	.string "someone might teach you…$"
 

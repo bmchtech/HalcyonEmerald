@@ -392,7 +392,7 @@ SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip: @ 820C43F
 
 SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum: @ 820C495
 	.string "Don't you dare run around inside\n"
-	.string "the MUSEUM!$"
+	.string "the Museum!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WantToRideSubmarine: @ 820C4C2
 	.string "Wow, the submarine's awesome!\n"

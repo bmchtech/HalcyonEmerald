@@ -230,7 +230,7 @@ BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier: @ 8263A3F
 	.string "Scott: Well, hello and welcome!\n"
 	.string "Heheh… Sorry about the cramped space.\p"
 	.string "Anyway, {PLAYER}{KUN}, let me formally\n"
-	.string "welcome you to the BATTLE FRONTIER.\p"
+	.string "welcome you to the Battle Frontier.\p"
 	.string "This is my dream come true.\n"
 	.string "It took me years and years, but I've\l"
 	.string "finally given shape to my dream.$"
@@ -260,7 +260,7 @@ BattleFrontier_ScottsHouse_Text_ExplainBattlePoints: @ 8263CD0
 	.string "Scott: You can check your Battle\n"
 	.string "Points on your FRONTIER PASS.\p"
 	.string "The more success you have here at\n"
-	.string "the BATTLE FRONTIER, the more Battle\l"
+	.string "the Battle Frontier, the more Battle\l"
 	.string "Points you will collect.\p"
 	.string "Use your Battle Points the way you\n"
 	.string "see fit, like trading them for items.$"
@@ -297,12 +297,12 @@ BattleFrontier_ScottsHouse_Text_MayFindWildMonsInFrontier: @ 8263FFE
 	.string "a Pokédex as well.\p"
 	.string "Well, guess what?\p"
 	.string "You may run into wild Pokémon in\n"
-	.string "the BATTLE FRONTIER somewhere…\l"
+	.string "the Battle Frontier somewhere…\l"
 	.string "Fufufu!$"
 
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols: @ 82640BC
 	.string "Scott: Are you enjoying things in\n"
-	.string "the BATTLE FRONTIER?\p"
+	.string "the Battle Frontier?\p"
 	.string "…Wait a second…\n"
 	.string "Oh!\p"
 	.string "Your FRONTIER PASS!\n"
@@ -317,7 +317,7 @@ BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols: @ 82640BC
 
 BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols: @ 8264216
 	.string "Scott: I hope you're enjoying\n"
-	.string "everything in the BATTLE FRONTIER.\p"
+	.string "everything in the Battle Frontier.\p"
 	.string "…Wait a second…\n"
 	.string "Oh, my disbelieving eyes!\p"
 	.string "Your FRONTIER PASS!\n"
@@ -337,7 +337,7 @@ BattleFrontier_ScottsHouse_Text_SoGladIBroughtYouHere: @ 8264373
 	.string "bring you here!$"
 
 BattleFrontier_ScottsHouse_Text_BerryPocketStuffed: @ 82643EB
-	.string "Your BERRY POCKET seems to\n"
+	.string "Your Berry POCKET seems to\n"
 	.string "be stuffed.$"
 
 BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow: @ 8264412

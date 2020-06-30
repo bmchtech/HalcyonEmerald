@@ -91,7 +91,7 @@ AquaHideout_B2F_Text_MattIntro: @ 8233EDD
 	.string "Got here already, did you?\n"
 	.string "We underestimated you!\p"
 	.string "But this is it!\p"
-	.string "I'm a cut above the GRUNTS you've seen\n"
+	.string "I'm a cut above the Grunts you've seen\n"
 	.string "so far.\p"
 	.string "I'm not stalling for time.\n"
 	.string "I'm going to pulverize you!$"
@@ -111,7 +111,7 @@ AquaHideout_B2F_Text_MattPostBattle: @ 8233FF2
 	.string "some cave under the sea!\p"
 	.string "If you're going to give chase, you'd\n"
 	.string "better search the big, wide sea beyond\l"
-	.string "LILYCOVE.\p"
+	.string "Lilycove.\p"
 	.string "But will you find it then?\n"
 	.string "Hehehe!$"
 

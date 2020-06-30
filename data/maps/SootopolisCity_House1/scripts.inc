@@ -40,5 +40,5 @@ SootopolisCity_House1_Text_ExplainBrickBreak: @ 8226A13
 	.string "so horrible that I can't describe it.$"
 
 SootopolisCity_House1_Text_Kecleon: @ 8226A60
-	.string "KECLEON: Puu puhyaah.$"
+	.string "Kecleon: Puu puhyaah.$"
 

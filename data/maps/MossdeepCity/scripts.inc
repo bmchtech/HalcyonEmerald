@@ -346,10 +346,10 @@ MossdeepCity_Text_SpaceCenterLaunchingRockets: @ 81E4F15
 
 MossdeepCity_Text_MossdeepTargetedByMagma: @ 81E4F50
 	.string "I heard from a SAILOR buddy that\n"
-	.string "Team Aqua set up shop in LILYCOVE.\p"
+	.string "Team Aqua set up shop in Lilycove.\p"
 	.string "I also heard that someone came along\n"
 	.string "and wiped the floor with them!\p"
-	.string "But MOSSDEEP here's been targeted\n"
+	.string "But Mossdeep here's been targeted\n"
 	.string "by that Team Magma.\p"
 	.string "If you want to know what they're up to,\n"
 	.string "go visit the Space Center.$"
@@ -395,16 +395,16 @@ MossdeepCity_Text_ItsAWhiteRock: @ 81E5396
 	.string "It's a white rock.$"
 
 MossdeepCity_Text_GymSign: @ 81E53A9
-	.string "MOSSDEEP CITY Pokémon Gym\n"
+	.string "Mossdeep City Pokémon Gym\n"
 	.string "LEADERS: LIZA & TATE\p"
 	.string "“The mystic combination!”$"
 
 MossdeepCity_Text_CitySign: @ 81E53F2
-	.string "MOSSDEEP CITY\n"
+	.string "Mossdeep City\n"
 	.string "“Our slogan: Cherish Pokémon!”$"
 
 MossdeepCity_Text_SpaceCenterSign: @ 81E541F
-	.string "MOSSDEEP Space Center\n"
+	.string "Mossdeep Space Center\n"
 	.string "“The closest place to space.”$"
 
 MossdeepCity_Text_ScottSomethingWrongWithTown: @ 81E5453
@@ -424,7 +424,7 @@ MossdeepCity_Text_SootopolisNewGymLeader: @ 81E5581
 	.string "Ahh… It feels great letting the waves\n"
 	.string "wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
+	.string "island city Sootopolis?\p"
 	.string "I think the Gym there had a new\n"
 	.string "Leader come in.\p"
 	.string "People tell me the new Leader once\n"

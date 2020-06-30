@@ -300,5 +300,5 @@ Route128_Text_StevenImGoingToSootopolis: @ 81F721B
 	.string "I don't know what you intend to do,\l"
 	.string "but don't do anything reckless.\p"
 	.string "Okay.\n"
-	.string "I'm going to SOOTOPOLIS.$"
+	.string "I'm going to Sootopolis.$"
 

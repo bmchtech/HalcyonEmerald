@@ -124,13 +124,13 @@ BattleFrontier_Lounge2_EventScript_TriathleteF:: @ 826075D
 
 BattleFrontier_Lounge2_Text_FrontierManiacIntro:: @ 8260766
 	.string "Howdy! When it comes to news about\n"
-	.string "the BATTLE FRONTIER, I'm no. 1.\p"
+	.string "the Battle Frontier, I'm no. 1.\p"
 	.string "You can think of me as\n"
 	.string "the FRONTIER MANIAC.\p"
 	.string "Just checking, but you are a Trainer,\n"
 	.string "isn't that right?\p"
 	.string "I'll happily share the hottest news\n"
-	.string "I gathered about the BATTLE FRONTIER.$"
+	.string "I gathered about the Battle Frontier.$"
 
 BattleFrontier_Lounge2_Text_SwingByForTheLatestWord:: @ 8260857
 	.string "Howdy! Did you swing by to grill me\n"
@@ -334,7 +334,7 @@ BattleFrontier_Lounge2_Text_DoubleBattleAdvice1:: @ 82619AC
 	.string "the Battle Tower are, like, basic!\p"
 	.string "They're where you should learn about\n"
 	.string "how DOUBLE BATTLES are played here\l"
-	.string "in the BATTLE FRONTIER.$"
+	.string "in the Battle Frontier.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice2:: @ 8261A91
 	.string "Watch yourself in the battles here.\p"

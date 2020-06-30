@@ -1032,7 +1032,7 @@ SlateportCity_Text_WhatsLongLineOverThere: @ 81DDBAC
 
 SlateportCity_Text_VisitedMuseumOften: @ 81DDBD5
 	.string "When I was a child, I visited\n"
-	.string "the MUSEUM often.\p"
+	.string "the Museum often.\p"
 	.string "I used to dream about the mysteries of\n"
 	.string "the sea after seeing the exhibits.$"
 
@@ -1048,7 +1048,7 @@ SlateportCity_Text_AquaHasPolicy: @ 81DDC8A
 SlateportCity_Text_BossIsBrilliant: @ 81DDCD5
 	.string "Our Boss is brilliant.\p"
 	.string "What would he want to do with\n"
-	.string "a MUSEUM now?$"
+	.string "a Museum now?$"
 
 SlateportCity_Text_WhatsNewSchemeIWonder: @ 81DDD18
 	.string "What's the new scheme, I wonder?\p"
@@ -1057,7 +1057,7 @@ SlateportCity_Text_WhatsNewSchemeIWonder: @ 81DDD18
 
 SlateportCity_Text_ShouldTakeItAll: @ 81DDD7D
 	.string "If there's something we need in\n"
-	.string "the MUSEUM, we should take it all!$"
+	.string "the Museum, we should take it all!$"
 
 SlateportCity_Text_DontButtIn: @ 81DDDC0
 	.string "Hey, you there!\n"
@@ -1237,7 +1237,7 @@ SlateportCity_Text_SternsShipyardNearsCompletion: @ 81DE940
 	.string "STERN'S SHIPYARD\p"
 	.string "“The ferry S.S. TIDAL nears\n"
 	.string "completion for serving the ports of\l"
-	.string "Slateport and LILYCOVE.”$"
+	.string "Slateport and Lilycove.”$"
 
 SlateportCity_Text_SternsShipyardFerryComplete: @ 81DE9AA
 	.string "STERN'S SHIPYARD\p"
@@ -1246,13 +1246,13 @@ SlateportCity_Text_SternsShipyardFerryComplete: @ 81DE9AA
 	.string "HARBOR.”$"
 
 SlateportCity_Text_PokemonFanClubSign: @ 81DEA0B
-	.string "Pokémon FAN CLUB\n"
+	.string "Pokémon Fan Club\n"
 	.string "“Calling all fans of Pokémon!”$"
 
 SlateportCity_Text_OceanicMuseumSign: @ 81DEA3B
 	.string "“The endless sea sustains\n"
 	.string "all life.”\p"
-	.string "OCEANIC MUSEUM$"
+	.string "OCEANIC Museum$"
 
 SlateportCity_Text_CitySign: @ 81DEA6F
 	.string "Slateport City\p"
@@ -1281,29 +1281,29 @@ SlateportCity_Text_NameRatersHouseSign: @ 81DEBA0
 
 SlateportCity_Text_ExplainBerries: @ 81DEBCE
 	.string "If a wild Pokémon gets hurt, it heals\n"
-	.string "itself by chewing on BERRIES.\p"
+	.string "itself by chewing on Berries.\p"
 	.string "Did you know that?\p"
 	.string "Somebody saw that and got the idea\n"
-	.string "of making medicine from BERRIES.\p"
+	.string "of making medicine from Berries.\p"
 	.string "Did you know that?\p"
-	.string "To turn BERRIES into medicine,\n"
+	.string "To turn Berries into medicine,\n"
 	.string "they must be crushed into powder.\p"
 	.string "Did you know that?\p"
 	.string "You seem to have an interest\n"
-	.string "in BERRIES!\p"
+	.string "in Berries!\p"
 	.string "I've got something good for someone\n"
 	.string "like you.$"
 
 SlateportCity_Text_ExplainBerryPowder: @ 81DED27
 	.string "I recently had machines installed at\n"
-	.string "Pokémon Centers for crushing BERRIES.\p"
-	.string "The BERRY CRUSH machines are at\n"
+	.string "Pokémon Centers for crushing Berries.\p"
+	.string "The Berry CRUSH machines are at\n"
 	.string "the DIRECT CORNER upstairs.\p"
 	.string "Did you know?\p"
-	.string "Could you make BERRY POWDER for\n"
+	.string "Could you make Berry POWDER for\n"
 	.string "me using those machines?\p"
 	.string "I can make you all sorts of medicine\n"
-	.string "if you bring me lots of BERRY POWDER.$"
+	.string "if you bring me lots of Berry POWDER.$"
 
 SlateportCity_Text_BroughtMeSomeBerryPowder: @ 81DEE40
 	.string "Have you brought me some\n"
@@ -1322,7 +1322,7 @@ SlateportCity_Text_DontHaveEnoughBerryPowder: @ 81DEEC9
 	.string "BERRY POWDER.$"
 
 SlateportCity_Text_FineBerryPowderTradeSomethingElse: @ 81DEEF7
-	.string "This is fine BERRY POWDER.\n"
+	.string "This is fine Berry POWDER.\n"
 	.string "It will make excellent medicine.\p"
 	.string "Would you like to trade more of your\n"
 	.string "BERRY POWDER for something else?$"

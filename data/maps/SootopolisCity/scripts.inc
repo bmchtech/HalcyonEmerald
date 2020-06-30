@@ -1571,7 +1571,7 @@ SootopolisCity_Text_SootopolisDidntGetWrecked: @ 81E6CA6
 
 SootopolisCity_Text_NoOrdinaryTourist: @ 81E6CCA
 	.string "Hm!\n"
-	.string "You've come all the way to SOOTOPOLIS?\l"
+	.string "You've come all the way to Sootopolis?\l"
 	.string "You're no ordinary tourist.\p"
 	.string "But I suppose that doesn't make you\n"
 	.string "an extraordinary tourist, either.$"
@@ -1754,7 +1754,7 @@ SootopolisCity_Text_AquaMagmaDidntMeanHarm: @ 81E7A3E
 SootopolisCity_Text_ThankYouForHelpAcceptThis: @ 81E7ACF
 	.string "Wallace: {PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
-	.string "Thanks to your help, SOOTOPOLIS…\n"
+	.string "Thanks to your help, Sootopolis…\n"
 	.string "No, all of Hoenn was saved.\p"
 	.string "On behalf of the people, I thank you.\p"
 	.string "This is a gift from me.\n"
@@ -1769,7 +1769,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym: @ 81E7B86
 	.string "And where does one get the RAIN BADGE?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
-	.string "the SOOTOPOLIS Gym Leader.\p"
+	.string "the Sootopolis Gym Leader.\p"
 	.string "When you're all set to go, step through\n"
 	.string "that door.$"
 

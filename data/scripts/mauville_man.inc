@@ -334,15 +334,15 @@ MauvilleCity_PokemonCenter_1F_Text_TrendsStartedStory:: @ 828E9FE
 	.string "the Hoenn region!$"
 
 MauvilleCity_PokemonCenter_1F_Text_BerriesPlantedTitle:: @ 828EA7D
-    .string "The BERRY-Planting Trainer$"
+    .string "The Berry-Planting Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_BerriesPlantedAction:: @ 828EA98
-	.string "Planted BERRIES$"
+	.string "Planted Berries$"
 
 MauvilleCity_PokemonCenter_1F_Text_BerriesPlantedStory:: @ 828EAA8
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer planted BERRIES\n"
+	.string "This Trainer planted Berries\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a legendary lover of\n"
 	.string "BERRIES!$"
@@ -509,7 +509,7 @@ MauvilleCity_PokemonCenter_1F_Text_UsedRockSmashAction:: @ 828F269
 MauvilleCity_PokemonCenter_1F_Text_UsedRockSmashStory:: @ 828F277
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer used ROCK SMASH\n"
+	.string "This Trainer used Rock Smash\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must be a Trainer who\n"
 	.string "can't leave a stone unsmashed!$"
@@ -609,33 +609,33 @@ MauvilleCity_PokemonCenter_1F_Text_MadePokeblocksStory:: @ 828F776
 	.string "named {STR_VAR_3}.\p"
 	.string "This Trainer made {POKEBLOCK}S\n"
 	.string "{STR_VAR_1} times!\p"
-	.string "There is none better at using a BERRY\n"
+	.string "There is none better at using a Berry\n"
 	.string "BLENDER than {STR_VAR_3}!$"
 
 MauvilleCity_PokemonCenter_1F_Text_EnteredContestsTitle:: @ 828F7F6
-	.string "The CONTEST-Loving Trainer$"
+	.string "The Contest-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_EnteredContestsAction:: @ 828F811
-	.string "Entered CONTESTS$"
+	.string "Entered Contests$"
 
 MauvilleCity_PokemonCenter_1F_Text_EnteredContestsStory:: @ 828F822
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer entered CONTESTS\n"
+	.string "This Trainer entered Contests\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must love showing off\n"
 	.string "Pokémon to others!$"
 
 MauvilleCity_PokemonCenter_1F_Text_WonContestsTitle:: @ 828F89C
-	.string "The CONTEST Master$"
+	.string "The Contest Master$"
 
 MauvilleCity_PokemonCenter_1F_Text_WonContestsAction:: @ 828F8AF
-	.string "Won CONTESTS$"
+	.string "Won Contests$"
 
 MauvilleCity_PokemonCenter_1F_Text_WonContestsStory:: @ 828F8BC
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer won CONTESTS\n"
+	.string "This Trainer won Contests\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} must be an incredible\n"
 	.string "CONTEST master!$"
