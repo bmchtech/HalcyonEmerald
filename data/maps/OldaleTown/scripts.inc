@@ -372,19 +372,19 @@ OldaleTown_Text_WaitDontComeInHere: @ 81E9313
 	.string "Aaaaah! Wait!\n"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints: @ 81E939A
 	.string "I just discovered the footprints of\n"
-	.string "a rare POKéMON!\p"
+	.string "a rare Pokémon!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints: @ 81E93F8
 	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
+	.string "a rare Pokémon.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 

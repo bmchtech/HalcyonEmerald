@@ -484,7 +484,7 @@ MauvilleCity_EventScript_RegisterWallyCall:: @ 81DF7BA
 	end
 
 MauvilleCity_Text_UncleHesTooPeppy: @ 81DF7DC
-	.string "UNCLE: It's because of POKéMON that\n"
+	.string "UNCLE: It's because of Pokémon that\n"
 	.string "this boy's got more pep, I suppose…\l"
 	.string "But he's become a bit too peppy…$"
 
@@ -496,7 +496,7 @@ MauvilleCity_Text_WallyWantToChallengeGym: @ 81DF845
 
 MauvilleCity_Text_UncleYourePushingIt: @ 81DF8B9
 	.string "UNCLE: Now hold on, WALLY.\p"
-	.string "Since you started living with POKéMON,\n"
+	.string "Since you started living with Pokémon,\n"
 	.string "you have grown quite a lot stronger.\p"
 	.string "But don't you think you're pushing it\n"
 	.string "to suddenly challenge a GYM?$"
@@ -547,7 +547,7 @@ MauvilleCity_Text_WallyIllGoBackToVerdanturf: @ 81DFBC3
 MauvilleCity_Text_ThankYouNotEnoughToBattle: @ 81DFBED
 	.string "{PLAYER}, thank you.\n"
 	.string "Being a TRAINER is tough, isn't it?\p"
-	.string "It's not enough just to have POKéMON\n"
+	.string "It's not enough just to have Pokémon\n"
 	.string "and make them battle. That isn't what\l"
 	.string "being a real TRAINER is about.$"
 
@@ -563,7 +563,7 @@ MauvilleCity_Text_UncleVisitUsSometime: @ 81DFD34
 	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me\n"
 	.string "that you must be the TRAINER who kept\l"
 	.string "an eye out for WALLY when he caught\l"
-	.string "his POKéMON.\p"
+	.string "his Pokémon.\p"
 	.string "Why don't you visit us in VERDANTURF\n"
 	.string "sometime?\l"
 	.string "I'm sure WALLY would enjoy it.$"
@@ -574,7 +574,7 @@ MauvilleCity_Text_WallyPokenavCall: @ 81DFDFB
 	.string "… … … … … Beep!\p"
 	.string "WALLY: Oh, hello, {PLAYER}!\p"
 	.string "I just wanted to tell you that\n"
-	.string "my uncle bought me a POKéNAV!\p"
+	.string "my uncle bought me a PokéNav!\p"
 	.string "Now I can get in touch with you\n"
 	.string "anytime, {PLAYER}!\p"
 	.string "… … … … … …\n"
@@ -582,7 +582,7 @@ MauvilleCity_Text_WallyPokenavCall: @ 81DFDFB
 
 MauvilleCity_Text_RegisteredWally: @ 81DFEB4
 	.string "Registered WALLY\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 MauvilleCity_Text_ScottYouDidntHoldBack: @ 81DFED5
 	.string "SCOTT: Hehe…\n"
@@ -591,7 +591,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack: @ 81DFED5
 	.string "aren't you?\p"
 	.string "But you didn't hold anything back\n"
 	.string "and beat him impressively.\p"
-	.string "Yeah! That's what a real POKéMON\n"
+	.string "Yeah! That's what a real Pokémon\n"
 	.string "battle is all about!\p"
 	.string "I idolize TRAINERS like that!\p"
 	.string "… … … … … …\n"
@@ -634,9 +634,9 @@ MauvilleCity_Text_WattsonYoungTakeCharge: @ 81E02AA
 	.string "the young step up and take charge!$"
 
 MauvilleCity_Text_NurseHurtMonBackToHealth: @ 81E0301
-	.string "You know, it's cool to have POKéMON\n"
+	.string "You know, it's cool to have Pokémon\n"
 	.string "battles and stuff…\p"
-	.string "But if your POKéMON gets hurt,\n"
+	.string "But if your Pokémon gets hurt,\n"
 	.string "you have to nurse it back to health.$"
 
 MauvilleCity_Text_AllSortsOfPeopleComeThrough: @ 81E037C
@@ -652,14 +652,14 @@ MauvilleCity_Text_RydelVeryGenerous: @ 81E03FB
 
 MauvilleCity_Text_PokemonCanJumpYouOnBike: @ 81E044A
 	.string "Even if you're riding a BIKE,\n"
-	.string "wild POKéMON could jump you.$"
+	.string "wild Pokémon could jump you.$"
 
 MauvilleCity_Text_CitySign: @ 81E0485
 	.string "MAUVILLE CITY\n"
 	.string "“The bright and shiny city of fun!”$"
 
 MauvilleCity_Text_GymSign: @ 81E04B7
-	.string "MAUVILLE CITY POKéMON GYM\n"
+	.string "MAUVILLE CITY Pokémon GYM\n"
 	.string "LEADER: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 

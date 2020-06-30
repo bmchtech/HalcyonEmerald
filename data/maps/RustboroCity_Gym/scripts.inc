@@ -420,7 +420,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall: @ 8213A76
 
 RustboroCity_Gym_Text_RegisteredRoxanne: @ 8213C01
 	.string "Registered Gym Leader Roxanne\n"
-	.string "in the Pokénav.$"
+	.string "in the PokéNav.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch: @ 8213C2F
 	.string "Roxanne: I'm so glad to see you again.\n"

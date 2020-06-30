@@ -446,7 +446,7 @@ DewfordTown_Gym_Text_ExplainBulkUp: @ 81FD181
 
 DewfordTown_Gym_Text_RegisteredBrawly: @ 81FD1E0
 	.string "Registered Gym Leader Brawly\n"
-	.string "in the Pokénav.$"
+	.string "in the PokéNav.$"
 
 DewfordTown_Gym_Text_BrawlyPostBattle: @ 81FD20D
 	.string "I can see your talent becoming a giant\n"

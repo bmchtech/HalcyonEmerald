@@ -4223,7 +4223,7 @@ static u8 HealConfuseBerry(u32 battlerId, u32 itemId, u8 flavorId)
         if (gBattleMoveDamage == 0)
             gBattleMoveDamage = 1;
         gBattleMoveDamage *= -1;
-        if (GetFlavorRelationByPersonality(gBattleMons[battlerId].personality, flavorId) < 0)
+        if (GetFlavorRelationByNature(gBattleMons[battlerId].personality, flavorId) < 0)
             BattleScriptExecute(BattleScript_BerryConfuseHealEnd2);
         else
             BattleScriptExecute(BattleScript_ItemHealHP_RemoveItemEnd2);

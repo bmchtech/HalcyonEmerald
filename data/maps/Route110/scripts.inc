@@ -794,7 +794,7 @@ Route110_Text_AquaActionsBringSmiles: @ 81EFC0D
 Route110_Text_MayLetsBattle: @ 81EFC48
 	.string "MAY: Hi, {PLAYER}{KUN}, long time no see!\p"
 	.string "While I was searching for other\n"
-	.string "POKéMON, my POKéMON grew stronger.\p"
+	.string "Pokémon, my Pokémon grew stronger.\p"
 	.string "So…\n"
 	.string "How about a little battle?$"
 
@@ -821,7 +821,7 @@ Route110_Text_BrendayLetsBattle: @ 81EFE3F
 	.string "BRENDAN: Hey, {PLAYER}.\n"
 	.string "So this is where you were.\l"
 	.string "How's it going?\p"
-	.string "Have you been raising your POKéMON?\n"
+	.string "Have you been raising your Pokémon?\n"
 	.string "I'll check for you.$"
 
 Route110_Text_BrendanDefeated: @ 81EFEB4
@@ -841,7 +841,7 @@ Route110_Text_BrendanExplainItemfinder: @ 81EFF1C
 	.string "If it senses something, it emits\n"
 	.string "a sound.\p"
 	.string "Anyway, I'm off to look for new\n"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 
 Route110_Text_RideBikeAtFullSpeed: @ 81EFFC3
 	.string "Wouldn't it be great to ride a BIKE\n"
@@ -871,7 +871,7 @@ Route110_Text_YouGotBikeFromRydel: @ 81F006A
 
 Route110_Text_TwoRoads: @ 81F0261
 	.string "The two roads, one above, one below…\p"
-	.string "A road each for people and POKéMON.\n"
+	.string "A road each for people and Pokémon.\n"
 	.string "Perhaps that is right and fair.$"
 
 Route110_Text_WalkOnTheLowRoad: @ 81F02CA
@@ -888,7 +888,7 @@ Route110_Text_WhichShouldIChoose: @ 81F0390
 	.string "Which should I choose?\p"
 	.string "Make a beeline for MAUVILLE on\n"
 	.string "CYCLING ROAD, or take the low road\l"
-	.string "and look for POKéMON?$"
+	.string "and look for Pokémon?$"
 
 Route110_Text_CyclingChallengeResultSummary: @ 81F03FF
 	.string "Number of collisions:\n"
@@ -983,7 +983,7 @@ Route110_Text_TrainerTipsPrlzSleep: @ 81F090D
 	.string "The foe can be made helpless by\n"
 	.string "paralyzing it or causing it to sleep.\p"
 	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
+	.string "Pokémon battles.$"
 
 Route110_Text_TrainerTipsRegisterItems: @ 81F0992
 	.string "TRAINER TIPS\p"
@@ -1013,17 +1013,17 @@ Route110_Text_HeardYouInstallMatchCall: @ 81F0AFF
 	.string "Oh, I see!\n"
 	.string "You two are running separately.\l"
 	.string "Well, that's fine.\p"
-	.string "Oh, yes, I heard that your POKéNAV\n"
+	.string "Oh, yes, I heard that your PokéNav\n"
 	.string "had the MATCH CALL system installed.\p"
 	.string "Well, then, I should register you in\n"
-	.string "my POKéNAV as well.\p"
+	.string "my PokéNav as well.\p"
 	.string "That way, even when we're apart,\n"
 	.string "I can rate your POKéDEX anytime.\p"
 	.string "… … … … … …$"
 
 Route110_Text_RegisteredBirchInPokenav: @ 81F0C0C
 	.string "Registered PROF. BIRCH\n"
-	.string "in the POKéNAV.$"
+	.string "in the PokéNav.$"
 
 Route110_Text_KeepAnEyeOutForRival: @ 81F0C33
 	.string "PROF. BIRCH: {PLAYER}{KUN}…\p"
