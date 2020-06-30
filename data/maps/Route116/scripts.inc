@@ -461,7 +461,7 @@ Route116_Text_NotWhatImLookingFor: @ 81F375E
 	.string "They're not what I'm looking for…$"
 
 Route116_Text_RouteSignRustboro: @ 81F379D
-	.string "ROUTE 116\n"
+	.string "Route 116\n"
 	.string "{LEFT_ARROW} RUSTBORO CITY$"
 
 Route116_Text_RusturfTunnelSign: @ 81F37B7

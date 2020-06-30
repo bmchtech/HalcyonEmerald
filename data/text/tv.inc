@@ -658,7 +658,7 @@ gTVTrainerFanClubSpecialText00:: @ 08281DFB
 	.string "TRAINER FAN CLUB\n"
 	.string "{STR_VAR_1} SPECIAL!\p"
 	.string "This is a special presentation for\n"
-	.string "the fans of {STR_VAR_1} all over HOENN!\p"
+	.string "the fans of {STR_VAR_1} all over Hoenn!\p"
 	.string "Today, we ask the question, “What do\n"
 	.string "people think of {STR_VAR_1}?”\p"
 	.string "We posed the question to {STR_VAR_2}\n"
@@ -1178,24 +1178,24 @@ gTVTodaysRivalTrainerText07:: @ 082846D2
 	.string "Today's rival TRAINER is {STR_VAR_1},\n"
 	.string "who's around {STR_VAR_3} now.\p"
 	.string "{STR_VAR_1} has so far registered\n"
-	.string "{STR_VAR_2} Pokémon in the POKéDEX.$"
+	.string "{STR_VAR_2} Pokémon in the Pokédex.$"
 
 gTVTodaysRivalTrainerText08:: @ 08284738
 	.string "Today's rival TRAINER is {STR_VAR_1},\n"
 	.string "who's in a SECRET BASE now.\p"
 	.string "{STR_VAR_1} has so far registered\n"
-	.string "{STR_VAR_2} Pokémon in the POKéDEX.$"
+	.string "{STR_VAR_2} Pokémon in the Pokédex.$"
 
 gTVTodaysRivalTrainerText09:: @ 082847A5
 	.string "Today's rival TRAINER is {STR_VAR_1}.\p"
 	.string "So far, {STR_VAR_1} has registered\n"
-	.string "{STR_VAR_2} Pokémon in the POKéDEX.$"
+	.string "{STR_VAR_2} Pokémon in the Pokédex.$"
 
 gTVTodaysRivalTrainerText10:: @ 082847F7
 	.string "Today's rival TRAINER is {STR_VAR_1},\n"
 	.string "who's on a ferry now.\p"
 	.string "{STR_VAR_1} has so far registered\n"
-	.string "{STR_VAR_2} Pokémon in the POKéDEX.$"
+	.string "{STR_VAR_2} Pokémon in the Pokédex.$"
 
 	.string "$"
 
@@ -1291,7 +1291,7 @@ gTVDewfordTrendWatcherNetworkText06:: @ 08284E34
 	.string "Old man: {STR_VAR_1} {STR_VAR_2}!$"
 
 gTVHoennTreasureInvestigatorsText00:: @ 08284EDF
-	.string "HOENN TREASURE INVESTIGATORS!\p"
+	.string "Hoenn TREASURE INVESTIGATORS!\p"
 	.string "Hi, gang!\n"
 	.string "Score any secret items lately?\p"
 	.string "As always, we'll examine eyewitness\n"
@@ -1606,7 +1606,7 @@ gTVPokemonLotteryWinnerFlashReportText00:: @ 082863CC
 	.string "This has been a live broadcast from\n"
 	.string "the LILYCOVE DEPARTMENT STORE,\l"
 	.string "offering you the greatest selection\l"
-	.string "in all HOENN!$"
+	.string "in all Hoenn!$"
 
 gTVThePokemonBattleSeminarText00:: @ 08286616
 	.string "THE Pokémon BATTLE SEMINAR!\p"
@@ -2003,7 +2003,7 @@ gTVPokemonNewsBattleFrontierText18:: @ 08287F77
 	.string "That's the news on Pokémon NEWS!$"
 
 gTVWhatsNo1InHoennTodayText00:: @ 08287FE0
-	.string "WHAT'S NO. 1 IN HOENN TODAY?\n"
+	.string "WHAT'S NO. 1 IN Hoenn TODAY?\n"
 	.string "Yes, it's that time again!\p"
 	.string "Hello, viewers! Are you giving your\n"
 	.string "best at whatever you do?\p"

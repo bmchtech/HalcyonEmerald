@@ -67,7 +67,7 @@ PokeMart_PokeCenterSootopolisCity::
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceToughestInHoenn: @ 8226562
 	.string "WALLACE is rumored to be the toughest\n"
-	.string "TRAINER in the whole HOENN region.\p"
+	.string "TRAINER in the whole Hoenn region.\p"
 	.string "This town's GYM is led by the TRAINER\n"
 	.string "who taught WALLACE.\p"
 	.string "But the ELITE FOUR… They're said to be\n"

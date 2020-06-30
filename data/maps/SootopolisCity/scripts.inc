@@ -1460,7 +1460,7 @@ SootopolisCity_Movement_DestroyTask:: @ 81E656D
 SootopolisCity_Text_GymSign: @ 81E656F
 	.string "SOOTOPOLIS CITY Pokémon GYM\n"
 	.string "LEADER: JUAN\p"
-	.string "“The GYM LEADER with the beauty\n"
+	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
 SootopolisCity_Text_CitySign: @ 81E65C8
@@ -1652,7 +1652,7 @@ SootopolisCity_Text_GroudonPleaseStop: @ 81E72DB
 	.string "MAXIE: G… GROUDON…\n"
 	.string "Please! Stop what you're doing!\p"
 	.string "I know the extent of your power now!\p"
-	.string "If you keep going, all HOENN, not just\n"
+	.string "If you keep going, all Hoenn, not just\n"
 	.string "SOOTOPOLIS, will be utterly ruined!$"
 
 SootopolisCity_Text_AfterAllOurScheming: @ 81E737E
@@ -1677,7 +1677,7 @@ SootopolisCity_Text_KyogreCalmDown: @ 81E7460
 SootopolisCity_Text_TryingMeaninglessToPokemon: @ 81E74F6
 	.string "ARCHIE: KYOGRE and GROUDON both\n"
 	.string "flew off to who knows where.\p"
-	.string "The weather in HOENN has returned\n"
+	.string "The weather in Hoenn has returned\n"
 	.string "to its normal state…\p"
 	.string "Haha…\n"
 	.string "Hahaha…\p"
@@ -1755,7 +1755,7 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis: @ 81E7ACF
 	.string "WALLACE: {PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
 	.string "Thanks to your help, SOOTOPOLIS…\n"
-	.string "No, all of HOENN was saved.\p"
+	.string "No, all of Hoenn was saved.\p"
 	.string "On behalf of the people, I thank you.\p"
 	.string "This is a gift from me.\n"
 	.string "Please accept it.$"
@@ -1769,7 +1769,7 @@ SootopolisCity_Text_ExplainWaterfallGoToGym: @ 81E7B86
 	.string "And where does one get the RAIN BADGE?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
-	.string "the SOOTOPOLIS GYM LEADER.\p"
+	.string "the SOOTOPOLIS Gym Leader.\p"
 	.string "When you're all set to go, step through\n"
 	.string "that door.$"
 

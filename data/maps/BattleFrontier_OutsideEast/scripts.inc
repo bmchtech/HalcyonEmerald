@@ -321,7 +321,7 @@ BattleFrontier_OutsideEast_Text_PeopleCallMeBusybody: @ 8243363
 
 BattleFrontier_OutsideEast_Text_OnceBeatGymLeader: @ 8243425
 	.string "I may not look that impressive now,\n"
-	.string "but I once beat a GYM LEADER.\p"
+	.string "but I once beat a Gym Leader.\p"
 	.string "Who knows, maybe I should give it\n"
 	.string "another shot at glory.$"
 

@@ -410,7 +410,7 @@ MossdeepCity_Text_SpaceCenterSign: @ 81E541F
 MossdeepCity_Text_ScottSomethingWrongWithTown: @ 81E5453
 	.string "SCOTT: {PLAYER}{KUN}, feeling good?\n"
 	.string "I'm doing great!\p"
-	.string "I'd heard MOSSDEEP's GYM LEADER is\n"
+	.string "I'd heard MOSSDEEP's Gym Leader is\n"
 	.string "pretty strong, so I decided to come\l"
 	.string "take a look-see for myself.\p"
 	.string "But there's something wrong about\n"

@@ -142,5 +142,5 @@ Route110_TrickHousePuzzle2_Text_GeorgiaDefeat: @ 826BE77
 
 Route110_TrickHousePuzzle2_Text_GeorgiaPostBattle: @ 826BE97
 	.string "You're strong, aren't you?\n"
-	.string "Maybe even enough to be a GYM LEADER!$"
+	.string "Maybe even enough to be a Gym Leader!$"
 

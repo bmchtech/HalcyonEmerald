@@ -108,7 +108,7 @@ FallarborTown_House1_Text_201249: @ 8201249
 
 FallarborTown_House1_Text_2012BC: @ 82012BC
 	.string "PROF. COZMO went off to METEOR FALLS\n"
-	.string "on ROUTE 114 with some people from\l"
+	.string "on Route 114 with some people from\l"
 	.string "TEAM MAGMA.$"
 
 FallarborTown_House1_Text_201310: @ 8201310

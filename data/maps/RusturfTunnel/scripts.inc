@@ -464,7 +464,7 @@ RusturfTunnel_Text_PeekoGladToSeeYouSafe: @ 822D395
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko: @ 822D3BA
 	.string "PEEKO owes her life to you!\p"
-	.string "They call me MR. BRINEY.\n"
+	.string "They call me Mr. Briney.\n"
 	.string "And, you are?\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"

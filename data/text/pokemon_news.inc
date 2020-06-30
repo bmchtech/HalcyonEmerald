@@ -126,7 +126,7 @@ gPokeNewsTextBlendMaster_Upcoming:: @ 0828DBEC
 	.string "appearing in LILYCOVE CITY with just\l"
 	.string "a mere {STR_VAR_1}-day wait to go!\p"
 	.string "The BLEND MASTER is said to be\n"
-	.string "the best in all HOENN when it comes to\l"
+	.string "the best in all Hoenn when it comes to\l"
 	.string "spinning a BERRY BLENDER.\p"
 	.string "Those people who want to make great\n"
 	.string "{POKEBLOCK}S or see the MASTER in action\l"

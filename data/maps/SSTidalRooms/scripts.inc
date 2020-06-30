@@ -160,7 +160,7 @@ SSTidalRooms_Text_NaomiPostBattle: @ 823D013
 	.string "A world cruise on a luxury liner has its\n"
 	.string "charms, I must say…\p"
 	.string "But, I will admit there is an appealing\n"
-	.string "side to touring HOENN by ferry.$"
+	.string "side to touring Hoenn by ferry.$"
 
 SSTidalRooms_Text_NotSuspiciousTakeThis: @ 823D098
 	.string "Uh… Hi! I… I'm not acting suspicious!\n"

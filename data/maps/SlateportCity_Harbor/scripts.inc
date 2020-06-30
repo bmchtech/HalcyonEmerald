@@ -509,7 +509,7 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub: @ 820D58A
 
 SlateportCity_Harbor_Text_WontBeLongBeforeWeFinishFerry: @ 820D65C
 	.string "CAPT. STERN: Oh, yes.\n"
-	.string "MR. BRINEY came to our SHIPYARD.\p"
+	.string "Mr. Briney came to our SHIPYARD.\p"
 	.string "It won't be long now before we finish\n"
 	.string "making the ferry!$"
 
@@ -518,7 +518,7 @@ SlateportCity_Harbor_Text_FinishedMakingFerry: @ 820D6CB
 	.string "We finally finished making the ferry\n"
 	.string "S.S. TIDAL!\p"
 	.string "We couldn't have done it without\n"
-	.string "your friend MR. BRINEY.\p"
+	.string "your friend Mr. Briney.\p"
 	.string "Please go for a short cruise on it!$"
 
 SlateportCity_Harbor_Text_WouldYouTradeScanner: @ 820D76C

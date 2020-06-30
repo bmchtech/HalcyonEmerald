@@ -496,7 +496,7 @@ Route119_EventScript_ScottWonAtFortreeGymCall:: @ 81F49EC
 	end
 
 Route119_Text_MayIntro: @ 81F49FD
-	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "May: {PLAYER}{KUN}!\n"
 	.string "Where were you? I was looking for you!\p"
 	.string "How much stronger have you gotten?\n"
 	.string "Let me check for you!\p"
@@ -510,12 +510,12 @@ Route119_Text_MayDefeat: @ 81F4A98
 	.string "struggling with your training.$"
 
 Route119_Text_MayPresentForYou: @ 81F4AF3
-	.string "MAY: But I had absolutely nothing to\n"
+	.string "May: But I had absolutely nothing to\n"
 	.string "worry about! Keep it up!\p"
 	.string "And, here! I have a present for you.$"
 
 Route119_Text_MayExplainFly: @ 81F4B56
-	.string "MAY: Use FLY, and your Pokémon will\n"
+	.string "May: Use FLY, and your Pokémon will\n"
 	.string "instantly carry you to any town you've\l"
 	.string "already visited.\p"
 	.string "But, to use FLY, you have to get\n"
@@ -528,7 +528,7 @@ Route119_Text_MayExplainFly: @ 81F4B56
 	.string "Well, let's meet again somewhere!$"
 
 Route119_Text_BrendanIntro: @ 81F4C9A
-	.string "BRENDAN: {PLAYER}! So this is where\n"
+	.string "Brendan: {PLAYER}! So this is where\n"
 	.string "you've been looking for Pokémon?\p"
 	.string "Let me see how good you got.\n"
 	.string "I'll test you!\p"
@@ -540,13 +540,13 @@ Route119_Text_BrendanDefeat: @ 81F4D24
 	.string "You've gotten pretty darn decent.$"
 
 Route119_Text_BrendanIllGiveYouThis: @ 81F4D4B
-	.string "BRENDAN: I'd say you're good enough\n"
+	.string "Brendan: I'd say you're good enough\n"
 	.string "to search for Pokémon anywhere.\p"
 	.string "Here, I'll give you this.\n"
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly: @ 81F4DB5
-	.string "BRENDAN: Use FLY, and your Pokémon\n"
+	.string "Brendan: Use FLY, and your Pokémon\n"
 	.string "instantly carries you to any town\l"
 	.string "you've already visited.\p"
 	.string "But you need the FORTREE GYM BADGE \n"
@@ -614,7 +614,7 @@ Route119_Text_CanYourMonMakeSecretBase: @ 81F52B9
 	.string "SECRET BASE?$"
 
 Route119_Text_RouteSignFortree: @ 81F530E
-	.string "ROUTE 119\n"
+	.string "Route 119\n"
 	.string "{RIGHT_ARROW} FORTREE CITY$"
 
 Route119_Text_WeatherInstitute: @ 81F5327

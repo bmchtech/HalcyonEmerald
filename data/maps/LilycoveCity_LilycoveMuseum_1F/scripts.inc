@@ -289,7 +289,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_MuseumTouristDestination: @ 821967A
 	.string "The ART MUSEUM has become a favorite\n"
 	.string "tourist destination.\p"
 	.string "It's great for LILYCOVE…\n"
-	.string "No, great for the HOENN region!\p"
+	.string "No, great for the Hoenn region!\p"
 	.string "This is what I've heard--a lone TRAINER\n"
 	.string "procured all the paintings upstairs.$"
 

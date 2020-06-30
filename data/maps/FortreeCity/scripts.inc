@@ -93,7 +93,7 @@ FortreeCity_Text_SawGiganticPokemonInSky: @ 81E2676
 	.string "No one believes me, but I saw this\n"
 	.string "gigantic Pokémon in the sky.\p"
 	.string "It seemed to squirm as it flew toward\n"
-	.string "ROUTE 131.\p"
+	.string "Route 131.\p"
 	.string "By the way… Sniff…\n"
 	.string "Um… You, uh…smell singed.\p"
 	.string "Were you at a volcano or something?$"
@@ -102,7 +102,7 @@ FortreeCity_Text_SomethingBlockingGym: @ 81E2738
 	.string "I want to go to the Pokémon GYM,\n"
 	.string "but something's blocking the way.\p"
 	.string "After all the bother I went through\n"
-	.string "training on ROUTE 120…$"
+	.string "training on Route 120…$"
 
 FortreeCity_Text_ThisTimeIllBeatWinona: @ 81E27B6
 	.string "I've got my pride-and-joy Pokémon\n"

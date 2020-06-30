@@ -422,9 +422,9 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment: @ 820C5C6
 	.string "thousands of tons on a small area.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel: @ 820C6C7
-	.string "“MODEL OF HOENN REGION”\p"
+	.string "“MODEL OF Hoenn REGION”\p"
 	.string "It's a miniature diorama of the\n"
-	.string "HOENN region.\p"
+	.string "Hoenn region.\p"
 	.string "Where is LITTLEROOT TOWN on this?$"
 
 SlateportCity_OceanicMuseum_2F_Text_DeepSeawaterDisplay: @ 820C72F

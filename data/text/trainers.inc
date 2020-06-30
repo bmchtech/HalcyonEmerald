@@ -952,7 +952,7 @@ Route109_Text_PaulNotEnoughPokemon: @ 829781D
 
 Route109_Text_MelIntro: @ 8297872
 	.string "MEL: We're, like, totally in love.\n"
-	.string "Our romance is heating up all of HOENN!$"
+	.string "Our romance is heating up all of Hoenn!$"
 
 Route109_Text_MelDefeated: @ 82978BD
 	.string "MEL: We lost, and it's my fault!\n"
@@ -2145,7 +2145,7 @@ Route115_Text_HelenePostBattle: @ 829B971
 	.string "I rarely meet anyone who's better\n"
 	.string "than me…\p"
 	.string "I get it now!\n"
-	.string "You're a GYM LEADER, aren't you?$"
+	.string "You're a Gym Leader, aren't you?$"
 
 Route115_Text_AlixIntro: @ 829B9CB
 	.string "Our eyes met!\n"

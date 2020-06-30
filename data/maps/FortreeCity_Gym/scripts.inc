@@ -138,7 +138,7 @@ FortreeCity_Gym_EventScript_GymStatue:: @ 821677B
 FortreeCity_Gym_Text_GymGuideAdvice: @ 8216785
 	.string "Yo, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "FORTREE GYM LEADER WINONA is\n"
+	.string "FORTREE Gym Leader WINONA is\n"
 	.string "a master of FLYING-type Pokémon.\p"
 	.string "She's waiting at the back of this GYM,\n"
 	.string "behind the rotating doors.\p"
@@ -270,7 +270,7 @@ FortreeCity_Gym_Text_ExplainAerialAce: @ 8216FEC
 	.string "… … … … … …$"
 
 FortreeCity_Gym_Text_RegisteredWinona: @ 8217044
-	.string "Registered GYM LEADER WINONA\n"
+	.string "Registered Gym Leader WINONA\n"
 	.string "in the PokéNav.$"
 
 FortreeCity_Gym_Text_WinonaPostBattle: @ 8217071

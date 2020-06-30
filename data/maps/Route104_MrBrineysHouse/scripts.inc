@@ -99,7 +99,7 @@ Route104_MrBrineysHouse_EventScript_Peeko:: @ 8229E5D
 	end
 
 Route104_MrBrineysHouse_Text_WaitUpPeeko: @ 8229E70
-	.string "MR. BRINEY: Hold on, lass!\n"
+	.string "Mr. Briney: Hold on, lass!\n"
 	.string "Wait up, PEEKO!$"
 
 Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford: @ 8229E9B
@@ -118,18 +118,18 @@ Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford: @ 8229E9B
 	.string "We'll set sail for DEWFORD.$"
 
 Route104_MrBrineysHouse_Text_SetSailForDewford: @ 8229FE9
-	.string "MR. BRINEY: DEWFORD it is, then!\p"
+	.string "Mr. Briney: DEWFORD it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
 Route104_MrBrineysHouse_Text_DeclineDeliverySail: @ 822A041
-	.string "MR. BRINEY: Is that so?\n"
+	.string "Mr. Briney: Is that so?\n"
 	.string "Your deliveries can wait?\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail!$"
 
 Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford: @ 822A0AD
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "Mr. Briney: Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
 	.string "You're to deliver a LETTER to DEWFORD\n"
 	.string "and a package to SLATEPORT.\p"
@@ -138,7 +138,7 @@ Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford: @ 822A0AD
 	.string "First, we'll set sail for DEWFORD.$"
 
 Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford: @ 822A18F
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "Mr. Briney: Ahoy!\n"
 	.string "I know exactly what you want to say!\p"
 	.string "You're to deliver a package to\n"
 	.string "CAPT. STERN in SLATEPORT.\p"
@@ -147,12 +147,12 @@ Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford: @ 822A18F
 	.string "First, we'll set sail for DEWFORD.$"
 
 Route104_MrBrineysHouse_Text_WhereAreWeBound: @ 822A268
-	.string "MR. BRINEY: Ahoy!\n"
+	.string "Mr. Briney: Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
 Route104_MrBrineysHouse_Text_TellMeWheneverYouWantToSail: @ 822A2C3
-	.string "MR. BRINEY: Is that so?\n"
+	.string "Mr. Briney: Is that so?\n"
 	.string "Well, PEEKO owes her life to you.\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail!$"
