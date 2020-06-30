@@ -824,7 +824,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls: @ 81FAE40
 	.string "I'm going to look all over the place\n"
 	.string "because I want different Pokémon.\p"
 	.string "If I find any cute Pokémon, I'll catch\n"
-	.string "them with POKé BALLS!$"
+	.string "them with Poké Balls!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull: @ 81FAEF3
 	.string "Oh? Your Bag's full.$"
@@ -845,7 +845,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls: @ 81FAF8E
 	.string "I'm going to explore all over the place\n"
 	.string "to find different Pokémon.\p"
 	.string "If I find any cool Pokémon, you bet\n"
-	.string "I'll try to get them with POKé BALLS.$"
+	.string "I'll try to get them with Poké Balls.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull: @ 81FB05D
 	.string "Hey, your Bag's full.$"
@@ -1040,7 +1040,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall: @ 81FBD1A
 	.string "There's this place that I'd like to\n"
 	.string "invite you to for a visit.\p"
 	.string "If you're interested, board a ferry\n"
-	.string "at either SLATEPORT or LILYCOVE.\p"
+	.string "at either Slateport or LILYCOVE.\p"
 	.string "I'll fill you in on the details when\n"
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"

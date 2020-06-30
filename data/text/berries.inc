@@ -1,5 +1,5 @@
 PetalburgCity_Gym_Text_GiveEnigmaBerry: @ 82A6D3D
-	.string "DAD: Hi, {PLAYER}!\p"
+	.string "Dad: Hi, {PLAYER}!\p"
 	.string "I just received a very rare BERRY.\n"
 	.string "I'd like you to have it.$"
 
@@ -13,7 +13,7 @@ Route104_Text_PlantBerriesInSoilTakeThis: @ 82A6D86
 Route104_Text_TrainersOftenMakeMonHoldBerries: @ 82A6E32
 	.string "The way you look, you must be a\n"
 	.string "TRAINER, no?\p"
-	.string "TRAINERS often make Pokémon hold\n"
+	.string "Trainers often make Pokémon hold\n"
 	.string "BERRIES.\p"
 	.string "It's up to you whether to grow BERRIES\n"
 	.string "or use them.$"
@@ -101,7 +101,7 @@ Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother: @ 82A7428
 
 Route123_BerryMastersHouse_Text_VisitPrettyPetalFlowerShop: @ 82A7445
 	.string "Be sure to visit the PRETTY PETAL\n"
-	.string "flower shop near RUSTBORO.\p"
+	.string "flower shop near Rustboro.\p"
 	.string "Let flowers fill the world!$"
 
 Route123_BerryMastersHouse_Text_DoneForToday: @ 82A749E

@@ -46,5 +46,5 @@ Route110_SeasideCyclingRoadNorthEntrance_Text_GoAllOutOnCyclingRoad: @ 826EAC1
 Route110_SeasideCyclingRoadNorthEntrance_Text_TooDangerousToWalk: @ 826EB48
 	.string "Sorry, you can't walk on CYCLING\n"
 	.string "ROAD. It's too dangerous.\p"
-	.string "Please come back with a BIKE.$"
+	.string "Please come back with a Bike.$"
 

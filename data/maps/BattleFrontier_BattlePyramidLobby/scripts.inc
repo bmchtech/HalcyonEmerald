@@ -551,7 +551,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainBattlePyramid: @ 825100C
 	.string "the PYRAMID and try to reach the top.\p"
 	.string "In the PYRAMID are seven floors of\n"
 	.string "mazes, all of them filled with not only\l"
-	.string "skilled TRAINERS but also wild Pokémon.\p"
+	.string "skilled Trainers but also wild Pokémon.\p"
 	.string "You must enter with three Pokémon,\n"
 	.string "none of them holding an item.\p"
 	.string "On your ascent, you will be provided\n"
@@ -845,7 +845,7 @@ BattleFrontier_BattlePyramidLobby_Text_BelieveMyFortunesOrNot: @ 8252461
 
 BattleFrontier_BattlePyramidLobby_Text_TrainersNoticeRunning: @ 82524DA
 	.string "Did you know?\p"
-	.string "If you run fast, TRAINERS may notice\n"
+	.string "If you run fast, Trainers may notice\n"
 	.string "and come after you for a battle.\p"
 	.string "So, if you want to avoid TRAINERS,\n"
 	.string "don't catch their eyes, but sneak\l"
@@ -882,7 +882,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainMonRules: @ 82526FC
 	.string "of wild Pokémon you may encounter.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainTrainerRules: @ 82527A9
-	.string "TRAINERS are lying in wait for you\n"
+	.string "Trainers are lying in wait for you\n"
 	.string "inside the PYRAMID.\p"
 	.string "On each floor, there are up to\n"
 	.string "eight TRAINERS.\p"

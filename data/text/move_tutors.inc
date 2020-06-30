@@ -103,7 +103,7 @@ MoveTutor_Text_DynamicPunchTeach: @ 82C79A6
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
 	.string "I'm a FIGHTING-type Trainer,\n"
-	.string "so I can't win at the MOSSDEEP GYM\l"
+	.string "so I can't win at the MOSSDEEP Gym\l"
 	.string "no matter how hard I try!\p"
 	.string "Argh! Punch! Punch! Punch!\n"
 	.string "Punch! Punch! Punch!\p"
@@ -121,12 +121,12 @@ MoveTutor_Text_DynamicPunchWhichMon: @ 82C7B0D
 	.string "Which Pokémon should I teach?$"
 
 MoveTutor_Text_DynamicPunchTaught: @ 82C7B4F
-	.string "I want you to win at the MOSSDEEP GYM\n"
+	.string "I want you to win at the MOSSDEEP Gym\n"
 	.string "using that DYNAMICPUNCH!$"
 
 MoveTutor_Text_DoubleEdgeTeach: @ 82C7B8E
 	.string "Sigh…\p"
-	.string "SOOTOPOLIS's Gym Leader is really\n"
+	.string "Sootopolis's Gym Leader is really\n"
 	.string "lovably admirable.\p"
 	.string "But that also means I have many\n"
 	.string "rivals for his attention.\p"

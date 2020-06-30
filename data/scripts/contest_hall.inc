@@ -1497,7 +1497,7 @@ LilycoveCity_ContestLobby_Text_WhichTopic1: @ 827AF5E
 
 LilycoveCity_ContestLobby_Text_ExplainContests: @ 827AF7A
 	.string "A Pokémon CONTEST involves four\n"
-	.string "TRAINERS entering one Pokémon each\l"
+	.string "Trainers entering one Pokémon each\l"
 	.string "in competitive judging.\p"
 	.string "A CONTEST has two stages of judging,\n"
 	.string "primary and secondary.\p"
@@ -1595,14 +1595,14 @@ ContestHall_Text_GettingStartedParticipantsAsFollows: @ 827B711
 	.string "MC: Hello! We're just getting started\n"
 	.string "with a {STR_VAR_3} Rank Pokémon\l"
 	.string "{STR_VAR_2}!\p"
-	.string "The participating TRAINERS and their\n"
+	.string "The participating Trainers and their\n"
 	.string "Pokémon are as follows:$"
 
 ContestHall_Text_GettingStartedParticipantsAsFollowsLink: @ 827B78F
 	.string "MC: Hello! We're just getting started\n"
 	.string "with a 4-player linked Pokémon\l"
 	.string "{STR_VAR_2}!\p"
-	.string "The participating TRAINERS and their\n"
+	.string "The participating Trainers and their\n"
 	.string "Pokémon are as follows:$"
 
 ContestHall_Text_EntryXTrainersMon: @ 827B815
@@ -1826,7 +1826,7 @@ LilycoveCity_ContestLobby_Text_ExplainEMode: @ 827C5B1
 	.string "other using Wireless Adapters or\l"
 	.string "GBA Game Link cables.\p"
 	.string "If there are fewer than four players,\n"
-	.string "TRAINERS in the hall will join to fill\l"
+	.string "Trainers in the hall will join to fill\l"
 	.string "the 4-player CONTEST lineup.\p"
 	.string "Please be aware that E-MODE is not\n"
 	.string "available in Pokémon Ruby or Sapphire.$"
@@ -1859,7 +1859,7 @@ ContestHall_Text_GettingStartedWireless: @ 827C929
 	.string "{STR_VAR_2}!$"
 
 ContestHall_Text_ParticipantsAsFollows: @ 827C972
-	.string "The participating TRAINERS and their\n"
+	.string "The participating Trainers and their\n"
 	.string "Pokémon are as follows:$"
 
 ContestHall_Text_WeveSeenContestants: @ 827C9AF

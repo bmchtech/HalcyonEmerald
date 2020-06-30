@@ -1,12 +1,12 @@
 EventTicket_Text_ShowOldSeaMap: @ 82A6848
-	.string "The ferry to SLATEPORT is…\p"
+	.string "The ferry to Slateport is…\p"
 	.string "I beg your pardon?\n"
 	.string "Can we sail to this place on the map?\p"
 	.string "I know someone who will help you better.\n"
 	.string "Please wait.$"
 
 EventTicket_Text_ThatPass: @ 82A68D2
-	.string "The ferry to SLATEPORT is…\p"
+	.string "The ferry to Slateport is…\p"
 	.string "Oh?\n"
 	.string "That PASS…$"
 

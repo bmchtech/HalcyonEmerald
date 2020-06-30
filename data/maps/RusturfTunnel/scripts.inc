@@ -451,7 +451,7 @@ RusturfTunnel_Text_GruntDefeat: @ 822D2B0
 
 RusturfTunnel_Text_GruntTakePackage: @ 822D2E1
 	.string "This is plain not right…\p"
-	.string "The BOSS told me this would be a\n"
+	.string "The Boss told me this would be a\n"
 	.string "slick-and-easy job to pull.\p"
 	.string "All I had to do was steal some package\n"
 	.string "from DEVON.\p"
@@ -473,8 +473,8 @@ RusturfTunnel_Text_ThankYouLetsGoHomePeeko: @ 822D3BA
 	.string "Now, if there's anything that troubles\n"
 	.string "you, don't hesitate to tell me!\p"
 	.string "You can usually find me in my cottage\n"
-	.string "by the sea near PETALBURG WOODS.\p"
-	.string "Come, PEEKO, we should make our way\n"
+	.string "by the sea near Petalburg WOODS.\p"
+	.string "Come, Peeko, we should make our way\n"
 	.string "home.\p"
 	.string "PEEKO: Pihyoh!$"
 
@@ -484,16 +484,16 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 	.string "Is the bedrock too hard?\p"
 	.string "My beloved awaits me in VERDANTURF\n"
 	.string "TOWN just beyond here…\p"
-	.string "If RUSTBORO and VERDANTURF were\n"
+	.string "If Rustboro and VERDANTURF were\n"
 	.string "joined by this tunnel, I could visit\l"
 	.string "her every day…\p"
 	.string "But this…\n"
 	.string "What am I to do?$"
 
 RusturfTunnel_Text_ToGetToVerdanturf: @ 822D5F3
-	.string "To get from RUSTBORO to VERDANTURF,\n"
-	.string "you need to go to DEWFORD, then pass\l"
-	.string "through SLATEPORT and MAUVILLE…$"
+	.string "To get from Rustboro to VERDANTURF,\n"
+	.string "you need to go to Dewford, then pass\l"
+	.string "through Slateport and MAUVILLE…$"
 
 RusturfTunnel_Text_YouShatteredBoulderTakeHM: @ 822D65C
 	.string "Wow! You shattered that boulder\n"

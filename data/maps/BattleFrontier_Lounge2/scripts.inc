@@ -149,12 +149,12 @@ BattleFrontier_Lounge2_Text_FacilityIsHottest:: @ 82608F2
 
 BattleFrontier_Lounge2_Text_BattleTowerIsHottest:: @ 8260933
 	.string "Let's see now…\p"
-	.string "It sounds like BATTLE TOWER\n"
+	.string "It sounds like Battle Tower\n"
 	.string "{STR_VAR_1} is the hottest.$"
 
 BattleFrontier_Lounge2_Text_SalonMaidenIsThere:: @ 8260971
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this mysterious Trainer called\n"
 	.string "the SALON MAIDEN that runs the place.$"
@@ -178,7 +178,7 @@ BattleFrontier_Lounge2_Text_SalonMaidenGoldMons:: @ 8260AE7
 
 BattleFrontier_Lounge2_Text_DomeAceIsThere:: @ 8260BC4
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this flamboyant Trainer called\n"
 	.string "the DOME ACE that runs the place.$"
@@ -203,7 +203,7 @@ BattleFrontier_Lounge2_Text_DomeAceGoldMons:: @ 8260D3A
 
 BattleFrontier_Lounge2_Text_FactoryHeadIsThere:: @ 8260E1E
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this freaky Trainer called\n"
 	.string "the FACTORY HEAD that runs the place.$"
@@ -226,7 +226,7 @@ BattleFrontier_Lounge2_Text_FactoryHeadGoldMons:: @ 8260F74
 
 BattleFrontier_Lounge2_Text_PikeQueenIsThere:: @ 8261026
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this scary Trainer called\n"
 	.string "the PIKE QUEEN that runs the place.$"
@@ -252,7 +252,7 @@ BattleFrontier_Lounge2_Text_PikeQueenGoldMons:: @ 8261194
 
 BattleFrontier_Lounge2_Text_ArenaTycoonIsThere:: @ 8261282
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this cute Trainer called\n"
 	.string "the ARENA TYCOON that runs the place.$"
@@ -278,7 +278,7 @@ BattleFrontier_Lounge2_Text_ArenaTycoonGoldMons:: @ 8261403
 
 BattleFrontier_Lounge2_Text_PalaceMavenIsThere:: @ 82614E6
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this sinister Trainer called\n"
 	.string "the PALACE MAVEN that runs the place.$"
@@ -303,7 +303,7 @@ BattleFrontier_Lounge2_Text_PalaceMavenGoldMons:: @ 826166F
 
 BattleFrontier_Lounge2_Text_PyramidKingIsThere:: @ 826174D
 	.string "Bet you didn't know this!\p"
-	.string "One of those top TRAINERS that SCOTT\n"
+	.string "One of those top Trainers that SCOTT\n"
 	.string "calls the FRONTIER BRAINS is there.\p"
 	.string "It's this fiery-hot Trainer called\n"
 	.string "the PYRAMID KING that runs the place.$"
@@ -331,14 +331,14 @@ BattleFrontier_Lounge2_Text_DoubleBattleAdvice1:: @ 82619AC
 	.string "Sure, there are several places where\n"
 	.string "you can enter DOUBLE BATTLES.\p"
 	.string "But the DOUBLE BATTLE ROOMS of\n"
-	.string "the BATTLE TOWER are, like, basic!\p"
+	.string "the Battle Tower are, like, basic!\p"
 	.string "They're where you should learn about\n"
 	.string "how DOUBLE BATTLES are played here\l"
 	.string "in the BATTLE FRONTIER.$"
 
 BattleFrontier_Lounge2_Text_DoubleBattleAdvice2:: @ 8261A91
 	.string "Watch yourself in the battles here.\p"
-	.string "I hear there are TRAINERS that have\n"
+	.string "I hear there are Trainers that have\n"
 	.string "strategies they developed just for\l"
 	.string "DOUBLE BATTLES.$"
 
@@ -349,7 +349,7 @@ BattleFrontier_Lounge2_Text_DoubleBattleAdvice3:: @ 8261B0C
 	.string "offering DOUBLE BATTLES.$"
 
 BattleFrontier_Lounge2_Text_MultiBattleAdvice:: @ 8261B95
-	.string "All sorts of TRAINERS gather in\n"
+	.string "All sorts of Trainers gather in\n"
 	.string "the BATTLE SALON.\p"
 	.string "Just think--you may run into your\n"
 	.string "friends or followers!\l"

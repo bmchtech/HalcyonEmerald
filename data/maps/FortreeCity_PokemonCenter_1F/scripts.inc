@@ -31,7 +31,7 @@ FortreeCity_PokemonCenter_1F_EventScript_Boy:: @ 8217407
 FortreeCity_PokemonCenter_1F_Text_GoToSafariZone: @ 8217410
 	.string "Listen, kid, are you working\n"
 	.string "on a Pokédex?\p"
-	.string "Hmm… Go to the SAFARI ZONE.\n"
+	.string "Hmm… Go to the Safari Zone.\n"
 	.string "That's my suggestion.$"
 
 FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat: @ 821746D
@@ -48,7 +48,7 @@ FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav: @ 821751F
 	.string "Do you know about PokéNav's\n"
 	.string "MATCH CALL system?\p"
 	.string "Access it, and you can chat with\n"
-	.string "registered TRAINERS anytime.\p"
+	.string "registered Trainers anytime.\p"
 	.string "It also shows you which TRAINERS\n"
 	.string "want a rematch with you.\p"
 	.string "It's really nifty! Those DEVON guys\n"

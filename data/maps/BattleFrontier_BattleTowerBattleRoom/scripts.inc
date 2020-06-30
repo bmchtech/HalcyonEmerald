@@ -520,7 +520,7 @@ BattleFrontier_BattleTowerBattleRoom_Text_GreetingsImAnabel: @ 8242579
 	.string "Greetings…\n"
 	.string "My name is ANABEL.\p"
 	.string "I am the SALON MAIDEN, and I am in\n"
-	.string "charge of running the BATTLE TOWER…\p"
+	.string "charge of running the Battle Tower…\p"
 	.string "I have heard several rumors\n"
 	.string "about you…\p"
 	.string "In all honesty, what I have heard does\n"

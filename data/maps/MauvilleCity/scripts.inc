@@ -490,7 +490,7 @@ MauvilleCity_Text_UncleHesTooPeppy: @ 81DF7DC
 
 MauvilleCity_Text_WallyWantToChallengeGym: @ 81DF845
 	.string "WALLY: Aww, UNCLE, please?\p"
-	.string "I want to challenge this GYM and see\n"
+	.string "I want to challenge this Gym and see\n"
 	.string "how much better I've become.\p"
 	.string "Please? May I, please?$"
 
@@ -499,7 +499,7 @@ MauvilleCity_Text_UncleYourePushingIt: @ 81DF8B9
 	.string "Since you started living with Pokémon,\n"
 	.string "you have grown quite a lot stronger.\p"
 	.string "But don't you think you're pushing it\n"
-	.string "to suddenly challenge a GYM?$"
+	.string "to suddenly challenge a Gym?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone: @ 81DF963
 	.string "WALLY: I'm not pushing it.\p"
@@ -593,7 +593,7 @@ MauvilleCity_Text_ScottYouDidntHoldBack: @ 81DFED5
 	.string "and beat him impressively.\p"
 	.string "Yeah! That's what a real Pokémon\n"
 	.string "battle is all about!\p"
-	.string "I idolize TRAINERS like that!\p"
+	.string "I idolize Trainers like that!\p"
 	.string "… … … … … …\n"
 	.string "I'll be cheering for you!$"
 
@@ -651,7 +651,7 @@ MauvilleCity_Text_RydelVeryGenerous: @ 81E03FB
 	.string "man.$"
 
 MauvilleCity_Text_PokemonCanJumpYouOnBike: @ 81E044A
-	.string "Even if you're riding a BIKE,\n"
+	.string "Even if you're riding a Bike,\n"
 	.string "wild Pokémon could jump you.$"
 
 MauvilleCity_Text_CitySign: @ 81E0485
@@ -660,7 +660,7 @@ MauvilleCity_Text_CitySign: @ 81E0485
 
 MauvilleCity_Text_GymSign: @ 81E04B7
 	.string "MAUVILLE CITY Pokémon Gym\n"
-	.string "LEADER: WATTSON\l"
+	.string "Leader: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 
 MauvilleCity_Text_BikeShopSign: @ 81E0504

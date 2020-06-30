@@ -281,7 +281,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_Partner8:: @ 8244049
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_PleaseFindPartner: @ 8244056
 	.string "Please find a partner from out of\n"
-	.string "the TRAINERS gathered here.$"
+	.string "the Trainers gathered here.$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_QuitLookingForPartner: @ 8244094
 	.string "{PLAYER}, you have not found a partner\n"
@@ -291,7 +291,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_QuitLookingForPartner: @ 8244094
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_PleaseFindPartner2: @ 824410C
 	.string "Then, please find a partner from\n"
-	.string "the TRAINERS gathered here.$"
+	.string "the Trainers gathered here.$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_ThankYouForChoosingPartner:: @ 8244149
 	.string "Thank you for choosing a partner.\p"
@@ -590,7 +590,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice10Reject:: @ 82450C0
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Intro:: @ 82450E6
 	.string "Hey! There's big trouble! This is\n"
-	.string "the BATTLE TOWER's last day!\p"
+	.string "the Battle Tower's last day!\p"
 	.string "… … … … … …\n"
 	.string "I'm only joking!\p"
 	.string "People call me {STR_VAR_3} and I do, too!\n"
@@ -616,7 +616,7 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Accept:: @ 824522F
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice11Reject:: @ 824529A
 	.string "Oh, that's so cold! I'll have to wreck\n"
-	.string "the BATTLE TOWER for that!\p"
+	.string "the Battle Tower for that!\p"
 	.string "Of course I won't!$"
 
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_Apprentice12Intro:: @ 82452EF

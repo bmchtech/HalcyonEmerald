@@ -294,14 +294,14 @@ RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry: @ 8214719
 RustboroCity_PokemonSchool_Text_StudentsNotes: @ 82147A2
 	.string "It's this student's notebook…\p"
 	.string "Pokémon are to be caught using\n"
-	.string "POKé BALLS.\p"
+	.string "Poké Balls.\p"
 	.string "Up to six Pokémon can accompany\n"
 	.string "a Trainer.\p"
 	.string "A Trainer is someone who catches\n"
 	.string "Pokémon, raises them, and battles\l"
 	.string "with them.\p"
 	.string "A Trainer's mission is to defeat\n"
-	.string "the strong TRAINERS who await\l"
+	.string "the strong Trainers who await\l"
 	.string "challengers in Pokémon GymS.$"
 
 RustboroCity_PokemonSchool_Text_ScottMetAlreadyCut: @ 82148C0

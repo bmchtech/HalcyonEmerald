@@ -1051,12 +1051,12 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner: @ 81E12AC
 RustboroCity_Text_HaveYouChallengedGym: @ 81E130D
 	.string "Have you taken the Pokémon Gym\n"
 	.string "challenge?\p"
-	.string "When you get that shiny GYM BADGE\n"
-	.string "in hand, I guess TRAINERS begin to\l"
+	.string "When you get that shiny Gym BADGE\n"
+	.string "in hand, I guess Trainers begin to\l"
 	.string "realize what is required of them.$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge: @ 81E139E
-	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
+	.string "Hey, that's Rustboro's Gym BADGE!\p"
 	.string "Out of all the Pokémon Gym BADGES,\n"
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
@@ -1083,7 +1083,7 @@ RustboroCity_Text_MrBrineyLovesPeeko: @ 81E1589
 	.string "The old sailor Mr. Briney lives in\n"
 	.string "a cottage by the sea.\p"
 	.string "He said he was going shopping in\n"
-	.string "SLATEPORT for his pet, PEEKO.\p"
+	.string "Slateport for his pet, PEEKO.\p"
 	.string "That old sea dog, he must really love\n"
 	.string "that PEEKO.$"
 
@@ -1109,7 +1109,7 @@ RustboroCity_Text_PokemonChangeShape: @ 81E174B
 RustboroCity_Text_TradePokemonGrowFast: @ 81E1789
 	.string "A Pokémon you get in a trade from\n"
 	.string "someone grows fast.\p"
-	.string "But if you don't have certain GYM\n"
+	.string "But if you don't have certain Gym\n"
 	.string "BADGES, it may not obey you…$"
 
 RustboroCity_Text_OutOfTheWay: @ 81E17FE
@@ -1123,7 +1123,7 @@ RustboroCity_Text_WaitDontTakeMyGoods: @ 81E1817
 RustboroCity_Text_HelpMeIWasRobbed: @ 81E183E
 	.string "Oh, it's you!\p"
 	.string "You're that fantastic Trainer who\n"
-	.string "helped me in PETALBURG WOODS!\p"
+	.string "helped me in Petalburg WOODS!\p"
 	.string "Help me! I was robbed by Team Aqua!\n"
 	.string "I have to get the DEVON GOODS back!\p"
 	.string "If I don't…\n"
@@ -1169,7 +1169,7 @@ RustboroCity_Text_RegisteredMay: @ 81E1ADB
 
 RustboroCity_Text_MayPassedBrineyWantToBattle: @ 81E1AFA
 	.string "May: Oh, by the way, I passed\n"
-	.string "Mr. Briney in PETALBURG WOODS.\p"
+	.string "Mr. Briney in Petalburg WOODS.\p"
 	.string "I guess he's on his way home to his\n"
 	.string "cottage by the sea.\p"
 	.string "How's your Pokédex coming along,\n"
@@ -1216,7 +1216,7 @@ RustboroCity_Text_RegisteredBrendan: @ 81E1E11
 
 RustboroCity_Text_BrendanPassedBrineyWantToBattle: @ 81E1E34
 	.string "Brendan: By the way, {PLAYER}, I walked\n"
-	.string "by Mr. Briney in PETALBURG WOODS.\p"
+	.string "by Mr. Briney in Petalburg WOODS.\p"
 	.string "I bet he was on his way home to his\n"
 	.string "cottage by the sea.\p"
 	.string "{PLAYER}, how's your Pokédex?\n"
@@ -1262,7 +1262,7 @@ RustboroCity_Text_DevonCorpSign: @ 81E2128
 
 RustboroCity_Text_GymSign: @ 81E2167
 	.string "Rustboro City Pokémon Gym\n"
-	.string "LEADER: ROXANNE\p"
+	.string "Leader: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign: @ 81E21B3
@@ -1317,4 +1317,4 @@ RustboroCity_Text_YouCanHave2On2Battle: @ 81E249D
 	.string "when you have two or more Pokémon,\l"
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
-	.string "could beat two TRAINERS by yourself?$"
+	.string "could beat two Trainers by yourself?$"

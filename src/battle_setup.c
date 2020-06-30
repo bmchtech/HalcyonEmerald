@@ -545,7 +545,7 @@ void StartGroudonKyogreBattle(void)
     if (gGameVersion == VERSION_RUBY)
         CreateBattleStartTask(B_TRANSITION_SHARDS, MUS_BATTLE34); // GROUDON
     else
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_BATTLE34); // KYOGRE
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_BATTLE34); // Kyogre
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

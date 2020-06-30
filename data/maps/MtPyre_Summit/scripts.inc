@@ -473,7 +473,7 @@ MtPyre_Summit_Text_Grunt2PostBattle: @ 82325E4
 
 MtPyre_Summit_Text_Grunt3Intro: @ 823261D
 	.string "You…\n"
-	.string "We saw you at MT. CHIMNEY.\p"
+	.string "We saw you at Mt. Chimney.\p"
 	.string "You don't belong to either TEAM,\n"
 	.string "so why would you be here?$"
 
@@ -484,7 +484,7 @@ MtPyre_Summit_Text_Grunt3Defeat: @ 8232678
 MtPyre_Summit_Text_Grunt3PostBattle: @ 82326B3
 	.string "Heh, it doesn't matter!\n"
 	.string "We bought ourselves some time!\p"
-	.string "The BOSS should have snatched what\n"
+	.string "The Boss should have snatched what\n"
 	.string "he was after!$"
 
 MtPyre_Summit_Text_Grunt4Intro: @ 823271B
@@ -505,7 +505,7 @@ MtPyre_Summit_Text_Grunt4PostBattle: @ 82327D8
 MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo: @ 823281A
 	.string "ARCHIE: Team Magma's MAXIE got ahead\n"
 	.string "of us, but we also got what we wanted.\p"
-	.string "The RED ORB preserved at MT. PYRE…\n"
+	.string "The RED ORB preserved at Mt. Pyre…\n"
 	.string "I, ARCHIE, now have it in my possession!\p"
 	.string "Fufufu… Now we can bring our ultimate\n"
 	.string "objective to fruition!\p"
@@ -540,7 +540,7 @@ MtPyre_Summit_Text_OrbsHaveBeenTaken: @ 8232AD8
 
 MtPyre_Summit_Text_GroudonKyogreAwakened: @ 8232B4F
 	.string "Oh, my goodness…\p"
-	.string "You say that both GROUDON and KYOGRE\n"
+	.string "You say that both GROUDON and Kyogre\n"
 	.string "have been awakened?\p"
 	.string "It is said that the BLUE ORB and\n"
 	.string "the RED ORB quelled the rage of\l"
@@ -570,7 +570,7 @@ MtPyre_Summit_Text_SuperAncientPokemonTaughtUs: @ 8232D1E
 	.string "taught us that…$"
 
 MtPyre_Summit_Text_WillYouHearOutMyTale: @ 8232E0C
-	.string "MT. PYRE is where we calm the spirits\n"
+	.string "Mt. Pyre is where we calm the spirits\n"
 	.string "of Pokémon that have passed on…\p"
 	.string "This is a high place where one can\n"
 	.string "see all of Hoenn…\p"
@@ -613,7 +613,7 @@ MtPyre_Summit_Text_HearTheNewLegendOfHoenn: @ 82331A6
 	.string "It is my role to pass on the legends\n"
 	.string "of Hoenn to future generations.\p"
 	.string "And the crisis that just ended in\n"
-	.string "SOOTOPOLIS rewrote a legend…\p"
+	.string "Sootopolis rewrote a legend…\p"
 	.string "Have you the time to hear the new\n"
 	.string "legend of Hoenn?$"
 

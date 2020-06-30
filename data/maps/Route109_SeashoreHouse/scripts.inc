@@ -152,13 +152,13 @@ Route109_SeashoreHouse_Text_DwayneDefeated: @ 8269867
 	.string "I can accept that loss, matey!$"
 
 Route109_SeashoreHouse_Text_DwaynePostBattle: @ 826989D
-	.string "Whenever I'm in SLATEPORT, I enjoy\n"
+	.string "Whenever I'm in Slateport, I enjoy\n"
 	.string "hot battles and ice-cold SODA POP!$"
 
 Route109_SeashoreHouse_Text_JohannaIntro: @ 82698E3
 	.string "Boring battles aren't worth the effort.\p"
 	.string "Fiery hot battles are what toughen up\n"
-	.string "TRAINERS and Pokémon!$"
+	.string "Trainers and Pokémon!$"
 
 Route109_SeashoreHouse_Text_JohannaDefeated: @ 8269947
 	.string "That's hot!$"

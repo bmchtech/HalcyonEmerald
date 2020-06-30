@@ -195,7 +195,7 @@ MagmaHideout_4F_Text_MaxieGroudonWhatsWrong: @ 823AADA
 	.string "MAXIE: GROUDON!\n"
 	.string "What's wrong?\p"
 	.string "Wasn't the BLUE ORB the key?\p"
-	.string "GROUDON!\n"
+	.string "Groudon!\n"
 	.string "Where have you gone…$"
 
 MagmaHideout_4F_Text_MaxieOhItWasYou: @ 823AB33

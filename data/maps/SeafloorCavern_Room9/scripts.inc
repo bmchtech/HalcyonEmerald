@@ -228,7 +228,7 @@ SeafloorCavern_Room9_Text_ArchieSoItWasYou: @ 823507C
 SeafloorCavern_Room9_Text_ArchieBeholdKyogre: @ 82350A6
 	.string "ARCHIE: Behold!\p"
 	.string "See how beautiful it is, the sleeping\n"
-	.string "form of the ancient Pokémon KYOGRE!\p"
+	.string "form of the ancient Pokémon Kyogre!\p"
 	.string "I have waited so long for this day to\n"
 	.string "come…$"
 
@@ -249,7 +249,7 @@ SeafloorCavern_Room9_Text_ArchieWithThisRedOrb: @ 82351E5
 	.string "you are truly gifted.\p"
 	.string "But!\n"
 	.string "I have this in my possession!\p"
-	.string "With this RED ORB, I can make KYOGRE…$"
+	.string "With this RED ORB, I can make Kyogre…$"
 
 SeafloorCavern_Room9_Text_RedOrbShinesByItself: @ 8235279
 	.string "The RED ORB suddenly began shining\n"
@@ -259,7 +259,7 @@ SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo: @ 82352A7
 	.string "ARCHIE: What?!\p"
 	.string "I didn't do anything.\n"
 	.string "Why did the RED ORB…\p"
-	.string "Where did KYOGRE go?$"
+	.string "Where did Kyogre go?$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside: @ 82352F6
 	.string "ARCHIE: Hm? It's a message from our\n"
@@ -270,7 +270,7 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard: @ 823532B
 	.string "Hm…\n"
 	.string "It's raining heavily?\p"
 	.string "Good… That should have happened.\n"
-	.string "That is why we awakened KYOGRE,\l"
+	.string "That is why we awakened Kyogre,\l"
 	.string "to realize Team Aqua's vision of\l"
 	.string "expanding the sea.\p"
 	.string "What?!\p"
@@ -284,14 +284,14 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard: @ 823532B
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear: @ 823546F
 	.string "ARCHIE: There's something wrong…\p"
 	.string "The RED ORB is supposed to awaken\n"
-	.string "and control KYOGRE…\p"
+	.string "and control Kyogre…\p"
 	.string "But… Why?\n"
-	.string "Why did KYOGRE disappear?\p"
+	.string "Why did Kyogre disappear?\p"
 	.string "Why?!$"
 
 SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought: @ 82354F0
 	.string "MAXIE: What have you wrought?\p"
-	.string "ARCHIE… You've finally awoken KYOGRE,\n"
+	.string "ARCHIE… You've finally awoken Kyogre,\n"
 	.string "haven't you?\p"
 	.string "What will happen to the world if this\n"
 	.string "downpour continues for all eternity?\p"
@@ -304,7 +304,7 @@ SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty: @ 82355C2
 	.string "Wasn't it you, Team Magma, that\n"
 	.string "infuriated GROUDON?\p"
 	.string "So long as I have this RED ORB,\n"
-	.string "I should be able to control KYOGRE…\p"
+	.string "I should be able to control Kyogre…\p"
 	.string "I should be able to control it…$"
 
 SeafloorCavern_Room9_Text_MaxieWeDontHaveTimeToArgue: @ 8235692

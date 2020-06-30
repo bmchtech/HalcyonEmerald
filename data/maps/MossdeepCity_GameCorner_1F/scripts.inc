@@ -43,7 +43,7 @@ RS_MysteryEventsHouse_Text_OldManGreeting: @ 8224B66
 	.string "as a Pokémon Trainer.\p"
 	.string "Now that I've become an old buzzard,\n"
 	.string "my only amusement is watching young\l"
-	.string "TRAINERS battle.$"
+	.string "Trainers battle.$"
 
 RS_MysteryEventsHouse_Text_DoorIsLocked: @ 8224BFD
 	.string "The door appears to be locked.$"

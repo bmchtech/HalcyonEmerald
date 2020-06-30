@@ -780,7 +780,7 @@ Route110_Text_WeCantTalkAboutAquaActivities: @ 81EFB5D
 	.string "We can't talk about them yet.$"
 
 Route110_Text_KickUpARuckus: @ 81EFB93
-	.string "I want to get going to SLATEPORT and\n"
+	.string "I want to get going to Slateport and\n"
 	.string "kick up a ruckus!$"
 
 Route110_Text_MyFirstJobInAqua: @ 81EFBCA
@@ -844,7 +844,7 @@ Route110_Text_BrendanExplainItemfinder: @ 81EFF1C
 	.string "Pokémon.$"
 
 Route110_Text_RideBikeAtFullSpeed: @ 81EFFC3
-	.string "Wouldn't it be great to ride a BIKE\n"
+	.string "Wouldn't it be great to ride a Bike\n"
 	.string "at full speed on CYCLING ROAD?$"
 
 Route110_Text_HairStreamsBehindMe: @ 81F0006
@@ -853,7 +853,7 @@ Route110_Text_HairStreamsBehindMe: @ 81F0006
 	.string "I grew my hair out just for that.$"
 
 Route110_Text_YouGotBikeFromRydel: @ 81F006A
-	.string "Oh, hey, you got that BIKE from RYDEL!\p"
+	.string "Oh, hey, you got that Bike from RYDEL!\p"
 	.string "Oh, it's glaringly obvious.\n"
 	.string "It says right on your bike…\p"
 	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
@@ -875,14 +875,14 @@ Route110_Text_TwoRoads: @ 81F0261
 	.string "Perhaps that is right and fair.$"
 
 Route110_Text_WalkOnTheLowRoad: @ 81F02CA
-	.string "I don't have a BIKE, so I'll take\n"
+	.string "I don't have a Bike, so I'll take\n"
 	.string "a leisurely walk on the low road.$"
 
 Route110_Text_BikeTechniques: @ 81F030E
-	.string "Learning techniques will make BIKE\n"
+	.string "Learning techniques will make Bike\n"
 	.string "riding even more fun.\p"
 	.string "There are some places that you can\n"
-	.string "reach only by using a BIKE technique.$"
+	.string "reach only by using a Bike technique.$"
 
 Route110_Text_WhichShouldIChoose: @ 81F0390
 	.string "Which should I choose?\p"
@@ -932,12 +932,12 @@ Route110_Text_ChallengeReactionWorst: @ 81F05CE
 	.string "You're perhaps not cut out for this\n"
 	.string "unfortunate cycling business.\p"
 	.string "You ought to give serious thought to\n"
-	.string "returning that BIKE to RYDEL.$"
+	.string "returning that Bike to RYDEL.$"
 
 Route110_Text_RatedForNumberOfCollisions: @ 81F0661
 	.string "This is CYCLING ROAD.\p"
 	.string "If you were to ride from MAUVILLE to\n"
-	.string "SLATEPORT on a MACH BIKE, you would\l"
+	.string "Slateport on a MACH Bike, you would\l"
 	.string "be rated for the number of collisions\l"
 	.string "and your total time.$"
 
@@ -948,14 +948,14 @@ Route110_Text_AlwaysAimHigher: @ 81F06FB
 
 Route110_Text_AcroBikesDoNotQualify: @ 81F0755
 	.string "On this CYCLING ROAD, those riding\n"
-	.string "MACH BIKES are rated for their number\l"
+	.string "MACH Bikes are rated for their number\l"
 	.string "of collisions and their total times.\p"
-	.string "ACRO BIKES do not qualify for rating.\n"
+	.string "ACRO Bikes do not qualify for rating.\n"
 	.string "They are easy to turn, so it's not fair.$"
 
 Route110_Text_SlateportCitySign: @ 81F0812
 	.string "ROUTE 110\n"
-	.string "{DOWN_ARROW} SLATEPORT CITY$"
+	.string "{DOWN_ARROW} Slateport City$"
 
 Route110_Text_CyclingRoadSign: @ 81F082D
 	.string "SEASIDE CYCLING ROAD$"

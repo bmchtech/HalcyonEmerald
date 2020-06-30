@@ -29,7 +29,7 @@ FallarborTown_BattleTentLobby_Text_ExplainFallarborTent: @ 82C48AC
 	.string "If you don't save, you will not be able\n"
 	.string "to continue with your challenge.\p"
 	.string "If you pull off the feat of beating\n"
-	.string "three TRAINERS in succession,\l"
+	.string "three Trainers in succession,\l"
 	.string "we will present you with a fine prize.$"
 
 FallarborTown_BattleTentLobby_Text_SaveBeforeChallenge: @ 82C4B35
@@ -84,7 +84,7 @@ FallarborTown_BattleTentLobby_Text_DidntSaveBeforeQuitting: @ 82C4DED
 
 FallarborTown_BattleTentLobby_Text_BeatThreeTrainers: @ 82C4EC3
 	.string "How splendid! You have beaten\n"
-	.string "three TRAINERS in succession!$"
+	.string "three Trainers in succession!$"
 
 FallarborTown_BattleTentLobby_Text_WaitWhileSaveGame: @ 82C4EFF
 	.string "Please wait while I save the game.$"
@@ -131,16 +131,16 @@ VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent: @ 82C5163
 	.string "In the VERDANTURF BATTLE TENT,\n"
 	.string "there is one crucial rule that must\l"
 	.string "be obeyed.\p"
-	.string "TRAINERS are permitted only to switch\n"
+	.string "Trainers are permitted only to switch\n"
 	.string "their Pokémon in and out.\p"
-	.string "TRAINERS are otherwise forbidden to\n"
+	.string "Trainers are otherwise forbidden to\n"
 	.string "command their Pokémon.\p"
 	.string "The Pokémon are to behave according\n"
 	.string "to their nature and battle on their own.\p"
 	.string "You must put your trust in your\n"
 	.string "Pokémon and watch over them.\p"
 	.string "If you achieve the honor of beating\n"
-	.string "three TRAINERS in succession,\l"
+	.string "three Trainers in succession,\l"
 	.string "we will present you with a prize.\p"
 	.string "If you want to interrupt your\n"
 	.string "challenge, please save the game.\p"
@@ -214,7 +214,7 @@ VerdanturfTown_BattleTentLobby_Text_PresentYouWithPrize: @ 82C57CD
 
 SlateportCity_BattleTentLobby_Text_WelcomeToBattleTent: @ 82C5810
 	.string "Welcome to the BATTLE TENT\n"
-	.string "SLATEPORT SITE!\p"
+	.string "Slateport SITE!\p"
 	.string "I am your guide to the Battle Swap\n"
 	.string "Tournament.$"
 
@@ -223,7 +223,7 @@ SlateportCity_BattleTentLobby_Text_TakeChallenge: @ 82C586A
 	.string "Swap challenge?$"
 
 SlateportCity_BattleTentLobby_Text_ExplainSlateportTent: @ 82C589C
-	.string "Here at the SLATEPORT BATTLE TENT,\n"
+	.string "Here at the Slateport BATTLE TENT,\n"
 	.string "we hold Battle Swap events\l"
 	.string "using rental Pokémon.\p"
 	.string "First, you will be loaned three\n"
@@ -351,7 +351,7 @@ SlateportCity_BattleTentLobby_Text_ExplainSwapNotes: @ 82C60C0
 	.string "even when swaps are made.$"
 
 SlateportCity_BattleTentLobby_Text_ExplainMonRules: @ 82C61FE
-	.string "The Pokémon of the SLATEPORT\n"
+	.string "The Pokémon of the Slateport\n"
 	.string "BATTLE TENT are all rentals.\p"
 	.string "All rental Pokémon are kept at\n"
 	.string "Level 30.$"

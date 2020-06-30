@@ -653,7 +653,7 @@ Route107_Text_DeniseDefeated: @ 829699E
 
 Route107_Text_DenisePostBattle: @ 82969AB
 	.string "A weird saying is getting really\n"
-	.string "trendy at DEWFORD HALL.$"
+	.string "trendy at Dewford HALL.$"
 
 Route107_Text_BethIntro: @ 82969E4
 	.string "Did you want to battle me?\n"
@@ -824,7 +824,7 @@ Route109_Text_AlicePostBattle: @ 829720F
 
 Route109_Text_HueyIntro: @ 8297235
 	.string "I've laid anchor in ports around\n"
-	.string "the world, but SLATEPORT's the best.$"
+	.string "the world, but Slateport's the best.$"
 
 Route109_Text_HueyDefeated: @ 829727B
 	.string "You're the best!$"
@@ -1001,11 +1001,11 @@ Route109_Text_ElijahDefeated: @ 8297AC7
 Route109_Text_ElijahPostBattle: @ 8297AE5
 	.string "For a guy as macho as me, a port\n"
 	.string "is the perfect setting!\p"
-	.string "I guess I'll head for SLATEPORT.$"
+	.string "I guess I'll head for Slateport.$"
 
 Route110_Text_JacobIntro: @ 8297B3F
 	.string "Whoa! Watch it!\n"
-	.string "I guess you're not used to BIKE racing.$"
+	.string "I guess you're not used to Bike racing.$"
 
 Route110_Text_JacobDefeated: @ 8297B77
 	.string "Whoa!\n"
@@ -1014,7 +1014,7 @@ Route110_Text_JacobDefeated: @ 8297B77
 Route110_Text_JacobPostBattle: @ 8297B8F
 	.string "Flat tires and brake problems can\n"
 	.string "cause serious injury!\l"
-	.string "Inspect your BIKE for problems!$"
+	.string "Inspect your Bike for problems!$"
 
 Route110_Text_AnthonyIntro: @ 8297BE7
 	.string "Yo, you!\n"
@@ -1028,7 +1028,7 @@ Route110_Text_AnthonyPostBattle: @ 8297C1F
 	.string "I need to reconsider this…$"
 
 Route110_Text_BenjaminIntro: @ 8297C63
-	.string "Don't panic if your BIKE's going fast!$"
+	.string "Don't panic if your Bike's going fast!$"
 
 Route110_Text_BenjaminDefeated: @ 8297C8A
 	.string "I shouldn't panic during Pokémon\n"
@@ -1089,7 +1089,7 @@ Route110_Text_JasmineDefeated: @ 8297FD0
 	.string "I'm worried about muscle cramps…$"
 
 Route110_Text_JasminePostBattle: @ 8297FF1
-	.string "Oh, you have some GYM BADGES?\n"
+	.string "Oh, you have some Gym BADGES?\n"
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro: @ 829802B
@@ -1344,7 +1344,7 @@ Route111_Text_IreneDefeat: @ 8298E6E
 
 Route111_Text_IrenePostBattle: @ 8298E8C
 	.string "I'm thinking that I should go to\n"
-	.string "MT. CHIMNEY, but the view around\l"
+	.string "Mt. Chimney, but the view around\l"
 	.string "here is very nice, too.$"
 
 Route111_Text_DaisukeIntro: @ 8298EE6
@@ -1356,7 +1356,7 @@ Route111_Text_DaisukeDefeat: @ 8298F14
 
 Route111_Text_DaisukePostBattle: @ 8298F26
 	.string "All I can do is keep training until\n"
-	.string "I can defeat strong TRAINERS such\l"
+	.string "I can defeat strong Trainers such\l"
 	.string "as yourself.$"
 
 Route111_Text_WiltonIntro: @ 8298F79
@@ -1368,7 +1368,7 @@ Route111_Text_WiltonDefeat: @ 8298FA9
 	.string "considerably.$"
 
 Route111_Text_WiltonPostBattle: @ 8298FD4
-	.string "Pokémon and TRAINERS learn much\n"
+	.string "Pokémon and Trainers learn much\n"
 	.string "through battling.\p"
 	.string "What's important is to never give up\n"
 	.string "even if you lose.$"
@@ -1556,7 +1556,7 @@ Route112_Text_TrentRematchDefeat: @ 82999F7
 
 Route112_Text_TrentRematchPostBattle: @ 8299A0F
 	.string "I hear there are some seriously tough\n"
-	.string "TRAINERS on top of MT. CHIMNEY.\p"
+	.string "Trainers on top of Mt. Chimney.\p"
 	.string "I intend to get up there and give them\n"
 	.string "a challenge!$"
 
@@ -2926,7 +2926,7 @@ Route119_Text_DaytonDefeat: @ 829E513
 Route119_Text_DaytonPostBattle: @ 829E532
 	.string "Hohoho!\n"
 	.string "I'll try emulating the pep of kid\l"
-	.string "TRAINERS like you!$"
+	.string "Trainers like you!$"
 
 Route119_Text_RachelIntro: @ 829E56F
 	.string "Wherever and whenever I may be,\n"
@@ -3189,7 +3189,7 @@ Route121_Text_TammyDefeat: @ 829F3B9
 	.string "I have lost…$"
 
 Route121_Text_TammyPostBattle: @ 829F3C6
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "There is a mysterious power\l"
 	.string "at work there…$"
 
@@ -3256,7 +3256,7 @@ Route121_Text_JessicaPostRematch: @ 829F740
 
 Route121_Text_CristinIntro: @ 829F770
 	.string "I have this routine.\n"
-	.string "Defeat five TRAINERS a day.\l"
+	.string "Defeat five Trainers a day.\l"
 	.string "Guess what? You're number five!$"
 
 Route121_Text_CristinDefeat: @ 829F7C1
@@ -3274,7 +3274,7 @@ Route121_Text_CristinRegister: @ 829F80D
 
 Route121_Text_CristinRematchIntro: @ 829F855
 	.string "I have this new routine.\n"
-	.string "Defeat ten TRAINERS a day.\l"
+	.string "Defeat ten Trainers a day.\l"
 	.string "Guess what? You're number ten!$"
 
 Route121_Text_CristinRematchDefeat: @ 829F8A8
@@ -3350,7 +3350,7 @@ Route123_Text_WendyPostBattle: @ 829FC42
 
 Route123_Text_BraxtonIntro: @ 829FC6F
 	.string "You seem to have a big collection\n"
-	.string "of GYM BADGES.\p"
+	.string "of Gym BADGES.\p"
 	.string "Let me see if you're actually worthy of\n"
 	.string "those BADGES!$"
 
@@ -3399,7 +3399,7 @@ Route123_Text_CameronRematchDefeat: @ 829FF1B
 	.string "I feel sad…$"
 
 Route123_Text_CameronPostRematch: @ 829FF27
-	.string "I should train at MT. PYRE…\n"
+	.string "I should train at Mt. Pyre…\n"
 	.string "I'll never beat you this way…$"
 
 Route123_Text_JackiIntro: @ 829FF61
@@ -3461,7 +3461,7 @@ Route123_Text_YukiNotEnoughMons: @ 82A0224
 	.string "don't have two Pokémon.$"
 
 Route123_Text_KindraIntro: @ 82A025F
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "Where the spirits of Pokémon sleep…\l"
 	.string "Will your Pokémon sleep?$"
 
@@ -3469,7 +3469,7 @@ Route123_Text_KindraDefeat: @ 82A02A6
 	.string "Overflowing with vitality…$"
 
 Route123_Text_KindraPostBattle: @ 82A02C1
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "Where the spirits of Pokémon sleep…\p"
 	.string "It must overflow with a power that\n"
 	.string "soothes spirits…$"
@@ -3555,7 +3555,7 @@ Route123_Text_AlbertoPostBattle: @ 82A072B
 	.string "BIRD Pokémon feathers.$"
 
 Route123_Text_EdIntro: @ 82A079B
-	.string "When there are no TRAINERS around,\n"
+	.string "When there are no Trainers around,\n"
 	.string "I let my Pokémon battle each other.\l"
 	.string "I watch them.$"
 
@@ -3637,7 +3637,7 @@ Route124_Text_JennyRegister: @ 82A0C14
 
 Route124_Text_JennyRematchIntro: @ 82A0C60
 	.string "If you just float in the sea like this,\n"
-	.string "TRAINERS challenge you!$"
+	.string "Trainers challenge you!$"
 
 Route124_Text_JennyRematchDefeat: @ 82A0CA0
 	.string "That's strange…\n"
@@ -3934,14 +3934,14 @@ Route126_Text_BarryPostBattle: @ 82A1CDD
 
 Route126_Text_DeanIntro: @ 82A1D2A
 	.string "This towering white mountain of rock\n"
-	.string "is SOOTOPOLIS CITY.$"
+	.string "is Sootopolis City.$"
 
 Route126_Text_DeanDefeat: @ 82A1D63
 	.string "I was done in?$"
 
 Route126_Text_DeanPostBattle: @ 82A1D72
 	.string "I can't find the entrance to\n"
-	.string "SOOTOPOLIS. Where could it be?$"
+	.string "Sootopolis. Where could it be?$"
 
 Route126_Text_NikkiIntro: @ 82A1DAE
 	.string "Ufufufufu!\n"
@@ -4147,7 +4147,7 @@ Route127_Text_AthenaPostBattle: @ 82A2832
 	.string "and sky, it feels as if time slows down.$"
 
 Route128_Text_IsaiahIntro: @ 82A287F
-	.string "EVER GRANDE CITY is still a long ways\n"
+	.string "Ever Grande City is still a long ways\n"
 	.string "away…$"
 
 Route128_Text_IsaiahDefeat: @ 82A28AB
@@ -4165,13 +4165,13 @@ Route128_Text_IsaiahRegister: @ 82A2916
 
 Route128_Text_IsaiahRematchIntro: @ 82A2975
 	.string "I'm still feeling good. I'll keep on\n"
-	.string "swimming to EVER GRANDE CITY.$"
+	.string "swimming to Ever Grande City.$"
 
 Route128_Text_IsaiahRematchDefeat: @ 82A29B8
 	.string "I've yet to taste my first victory…$"
 
 Route128_Text_IsaiahPostRematch: @ 82A29DC
-	.string "I'll eventually reach EVER GRANDE CITY\n"
+	.string "I'll eventually reach Ever Grande City\n"
 	.string "where I can eventually win…$"
 
 Route128_Text_KatelynIntro: @ 82A2A1F
@@ -4184,7 +4184,7 @@ Route128_Text_KatelynDefeat: @ 82A2A94
 	.string "A Pokémon battle is grueling, too…$"
 
 Route128_Text_KatelynPostBattle: @ 82A2AB7
-	.string "I have to ride a BIKE next, but…\n"
+	.string "I have to ride a Bike next, but…\n"
 	.string "I'm about to throw in the towel…$"
 
 Route128_Text_KatelynRegister: @ 82A2AF9
@@ -4202,7 +4202,7 @@ Route128_Text_KatelynRematchDefeat: @ 82A2BAB
 
 Route128_Text_KatelynPostRematch: @ 82A2BDD
 	.string "You should give serious thought to\n"
-	.string "challenges on VICTORY ROAD.$"
+	.string "challenges on Victory Road.$"
 
 Route128_Text_AlexaIntro: @ 82A2C1C
 	.string "We've been working so hard to mount\n"
@@ -4238,7 +4238,7 @@ Route128_Text_WayneDefeat: @ 82A2DA9
 Route128_Text_WaynePostBattle: @ 82A2DBA
 	.string "Awww, phooey!\p"
 	.string "My Pokémon knows WATERFALL, but\n"
-	.string "I don't have the SOOTOPOLIS GYM BADGE!$"
+	.string "I don't have the SOOTOPOLIS Gym BADGE!$"
 
 Route128_Text_HarrisonIntro: @ 82A2E0F
 	.string "You're looking awfully tough.\n"
@@ -4249,7 +4249,7 @@ Route128_Text_HarrisonDefeat: @ 82A2E44
 	.string "I guess it was impossible to win.$"
 
 Route128_Text_HarrisonPostBattle: @ 82A2E6C
-	.string "There are tough TRAINERS galore\n"
+	.string "There are tough Trainers galore\n"
 	.string "around EVER GRANDE.\p"
 	.string "Do you think I may be out\n"
 	.string "of my league?$"
@@ -4373,7 +4373,7 @@ Route131_Text_RichardIntro: @ 82A34C8
 	.string "It's not easy swimming, I tell you.$"
 
 Route131_Text_RichardDefeat: @ 82A350D
-	.string "Pokémon raised by TRAINERS are\n"
+	.string "Pokémon raised by Trainers are\n"
 	.string "seriously tough…$"
 
 Route131_Text_RichardPostBattle: @ 82A353D
@@ -4494,7 +4494,7 @@ Route132_Text_GilbertDefeat: @ 82A3BAC
 	.string "I crave more power…$"
 
 Route132_Text_GilbertPostBattle: @ 82A3BC0
-	.string "TRAINERS travel the fields and\n"
+	.string "Trainers travel the fields and\n"
 	.string "mountains, so they must be fit, too.$"
 
 Route132_Text_DanaIntro: @ 82A3C04
@@ -4766,7 +4766,7 @@ Route134_Text_ReynaPostBattle: @ 82A4A34
 	.string "Haha!\n"
 	.string "You won, all right!\p"
 	.string "I'll work my way back up by taking on\n"
-	.string "TRAINERS I happen to meet!$"
+	.string "Trainers I happen to meet!$"
 
 Route134_Text_HudsonIntro: @ 82A4A8F
 	.string "Listen, have you seen another SAILOR\n"

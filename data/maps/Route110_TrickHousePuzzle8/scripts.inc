@@ -36,7 +36,7 @@ Route110_TrickHousePuzzle8_EventScript_WroteSecretCodeLockOpened:: @ 826E864
 	.string "The lock clicked open!$"
 
 Route110_TrickHousePuzzle8_Text_VincentIntro: @ 826E8CD
-	.string "Not many TRAINERS have made it\n"
+	.string "Not many Trainers have made it\n"
 	.string "this far.$"
 
 Route110_TrickHousePuzzle8_Text_VincentDefeat: @ 826E8F6

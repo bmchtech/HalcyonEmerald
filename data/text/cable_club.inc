@@ -144,7 +144,7 @@ CableClub_Text_HopeToSeeYouAgain: @ 827854C
 CableClub_Text_NotSetUpForFarAwayRegion: @ 8278565
 	.string "I'm awfully sorry.\p"
 	.string "We're not set up to conduct trades\n"
-	.string "with TRAINERS far away in another\l"
+	.string "with Trainers far away in another\l"
 	.string "region yet…$"
 
 CableClub_Text_OtherTrainerNotReady: @ 82785C9
@@ -194,7 +194,7 @@ CableClub_Text_YouMayBattleHere:: @ 82787D5
 	.string "here.$"
 
 CableClub_Text_CanMakeBerryPowder:: @ 82787FC
-	.string "Two to five TRAINERS can make\n"
+	.string "Two to five Trainers can make\n"
 	.string "BERRY POWDER together.$"
 
 CableClub_Text_CanMixRecords:: @ 8278831
@@ -391,12 +391,12 @@ CableClub_Text_WelcomeUnionRoomEnter: @ 827940D
 	.string "Welcome to the Pokémon WIRELESS\n"
 	.string "CLUB UNION ROOM.\p"
 	.string "You may interact directly with\n"
-	.string "other TRAINERS here, some of\l"
+	.string "other Trainers here, some of\l"
 	.string "whom you may not even know.\p"
 	.string "Would you like to enter the ROOM?$"
 
 CableClub_Text_UnionRoomInfo: @ 82794B8
-	.string "The TRAINERS in the UNION ROOM\n"
+	.string "The Trainers in the UNION ROOM\n"
 	.string "will be those players around you\l"
 	.string "who have also entered the ROOM.\p"
 	.string "You may do all sorts of things\n"

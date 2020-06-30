@@ -31,7 +31,7 @@ SootopolisCity_House1_EventScript_Kecleon:: @ 822698E
 
 SootopolisCity_House1_Text_DevelopedThisTM: @ 82269A1
 	.string "For thirty years I've remained in\n"
-	.string "SOOTOPOLIS honing my skills.\p"
+	.string "Sootopolis honing my skills.\p"
 	.string "I developed a shattering TM.\n"
 	.string "I bequeath it to you!$"
 

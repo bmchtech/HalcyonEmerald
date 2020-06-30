@@ -152,7 +152,7 @@ FortreeCity_Text_CitySign: @ 81E2AAC
 
 FortreeCity_Text_GymSign: @ 81E2AE6
 	.string "FORTREE CITY Pokémon Gym\n"
-	.string "LEADER: WINONA\p"
+	.string "Leader: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
 

@@ -439,7 +439,7 @@ SlateportCity_PokemonFanClub_Text_Skitty: @ 820AD5A
 	.string "SKITTY: Fffnyaaaah…$"
 
 SlateportCity_PokemonFanClub_Text_Zigzagoon: @ 820AD6E
-	.string "ZIGZAGOON: Kyuuu…$"
+	.string "Zigzagoon: Kyuuu…$"
 
 SlateportCity_PokemonFanClub_Text_Azumarill: @ 820AD80
 	.string "AZUMARILL: Marimari?$"

@@ -195,7 +195,7 @@ VictoryRoad_1F_Text_HopePostBattle: @ 8236356
 	.string "becoming the Champion.$"
 
 VictoryRoad_1F_Text_QuincyIntro: @ 8236390
-	.string "What is the VICTORY ROAD?\n"
+	.string "What is the Victory Road?\n"
 	.string "I'll tell you if you win!$"
 
 VictoryRoad_1F_Text_QuincyDefeat: @ 82363C4

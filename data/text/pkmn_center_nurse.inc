@@ -29,7 +29,7 @@ gText_NoticesGoldCard:: @ 8272860
     .string "Could it be… The GOLD CARD?!\p"
     .string "Oh, the gold color is brilliant!\n"
     .string "The four stars seem to sparkle!\p"
-    .string "I've seen several TRAINERS with\n"
+    .string "I've seen several Trainers with\n"
     .string "a SILVER CARD before, but, {PLAYER},\l"
     .string "you're the first Trainer I've ever\l"
     .string "seen with a GOLD CARD!\p"

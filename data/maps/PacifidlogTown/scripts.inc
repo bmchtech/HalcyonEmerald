@@ -29,7 +29,7 @@ PacifidlogTown_EventScript_TownSign:: @ 81EBADE
 
 PacifidlogTown_Text_FastRunningCurrent: @ 81EBAE7
 	.string "The sea between PACIFIDLOG and\n"
-	.string "SLATEPORT has a fast-running tide.\p"
+	.string "Slateport has a fast-running tide.\p"
 	.string "If you decide to SURF, you could end\n"
 	.string "up swept away somewhere else.$"
 
@@ -39,7 +39,7 @@ PacifidlogTown_Text_NeatHousesOnWater: @ 81EBB6C
 	.string "I was born here!$"
 
 PacifidlogTown_Text_SkyPillarTooScary: @ 81EBBAC
-	.string "The SKY PILLAR?\p"
+	.string "The Sky Pillar?\p"
 	.string "…Oh, you must mean that tall, tall\n"
 	.string "tower a little further out.\p"
 	.string "If you asked me, I wouldn't climb it.\n"

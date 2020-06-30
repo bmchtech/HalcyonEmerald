@@ -1458,13 +1458,13 @@ SootopolisCity_Movement_DestroyTask:: @ 81E656D
 	step_end
 
 SootopolisCity_Text_GymSign: @ 81E656F
-	.string "SOOTOPOLIS CITY Pokémon Gym\n"
-	.string "LEADER: JUAN\p"
+	.string "Sootopolis City Pokémon Gym\n"
+	.string "Leader: JUAN\p"
 	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
 SootopolisCity_Text_CitySign: @ 81E65C8
-	.string "SOOTOPOLIS CITY\p"
+	.string "Sootopolis City\p"
 	.string "“The mystical city where history\n"
 	.string "slumbers.”$"
 
@@ -1491,7 +1491,7 @@ SootopolisCity_Text_WhatIsThatGreenPokemon: @ 81E6750
 	.string "What is that green Pokémon?!$"
 
 SootopolisCity_Text_WhereDidLegendariesGo: @ 81E677F
-	.string "GROUDON and KYOGRE…\n"
+	.string "Groudon and Kyogre…\n"
 	.string "Where did they go?\p"
 	.string "Will they cause droughts or downpours\n"
 	.string "somewhere else?$"
@@ -1564,10 +1564,10 @@ SootopolisCity_Text_PrettyMonCameFromSky: @ 81E6C53
 
 SootopolisCity_Text_SootopolisWillBeWrecked: @ 81E6C7C
 	.string "Oh, no!\n"
-	.string "SOOTOPOLIS CITY will get wrecked!$"
+	.string "Sootopolis City will get wrecked!$"
 
 SootopolisCity_Text_SootopolisDidntGetWrecked: @ 81E6CA6
-	.string "SOOTOPOLIS CITY didn't get wrecked!$"
+	.string "Sootopolis City didn't get wrecked!$"
 
 SootopolisCity_Text_NoOrdinaryTourist: @ 81E6CCA
 	.string "Hm!\n"
@@ -1581,9 +1581,9 @@ SootopolisCity_Text_CityRegainedCalm: @ 81E6D57
 
 SootopolisCity_Text_CaveOfOriginPleaseLeave: @ 81E6D77
 	.string "Who might you be?\p"
-	.string "This is the CAVE OF ORIGIN.\p"
+	.string "This is the Cave of Origin.\p"
 	.string "The spirits of Pokémon, becalmed at\n"
-	.string "MT. PYRE, are said to be revived here.\p"
+	.string "Mt. Pyre, are said to be revived here.\p"
 	.string "Please leave.$"
 
 SootopolisCity_Text_LeadSuperiorTrainerToCave: @ 81E6DFE
@@ -1592,7 +1592,7 @@ SootopolisCity_Text_LeadSuperiorTrainerToCave: @ 81E6DFE
 	.string "A Trainer who has knowledge and\n"
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
-	.string "instructed by WALLACE to lead that\l"
+	.string "instructed by Wallace to lead that\l"
 	.string "Trainer to this CAVE.$"
 
 SootopolisCity_Text_AwakenedPokemonClash: @ 81E6ED4
@@ -1602,18 +1602,18 @@ SootopolisCity_Text_AwakenedPokemonClash: @ 81E6ED4
 	.string "of a third Pokémon…$"
 
 SootopolisCity_Text_CaveOfOriginSleepsToo: @ 81E6F38
-	.string "This is the CAVE OF ORIGIN…\p"
+	.string "This is the Cave of Origin…\p"
 	.string "With the passing of the crisis,\n"
 	.string "the cave, too, shall sleep…$"
 
 SootopolisCity_Text_SootopolisSkyBeautiful: @ 81E6F90
-	.string "SOOTOPOLIS sprang up as a town in\n"
+	.string "Sootopolis sprang up as a town in\n"
 	.string "the crater of a volcano.\p"
 	.string "If you look up at the sky, the lip of\n"
 	.string "the crater is also visible.\l"
 	.string "So, all you see is the sky in a circle.\p"
 	.string "But that's what makes the sky above\n"
-	.string "SOOTOPOLIS the most beautiful.$"
+	.string "Sootopolis the most beautiful.$"
 
 SootopolisCity_Text_GiganticPokemonFight: @ 81E7078
 	.string "When two Pokémon that gigantic\n"
@@ -1653,11 +1653,11 @@ SootopolisCity_Text_GroudonPleaseStop: @ 81E72DB
 	.string "Please! Stop what you're doing!\p"
 	.string "I know the extent of your power now!\p"
 	.string "If you keep going, all Hoenn, not just\n"
-	.string "SOOTOPOLIS, will be utterly ruined!$"
+	.string "Sootopolis, will be utterly ruined!$"
 
 SootopolisCity_Text_AfterAllOurScheming: @ 81E737E
 	.string "MAXIE: So the super-ancient Pokémon\n"
-	.string "weren't only GROUDON and KYOGRE…\p"
+	.string "weren't only GROUDON and Kyogre…\p"
 	.string "After all our fruitless scheming and\n"
 	.string "frantic efforts, that one Pokémon's\l"
 	.string "simple action puts everything right\l"
@@ -1666,16 +1666,16 @@ SootopolisCity_Text_AfterAllOurScheming: @ 81E737E
 	.string "Fuhahaha…$"
 
 SootopolisCity_Text_KyogreCalmDown: @ 81E7460
-	.string "ARCHIE: KYOGRE! What's wrong?!\n"
+	.string "ARCHIE: Kyogre! What's wrong?!\n"
 	.string "Look over here! It's the RED ORB!\l"
-	.string "Calm down! KYOGRE!\p"
+	.string "Calm down! Kyogre!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "It's no good!\n"
 	.string "It's not responding at all!$"
 
 SootopolisCity_Text_TryingMeaninglessToPokemon: @ 81E74F6
-	.string "ARCHIE: KYOGRE and GROUDON both\n"
+	.string "ARCHIE: Kyogre and GROUDON both\n"
 	.string "flew off to who knows where.\p"
 	.string "The weather in Hoenn has returned\n"
 	.string "to its normal state…\p"
@@ -1686,8 +1686,8 @@ SootopolisCity_Text_TryingMeaninglessToPokemon: @ 81E74F6
 	.string "to Pokémon…$"
 
 SootopolisCity_Text_InvolvedWithCrisisComeWithMe: @ 81E75CB
-	.string "STEVEN: Those Pokémon fighting…\n"
-	.string "GROUDON… And KYOGRE…\p"
+	.string "Steven: Those Pokémon fighting…\n"
+	.string "Groudon… And Kyogre…\p"
 	.string "The two super-ancient Pokémon\n"
 	.string "were awakened from a long sleep…\p"
 	.string "And now they are smashing each other\n"
@@ -1701,8 +1701,8 @@ SootopolisCity_Text_InvolvedWithCrisisComeWithMe: @ 81E75CB
 	.string "Come with me, please.$"
 
 SootopolisCity_Text_DoesThisMakeYourFearPokemon: @ 81E7737
-	.string "STEVEN: Listen, {PLAYER}{KUN}.\p"
-	.string "Does seeing GROUDON and KYOGRE make\n"
+	.string "Steven: Listen, {PLAYER}{KUN}.\p"
+	.string "Does seeing GROUDON and Kyogre make\n"
 	.string "you think Pokémon are to be feared?\p"
 	.string "But that's not true.\n"
 	.string "Pokémon are really more…\p"
@@ -1710,49 +1710,49 @@ SootopolisCity_Text_DoesThisMakeYourFearPokemon: @ 81E7737
 	.string "You already know.$"
 
 SootopolisCity_Text_HereWereAreHelpWallace: @ 81E77F0
-	.string "STEVEN: Okay, here we are!\p"
+	.string "Steven: Okay, here we are!\p"
 	.string "Inside here you'll find someone named\n"
 	.string "WALLACE.\p"
 	.string "I think you have what's needed to\n"
 	.string "help him…$"
 
 SootopolisCity_Text_KnowWhatsNeededToHelpHim: @ 81E7866
-	.string "STEVEN: I think you have what's\n"
+	.string "Steven: I think you have what's\n"
 	.string "needed to help him…$"
 
 SootopolisCity_Text_NeverBeenToSkyPillar: @ 81E789A
-	.string "STEVEN: The SKY PILLAR…\p"
+	.string "Steven: The Sky Pillar…\p"
 	.string "I've never been there.\n"
 	.string "I wonder where it could be?$"
 
 SootopolisCity_Text_SoThatsRayquaza: @ 81E78E5
-	.string "STEVEN: So that's RAYQUAZA…\p"
+	.string "Steven: So that's Rayquaza…\p"
 	.string "It's incredible how the two rampaging\n"
 	.string "Pokémon would flee from it in fear…$"
 
 SootopolisCity_Text_MaxieArchieLeft: @ 81E794B
-	.string "STEVEN: It looks like both MAXIE and\n"
+	.string "Steven: It looks like both MAXIE and\n"
 	.string "ARCHIE have gone away somewhere.\p"
-	.string "Perhaps they've gone to MT. PYRE to\n"
+	.string "Perhaps they've gone to Mt. Pyre to\n"
 	.string "return those ORBS…$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar: @ 81E79C8
-	.string "WALLACE: Oh?\n"
+	.string "Wallace: Oh?\n"
 	.string "{PLAYER}{KUN}?\p"
-	.string "Haven't you scaled the SKY PILLAR\n"
+	.string "Haven't you scaled the Sky Pillar\n"
 	.string "yet?\p"
 	.string "I'm sure that you can make it to\n"
-	.string "the top of the SKY PILLAR…$"
+	.string "the top of the Sky Pillar…$"
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm: @ 81E7A3E
-	.string "WALLACE: {PLAYER}{KUN}…\p"
+	.string "Wallace: {PLAYER}{KUN}…\p"
 	.string "The leaders of Team Magma and AQUA,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
 	.string "have to say for themselves.$"
 
 SootopolisCity_Text_ThankYouForHelpAcceptThis: @ 81E7ACF
-	.string "WALLACE: {PLAYER}{KUN}…\n"
+	.string "Wallace: {PLAYER}{KUN}…\n"
 	.string "My eyes didn't deceive me.\p"
 	.string "Thanks to your help, SOOTOPOLIS…\n"
 	.string "No, all of Hoenn was saved.\p"
@@ -1761,7 +1761,7 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis: @ 81E7ACF
 	.string "Please accept it.$"
 
 SootopolisCity_Text_ExplainWaterfallGoToGym: @ 81E7B86
-	.string "That HIDDEN MACHINE contains\n"
+	.string "That Hidden Machine contains\n"
 	.string "WATERFALL.\p"
 	.string "If you have the RAIN BADGE, a Pokémon\n"
 	.string "that has learned that HM move can\l"
@@ -1774,6 +1774,6 @@ SootopolisCity_Text_ExplainWaterfallGoToGym: @ 81E7B86
 	.string "that door.$"
 
 SootopolisCity_Text_DazzledByMentor: @ 81E7CBC
-	.string "WALLACE: I'm sure that you will be\n"
+	.string "Wallace: I'm sure that you will be\n"
 	.string "dazzled by my mentor's breathtakingly\l"
 	.string "elegant battle style.$"

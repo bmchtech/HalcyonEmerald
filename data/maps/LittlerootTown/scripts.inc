@@ -952,7 +952,7 @@ LittlerootTown_EventScript_GiveRunningShoes:: @ 81E8693
 	return
 
 LittlerootTown_Text_OurNewHomeLetsGoInside: @ 81E86BC
-	.string "MOM: {PLAYER}, we're here, honey!\p"
+	.string "Mom: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"
 	.string "in the moving truck.\p"
 	.string "Well, this is Littleroot Town.\p"
@@ -964,10 +964,10 @@ LittlerootTown_Text_OurNewHomeLetsGoInside: @ 81E86BC
 	.string "Let's go inside.$"
 
 LittlerootTown_Text_WaitPlayer: @ 81E87E1
-	.string "MOM: Wait, {PLAYER}!$"
+	.string "Mom: Wait, {PLAYER}!$"
 
 LittlerootTown_Text_WearTheseRunningShoes: @ 81E87F0
-	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
+	.string "Mom: {PLAYER}! {PLAYER}! Did you\n"
 	.string "introduce yourself to Prof. Birch?\p"
 	.string "Oh! What an adorable Pokémon!\n"
 	.string "You got it from Prof. Birch. How nice!\p"

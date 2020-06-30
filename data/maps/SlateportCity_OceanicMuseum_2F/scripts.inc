@@ -289,12 +289,12 @@ SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts: @ 820BE40
 	.string "We'll take those parts!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou: @ 820BE69
-	.string "CAPT. STERN: Wh-what?\n"
+	.string "Capt. Stern: Wh-what?\n"
 	.string "Who are you people?$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua: @ 820BE93
 	.string "We're Team Aqua!\p"
-	.string "Our BOSS wants those parts!\n"
+	.string "Our Boss wants those parts!\n"
 	.string "Shut your yap and fork them over!$"
 
 SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat: @ 820BEE2
@@ -303,7 +303,7 @@ SlateportCity_OceanicMuseum_2F_Text_Grunt1Defeat: @ 820BEE2
 
 SlateportCity_OceanicMuseum_2F_Text_BossGoingToBeFurious: @ 820BEFA
 	.string "Oh, man, what a disaster…\n"
-	.string "The BOSS is going to be furious…$"
+	.string "The Boss is going to be furious…$"
 
 SlateportCity_OceanicMuseum_2F_Text_LetMeTakeCareOfThis: @ 820BF35
 	.string "Humph, sniveling wimp!\n"
@@ -368,7 +368,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieDefeated:
 	.string "And don't you forget it!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs: @ 820C2BE
-	.string "CAPT. STERN: You're…\n"
+	.string "Capt. Stern: You're…\n"
 	.string "Ah, okay, you're {PLAYER}{KUN}…\p"
 	.string "Anyway, that was a tense situation!\n"
 	.string "Thank you for saving us!\p"
@@ -376,7 +376,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs: @ 820C2BE
 	.string "even brought the parts from DEVON!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo: @ 820C36C
-	.string "CAPT. STERN: Whoops!\n"
+	.string "Capt. Stern: Whoops!\n"
 	.string "There's no time to lose!\p"
 	.string "We have to set out on our ocean-floor\n"
 	.string "expedition really soon.\p"
@@ -388,7 +388,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo: @ 820C36C
 SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip: @ 820C43F
 	.string "I saw a model of a ship here.\p"
 	.string "It reminded me of the ABANDONED SHIP\n"
-	.string "near DEWFORD TOWN…$"
+	.string "near Dewford Town…$"
 
 SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum: @ 820C495
 	.string "Don't you dare run around inside\n"

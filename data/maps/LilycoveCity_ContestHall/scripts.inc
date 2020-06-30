@@ -375,7 +375,7 @@ LilycoveCity_ContestHall_Text_YoureBeautifulGrandpa: @ 821BC65
 	.string "Kiyaaah! You're beautiful, Grandpa!$"
 
 LilycoveCity_ContestHall_Text_AllSeemToUseDifferentMoves: @ 821BC89
-	.string "Even when TRAINERS enter the same\n"
+	.string "Even when Trainers enter the same\n"
 	.string "kind of Pokémon, they all seem to use\l"
 	.string "different moves for appeals.\p"
 	.string "It's just like the way people have\n"

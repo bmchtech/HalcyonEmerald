@@ -332,7 +332,7 @@
 #define MUS_MISHIRO 405         // Littleroot Town
 #define MUS_TOZAN 406           // Sky Pillar
 #define MUS_GIRLEYE 407         // Encounter! Girl
-#define MUS_MINAMO 408          // Lilycove City
+#define MUS_MINAMO 408          //Lilycove City
 #define MUS_ASHROAD 409         // Route 111
 #define MUS_EVENT0 410          // Help me!
 #define MUS_DEEPDEEP 411        // Underwater

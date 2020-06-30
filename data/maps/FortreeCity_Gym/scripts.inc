@@ -140,7 +140,7 @@ FortreeCity_Gym_Text_GymGuideAdvice: @ 8216785
 	.string "bound {PLAYER}?\p"
 	.string "FORTREE Gym Leader WINONA is\n"
 	.string "a master of FLYING-type Pokémon.\p"
-	.string "She's waiting at the back of this GYM,\n"
+	.string "She's waiting at the back of this Gym,\n"
 	.string "behind the rotating doors.\p"
 	.string "She's waiting for new challengers\n"
 	.string "who are trying to take wing!\p"
@@ -166,8 +166,8 @@ FortreeCity_Gym_Text_JaredPostBattle: @ 82168E7
 
 FortreeCity_Gym_Text_EdwardoIntro: @ 821695A
 	.string "The lovers of BIRD Pokémon aspire\n"
-	.string "to join this GYM.\p"
-	.string "As a member of the FORTREE GYM,\n"
+	.string "to join this Gym.\p"
+	.string "As a member of the FORTREE Gym,\n"
 	.string "I'm not allowed to lose!$"
 
 FortreeCity_Gym_Text_EdwardoDefeat: @ 82169C7
@@ -181,7 +181,7 @@ FortreeCity_Gym_Text_EdwardoPostBattle: @ 82169F1
 	.string "myself even stronger.$"
 
 FortreeCity_Gym_Text_FlintIntro: @ 8216A66
-	.string "There's no need for WINONA, our GYM\n"
+	.string "There's no need for WINONA, our Gym\n"
 	.string "LEADER, to deal with you!\p"
 	.string "I'm plenty good enough for you!$"
 
@@ -248,7 +248,7 @@ FortreeCity_Gym_Text_WinonaDefeat: @ 8216E60
 	.string "command Pokémon with more grace\l"
 	.string "than I…\p"
 	.string "In recognition of your prowess,\n"
-	.string "I present to you this GYM BADGE.$"
+	.string "I present to you this Gym BADGE.$"
 
 FortreeCity_Gym_Text_ReceivedFeatherBadge: @ 8216EEC
 	.string "{PLAYER} received the FEATHER BADGE\n"

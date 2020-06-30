@@ -611,47 +611,47 @@ DewfordTown_EventScript_PhraseNotTrendyEnough:: @ 81E999E
 	end
 
 DewfordTown_Text_TinyIslandCommunity: @ 81E99A8
-	.string "DEWFORD is a tiny island community.\n"
+	.string "Dewford is a tiny island community.\n"
 	.string "If something gets trendy here,\l"
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign: @ 81E9A0F
-	.string "DEWFORD TOWN\n"
+	.string "Dewford Town\n"
 	.string "“A tiny island in the blue sea.”$"
 
 DewfordTown_Text_GymSign: @ 81E9A3D
-	.string "DEWFORD TOWN Pokémon Gym\n"
-	.string "LEADER: BRAWLY\l"
+	.string "Dewford Town Pokémon Gym\n"
+	.string "Leader: Brawly\l"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign: @ 81E9A7F
-	.string "DEWFORD HALL\n"
+	.string "Dewford Hall\n"
 	.string "“Everyone's information exchange!”$"
 
 Route104_Text_LandedInDewfordDeliverLetter: @ 81E9AAF
 	.string "Mr. Briney: Ahoy!\n"
-	.string "We've hit land in DEWFORD.\p"
+	.string "We've hit land in Dewford.\p"
 	.string "I suppose you're off to deliver that\n"
-	.string "LETTER to, who was it now, STEVEN!$"
+	.string "Letter to, who was it now, STEVEN!$"
 
 DewfordTown_Text_SetSailBackToPetalburg: @ 81E9B24
 	.string "Mr. Briney: Have you delivered your\n"
-	.string "LETTER?\p"
+	.string "Letter?\p"
 	.string "Or were you meaning to sail back to\n"
-	.string "PETALBURG?$"
+	.string "Petalburg?$"
 
 DewfordTown_Text_PetalburgWereSettingSail2: @ 81E9B7F
-	.string "Mr. Briney: PETALBURG it is, then!\p"
+	.string "Mr. Briney: Petalburg it is, then!\p"
 	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "Peeko, we're setting sail, my darling!$"
 
 DewfordTown_Text_GoDeliverIllBeWaiting: @ 81E9BD9
 	.string "Mr. Briney: Then you go on and deliver\n"
-	.string "the LETTER. I'll be waiting.$"
+	.string "the Letter. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInDewford: @ 81E9C1D
 	.string "Mr. Briney: Ahoy!\n"
-	.string "We've hit land in DEWFORD!\p"
+	.string "We've hit land in Dewford!\p"
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
@@ -661,14 +661,14 @@ DewfordTown_Text_WhereAreWeBound: @ 81E9C8A
 	.string "Now, my friend, where are we bound?$"
 
 DewfordTown_Text_PetalburgWereSettingSail: @ 81E9CE5
-	.string "Mr. Briney: PETALBURG, is it?\p"
+	.string "Mr. Briney: Petalburg, is it?\p"
 	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "Peeko, we're setting sail, my darling!$"
 
 DewfordTown_Text_SlateportWereSettingSail: @ 81E9D3A
-	.string "Mr. Briney: SLATEPORT, is it?\p"
+	.string "Mr. Briney: Slateport, is it?\p"
 	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "Peeko, we're setting sail, my darling!$"
 
 DewfordTown_Text_JustTellMeWhenYouNeedToSetSail: @ 81E9D8F
 	.string "Mr. Briney: You just tell me whenever\n"
@@ -730,10 +730,11 @@ DewfordTown_Text_YeahDefinitionOfInRightNow: @ 81EA491
 
 DewfordTown_Text_FishedUpEviolite:
 	.string "I fished up this strange rock the other\n"
-	.string "day. It's of no use to me, so here,\l"
+	.string "day.\p"
+	.string "It's of no use to me, so here,\n"
 	.string "you take it!$"
 
 DewfordTown_Text_ReceivedEviolite:
 	.string "Maybe it'll be more useful in the hands\n"
-	.string "of a Pokémon Trainer? It's no good as\l"
-	.string "bait, that's for sure.$"
+	.string "of a Pokémon Trainer?\p"
+	.string "It's no good as bait, that's for sure!$"

@@ -287,11 +287,11 @@ SSTidal_Text_HopeYouEnjoyVoyage: @ 823C4E3
 	.string "our ferry.$"
 
 SSTidal_Text_MadeLandInSlateport: @ 823C50F
-	.string "We have made land in SLATEPORT CITY.\n"
+	.string "We have made land in Slateport City.\n"
 	.string "Thank you for sailing with us.$"
 
 SSTidal_Text_MadeLandInLilycove: @ 823C553
-	.string "We have made land in LILYCOVE CITY.\n"
+	.string "We have made land in Lilycove City.\n"
 	.string "Thank you for sailing with us.$"
 
 SSTidalCorridor_Text_CanRestInCabin2: @ 823C596
@@ -307,7 +307,7 @@ SSTidalCorridor_Text_WeveArrived: @ 823C64F
 
 SSTidalCorridor_Text_VisitOtherCabins: @ 823C65E
 	.string "Go visit other cabins.\n"
-	.string "TRAINERS bored of the boat trip will\l"
+	.string "Trainers bored of the boat trip will\l"
 	.string "be itching to battle.$"
 
 SSTidalCorridor_Text_EnjoyYourCruise: @ 823C6B0

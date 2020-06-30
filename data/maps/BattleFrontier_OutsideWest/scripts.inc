@@ -323,8 +323,8 @@ BattleFrontier_OutsideWest_Text_BattlePikeSign: @ 823D772
 	.string "Choose one of three paths!$"
 
 BattleFrontier_OutsideWest_Text_ThisIsBattleTower: @ 823D7A6
-	.string "This is the BATTLE TOWER.\p"
-	.string "TRAINERS bring their best-raised\n"
+	.string "This is the Battle Tower.\p"
+	.string "Trainers bring their best-raised\n"
 	.string "Pokémon for elimination-style matches.$"
 
 BattleFrontier_OutsideWest_Text_MayISeeYourTicket: @ 823D808
@@ -343,10 +343,10 @@ BattleFrontier_OutsideWest_Text_WhereWouldYouLikeToGo: @ 823D89D
 	.string "And where would you like to go?$"
 
 BattleFrontier_OutsideWest_Text_SlateportItIs: @ 823D8F2
-	.string "SLATEPORT CITY it is, then!$"
+	.string "Slateport City it is, then!$"
 
 BattleFrontier_OutsideWest_Text_LilycoveItIs: @ 823D90E
-	.string "LILYCOVE CITY it is, then!$"
+	.string "Lilycove City it is, then!$"
 
 BattleFrontier_OutsideWest_Text_SailWithUsAnotherTime: @ 823D929
 	.string "Please sail with us another time!$"
@@ -364,7 +364,7 @@ BattleFrontier_OutsideWest_Text_BestOutOfAllMyFriends: @ 823D99C
 	.string "I've been useless!$"
 
 BattleFrontier_OutsideWest_Text_CantFindBattleTower: @ 823D9DD
-	.string "I want to go to the BATTLE TOWER,\n"
+	.string "I want to go to the Battle Tower,\n"
 	.string "but I can't find it even though I have\l"
 	.string "a map of the BATTLE FRONTIER.\p"
 	.string "This place is just too big!$"
@@ -378,9 +378,9 @@ BattleFrontier_OutsideWest_Text_GotSeasickOnWayHere: @ 823DA60
 BattleFrontier_OutsideWest_Text_OnlyToughTrainersBroughtHere: @ 823DABF
 	.string "It's not as if just anyone can come\n"
 	.string "here, you know?\p"
-	.string "Only those TRAINERS who've been\n"
+	.string "Only those Trainers who've been\n"
 	.string "recognized as tough are brought here.\p"
-	.string "That's why many TRAINERS don't even\n"
+	.string "That's why many Trainers don't even\n"
 	.string "know about the BATTLE FRONTIER.$"
 
 BattleFrontier_OutsideWest_Text_SureWeCanChallengeWithNoMons: @ 823DB7D

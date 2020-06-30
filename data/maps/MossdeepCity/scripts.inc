@@ -425,8 +425,8 @@ MossdeepCity_Text_SootopolisNewGymLeader: @ 81E5581
 	.string "wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
 	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
+	.string "I think the Gym there had a new\n"
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+	.string "mentored Wallace.$"
 

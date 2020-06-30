@@ -315,13 +315,13 @@ TrainerHill_Entrance_Text_SaveGameBeforeEnter: @ 826851C
 
 TrainerHill_Entrance_Text_TrainersUpToFloorX: @ 8268564
 	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
+	.string "The Trainers here now are…\p"
 	.string "Up to floor no. {STR_VAR_1}.$"
 
 TrainerHill_Entrance_Text_TrainersInEveryRoom: @ 826859E
 	.string "Let's see…\n"
-	.string "The TRAINERS here now are…\p"
-	.string "There appear to be TRAINERS gathered\n"
+	.string "The Trainers here now are…\p"
+	.string "There appear to be Trainers gathered\n"
 	.string "in every room.$"
 
 TrainerHill_Entrance_Text_LikeToChallengeTrainers: @ 82685F8
@@ -348,7 +348,7 @@ TrainerHill_Entrance_Text_HopeYouGiveItYourBest: @ 82686F4
 	.string "I hope you give it your best.$"
 
 TrainerHill_Entrance_Text_MovedReceptionHereForSwitch: @ 8268712
-	.string "When the TRAINERS switch places,\n"
+	.string "When the Trainers switch places,\n"
 	.string "the movement can be hectic.\p"
 	.string "To avoid the stampede, we moved\n"
 	.string "the reception counter here.\p"
@@ -437,7 +437,7 @@ TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead: @ 8268D5A
 	.string "anyone that stands in my way!$"
 
 TrainerHill_Entrance_Text_CantWaitToTestTheWaters: @ 8268DDA
-	.string "I heard tough TRAINERS come to this\n"
+	.string "I heard tough Trainers come to this\n"
 	.string "Trainer HILL from all over.\p"
 	.string "I can't wait to test the waters!\p"
 	.string "I'll knock aside anyone that stands\n"

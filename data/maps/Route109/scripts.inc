@@ -506,7 +506,7 @@ Route109_EventScript_Elijah:: @ 81EEC06
 
 DewfordTown_Text_BrineyLandedInSlateportDeliverGoods: @ 81EEC1D
 	.string "Mr. Briney: Ahoy!\n"
-	.string "We've made land in SLATEPORT!\p"
+	.string "We've made land in Slateport!\p"
 	.string "I suppose you're going to visit CAPT.\n"
 	.string "STERN and deliver the DEVON GOODS?$"
 
@@ -517,9 +517,9 @@ Route109_Text_BrineySailToDewfordQuestion: @ 81EEC96
 	.string "DEWFORD, then?$"
 
 Route109_Text_BrineyDewfordItIs: @ 81EED06
-	.string "Mr. Briney: DEWFORD it is, then!\p"
+	.string "Mr. Briney: Dewford it is, then!\p"
 	.string "Anchors aweigh!\n"
-	.string "PEEKO, we're setting sail, my darling!$"
+	.string "Peeko, we're setting sail, my darling!$"
 
 Route109_Text_BrineyDeliverDevonGoods: @ 81EED5E
 	.string "Mr. Briney: Then you go on and deliver\n"
@@ -577,7 +577,7 @@ Route109_Text_ZigzagoonPicksUpLitter: @ 81EF080
 	.string "back to haunt us eventually.$"
 
 Route109_Text_ZigzagoonCry: @ 81EF173
-	.string "ZIGZAGOON: Guguu?$"
+	.string "Zigzagoon: Guguu?$"
 
 Route109_Text_SeashoreHouseSign: @ 81EF185
 	.string "SEASHORE HOUSE\p"
@@ -588,5 +588,5 @@ Route109_Text_TrainerTipsSign: @ 81EF1D5
 	.string "Trainer Tips\p"
 	.string "Pokémon at the same level may not\n"
 	.string "always have identical stats.\p"
-	.string "Pokémon raised by TRAINERS are said\n"
+	.string "Pokémon raised by Trainers are said\n"
 	.string "to grow stronger than wild Pokémon.$"

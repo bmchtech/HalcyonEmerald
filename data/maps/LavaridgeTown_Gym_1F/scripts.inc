@@ -309,7 +309,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryIntro: @ 81FF0DC
 	.string "made it here!\p"
 	.string "I have been entrusted with the…\n"
 	.string "No, wait.\p"
-	.string "I am FLANNERY, and I'm the GYM\n"
+	.string "I am FLANNERY, and I'm the Gym\n"
 	.string "LEADER here!\p"
 	.string "Uh…\n"
 	.string "Dare not underestimate me, though\l"
@@ -359,7 +359,7 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery: @ 81FF517
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle: @ 81FF546
 	.string "Your power reminds me of someone…\p"
 	.string "Oh! I know! You battle like NORMAN,\n"
-	.string "the Gym Leader of PETALBURG.$"
+	.string "the Gym Leader of Petalburg.$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue: @ 81FF5A9
 	.string "LAVARIDGE TOWN Pokémon Gym$"
@@ -374,7 +374,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryPreRematch: @ 81FF601
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
 	.string "I love to battle.\l"
-	.string "And… I love this GYM!\p"
+	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!$"
 
@@ -395,7 +395,7 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons: @ 81FF75E
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
 	.string "I love to battle.\l"
-	.string "And… I love this GYM!\p"
+	.string "And… I love this Gym!\p"
 	.string "Let's exchange superhot moves\n"
 	.string "in another battle!\p"
 	.string "Oh, wait. Do you only have one Pokémon\n"

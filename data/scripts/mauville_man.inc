@@ -281,7 +281,7 @@ MauvilleCity_PokemonCenter_1F_Text_YouDidStatXTimes: @ 828E726
 
 MauvilleCity_PokemonCenter_1F_Text_CouldThereBeOtherLegends: @ 828E78A
 	.string "It gets me thinking, could there be\n"
-	.string "other TRAINERS with more impressive\l"
+	.string "other Trainers with more impressive\l"
 	.string "legends awaiting discovery?$"
 
 MauvilleCity_PokemonCenter_1F_Text_HaveYouAnyLegendaryTales: @ 828E7EE
@@ -348,17 +348,17 @@ MauvilleCity_PokemonCenter_1F_Text_BerriesPlantedStory:: @ 828EAA8
 	.string "BERRIES!$"
 
 MauvilleCity_PokemonCenter_1F_Text_BikeTradesTitle:: @ 828EB19
-	.string "The BIKE-Loving Trainer$"
+	.string "The Bike-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_BikeTradesAction:: @ 828EB31
-	.string "Traded BIKES$"
+	.string "Traded Bikes$"
 
 MauvilleCity_PokemonCenter_1F_Text_BikeTradesStory:: @ 828EB3E
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer swapped BIKES\n"
+	.string "This Trainer swapped Bikes\n"
 	.string "{STR_VAR_1} times!\p"
-	.string "{STR_VAR_3} must love BIKES deeply\n"
+	.string "{STR_VAR_3} must love Bikes deeply\n"
 	.string "and passionately!$"
 
 MauvilleCity_PokemonCenter_1F_Text_InterviewsTitle:: @ 828EBB5
@@ -476,15 +476,15 @@ MauvilleCity_PokemonCenter_1F_Text_SafariGamesTitle:: @ 828F0F3
 	.string "The SAFARI-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_SafariGamesAction:: @ 828F10D
-	.string "Entered the SAFARI ZONE$"
+	.string "Entered the Safari Zone$"
 
 MauvilleCity_PokemonCenter_1F_Text_SafariGamesStory:: @ 828F125
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer went into the SAFARI ZONE\n"
+	.string "This Trainer went into the Safari Zone\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a Trainer whose wild side\n"
-	.string "must come out in the SAFARI ZONE!$"
+	.string "must come out in the Safari Zone!$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedCutTitle:: @ 828F1BE
 	.string "The CUT-Frenzy Trainer$"
@@ -518,12 +518,12 @@ MauvilleCity_PokemonCenter_1F_Text_MovedBasesTitle:: @ 828F2FC
 	.string "The Move-Loving Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_MovedBasesAction:: @ 828F314
-	.string "Moved the SECRET BASE$"
+	.string "Moved the Secret Base$"
 
 MauvilleCity_PokemonCenter_1F_Text_MovedBasesStory:: @ 828F32A
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer moved the SECRET BASE\n"
+	.string "This Trainer moved the Secret Base\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a Trainer who loves\n"
 	.string "to move houses often!$"
@@ -585,18 +585,18 @@ MauvilleCity_PokemonCenter_1F_Text_RouletteWinsStory:: @ 828F5F2
 	.string "bounced in ROULETTE!$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesTitle:: @ 828F678
-	.string "The BATTLE TOWER Challenger$"
+	.string "The Battle Tower Challenger$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesAction:: @ 828F694
-	.string "Took the BATTLE TOWER challenge$"
+	.string "Took the Battle Tower challenge$"
 
 MauvilleCity_PokemonCenter_1F_Text_BattleTowerChallengesStory:: @ 828F6B4
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer took the BATTLE TOWER\n"
+	.string "This Trainer took the Battle Tower\n"
 	.string "challenge {STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a Trainer who aspires\n"
-	.string "for excellence in the BATTLE TOWER!$"
+	.string "for excellence in the Battle Tower!$"
 
 MauvilleCity_PokemonCenter_1F_Text_MadePokeblocksTitle:: @ 828F751
 	.string "The Blend-Loving Trainer$"

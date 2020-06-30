@@ -343,21 +343,21 @@ BattleFrontier_Lounge3_Text_ThanksOffYouGo:: @ 8262BE0
 	.string "So, off you go!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerSingle:: @ 8262C04
-	.string "Get to the BATTLE TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "SINGLE BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerDouble:: @ 8262C90
-	.string "Get to the BATTLE TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "DOUBLE BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"
 	.string "Both of our futures depend on you!$"
 
 BattleFrontier_Lounge3_Text_GetToBattleTowerMulti:: @ 8262D1C
-	.string "Get to the BATTLE TOWER's\n"
+	.string "Get to the Battle Tower's\n"
 	.string "MULTI BATTLE ROOMS pronto!\p"
 	.string "It's a must-win situation!\n"
 	.string "Don't blow your chance!\l"

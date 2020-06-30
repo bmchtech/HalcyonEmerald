@@ -74,12 +74,12 @@ AbandonedShip_Corridors_B1F_Text_YayItsAShip: @ 8237F03
 
 AbandonedShip_Corridors_B1F_Text_DoorIsLocked: @ 8237F15
 	.string "The door is locked.\p"
-	.string "“STORAGE” is painted on the door.$"
+	.string "“Storage” is painted on the door.$"
 
 AbandonedShip_Corridors_B1F_Text_InsertedStorageKey: @ 8237F4B
 	.string "{PLAYER} inserted and turned the\n"
-	.string "STORAGE KEY.\p"
-	.string "The inserted KEY stuck fast,\n"
+	.string "Storage Key.\p"
+	.string "The inserted Key stuck fast,\n"
 	.string "but the door opened.$"
 
 AbandonedShip_Text_TheDoorIsOpen: @ 8237FA5

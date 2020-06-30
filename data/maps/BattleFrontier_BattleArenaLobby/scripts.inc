@@ -389,7 +389,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainChallenge: @ 825624C
 	.string "If you don't save, you will not be able\n"
 	.string "to continue with your challenge.\p"
 	.string "If you pull off the feat of beating\n"
-	.string "seven TRAINERS in succession,\l"
+	.string "seven Trainers in succession,\l"
 	.string "we will present you with Battle Points.$"
 
 BattleFrontier_BattleArenaLobby_Text_OkayToSave: @ 82564CE
@@ -539,7 +539,7 @@ BattleFrontier_BattleArenaLobby_Text_ExplainMindRules: @ 8256F43
 	.string "This factor evaluates how aggressive\l"
 	.string "the battlers were.\p"
 	.string "The judging is based on how often\n"
-	.string "the TRAINERS ordered the use of\l"
+	.string "the Trainers ordered the use of\l"
 	.string "offensive moves.$"
 
 BattleFrontier_BattleArenaLobby_Text_ExplainSkillRules: @ 8256FF2

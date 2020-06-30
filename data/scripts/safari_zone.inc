@@ -82,7 +82,7 @@ SafariZone_Text_TimesUp: @ 82A4C26
 	.string "Your SAFARI Game is over.$"
 
 SafariZone_Text_OutOfBalls: @ 82A4C56
-	.string "You've run out of SAFARI BALLS.\n"
+	.string "You've run out of Safari Balls.\n"
 	.string "Your SAFARI Game is over.$"
 
 SafariZone_Text_PlacePokeblockOnFeeder: @ 82A4C90
@@ -98,7 +98,7 @@ SafariZone_Text_PokeblockWasPlaced: @ 82A4CEB
 	.string "on the {POKEBLOCK} FEEDER.$"
 
 Route121_SafariZoneEntrance_Text_WelcomeToSafariZone: @ 82A4D12
-	.string "Welcome to the SAFARI ZONE!\p"
+	.string "Welcome to the Safari Zone!\p"
 	.string "Here, you may witness many kinds of\n"
 	.string "Pokémon rarely seen in Hoenn.\p"
 	.string "And, you'll see them in their wild,\n"
@@ -107,26 +107,26 @@ Route121_SafariZoneEntrance_Text_WelcomeToSafariZone: @ 82A4D12
 	.string "gates to Pokémon TRAINERS.\p"
 	.string "You're encouraged to catch Pokémon\n"
 	.string "for keeps!\p"
-	.string "Come in and enjoy the SAFARI ZONE!$"
+	.string "Come in and enjoy the Safari Zone!$"
 
 Route121_SafariZoneEntrance_Text_WelcomeFirstTime: @ 82A4E46
-	.string "Welcome to the SAFARI ZONE!\n"
+	.string "Welcome to the Safari Zone!\n"
 	.string "Is it your first time here?$"
 
 Route121_SafariZoneEntrance_Text_ComeInAndEnjoy: @ 82A4E7E
-	.string "Come in and enjoy the SAFARI ZONE!$"
+	.string "Come in and enjoy the Safari Zone!$"
 
 Route121_SafariZoneEntrance_Text_FirstTimeInfo: @ 82A4EA1
-	.string "When you enter the SAFARI ZONE, you\n"
-	.string "start with 30 SAFARI BALLS for\l"
+	.string "When you enter the Safari Zone, you\n"
+	.string "start with 30 Safari Balls for\l"
 	.string "catching Pokémon.\p"
 	.string "The SAFARI Game is over when you run\n"
-	.string "out of SAFARI BALLS, or when you've\l"
+	.string "out of Safari Balls, or when you've\l"
 	.string "walked 500 steps.\p"
-	.string "Come in and enjoy the SAFARI ZONE!$"
+	.string "Come in and enjoy the Safari Zone!$"
 
 Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay: @ 82A4F74
-	.string "Welcome to the SAFARI ZONE!\p"
+	.string "Welcome to the Safari Zone!\p"
 	.string "All you can catch for just ¥500!\n"
 	.string "Would you like to play a SAFARI Game?$"
 
@@ -142,10 +142,10 @@ Route121_SafariZoneEntrance_Text_ThatWillBe500Please: @ 82A501B
 	.string "That will be ¥500, please.$"
 
 Route121_SafariZoneEntrance_Text_HereAreYourSafariBalls: @ 82A5036
-	.string "Here are your SAFARI BALLS.$"
+	.string "Here are your Safari Balls.$"
 
 Route121_SafariZoneEntrance_Text_Received30SafariBalls: @ 82A5052
-	.string "{PLAYER} received 30 SAFARI BALLS.$"
+	.string "{PLAYER} received 30 Safari Balls.$"
 
 Route121_SafariZoneEntrance_Text_PleaseEnjoyYourself: @ 82A506F
 	.string "We'll let you know when your game\n"
@@ -168,7 +168,7 @@ Route121_SafariZoneEntrance_Text_YouNeedPokeblockCase: @ 82A5105
 
 SafariZone_South_Text_StillHaveTimeExit: @ 82A51D4
 	.string "You still have time left. Would you like\n"
-	.string "to exit the SAFARI ZONE now?$"
+	.string "to exit the Safari Zone now?$"
 
 SafariZone_South_Text_EnjoyTheRestOfYourAdventure: @ 82A521A
 	.string "Please enjoy the rest of your wild\n"
@@ -193,7 +193,7 @@ SafariZone_South_Text_Boy: @ 82A52EF
 
 SafariZone_South_Text_Man: @ 82A533B
 	.string "I want to keep going deeper, but I\n"
-	.string "forgot to bring a BIKE.\p"
+	.string "forgot to bring a Bike.\p"
 	.string "Something tells me that rare Pokémon\n"
 	.string "live in the outlying areas.$"
 
@@ -225,20 +225,20 @@ SafariZone_South_Text_Youngster: @ 82A553E
 	.string "without me noticing.$"
 
 Route121_SafariZoneEntrance_Text_TrainerTip: @ 82A55BB
-	.string "SAFARI ZONE Trainer TIP!\p"
+	.string "Safari Zone Trainer Tip!\p"
 	.string "Throw {POKEBLOCK}S at wild Pokémon to make\n"
 	.string "them less likely to flee.$"
 
 SafariZone_Southwest_Text_RestHouseSign: @ 82A5613
 	.string "“Relieve your tired feet.”\n"
-	.string "REST HOUSE$"
+	.string "Rest House$"
 
 SafariZone_RestHouse_Text_Youngster: @ 82A5639
 	.string "I don't have any {POKEBLOCK}S, but I caught\n"
 	.string "a good number of Pokémon.\p"
 	.string "You can improve your chances of making\n"
 	.string "a catch by getting closer to them\l"
-	.string "before throwing a SAFARI BALL.$"
+	.string "before throwing a Safari Ball.$"
 
 SafariZone_RestHouse_Text_PsychicM: @ 82A56E1
 	.string "If you use {POKEBLOCK}S, wild Pokémon won't\n"
@@ -257,7 +257,7 @@ SafariZone_South_Text_AreaOffLimits1: @ 82A57EE
 	.string "It's off-limits, sorry!$"
 
 SafariZone_Southeast_Text_ExpansionIsFinished: @ 82A582D
-	.string "The SAFARI ZONE's expansion project\n"
+	.string "The Safari Zone's expansion project\n"
 	.string "is finished now.\p"
 	.string "We hope you will enjoy the new area.$"
 
@@ -280,7 +280,7 @@ SafariZone_Southeast_Text_RichBoy: @ 82A5960
 	.string "from somewhere other than Hoenn.$"
 
 SafariZone_Northeast_Text_Boy: @ 82A59A4
-	.string "I only have a couple SAFARI BALLS left.\p"
+	.string "I only have a couple Safari Balls left.\p"
 	.string "I'm having a hard time trying to\n"
 	.string "decide what I should catch.$"
 

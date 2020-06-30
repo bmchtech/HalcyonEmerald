@@ -982,7 +982,7 @@ BattleFrontier_BattleTowerLobby_Text_CongratsBeatenSeven: @ 823F60D
 
 @ Unused
 BattleFrontier_BattleTowerLobby_Text_EarnedFabulousPrize: @ 823F641
-	.string "For beating seven TRAINERS in a row,\n"
+	.string "For beating seven Trainers in a row,\n"
 	.string "you have earned this fabulous prize!\p"
 	.string "$"
 
@@ -1016,13 +1016,13 @@ BattleFrontier_BattleTowerLobby_Text_AboutToFace50thTrainer: @ 823F79D
 	.string "You're finally about to face the\n"
 	.string "50th Trainer.\p"
 	.string "From here on, every time you beat seven\n"
-	.string "TRAINERS in a row, your Pokémon will\l"
+	.string "Trainers in a row, your Pokémon will\l"
 	.string "receive a commemorative RIBBON.\p"
 	.string "Good luck!$"
 
 BattleFrontier_BattleTowerLobby_Text_HereAreSomeRibbons: @ 823F844
 	.string "Here are some RIBBONS for beating\n"
-	.string "seven tough TRAINERS in a row.\p"
+	.string "seven tough Trainers in a row.\p"
 	.string "{PLAYER} received some RIBBONS!$"
 
 BattleFrontier_BattleTowerLobby_Text_PutRibbonOnMons: @ 823F89F
@@ -1032,7 +1032,7 @@ BattleFrontier_BattleTowerLobby_Text_PutRibbonOnMons: @ 823F89F
 BattleFrontier_BattleTowerLobby_Text_DescribeFeelingsAboutBattleTower: @ 823F8CD
 	.string "Excuse me, do you have a moment?\p"
 	.string "Can you describe your feelings when\n"
-	.string "you're about to begin a BATTLE TOWER\l"
+	.string "you're about to begin a Battle Tower\l"
 	.string "match, or when you've either won or\l"
 	.string "lost a match?$"
 
@@ -1068,15 +1068,15 @@ BattleFrontier_BattleTowerLobby_Text_WinsInRowRecorded: @ 823FAC0
 	.string "an embarrassing way!$"
 
 BattleFrontier_BattleTowerLobby_Text_CanLeaveUntilLossOrSevenWins: @ 823FB26
-	.string "Once you've entered the BATTLE TOWER,\n"
+	.string "Once you've entered the Battle Tower,\n"
 	.string "you can't leave until you either lose\l"
-	.string "or you beat seven TRAINERS in a row.\p"
+	.string "or you beat seven Trainers in a row.\p"
 	.string "You'd best be certain that you're up\n"
 	.string "to the challenge.$"
 
 @ Unused
 BattleFrontier_BattleTowerLobby_Text_DoubleBattleRoomConstruction: @ 823FBCE
-	.string "Welcome to the BATTLE TOWER\n"
+	.string "Welcome to the Battle Tower\n"
 	.string "DOUBLE BATTLE CORNER!\p"
 	.string "Unfortunately, the BATTLE ROOMS\n"
 	.string "are still under construction.\p"
@@ -1085,7 +1085,7 @@ BattleFrontier_BattleTowerLobby_Text_DoubleBattleRoomConstruction: @ 823FBCE
 
 @ Unused
 BattleFrontier_BattleTowerLobby_Text_MultiBattleRoomConstruction: @ 823FC6B
-	.string "Welcome to the BATTLE TOWER\n"
+	.string "Welcome to the Battle Tower\n"
 	.string "MULTI BATTLE CORNER!\p"
 	.string "Unfortunately, the BATTLE ROOMS\n"
 	.string "are still under construction.\p"
@@ -1115,7 +1115,7 @@ BattleFrontier_BattleTowerLobby_Text_ShowYouToBattleRoom: @ 823FE11
 	.string "{STR_VAR_1} BATTLE ROOM.$"
 
 BattleFrontier_BattleTowerLobby_Text_RecordLastMatch: @ 823FE3C
-	.string "Shall I record your last BATTLE TOWER\n"
+	.string "Shall I record your last Battle Tower\n"
 	.string "match on your FRONTIER PASS?$"
 
 @ Unused
@@ -1203,7 +1203,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenMultis: @ 824046B
 BattleFrontier_BattleTowerLobby_Text_WelcomSingleBattle: @ 8240537
 	.string "Where the talents of TRAINERS\n"
 	.string "are put to the test!\p"
-	.string "Welcome to the BATTLE TOWER!\p"
+	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the SINGLE\n"
 	.string "BATTLE ROOMS.$"
 
@@ -1212,13 +1212,13 @@ BattleFrontier_BattleTowerLobby_Text_TakeSinglesChallenge: @ 82405B3
 	.string "BATTLE ROOM challenge?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainSinglesChallenge: @ 82405EC
-	.string "The BATTLE TOWER's SINGLE BATTLE\n"
+	.string "The Battle Tower's SINGLE BATTLE\n"
 	.string "ROOMS are facilities for conducting\l"
 	.string "SINGLE BATTLES with three Pokémon.\p"
 	.string "There are many SINGLE BATTLE ROOMS\n"
-	.string "in the BATTLE TOWER for team battles.\p"
+	.string "in the Battle Tower for team battles.\p"
 	.string "In each of the SINGLE BATTLE ROOMS,\n"
-	.string "seven TRAINERS await your challenge.\p"
+	.string "seven Trainers await your challenge.\p"
 	.string "If you manage to defeat all seven,\n"
 	.string "you will earn Battle Points.\p"
 	.string "If you want to interrupt your\n"
@@ -1233,7 +1233,7 @@ BattleFrontier_BattleTowerLobby_Text_SelectThreeMons: @ 82407A6
 BattleFrontier_BattleTowerLobby_Text_WelcomeDoubleBattle: @ 82407E2
 	.string "Where the talents of TRAINERS\n"
 	.string "are put to the test!\p"
-	.string "Welcome to the BATTLE TOWER!\p"
+	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the DOUBLE\n"
 	.string "BATTLE ROOMS.$"
 
@@ -1242,13 +1242,13 @@ BattleFrontier_BattleTowerLobby_Text_TakeDoublesChallenge: @ 824085E
 	.string "BATTLE ROOM challenge?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainDoublesChallenge: @ 8240897
-	.string "The BATTLE TOWER's DOUBLE BATTLE\n"
+	.string "The Battle Tower's DOUBLE BATTLE\n"
 	.string "ROOMS are facilities for conducting\l"
 	.string "DOUBLE BATTLES with four Pokémon.\p"
 	.string "There are many DOUBLE BATTLE ROOMS\n"
-	.string "in the BATTLE TOWER for team battles.\p"
+	.string "in the Battle Tower for team battles.\p"
 	.string "In each of the DOUBLE BATTLE ROOMS,\n"
-	.string "seven TRAINERS await your challenge.\p"
+	.string "seven Trainers await your challenge.\p"
 	.string "If you manage to defeat all seven,\n"
 	.string "you will earn Battle Points.\p"
 	.string "If you want to interrupt your\n"
@@ -1263,7 +1263,7 @@ BattleFrontier_BattleTowerLobby_Text_PleaseSelectFourMons: @ 8240A50
 BattleFrontier_BattleTowerLobby_Text_WelcomeMultiBattle: @ 8240A8B
 	.string "Where the talents of TRAINERS\n"
 	.string "are put to the test!\p"
-	.string "Welcome to the BATTLE TOWER!\p"
+	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the MULTI\n"
 	.string "BATTLE ROOMS.$"
 
@@ -1272,7 +1272,7 @@ BattleFrontier_BattleTowerLobby_Text_TakeMultisChallenge: @ 8240B06
 	.string "BATTLE ROOM challenge?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainMultisChallenge: @ 8240B3E
-	.string "The BATTLE TOWER's MULTI BATTLE\n"
+	.string "The Battle Tower's MULTI BATTLE\n"
 	.string "ROOMS are facilities for conducting\l"
 	.string "MULTI BATTLES.\p"
 	.string "For MULTI BATTLES, you must partner\n"
@@ -1301,7 +1301,7 @@ BattleFrontier_BattleTowerLobby_Text_PleaseSelectTwoMons: @ 8240DDB
 BattleFrontier_BattleTowerLobby_Text_WelcomeLinkMultiBattle: @ 8240E15
 	.string "Where the talents of TRAINERS\n"
 	.string "are put to the test!\p"
-	.string "Welcome to the BATTLE TOWER!\p"
+	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the LINK MULTI\n"
 	.string "BATTLE ROOMS.$"
 
@@ -1310,7 +1310,7 @@ BattleFrontier_BattleTowerLobby_Text_TakeLinkMultisChallenge: @ 8240E95
 	.string "BATTLE ROOM challenge?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainLinkMultisChallenge: @ 8240ED2
-	.string "The BATTLE TOWER's MULTI BATTLE\n"
+	.string "The Battle Tower's MULTI BATTLE\n"
 	.string "ROOMS are facilities for conducting\l"
 	.string "MULTI BATTLES with a friend.\p"
 	.string "You must link with your friend using\n"
@@ -1319,7 +1319,7 @@ BattleFrontier_BattleTowerLobby_Text_ExplainLinkMultisChallenge: @ 8240ED2
 	.string "You must partner with your friend and\n"
 	.string "enter two different kinds of Pokémon.\p"
 	.string "There are many MULTI BATTLE ROOMS\n"
-	.string "in the BATTLE TOWER for team battles.\p"
+	.string "in the Battle Tower for team battles.\p"
 	.string "In a MULTI BATTLE ROOM, seven\n"
 	.string "tag teams await you and your friend\l"
 	.string "to make a tag-team challenge.\p"
@@ -1394,13 +1394,13 @@ BattleFrontier_Text_ObtainedXBattlePoints: @ 8241520
 	.string "{PLAYER} obtained {STR_VAR_1} Battle Point(s).$"
 
 BattleFrontier_BattleTowerLobby_Text_RulesAreListed: @ 8241540
-	.string "The BATTLE TOWER rules are listed.$"
+	.string "The Battle Tower rules are listed.$"
 
 BattleFrontier_BattleTowerLobby_Text_ReadWhichHeading: @ 8241563
 	.string "Which heading do you want to read?$"
 
 BattleFrontier_BattleTowerLobby_Text_ExplainTowerRules: @ 8241586
-	.string "The BATTLE TOWER is a facility where\n"
+	.string "The Battle Tower is a facility where\n"
 	.string "four types of battles are waged--\l"
 	.string "SINGLE BATTLE, DOUBLE BATTLE, MULTI\l"
 	.string "BATTLE, and LINK MULTI BATTLE.\p"

@@ -623,7 +623,7 @@ LilycoveCity_PokemonTrainerFanClub_Text_HeardAboutYouImYourFan: @ 821CF12
 	.string "I've heard the news!\n"
 	.string "You're really strong, aren't you?\p"
 	.string "We always argue about who is the\n"
-	.string "strongest of all TRAINERS here.\p"
+	.string "strongest of all Trainers here.\p"
 	.string "So when I heard about you, I decided\n"
 	.string "to be your fan!\p"
 	.string "I hope you'll keep on battling other\n"
@@ -689,11 +689,11 @@ LilycoveCity_PokemonTrainerFanClub_Text_NobodyUnderstandsBrawly: @ 821D377
 	.string "BRAWLY…\p"
 	.string "I don't care!\p"
 	.string "Even if I'm the only one, I'm going\n"
-	.string "to keep cheering for BRAWLY!$"
+	.string "to keep cheering for Brawly!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_MyFavoriteTrainerIsBrawly: @ 821D3EE
 	.string "Whatever anyone says, my favorite\n"
-	.string "Trainer is DEWFORD's Gym Leader\l"
+	.string "Trainer is Dewford's Gym Leader\l"
 	.string "BRAWLY!$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_YouveSurpassedYourFather: @ 821D438

@@ -29,7 +29,7 @@ DewfordTown_House2_EventScript_Boy:: @ 81FE271
 
 DewfordTown_House2_Text_WantYouToHaveSilkScarf: @ 81FE27A
 	.string "Gorge your eyes on this!\p"
-	.string "It's a SILK SCARF. It's right at the\n"
+	.string "It's a Silk Scarf. It's right at the\n"
 	.string "cutting edge of fashion, yeah!\p"
 	.string "Oh, I can see your eyes twinkling!\n"
 	.string "You appreciate my dazzling style!\p"
@@ -43,16 +43,16 @@ DewfordTown_House2_Text_NoRoom: @ 81FE356
 	.string "in order to get it!$"
 
 DewfordTown_House2_Text_ExplainSilkScarf: @ 81FE3D1
-	.string "The SILK SCARF raises the power of\n"
-	.string "NORMAL-type moves.\p"
-	.string "It's a marvelous SCARF that will go\n"
+	.string "The Silk Scarf raises the power of\n"
+	.string "Normal-type moves.\p"
+	.string "It's a marvelous Scarf that will go\n"
 	.string "with almost all Pokémon!$"
 
 DewfordTown_House2_Text_BrawlySoCool: @ 81FE444
 	.string "Wow, you bothered to cross the sea\n"
-	.string "to visit DEWFORD?\p"
+	.string "to visit Dewford?\p"
 	.string "Did you maybe come here because you\n"
-	.string "heard about BRAWLY?\p"
+	.string "heard about Brawly?\p"
 	.string "He's so cool…\n"
 	.string "Everyone idolizes him.$"
 

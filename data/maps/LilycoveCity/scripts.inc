@@ -456,14 +456,14 @@ LilycoveCity_Text_MayDefeat: @ 81E3275
 
 LilycoveCity_Text_MayGoingBackToLittleroot: @ 81E32FB
 	.string "May: I'm thinking of going back to\n"
-	.string "LITTLEROOT soon.\p"
+	.string "Littleroot soon.\p"
 	.string "I've caught a decent group of Pokémon,\n"
 	.string "and my Pokédex is coming along, so\l"
 	.string "I'm going home to show my dad.$"
 
 LilycoveCity_Text_MayYouGoingToCollectBadges: @ 81E3398
 	.string "{PLAYER}{KUN}, what are you going to do?\p"
-	.string "Collect all the GYM BADGES and take\n"
+	.string "Collect all the Gym BADGES and take\n"
 	.string "the Pokémon League challenge?\p"
 	.string "Well, while you're collecting BADGES,\n"
 	.string "{PLAYER}{KUN}, I'm going to work on my\l"
@@ -518,14 +518,14 @@ LilycoveCity_Text_BrendanDefeat: @ 81E3777
 
 LilycoveCity_Text_BrendanGoingBackToLittleroot: @ 81E37D7
 	.string "Brendan: I…\n"
-	.string "I plan on going home to LITTLEROOT.\p"
+	.string "I plan on going home to Littleroot.\p"
 	.string "You know I'm helping out my dad on his\n"
 	.string "Pokédex. It's coming together pretty\l"
 	.string "decently, so I should go show him.$"
 
 LilycoveCity_Text_BrendanYouGoingToCollectBadges: @ 81E3876
 	.string "{PLAYER}, what are you going to do?\p"
-	.string "Collect all the GYM BADGES and take\n"
+	.string "Collect all the Gym BADGES and take\n"
 	.string "the Pokémon League challenge?\p"
 	.string "Maybe I'll do that, too…\p"
 	.string "Well, anyway, hang in there!$"
@@ -556,13 +556,13 @@ LilycoveCity_Text_BrendanYouGoingToBattleFrontier: @ 81E39E3
 LilycoveCity_Text_MovedLootIntoHideoutToday: @ 81E3B2C
 	.string "Fufufu…\p"
 	.string "We moved more loot into our secret\n"
-	.string "HIDEOUT today…\p"
+	.string "Hideout today…\p"
 	.string "Wh-who are you?!\n"
 	.string "I was just talking to myself!$"
 
 LilycoveCity_Text_ChanceToDoBigThings: @ 81E3B95
 	.string "I'm just a GRUNT, so I don't know what\n"
-	.string "the BOSS is thinking…\p"
+	.string "the Boss is thinking…\p"
 	.string "But being on Team Aqua, I know I'll get\n"
 	.string "the chance to do big things!\p"
 	.string "Wh-who are you?!\n"
@@ -675,7 +675,7 @@ LilycoveCity_Text_TeamAquaLotGoneForGood: @ 81E43FF
 	.string "have gone away for good.$"
 
 LilycoveCity_Text_CitySign: @ 81E448B
-	.string "LILYCOVE CITY\p"
+	.string "Lilycove City\p"
 	.string "“Where the land ends and the\n"
 	.string "sea begins.”$"
 
@@ -699,20 +699,20 @@ LilycoveCity_Text_MuseumSignPlayersExhibit: @ 81E4571
 	.string "on exhibit!”$"
 
 LilycoveCity_Text_HarborSignUnderConstruction: @ 81E45A7
-	.string "LILYCOVE CITY HARBOR\p"
+	.string "Lilycove City HARBOR\p"
 	.string "“The ferry S.S. TIDAL is under\n"
-	.string "construction in SLATEPORT CITY.\p"
+	.string "construction in Slateport City.\p"
 	.string "“Service is scheduled to begin\n"
 	.string "shortly.”$"
 
 LilycoveCity_Text_HarborSign: @ 81E4624
-	.string "LILYCOVE CITY HARBOR\p"
+	.string "Lilycove City HARBOR\p"
 	.string "“Enjoy a delightful cruise on\n"
 	.string "the ferry S.S. TIDAL.”$"
 
 LilycoveCity_Text_TrainerFanClubSign: @ 81E466E
 	.string "Pokémon Trainer FAN CLUB\p"
-	.string "The names of TRAINERS are scribbled\n"
+	.string "The names of Trainers are scribbled\n"
 	.string "all over the sign…$"
 
 LilycoveCity_Text_DepartmentStoreSign: @ 81E46BE
@@ -745,7 +745,7 @@ LilycoveCity_Text_ExplainBerryBlender: @ 81E4824
 LilycoveCity_Text_HeardTowerCalledSkyPillar: @ 81E48A5
 	.string "I heard there's a tower somewhere out\n"
 	.string "on the sea routes.\p"
-	.string "It's called the SKY PILLAR, I hear.$"
+	.string "It's called the Sky Pillar, I hear.$"
 
 LilycoveCity_Text_SawTallTowerOnRoute131: @ 81E4902
 	.string "I saw this tall tower somewhere\n"

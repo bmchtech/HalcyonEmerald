@@ -97,5 +97,5 @@ FortreeCity_House1_Text_TradingMemoriesWithOthers: @ 821653B
 	.string "memories with other people.$"
 
 FortreeCity_House1_Text_Zigzagoon: @ 8216597
-	.string "ZIGZAGOON: Gumomoh?$"
+	.string "Zigzagoon: Gumomoh?$"
 

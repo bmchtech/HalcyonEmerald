@@ -154,7 +154,7 @@ JaggedPass_EventScript_Autumn:: @ 8230871
 	end
 
 JaggedPass_Text_EricIntro: @ 8230888
-	.string "MT. CHIMNEY's JAGGED PASS…\p"
+	.string "Mt. Chimney's JAGGED PASS…\p"
 	.string "Now this is what I've always wanted\n"
 	.string "in a mountain.\p"
 	.string "This jagged bumpiness…\n"
@@ -206,7 +206,7 @@ JaggedPass_Text_EthanDefeat: @ 8230B50
 	.string "trying to find a good footing…$"
 
 JaggedPass_Text_EthanPostBattle: @ 8230B93
-	.string "If I had an ACRO BIKE, I'd be able to\n"
+	.string "If I had an ACRO Bike, I'd be able to\n"
 	.string "jump ledges.$"
 
 JaggedPass_Text_EthanRegister: @ 8230BC6
@@ -223,7 +223,7 @@ JaggedPass_Text_EthanRematchDefeat: @ 8230C60
 	.string "bumpy ground…$"
 
 JaggedPass_Text_EthanPostRematch: @ 8230C94
-	.string "I should get an ACRO BIKE from RYDEL\n"
+	.string "I should get an ACRO Bike from RYDEL\n"
 	.string "in MAUVILLE CITY…$"
 
 JaggedPass_Text_GruntIntro: @ 8230CCB
@@ -234,7 +234,7 @@ JaggedPass_Text_GruntIntro: @ 8230CCB
 
 JaggedPass_Text_GruntDefeat: @ 8230D2D
 	.string "Urrrgh…\p"
-	.string "I should've ducked into our HIDEOUT\n"
+	.string "I should've ducked into our Hideout\n"
 	.string "right away…$"
 
 JaggedPass_Text_GoWhereverYouWant: @ 8230D65
@@ -245,7 +245,7 @@ JaggedPass_Text_GoWhereverYouWant: @ 8230D65
 
 JaggedPass_Text_BoulderShakingInResponseToEmblem: @ 8230DBA
 	.string "Oh! This boulder is shaking in response\n"
-	.string "to the MAGMA EMBLEM!$"
+	.string "to the Magma Emblem!$"
 
 JaggedPass_Text_JulioIntro: @ 8230DF7
 	.string "Aiyeeh! It's awfully scary to shoot\n"

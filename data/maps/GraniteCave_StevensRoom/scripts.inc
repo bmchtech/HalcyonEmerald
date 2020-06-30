@@ -92,7 +92,7 @@ GraniteCave_StevensRoom_Text_ImStevenLetterForMe: @ 822DD5A
 	.string "A LETTER for me?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis: @ 822DDBD
-	.string "STEVEN: Okay, thank you.\p"
+	.string "Steven: Okay, thank you.\p"
 	.string "You went through all this trouble to\n"
 	.string "deliver that. I need to thank you.\p"
 	.string "Let me see…\n"
@@ -101,7 +101,7 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis: @ 822DDBD
 	.string "STEEL WING.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister: @ 822DE6B
-	.string "STEVEN: Your Pokémon appear quite\n"
+	.string "Steven: Your Pokémon appear quite\n"
 	.string "capable.\p"
 	.string "If you keep training, you could even\n"
 	.string "become the Champion of the Pokémon\l"

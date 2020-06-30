@@ -399,15 +399,15 @@ BattleFrontier_ReceptionGate_Text_BattlePyramidInfo: @ 8266CBB
 
 BattleFrontier_ReceptionGate_Text_RankingHallInfo: @ 8266D1C
 	.string "The RANKING HALL is located near\n"
-	.string "the BATTLE TOWER.\p"
+	.string "the Battle Tower.\p"
 	.string "There, you may see the most fantastic\n"
-	.string "records left by the TRAINERS that\l"
+	.string "records left by the Trainers that\l"
 	.string "took on the many challenges of\l"
 	.string "the BATTLE FRONTIER.$"
 
 BattleFrontier_ReceptionGate_Text_ExchangeCornerInfo: @ 8266DCB
 	.string "The EXCHANGE SERVICE CORNER is near\n"
-	.string "the BATTLE TOWER.\p"
+	.string "the Battle Tower.\p"
 	.string "The Battle Points you have earned in\n"
 	.string "the BATTLE FRONTIER may be exchanged\l"
 	.string "for fabulous prizes there.$"
@@ -475,11 +475,11 @@ BattleFrontier_ReceptionGate_Text_LearnAboutWhich1: @ 826737C
 BattleFrontier_ReceptionGate_Text_SymbolsInfo: @ 82673A1
 	.string "There are seven facilities at\n"
 	.string "the BATTLE FRONTIER.\p"
-	.string "TRAINERS who gain recognition for\n"
+	.string "Trainers who gain recognition for\n"
 	.string "their abilities may be rewarded with\l"
 	.string "symbols from each of the facilities.\p"
-	.string "To earn a symbol, TRAINERS may need\n"
-	.string "to defeat other TRAINERS in a row,\l"
+	.string "To earn a symbol, Trainers may need\n"
+	.string "to defeat other Trainers in a row,\l"
 	.string "and may need to win events repeatedly.\p"
 	.string "It's certainly not easy to win symbols.\n"
 	.string "I wish you the best of luck!$"
@@ -498,7 +498,7 @@ BattleFrontier_ReceptionGate_Text_RecordedBattleInfo: @ 82674F3
 
 BattleFrontier_ReceptionGate_Text_BattlePointsInfo: @ 826761C
 	.string "Battle Points are rewards given to\n"
-	.string "TRAINERS who battled outstandingly\l"
+	.string "Trainers who battled outstandingly\l"
 	.string "at the BATTLE FRONTIER.\p"
 	.string "You may trade in your Battle Points\n"
 	.string "for prizes at the EXCHANGE SERVICE\l"

@@ -67,7 +67,7 @@ EverGrandeCity_SidneysRoom_EventScript_Defeated:: @ 8227F95
 
 EverGrandeCity_SidneysRoom_Text_IntroSpeech: @ 8227FA7
 	.string "Welcome, challenger!\n"
-	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	.string "I'm SIDNEY of the Elite Four.\p"
 	.string "I like that look you're giving me.\n"
 	.string "I guess you'll give me a good match.\l"
 	.string "That's good! Looking real good!\p"

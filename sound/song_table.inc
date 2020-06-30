@@ -409,7 +409,7 @@ gSongTable:: @ 86B49F0
 	song mus_mishiro, 0, 0          @ Littleroot Town
 	song mus_tozan, 0, 0            @ Mt. Chimney
 	song mus_girleye, 0, 0          @ Trainers' Eyes Meet (Lass)
-	song mus_minamo, 0, 0           @ Lilycove City
+	song mus_minamo, 0, 0           @Lilycove City
 	song mus_ashroad, 0, 0          @ Route 111
 	song mus_event0, 0, 0           @ H-Help Me!
 	song mus_deepdeep, 0, 0         @ Dive

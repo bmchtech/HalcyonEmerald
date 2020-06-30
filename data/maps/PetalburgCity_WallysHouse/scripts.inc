@@ -111,7 +111,7 @@ PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon: @ 8204661
 
 PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity: @ 8204698
 	.string "Oh? You met WALLY in\n"
-	.string "EVER GRANDE CITY?\p"
+	.string "Ever Grande City?\p"
 	.string "Oh, {PLAYER}{KUN}, don't be silly.\p"
 	.string "He may have gotten healthy, but he\n"
 	.string "can't go somewhere far away like\l"

@@ -408,7 +408,7 @@ BattleFrontier_BattlePikeLobby_Text_TrainersWhicheverPathIChoose: @ 825C558
 	.string "I can't figure it out at all!\p"
 	.string "I've taken the challenge a bunch\n"
 	.string "of times, but all I ever do is run into\l"
-	.string "TRAINERS whichever path I choose.$"
+	.string "Trainers whichever path I choose.$"
 
 BattleFrontier_BattlePikeLobby_Text_RulesAreListed: @ 825C5FB
 	.string "The Battle Choice's rules are listed.$"

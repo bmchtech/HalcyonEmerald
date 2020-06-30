@@ -382,5 +382,5 @@ VerdanturfTown_BattleTentLobby_Text_ScottCanMeetToughTrainers: @ 8201F3F
 
 VerdanturfTown_BattleTentLobby_Text_ScottVisitRegularly: @ 8202025
 	.string "SCOTT: I visit here regularly in hopes\n"
-	.string "of seeing tough TRAINERS in action\l"
+	.string "of seeing tough Trainers in action\l"
 	.string "in whatever the situation.$"

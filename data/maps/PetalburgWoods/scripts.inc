@@ -330,7 +330,7 @@ PetalburgWoods_Text_HaveYouSeenShroomish: @ 822E34F
 
 PetalburgWoods_Text_IWasGoingToAmbushYou: @ 822E3AA
 	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in PETALBURG WOODS\l"
+	.string "had to dawdle in Petalburg WOODS\l"
 	.string "forever, didn't you?\p"
 	.string "I got sick of waiting, so here I am!$"
 
@@ -360,7 +360,7 @@ PetalburgWoods_Text_YouveGotSomeNerve: @ 822E563
 	.string "I wish I could say that, but I'm out of\n"
 	.string "Pokémon…\p"
 	.string "And, hey, we of Team Aqua are also\n"
-	.string "after something in RUSTBORO.\p"
+	.string "after something in Rustboro.\p"
 	.string "I'll let you go today!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose: @ 822E63D
@@ -400,7 +400,7 @@ PetalburgWoods_Text_ICouldntWin: @ 822E7C1
 
 PetalburgWoods_Text_ImOutOfPokeBalls: @ 822E7EF
 	.string "I caught a bunch of Pokémon.\n"
-	.string "Now I'm out of POKé BALLS.$"
+	.string "Now I'm out of Poké Balls.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon: @ 822E827
 	.string "If you take BUG Pokémon to school,\n"
@@ -450,7 +450,7 @@ PetalburgWoods_Text_HiddenItemsExplanation: @ 822EA8B
 
 PetalburgWoods_Text_TryUsingThisItem: @ 822EAFE
 	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
+	.string "That's the BADGE from Rustboro Gym!\p"
 	.string "You must be a Trainer.\n"
 	.string "You should try using this item.$"
 

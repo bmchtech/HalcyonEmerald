@@ -254,7 +254,7 @@ SlateportCity_OceanicMuseum_1F_Text_AquaExistForGoodOfAll: @ 820B0E8
 SlateportCity_OceanicMuseum_1F_Text_OurBossIsntHere: @ 820B112
 	.string "We were told to assemble here,\n"
 	.string "so we did, but…\p"
-	.string "Our BOSS, the linchpin, isn't here.$"
+	.string "Our Boss, the linchpin, isn't here.$"
 
 SlateportCity_OceanicMuseum_1F_Text_WouldStuffHereMakeMeRich: @ 820B165
 	.string "If I ripped off the stuff here,\n"
@@ -266,7 +266,7 @@ SlateportCity_OceanicMuseum_1F_Text_CanLearnForNefariousDeeds: @ 820B19C
 
 SlateportCity_OceanicMuseum_1F_Text_RustboroBungled: @ 820B1D4
 	.string "If our goons didn't bungle things\n"
-	.string "in RUSTBORO, we wouldn't be here!$"
+	.string "in Rustboro, we wouldn't be here!$"
 
 SlateportCity_OceanicMuseum_1F_Text_DidntHaveMoney: @ 820B218
 	.string "I didn't have ¥50, so it took a long\n"
@@ -279,7 +279,7 @@ SlateportCity_OceanicMuseum_1F_Text_LearnAboutSeaForBattling: @ 820B25F
 SlateportCity_OceanicMuseum_1F_Text_SternIsRoleModel: @ 820B2A2
 	.string "I get all giddy and gooey when\n"
 	.string "I see the sea!\p"
-	.string "For me, CAPT. STERN is the number\n"
+	.string "For me, Capt. Stern is the number\n"
 	.string "one role model!$"
 
 SlateportCity_OceanicMuseum_1F_Text_MustBePokemonWeDontKnow: @ 820B302

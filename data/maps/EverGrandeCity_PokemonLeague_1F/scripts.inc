@@ -126,10 +126,10 @@ EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay: @ 82296E5
 
 EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges: @ 82296E8
 	.string "Beyond this point, only those TRAINERS\n"
-	.string "who have collected all the GYM BADGES\l"
+	.string "who have collected all the Gym BADGES\l"
 	.string "are permitted to enter.\p"
 	.string "TRAINER, let us confirm that you have\n"
-	.string "all the GYM BADGES.$"
+	.string "all the Gym BADGES.$"
 
 EverGrandeCity_PokemonLeague_1F_Text_HaventObtainedAllBadges: @ 8229787
 	.string "You haven't obtained all the BADGES.\p"

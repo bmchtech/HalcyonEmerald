@@ -280,7 +280,7 @@ Route128_Text_MaxieThisDefiesBelief: @ 81F704F
 	.string "They've upset the balance of nature…$"
 
 Route128_Text_StevenWhatIsHappening: @ 81F70C9
-	.string "STEVEN: {PLAYER}{KUN}!\n"
+	.string "Steven: {PLAYER}{KUN}!\n"
 	.string "What is happening?$"
 
 Route128_Text_StevenWholeWorldWillDrown: @ 81F70EA
@@ -293,7 +293,7 @@ Route128_Text_StevenWholeWorldWillDrown: @ 81F70EA
 	.string "from above SOOTOPOLIS…\p"
 	.string "What in the world is taking place there?\p"
 	.string "There's no point arguing here…\n"
-	.string "SOOTOPOLIS might provide answers…$"
+	.string "Sootopolis might provide answers…$"
 
 Route128_Text_StevenImGoingToSootopolis: @ 81F721B
 	.string "{PLAYER}{KUN}…\n"

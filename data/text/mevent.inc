@@ -38,6 +38,6 @@ Mevent_Text_TheresATicketForYou:: @ 8273594
 
 Mevent_Text_TryUsingItAtLilycovePort:: @ 82735F2
 	.string "It appears to be for use at\n"
-	.string "the LILYCOVE CITY port.\p"
+	.string "the Lilycove City port.\p"
 	.string "Why not give it a try and see what\n"
 	.string "it is about?$"

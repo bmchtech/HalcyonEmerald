@@ -154,6 +154,6 @@ AbandonedShip_HiddenFloorCorridors_Text_Rm6DoorIsLocked: @ 8238BC3
 AbandonedShip_HiddenFloorCorridors_Text_InsertedKey: @ 8238BF7
 	.string "{PLAYER} inserted and turned the\n"
 	.string "KEY.\p"
-	.string "The inserted KEY stuck fast,\n"
+	.string "The inserted Key stuck fast,\n"
 	.string "but the door opened.$"
 

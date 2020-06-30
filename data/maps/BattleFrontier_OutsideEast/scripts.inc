@@ -236,7 +236,7 @@ BattleFrontier_OutsideEast_EventScript_Camper:: @ 8242E08
 	end
 
 BattleFrontier_OutsideEast_Text_BattleTowerSign: @ 8242E11
-	.string "This is the BATTLE TOWER!\n"
+	.string "This is the Battle Tower!\n"
 	.string "Keep the win streak as the toughest\l"
 	.string "TRAINER!$"
 
@@ -263,7 +263,7 @@ BattleFrontier_OutsideEast_Text_ExchangeCornerSign: @ 8242F4A
 BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial: @ 8242F8C
 	.string "Wow!\n"
 	.string "It's huge!\p"
-	.string "The BATTLE TOWER feels special.\n"
+	.string "The Battle Tower feels special.\n"
 	.string "It's different from the others.$"
 
 BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier: @ 8242FDC
@@ -326,7 +326,7 @@ BattleFrontier_OutsideEast_Text_OnceBeatGymLeader: @ 8243425
 	.string "another shot at glory.$"
 
 BattleFrontier_OutsideEast_Text_FastOnBikeAndBattles: @ 82434A0
-	.string "I'm fast on my BIKE, and that goes for\n"
+	.string "I'm fast on my Bike, and that goes for\n"
 	.string "the way I battle, too.\p"
 	.string "I win matches in the blink of\n"
 	.string "an eye!$"
@@ -382,7 +382,7 @@ BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower: @ 8243895
 	.string "TOWER challenge.\p"
 	.string "Now look at him…\p"
 	.string "You need to be cautious if you ever\n"
-	.string "decide to go to the BATTLE TOWER.$"
+	.string "decide to go to the Battle Tower.$"
 
 BattleFrontier_OutsideEast_Text_EnoughBattlePointsForDoll: @ 8243943
 	.string "Yes!\n"

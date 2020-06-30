@@ -134,7 +134,7 @@ Route110_TrickHousePuzzle2_Text_PaulPostBattle: @ 826BDEC
 	.string "in this house all by himself.$"
 
 Route110_TrickHousePuzzle2_Text_GeorgiaIntro: @ 826BE31
-	.string "I want to make my own GYM one day.\n"
+	.string "I want to make my own Gym one day.\n"
 	.string "So, I'm studying how to set traps.$"
 
 Route110_TrickHousePuzzle2_Text_GeorgiaDefeat: @ 826BE77

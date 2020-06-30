@@ -182,7 +182,7 @@ SootopolisCity_MysteryEventsHouse_1F_Text_OnlyAmusementWatchingBattles: @ 8227B4
 	.string "as a Pokémon Trainer.\p"
 	.string "Now that I've become an old buzzard,\n"
 	.string "my only amusement is watching young\l"
-	.string "TRAINERS battle.$"
+	.string "Trainers battle.$"
 
 SootopolisCity_MysteryEventsHouse_1F_Text_DoorAppearsToBeLocked: @ 8227BDD
 	.string "The door appears to be locked.$"
