@@ -33,7 +33,7 @@ SlateportCity_Mart_EventScript_Man:: @ 820DC7F
 	end
 
 SlateportCity_Mart_Text_SomeItemsOnlyAtMart: @ 820DC88
-	.string "The MARKET does have some interesting\n"
+	.string "The Market does have some interesting\n"
 	.string "merchandise.\p"
 	.string "But there are some items you can only\n"
 	.string "get at a Pokémon Mart.$"

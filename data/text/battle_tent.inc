@@ -124,7 +124,7 @@ VerdanturfTown_BattleTentLobby_Text_WelcomeToBattleTent: @ 82C50C3
 	.string "Pokémon is tested.$"
 
 VerdanturfTown_BattleTentLobby_Text_TakeChallenge: @ 82C5129
-	.string "Do you wish to take the VERDANTURF\n"
+	.string "Do you wish to take the Verdanturf\n"
 	.string "Battle Tent challenge?$"
 
 VerdanturfTown_BattleTentLobby_Text_ExplainVerdanturfTent: @ 82C5163

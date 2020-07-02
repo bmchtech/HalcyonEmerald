@@ -230,7 +230,7 @@ SlateportCity_OceanicMuseum_1F_Movement_FamiliarGruntExitNorth: @ 820AFCE
 	step_end
 
 SlateportCity_OceanicMuseum_1F_Text_WouldYouLikeToEnter: @ 820AFD5
-	.string "Welcome to the OCEANIC Museum.\p"
+	.string "Welcome to the Oceanic Museum.\p"
 	.string "The entrance fee is ¥50.\n"
 	.string "Would you like to enter?$"
 
@@ -316,13 +316,13 @@ SlateportCity_OceanicMuseum_1F_Text_WhirlpoolExperiment: @ 820B4CF
 	.string "A blue fluid is spiraling inside\n"
 	.string "a glass vessel.\p"
 	.string "“This is an experiment to create a\n"
-	.string "WHIRLPOOL artificially using wind.”$"
+	.string "Whirlpool artificially using wind.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_WaterfallExperiment: @ 820B547
 	.string "A red ball is bobbing up and down\n"
 	.string "inside a glass vessel.\p"
 	.string "“This is an experiment simulating a\n"
-	.string "WATERFALL using the ball's buoyancy.”$"
+	.string "Waterfall using the ball's buoyancy.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_OceanSoilDisplay: @ 820B5CA
 	.string "It's a sample of soil from the ocean\n"

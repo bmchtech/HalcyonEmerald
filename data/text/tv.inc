@@ -1205,7 +1205,7 @@ gTVTodaysRivalTrainerText01:: @ 0828485F
 
 gTVTodaysRivalTrainerText02:: @ 0828489A
 	.string "But our rival hasn't obtained\n"
-	.string "a single BADGE yet!$"
+	.string "a single Badge yet!$"
 
 gTVTodaysRivalTrainerText03:: @ 082848CC
 	.string "Our rival hasn't obtained a single\n"

@@ -85,27 +85,27 @@ SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern: @ 82080A5
 	.string "STERN and deliver that to him?$"
 
 SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern: @ 82081A5
-	.string "DOCK: Where could Capt. Stern have\n"
+	.string "Dock: Where could Capt. Stern have\n"
 	.string "gone off to?\p"
 	.string "Could you go find Capt. Stern and\n"
 	.string "deliver that parcel to him?$"
 
 SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran: @ 8208213
-	.string "DOCK: Shipbuilding is an art.\p"
+	.string "Dock: Shipbuilding is an art.\p"
 	.string "A lot of things can't be figured out\n"
 	.string "just by calculating.\p"
 	.string "I really could use advice from a veteran\n"
 	.string "who knows the seas…$"
 
 SlateportCity_SternsShipyard_1F_Text_BrineyJoinedUs: @ 82082A8
-	.string "DOCK: Hi! Mr. Briney's joined us to\n"
+	.string "Dock: Hi! Mr. Briney's joined us to\n"
 	.string "lend us his help.\p"
 	.string "Thanks to the veteran sailor, the\n"
 	.string "ferry is steadily coming together.$"
 
 SlateportCity_SternsShipyard_1F_Text_FerryIsReady: @ 8208323
-	.string "DOCK: The ferry is finally ready!\p"
-	.string "The new S.S. TIDAL is truly a marvel\n"
+	.string "Dock: The ferry is finally ready!\p"
+	.string "The new S.S. Tidal is truly a marvel\n"
 	.string "of technology!\p"
 	.string "But, I get the feeling that we can\n"
 	.string "make something even better.\p"

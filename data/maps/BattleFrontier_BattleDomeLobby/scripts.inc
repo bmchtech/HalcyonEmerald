@@ -692,7 +692,7 @@ BattleFrontier_BattleDomeLobby_Text_ExplainTourneyTree: @ 824AF4C
 	.string "The data on view includes the previous\n"
 	.string "tournament's results, the Pokémon held\l"
 	.string "by TRAINERS, and the battle styles of\l"
-	.string "TRAINERS.$"
+	.string "Trainers.$"
 
 BattleFrontier_BattleDomeLobby_Text_ExplainDoubleKORules: @ 824B073
 	.string "If battling Pokémon faint at the same\n"

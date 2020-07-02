@@ -296,15 +296,15 @@ TrainerHill_Entrance_Pokemart_Expanded: @ 8268414
 	end
 
 TrainerHill_Entrance_Text_StillGettingReady: @ 8268430
-	.string "This is the Trainer HILL where\n"
+	.string "This is the Trainer Hill where\n"
 	.string "you may enjoy tag battles with many\l"
-	.string "TRAINERS.\p"
+	.string "Trainers.\p"
 	.string "Unfortunately, we're still getting\n"
 	.string "things ready. Please come back later!$"
 
 TrainerHill_Entrance_Text_WelcomeToTrainerHill: @ 82684C6
 	.string "Welcome!\p"
-	.string "This is the Trainer HILL where\n"
+	.string "This is the Trainer Hill where\n"
 	.string "you may enjoy tag battles with many\l"
 	.string "Trainers!$"
 
@@ -326,7 +326,7 @@ TrainerHill_Entrance_Text_TrainersInEveryRoom: @ 826859E
 
 TrainerHill_Entrance_Text_LikeToChallengeTrainers: @ 82685F8
 	.string "Would you like to challenge the\n"
-	.string "waiting TRAINERS?$"
+	.string "waiting Trainers?$"
 
 TrainerHill_Entrance_Text_TimeProgessGetSetGo: @ 826862A
 	.string "I will time your progress.\n"
@@ -358,7 +358,7 @@ TrainerHill_Entrance_Text_ThankYouForPlaying: @ 82687AC
 	.string "Thank you for playing!$"
 
 TrainerHill_Entrance_Text_ExplainTrainerHill: @ 82687C3
-	.string "Here at the Trainer HILL, we conduct\n"
+	.string "Here at the Trainer Hill, we conduct\n"
 	.string "an event called the Time Attack.\p"
 	.string "It is a race that measures how long\n"
 	.string "you take to reach our owner on\l"
@@ -385,7 +385,7 @@ TrainerHill_Roof_Text_YouFinallyCameBravo: @ 8268986
 	.string "I know why you came all the way\l"
 	.string "here by yourself!\p"
 	.string "You wanted to see me, the owner\n"
-	.string "of the Trainer HILL, because…\p"
+	.string "of the Trainer Hill, because…\p"
 	.string "You want to form a tag team with me!\n"
 	.string "Wa-hoo!\p"
 	.string "…Uh?\n"
@@ -422,7 +422,7 @@ TrainerHill_Roof_Text_ArriveZippierNextTime: @ 8268C31
 
 @ Unused
 TrainerHill_Roof_Text_BuiltTrainerHillToFindPartner: @ 8268CC6
-	.string "I had the Trainer HILL built for but\n"
+	.string "I had the Trainer Hill built for but\n"
 	.string "one reason and one only!\p"
 	.string "To find the most suitable partner\n"
 	.string "with whom I may form a tag team!$"
@@ -438,7 +438,7 @@ TrainerHill_Entrance_Text_WhatSortOfTrainersAreAhead: @ 8268D5A
 
 TrainerHill_Entrance_Text_CantWaitToTestTheWaters: @ 8268DDA
 	.string "I heard tough Trainers come to this\n"
-	.string "Trainer HILL from all over.\p"
+	.string "Trainer Hill from all over.\p"
 	.string "I can't wait to test the waters!\p"
 	.string "I'll knock aside anyone that stands\n"
 	.string "in my way!$"

@@ -727,7 +727,7 @@ Route108_Text_JeromePostBattle: @ 8296D6E
 
 Route108_Text_MatthewIntro: @ 8296DAF
 	.string "Ahoy, there! Are you going out to\n"
-	.string "the ABANDONED SHIP, too?$"
+	.string "the Abandoned Ship, too?$"
 
 Route108_Text_MatthewDefeated: @ 8296DEA
 	.string "I'm sinking!\n"
@@ -735,7 +735,7 @@ Route108_Text_MatthewDefeated: @ 8296DEA
 
 Route108_Text_MatthewPostBattle: @ 8296E03
 	.string "Some people even go inside that\n"
-	.string "ABANDONED SHIP.$"
+	.string "Abandoned Ship.$"
 
 Route108_Text_TaraIntro: @ 8296E33
 	.string "My liar of a boyfriend told me that\n"
@@ -4228,7 +4228,7 @@ Route128_Text_RubenPostBattle: @ 82A2D0D
 	.string "than you!$"
 
 Route128_Text_WayneIntro: @ 82A2D3D
-	.string "I want to visit EVER GRANDE, so I\n"
+	.string "I want to visit Ever Grande, so I\n"
 	.string "caught myself a Pokémon that knows\l"
 	.string "the move WATERFALL to crest the falls.$"
 
@@ -4250,7 +4250,7 @@ Route128_Text_HarrisonDefeat: @ 82A2E44
 
 Route128_Text_HarrisonPostBattle: @ 82A2E6C
 	.string "There are tough Trainers galore\n"
-	.string "around EVER GRANDE.\p"
+	.string "around Ever Grande.\p"
 	.string "Do you think I may be out\n"
 	.string "of my league?$"
 
@@ -4327,7 +4327,7 @@ Route129_Text_ClarenceDefeat: @ 82A3239
 
 Route129_Text_ClarencePostBattle: @ 82A3252
 	.string "You have your sights on the Pokémon\n"
-	.string "LEAGUE? Keep at it!$"
+	.string "League? Keep at it!$"
 
 Route130_Text_RodneyIntro: @ 82A328A
 	.string "What a surprise! I didn't expect to\n"

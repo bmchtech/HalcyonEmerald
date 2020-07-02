@@ -40,7 +40,7 @@ VictoryRoad_B1F_Text_SamuelPostBattle: @ 82365C4
 
 VictoryRoad_B1F_Text_ShannonIntro: @ 82365FD
 	.string "To win your way through the Pokémon\n"
-	.string "LEAGUE, you need the trust of your\l"
+	.string "League, you need the trust of your\l"
 	.string "Pokémon.$"
 
 VictoryRoad_B1F_Text_ShannonDefeat: @ 823664D

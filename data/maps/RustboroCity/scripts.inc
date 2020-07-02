@@ -1039,7 +1039,7 @@ RustboroCity_EventScript_Boy1:: @ 81E1236
 
 RustboroCity_Text_WeShortenItToDevon: @ 81E123F
 	.string "The Devon Corporation…\n"
-	.string "We all just shorten it to DEVON.\p"
+	.string "We all just shorten it to Devon.\p"
 	.string "That company makes all sorts of\n"
 	.string "convenient products.$"
 
@@ -1058,7 +1058,7 @@ RustboroCity_Text_HaveYouChallengedGym: @ 81E130D
 RustboroCity_Text_HeyThatsRustborosGymBadge: @ 81E139E
 	.string "Hey, that's Rustboro's Gym Badge!\p"
 	.string "Out of all the Pokémon Gym Badges,\n"
-	.string "RUSTBORO's is the coolest, I'd say.$"
+	.string "Rustboro's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere: @ 81E1407
 	.string "Oh? Who might you be?\n"
@@ -1071,7 +1071,7 @@ RustboroCity_Text_GymLeaderIsntEasyWithFire: @ 81E1480
 	.string "It's not going to be easy winning with\n"
 	.string "my Fire-type Pokémon…\p"
 	.string "Fire-type Pokémon don't match up\n"
-	.string "well against ROCK-type Pokémon…$"
+	.string "well against Rock-type Pokémon…$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel: @ 81E1520
 	.string "The old sailor Mr. Briney lives in\n"
@@ -1110,7 +1110,7 @@ RustboroCity_Text_TradePokemonGrowFast: @ 81E1789
 	.string "A Pokémon you get in a trade from\n"
 	.string "someone grows fast.\p"
 	.string "But if you don't have certain Gym\n"
-	.string "BADGES, it may not obey you…$"
+	.string "Badges, it may not obey you…$"
 
 RustboroCity_Text_OutOfTheWay: @ 81E17FE
 	.string "Get out!\n"
@@ -1262,12 +1262,12 @@ RustboroCity_Text_DevonCorpSign: @ 81E2128
 
 RustboroCity_Text_GymSign: @ 81E2167
 	.string "Rustboro City Pokémon Gym\n"
-	.string "Leader: ROXANNE\p"
+	.string "Leader: Roxanne\p"
 	.string "“The ROCK-loving honors student!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign: @ 81E21B3
-	.string "DEVON CORP. BRANCH OFFICE\p"
-	.string "“Access limited to DEVON employees\n"
+	.string "Devon Corp. Branch Office\p"
+	.string "“Access limited to Devon employees\n"
 	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign: @ 81E220B
@@ -1281,14 +1281,14 @@ RustboroCity_Text_TrainersSchoolSign: @ 81E2253
 	.string "Pokémon!”$"
 
 RustboroCity_Text_CuttersHouse: @ 81E2296
-	.string "CUTTER'S HOUSE$"
+	.string "Cutter's House$"
 
 RustboroCity_Text_DevelopedNewPokenavFeature: @ 81E22A5
 	.string "I've been developing an added feature\n"
 	.string "for the PokéNav…\p"
 	.string "And it turned out great!\p"
 	.string "{PLAYER}, may I see that PokéNav?\n"
-	.string "The one our PRESIDENT gave you?$"
+	.string "The one our President gave you?$"
 
 RustboroCity_Text_AddedMatchCallPleaseCallMrStone: @ 81E2331
 	.string "There you go, {PLAYER}!\p"
@@ -1297,10 +1297,10 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone: @ 81E2331
 	.string "Using the Match Call feature,\n"
 	.string "you can chat with people who have\l"
 	.string "been registered in your PokéNav.\p"
-	.string "{PLAYER}, our PRESIDENT STONE should\n"
+	.string "{PLAYER}, our President Stone should\n"
 	.string "be registered in your PokéNav.\p"
 	.string "Test it out.\n"
-	.string "Please give our PRESIDENT a call.$"
+	.string "Please give our President a call.$"
 
 RustboroCity_Text_PleaseSelectPokenav: @ 81E2449
 	.string "Please select the PokéNav.$"

@@ -269,7 +269,7 @@ BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial: @ 8242F8C
 BattleFrontier_OutsideEast_Text_ConquerLeagueAndFrontier: @ 8242FDC
 	.string "My grand ambition is to conquer both\n"
 	.string "the Battle Frontier and the Pokémon\l"
-	.string "LEAGUE.\p"
+	.string "League.\p"
 	.string "And if my dream comes true…\p"
 	.string "I… I'm going to ask MIMI next door\n"
 	.string "if she will be friends with me!$"

@@ -280,7 +280,7 @@ SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts: @ 820BD8D
 	.string "Yes? If you're looking for STERN,\n"
 	.string "that would be me.\p"
 	.string "Ah! Those must be the parts I ordered\n"
-	.string "from Mr. Stone of DEVON.\p"
+	.string "from Mr. Stone of Devon.\p"
 	.string "Thank you! That's great!\n"
 	.string "We can prepare for our expedition now.$"
 
@@ -328,7 +328,7 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning: @ 820C059
 	.string "We are Team Aqua,\n"
 	.string "and we love the sea!\p"
 	.string "And I am Team Aqua's leader,\n"
-	.string "ARCHIE!\p"
+	.string "Archie!\p"
 	.string "What makes you interfere with us?\p"
 	.string "…No! You can't be!\n"
 	.string "You're not one of Team Magma?\p"
@@ -373,7 +373,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs: @ 820C2BE
 	.string "Anyway, that was a tense situation!\n"
 	.string "Thank you for saving us!\p"
 	.string "Oh, yes, I almost forgot that you\n"
-	.string "even brought the parts from DEVON!$"
+	.string "even brought the parts from Devon!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo: @ 820C36C
 	.string "Capt. Stern: Whoops!\n"
@@ -387,7 +387,7 @@ SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo: @ 820C36C
 
 SlateportCity_OceanicMuseum_2F_Text_RemindsMeOfAbandonedShip: @ 820C43F
 	.string "I saw a model of a ship here.\p"
-	.string "It reminded me of the ABANDONED SHIP\n"
+	.string "It reminded me of the Abandoned Ship\n"
 	.string "near Dewford Town…$"
 
 SlateportCity_OceanicMuseum_2F_Text_DontRunInMuseum: @ 820C495
@@ -422,7 +422,7 @@ SlateportCity_OceanicMuseum_2F_Text_PressureExperiment: @ 820C5C6
 	.string "thousands of tons on a small area.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_HoennModel: @ 820C6C7
-	.string "“MODEL OF Hoenn REGION”\p"
+	.string "“MODEL OF HOENN REGION”\p"
 	.string "It's a miniature diorama of the\n"
 	.string "Hoenn region.\p"
 	.string "Where is Littleroot Town on this?$"
@@ -441,10 +441,10 @@ SlateportCity_OceanicMuseum_2F_Text_SurfaceSeawaterDisplay: @ 820C7C1
 SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica: @ 820C82F
 	.string "“THE FERRY S.S. TIDAL\p"
 	.string "“A scale replica of the ship under\n"
-	.string "construction at STERN'S SHIPYARD.”$"
+	.string "construction at Stern's Shipyard.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica: @ 820C88B
-	.string "“SUBMARINE EXPLORER 1\p"
+	.string "“Submarine Explorer 1\p"
 	.string "“A replica of the high-performance\n"
 	.string "ocean floor exploration submarine.”$"
 

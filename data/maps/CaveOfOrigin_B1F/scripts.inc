@@ -65,7 +65,7 @@ CaveOfOrigin_B1F_Text_WallaceStory: @ 823586E
 	.string "My name is Wallace.\p"
 	.string "I was once the Gym Leader of\n"
 	.string "Sootopolis, but something came up.\p"
-	.string "So now, I've entrusted my mentor JUAN\n"
+	.string "So now, I've entrusted my mentor Juan\n"
 	.string "with the Gym's operation.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"

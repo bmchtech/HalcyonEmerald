@@ -212,7 +212,7 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist:: @ 827018B
 	end
 
 Route119_WeatherInstitute_2F_Text_Grunt2Intro: @ 827019C
-	.string "The INSTITUTE created a type of\n"
+	.string "The Institute created a type of\n"
 	.string "Pokémon that has something to do with\l"
 	.string "the weather. We're here to take them!$"
 

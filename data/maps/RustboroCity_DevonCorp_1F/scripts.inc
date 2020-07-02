@@ -79,8 +79,8 @@ RustboroCity_DevonCorp_1F_EventScript_ProductsDisplay:: @ 8211312
 	end
 
 RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp: @ 821131B
-	.string "Hello and welcome to the DEVON\n"
-	.string "CORPORATION.\p"
+	.string "Hello and welcome to the Devon\n"
+	.string "Corporation.\p"
 	.string "We're proud producers of items and\n"
 	.string "medicine that enhance your life.$"
 
@@ -127,7 +127,7 @@ RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay: @ 82115AC
 	.string "“The company also produced iron from\n"
 	.string "filings in the sand.\p"
 	.string "“From that humble start as a producer\n"
-	.string "of raw materials, DEVON developed.\p"
+	.string "of raw materials, Devon developed.\p"
 	.string "“DEVON is now a manufacturer of a wide\n"
 	.string "range of industrial products.”$"
 
@@ -136,9 +136,9 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay: @ 8211722
 	.string "the glass display case.\p"
 	.string "There's a panel with a description…\p"
 	.string "“In addition to industrial products,\n"
-	.string "DEVON now markets sundries and\l"
+	.string "Devon now markets sundries and\l"
 	.string "pharmaceuticals for better lifestyles.\p"
-	.string "“Recently, DEVON has begun marketing\n"
-	.string "tools for Pokémon TRAINERS, including\l"
+	.string "“Recently, Devon has begun marketing\n"
+	.string "tools for Pokémon Trainers, including\l"
 	.string "Poké Balls and PokéNav systems.”$"
 

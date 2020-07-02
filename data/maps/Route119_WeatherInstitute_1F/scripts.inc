@@ -109,15 +109,15 @@ Route119_WeatherInstitute_1F_Text_WowYoureStrong: @ 826FCE5
 	.string "like you!$"
 
 Route119_WeatherInstitute_1F_Text_ProfStudyingRain: @ 826FD2E
-	.string "The PROFESSOR loves rain.\n"
+	.string "The Professor loves rain.\n"
 	.string "That's a fact.\p"
 	.string "But if it keeps raining, people will be in\n"
 	.string "trouble. That's another fact.\p"
-	.string "And thus, the PROFESSOR is studying\n"
+	.string "And thus, the Professor is studying\n"
 	.string "if the rain can be put to good use.$"
 
 Route119_WeatherInstitute_1F_Text_NoticingAbnormalWeather: @ 826FDE8
-	.string "On the 2nd floor of the INSTITUTE,\n"
+	.string "On the 2nd floor of the Institute,\n"
 	.string "we study the weather patterns over\l"
 	.string "the Hoenn region.\p"
 	.string "We've been noticing temporary and\n"
@@ -128,7 +128,7 @@ Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo: @ 826FE94
 	.string "Hello!\n"
 	.string "We've been saved by your actions!\p"
 	.string "What I don't understand is what on\n"
-	.string "earth the AQUAS were up to.$"
+	.string "earth the Aquas were up to.$"
 
 Route119_WeatherInstitute_1F_Text_TakeRestInBed: @ 826FEFC
 	.string "There's a bed…\n"

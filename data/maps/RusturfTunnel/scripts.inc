@@ -454,12 +454,12 @@ RusturfTunnel_Text_GruntTakePackage: @ 822D2E1
 	.string "The Boss told me this would be a\n"
 	.string "slick-and-easy job to pull.\p"
 	.string "All I had to do was steal some package\n"
-	.string "from DEVON.\p"
+	.string "from Devon.\p"
 	.string "Tch!\n"
 	.string "You want it back that badly, take it!$"
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe: @ 822D395
-	.string "PEEKO!\n"
+	.string "Peeko!\n"
 	.string "Am I glad to see you're safe!$"
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko: @ 822D3BA
@@ -482,7 +482,7 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 	.string "… …\p"
 	.string "Why can't they keep digging?\n"
 	.string "Is the bedrock too hard?\p"
-	.string "My beloved awaits me in VERDANTURF\n"
+	.string "My beloved awaits me in Verdanturf\n"
 	.string "TOWN just beyond here…\p"
 	.string "If Rustboro and Verdanturf were\n"
 	.string "joined by this tunnel, I could visit\l"
@@ -491,7 +491,7 @@ RusturfTunnel_Text_WhyCantTheyKeepDigging: @ 822D510
 	.string "What am I to do?$"
 
 RusturfTunnel_Text_ToGetToVerdanturf: @ 822D5F3
-	.string "To get from Rustboro to VERDANTURF,\n"
+	.string "To get from Rustboro to Verdanturf,\n"
 	.string "you need to go to Dewford, then pass\l"
 	.string "through Slateport and Mauville…$"
 
@@ -502,15 +502,15 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM: @ 822D65C
 	.string "I'd like you to have this HM.$"
 
 RusturfTunnel_Text_ExplainStrength: @ 822D6D2
-	.string "That HM contains STRENGTH.\p"
+	.string "That HM contains Strength.\p"
 	.string "If a muscular Pokémon were to learn\n"
 	.string "that, it would be able to move even\l"
 	.string "large boulders.$"
 
 RusturfTunnel_Text_WandaReunion: @ 822D745
-	.string "WANDA!\n"
+	.string "Wanda!\n"
 	.string "Now I can see you anytime!\p"
-	.string "WANDA: That's…wonderful.\p"
+	.string "Wanda: That's…wonderful.\p"
 	.string "Please, take some rest at my home.$"
 
 RusturfTunnel_Text_BoyfriendOnOtherSideOfRock: @ 822D7A3

@@ -1459,7 +1459,7 @@ SootopolisCity_Movement_DestroyTask:: @ 81E656D
 
 SootopolisCity_Text_GymSign: @ 81E656F
 	.string "Sootopolis City Pokémon Gym\n"
-	.string "Leader: JUAN\p"
+	.string "Leader: Juan\p"
 	.string "“The Gym Leader with the beauty\n"
 	.string "of pure water!”$"
 
@@ -1593,7 +1593,7 @@ SootopolisCity_Text_LeadSuperiorTrainerToCave: @ 81E6DFE
 	.string "experience of many kinds of Pokémon…\p"
 	.string "If such a person were to appear, I was\n"
 	.string "instructed by Wallace to lead that\l"
-	.string "Trainer to this CAVE.$"
+	.string "Trainer to this cave.$"
 
 SootopolisCity_Text_AwakenedPokemonClash: @ 81E6ED4
 	.string "Oh, my…\p"
@@ -1712,7 +1712,7 @@ SootopolisCity_Text_DoesThisMakeYourFearPokemon: @ 81E7737
 SootopolisCity_Text_HereWereAreHelpWallace: @ 81E77F0
 	.string "Steven: Okay, here we are!\p"
 	.string "Inside here you'll find someone named\n"
-	.string "WALLACE.\p"
+	.string "Wallace.\p"
 	.string "I think you have what's needed to\n"
 	.string "help him…$"
 
@@ -1734,7 +1734,7 @@ SootopolisCity_Text_MaxieArchieLeft: @ 81E794B
 	.string "Steven: It looks like both Maxie and\n"
 	.string "Archie have gone away somewhere.\p"
 	.string "Perhaps they've gone to Mt. Pyre to\n"
-	.string "return those ORBS…$"
+	.string "return those Orbs…$"
 
 SootopolisCity_Text_HaventYouScaledSkyPillar: @ 81E79C8
 	.string "Wallace: Oh?\n"
@@ -1762,11 +1762,11 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis: @ 81E7ACF
 
 SootopolisCity_Text_ExplainWaterfallGoToGym: @ 81E7B86
 	.string "That Hidden Machine contains\n"
-	.string "WATERFALL.\p"
-	.string "If you have the RAIN BADGE, a Pokémon\n"
+	.string "Waterfall.\p"
+	.string "If you have the Rain Badge, a Pokémon\n"
 	.string "that has learned that HM move can\l"
 	.string "force its way up waterfalls.\p"
-	.string "And where does one get the RAIN BADGE?\n"
+	.string "And where does one get the Rain Badge?\n"
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
 	.string "the Sootopolis Gym Leader.\p"

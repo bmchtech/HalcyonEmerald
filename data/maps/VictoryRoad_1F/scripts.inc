@@ -168,7 +168,7 @@ VictoryRoad_1F_Text_EdgarDefeat: @ 82361CB
 VictoryRoad_1F_Text_EdgarPostBattle: @ 82361E5
 	.string "You've made it this far. Keep the\n"
 	.string "momentum going and become the\l"
-	.string "CHAMPION! If anyone can, it's you!$"
+	.string "Champion! If anyone can, it's you!$"
 
 VictoryRoad_1F_Text_AlbertIntro: @ 8236248
 	.string "I didn't come all this way to lose now.\n"
@@ -206,8 +206,8 @@ VictoryRoad_1F_Text_QuincyPostBattle: @ 82363D5
 	.string "Getting through here safely--that's\n"
 	.string "the final test for any Trainer aiming\l"
 	.string "to become the Pokémon Champion.\p"
-	.string "That's why it's called the VICTORY\n"
-	.string "ROAD.$"
+	.string "That's why it's called the Victory\n"
+	.string "Road.$"
 
 VictoryRoad_1F_Text_KatelynnIntro: @ 8236468
 	.string "I have nothing to say to anyone\n"

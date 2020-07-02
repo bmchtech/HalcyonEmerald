@@ -476,7 +476,7 @@ SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove: @ 820D291
 SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine: @ 820D35A
 	.string "Capt. Stern: Why…\p"
 	.string "Why would Team Aqua steal my\n"
-	.string "SUBMARINE EXPLORER 1?\p"
+	.string "Submarine Explorer 1?\p"
 	.string "They can't be after the slumbering\n"
 	.string "Pokémon at the bottom of the sea…\p"
 	.string "But even if I were to chase them,\n"
@@ -509,14 +509,14 @@ SlateportCity_Harbor_Text_NeedDiveToCatchSub: @ 820D58A
 
 SlateportCity_Harbor_Text_WontBeLongBeforeWeFinishFerry: @ 820D65C
 	.string "Capt. Stern: Oh, yes.\n"
-	.string "Mr. Briney came to our SHIPYARD.\p"
+	.string "Mr. Briney came to our Shipyard.\p"
 	.string "It won't be long now before we finish\n"
 	.string "making the ferry!$"
 
 SlateportCity_Harbor_Text_FinishedMakingFerry: @ 820D6CB
 	.string "Capt. Stern: {PLAYER}{KUN}!\p"
 	.string "We finally finished making the ferry\n"
-	.string "S.S. TIDAL!\p"
+	.string "S.S. Tidal!\p"
 	.string "We couldn't have done it without\n"
 	.string "your friend Mr. Briney.\p"
 	.string "Please go for a short cruise on it!$"
@@ -527,9 +527,9 @@ SlateportCity_Harbor_Text_WouldYouTradeScanner: @ 820D76C
 	.string "That's a Scanner! That would sure\n"
 	.string "help us on our explorations.\p"
 	.string "{PLAYER}{KUN}, would you trade your\n"
-	.string "SCANNER for something?\p"
-	.string "Like, say, a DEEPSEATOOTH or\n"
-	.string "a DEEPSEASCALE that I have?$"
+	.string "Scanner for something?\p"
+	.string "Like, say, a DeepSeaTooth or\n"
+	.string "a DeepSeaScale that I have?$"
 
 SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow: @ 820D841
 	.string "Capt. Stern: Are you certain?\n"
@@ -539,11 +539,11 @@ SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow: @ 820D841
 
 SlateportCity_Harbor_Text_TradeForDeepSeaTooth: @ 820D8BC
 	.string "Capt. Stern: So you'll trade it for\n"
-	.string "my DEEPSEATOOTH?$"
+	.string "my DeepSeaTooth?$"
 
 SlateportCity_Harbor_Text_TradeForDeepSeaScale: @ 820D8F1
 	.string "Capt. Stern: So you'll trade it for\n"
-	.string "my DEEPSEASCALE?$"
+	.string "my DeepSeaScale?$"
 
 SlateportCity_Harbor_Text_WhichOneDoYouWant: @ 820D926
 	.string "Capt. Stern: Which one do you want?$"

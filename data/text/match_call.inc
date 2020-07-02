@@ -783,7 +783,7 @@ MatchCall_PersonalizedText13:: @ 82ACA59
 MatchCall_PersonalizedText14:: @ 82ACB02
 	.string "Oh, it's {STR_VAR_1}!\p"
 	.string "I was just thinking I'm getting\n"
-	.string "bored of the ABANDONED SHIP.\p"
+	.string "bored of the Abandoned Ship.\p"
 	.string "But since I'm already here,\n"
 	.string "and I want to beat you once,\l"
 	.string "I'll be sticking around a bit more.\p"
@@ -1102,7 +1102,7 @@ MatchCall_PersonalizedText39:: @ 82AE489
 	.string "I just put on some suntan oil.\p"
 	.string "So my PokéNav went whoopsy\n"
 	.string "out of my hand into the water!\p"
-	.string "But, boy, DEVON's PokéNav is built\n"
+	.string "But, boy, Devon's PokéNav is built\n"
 	.string "tough. It survived that dunking!\p"
 	.string "Anyways, I'm busy sunbathing,\n"
 	.string "so let's chat another time.$"
@@ -2224,7 +2224,7 @@ MatchCall_Text_TateLiza4:: @ 82B31CD
 	.string "Liza: We could all battle again!$"
 
 MatchCall_Text_Juan1:: @ 82B3249
-	.string "JUAN: Hmm…\n"
+	.string "Juan: Hmm…\n"
 	.string "{PLAYER}{KUN}… Was it?\p"
 	.string "Our battle together--it brought\n"
 	.string "to me memories of when I first\l"
@@ -2233,7 +2233,7 @@ MatchCall_Text_Juan1:: @ 82B3249
 	.string "yet surpass Wallace!$"
 
 MatchCall_Text_Juan2:: @ 82B32EC
-	.string "JUAN: Fufu… {PLAYER}{KUN}…\n"
+	.string "Juan: Fufu… {PLAYER}{KUN}…\n"
 	.string "You've finally achieved your goal.\p"
 	.string "My eye for appraising talent wasn't\n"
 	.string "mistaken…\p"
@@ -2242,14 +2242,14 @@ MatchCall_Text_Juan2:: @ 82B32EC
 	.string "of power and prestige.$"
 
 MatchCall_Text_Juan3:: @ 82B33AA
-	.string "JUAN: Hoho… {PLAYER}{KUN}…\p"
+	.string "Juan: Hoho… {PLAYER}{KUN}…\p"
 	.string "Our Sootopolis Gym has finally\n"
 	.string "reopened.\p"
 	.string "If you wish to see me, you are\n"
 	.string "welcome to visit anytime.$"
 
 MatchCall_Text_Juan4:: @ 82B341E
-	.string "JUAN: {PLAYER}{KUN}…\p"
+	.string "Juan: {PLAYER}{KUN}…\p"
 	.string "Like the finest music, the battles\n"
 	.string "we wage together strike chords\l"
 	.string "of inspiration in my heart…\p"
@@ -2286,7 +2286,7 @@ MatchCall_Text_Drake:: @ 82B368B
 	.string "I understand that there is now\n"
 	.string "a facility called the BATTLE\l"
 	.string "FRONTIER that tests the skills of\l"
-	.string "TRAINERS.\p"
+	.string "Trainers.\p"
 	.string "However, if you wish to have real\n"
 	.string "battles, there is no substitute for\l"
 	.string "the Pokémon League!\p"
@@ -2367,7 +2367,7 @@ MatchCall_Text_May4:: @ 2B3CF3
 	.string "May: {PLAYER}{KUN}?\p"
 	.string "Rusturf Tunnel…\n"
 	.string "They named it that because it\l"
-	.string "joins Rustboro and VERDANTURF.$"
+	.string "joins Rustboro and Verdanturf.$"
 
 MatchCall_Text_May5:: @ 2B3D4B
 	.string "May: {PLAYER}{KUN}, how are you?\p"
@@ -2596,7 +2596,7 @@ MatchCall_Text_Wally1:: @ 2B4DE2
 MatchCall_Text_Wally2:: @ 2B4E57
 	.string "Wally: {PLAYER}, hello!\p"
 	.string "After Rusturf Tunnel went\n"
-	.string "through, WANDA's been very happy!$"
+	.string "through, Wanda's been very happy!$"
 
 MatchCall_Text_Wally3:: @ 2B4EA5
 	.string "Wally: Oh, {PLAYER}!\p"
@@ -2875,7 +2875,7 @@ MatchCall_Text_MrStone2:: @ 82B61E6
 	.string "After that, deliver our parcel to\n"
 	.string "Capt. Stern in Slateport.\p"
 	.string "You remember, don't you?\p"
-	.string "Now, since I am a busy PRESIDENT,\n"
+	.string "Now, since I am a busy President,\n"
 	.string "I have to go! Bye-bye!$"
 
 MatchCall_Text_MrStone3:: @ 82B6302
@@ -2888,7 +2888,7 @@ MatchCall_Text_MrStone3:: @ 82B6302
 
 MatchCall_Text_MrStone4:: @ 82B63A0
 	.string "Mr. Stone: Oh! {PLAYER}{KUN}!\p"
-	.string "Did you know that DEVON was\n"
+	.string "Did you know that Devon was\n"
 	.string "digging the Rusturf Tunnel?\p"
 	.string "But we shut down the operation to\n"
 	.string "protect the Pokémon in the area.\p"
@@ -2914,11 +2914,11 @@ MatchCall_Text_MrStone6:: @ 82B6526
 
 MatchCall_Text_MrStone7:: @ 82B65BB
 	.string "Hello!\n"
-	.string "This is DEVON CORPORATI…\l"
+	.string "This is Devon CORPORATI…\l"
 	.string "Oh, hello, {PLAYER}!\p"
-	.string "Our PRESIDENT was here a little\n"
+	.string "Our President was here a little\n"
 	.string "while ago, but he's gone out.\p"
-	.string "Our PRESIDENT is busy, but you\n"
+	.string "Our President is busy, but you\n"
 	.string "seem to be just as busy, {PLAYER}.$"
 
 MatchCall_Text_MrStone8:: @ 82B6664
@@ -2950,5 +2950,5 @@ MatchCall_Text_MrStone11:: @ 82B67ED
 	.string "Is this maybe {PLAYER}{KUN}?\p"
 	.string "Your voice is so full of confidence,\n"
 	.string "I didn't recognize you right off!\p"
-	.string "Hm! You must come visit us at DEVON\n"
+	.string "Hm! You must come visit us at Devon\n"
 	.string "sometime!$"

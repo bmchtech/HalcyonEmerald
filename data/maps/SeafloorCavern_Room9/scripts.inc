@@ -291,7 +291,7 @@ SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear: @ 823546F
 
 SeafloorCavern_Room9_Text_MaxieWhatHaveYouWrought: @ 82354F0
 	.string "Maxie: What have you wrought?\p"
-	.string "ARCHIE… You've finally awoken Kyogre,\n"
+	.string "Archie… You've finally awoken Kyogre,\n"
 	.string "haven't you?\p"
 	.string "What will happen to the world if this\n"
 	.string "downpour continues for all eternity?\p"

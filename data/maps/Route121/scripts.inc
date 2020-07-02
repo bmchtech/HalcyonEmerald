@@ -181,7 +181,7 @@ Route121_Text_AheadLoomsMtPyre: @ 81F607F
 	.string "of departed Pokémon…$"
 
 Route121_Text_MtPyrePierSign: @ 81F60D3
-	.string "Mt. Pyre PIER\p"
+	.string "Mt. Pyre Pier\p"
 	.string "…The sign is old and worn out.\n"
 	.string "The words are barely legible…$"
 

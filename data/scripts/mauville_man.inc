@@ -254,7 +254,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_NoRoomForDecor:: @ 828E5EC
 MauvilleCity_PokemonCenter_1F_Text_WillYouHearMyTale: @ 828E5F6
 	.string "I'm the STORYTELLER.\n"
 	.string "I'll tell you tales of legendary\l"
-	.string "TRAINERS.\p"
+	.string "Trainers.\p"
 	.string "Will you hear my tale?$"
 
 MauvilleCity_PokemonCenter_1F_Text_StorytellerFeelingTheBlues: @ 828E64D
@@ -303,7 +303,7 @@ MauvilleCity_PokemonCenter_1F_Text_NotWorthyOfLegend: @ 828E881
 MauvilleCity_PokemonCenter_1F_Text_IWishMorePeopleWereInterested: @ 828E8D9
 	.string "I wish more people would be interested\n"
 	.string "in hearing my epic tales of legendary\l"
-	.string "TRAINERS.$"
+	.string "Trainers.$"
 
 MauvilleCity_PokemonCenter_1F_Text_SavedGameTitle:: @ 828E930
 	.string "The Save-Happy Trainer$"
