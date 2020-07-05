@@ -307,6 +307,9 @@ u8 CountAliveMonsInBattle(u8 caseId);
 #define BATTLE_ALIVE_ATK_SIDE       1
 #define BATTLE_ALIVE_DEF_SIDE       2
 
+#define DAY_START 4
+#define NIGHT_START 18
+
 u8 GetDefaultMoveTarget(u8 battlerId);
 u8 GetMonGender(struct Pokemon *mon);
 u8 GetBoxMonGender(struct BoxPokemon *boxMon);
