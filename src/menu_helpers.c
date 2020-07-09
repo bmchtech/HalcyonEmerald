@@ -251,6 +251,78 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
     return FALSE;
 }
 
+bool8 AdjustEVQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
+{
+    s16 valBefore = (*arg0);
+
+    if ((gMain.newAndRepeatedKeys & DPAD_ANY) == DPAD_UP)
+    {
+        (*arg0)+=4;
+        if ((*arg0) > arg1)
+            (*arg0) = 1;
+
+        if ((*arg0) == valBefore)
+        {
+            return FALSE;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            return TRUE;
+        }
+    }
+    else if ((gMain.newAndRepeatedKeys & DPAD_ANY) == DPAD_DOWN)
+    {
+        (*arg0)-=4;
+        if ((*arg0) <= 0)
+            (*arg0) = arg1;
+
+        if ((*arg0) == valBefore)
+        {
+            return FALSE;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            return TRUE;
+        }
+    }
+    else if ((gMain.newAndRepeatedKeys & DPAD_ANY) == DPAD_RIGHT)
+    {
+        (*arg0) += 52;
+        if ((*arg0) > arg1)
+            (*arg0) = arg1;
+
+        if ((*arg0) == valBefore)
+        {
+            return FALSE;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            return TRUE;
+        }
+    }
+    else if ((gMain.newAndRepeatedKeys & DPAD_ANY) == DPAD_LEFT)
+    {
+        (*arg0) -= 52;
+        if ((*arg0) <= 0)
+            (*arg0) = 1;
+
+        if ((*arg0) == valBefore)
+        {
+            return FALSE;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 u8 GetLRKeysPressed(void)
 {
     if (gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)
