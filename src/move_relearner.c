@@ -796,7 +796,7 @@ static void HandleInput(bool8 showContest)
             sMoveRelearnerMenuSate.showContestInfo = FALSE;
         }
 
-        ScheduleBgCopyTilemapToVram(1);
+        schedule_bg_copy_tilemap_to_vram(1);
         MoveRelearnerShowHideHearts(GetCurrentSelectedMove());
         break;
     case LIST_CANCEL:

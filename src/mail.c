@@ -323,7 +323,7 @@ static bool8 MailReadBuildGraphics(void)
             break;
         case 5:
             FreeAllSpritePalettes();
-            ResetTempTileDataBuffers();
+            reset_temp_tile_data_buffers();
             SetGpuReg(REG_OFFSET_BG0HOFS, 0);
             SetGpuReg(REG_OFFSET_BG0VOFS, 0);
             SetGpuReg(REG_OFFSET_BG1HOFS, 0);
@@ -346,10 +346,10 @@ static bool8 MailReadBuildGraphics(void)
             DeactivateAllTextPrinters();
             break;
         case 8:
-            DecompressAndCopyTileDataToVram(1, sUnknown_0859F2B8[sMailRead->mailType].tiles, 0, 0, 0);
+            decompress_and_copy_tile_data_to_vram(1, sUnknown_0859F2B8[sMailRead->mailType].tiles, 0, 0, 0);
             break;
         case 9:
-            if (FreeTempTileDataBuffersIfPossible())
+            if (free_temp_tile_data_buffers_if_possible())
             {
                 return FALSE;
             }
@@ -438,7 +438,7 @@ static void CB2_InitMailRead(void)
             SetMainCallback2(CB2_MailRead);
             break;
         }
-    } while (MenuHelpers_LinkSomething() != TRUE);
+    } while (sub_81221AC() != TRUE);
 }
 
 static void sub_8121A1C(void)

@@ -152,7 +152,7 @@ static void CB2_MysteryEventMenu(void)
         if (!IsTextPrinterActive(0))
         {
             gMain.state++;
-            gLinkType = LINKTYPE_MYSTERY_EVENT;
+            gLinkType = LINKTYPE_0x5501;
             OpenLink();
         }
         break;
@@ -206,7 +206,7 @@ static void CB2_MysteryEventMenu(void)
         {
             if (gReceivedRemoteLinkPlayers != 0)
             {
-                if (GetLinkPlayerDataExchangeStatusTimed(2, 2) == EXCHANGE_DIFF_SELECTIONS)
+                if (GetLinkPlayerDataExchangeStatusTimed(2, 2) == 3)
                 {
                     sub_800AC34();
                     GetEventLoadMessage(gStringVar4, 1);

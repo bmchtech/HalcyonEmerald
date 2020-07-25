@@ -1366,7 +1366,7 @@ void ShowTrainerIntroSpeech(void)
         else
             CopyPyramidTrainerSpeechBefore(LocalIdToPyramidTrainerId(gObjectEvents[gApproachingTrainers[gApproachingTrainerId].objectEventId].localId));
 
-        ShowFieldMessageFromBuffer();
+        sub_80982B8();
     }
     else if (InTrainerHillChallenge())
     {
@@ -1375,7 +1375,7 @@ void ShowTrainerIntroSpeech(void)
         else
             CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_INTRO, LocalIdToHillTrainerId(gObjectEvents[gApproachingTrainers[gApproachingTrainerId].objectEventId].localId));
 
-        ShowFieldMessageFromBuffer();
+        sub_80982B8();
     }
     else
     {

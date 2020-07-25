@@ -33,11 +33,8 @@
 #include "fldeff_misc.h"
 #include "trainer_pokemon_sprites.h"
 #include "data.h"
-#include "confetti_util.h"
+#include "rom_81520A8.h"
 #include "constants/rgb.h"
-
-#define HALL_OF_FAME_MAX_TEAMS 30
-#define TAG_CONFETTI 1001
 
 struct HallofFameMon
 {
@@ -61,31 +58,33 @@ struct HofGfx
     u8 tilemap2[0x1000];
 };
 
-static EWRAM_DATA u32 sHofFadePalettes = 0;
+static EWRAM_DATA u32 sUnknown_0203BCD4 = 0;
 static EWRAM_DATA struct HallofFameTeam *sHofMonPtr = NULL;
 static EWRAM_DATA struct HofGfx *sHofGfxPtr = NULL;
 
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
 
+#define HALL_OF_FAME_MAX_TEAMS 30
+
 // this file's functions
 static void ClearVramOamPltt_LoadHofPal(void);
-static void LoadHofGfx(void);
-static void InitHofBgs(void);
-static bool8 CreateHofConfettiSprite(void);
+static void sub_8174F70(void);
+static void sub_8174FAC(void);
+static bool8 sub_81751FC(void);
 static void SetCallback2AfterHallOfFameDisplay(void);
 static bool8 sub_8175024(void);
 static void Task_Hof_InitMonData(u8 taskId);
 static void Task_Hof_InitTeamSaveData(u8 taskId);
 static void Task_Hof_SetMonDisplayTask(u8 taskId);
 static void Task_Hof_TrySaveData(u8 taskId);
-static void Task_Hof_WaitToDisplayMon(u8 taskId);
+static void Task_Hof_WaitForFrames(u8 taskId);
 static void Task_Hof_DisplayMon(u8 taskId);
 static void Task_Hof_PrintMonInfoAfterAnimating(u8 taskId);
 static void Task_Hof_TryDisplayAnotherMon(u8 taskId);
 static void Task_Hof_PaletteFadeAndPrintWelcomeText(u8 taskId);
-static void Task_Hof_DoConfetti(u8 taskId);
-static void Task_Hof_WaitToDisplayPlayer(u8 taskId);
-static void Task_Hof_DisplayPlayer(u8 taskId);
+static void sub_8173DC0(u8 taskId);
+static void sub_8173EA4(u8 taskId);
+static void sub_8173EE4(u8 taskId);
 static void Task_Hof_WaitAndPrintPlayerInfo(u8 taskId);
 static void Task_Hof_ExitOnKeyPressed(u8 taskId);
 static void Task_Hof_HandlePaletteOnExit(u8 taskId);
@@ -102,8 +101,8 @@ static void SpriteCB_GetOnScreenAndAnimate(struct Sprite *sprite);
 static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u8 unused2);
 static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2);
 static void HallOfFame_PrintPlayerInfo(u8 unused1, u8 unused2);
-static void Task_DoDomeConfetti(u8 taskId);
-static void SpriteCB_HofConfetti(struct Sprite* sprite);
+static void Task_DoConfettiEffect(u8 taskId);
+static void sub_81751A4(struct Sprite* sprite);
 
 // const rom data
 static const struct BgTemplate sHof_BgTemplates[] =
@@ -144,15 +143,15 @@ static const u8 sPlayerInfoTextColors[4] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_D
 
 static const u8 sUnused_085E538C[] = {4, 5, 0, 0};
 
-static const struct CompressedSpriteSheet sSpriteSheet_Confetti[] =
+static const struct CompressedSpriteSheet sHallOfFame_ConfettiSpriteSheet[] =
 {
-    {.data = gConfetti_Gfx, .size = 0x220, .tag = TAG_CONFETTI},
+    {gContestConfetti_Gfx, 0x220, 1001},
     {},
 };
 
-static const struct CompressedSpritePalette sSpritePalette_Confetti[] =
+static const struct CompressedSpritePalette sHallOfFame_ConfettiSpritePalette[] =
 {
-    {.data = gConfetti_Pal, .tag = TAG_CONFETTI},
+    {gContestConfetti_Pal, 1001},
     {},
 };
 
@@ -173,7 +172,7 @@ static const s16 sHallOfFame_MonHalfTeamPositions[PARTY_SIZE / 2][4] =
     {-86,   244,    184,    64}
 };
 
-static const struct OamData sOamData_Confetti =
+static const struct OamData sOamData_85E53FC =
 {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
@@ -190,138 +189,126 @@ static const struct OamData sOamData_Confetti =
     .affineParam = 0,
 };
 
-static const union AnimCmd sAnim_PinkConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E5404[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_RedConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E540C[] =
 {
     ANIMCMD_FRAME(1, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_BlueConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E5414[] =
 {
     ANIMCMD_FRAME(2, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_RedConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E541C[] =
 {
     ANIMCMD_FRAME(3, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_BlueConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E5424[] =
 {
     ANIMCMD_FRAME(4, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_YellowConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E542C[] =
 {
     ANIMCMD_FRAME(5, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_WhiteConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E5434[] =
 {
     ANIMCMD_FRAME(6, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_GreenConfettiA[] =
+static const union AnimCmd sSpriteAnim_85E543C[] =
 {
     ANIMCMD_FRAME(7, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_PinkConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E5444[] =
 {
     ANIMCMD_FRAME(8, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_BlueConfettiC[] =
+static const union AnimCmd sSpriteAnim_85E544C[] =
 {
     ANIMCMD_FRAME(9, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_YellowConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E5454[] =
 {
     ANIMCMD_FRAME(10, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_WhiteConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E545C[] =
 {
     ANIMCMD_FRAME(11, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_GreenConfettiB[] =
+static const union AnimCmd sSpriteAnim_85E5464[] =
 {
     ANIMCMD_FRAME(12, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_PinkConfettiC[] =
+static const union AnimCmd sSpriteAnim_85E546C[] =
 {
     ANIMCMD_FRAME(13, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_RedConfettiC[] =
+static const union AnimCmd sSpriteAnim_85E5474[] =
 {
     ANIMCMD_FRAME(14, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_YellowConfettiC[] =
+static const union AnimCmd sSpriteAnim_85E547C[] =
 {
     ANIMCMD_FRAME(15, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd sAnim_WhiteConfettiC[] =
+static const union AnimCmd sSpriteAnim_85E5484[] =
 {
     ANIMCMD_FRAME(16, 30),
     ANIMCMD_END
 };
 
-static const union AnimCmd * const sAnims_Confetti[] =
+static const union AnimCmd * const sSpriteAnimTable_85E548C[] =
 {
-    sAnim_PinkConfettiA,
-    sAnim_RedConfettiA,
-    sAnim_BlueConfettiA,
-    sAnim_RedConfettiB,
-    sAnim_BlueConfettiB,
-    sAnim_YellowConfettiA,
-    sAnim_WhiteConfettiA,
-    sAnim_GreenConfettiA,
-    sAnim_PinkConfettiB,
-    sAnim_BlueConfettiC,
-    sAnim_YellowConfettiB,
-    sAnim_WhiteConfettiB,
-    sAnim_GreenConfettiB,
-    sAnim_PinkConfettiC,
-    sAnim_RedConfettiC,
-    sAnim_YellowConfettiC,
-    sAnim_WhiteConfettiC
+    sSpriteAnim_85E5404, sSpriteAnim_85E540C, sSpriteAnim_85E5414, sSpriteAnim_85E541C,
+    sSpriteAnim_85E5424, sSpriteAnim_85E542C, sSpriteAnim_85E5434, sSpriteAnim_85E543C,
+    sSpriteAnim_85E5444, sSpriteAnim_85E544C, sSpriteAnim_85E5454, sSpriteAnim_85E545C,
+    sSpriteAnim_85E5464, sSpriteAnim_85E546C, sSpriteAnim_85E5474, sSpriteAnim_85E547C,
+    sSpriteAnim_85E5484
 };
 
-static const struct SpriteTemplate sSpriteTemplate_HofConfetti =
+static const struct SpriteTemplate sSpriteTemplate_85E54D0 =
 {
-    .tileTag = TAG_CONFETTI,
-    .paletteTag = TAG_CONFETTI,
-    .oam = &sOamData_Confetti,
-    .anims = sAnims_Confetti,
+    .tileTag = 1001,
+    .paletteTag = 1001,
+    .oam = &sOamData_85E53FC,
+    .anims = sSpriteAnimTable_85E548C,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_HofConfetti
+    .callback = sub_81751A4
 };
 
 static const u16 sHallOfFame_Pal[] = INCBIN_U16("graphics/misc/japanese_hof.gbapal");
@@ -330,19 +317,10 @@ static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp
 
 static const struct HallofFameMon sDummyFameMon =
 {
-    .tid = 0x3EA03EA,
-    .personality = 0,
-    .species = SPECIES_NONE,
-    .lvl = 0,
-    .nick = {0}
+    0x3EA03EA, 0, 0, 0, {0}
 };
 
-// Unused, order of party slots on Hall of Fame screen
-static const u8 sHallOfFame_SlotOrder[] = {
-    2, 1, 3,
-    6, 4, 5,
-    0, 0
-};
+static const u8 sUnused2[] = {2, 1, 3, 6, 4, 5, 0, 0};
 
 // code
 static void VBlankCB_HallOfFame(void)
@@ -372,14 +350,14 @@ static bool8 InitHallOfFameScreen(void)
         gMain.state = 1;
         break;
     case 1:
-        LoadHofGfx();
+        sub_8174F70();
         gMain.state++;
         break;
     case 2:
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 7));
         SetGpuReg(REG_OFFSET_BLDY, 0);
-        InitHofBgs();
+        sub_8174FAC();
         sHofGfxPtr->state = 0;
         gMain.state++;
         break;
@@ -455,7 +433,7 @@ static void Task_Hof_InitMonData(u8 taskId)
         }
         else
         {
-            sHofMonPtr->mon[i].species = SPECIES_NONE;
+            sHofMonPtr->mon[i].species = 0;
             sHofMonPtr->mon[i].tid = 0;
             sHofMonPtr->mon[i].personality = 0;
             sHofMonPtr->mon[i].lvl = 0;
@@ -463,7 +441,7 @@ static void Task_Hof_InitMonData(u8 taskId)
         }
     }
 
-    sHofFadePalettes = 0;
+    sUnknown_0203BCD4 = 0;
     gTasks[taskId].tDisplayedMonId = 0;
     gTasks[taskId].tPlayerSpriteID = 0xFF;
 
@@ -536,12 +514,12 @@ static void Task_Hof_TrySaveData(u8 taskId)
     else
     {
         PlaySE(SE_SAVE);
-        gTasks[taskId].func = Task_Hof_WaitToDisplayMon;
+        gTasks[taskId].func = Task_Hof_WaitForFrames;
         gTasks[taskId].tFrameCount = 32;
     }
 }
 
-static void Task_Hof_WaitToDisplayMon(u8 taskId)
+static void Task_Hof_WaitForFrames(u8 taskId)
 {
     if (gTasks[taskId].tFrameCount)
         gTasks[taskId].tFrameCount--;
@@ -561,32 +539,32 @@ static void Task_Hof_SetMonDisplayTask(u8 taskId)
 static void Task_Hof_DisplayMon(u8 taskId)
 {
     u8 spriteId;
-    s16 startX, startY, destX, destY;
+    s16 xPos, yPos, field4, field6;
 
     u16 currMonId = gTasks[taskId].tDisplayedMonId;
     struct HallofFameMon* currMon = &sHofMonPtr->mon[currMonId];
 
     if (gTasks[taskId].tMonNumber > PARTY_SIZE / 2)
     {
-        startX = sHallOfFame_MonFullTeamPositions[currMonId][0];
-        startY = sHallOfFame_MonFullTeamPositions[currMonId][1];
-        destX = sHallOfFame_MonFullTeamPositions[currMonId][2];
-        destY = sHallOfFame_MonFullTeamPositions[currMonId][3];
+        xPos = sHallOfFame_MonFullTeamPositions[currMonId][0];
+        yPos = sHallOfFame_MonFullTeamPositions[currMonId][1];
+        field4 = sHallOfFame_MonFullTeamPositions[currMonId][2];
+        field6 = sHallOfFame_MonFullTeamPositions[currMonId][3];
     }
     else
     {
-        startX = sHallOfFame_MonHalfTeamPositions[currMonId][0];
-        startY = sHallOfFame_MonHalfTeamPositions[currMonId][1];
-        destX = sHallOfFame_MonHalfTeamPositions[currMonId][2];
-        destY = sHallOfFame_MonHalfTeamPositions[currMonId][3];
+        xPos = sHallOfFame_MonHalfTeamPositions[currMonId][0];
+        yPos = sHallOfFame_MonHalfTeamPositions[currMonId][1];
+        field4 = sHallOfFame_MonHalfTeamPositions[currMonId][2];
+        field6 = sHallOfFame_MonHalfTeamPositions[currMonId][3];
     }
 
     if (currMon->species == SPECIES_EGG)
-        destY += 10;
+        field6 += 10;
 
-    spriteId = CreatePicSprite2(currMon->species, currMon->tid, currMon->personality, 1, startX, startY, currMonId, 0xFFFF);
-    gSprites[spriteId].tDestinationX = destX;
-    gSprites[spriteId].tDestinationY = destY;
+    spriteId = CreatePicSprite2(currMon->species, currMon->tid, currMon->personality, 1, xPos, yPos, currMonId, 0xFFFF);
+    gSprites[spriteId].tDestinationX = field4;
+    gSprites[spriteId].tDestinationY = field6;
     gSprites[spriteId].data[0] = 0;
     gSprites[spriteId].tSpecies = currMon->species;
     gSprites[spriteId].callback = SpriteCB_GetOnScreenAndAnimate;
@@ -621,11 +599,11 @@ static void Task_Hof_TryDisplayAnotherMon(u8 taskId)
     }
     else
     {
-        sHofFadePalettes |= (0x10000 << gSprites[gTasks[taskId].tMonSpriteId(currPokeID)].oam.paletteNum);
-        if (gTasks[taskId].tDisplayedMonId < PARTY_SIZE - 1 && currMon[1].species != SPECIES_NONE) // there is another pokemon to display
+        sUnknown_0203BCD4 |= (0x10000 << gSprites[gTasks[taskId].tMonSpriteId(currPokeID)].oam.paletteNum);
+        if (gTasks[taskId].tDisplayedMonId <= 4 && currMon[1].species != SPECIES_NONE) // there is another pokemon to display
         {
             gTasks[taskId].tDisplayedMonId++;
-            BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
+            BeginNormalPaletteFade(sUnknown_0203BCD4, 0, 12, 12, RGB(16, 29, 24));
             gSprites[gTasks[taskId].tMonSpriteId(currPokeID)].oam.priority = 1;
             gTasks[taskId].func = Task_Hof_DisplayMon;
         }
@@ -650,19 +628,16 @@ static void Task_Hof_PaletteFadeAndPrintWelcomeText(u8 taskId)
     HallOfFame_PrintWelcomeText(0, 15);
     PlaySE(SE_DENDOU);
     gTasks[taskId].tFrameCount = 400;
-    gTasks[taskId].func = Task_Hof_DoConfetti;
+    gTasks[taskId].func = sub_8173DC0;
 }
 
-static void Task_Hof_DoConfetti(u8 taskId)
+static void sub_8173DC0(u8 taskId)
 {
     if (gTasks[taskId].tFrameCount != 0)
     {
         gTasks[taskId].tFrameCount--;
-
-        // Create new confetti every 4th frame for the first 290 frames
-        // For the last 110 frames wait for the existing confetti to fall offscreen
         if ((gTasks[taskId].tFrameCount & 3) == 0 && gTasks[taskId].tFrameCount > 110)
-            CreateHofConfettiSprite();
+            sub_81751FC();
     }
     else
     {
@@ -672,19 +647,19 @@ static void Task_Hof_DoConfetti(u8 taskId)
             if (gTasks[taskId].tMonSpriteId(i) != 0xFF)
                 gSprites[gTasks[taskId].tMonSpriteId(i)].oam.priority = 1;
         }
-        BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
+        BeginNormalPaletteFade(sUnknown_0203BCD4, 0, 12, 12, RGB(16, 29, 24));
         FillWindowPixelBuffer(0, PIXEL_FILL(0));
         CopyWindowToVram(0, 3);
         gTasks[taskId].tFrameCount = 7;
-        gTasks[taskId].func = Task_Hof_WaitToDisplayPlayer;
+        gTasks[taskId].func = sub_8173EA4;
     }
 }
 
-static void Task_Hof_WaitToDisplayPlayer(u8 taskId)
+static void sub_8173EA4(u8 taskId)
 {
     if (gTasks[taskId].tFrameCount >= 16)
     {
-        gTasks[taskId].func = Task_Hof_DisplayPlayer;
+        gTasks[taskId].func = sub_8173EE4;
     }
     else
     {
@@ -693,7 +668,7 @@ static void Task_Hof_WaitToDisplayPlayer(u8 taskId)
     }
 }
 
-static void Task_Hof_DisplayPlayer(u8 taskId)
+static void sub_8173EE4(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     ShowBg(0);
@@ -809,14 +784,14 @@ void CB2_DoHallOfFamePC(void)
         gMain.state = 1;
         break;
     case 1:
-        LoadHofGfx();
+        sub_8174F70();
         gMain.state++;
         break;
     case 2:
         SetGpuReg(REG_OFFSET_BLDCNT, 0);
         SetGpuReg(REG_OFFSET_BLDALPHA, 0);
         SetGpuReg(REG_OFFSET_BLDY, 0);
-        InitHofBgs();
+        sub_8174FAC();
         gMain.state++;
         break;
     case 3:
@@ -899,7 +874,7 @@ static void Task_HofPC_DrawSpritesPrintText(u8 taskId)
         savedTeams++;
 
     currMon = &savedTeams->mon[0];
-    sHofFadePalettes = 0;
+    sUnknown_0203BCD4 = 0;
     gTasks[taskId].tCurrMonId = 0;
     gTasks[taskId].tMonNo = 0;
 
@@ -974,8 +949,8 @@ static void Task_HofPC_PrintMonInfo(u8 taskId)
 
     currMonID = gTasks[taskId].tMonSpriteId(gTasks[taskId].tCurrMonId);
     gSprites[currMonID].oam.priority = 0;
-    sHofFadePalettes = (0x10000 << gSprites[currMonID].oam.paletteNum) ^ 0xFFFF0000;
-    BlendPalettesUnfaded(sHofFadePalettes, 0xC, RGB(16, 29, 24));
+    sUnknown_0203BCD4 = (0x10000 << gSprites[currMonID].oam.paletteNum) ^ 0xFFFF0000;
+    BlendPalettesUnfaded(sUnknown_0203BCD4, 0xC, RGB(16, 29, 24));
 
     currMon = &savedTeams->mon[gTasks[taskId].tCurrMonId];
     if (currMon->species != SPECIES_EGG)
@@ -997,7 +972,7 @@ static void Task_HofPC_HandleInput(u8 taskId)
         if (gTasks[taskId].tCurrTeamNo != 0) // prepare another team to view
         {
             gTasks[taskId].tCurrTeamNo--;
-            for (i = 0; i < PARTY_SIZE; i++)
+            for (i = 0; i < 6; i++)
             {
                 u8 spriteId = gTasks[taskId].tMonSpriteId(i);
                 if (spriteId != 0xFF)
@@ -1275,20 +1250,20 @@ static void ClearVramOamPltt_LoadHofPal(void)
     LoadPalette(sHallOfFame_Pal, 0, 0x20);
 }
 
-static void LoadHofGfx(void)
+static void sub_8174F70(void)
 {
     ScanlineEffect_Stop();
     ResetTasks();
     ResetSpriteData();
-    ResetTempTileDataBuffers();
+    reset_temp_tile_data_buffers();
     ResetAllPicSprites();
     FreeAllSpritePalettes();
     gReservedSpritePaletteCount = 8;
-    LoadCompressedSpriteSheet(sSpriteSheet_Confetti);
-    LoadCompressedSpritePalette(sSpritePalette_Confetti);
+    LoadCompressedSpriteSheet(sHallOfFame_ConfettiSpriteSheet);
+    LoadCompressedSpritePalette(sHallOfFame_ConfettiSpritePalette);
 }
 
-static void InitHofBgs(void)
+static void sub_8174FAC(void)
 {
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sHof_BgTemplates, ARRAY_COUNT(sHof_BgTemplates));
@@ -1307,10 +1282,10 @@ static bool8 sub_8175024(void)
     switch (sHofGfxPtr->state)
     {
     case 0:
-        DecompressAndCopyTileDataToVram(1, sHallOfFame_Gfx, 0, 0, 0);
+        decompress_and_copy_tile_data_to_vram(1, sHallOfFame_Gfx, 0, 0, 0);
         break;
     case 1:
-        if (FreeTempTileDataBuffersIfPossible())
+        if (free_temp_tile_data_buffers_if_possible())
             return TRUE;
         break;
     case 2:
@@ -1369,10 +1344,7 @@ static void SpriteCB_GetOnScreenAndAnimate(struct Sprite *sprite)
 #undef tDestinationY
 #undef tSpecies
 
-#define sSineIdx data[0]
-#define sExtraY  data[1]
-
-static void SpriteCB_HofConfetti(struct Sprite* sprite)
+static void sub_81751A4(struct Sprite* sprite)
 {
     if (sprite->pos2.y > 120)
     {
@@ -1381,20 +1353,20 @@ static void SpriteCB_HofConfetti(struct Sprite* sprite)
     else
     {
         u16 rand;
-        u8 sineIdx;
+        u8 tableID;
 
         sprite->pos2.y++;
-        sprite->pos2.y += sprite->sExtraY;
+        sprite->pos2.y += sprite->data[1];
 
-        sineIdx = sprite->sSineIdx;
+        tableID = sprite->data[0];
         rand = (Random() % 4) + 8;
-        sprite->pos2.x = rand * gSineTable[sineIdx] / 256;
+        sprite->pos2.x = rand * gSineTable[tableID] / 256;
 
-        sprite->sSineIdx += 4;
+        sprite->data[0] += 4;
     }
 }
 
-static bool8 CreateHofConfettiSprite(void)
+static bool8 sub_81751FC(void)
 {
     u8 spriteID;
     struct Sprite* sprite;
@@ -1402,136 +1374,110 @@ static bool8 CreateHofConfettiSprite(void)
     s16 posX = Random() % 240;
     s16 posY = -(Random() % 8);
 
-    spriteID = CreateSprite(&sSpriteTemplate_HofConfetti, posX, posY, 0);
+    spriteID = CreateSprite(&sSpriteTemplate_85E54D0, posX, posY, 0);
     sprite = &gSprites[spriteID];
 
-    StartSpriteAnim(sprite, Random() % ARRAY_COUNT(sAnims_Confetti));
+    StartSpriteAnim(sprite, Random() % 17);
 
-    // 1/4 confetti sprites move an extra Y coord each frame
     if (Random() & 3)
-        sprite->sExtraY = 0;
+        sprite->data[1] = 0;
     else
-        sprite->sExtraY = 1;
+        sprite->data[1] = 1;
 
     return FALSE;
 }
 
-// The below confetti functions are used when a Battle Dome tourney is won
-// For the Hall of Fame confetti see Task_Hof_DoConfetti
-// The end result is essentially the same, just a very different way of handling it
-#define tState         data[0]
-#define tTimer         data[1]
-#define tConfettiCount data[15]
-
-// Indexes into the data array of the struct ConfettiUtil
-#define CONFETTI_SINE_IDX 0
-#define CONFETTI_EXTRA_Y  1
-#define CONFETTI_TASK_ID  7
-
-void DoDomeConfetti(void)
+// Used when a Battle Dome tourney is won
+void DoConfettiEffect(void)
 {
     u8 taskId;
 
     gSpecialVar_0x8004 = 180;
-    taskId = CreateTask(Task_DoDomeConfetti, 0);
+    taskId = CreateTask(Task_DoConfettiEffect, 0);
     if (taskId != 0xFF)
     {
-        gTasks[taskId].tTimer = gSpecialVar_0x8004;
+        gTasks[taskId].data[1] = gSpecialVar_0x8004;
         gSpecialVar_0x8005 = taskId;
     }
 }
 
-static void StopDomeConfetti(void)
+static void StopConfettiEffect(void)
 {
     u8 taskId;
 
-    if ((taskId = FindTaskIdByFunc(Task_DoDomeConfetti)) != 0xFF)
+    if ((taskId = FindTaskIdByFunc(Task_DoConfettiEffect)) != 0xFF)
         DestroyTask(taskId);
 
-    ConfettiUtil_Free();
-    FreeSpriteTilesByTag(TAG_CONFETTI);
-    FreeSpritePaletteByTag(TAG_CONFETTI);
+    sub_8152254();
+    FreeSpriteTilesByTag(0x3E9);
+    FreeSpritePaletteByTag(0x3E9);
 }
 
-static void UpdateDomeConfetti(struct ConfettiUtil *util)
+static void sub_81752F4(struct UnkStruct_81520A8 *structPtr)
 {
-    if (util->yDelta > 110)
+    if (structPtr->yDelta > 110)
     {
-        // Destroy confetti after it falls far enough
-        gTasks[util->data[CONFETTI_TASK_ID]].tConfettiCount--;
-        ConfettiUtil_Remove(util->id);
+        gTasks[structPtr->data[7]].data[15]--;
+        sub_81525D0(structPtr->id);
     }
     else
     {
-        // Move confetti down
-        u8 sineIdx;
+        u8 var;
         s32 rand;
 
-        util->yDelta++;
-        util->yDelta += util->data[CONFETTI_EXTRA_Y];
+        structPtr->yDelta++;
+        structPtr->yDelta += structPtr->data[1];
 
-        sineIdx = util->data[CONFETTI_SINE_IDX];
+        var = structPtr->data[0];
         rand = Random();
         rand &= 3;
         rand += 8;
-        util->xDelta = (rand) * ((gSineTable[sineIdx])) / 256;
+        structPtr->xDelta = (rand) * ((gSineTable[var])) / 256;
 
-        util->data[CONFETTI_SINE_IDX] += 4;
+        structPtr->data[0] += 4;
     }
 }
 
-static void Task_DoDomeConfetti(u8 taskId)
+static void Task_DoConfettiEffect(u8 taskId)
 {
-    u32 id = 0;
+    u32 var = 0;
     u16 *data = gTasks[taskId].data;
 
-    switch (tState)
+    switch (data[0])
     {
     case 0:
-        if (!ConfettiUtil_Init(64))
+        if (!sub_81521C0(0x40))
         {
-            // Init failed
             DestroyTask(taskId);
-            gSpecialVar_0x8004 = 0;
+            gSpecialVar_0x8004 = var;
             gSpecialVar_0x8005 = 0xFFFF;
         }
-        LoadCompressedSpriteSheet(sSpriteSheet_Confetti);
-        LoadCompressedSpritePalette(sSpritePalette_Confetti);
-        tState++;
+        LoadCompressedSpriteSheet(sHallOfFame_ConfettiSpriteSheet);
+        LoadCompressedSpritePalette(sHallOfFame_ConfettiSpritePalette);
+        data[0]++;
         break;
     case 1:
-        if (tTimer != 0 && tTimer % 3 == 0)
+        if (data[1] != 0 && data[1] % 3 == 0)
         {
-            // Create new confetti every 3 frames
-            id = ConfettiUtil_AddNew(&sOamData_Confetti,
-                              TAG_CONFETTI,
-                              TAG_CONFETTI,
-                              Random() % 240,
-                              -(Random() % 8),
-                              Random() % ARRAY_COUNT(sAnims_Confetti),
-                              id);
-            if (id != 0xFF)
+            var = sub_81524C4(&sOamData_85E53FC, 0x3E9, 0x3E9, Random() % 240, -(Random() % 8), Random() % 0x11, var);
+            if (var != 0xFF)
             {
-                ConfettiUtil_SetCallback(id, UpdateDomeConfetti);
-
-                // 1/4 of the confetti move an extra y coord every frame
-                if ((Random() % 4) == 0)
-                    ConfettiUtil_SetData(id, CONFETTI_EXTRA_Y, 1);
-
-                ConfettiUtil_SetData(id, CONFETTI_TASK_ID, taskId);
-                tConfettiCount++;
+                sub_8152438(var, sub_81752F4);
+                if ((Random() & 3) == 0)
+                    sub_8152474(var, 1, 1);
+                sub_8152474(var, 7, taskId);
+                data[15]++;
             }
         }
-
-        ConfettiUtil_Update();
-        if (tTimer != 0)
-            tTimer--;
-        else if (tConfettiCount == 0)
-            tState = 0xFF;
+        sub_81522D4();
+        if (data[1] != 0)
+            data[1]--;
+        else if (data[15] == 0)
+            data[0] = 0xFF;
         break;
     case 0xFF:
-        StopDomeConfetti();
-        gSpecialVar_0x8004 = 0;
+        StopConfettiEffect();
+        gSpecialVar_0x8004 = var;
         gSpecialVar_0x8005 = 0xFFFF;
         break;
     }

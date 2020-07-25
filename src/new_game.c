@@ -197,7 +197,7 @@ void NewGameInitData(void)
     WarpToTruck();
     ScriptContext2_RunNewScript(EventScript_ResetAllMapFlags);
     ResetMiniGamesResults();
-    InitUnionRoomChatRegisteredTexts();
+    copy_strings_to_sav1();
     InitLilycoveLady();
     ResetAllApprenticeData();
     ClearRankingHallRecords();

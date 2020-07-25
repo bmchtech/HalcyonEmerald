@@ -1239,7 +1239,7 @@ const u8 gText_BDot[] = _("B.");
 const u8 gText_AnnouncingResults[] = _("Announcing the results!");
 const u8 gText_PreliminaryResults[] = _("The preliminary results!");
 const u8 gText_Round2Results[] = _("Round 2 results!");
-const u8 gText_ContestantsMonWon[] = _("{STR_VAR_1}'s {STR_VAR_2} won!");
+const u8 gText_Var1sVar2Won[] = _("{STR_VAR_1}'s {STR_VAR_2} won!");
 const u8 gText_CommunicationStandby[] = _("Communication standby…");
 const u8 gText_ColorDarkGrey[] = _("{COLOR DARK_GREY}");
 const u8 gText_ColorDynamic6WhiteDynamic5[] = _("{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR6 WHITE DYNAMIC_COLOR5}"); // Unused
@@ -1263,7 +1263,6 @@ const u8 gText_F700LeftChat[] = _("{SPECIAL_F7 0x00} left the chat.");
 const u8 gJPText_PlayersXPokemon[] = _("{SPECIAL_F7 0x00}の{SPECIAL_F7 0x01}ひきめ:"); // Unused
 const u8 gJPText_PlayersXPokmonDoesNotExist[] = _("{SPECIAL_F7 0x00}の{SPECIAL_F7 0x01}ひきめは いません"); // Unused
 const u8 gText_ExitingChat[] = _("Exiting the chat…");
-<<<<<<< HEAD
 const u8 gText_LeaderLeftEndingChat[] = _("The Leader, {SPECIAL_F7 0x00}, has\nleft, ending the chat.");
 const u8 gText_RegisteredTextChanged[] = _("The registered text has been changed.\nIs it okay to save the game?");
 const u8 gText_AlreadySavedFile_Unused[] = _("There is already a saved file.\nIs it okay to overwrite it?");
@@ -1275,19 +1274,6 @@ const u8 gText_Pokemon2[] = _("Pokémon");
 const u8 gText_Trade[] = _("Trade");
 const u8 gText_Battle[] = _("Battle");
 const u8 gText_Lets[] = _("Let's");
-=======
-const u8 gText_LeaderLeftEndingChat[] = _("The LEADER, {SPECIAL_F7 0x00}, has\nleft, ending the chat.");
-const u8 gText_RegisteredTextChangedOKToSave[] = _("The registered text has been changed.\nIs it okay to save the game?");
-const u8 gText_AlreadySavedFile_Chat[] = _("There is already a saved file.\nIs it okay to overwrite it?");
-const u8 gText_SavingDontTurnOff_Chat[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
-const u8 gText_PlayerSavedGame_Chat[] = _("{SPECIAL_F7 0x00} saved the game.");
-const u8 gText_IfLeaderLeavesChatEnds[] = _("If the LEADER leaves, the chat\nwill end. Is that okay?");
-const u8 gText_Hello[] = _("HELLO");
-const u8 gText_Pokemon2[] = _("POKéMON");
-const u8 gText_Trade[] = _("TRADE");
-const u8 gText_Battle[] = _("BATTLE");
-const u8 gText_Lets[] = _("LET'S");
->>>>>>> db94e3c0652a47643bc89499f2be8888654efcaf
 const u8 gText_Ok[] = _("OK!");
 const u8 gText_Sorry[] = _("Sorry");
 const u8 gText_YaySmileEmoji[] = _("Yay{EMOJI_BIGSMILE}");
@@ -1509,21 +1495,12 @@ const u8 gText_FrameTypeNumber[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
 const u8 gText_ButtonTypeNormal[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
 const u8 gText_ButtonTypeLR[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
-<<<<<<< HEAD
 const u8 gText_XPLink[] = _("{STR_VAR_1}P Link");
 const u8 gText_BronzeCard[] = _("Bronze");
 const u8 gText_CopperCard[] = _("Copper");
 const u8 gText_SilverCard[] = _("Silver");
 const u8 gText_GoldCard[] = _("Gold");
 const u8 gText_Day[] = _("Day");
-=======
-const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P LINK");
-const u8 gText_BronzeCard[] = _("BRONZE");
-const u8 gText_CopperCard[] = _("COPPER");
-const u8 gText_SilverCard[] = _("SILVER");
-const u8 gText_GoldCard[] = _("GOLD");
-const u8 gText_Day[] = _("DAY");
->>>>>>> db94e3c0652a47643bc89499f2be8888654efcaf
 const u8 gText_Colon3[] = _(":");
 const u8 gText_Confirm2[] = _("Confirm");
 const u8 gText_Days[] = _("Days"); // Unused

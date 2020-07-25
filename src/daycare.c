@@ -892,11 +892,11 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             TriggerPendingDaycareEgg();
     }
 
-    // Try to hatch Egg
+    // Hatch Egg
     if (++daycare->stepCounter == 255)
     {
-        u32 eggCycles;
-        u8 toSub = GetEggCyclesToSubtract();
+        u32 steps;
+        u8 toSub = GetEggStepsToSubtract();
 
         for (i = 0; i < gPlayerPartyCount; i++)
         {
@@ -905,15 +905,15 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_BAD_EGG))
                 continue;
 
-            eggCycles = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
-            if (eggCycles != 0)
+            steps = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+            if (steps != 0)
             {
-                if (eggCycles >= toSub)
-                    eggCycles -= toSub;
+                if (steps >= toSub)
+                    steps -= toSub;
                 else
-                    eggCycles -= 1;
+                    steps -= 1;
 
-                SetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP, &eggCycles);
+                SetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP, &steps);
             }
             else 
             {

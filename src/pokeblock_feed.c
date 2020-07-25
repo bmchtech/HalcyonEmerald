@@ -607,11 +607,11 @@ void CB2_PreparePokeblockFeedScene(void)
 {
     while (1)
     {
-        if (MenuHelpers_CallLinkSomething() == TRUE)
+        if (sub_81221EC() == TRUE)
             break;
         if (TransitionToPokeblockFeedScene() == TRUE)
             break;
-        if (MenuHelpers_LinkSomething() == TRUE)
+        if (sub_81221AC() == TRUE)
             break;
     }
 }
@@ -624,7 +624,7 @@ static void HandleInitBackgrounds(void)
     InitBgsFromTemplates(0, sBackgroundTemplates, ARRAY_COUNT(sBackgroundTemplates));
     SetBgTilemapBuffer(1, sPokeblockFeed->tilemapBuffer);
     ResetAllBgsCoordinates();
-    ScheduleBgCopyTilemapToVram(1);
+    schedule_bg_copy_tilemap_to_vram(1);
 
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
 
@@ -676,12 +676,12 @@ static bool8 LoadMonAndSceneGfx(struct Pokemon *mon)
         sPokeblockFeed->loadGfxState++;
         break;
     case 6:
-        ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(1, gBattleTerrainTiles_Building, 0, 0, 0);
+        reset_temp_tile_data_buffers();
+        decompress_and_copy_tile_data_to_vram(1, gBattleTerrainTiles_Building, 0, 0, 0);
         sPokeblockFeed->loadGfxState++;
         break;
     case 7:
-        if (FreeTempTileDataBuffersIfPossible() != TRUE)
+        if (free_temp_tile_data_buffers_if_possible() != TRUE)
         {
             LZDecompressWram(gUnknown_08D9BA44, sPokeblockFeed->tilemapBuffer);
             sPokeblockFeed->loadGfxState++;
@@ -704,7 +704,7 @@ static void HandleInitWindows(void)
     LoadPalette(gUnknown_0860F074, 0xF0, 0x20);
     FillWindowPixelBuffer(0, PIXEL_FILL(0));
     PutWindowTilemap(0);
-    ScheduleBgCopyTilemapToVram(0);
+    schedule_bg_copy_tilemap_to_vram(0);
 }
 
 static void SetPokeblockSpritePal(u8 pokeblockCaseId)

@@ -490,11 +490,11 @@ static void CB2_InitPokeblockMenu(void)
 {
     while (1)
     {
-        if (MenuHelpers_CallLinkSomething() == TRUE)
+        if (sub_81221EC() == TRUE)
             break;
         if (InitPokeblockMenu() == TRUE)
             break;
-        if (MenuHelpers_LinkSomething() == TRUE)
+        if (sub_81221AC() == TRUE)
             break;
     }
 }
@@ -606,7 +606,7 @@ static void HandleInitBackgrounds(void)
     InitBgsFromTemplates(0, sBgTemplatesForPokeblockMenu, ARRAY_COUNT(sBgTemplatesForPokeblockMenu));
     SetBgTilemapBuffer(2, sPokeblockMenu->tilemap);
     ResetAllBgsCoordinates();
-    ScheduleBgCopyTilemapToVram(2);
+    schedule_bg_copy_tilemap_to_vram(2);
 
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
 
@@ -622,12 +622,12 @@ static bool8 LoadPokeblockMenuGfx(void)
     switch (sPokeblockMenu->gfxState)
     {
     case 0:
-        ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(2, gMenuPokeblock_Gfx, 0, 0, 0);
+        reset_temp_tile_data_buffers();
+        decompress_and_copy_tile_data_to_vram(2, gMenuPokeblock_Gfx, 0, 0, 0);
         sPokeblockMenu->gfxState++;
         break;
     case 1:
-        if (FreeTempTileDataBuffersIfPossible() != TRUE)
+        if (free_temp_tile_data_buffers_if_possible() != TRUE)
         {
             LZDecompressWram(gMenuPokeblock_Tilemap, sPokeblockMenu->tilemap);
             sPokeblockMenu->gfxState++;
@@ -669,8 +669,8 @@ static void HandleInitWindows(void)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
     }
 
-    ScheduleBgCopyTilemapToVram(0);
-    ScheduleBgCopyTilemapToVram(1);
+    schedule_bg_copy_tilemap_to_vram(0);
+    schedule_bg_copy_tilemap_to_vram(1);
 }
 
 static void PrintOnPokeblockWindow(u8 windowId, const u8 *string, s32 x)
@@ -786,14 +786,14 @@ static void sub_8135FCC(s32 pkblId)
         CopyWindowToVram(7, 2);
     }
 
-    ScheduleBgCopyTilemapToVram(0);
-    ScheduleBgCopyTilemapToVram(2);
+    schedule_bg_copy_tilemap_to_vram(0);
+    schedule_bg_copy_tilemap_to_vram(2);
 }
 
 static void HandlePokeblockMenuCursor(u16 cursorPos, u16 arg1)
 {
     FillBgTilemapBufferRect_Palette0(2, arg1, 0xF, (cursorPos * 2) + 1, 0xE, 2);
-    ScheduleBgCopyTilemapToVram(2);
+    schedule_bg_copy_tilemap_to_vram(2);
 }
 
 static void CompactPokeblockSlots(void)
@@ -982,7 +982,7 @@ static void Task_HandlePokeblockMenuInput(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (!gPaletteFade.active && MenuHelpers_CallLinkSomething() != TRUE)
+    if (!gPaletteFade.active && sub_81221EC() != TRUE)
     {
         if (gMain.newKeys & SELECT_BUTTON)
         {
@@ -1032,7 +1032,7 @@ static void Task_HandlePokeblocksSwapInput(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (MenuHelpers_CallLinkSomething() == TRUE)
+    if (sub_81221EC() == TRUE)
         return;
 
     if (gMain.newKeys & SELECT_BUTTON)
@@ -1101,7 +1101,7 @@ static void HandlePokeblocksSwap(u8 taskId, bool8 noSwap)
         sSavedPokeblockData.lastItemPos--;
 
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sSavedPokeblockData.lastItemPage, sSavedPokeblockData.lastItemPos);
-    ScheduleBgCopyTilemapToVram(0);
+    schedule_bg_copy_tilemap_to_vram(0);
     sub_81223FC(sPokeblockMenu->field_E75, FIELD_E75_COUNT, 1);
 
     for (i = 0; i < 9; i++)
@@ -1125,7 +1125,7 @@ static void PutPokeblockOptionsWindow(u8 taskId)
     sub_81995E4(data[1], sPokeblockMenu->optionsNo, sPokeblockMenuActions, sPokeblockMenu->pokeblockOptionsIds);
     InitMenuInUpperLeftCornerPlaySoundWhenAPressed(data[1], sPokeblockMenu->optionsNo, 0);
     PutWindowTilemap(data[1]);
-    ScheduleBgCopyTilemapToVram(1);
+    schedule_bg_copy_tilemap_to_vram(1);
 
     gTasks[taskId].func = Task_HandlePokeblockOptionsInput;
 }
@@ -1134,7 +1134,7 @@ static void Task_HandlePokeblockOptionsInput(u8 taskId)
 {
     s8 itemId;
 
-    if (MenuHelpers_CallLinkSomething() == TRUE)
+    if (sub_81221EC() == TRUE)
         return;
 
     itemId = Menu_ProcessInputNoWrap();
@@ -1212,8 +1212,8 @@ static void HandleErasePokeblock(u8 taskId)
         HandlePokeblockListMenuItems();
         data[0] = ListMenuInit(&gMultiuseListMenuTemplate, *lastPage, *lastPos);
         HandlePokeblockMenuCursor(*lastPos, 0x1005);
-        ScheduleBgCopyTilemapToVram(0);
-        ScheduleBgCopyTilemapToVram(1);
+        schedule_bg_copy_tilemap_to_vram(0);
+        schedule_bg_copy_tilemap_to_vram(1);
         TossPokeblockChoice_No(taskId);
     }
 }
@@ -1221,7 +1221,7 @@ static void HandleErasePokeblock(u8 taskId)
 static void TossPokeblockChoice_No(u8 taskId)
 {
     ClearDialogWindowAndFrameToTransparent(10, FALSE);
-    ScheduleBgCopyTilemapToVram(1);
+    schedule_bg_copy_tilemap_to_vram(1);
     sub_81363BC();
     gTasks[taskId].func = Task_HandlePokeblockMenuInput;
 }
@@ -1268,7 +1268,7 @@ static void PokeblockAction_Cancel(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     ClearStdWindowAndFrameToTransparent(data[1], FALSE);
-    ScheduleBgCopyTilemapToVram(1);
+    schedule_bg_copy_tilemap_to_vram(1);
     sub_81363BC();
     gTasks[taskId].func = Task_HandlePokeblockMenuInput;
 }

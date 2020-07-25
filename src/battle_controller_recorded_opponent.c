@@ -1230,9 +1230,9 @@ static void RecordedOpponentHandleDrawTrainerPic(void)
     else
     {
         xPos = 176;
-        if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM)
+        if (gTrainerBattleOpponent_A == TRAINER_OPPONENT_C00)
         {
-            trainerPicId = GetUnionRoomTrainerPic();
+            trainerPicId = sub_8068B48();
         }
         else
         {

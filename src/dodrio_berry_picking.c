@@ -450,7 +450,7 @@ static void (*const gUnknown_082F7AF4[])(void) =
 };
 
 // code
-void StartDodrioBerryPicking(u16 a0, void (*callback)(void))
+void sub_802493C(u16 a0, void (*callback)(void))
 {
     gUnknown_03000DB0 = FALSE;
 
@@ -832,9 +832,9 @@ static void sub_8025158(void)
 
 static bool32 sub_8025170(void)
 {
-    u8 recvStatus = GetBlockReceivedStatus();
-    u8 playerFlags = GetLinkPlayerCountAsBitFlags();
-    if (recvStatus == playerFlags)
+    u8 r4 = GetBlockReceivedStatus();
+    u8 r0 = sub_800A9D8();
+    if (r4 == r0)
     {
         ResetBlockReceivedFlags();
         return TRUE;
@@ -4483,12 +4483,12 @@ static void sub_802A380(void)
     case 2:
         if (!IsDma3ManagerBusyWithBgCopy())
         {
-            CreateTask(Task_LinkSave, 0);
+            CreateTask(sub_8153688, 0);
             gUnknown_02022CF8->state++;
         }
         break;
     case 3:
-        if (!FuncIsActiveTask(Task_LinkSave))
+        if (!FuncIsActiveTask(sub_8153688))
             gUnknown_02022CF8->state++;
         break;
     default:
@@ -4644,16 +4644,16 @@ static bool32 sub_802A8E8(void)
         LoadPalette(gDodrioBerryBgPal1, 0, sizeof(gDodrioBerryBgPal1));
         break;
     case 1:
-        ResetTempTileDataBuffers();
+        reset_temp_tile_data_buffers();
         break;
     case 2:
-        DecompressAndCopyTileDataToVram(3, gDodrioBerryBgGfx1, 0, 0, 0);
+        decompress_and_copy_tile_data_to_vram(3, gDodrioBerryBgGfx1, 0, 0, 0);
         break;
     case 3:
-        DecompressAndCopyTileDataToVram(1, gDodrioBerryBgGfx2, 0, 0, 0);
+        decompress_and_copy_tile_data_to_vram(1, gDodrioBerryBgGfx2, 0, 0, 0);
         break;
     case 4:
-        if (FreeTempTileDataBuffersIfPossible() == TRUE)
+        if (free_temp_tile_data_buffers_if_possible() == TRUE)
             return FALSE;
         break;
     case 5:

@@ -7,7 +7,6 @@
 #include "battle_setup.h"
 #include "cable_club.h"
 #include "link.h"
-#include "link_rfu.h"
 #include "party_menu.h"
 #include "pokemon.h"
 #include "recorded_battle.h"
@@ -35,10 +34,10 @@ void HandleLinkBattleSetup(void)
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
         if (gWirelessCommType)
-            SetWirelessCommType1();
+            sub_800B488();
         if (!gReceivedRemoteLinkPlayers)
             OpenLink();
-        CreateTask(Task_WaitForLinkPlayerConnection, 0);
+        CreateTask(task00_08081A90, 0);
         CreateTasksForSendRecvLinkBuffers();
     }
 }
@@ -839,7 +838,7 @@ void sub_8033648(void)
 
     if (gReceivedRemoteLinkPlayers != 0 && (gBattleTypeFlags & BATTLE_TYPE_20))
     {
-        DestroyTask_RfuIdle();
+        sub_8011BD0();
         for (i = 0; i < GetLinkPlayerCount(); i++)
         {
             if (GetBlockReceivedStatus() & gBitTable[i])

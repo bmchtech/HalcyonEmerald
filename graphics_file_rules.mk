@@ -507,7 +507,7 @@ $(ROULETTEGFXDIR)/poke_icons2.4bpp: $(ROULETTEGFXDIR)/wynaut.4bpp \
 									$(ROULETTEGFXDIR)/makuhita.4bpp
 	@cat $^ >$@
 
-$(BATTRANSGFXDIR)/regis.4bpp: %.4bpp: %.png
+$(BATTRANSGFXDIR)/85BBC14.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 53
 
 $(BATTRANSGFXDIR)/rayquaza.4bpp: %.4bpp: %.png

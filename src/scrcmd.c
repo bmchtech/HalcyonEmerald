@@ -5,7 +5,7 @@
 #include "clock.h"
 #include "coins.h"
 #include "contest.h"
-#include "contest_util.h"
+#include "contest_link_80F57C4.h"
 #include "contest_painting.h"
 #include "data.h"
 #include "decoration.h"
@@ -1188,22 +1188,22 @@ bool8 ScrCmd_setobjectmovementtype(struct ScriptContext *ctx)
 bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
 {
     u8 graphicsId = ScriptReadByte(ctx);
-    u8 objectEventId = ScriptReadByte(ctx);
+    u8 v2 = ScriptReadByte(ctx);
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u32 y = VarGet(ScriptReadHalfword(ctx));
     u8 elevation = ScriptReadByte(ctx);
     u8 direction = ScriptReadByte(ctx);
 
-    CreateObjectSprite(graphicsId, objectEventId, x, y, elevation, direction);
+    sprite_new(graphicsId, v2, x, y, elevation, direction);
     return FALSE;
 }
 
 bool8 ScrCmd_turnvobject(struct ScriptContext *ctx)
 {
-    u8 objectEventId = ScriptReadByte(ctx);
+    u8 v1 = ScriptReadByte(ctx);
     u8 direction = ScriptReadByte(ctx);
 
-    TurnObjectEventSprite(objectEventId, direction);
+    sub_8097B78(v1, direction);
     return FALSE;
 }
 
@@ -1285,7 +1285,7 @@ bool8 ScrCmd_pokenavcall(struct ScriptContext *ctx)
 
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
-    ShowPokenavFieldMessage(msg);
+    sub_8098238(msg);
     return FALSE;
 }
 
@@ -1472,9 +1472,7 @@ bool8 ScrCmd_hidemonpic(struct ScriptContext *ctx)
 bool8 ScrCmd_showcontestwinner(struct ScriptContext *ctx)
 {
     u8 contestWinnerId = ScriptReadByte(ctx);
-
-    // Don't save artist's painting yet
-    if (contestWinnerId != CONTEST_WINNER_ARTIST)
+    if (contestWinnerId)
         SetContestWinnerForPainting(contestWinnerId);
 
     ShowContestWinner();
@@ -1958,14 +1956,14 @@ bool8 ScrCmd_startcontest(struct ScriptContext *ctx)
 
 bool8 ScrCmd_showcontestresults(struct ScriptContext *ctx)
 {
-    ShowContestResults();
+    sub_80F8484();
     ScriptContext1_Stop();
     return TRUE;
 }
 
 bool8 ScrCmd_contestlinktransfer(struct ScriptContext *ctx)
 {
-    ContestLinkTransfer(gSpecialVar_ContestCategory);
+    sub_80F84C4(gSpecialVar_ContestCategory);
     ScriptContext1_Stop();
     return TRUE;
 }

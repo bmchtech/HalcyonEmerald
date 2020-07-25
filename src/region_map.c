@@ -548,15 +548,15 @@ bool8 LoadRegionMapGfx(void)
     {
     case 0:
         if (gRegionMap->bgManaged)
-            DecompressAndCopyTileDataToVram(gRegionMap->bgNum, sRegionMapBg_GfxLZ, 0, 0, 0);
+            decompress_and_copy_tile_data_to_vram(gRegionMap->bgNum, sRegionMapBg_GfxLZ, 0, 0, 0);
         else
             LZ77UnCompVram(sRegionMapBg_GfxLZ, (u16 *)BG_CHAR_ADDR(2));
         break;
     case 1:
         if (gRegionMap->bgManaged)
         {
-            if (!FreeTempTileDataBuffersIfPossible())
-                DecompressAndCopyTileDataToVram(gRegionMap->bgNum, sRegionMapBg_TilemapLZ, 0, 0, 1);
+            if (!free_temp_tile_data_buffers_if_possible())
+                decompress_and_copy_tile_data_to_vram(gRegionMap->bgNum, sRegionMapBg_TilemapLZ, 0, 0, 1);
         }
         else
         {
@@ -564,7 +564,7 @@ bool8 LoadRegionMapGfx(void)
         }
         break;
     case 2:
-        if (!FreeTempTileDataBuffersIfPossible())
+        if (!free_temp_tile_data_buffers_if_possible())
             LoadPalette(sRegionMapBg_Pal, 0x70, 0x60);
         break;
     case 3:
@@ -1711,7 +1711,7 @@ void CB2_OpenFlyMap(void)
         PutWindowTilemap(2);
         FillWindowPixelBuffer(2, PIXEL_FILL(0));
         AddTextPrinterParameterized(2, 1, gText_FlyToWhere, 0, 1, 0, NULL);
-        ScheduleBgCopyTilemapToVram(0);
+        schedule_bg_copy_tilemap_to_vram(0);
         gMain.state++;
         break;
     case 8:
@@ -1779,7 +1779,7 @@ static void DrawFlyDestTextWindow(void)
                     AddTextPrinterParameterized(1, 1, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
                     name = sMultiNameFlyDestinations[i].name[sFlyMap->regionMap.posWithinMapSec];
                     AddTextPrinterParameterized(1, 1, name, GetStringRightAlignXOffset(1, name, 96), 17, 0, NULL);
-                    ScheduleBgCopyTilemapToVram(0);
+                    schedule_bg_copy_tilemap_to_vram(0);
                     gUnknown_03001180 = TRUE;
                 }
                 break;
@@ -1797,7 +1797,7 @@ static void DrawFlyDestTextWindow(void)
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
             }
             AddTextPrinterParameterized(0, 1, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
-            ScheduleBgCopyTilemapToVram(0);
+            schedule_bg_copy_tilemap_to_vram(0);
             gUnknown_03001180 = FALSE;
         }
     }
@@ -1810,7 +1810,7 @@ static void DrawFlyDestTextWindow(void)
         }
         FillWindowPixelBuffer(0, PIXEL_FILL(1));
         CopyWindowToVram(0, 2);
-        ScheduleBgCopyTilemapToVram(0);
+        schedule_bg_copy_tilemap_to_vram(0);
         gUnknown_03001180 = FALSE;
     }
 }

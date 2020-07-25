@@ -1360,7 +1360,7 @@ struct BerryTree *GetBerryTreeInfo(u8 id)
 
 bool32 ObjectEventInteractionWaterBerryTree(void)
 {
-    struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
+    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
 
     switch (tree->stage)
     {
@@ -1493,7 +1493,7 @@ void DoBerryEncounter(void)
 bool8 IsPlayerFacingEmptyBerryTreePatch(void)
 {
     if (GetObjectEventScriptPointerPlayerFacing() == BerryTreeScript
-     && GetStageByBerryTreeId(GetObjectEventBerryTreeId(gSelectedObjectEvent)) == BERRY_STAGE_NO_BERRY)
+     && GetStageByBerryTreeId(ObjectEventGetBerryTreeId(gSelectedObjectEvent)) == BERRY_STAGE_NO_BERRY)
         return TRUE;
     else
         return FALSE;
@@ -1731,7 +1731,7 @@ void ObjectEventInteractionGetBerryTreeData(void)
     u8 group;
     u8 num;
 
-    id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
+    id = ObjectEventGetBerryTreeId(gSelectedObjectEvent);
     berry = GetBerryTypeByBerryTreeId(id);
     ResetBerryTreeSparkleFlag(id);
     localId = gSpecialVar_LastTalked;
@@ -1748,13 +1748,13 @@ void ObjectEventInteractionGetBerryTreeData(void)
 
 void ObjectEventInteractionGetBerryName(void)
 {
-    u8 berryType = GetBerryTypeByBerryTreeId(GetObjectEventBerryTreeId(gSelectedObjectEvent));
+    u8 berryType = GetBerryTypeByBerryTreeId(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
     GetBerryNameByBerryType(berryType, gStringVar1);
 }
 
 void ObjectEventInteractionGetBerryCountString(void)
 {
-    u8 treeId = GetObjectEventBerryTreeId(gSelectedObjectEvent);
+    u8 treeId = ObjectEventGetBerryTreeId(gSelectedObjectEvent);
     u8 berry = GetBerryTypeByBerryTreeId(treeId);
     u8 count = GetBerryCountByBerryTreeId(treeId);
     GetBerryCountStringByBerryType(berry, gStringVar1, count);
@@ -1769,13 +1769,13 @@ void ObjectEventInteractionPlantBerryTree(void)
 {
     u8 berry = ItemIdToBerryType(gSpecialVar_ItemId);
 
-    PlantBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent), berry, 1, TRUE);
+    PlantBerryTree(ObjectEventGetBerryTreeId(gSelectedObjectEvent), berry, 1, TRUE);
     ObjectEventInteractionGetBerryTreeData();
 }
 
 void ObjectEventInteractionPickBerryTree(void)
 {
-    u8 id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
+    u8 id = ObjectEventGetBerryTreeId(gSelectedObjectEvent);
     u8 berry = GetBerryTypeByBerryTreeId(id);
 
     gSpecialVar_0x8004 = AddBagItem(BerryTypeToItemId(berry), GetBerryCountByBerryTreeId(id));
@@ -1783,7 +1783,7 @@ void ObjectEventInteractionPickBerryTree(void)
 
 void ObjectEventInteractionRemoveBerryTree(void)
 {
-    RemoveBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent));
+    RemoveBerryTree(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
     sub_8092EF0(gSpecialVar_LastTalked, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 

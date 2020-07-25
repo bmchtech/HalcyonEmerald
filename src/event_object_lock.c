@@ -96,7 +96,7 @@ void ScriptUnfreezeObjectEvents(void)
     UnfreezeObjectEvents();
 }
 
-void UnionRoom_UnlockPlayerAndChatPartner(void)
+void sub_8098524(void)
 {
     u8 playerObjectId;
 
