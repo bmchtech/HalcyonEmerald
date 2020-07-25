@@ -52,6 +52,7 @@
 #include "constants/rgb.h"
 #include "constants/species.h"
 #include "constants/songs.h"
+#include "constants/union_room.h"
 
 #define Trade_SendData(ptr) (SendBlock(bitmask_all_link_players_but_self(), ptr->linkData, 20))
 
@@ -237,7 +238,7 @@ static void CB2_SaveAndEndWirelessTrade(void);
 
 static bool8 SendLinkData(const void *linkData, u32 size)
 {
-    if (gUnknown_02022C2C == 29)
+    if (gPlayerCurrActivity == ACTIVITY_29)
     {
         rfu_NI_setSendData(lman.acceptSlot_flag, 84, linkData, size);
         return TRUE;
@@ -255,7 +256,7 @@ static void sub_80771AC(u8 a0)
 
 static bool32 sub_80771BC(void)
 {
-    if (gUnknown_02022C2C == 29)
+    if (gPlayerCurrActivity == ACTIVITY_29)
     {
         if (gRfuSlotStatusNI[sub_800E87C(lman.acceptSlot_flag)]->send.state == 0)
             return TRUE;
@@ -291,7 +292,7 @@ static void TradeResetReceivedFlag(u32 who)
 
 static bool32 IsWirelessTrade(void)
 {
-    if (gWirelessCommType && gUnknown_02022C2C == 29)
+    if (gWirelessCommType && gPlayerCurrActivity == ACTIVITY_29)
         return TRUE;
     else
         return FALSE;
@@ -391,20 +392,20 @@ static void CB2_CreateTradeMenu(void)
 
         if (!gReceivedRemoteLinkPlayers)
         {
-            gLinkType = LINKTYPE_0x1122;
+            gLinkType = LINKTYPE_TRADE_CONNECTING;
             sTradeMenuData->timer = 0;
 
             if (gWirelessCommType)
             {
-                sub_800B488();
+                SetWirelessCommType1();
                 OpenLink();
-                sub_8011BA4();
+                CreateTask_RfuIdle();
             }
             else
             {
                 OpenLink();
                 gMain.state++;
-                CreateTask(task00_08081A90, 1);
+                CreateTask(Task_WaitForLinkPlayerConnection, 1);
             }
         }
         else
@@ -440,7 +441,7 @@ static void CB2_CreateTradeMenu(void)
     case 4:
         if (gReceivedRemoteLinkPlayers == TRUE && IsLinkPlayerDataExchangeComplete() == TRUE)
         {
-            sub_8011BD0();
+            DestroyTask_RfuIdle();
             CalculatePlayerPartyCount();
             gMain.state++;
             sTradeMenuData->timer = 0;
@@ -2752,7 +2753,7 @@ void CB2_LinkTrade(void)
     case 0:
         if (!gReceivedRemoteLinkPlayers)
         {
-            gLinkType = LINKTYPE_0x1144;
+            gLinkType = LINKTYPE_TRADE_DISCONNECTED;
             CloseLink();
         }
         sTradeData = AllocZeroed(sizeof(*sTradeData));
@@ -4605,7 +4606,7 @@ static void CB2_SaveAndEndTrade(void)
             IncrementGameStat(GAME_STAT_POKEMON_TRADES);
         if (gWirelessCommType)
         {
-            sub_801B990(2, gLinkPlayers[GetMultiplayerId() ^ 1].trainerId);
+            RecordIdOfWonderCardSenderByEventType(2, gLinkPlayers[GetMultiplayerId() ^ 1].trainerId);
         }
         SetContinueGameWarpStatusToDynamicWarp();
         sub_8153380();
