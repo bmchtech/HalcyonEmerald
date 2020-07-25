@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 18,
-      "y": 68,
+      "x": 14,
+      "y": 64,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -348,14 +348,16 @@
       "dest_warp_id": 0
     },
     {
-      "dest_map": "MAP_SEASPRAY_CAVE",
-      "dest_warp_id": 0,
-      "elevation": 0,
       "x": 8,
-      "y": 70
+      "y": 70,
+      "elevation": 0,
+      "dest_map": "MAP_SEASPRAY_CAVE",
+      "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "secret_base",
@@ -373,8 +375,8 @@
     },
     {
       "type": "sign",
-      "x": 16,
-      "y": 64,
+      "x": 19,
+      "y": 73,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route115_EventScript_RouteSignRustboro"
