@@ -1385,7 +1385,7 @@ bool32 ObjectEventInteractionWaterBerryTree(void)
 // Used when encountering a Pokemon on a growing berry tree to set the encounter to "done"
 bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
 {
-    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+    struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
     switch (tree->stage)
     {
@@ -1411,7 +1411,7 @@ bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
 // Should be called when a berry is planted.
 void SetBerryEncounters(void)
 {
-    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+    struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
     u8 encounterStages = Random() % 16;
     u8 mask = 1;
@@ -1439,7 +1439,7 @@ void SetBerryEncounters(void)
 // Result is stored in gSpecialVar_Result, and is either true or false.
 void GetBerryEncounter(void)
 {
-    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+    struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
     if (tree->EncounterSproutStage && tree->stage == BERRY_STAGE_SPROUTED)
     {
@@ -1465,7 +1465,7 @@ void GetBerryEncounter(void)
 
 void DoBerryEncounter(void)
 {
-    struct BerryTree *tree = GetBerryTreeInfo(ObjectEventGetBerryTreeId(gSelectedObjectEvent));
+    struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
     // Get encounter list based on growth stage of berry
 
     u8 berryStage;
