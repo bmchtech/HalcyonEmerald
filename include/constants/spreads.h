@@ -37,5 +37,7 @@
 #define SPREAD_BRAWLY_ONE_MON             	33
 #define SPREAD_ARCHIE_ONE_MON               34
 #define SPREAD_WATTSON_SPECIAL              35
+#define SPREAD_FLANNERY_SPECIAL             36
+#define SPREAD_FLANNERY_MIXED               37
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

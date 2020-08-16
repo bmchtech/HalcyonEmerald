@@ -601,4 +601,42 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_MODEST
 	},
+	[SPREAD_FLANNERY_SPECIAL] = {
+		.EVs = {
+			  0,	// HP
+			  0,	// Attack
+			 80,	// Defense
+			 80,	// Speed
+			252,	// Special Attack
+			 80		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	 0,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_MODEST
+	},
+	[SPREAD_FLANNERY_MIXED] = {
+		.EVs = {
+			  0,	// HP
+			252,	// Attack
+			  0,	// Defense
+			  0,	// Speed
+			252,	// Special Attack
+			  0		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	31,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_RASH
+	},
 };
