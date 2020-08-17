@@ -7355,7 +7355,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jeff[] = {
     .lvl = -1,
     .species = SPECIES_DELPHOX,
     .heldItem = ITEM_LIFE_ORB,
-    .ability = 1, // Magic Guard
+    .ability = 2, // Magic Guard
     .spread = SPREAD_31_IV_40_EV,
     .moves = MOVE_MYSTICAL_FIRE, MOVE_PSYSHOCK, MOVE_DAZZLING_GLEAM, MOVE_WILL_O_WISP
     },
