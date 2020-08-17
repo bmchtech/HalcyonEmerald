@@ -366,8 +366,8 @@ GraniteCave_B2F_EventScript_ItemRareCandy:: @ 8291177
 	finditem ITEM_RARE_CANDY
 	end
 
-JaggedPass_EventScript_ItemBurnHeal:: @ 8291184
-	finditem ITEM_BURN_HEAL
+JaggedPass_EventScript_ItemTM69RockPolish:: @ 8291184
+	finditem ITEM_TM69_ROCK_POLISH
 	end
 
 FieryPath_EventScript_ItemFireStone:: @ 8291191
