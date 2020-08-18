@@ -189,16 +189,18 @@ static const u8 sMapName_RixyChamber[] = _("RIXY CHAMBER");
 static const u8 sMapName_ViapoisChamber[] = _("VIAPOIS CHAMBER");
 static const u8 sMapName_EmberSpa[] = _("EMBER SPA");
 static const u8 sMapName_SpecialArea[] = _("SPECIAL AREA");
-static const u8 sMapName_AquaHideout[] = _("AQUA Hideout");
-static const u8 sMapName_MagmaHideout[] = _("MAGMA Hideout");
+static const u8 sMapName_AquaHideout[] = _("Aqua Hideout");
+static const u8 sMapName_MagmaHideout[] = _("Magma Hideout");
 static const u8 sMapName_MirageTower[] = _("Mirage Tower");
-static const u8 sMapName_FarawayIsland[] = _("FARAWAY ISLAND");
-static const u8 sMapName_ArtisanCave[] = _("ARTISAN CAVE");
-static const u8 sMapName_MarineCave[] = _("MARINE CAVE");
-static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
-static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
-static const u8 sMapName_TrainerHill[] = _("Trainer HILL");
+static const u8 sMapName_FarawayIsland[] = _("Faraway Island");
+static const u8 sMapName_ArtisanCave[] = _("Artisan Cave");
+static const u8 sMapName_MarineCave[] = _("Marine Cave");
+static const u8 sMapName_TerraCave[] = _("Terra Cave");
+static const u8 sMapName_DesertUnderpass[] = _("Desert Underpass");
+static const u8 sMapName_TrainerHill[] = _("Trainer Hill");
 static const u8 sMapName_Seaspray_Cave[] = _("Seaspray Cave");
+static const u8 sMapName_EmberPath[] = _("Ember Path");
+static const u8 sMapName_AshenWoods[] = _("Ashen Woods");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]           = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -414,7 +416,9 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ALTERING_CAVE]             = { 6,  8, 1, 1, sMapName_AlteringCave},
     [MAPSEC_NAVEL_ROCK]                = { 0,  0, 1, 1, sMapName_NavelRock},
     [MAPSEC_TRAINER_HILL]              = { 8,  4, 1, 1, sMapName_TrainerHill},
-    [MAPSEC_SEASPRAY_CAVE]             = { 0,  4, 1, 1, sMapName_Seaspray_Cave}
+    [MAPSEC_SEASPRAY_CAVE]             = { 0,  4, 1, 1, sMapName_Seaspray_Cave},
+    [MAPSEC_EMBER_PATH]                = { 6,  3, 1, 1, sMapName_EmberPath},
+    [MAPSEC_ASHEN_WOODS]               = { 6,  3, 1, 1, sMapName_AshenWoods}
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
