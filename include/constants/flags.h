@@ -58,7 +58,7 @@
 #define FLAG_SEASPRAY_CAVE_LURE_BALL        0x2E
 #define FLAG_SEASPRAY_CAVE_BLASTOISINITE    0x2F
 #define FLAG_GRANITE_CAVE_BRICK_BREAK       0x30
-#define FLAG_ROUTE_106_BIG_PEARL            0x31 // Unused Flag
+#define FLAG_ROUTE_106_BIG_PEARL            0x31
 #define FLAG_DEWFORD_GYM_FRESHWATER         0x32
 #define FLAG_TALKED_TO_MOVE_TUTOR           0x33
 #define FLAG_PETALBURG_WOODS_BIG_ROOT       0x34
@@ -73,13 +73,13 @@
 #define FLAG_HIDE_FALLARBOR_RIVAL_ON_BIKE   0x3D
 #define FLAG_MET_NATURE_CHANGER             0x3E
 #define FLAG_MET_IVY_AND_EVIE               0x3F
-#define FLAG_SEASPRAY_CAVE_STONE_EDGE       0x40 // Unused Flag
-#define FLAG_SEASPRAY_CAVE_B1F_FREEZE_DRY   0x41 // Unused Flag
-#define FLAG_SEASPRAY_CAVE_B1F_KINGS_ROCK   0x42 // Unused Flag
-#define FLAG_SEASPRAY_CAVE_B1F_REVIVE       0x43 // Unused Flag
-#define FLAG_SEASPRAY_CAVE_B1F_ABOMASITE    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
+#define FLAG_SEASPRAY_CAVE_STONE_EDGE       0x40
+#define FLAG_SEASPRAY_CAVE_B1F_FREEZE_DRY   0x41
+#define FLAG_SEASPRAY_CAVE_B1F_KINGS_ROCK   0x42
+#define FLAG_SEASPRAY_CAVE_B1F_REVIVE       0x43
+#define FLAG_SEASPRAY_CAVE_B1F_ABOMASITE    0x44
+#define FLAG_EMBER_PATH_SMACK_DOWN          0x45
+#define FLAG_EMBER_PATH_CHARIZARDITE_Y      0x46
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag

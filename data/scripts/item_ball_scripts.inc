@@ -717,3 +717,11 @@ Seaspray_Cave_B1F_ItemKingsRock::
 Granite_Cave_B2F_TM31_Brick_Break::
 	finditem ITEM_TM31_BRICK_BREAK
 	end
+
+Ember_Path_ItemSmack_Down::
+	finditem ITEM_TM87_SMACK_DOWN
+	end
+
+Ember_Path_ItemCharizarditeY::
+	finditem ITEM_CHARIZARDITE_Y
+	end

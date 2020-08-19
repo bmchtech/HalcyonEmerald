@@ -11370,6 +11370,75 @@
           }
         },
         {
+          "map": "MAP_EMBER_PATH",
+          "base_label": "gEmberPath",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MAGCARGO"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MAGMAR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MAGCARGO"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_GRUMPIG"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_GRUMPIG"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LARVESTA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LARVESTA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LARVESTA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LARVESTA"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_ARTISAN_CAVE_1F",
           "base_label": "gArtisanCave_1F",
           "land_mons": {
