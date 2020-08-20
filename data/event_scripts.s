@@ -1069,3 +1069,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/Seaspray_Cave_B1F/scripts.inc"
 
 	.include "data/maps/EmberPath/scripts.inc"
+
+	.include "data/maps/AshenWoods/scripts.inc"

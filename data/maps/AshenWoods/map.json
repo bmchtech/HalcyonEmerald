@@ -1,0 +1,187 @@
+{
+  "id": "MAP_ASHEN_WOODS",
+  "name": "AshenWoods",
+  "layout": "LAYOUT_ASHEN_WOODS",
+  "music": "MUS_AJITO",
+  "region_map_section": "MAPSEC_ASHEN_WOODS",
+  "requires_flash": false,
+  "weather": "WEATHER_VOLCANIC_ASH",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Ashen_Woods_ItemPinsirite",
+      "flag": "FLAG_ASHEN_WOODS_PINSIRITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Ashen_Woods_ItemFlame_Orb",
+      "flag": "FLAG_ASHEN_WOODS_FLAME_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Ashen_Woods_ItemU_Turn",
+      "flag": "FLAG_ASHEN_WOODS_U_TURN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 10,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "AshenWoods_EventScript_Roman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 12,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "AshenWoods_EventScript_Alannah",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 12,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "AshenWoods_EventScript_Martin",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 6,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 7,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "7",
+      "script": "AshenWoods_EventScript_Elmer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
+      "x": 19,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 23,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_EMBER_PATH",
+      "dest_warp_id": 1
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "weather",
+      "x": 21,
+      "y": 15,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SHADE"
+    },
+    {
+      "type": "weather",
+      "x": 22,
+      "y": 15,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SHADE"
+    },
+    {
+      "type": "weather",
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_VOLCANIC_ASH"
+    },
+    {
+      "type": "weather",
+      "x": 25,
+      "y": 13,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_VOLCANIC_ASH"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_BALM_MUSHROOM",
+      "flag": "FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 27,
+      "elevation": 3,
+      "item": "ITEM_PP_MAX",
+      "flag": "FLAG_HIDDEN_ITEM_ASHEN_WOODS_PP_MAX"
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 39,
+      "elevation": 3,
+      "item": "ITEM_BALM_MUSHROOM",
+      "flag": "FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_1"
+    }
+  ]
+}

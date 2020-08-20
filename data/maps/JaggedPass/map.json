@@ -243,11 +243,11 @@
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 29,
+      "x": 22,
+      "y": 32,
       "elevation": 3,
-      "item": "ITEM_GREAT_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL"
+      "item": "ITEM_HEAVY_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_HEAVY_BALL"
     }
   ]
 }

@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/EmberPath/border.bin",
       "blockdata_filepath": "data/layouts/EmberPath/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHEN_WOODS",
+      "name": "AshenWoods_Layout",
+      "width": 36,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/AshenWoods/border.bin",
+      "blockdata_filepath": "data/layouts/AshenWoods/map.bin"
     }
   ]
 }

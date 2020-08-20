@@ -80,9 +80,9 @@
 #define FLAG_SEASPRAY_CAVE_B1F_ABOMASITE    0x44
 #define FLAG_EMBER_PATH_SMACK_DOWN          0x45
 #define FLAG_EMBER_PATH_CHARIZARDITE_Y      0x46
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_ASHEN_WOODS_FLAME_ORB          0x47
+#define FLAG_ASHEN_WOODS_PINSIRITE          0x48
+#define FLAG_ASHEN_WOODS_U_TURN             0x49
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
@@ -613,7 +613,7 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x49)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x4A)
 #define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL             (FLAG_HIDDEN_ITEMS_START + 0x4B)
-#define FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL              (FLAG_HIDDEN_ITEMS_START + 0x4C)
+#define FLAG_HIDDEN_ITEM_JAGGED_PASS_HEAVY_BALL              (FLAG_HIDDEN_ITEMS_START + 0x4C)
 #define FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL               (FLAG_HIDDEN_ITEMS_START + 0x4D)
 #define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER          (FLAG_HIDDEN_ITEMS_START + 0x4E)
 #define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC                 (FLAG_HIDDEN_ITEMS_START + 0x4F)
@@ -651,10 +651,10 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 #define FLAG_HIDDEN_ITEM_SEASPRAY_CAVE_B1F_ICICLE_PLATE      (FLAG_HIDDEN_ITEMS_START + 0x70)
 #define FLAG_HIDDEN_ITEM_SEASPRAY_CAVE_B1F_ICE_STONE         (FLAG_HIDDEN_ITEMS_START + 0x71)
+#define FLAG_HIDDEN_ITEM_EMBER_PATH_FLAME_PLATE              (FLAG_HIDDEN_ITEMS_START + 0x72)
+#define FLAG_HIDDEN_ITEM_EMBER_PATH_MAGMARIZER               (FLAG_HIDDEN_ITEMS_START + 0x73)
+#define FLAG_HIDDEN_ITEM_ASHEN_WOODS_PP_MAX                  (FLAG_HIDDEN_ITEMS_START + 0x74)
 
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
@@ -1579,8 +1579,8 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_1      (DAILY_FLAGS_START + 0x3)
+#define FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_2      (DAILY_FLAGS_START + 0x4)
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag

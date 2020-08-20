@@ -87,6 +87,13 @@
       "elevation": 0,
       "dest_map": "MAP_JAGGED_PASS",
       "dest_warp_id": 5
+    },
+    {
+      "x": 3,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ASHEN_WOODS",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
@@ -99,7 +106,7 @@
       "y": 38,
       "elevation": 3,
       "item": "ITEM_MAGMARIZER",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_EMBER_PATH_MAGMARIZER"
     },
     {
       "type": "hidden_item",
@@ -107,7 +114,7 @@
       "y": 2,
       "elevation": 3,
       "item": "ITEM_FLAME_PLATE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_EMBER_PATH_FLAME_PLATE"
     }
   ]
 }

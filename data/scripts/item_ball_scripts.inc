@@ -725,3 +725,15 @@ Ember_Path_ItemSmack_Down::
 Ember_Path_ItemCharizarditeY::
 	finditem ITEM_CHARIZARDITE_Y
 	end
+
+Ashen_Woods_ItemFlame_Orb::
+	finditem ITEM_FLAME_ORB
+	end
+
+Ashen_Woods_ItemU_Turn::
+	finditem ITEM_TM89_U_TURN
+	end
+
+Ashen_Woods_ItemPinsirite::
+	finditem ITEM_PINSIRITE
+	end

@@ -401,6 +401,7 @@
 #define MAP_SEASPRAY_CAVE                            (110 | (24 << 8))
 #define MAP_SEASPRAY_CAVE_B1F                        (111 | (24 << 8))
 #define MAP_EMBER_PATH                               (112 | (24 << 8))
+#define MAP_ASHEN_WOODS                              (113 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))

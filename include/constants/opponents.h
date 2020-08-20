@@ -123,7 +123,7 @@
 #define TRAINER_NAOMI                       119
 #define TRAINER_CINDY_3                     120
 #define TRAINER_CINDY_4                     121
-#define BRENDAN_MUDKIP_METEOR_FALLS                     122
+#define BRENDAN_MUDKIP_METEOR_FALLS         122
 #define TRAINER_CINDY_6                     123
 #define TRAINER_MELISSA                     124
 #define TRAINER_SHEILA                      125
@@ -136,14 +136,14 @@
 #define TRAINER_JESSICA_2                   132
 #define TRAINER_JESSICA_3                   133
 #define TRAINER_JESSICA_4                   134
-#define TRAINER_JESSICA_5                   135
+#define TRAINER_ALANNAH                     135
 #define TRAINER_WINSTON_1                   136
 #define TRAINER_MOLLIE                      137
 #define TRAINER_GARRET                      138
 #define TRAINER_WINSTON_2                   139
 #define TRAINER_WINSTON_3                   140
 #define TRAINER_WINSTON_4                   141
-#define TRAINER_WINSTON_5                   142
+#define TRAINER_ELMER                       142
 #define TRAINER_STEVE_1                     143
 #define TRAINER_THALIA_1                    144
 #define TRAINER_MARK                        145
@@ -151,7 +151,7 @@
 #define TRAINER_STEVE_2                     147
 #define TRAINER_STEVE_3                     148
 #define TRAINER_STEVE_4                     149
-#define TRAINER_STEVE_5                     150
+#define TRAINER_ROMAN                       150
 #define TRAINER_LUIS                        151
 #define TRAINER_DOMINIK                     152
 #define TRAINER_DOUGLAS                     153
@@ -179,7 +179,7 @@
 #define TRAINER_TONY_2                      175
 #define TRAINER_TONY_3                      176
 #define TRAINER_TONY_4                      177
-#define TRAINER_TONY_5                      178
+#define TRAINER_MARTIN                      178
 #define TRAINER_TAKAO                       179
 #define TRAINER_HITOSHI                     180
 #define TRAINER_KIYO                        181
