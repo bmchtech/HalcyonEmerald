@@ -851,6 +851,13 @@ const struct MenuAction MultichoiceList_HyperTrainingMenu[] =
     {gText_Exit},
 };
 
+const struct MenuAction MultichoiceList_MoomooMilk[] = 
+{
+    {gText_TakeOne},
+    {gText_TakeOneDozen},
+    {gText_IllPass},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -988,6 +995,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_EV_MENU]                    = MULTICHOICE(MultichoiceList_EVMenu),
     [MULTI_BASE_STATS]                 = MULTICHOICE(MultichoiceList_BaseStats),
     [MULTI_HYPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
+    [MULTI_MOOMOO_MILK]                = MULTICHOICE(MultichoiceList_MoomooMilk),
 };
 
 const u8 *const gStdStrings[] =

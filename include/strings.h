@@ -3318,4 +3318,8 @@ extern const u8 gText_Kalos[];
 extern const u8 gText_Alola[];
 extern const u8 gText_Galar[];
 
+extern const u8 gText_TakeOne[];
+extern const u8 gText_TakeOneDozen[];
+extern const u8 gText_IllPass[];
+
 #endif // GUARD_STRINGS_H

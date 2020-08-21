@@ -2093,3 +2093,8 @@ const u8 gText_Unova[] =    _("Unova");
 const u8 gText_Kalos[] =    _("Kalos");
 const u8 gText_Alola[] =    _("Alola");
 const u8 gText_Galar[] =    _("Galar");
+
+// Moomoo Milk options
+const u8 gText_TakeOne[] =      _("I'll take one.");
+const u8 gText_TakeOneDozen[] = _("I'll take a dozen!");
+const u8 gText_IllPass[] =      _("I'll pass.");
