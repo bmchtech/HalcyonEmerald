@@ -34,7 +34,7 @@ LavaridgeTown_PokemonCenter_1F_EventScript_MoomooMilk::
 	faceplayer
 	showmoneybox 0, 0, 0
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_WantToBuyMoomooMilk, MSGBOX_DEFAULT
-	multichoice 0, 0, MULTI_MOOMOO_MILK, 0
+	multichoice 8, 0, MULTI_MOOMOO_MILK, 0
 	switch VAR_RESULT
 	case 0, LavaridgeTown_PokemonCenter_1F_EventScript_Buy1MoomooMilk
 	case 1, LavaridgeTown_PokemonCenter_1F_EventScript_Buy12MoomooMilk
