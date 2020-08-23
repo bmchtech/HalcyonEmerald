@@ -982,11 +982,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_STRENGTH] =
     {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
+        .effect = EFFECT_CLOSE_COMBAT,
+        .power = 100,
+        .type = TYPE_ROCK,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,

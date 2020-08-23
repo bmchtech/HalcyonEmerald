@@ -2078,9 +2078,9 @@ static const u8 sHM03Desc[] = _(
     "it down on the foe.");
 
 static const u8 sHM04Desc[] = _(
-    "Builds enormous\n"
-    "power, then slams\n"
-    "the foe.");
+    "A powerful slam\n"
+    "attack that also\n"
+    "lowers defenses.");
 
 static const u8 sHM05Desc[] = _(
     "Looses a powerful\n"
