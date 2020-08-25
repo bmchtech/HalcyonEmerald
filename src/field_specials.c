@@ -4368,3 +4368,45 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+// Checks how many HP IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #1
+void CheckHpEvs(void)
+{
+    u8 HpIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV, &HpIv);
+    ConvertIntToDecimalStringN(gStringVar1, HpIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Checks how many ATK IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #2
+void CheckAtkEvs(void)
+{
+    u8 AtkIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_EV, &AtkIv);
+    ConvertIntToDecimalStringN(gStringVar2, AtkIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Checks how many DEF IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #3
+void CheckDefEvs(void)
+{
+    u8 DefIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_EV, &DefIv);
+    ConvertIntToDecimalStringN(gStringVar3, DefIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Checks how many SPD IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #1
+void CheckSpdEvs(void)
+{
+    u8 SpdIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_EV, &SpdIv);
+    ConvertIntToDecimalStringN(gStringVar1, SpdIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Checks how many SP. ATK IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #2
+void CheckSpAtkEvs(void)
+{
+    u8 SpAtkIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_EV, &SpAtkIv);
+    ConvertIntToDecimalStringN(gStringVar2, SpAtkIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Checks how many SP. DEF IVs the Pokémon in gSpecialVar_0x8004 has and stores the information in the Buffer #3
+void CheckSpDefEvs(void)
+{
+    u8 SpDefIv = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &SpDefIv);
+    ConvertIntToDecimalStringN(gStringVar3, SpDefIv, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
