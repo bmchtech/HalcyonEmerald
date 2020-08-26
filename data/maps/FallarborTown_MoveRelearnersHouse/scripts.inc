@@ -1,3 +1,5 @@
+.set LOCALID_MOVE_RELEARNER, 1
+
 FallarborTown_MoveRelearnersHouse_MapScripts:: @ 8201382
 	.byte 0
 

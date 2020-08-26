@@ -1,3 +1,9 @@
+.set LOCALID_MAGMA_GRUNT_1, 5
+.set LOCALID_MAGMA_GRUNT_2, 6
+.set LOCALID_ARCHIE, 7
+.set LOCALID_AQUA_GRUNT_1, 8
+.set LOCALID_AQUA_GRUNT_2, 9
+
 MeteorFalls_1F_1R_MapScripts:: @ 822BD2A
 	map_script MAP_SCRIPT_ON_LOAD, MeteorFalls_1F_1R_OnLoad
 	.byte 0
@@ -42,13 +48,13 @@ MeteorFalls_1F_1R_EventScript_MagmaAfterBattle::
 	applymovement 5, Common_Movement_WalkInPlaceFastestLeft
 	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
-	addobject 7
-	addobject 8
-	addobject 9
+	addobject LOCALID_ARCHIE
+	addobject LOCALID_AQUA_GRUNT_1
+	addobject LOCALID_AQUA_GRUNT_2
 	playbgm MUS_AQA_0, 0
-	applymovement 7, MeteorFalls_1F_1R_Movement_ArchieArrive
-	applymovement 8, MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive
-	applymovement 9, MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive
+	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieArrive
+	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive
+	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive
 	waitmovement 0
 	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
@@ -59,17 +65,17 @@ MeteorFalls_1F_1R_EventScript_MagmaAfterBattle::
 	applymovement 5, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
 	applymovement 6, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
 	waitmovement 0
-	removeobject 5
-	removeobject 6
-	applymovement 7, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
+	removeobject LOCALID_MAGMA_GRUNT_1
+	removeobject LOCALID_MAGMA_GRUNT_2
+	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	applymovement 11, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_ArchieSeenYouBefore, MSGBOX_DEFAULT
 	closemessage
-	applymovement 8, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
-	applymovement 9, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
+	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1ApproachArchie
+	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2ApproachArchie
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma, MSGBOX_DEFAULT
 	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
