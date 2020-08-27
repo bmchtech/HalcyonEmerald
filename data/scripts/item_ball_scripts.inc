@@ -62,8 +62,8 @@ Route111_EventScript_ItemTM37:: @ 8290D9B
 	finditem ITEM_TM37_SANDSTORM
 	end
 
-Route111_EventScript_ItemStardust:: @ 8290DA8
-	finditem ITEM_STARDUST
+Route111_EventScript_ItemStarPiece:: @ 8290DA8
+	finditem ITEM_STAR_PIECE
 	end
 
 Route111_EventScript_ItemHPUp:: @ 8290DB5
@@ -370,8 +370,8 @@ JaggedPass_EventScript_ItemTM69RockPolish:: @ 8291184
 	finditem ITEM_TM69_ROCK_POLISH
 	end
 
-FieryPath_EventScript_ItemFireStone:: @ 8291191
-	finditem ITEM_FIRE_STONE
+FieryPath_EventScript_ItemCharizarditeX::
+	finditem ITEM_CHARIZARDITE_X
 	end
 
 FieryPath_EventScript_ItemTM06:: @ 829119E

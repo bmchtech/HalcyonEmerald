@@ -352,8 +352,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route111_EventScript_ItemStardust",
-      "flag": "FLAG_ITEM_ROUTE_111_STARDUST"
+      "script": "Route111_EventScript_ItemStarPiece",
+      "flag": "FLAG_ITEM_ROUTE_111_STAR_PIECE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -1055,8 +1055,8 @@
       "x": 26,
       "y": 70,
       "elevation": 0,
-      "item": "ITEM_STARDUST",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST"
+      "item": "ITEM_EARTH_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_EARTH_PLATE"
     },
     {
       "type": "secret_base",
