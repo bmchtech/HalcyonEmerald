@@ -1,32 +1,3 @@
-LavaridgeTown_House_EventScript_MimicTutor:: @ 82C804E
-	lock
-	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_MIMIC, MoveTutor_EventScript_MimicTaught
-	msgbox MoveTutor_MimicTeach, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_MimicDeclined
-	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_MimicDeclined
-	msgbox MoveTutor_Text_MimicWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_MIMIC
-	call MoveTutor_EventScript_OpenPartyMenu
-	compare VAR_RESULT, 0
-	goto_if_eq MoveTutor_EventScript_MimicDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_MIMIC
-	goto MoveTutor_EventScript_MimicTaught
-	end
-
-MoveTutor_EventScript_MimicDeclined:: @ 82C80A2
-	msgbox MoveTutor_MimicDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_MimicTaught:: @ 82C80AC
-	msgbox MoveTutor_Text_MimicTaught, MSGBOX_DEFAULT
-	release
-	end
-
 FallarborTown_Mart_EventScript_MetronomeTutor:: @ 82C80B6
 	lock
 	faceplayer

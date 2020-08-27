@@ -12,7 +12,7 @@ MoveTutor_MimicTeach: @ 82C72B6
 	.string "offer to teach the move MIMIC?$"
 
 MoveTutor_MimicDeclined: @ 82C737F
-	.string "Oh, boo! I wanted to teach MIMIC\n"
+	.string "Oh, boo! I wanted to teach Mimic\n"
 	.string "to your Pokémon!$"
 
 MoveTutor_Text_MimicWhichMon: @ 82C73B1
@@ -21,7 +21,7 @@ MoveTutor_Text_MimicWhichMon: @ 82C73B1
 	.string "you wish me to teach.$"
 
 MoveTutor_Text_MimicTaught: @ 82C73F6
-	.string "MIMIC is a move of great depth.\p"
+	.string "Mimic is a move of great depth.\p"
 	.string "Could you execute it to perfection\n"
 	.string "as well as me…?$"
 

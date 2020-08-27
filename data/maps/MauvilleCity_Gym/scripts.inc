@@ -114,7 +114,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated:: @ 820DF2B
 	release
 	end
 
-MauvilleCity_Gym_EventScript_GiveShockWave2:: @ 820DF8D
+MauvilleCity_Gym_EventScript_GiveVoltSwitch2:: @ 820DF8D
 	giveitem ITEM_TM72_VOLT_SWITCH
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
@@ -123,7 +123,7 @@ MauvilleCity_Gym_EventScript_GiveShockWave2:: @ 820DF8D
 	release
 	end
 
-MauvilleCity_Gym_EventScript_GiveShockWave:: @ 820DFB1
+MauvilleCity_Gym_EventScript_GiveVoltSwitch:: @ 820DFB1
 	giveitem ITEM_TM72_VOLT_SWITCH
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_BagIsFull
