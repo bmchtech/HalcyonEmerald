@@ -39,5 +39,6 @@
 #define SPREAD_WATTSON_SPECIAL              35
 #define SPREAD_FLANNERY_SPECIAL             36
 #define SPREAD_FLANNERY_MIXED               37
+#define SPREAD_CHANSEY                      38  
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS
