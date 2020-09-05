@@ -201,6 +201,7 @@ static const u8 sMapName_TrainerHill[] = _("Trainer Hill");
 static const u8 sMapName_Seaspray_Cave[] = _("Seaspray Cave");
 static const u8 sMapName_EmberPath[] = _("Ember Path");
 static const u8 sMapName_AshenWoods[] = _("Ashen Woods");
+static const u8 sMapName_SandstrewnRuins[] = _("Sandstrewn Ruins");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]           = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -418,7 +419,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_TRAINER_HILL]              = { 8,  4, 1, 1, sMapName_TrainerHill},
     [MAPSEC_SEASPRAY_CAVE]             = { 0,  4, 1, 1, sMapName_Seaspray_Cave},
     [MAPSEC_EMBER_PATH]                = { 6,  3, 1, 1, sMapName_EmberPath},
-    [MAPSEC_ASHEN_WOODS]               = { 6,  3, 1, 1, sMapName_AshenWoods}
+    [MAPSEC_ASHEN_WOODS]               = { 6,  3, 1, 1, sMapName_AshenWoods},
+    [MAPSEC_SANDSTREWN_RUINS]          = { 8,  2, 1, 1, sMapName_SandstrewnRuins}
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

@@ -217,7 +217,8 @@
 #define MAPSEC_SEASPRAY_CAVE                0xD5
 #define MAPSEC_EMBER_PATH                   0xD6
 #define MAPSEC_ASHEN_WOODS                  0xD7
-#define MAPSEC_NONE                         0xD8
+#define MAPSEC_SANDSTREWN_RUINS             0xD8
+#define MAPSEC_NONE                         0xD9
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

@@ -3852,6 +3852,16 @@
       "blockdata_filepath": "data/layouts/MirageTower_3F/map.bin"
     },
     {
+      "id": "LAYOUT_MIRAGE_TOWER_B1F",
+      "name": "MirageTower_B1F_Layout",
+      "width": 21,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/MirageTower_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/MirageTower_B1F/map.bin"
+    },
+    {
       "id": "LAYOUT_BATTLE_TENT_LOBBY",
       "name": "BattleTentLobby_Layout",
       "width": 13,
@@ -4470,6 +4480,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/AshenWoods/border.bin",
       "blockdata_filepath": "data/layouts/AshenWoods/map.bin"
+    },
+    {
+      "id": "LAYOUT_SANDSTREWN_RUINS",
+      "name": "SandstrewnRuins_Layout",
+      "width": 36,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MirageTower",
+      "border_filepath": "data/layouts/SandstrewnRuins/border.bin",
+      "blockdata_filepath": "data/layouts/SandstrewnRuins/map.bin"
     }
   ]
 }

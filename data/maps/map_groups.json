@@ -422,6 +422,7 @@
     "MirageTower_2F",
     "MirageTower_3F",
     "MirageTower_4F",
+    "MirageTower_B1F",
     "DesertUnderpass",
     "ArtisanCave_B1F",
     "ArtisanCave_1F",
@@ -435,7 +436,8 @@
     "Seaspray_Cave",
     "Seaspray_Cave_B1F",
     "EmberPath",
-    "AshenWoods"
+    "AshenWoods",
+    "SandstrewnRuins"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",

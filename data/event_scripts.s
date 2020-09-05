@@ -1065,9 +1065,8 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
-
 	.include "data/maps/Seaspray_Cave_B1F/scripts.inc"
-
 	.include "data/maps/EmberPath/scripts.inc"
-
 	.include "data/maps/AshenWoods/scripts.inc"
+	.include "data/maps/MirageTower_B1F/scripts.inc"
+	.include "data/maps/SandstrewnRuins/scripts.inc"
