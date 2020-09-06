@@ -4484,8 +4484,8 @@
     {
       "id": "LAYOUT_SANDSTREWN_RUINS",
       "name": "SandstrewnRuins_Layout",
-      "width": 36,
-      "height": 46,
+      "width": 17,
+      "height": 135,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/SandstrewnRuins/border.bin",

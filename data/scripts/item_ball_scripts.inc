@@ -737,3 +737,47 @@ Ashen_Woods_ItemU_Turn::
 Ashen_Woods_ItemPinsirite::
 	finditem ITEM_PINSIRITE
 	end
+
+Sandstrewn_Ruins_ItemGarchompite::
+	finditem ITEM_GARCHOMPITE
+	end
+
+Sandstrewn_Ruins_ItemLeechLife::
+	finditem ITEM_TM56_LEECH_LIFE
+	end
+
+Sandstrewn_Ruins_ItemDomeFossil::
+	finditem ITEM_DOME_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemHelixFossil::
+	finditem ITEM_HELIX_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemOldAmber::
+	finditem ITEM_OLD_AMBER
+	end
+
+Sandstrewn_Ruins_ItemSkullFossil::
+	finditem ITEM_SKULL_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemArmorFossil::
+	finditem ITEM_ARMOR_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemCoverFossil::
+	finditem ITEM_COVER_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemPlumeFossil::
+	finditem ITEM_PLUME_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemSailFossil::
+	finditem ITEM_SAIL_FOSSIL
+	end
+
+Sandstrewn_Ruins_ItemJawFossil::
+	finditem ITEM_JAW_FOSSIL
+	end

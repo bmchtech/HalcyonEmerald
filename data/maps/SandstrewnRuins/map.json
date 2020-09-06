@@ -12,24 +12,438 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
-  "object_events": [],
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SANDSTREWN_RUINS_GARCHOMPITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 113,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemLeechLife",
+      "flag": "FLAG_SANDSTREWN_RUINS_LEECH_LIFE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 14,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemSailFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_SAIL_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 2,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemOldAmber",
+      "flag": "FLAG_SANDSTREWN_RUINS_OLD_AMBER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 14,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemArmorFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_ARMOR_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 3,
+      "y": 58,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemPlumeFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_PLUME_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 10,
+      "y": 71,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemSkullFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_SKULL_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 2,
+      "y": 85,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemCoverFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_COVER_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 7,
+      "y": 102,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemHelixFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_HELX_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 3,
+      "y": 118,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemDomeFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_DOME_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Sandstrewn_Ruins_ItemJawFossil",
+      "flag": "FLAG_SANDSTREWN_RUINS_JAW_FOSSIL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 4,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 5,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 13,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 8,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_14"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 7,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_15"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 7,
+      "y": 103,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_15"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 3,
+      "y": 127,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_16"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 11,
+      "y": 126,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_17"
+    }
+  ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 14,
+      "x": 8,
+      "y": 132,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE111",
+      "dest_map": "MAP_MIRAGE_TOWER_B1F",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 4,
+      "y": 125,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 12,
+      "y": 125,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 6
+    },
+    {
+      "x": 4,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 12,
+      "y": 118,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 12,
+      "y": 111,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 7
+    },
+    {
+      "x": 4,
+      "y": 104,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 4,
+      "y": 76,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 12,
+      "y": 90,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
       "dest_warp_id": 3
     },
     {
-      "x": 15,
-      "y": 2,
+      "x": 12,
+      "y": 76,
       "elevation": 3,
-      "dest_map": "MAP_MIRAGE_TOWER_2F",
-      "dest_warp_id": 1
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 10
+    },
+    {
+      "x": 4,
+      "y": 97,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 9
+    },
+    {
+      "x": 4,
+      "y": 83,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 12
+    },
+    {
+      "x": 12,
+      "y": 62,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 11
+    },
+    {
+      "x": 12,
+      "y": 83,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 14
+    },
+    {
+      "x": 4,
+      "y": 48,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 13
+    },
+    {
+      "x": 4,
+      "y": 69,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 16
+    },
+    {
+      "x": 12,
+      "y": 48,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 15
+    },
+    {
+      "x": 12,
+      "y": 69,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 18
+    },
+    {
+      "x": 4,
+      "y": 34,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 17
+    },
+    {
+      "x": 12,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 20
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 19
+    },
+    {
+      "x": 8,
+      "y": 41,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 22
+    },
+    {
+      "x": 8,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS",
+      "dest_warp_id": 21
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 31,
+      "elevation": 3,
+      "item": "ITEM_PROTECTOR",
+      "flag": "FLAG_SANDSTREWN_RUINS_PROTECTOR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 89,
+      "elevation": 3,
+      "item": "ITEM_BIG_NUGGET",
+      "flag": "FLAG_SANDSTREWN_RUINS_BIG_NUGGET"
+    }
+  ]
 }
