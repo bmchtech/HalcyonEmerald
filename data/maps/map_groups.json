@@ -438,7 +438,11 @@
     "Seaspray_Cave_B1F",
     "EmberPath",
     "AshenWoods",
-    "SandstrewnRuins"
+    "SandstrewnRuins",
+    "SandstrewnRuins_B1F",
+    "Route111_RuinsExterior",
+    "SandstrewnRuins_2F",
+    "SandstrewnRuins_3F"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",

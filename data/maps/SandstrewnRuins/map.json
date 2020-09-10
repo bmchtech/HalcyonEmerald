@@ -423,6 +423,13 @@
       "elevation": 3,
       "dest_map": "MAP_SANDSTREWN_RUINS",
       "dest_warp_id": 21
+    },
+    {
+      "x": 13,
+      "y": 2,
+      "elevation": 3,
+      "dest_map": "MAP_SANDSTREWN_RUINS_B1F",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

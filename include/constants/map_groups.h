@@ -404,6 +404,10 @@
 #define MAP_EMBER_PATH                               (113 | (24 << 8))
 #define MAP_ASHEN_WOODS                              (114 | (24 << 8))
 #define MAP_SANDSTREWN_RUINS                         (115 | (24 << 8))
+#define MAP_SANDSTREWN_RUINS_B1F                     (116 | (24 << 8))
+#define MAP_ROUTE111_RUINS_EXTERIOR                  (117 | (24 << 8))
+#define MAP_SANDSTREWN_RUINS_2F                      (118 | (24 << 8))
+#define MAP_SANDSTREWN_RUINS_3F                      (119 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))
