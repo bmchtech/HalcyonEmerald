@@ -2,7 +2,7 @@
   "id": "MAP_SANDSTREWN_RUINS_B1F",
   "name": "SandstrewnRuins_B1F",
   "layout": "LAYOUT_SANDSTREWN_RUINS_B1F",
-  "music": "MUS_AJITO",
+  "music": "MUS_TOZAN",
   "region_map_section": "MAPSEC_SANDSTREWN_RUINS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

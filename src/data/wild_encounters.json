@@ -13,13 +13,13 @@
         {
           "type": "water_mons",
           "encounter_rates": [
-            50, 30, 10, 10
+            60, 30, 5, 5
           ]
         },
         {
           "type": "rock_smash_mons",
           "encounter_rates": [
-            50, 30, 10, 10
+            60, 30, 5, 5
           ]
         },
         {
