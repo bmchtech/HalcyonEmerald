@@ -17,7 +17,7 @@
 #define B_PARALYSIS_SPEED           GEN_7 // In Gen7+, speed is decreased by 50% instead of 75%.
 #define B_TERRAIN_TYPE_BOOST        GEN_6 // In Gen8+, speed is boosted by 30% instead of 50%.
 #define B_BINDING_DAMAGE            GEN_6 // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. (With Binding Band, 1/6 and 1/8 respectively.)
-#define B_CONFUSION_SELF_DMG_CHANCE GEN_6 // In Gen7+, confusion has a 33.3% of self-damage, instead of 50%.
+#define B_CONFUSION_SELF_DMG_CHANCE GEN_7 // In Gen7+, confusion has a 33.3% of self-damage, instead of 50%.
 #define B_MULTI_HIT_CHANCE          GEN_6 // In Gen5+, multi-hit moves have different %. See Cmd_setmultihitcounter for values.
 #define B_RECOIL_IF_MISS_DMG        GEN_6 // In Gen5+, Jump Kick and Hi Jump Kick will always do half of the user's max HP when missing.
 #define B_PSYWAVE_DMG               GEN_6 // Psywave's damage formula. See Cmd_psywavedamageeffect.
@@ -61,7 +61,7 @@
 #define NEW_LEECH_SEED_PARTICLE         TRUE    //update leech seed's animation particle
 #define NEW_HORN_ATTACK_PARTICLE        TRUE    //update horn attack's horn
 #define NEW_LEAF_PARTICLE               TRUE    // update leaf particle
-#define NEW_EMBER_PARTICLES             TRUE    //updates ember fire particle
+#define NEW_EMBER_PARTICLES             FALSE    //updates ember fire particle
 #define NEW_MEAN_LOOK_PARTICLE          TRUE    //update mean look eye
 #define NEW_TEETH_PARTICLE              TRUE    //update bite/crunch teeth particle
 #define NEW_HANDS_FEET_PARTICLE         TRUE    //update chop/kick/punch particles

@@ -453,14 +453,13 @@
 #define FLAG_REMATCH_WALLACE                 0x1A9
 
 #define FLAG_SANDSTREWN_RUINS_LEECH_LIFE     0x1AA
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
-
+#define FLAG_LAVARIDGE_GYM_ENERGY_ROOTS      0x1AB
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
 #define FLAG_SHOWN_EON_TICKET                0x1AE
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
-#define FLAG_UNUSED_0x1B1                    0x1B1 // Unused Flag
+#define FLAG_PETALBURG_GYM_CHILAN_BERRIES    0x1B1
 #define FLAG_UNUSED_0x1B2                    0x1B2 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4

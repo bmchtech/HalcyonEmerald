@@ -1198,9 +1198,18 @@ PetalburgCity_Gym_EventScript_GymGuide:: @ 820574F
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgCity_Gym_EventScript_GymGuidePostVictory
-	msgbox PetalburgCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	goto_if_set FLAG_PETALBURG_GYM_CHILAN_BERRIES, PetalburgCity_Gym_EventScript_GymGuide2
+	msgbox PetalburgCity_Gym_Text_GymGuideAdvice1, MSGBOX_DEFAULT
+	giveitem ITEM_CHILAN_BERRY, 15
+	setflag FLAG_PETALBURG_GYM_CHILAN_BERRIES
+	msgbox MauvilleCity_Gym_Text_GymGuideAdvice2, MSGBOX_DEFAULT
 	release
 	end
+
+PetalburgCity_Gym_EventScript_GymGuide2::
+	msgbox PetalburgCity_Gym_Text_GymGuideAdvice2, MSGBOX_DEFAULT
+	release
+	end	
 
 PetalburgCity_Gym_EventScript_GymGuidePostVictory:: @ 8205764
 	msgbox PetalburgCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
@@ -1368,7 +1377,7 @@ PetalburgCity_Gym_Text_NormanDefeat: @ 8206107
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge: @ 8206162
 	.string "{PLAYER} received the Balance Badge\n"
-	.string "from DAD!$"
+	.string "from Dad!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis: @ 820618A
 	.string "Dad: With that Badge, the Defense\n"
@@ -1416,9 +1425,13 @@ PetalburgCity_Gym_Text_DadNoAmountOfTrainingIsEnough: @ 82064C3
 	.string "I honestly think that no amount of\n"
 	.string "training would ever be enough.$"
 
-PetalburgCity_Gym_Text_GymGuideAdvice: @ 8206542
+PetalburgCity_Gym_Text_GymGuideAdvice1: @ 8206542
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
+	.string "Please, take these Chilan Berries\n"
+	.string "to help with your challenge.$"
+
+PetalburgCity_Gym_Text_GymGuideAdvice2: @ 8206542
 	.string "The doors in this Gym open when you\n"
 	.string "beat the awaiting Trainers.\p"
 	.string "Whoops! The doors in this room are\n"
@@ -1432,7 +1445,9 @@ PetalburgCity_Gym_Text_GymGuideAdvice: @ 8206542
 	.string "The room's name will be on\n"
 	.string "the door, so choose carefully.\p"
 	.string "Once you've chosen the door…\n"
-	.string "Well, hey, go for it!$"
+	.string "Well, hey, go for it!\p"
+	.string "Oh, and your Dad's got something\n"
+	.string "special for you once you reach him!$"
 
 PetalburgCity_Gym_Text_GymGuidePostVictory: @ 82066F3
 	.string "{PLAYER}! Whoa! You've overcome even\n"

@@ -159,7 +159,16 @@ LavaridgeTown_Gym_1F_EventScript_GymGuide:: @ 81FE96C
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, LavaridgeTown_Gym_1F_EventScript_GymGuidePostVictory
-	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	goto_if_set FLAG_LAVARIDGE_GYM_ENERGY_ROOTS, LavaridgeTown_Gym_1F_EventScript_GymGuide2
+	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice1, MSGBOX_DEFAULT
+	giveitem ITEM_ENERGY_ROOT, 15
+	setflag FLAG_LAVARIDGE_GYM_ENERGY_ROOTS
+	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice2, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_Gym_1F_EventScript_GymGuide2::
+	msgbox LavaridgeTown_Gym_1F_Text_GymGuideAdvice2, MSGBOX_DEFAULT
 	release
 	end
 
@@ -190,16 +199,24 @@ LavaridgeTown_Gym_1F_EventScript_GymStatue:: @ 81FE9B5
 	releaseall
 	end
 
-LavaridgeTown_Gym_1F_Text_GymGuideAdvice: @ 81FE9BF
+LavaridgeTown_Gym_1F_Text_GymGuideAdvice1:
 	.string "Hey, how's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "Lavardge's Gym Leader Flannery\n"
+	.string "Please, take this herbal medicine\n"
+	.string "to help with your challenge.$"
+
+LavaridgeTown_Gym_1F_Text_GymGuideAdvice2: @ 81FE9BF
+	.string "Lavaridge's Gym Leader Flannery\n"
 	.string "uses Fire-type Pokémon.\p"
 	.string "Her passion for Pokémon burns stronger\n"
 	.string "and hotter than a volcano.\p"
-	.string "Don't get too close to her--you'll burn!\n"
-	.string "Hose her down with water and then\l"
-	.string "go for it!$"
+	.string "She likes to battle in the sun, and\n"
+	.string "her Pokémon are all trained to hit as\l"
+	.string "hard as they can.\p"
+	.string "You might need some extra power to\n"
+	.string "keep up!\p"	
+	.string "Try buying some Gems from the local\n"
+	.string "Poké Mart to boost your attacks.$"
 
 LavaridgeTown_Gym_1F_Text_GymGuidePostVictory: @ 81FEAB8
 	.string "Yow! That was a scorching-hot battle!$"
