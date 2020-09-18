@@ -6846,6 +6846,14 @@ bool32 CanMegaEvolve(u8 battlerId)
     u8 partnerPosition = GetBattlerPosition(BATTLE_PARTNER(battlerId));
     struct MegaEvolutionData *mega = &(((struct ChooseMoveStruct*)(&gBattleResources->bufferA[gActiveBattler][4]))->mega);
 
+    // Check Player has keystone and flag is set; don't check this for opponents
+    // Might also affect allies but that doesn't matter
+    if ((GetBattlerSide(battlerId) == B_SIDE_PLAYER) && 
+        (!CheckBagHasItem(ITEM_MEGA_BRACELET, 1) || !FlagGet(FLAG_SYS_RECEIVED_KEYSTONE)))
+    {
+        return FALSE;
+    }
+
     // Check if trainer already mega evolved a pokemon.
     if (mega->alreadyEvolved[battlerPosition])
         return FALSE;
