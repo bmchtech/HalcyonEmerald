@@ -407,8 +407,24 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry:: @ 8204E1D
 	release
 	end
 
-PetalburgCity_Gym_EventScript_NormanBattle:: @ 8204E3B
+PetalburgCity_Gym_EventScript_NormanGiveKeystone::
+	goto_if_set FLAG_SYS_RECEIVED_KEYSTONE, PetalburgCity_Gym_EventScript_NormanBattle
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_BRACELET
+	setflag FLAG_SYS_RECEIVED_KEYSTONE
+	msgbox PetalburgCity_Gym_Text_NormanMegaBracelet, MSGBOX_DEFAULT
+	giveitem ITEM_SCEPTILITE
+	waitmessage
+	giveitem ITEM_BLAZIKENITE
+	waitmessage
+	giveitem ITEM_SWAMPERTITE
+	waitmessage
+	msgbox PetalburgCity_Gym_Text_NormanWheneverReady, MSGBOX_DEFAULT
+	closemessage
+	end
+	
+PetalburgCity_Gym_EventScript_NormanBattle::
+	msgbox PetalburgCity_Gym_Text_NormanBattleIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
@@ -1202,7 +1218,7 @@ PetalburgCity_Gym_EventScript_GymGuide:: @ 820574F
 	msgbox PetalburgCity_Gym_Text_GymGuideAdvice1, MSGBOX_DEFAULT
 	giveitem ITEM_CHILAN_BERRY, 15
 	setflag FLAG_PETALBURG_GYM_CHILAN_BERRIES
-	msgbox MauvilleCity_Gym_Text_GymGuideAdvice2, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_EventScript_GymGuide2, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1358,6 +1374,28 @@ PetalburgCity_Gym_Text_NormanIntro: @ 8205FE5
 	.string "So, you did get four Gym Badges.\p"
 	.string "Fine, as I promised, we will have\n"
 	.string "a Pokémon battle.\p"
+	.string "But first, let me give you this.$"
+
+PetalburgCity_Gym_Text_NormanMegaBracelet:
+	.string "That Mega Bracelet will allow certain\n"
+	.string "Pokémon to Mega Evolve in battle.\p"
+	.string "It's no good on its own, though.\p"
+	.string "To Mega Evolve a Pokémon, you must\n"
+	.string "also let it hold its Mega Stone.\p"
+	.string "Then, press START before choosing a\n"
+	.string "move.\p"
+	.string "Mega Evolution is a very powerful\n"
+	.string "technique, but I think you and your\l"
+	.string "Pokémon are ready for it.\p"
+	.string "If you can, give it a try in our\n"
+	.string "battle!\p"
+	.string "Here, take these Mega Stones too.$"
+
+PetalburgCity_Gym_Text_NormanWheneverReady:
+	.string "Now then, {PLAYER}!\n"
+	.string "I'm ready when you are!$"
+
+PetalburgCity_Gym_Text_NormanBattleIntro:
 	.string "{PLAYER}…\p"
 	.string "I'm so happy that I can have\n"
 	.string "a real battle with my own child.\p"
@@ -1545,7 +1583,7 @@ PetalburgCity_Gym_Text_BerkePostBadge: @ 8206D56
 
 PetalburgCity_Gym_Text_MaryIntro: @ 8206DB2
 	.string "Giggle…\n"
-	.string "This is the ACCURACY ROOM.\p"
+	.string "This is the Accuracy Room.\p"
 	.string "It's pretty nasty when every attack\n"
 	.string "lands without fail.$"
 
