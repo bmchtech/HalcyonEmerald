@@ -14,15 +14,15 @@ Route104_EventScript_ItemPPUp:: @ 8290CFF
 	finditem ITEM_PP_UP
 	end
 
-Route104_EventScript_ItemPokeBall:: @ 8290D0C
+Route104_EventScript_ItemFriendBall:: @ 8290D0C
 	finditem ITEM_FRIEND_BALL
 	end
 
-Route104_EventScript_ItemXAccuracy:: @ 8290D19
-	finditem ITEM_X_ACCURACY
+Route104_EventScript_ItemAudinite:: @ 8290D19
+	finditem ITEM_AUDINITE
 	end
 
-Route104_EventScript_ItemPotion:: @ 8290D26
+Route104_EventScript_ItemSootheBell:: @ 8290D26
 	finditem ITEM_SOOTHE_BELL
 	end
 
@@ -306,15 +306,15 @@ PetalburgCity_EventScript_ItemMaxRevive:: @ 82910B4
 	finditem ITEM_MAX_REVIVE
 	end
 
-PetalburgCity_EventScript_ItemEther:: @ 82910C1
-	finditem ITEM_ETHER
+PetalburgCity_EventScript_ItemVenusaurite:: @ 82910C1
+	finditem ITEM_VENUSAURITE
 	end
 
 MauvilleCity_EventScript_ItemXSpeed:: @ 82910CE
 	finditem ITEM_X_SPEED
 	end
 
-RustboroCity_EventScript_ItemXDefend:: @ 82910DB
+RustboroCity_EventScript_ItemAbilityCapsule:: @ 82910DB
 	finditem ITEM_ABILITY_CAPSULE
 	end
 

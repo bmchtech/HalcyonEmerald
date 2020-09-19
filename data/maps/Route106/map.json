@@ -165,7 +165,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
@@ -181,7 +183,7 @@
       "y": 12,
       "elevation": 0,
       "item": "ITEM_BIG_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_BIG_PEARL"
     },
     {
       "type": "hidden_item",
@@ -189,7 +191,7 @@
       "y": 11,
       "elevation": 3,
       "item": "ITEM_PRISM_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_PRISM_SCALE"
     },
     {
       "type": "sign",
