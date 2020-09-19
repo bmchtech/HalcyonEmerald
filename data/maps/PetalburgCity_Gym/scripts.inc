@@ -1684,7 +1684,7 @@ PetalburgCity_Gym_Text_EnterOHKORoom: @ 82073A7
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_EnterGymLeadersRoom: @ 82073E4
-	.string "“Gym Leader's Room\p"
+	.string "“Gym Leader's Room.”\p"
 	.string "“See for yourself what Pokémon await\n"
 	.string "you!” the sign says.\p"
 	.string "Do you want to go through?$"
