@@ -339,7 +339,7 @@ BattleFrontier_ScottsHouse_Text_SoGladIBroughtYouHere: @ 8264373
 	.string "bring you here!$"
 
 BattleFrontier_ScottsHouse_Text_BerryPocketStuffed: @ 82643EB
-	.string "Your Berry POCKET seems to\n"
+	.string "Your Berry Pocket seems to\n"
 	.string "be stuffed.$"
 
 BattleFrontier_ScottsHouse_Text_Beat50TrainersInARow: @ 8264412

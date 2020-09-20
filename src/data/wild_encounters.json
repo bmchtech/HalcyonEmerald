@@ -282,7 +282,7 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_SNUBBULL"
               },
               {
                 "min_level": 3,
@@ -610,7 +610,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_INKAY"
+                "species": "SPECIES_MALAMAR"
               },
               {
                 "min_level": 4,
@@ -640,32 +640,32 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               },
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               },
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGUTOR"
               }
             ]
           },
@@ -3205,12 +3205,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_FLOATZEL"
+                "species": "SPECIES_BUIZEL"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_FLOATZEL"
+                "species": "SPECIES_BUIZEL"
               },
               {
                 "min_level": 4,
@@ -13912,7 +13912,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_LEDYBA"
+                "species": "SPECIES_BURMY"
               },
               {
                 "min_level": 5,
@@ -13922,7 +13922,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_LEDYBA"
+                "species": "SPECIES_BURMY"
               },
               {
                 "min_level": 5,

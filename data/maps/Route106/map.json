@@ -118,8 +118,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 62,
-      "y": 15,
+      "x": 70,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -144,8 +144,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 55,
-      "y": 12,
+      "x": 51,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -187,8 +187,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 55,
-      "y": 11,
+      "x": 51,
+      "y": 16,
       "elevation": 3,
       "item": "ITEM_PRISM_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_PRISM_SCALE"

@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_ItemUltraRope",
-      "flag": "FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL"
+      "script": "NewMauville_Inside_EventScript_ItemFastBall",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_FAST_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_ItemThunderStone",
-      "flag": "FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE"
+      "script": "NewMauville_Inside_EventScript_ItemAmpharosite",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_AMPHAROSITE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -76,8 +76,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_ItemParalyzeHeal",
-      "flag": "FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL"
+      "script": "NewMauville_Inside_EventScript_ItemElectirizer",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_ELECTIRIZER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -89,8 +89,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb1",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1"
+      "script": "NewMauville_Inside_EventScript_Electrode1",
+      "flag": "FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -102,8 +102,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb2",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2"
+      "script": "NewMauville_Inside_EventScript_Electrode2",
+      "flag": "FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -115,8 +115,21 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewMauville_Inside_EventScript_Voltorb3",
-      "flag": "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3"
+      "script": "NewMauville_Inside_EventScript_Electrode3",
+      "flag": "FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 37,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewMauville_Inside_EventScript_ItemTM91FlashCannon",
+      "flag": "FLAG_ITEM_NEW_MAUVILLE_INSIDE_TM91"
     }
   ],
   "warp_events": [

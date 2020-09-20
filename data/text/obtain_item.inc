@@ -6,7 +6,7 @@ gText_TheBagIsFull:: @ 8272A89
 
 gText_PutItemInPocket:: @ 8272A9A
 	.string "{PLAYER} put away the {STR_VAR_2}\n"
-	.string "in the {STR_VAR_3} POCKET.$"
+	.string "in the {STR_VAR_3} Pocket.$"
 
 gText_PlayerFoundOneItem:: @ 8272ABF
 	.string "{PLAYER} found one {STR_VAR_2}!$"

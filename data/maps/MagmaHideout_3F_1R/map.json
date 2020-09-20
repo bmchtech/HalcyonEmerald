@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MagmaHideout_3F_1R_EventScript_ItemNugget",
-      "flag": "FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET"
+      "script": "MagmaHideout_3F_1R_EventScript_ItemCameruptite",
+      "flag": "FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_CAMERUPTITE"
     }
   ],
   "warp_events": [

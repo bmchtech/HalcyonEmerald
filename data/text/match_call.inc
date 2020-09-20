@@ -2354,7 +2354,7 @@ MatchCall_Text_May2:: @ 2B3B3F
 MatchCall_Text_May3:: @ 2B3C13
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "Do you remember a man named\n"
-	.string "the CUTTER in Rustboro?\l"
+	.string "the Cutter in Rustboro?\l"
 	.string "He had a house there, remember?\p"
 	.string "Well, I found out his younger\n"
 	.string "brother lives in Mauville.\p"
@@ -2480,14 +2480,14 @@ MatchCall_Text_Brendan2:: @ 2B4486
 MatchCall_Text_Brendan3:: @ 2B4560
 	.string "Brendan: Yo, {PLAYER}!\p"
 	.string "Do you remember a guy named\n"
-	.string "the CUTTER in Rustboro?\l"
+	.string "the Cutter in Rustboro?\l"
 	.string "He had a house there, right?\p"
 	.string "Well, it turns out his little\n"
 	.string "brother lives in Mauville.\p"
 	.string "Can you guess his name?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "The Rock Smash GUY!$"
+	.string "The Rock Smash Guy!$"
 
 MatchCall_Text_Brendan4:: @ 2B463F
 	.string "Brendan: This voice… {PLAYER}?\p"

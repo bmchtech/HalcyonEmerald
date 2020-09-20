@@ -22,21 +22,21 @@ NewMauville_Inside_EventScript_TryRemoveVoltorb:: @ 8237407
 NewMauville_Inside_OnTransition: @ 823741B
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
-	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
-	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
-	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
+	call_if_unset FLAG_DEFEATED_ELECTRODE_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
+	call_if_unset FLAG_DEFEATED_ELECTRODE_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
+	call_if_unset FLAG_DEFEATED_ELECTRODE_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
 NewMauville_Inside_EventScript_ShowVoltorb1:: @ 8237441
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
+	clearflag FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_1
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb2:: @ 8237445
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
+	clearflag FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_2
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb3:: @ 8237449
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+	clearflag FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_3
 	return
 
 NewMauville_Inside_OnLoad: @ 823744D
@@ -178,12 +178,12 @@ NewMauville_Inside_EventScript_GeneratorOff:: @ 82377A5
 	releaseall
 	end
 
-NewMauville_Inside_EventScript_Voltorb1:: @ 82377AF
+NewMauville_Inside_EventScript_Electrode1:: @ 82377AF
 	lock
 	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25, ITEM_NONE
+	setwildbattle SPECIES_ELECTRODE, 55 ITEM_NONE
 	waitse
-	playmoncry SPECIES_VOLTORB, 2
+	playmoncry SPECIES_ELECTRODE, 2
 	delay 40
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -196,21 +196,21 @@ NewMauville_Inside_EventScript_Voltorb1:: @ 82377AF
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb1
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb1
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_1_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb1:: @ 82377F3
-	setflag FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_1_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
-NewMauville_Inside_EventScript_Voltorb2:: @ 82377FC
+NewMauville_Inside_EventScript_Electrode2:: @ 82377FC
 	lock
 	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25, ITEM_NONE
+	setwildbattle SPECIES_ELECTRODE, 55 ITEM_NONE
 	waitse
-	playmoncry SPECIES_VOLTORB, 2
+	playmoncry SPECIES_ELECTRODE, 2
 	delay 40
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -223,21 +223,21 @@ NewMauville_Inside_EventScript_Voltorb2:: @ 82377FC
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb2
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb2
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_2_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb2:: @ 8237840
-	setflag FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_2_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
-NewMauville_Inside_EventScript_Voltorb3:: @ 8237849
+NewMauville_Inside_EventScript_Electrode3:: @ 8237849
 	lock
 	faceplayer
-	setwildbattle SPECIES_VOLTORB, 25, ITEM_NONE
+	setwildbattle SPECIES_ELECTRODE, 55 ITEM_NONE
 	waitse
-	playmoncry SPECIES_VOLTORB, 2
+	playmoncry SPECIES_ELECTRODE, 2
 	delay 40
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -250,12 +250,12 @@ NewMauville_Inside_EventScript_Voltorb3:: @ 8237849
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb3
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq NewMauville_Inside_EventScript_DefeatedVoltorb3
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_3_NEW_MAUVILLE
 	release
 	end
 
 NewMauville_Inside_EventScript_DefeatedVoltorb3:: @ 823788D
-	setflag FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
+	setflag FLAG_DEFEATED_ELECTRODE_3_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

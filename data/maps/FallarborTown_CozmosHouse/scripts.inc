@@ -58,7 +58,15 @@ FallarborTown_CozmosHouse_EventScript_CozmosWife:: @ 8200FBC
 	end
 
 FallarborTown_CozmosHouse_EventScript_CozmoIsSad:: @ 8200FDA
+	goto_if_unset FLAG_RECEIVED_GALLADITE, FallarborTown_CozmosHouse_EventScript_GiveGalladite
 	msgbox FallarborTown_CozmosHouse_Text_FeelSorryForCozmo, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_GiveGalladite::
+	msgbox FallarborTown_CozmosHouse_Text_PleaseTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_GALLADITE
+	setflag FLAG_RECEIVED_GALLADITE
 	release
 	end
 
@@ -118,4 +126,9 @@ FallarborTown_CozmosHouse_Text_FeelSorryForCozmo: @ 8201310
 FallarborTown_CozmosHouse_Text_CozmoIsSoHappy: @ 820134B
 	.string "Look at Prof. Cozmo…\n"
 	.string "He's so happy! I think it's cute.$"
+
+FallarborTown_CozmosHouse_Text_PleaseTakeThis:
+	.string "Thank you for saving Prof. Cozmo!\p"
+	.string "Please take this stone as a sign of\n"
+	.string "our gratitude.$"
 

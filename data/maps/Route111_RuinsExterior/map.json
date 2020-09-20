@@ -14,7 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route111_RuinsExterior_EventScript_ItemMedichamite",
+      "flag": "FLAG_ITEM_ROUTE_111_MEDICHAMITE"
+    }
   ],
   "warp_events": [
     {
@@ -31,8 +43,8 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 17,
-      "y": 7,
+      "x": 8,
+      "y": 13,
       "elevation": 3,
       "item": "ITEM_STAR_PIECE",
       "flag": "FLAG_DAILY_RUINS_EXTERIOR_STAR_PIECE_1"

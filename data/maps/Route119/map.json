@@ -243,8 +243,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemSuperRepel",
-      "flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL"
+      "script": "Route119_EventScript_ItemToxicOrb",
+      "flag": "FLAG_ITEM_ROUTE_119_TOXIC_ORB"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -256,8 +256,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemZinc",
-      "flag": "FLAG_ITEM_ROUTE_119_ZINC"
+      "script": "Route119_EventScript_ItemScizorite",
+      "flag": "FLAG_ITEM_ROUTE_119_SCIZORITE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -282,8 +282,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemLeafStone",
-      "flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE"
+      "script": "Route119_EventScript_ItemTM84_Poison_Jab",
+      "flag": "FLAG_ITEM_ROUTE_119_TM84_POISON_JAB"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -583,6 +583,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_119_SCOTT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 13,
+      "y": 82,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route119_EventScript_ItemTM62_Acrobatics",
+      "flag": "FLAG_ITEM_ROUTE_119_TM62_ACROBATICS"
     }
   ],
   "warp_events": [

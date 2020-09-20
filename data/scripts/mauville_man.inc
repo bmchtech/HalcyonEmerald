@@ -487,21 +487,21 @@ MauvilleCity_PokemonCenter_1F_Text_SafariGamesStory:: @ 828F125
 	.string "must come out in the Safari Zone!$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedCutTitle:: @ 828F1BE
-	.string "The CUT-Frenzy Trainer$"
+	.string "The Cut-Frenzy Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedCutAction:: @ 828F1D5
-	.string "Used CUT$"
+	.string "Used Cut$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedCutStory:: @ 828F1DE
 	.string "This is a tale of a Trainer\n"
 	.string "named {STR_VAR_3}.\p"
-	.string "This Trainer used CUT\n"
+	.string "This Trainer used Cut\n"
 	.string "{STR_VAR_1} times!\p"
 	.string "{STR_VAR_3} is a Trainer who just must\n"
-	.string "love to CUT!$"
+	.string "love to Cut!$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedRockSmashTitle:: @ 828F24F
-	.string "The ROCK-SMASHING Trainer$"
+	.string "The Rock-Smashing Trainer$"
 
 MauvilleCity_PokemonCenter_1F_Text_UsedRockSmashAction:: @ 828F269
 	.string "Smashed rocks$"

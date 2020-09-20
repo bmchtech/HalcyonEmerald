@@ -109,5 +109,5 @@ LilycoveCity_MoveDeletersHouse_Text_EggCantForgetMoves: @ 821EC78
 LilycoveCity_MoveDeletersHouse_Text_CantForgetSurf: @ 821EC9C
 	.string "Hm!\p"
 	.string "Your {STR_VAR_1} doesn't seem willing\n"
-	.string "to forget SURF.$"
+	.string "to forget Surf.$"
 
