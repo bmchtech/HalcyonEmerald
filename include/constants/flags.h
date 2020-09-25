@@ -460,7 +460,7 @@
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_PETALBURG_GYM_CHILAN_BERRIES    0x1B1
-#define FLAG_UNUSED_0x1B2                    0x1B2 // Unused Flag
+#define FLAG_ITEM_MT_PYRE_SUMMIT_TM61_WILLOWISP 0x1B2
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
 #define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5 // Unused Flag
@@ -536,7 +536,7 @@
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
 #define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_EARTH_PLATE                  (FLAG_HIDDEN_ITEMS_START + 0x02)
+#define FLAG_HIDDEN_ITEM_ROUTE_111_EARTH_PLATE               (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
@@ -1048,15 +1048,15 @@
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_109_RARE_CANDY                              0x3EE
-#define FLAG_ITEM_ROUTE_110_MANECTITE                                0x3EF
+#define FLAG_ITEM_ROUTE_110_MANECTITE                               0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_37                                   0x3F0
-#define FLAG_ITEM_ROUTE_111_STAR_PIECE                                0x3F1
-#define FLAG_ITEM_ROUTE_111_ROCK_SLIDE                                   0x3F2
-#define FLAG_ITEM_ROUTE_112_HOUNDOOMINITE                                  0x3F3
+#define FLAG_ITEM_ROUTE_111_STAR_PIECE                              0x3F1
+#define FLAG_ITEM_ROUTE_111_ROCK_SLIDE                              0x3F2
+#define FLAG_ITEM_ROUTE_112_HOUNDOOMINITE                           0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_ROUTE_113_SHINY_STONE                             0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
-#define FLAG_ITEM_ROUTE_114_TM53_PSYSHOCK                                 0x3F7
+#define FLAG_ITEM_ROUTE_114_TM53_PSYSHOCK                           0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_01                                   0x3F9
 #define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
@@ -1065,10 +1065,10 @@
 #define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
 #define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
 #define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
-#define FLAG_ITEM_ROUTE_119_TOXIC_ORB                             0x400
-#define FLAG_ITEM_ROUTE_119_SCIZORITE                                    0x401
+#define FLAG_ITEM_ROUTE_119_TOXIC_ORB                               0x400
+#define FLAG_ITEM_ROUTE_119_SCIZORITE                               0x401
 #define FLAG_ITEM_ROUTE_119_ELIXIR_1                                0x402
-#define FLAG_ITEM_ROUTE_119_TM84_POISON_JAB                              0x403
+#define FLAG_ITEM_ROUTE_119_TM84_POISON_JAB                         0x403
 #define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
@@ -1081,13 +1081,13 @@
 #define FLAG_ITEM_ROUTE_133_BIG_PEARL                               0x40D
 #define FLAG_ITEM_ROUTE_133_STAR_PIECE                              0x40E
 #define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
-#define FLAG_ITEM_PETALBURG_CITY_VENUSAURITE                              0x410
-#define FLAG_ITEM_RUSTBORO_CITY_ABILITY_CAPSULE                            0x411
+#define FLAG_ITEM_PETALBURG_CITY_VENUSAURITE                        0x410
+#define FLAG_ITEM_RUSTBORO_CITY_ABILITY_CAPSULE                     0x411
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23                          0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_COMET_SHARD                      0x415
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM59_DRAGON_PULSE                     0x416
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_COMET_SHARD                    0x415
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM59_DRAGON_PULSE              0x416
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
 #define FLAG_ITEM_RUSTURF_TUNNEL_SABLENITE                          0x419
@@ -1104,9 +1104,9 @@
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_DAWN_STONE                   0x424
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_DUSK_STONE                   0x425
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HEAVY_BALL                   0x426
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_BIG_NUGGET                  0x427
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_EXPERT_BELT                    0x428
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_ASSAULT_VEST                    0x429
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_BIG_NUGGET                   0x427
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_EXPERT_BELT                  0x428
+#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_ASSAULT_VEST                 0x429
 #define FLAG_ITEM_ROUTE_124_YELLOW_SHARD                            0x42A
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL                 0x42B
 #define FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL                  0x42C
@@ -1207,11 +1207,11 @@
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE                  0x48D
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_CAMERUPTITE                        0x48E
+#define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_CAMERUPTITE                   0x48E
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
-#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_KANGASKHANITE                     0x491
-#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_TM53_ENERGY_BALL                  0x492
+#define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_KANGASKHANITE              0x491
+#define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_TM53_ENERGY_BALL           0x492
 
 #define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
