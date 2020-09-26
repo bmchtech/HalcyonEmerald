@@ -496,7 +496,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Slateport_City_ItemAlakazite",
-      "flag": "0"
+      "flag": "FLAG_ITEM_SLATEPORT_CITY_ALAKAZITE"
     }
   ],
   "warp_events": [

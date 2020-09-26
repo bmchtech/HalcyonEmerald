@@ -442,7 +442,7 @@ MauvilleCity_EventScript_Wattson:: @ 81DF73A
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_TM24_FROM_WATTSON, MauvilleCity_EventScript_ReceivedThunderbolt
-	compare VAR_NEW_MAUVILLE_STATE, 2
+	compare VAR_NEW_MAUVILLE_STATE, 6
 	goto_if_eq MauvilleCity_EventScript_CompletedNewMauville
 	goto_if_set FLAG_GOT_BASEMENT_KEY_FROM_WATTSON, MauvilleCity_EventScript_BegunNewMauville
 	msgbox MauvilleCity_Text_WattsonNeedFavorTakeKey, MSGBOX_DEFAULT

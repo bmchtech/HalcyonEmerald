@@ -42,6 +42,10 @@ NewMauville_Inside_EventScript_ShowVoltorb3:: @ 8237449
 NewMauville_Inside_OnLoad: @ 823744D
 	compare VAR_NEW_MAUVILLE_STATE, 2
 	call_if_eq NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	compare VAR_NEW_MAUVILLE_STATE, 4
+	call_if_eq NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	compare VAR_NEW_MAUVILLE_STATE, 6
+	call_if_eq NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
 	end
 
 NewMauville_Inside_EventScript_BlueButton:: @ 8237459
@@ -144,7 +148,7 @@ NewMauville_Inside_EventScript_SetBarrierStateGreenButton:: @ 82375D7
 	setmetatile 30, 38, METATILE_BikeShop_Button_Blue, 0
 	return
 
-NewMauville_Inside_EventScript_RedButton:: @ 8237725
+NewMauville_Inside_EventScript_RedButton::
 	lockall
 	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
 	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
@@ -152,7 +156,77 @@ NewMauville_Inside_EventScript_RedButton:: @ 8237725
 	releaseall
 	end
 
-NewMauville_Inside_EventScript_SetGeneratorOffMetatiles:: @ 823773A
+NewMauville_Inside_EventScript_Rotom::
+	lockall
+	playmoncry SPECIES_ROTOM, 2
+	waitmoncry
+	msgbox NewMauville_Inside_Text_GeneratorRestarted, MSGBOX_DEFAULT
+	call NewMauville_Inside_EventScript_SetGeneratorOnMetatiles
+	setvar VAR_NEW_MAUVILLE_STATE, 3
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_RedButton2::
+	lockall
+	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
+	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	setvar VAR_NEW_MAUVILLE_STATE, 4
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_Rotom2::
+	lockall
+	playmoncry SPECIES_ROTOM, 2
+	waitmoncry
+	msgbox NewMauville_Inside_Text_GeneratorRestartedAgain, MSGBOX_DEFAULT
+	call NewMauville_Inside_EventScript_SetGeneratorOnMetatiles
+	setvar VAR_NEW_MAUVILLE_STATE, 5
+	releaseall
+	end
+
+NewMauville_Inside_EventScript_RotomEncounter::
+	lock
+	faceplayer
+	setmetatile 33, 6, METATILE_BikeShop_Button_Pressed, 0
+	special DrawWholeMapView
+	playmoncry SPECIES_ROTOM, 2
+	delay 40
+	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	msgbox NewMauville_Inside_Text_PokemonCameOut, MSGBOX_DEFAULT
+	setwildbattle SPECIES_ROTOM, 60 ITEM_NONE
+	waitse
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq NewMauville_Inside_EventScript_DefeatedRotom
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq NewMauville_Inside_EventScript_PlayerCaughtRotom
+	setvar VAR_NEW_MAUVILLE_STATE, 5
+	release
+	end
+
+NewMauville_Inside_EventScript_DefeatedRotom::
+	msgbox NewMauville_Inside_Text_RotomLeftGenerator, MSGBOX_DEFAULT
+	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	setvar VAR_NEW_MAUVILLE_STATE, 6
+	release
+	end
+
+NewMauville_Inside_EventScript_PlayerCaughtRotom::
+	msgbox NewMauville_Inside_Text_GeneratorStopped, MSGBOX_DEFAULT
+	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	setvar VAR_NEW_MAUVILLE_STATE, 6
+	release
+	end
+
+NewMauville_Inside_EventScript_SetGeneratorOffMetatiles::
 	setmetatile 33, 6, METATILE_BikeShop_Button_Pressed, 0
 	setmetatile 32, 2, METATILE_BikeShop_Generator_Off_Tile0, 1
 	setmetatile 33, 2, METATILE_BikeShop_Generator_Off_Tile1, 1
@@ -165,9 +239,26 @@ NewMauville_Inside_EventScript_SetGeneratorOffMetatiles:: @ 823773A
 	special DrawWholeMapView
 	return
 
+NewMauville_Inside_EventScript_SetGeneratorOnMetatiles::
+	setmetatile 33, 6, METATILE_BikeShop_Button_Red, 0
+	setmetatile 32, 2, METATILE_BikeShop_Generator_On_Tile0, 1
+	setmetatile 33, 2, METATILE_BikeShop_Generator_On_Tile1, 1
+	setmetatile 34, 2, METATILE_BikeShop_Generator_On_Tile2, 1
+	setmetatile 35, 2, METATILE_BikeShop_Generator_On_Tile3, 1
+	setmetatile 32, 3, METATILE_BikeShop_Generator_On_Tile4, 1
+	setmetatile 33, 3, METATILE_BikeShop_Generator_On_Tile5, 1
+	setmetatile 34, 3, METATILE_BikeShop_Generator_On_Tile6, 1
+	setmetatile 35, 3, METATILE_BikeShop_Generator_On_Tile7, 1
+	special DrawWholeMapView
+	return
+
 NewMauville_Inside_EventScript_Generator:: @ 823778F
 	lockall
 	compare VAR_NEW_MAUVILLE_STATE, 2
+	goto_if_eq NewMauville_Inside_EventScript_GeneratorOff
+	compare VAR_NEW_MAUVILLE_STATE, 4
+	goto_if_eq NewMauville_Inside_EventScript_GeneratorOff
+	compare VAR_NEW_MAUVILLE_STATE, 6
 	goto_if_eq NewMauville_Inside_EventScript_GeneratorOff
 	msgbox NewMauville_Inside_Text_GeneratorRadiatingHeat, MSGBOX_DEFAULT
 	releaseall
@@ -275,3 +366,19 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped: @ 8237932
 	.string "… … … … … … … …\p"
 	.string "The generator appears to have\n"
 	.string "stopped…$"
+
+NewMauville_Inside_Text_GeneratorRestarted:
+	.string "The generator restarted!$"
+
+NewMauville_Inside_Text_GeneratorRestartedAgain:
+	.string "The generator restarted again!$"
+
+NewMauville_Inside_Text_RotomLeftGenerator:
+	.string "Rotom left the generator and vanished…$"
+
+NewMauville_Inside_Text_GeneratorStopped:
+	.string "The generator appears to have\n"
+	.string "stopped…$"
+
+NewMauville_Inside_Text_PokemonCameOut:
+	.string "A Pokémon came out of the generator!$"

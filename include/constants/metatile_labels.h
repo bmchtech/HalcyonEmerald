@@ -87,6 +87,7 @@
 #define METATILE_BikeShop_Button_Blue              0x236
 #define METATILE_BikeShop_Button_Green             0x22E
 #define METATILE_BikeShop_Button_Pressed           0x24F
+#define METATILE_BikeShop_Button_Red               0x23E
 #define METATILE_BikeShop_Floor_Shadow_Top         0x26D
 #define METATILE_BikeShop_Generator_Off_Tile0      0x2F0
 #define METATILE_BikeShop_Generator_Off_Tile1      0x2F1
@@ -96,6 +97,14 @@
 #define METATILE_BikeShop_Generator_Off_Tile5      0x2F5
 #define METATILE_BikeShop_Generator_Off_Tile6      0x2F6
 #define METATILE_BikeShop_Generator_Off_Tile7      0x2F7
+#define METATILE_BikeShop_Generator_On_Tile0       0x2D8
+#define METATILE_BikeShop_Generator_On_Tile1       0x2D9
+#define METATILE_BikeShop_Generator_On_Tile2       0x2DA
+#define METATILE_BikeShop_Generator_On_Tile3       0x2DB
+#define METATILE_BikeShop_Generator_On_Tile4       0x2E0
+#define METATILE_BikeShop_Generator_On_Tile5       0x2E1
+#define METATILE_BikeShop_Generator_On_Tile6       0x2E2
+#define METATILE_BikeShop_Generator_On_Tile7       0x2E3
 #define METATILE_BikeShop_Wall_Edge_Top            0x281
 
 // gTileset_BrendansMaysHouse

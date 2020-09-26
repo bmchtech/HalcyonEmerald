@@ -231,6 +231,96 @@
       "var": "VAR_NEW_MAUVILLE_STATE",
       "var_value": "1",
       "script": "NewMauville_Inside_EventScript_RedButton"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "2",
+      "script": "NewMauville_Inside_EventScript_Rotom"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "2",
+      "script": "NewMauville_Inside_EventScript_Rotom"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "2",
+      "script": "NewMauville_Inside_EventScript_Rotom"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "2",
+      "script": "NewMauville_Inside_EventScript_Rotom"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "4",
+      "script": "NewMauville_Inside_EventScript_Rotom2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "4",
+      "script": "NewMauville_Inside_EventScript_Rotom2"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "4",
+      "script": "NewMauville_Inside_EventScript_Rotom2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "4",
+      "script": "NewMauville_Inside_EventScript_Rotom2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "5",
+      "script": "NewMauville_Inside_EventScript_RotomEncounter"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NEW_MAUVILLE_STATE",
+      "var_value": "3",
+      "script": "NewMauville_Inside_EventScript_RedButton2"
     }
   ],
   "bg_events": [
