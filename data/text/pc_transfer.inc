@@ -1,6 +1,6 @@
 gText_PkmnTransferredSomeonesPC:: @ 8273216
 	.string "{STR_VAR_2} was transferred to\n"
-	.string "SOMEONE'S PC.\p"
+	.string "Someone's PC.\p"
 	.string "It was placed in \n"
 	.string "BOX “{STR_VAR_1}.”$"
 
@@ -11,7 +11,7 @@ gText_PkmnTransferredLanettesPC:: @ 8273256
 
 gText_PkmnTransferredSomeonesPCBoxFull:: @ 8273296
 	.string "BOX “{STR_VAR_3}” on\n"
-	.string "SOMEONE'S PC was full.\p"
+	.string "Someone's PC was full.\p"
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "BOX “{STR_VAR_1}.”$"
 

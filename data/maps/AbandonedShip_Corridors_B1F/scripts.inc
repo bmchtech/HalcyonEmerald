@@ -55,7 +55,7 @@ AbandonedShip_Corridors_B1F_EventScript_Duncan:: @ 8237E13
 	end
 
 AbandonedShip_Corridors_B1F_Text_DuncanIntro: @ 8237E2A
-	.string "When we go out to sea, we SAILORS\n"
+	.string "When we go out to sea, we Sailors\n"
 	.string "always bring our Pokémon.\l"
 	.string "How about a quick battle?$"
 

@@ -1929,7 +1929,7 @@ static const u8 sTM73Desc[] = _(
 
 static const u8 sTM74Desc[] = _(
     "A high-speed spin\n"
-    "that damages faster\n"
+    "that hurts faster\n"
     "foes more.");
 
 static const u8 sTM75Desc[] = _(

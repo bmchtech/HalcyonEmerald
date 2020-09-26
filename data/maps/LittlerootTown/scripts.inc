@@ -979,7 +979,7 @@ LittlerootTown_Text_WearTheseRunningShoes: @ 81E87F0
 	.string "You're your father's child, all right.\n"
 	.string "You look good together with Pokémon!\p"
 	.string "Here, honey! If you're going out on an\n"
-	.string "adventure, take Dad's old fishing rod.\p"
+	.string "adventure, take Dad's old Fishing Rod.\p"
 	.string "He never uses it anyway!$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens: @ 81E8A03
@@ -998,7 +998,7 @@ LittlerootTown_Text_CanUsePCToStoreItems: @ 81E8ACF
 	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab: @ 81E8B25
-	.string "Prof. Birch spends days in his LAB\n"
+	.string "Prof. Birch spends days in his Lab\n"
 	.string "studying, then he'll suddenly go out in\l"
 	.string "the wild to do more research…\p"
 	.string "When does Prof. Birch spend time\n"
@@ -1035,13 +1035,13 @@ LittlerootTown_Text_TownSign: @ 81E8D32
 	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab: @ 81E8D69
-	.string "Prof. Birch'S Pokémon LAB$"
+	.string "Prof. Birch'S Pokémon Lab$"
 
 LittlerootTown_Text_PlayersHouse: @ 81E8D83
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 
 LittlerootTown_Text_ProfBirchsHouse: @ 81E8D8E
-	.string "Prof. Birch'S HOUSE$"
+	.string "Prof. Birch's House$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab: @ 81E8DA2
 	.string "Prof. Birch: Well, well, {PLAYER}{KUN}!\n"
@@ -1052,5 +1052,5 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab: @ 81E8DA2
 	.string "Oh, yes. Do you still have the Pokédex\n"
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
-	.string "Let's go to my LAB.$"
+	.string "Let's go to my Lab.$"
 

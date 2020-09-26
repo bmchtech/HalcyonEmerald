@@ -336,7 +336,7 @@ SuperTraining_Text_TakeALookatEVs::
 SuperTraining_String_5::
 	.string "This is {STR_VAR_1}'s current EV\n"
 	.string "spread.\p"
-	.string "Which stat would you like it to train?"
+	.string "Which stat would you like it to train?$"
 
 SuperTraining_ReportHP::
 	.string "{STR_VAR_1} has {STR_VAR_2} HP EVs.\n"

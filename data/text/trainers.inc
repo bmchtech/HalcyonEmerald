@@ -653,7 +653,7 @@ Route107_Text_DeniseDefeated: @ 829699E
 
 Route107_Text_DenisePostBattle: @ 82969AB
 	.string "A weird saying is getting really\n"
-	.string "trendy at Dewford HALL.$"
+	.string "trendy at Dewford Hall.$"
 
 Route107_Text_BethIntro: @ 82969E4
 	.string "Did you want to battle me?\n"
@@ -2030,14 +2030,14 @@ Route115_Text_TimothyPostRematch: @ 829B385
 
 Route115_Text_KoichiIntro: @ 829B3CC
 	.string "You!\p"
-	.string "My Machop!\p"
+	.string "My Lucario!\p"
 	.string "Demand a battle!$"
 
 Route115_Text_KoichiDefeat: @ 829B3ED
 	.string "Ouch, ouch, ouch!$"
 
 Route115_Text_KoichiPostBattle: @ 829B3FF
-	.string "My Machop crew!\p"
+	.string "My Pokémon crew!\p"
 	.string "So long as they seek power, I will\n"
 	.string "grow strong with them!$"
 
