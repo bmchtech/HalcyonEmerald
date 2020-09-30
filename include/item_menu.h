@@ -95,6 +95,8 @@ void DoWallyTutorialBagMenu(void);
 void ResetBagScrollPositions(void);
 void ChooseBerrySetCallback(void (*callback)(void));
 void CB2_ChooseBerry(void);
+void CB2_ChooseItem(void);
+void CB2_ChoosePokeBall(void);
 void Task_FadeAndCloseBagMenu(u8 taskId);
 void BagMenu_YesNo(u8, u8, const struct YesNoFuncTable*);
 void BagMenu_InitListsMenu(u8 taskId);

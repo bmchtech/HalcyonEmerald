@@ -553,3 +553,5 @@ gSpecials:: @ 81DBA64
 	def_special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
 	def_special GetPKMNCenterMoveListMultichoice
 	def_special AreChosenMonEVsMaxedOut
+	def_special Bag_ChooseItem
+	def_special Bag_ChoosePokeBall

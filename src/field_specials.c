@@ -17,6 +17,7 @@
 #include "field_specials.h"
 #include "field_weather.h"
 #include "international_string_util.h"
+#include "item_menu.h"
 #include "item_icon.h"
 #include "link.h"
 #include "list_menu.h"
@@ -5291,4 +5292,16 @@ bool8 AreChosenMonEVsMaxedOut(void)
         return TRUE;
     }
     return FALSE;
+}
+
+// Lets player select an item from the items pocket
+void Bag_ChooseItem(void)
+{
+    SetMainCallback2(CB2_ChooseItem);
+}
+
+// Lets player select a ball from the poke balls pocket
+void Bag_ChoosePokeBall(void)
+{
+    SetMainCallback2(CB2_ChoosePokeBall);
 }

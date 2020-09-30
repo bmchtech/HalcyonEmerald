@@ -533,6 +533,16 @@ void CB2_ChooseBerry(void)
     GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, BERRIES_POCKET, CB2_ReturnToFieldContinueScript);
 }
 
+void CB2_ChooseItem(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, ITEMS_POCKET, CB2_ReturnToFieldContinueScript);
+}
+
+void CB2_ChoosePokeBall(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, POCKET_POKE_BALLS, CB2_ReturnToFieldContinueScript);
+}
+
 void ChooseBerrySetCallback(void (*callback)(void))
 {
     GoToBagMenu(ITEMMENULOCATION_BERRY_BLENDER_CRUSH, BERRIES_POCKET, callback);
