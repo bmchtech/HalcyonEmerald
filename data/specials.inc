@@ -555,3 +555,6 @@ gSpecials:: @ 81DBA64
 	def_special AreChosenMonEVsMaxedOut
 	def_special Bag_ChooseItem
 	def_special Bag_ChoosePokeBall
+	def_special FossilToSpecies
+	def_special IsItemFossil
+	def_special DoesPlayerHaveFossil

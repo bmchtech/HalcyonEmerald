@@ -5305,3 +5305,84 @@ void Bag_ChoosePokeBall(void)
 {
     SetMainCallback2(CB2_ChoosePokeBall);
 }
+
+// Gets a fossil item from gSpecialVar_0x8008 and stores the species it becomes in gSpecialVar_0x8006
+void FossilToSpecies(void)
+{
+    u16 species;
+    u16 item = gSpecialVar_0x8008;
+
+    switch (item)
+    {
+        case ITEM_HELIX_FOSSIL:
+            species = SPECIES_OMANYTE;
+            break;
+        case ITEM_DOME_FOSSIL:
+            species = SPECIES_KABUTO;
+            break;
+        case ITEM_OLD_AMBER:
+            species = SPECIES_AERODACTYL;
+            break;
+        case ITEM_ROOT_FOSSIL:
+            species = SPECIES_LILEEP;
+            break;
+        case ITEM_CLAW_FOSSIL:
+            species = SPECIES_ANORITH;
+            break;
+        case ITEM_ARMOR_FOSSIL:
+            species = SPECIES_SHIELDON;
+            break;
+        case ITEM_SKULL_FOSSIL:
+            species = SPECIES_CRANIDOS;
+            break;
+        case ITEM_COVER_FOSSIL:
+            species = SPECIES_TIRTOUGA;
+            break;
+        case ITEM_PLUME_FOSSIL:
+            species = SPECIES_ARCHEN;
+            break;
+        case ITEM_SAIL_FOSSIL:
+            species = SPECIES_AMAURA;
+            break;
+        case ITEM_JAW_FOSSIL:
+            species = SPECIES_TYRUNT;
+            break;
+        default:
+            species = SPECIES_NONE;
+            break;
+    }
+    if (species != SPECIES_NONE)
+    {
+        gSpecialVar_0x8006 = species;
+        return;
+    }
+}
+
+// Checks if player chose a Fossil using Bag_ChooseItem
+bool8 IsItemFossil (void)
+{
+    u16 item = gSpecialVar_ItemId;
+    if ((item >= ITEM_ARMOR_FOSSIL && item <= ITEM_CLAW_FOSSIL) || item == ITEM_OLD_AMBER)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// Checks player's bag for a fossil item. Better than 12 "checkItem" lines in a script!
+bool8 DoesPlayerHaveFossil (void)
+{
+    u16 fossil;
+    for (fossil = ITEM_ARMOR_FOSSIL; fossil < (ITEM_CLAW_FOSSIL + 1); fossil++)
+    {
+        if (CheckBagHasItem(fossil, 1));
+        {
+            return TRUE;
+        }
+    }
+    if (CheckBagHasItem(ITEM_OLD_AMBER, 1));
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
