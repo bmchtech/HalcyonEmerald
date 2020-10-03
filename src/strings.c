@@ -2098,3 +2098,11 @@ const u8 gText_Galar[] =    _("Galar");
 const u8 gText_TakeOne[] =      _("I'll take one.");
 const u8 gText_TakeOneDozen[] = _("I'll take a dozen!");
 const u8 gText_IllPass[] =      _("I'll pass.");
+
+// Rotom form options
+const u8 gText_MicrowaveOven[] = _("Microwave Oven");
+const u8 gText_WashingMachine[] = _("Washing Machine");
+const u8 gText_Refrigerator[] = _("Refrigerator");
+const u8 gText_ElectricFan[] = _("Electric Fan");
+const u8 gText_Lawnmower[] = _("Lawnmower");
+const u8 gText_Recall[] = _("Recall");

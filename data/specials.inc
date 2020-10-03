@@ -558,3 +558,11 @@ gSpecials:: @ 81DBA64
 	def_special FossilToSpecies
 	def_special IsItemFossil
 	def_special DoesPlayerHaveFossil
+	def_special CountRotomInParty
+	def_special GetRotomState
+	def_special RotomForgetSpecialMove
+	def_special ChangeRotomForm
+	def_special TeachRotomMove
+	def_special IsSelectedMonRotom
+	def_special DoesRotomKnowSpecialMove
+	def_special GetRotomNewSpecialMove

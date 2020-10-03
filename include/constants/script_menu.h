@@ -133,6 +133,7 @@
 #define MULTI_BASE_STATS                   122
 #define MULTI_HYPER_TRAINING_MENU          123
 #define MULTI_MOOMOO_MILK                  124
+#define MULTI_ROTOM_APPLIANCES             125
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

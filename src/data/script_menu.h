@@ -858,6 +858,16 @@ const struct MenuAction MultichoiceList_MoomooMilk[] =
     {gText_IllPass},
 };
 
+const struct MenuAction MultichoiceList_RotomAppliances[] = 
+{
+    {gText_MicrowaveOven},
+    {gText_WashingMachine},
+    {gText_Refrigerator},
+    {gText_ElectricFan},
+    {gText_Lawnmower},
+    {gText_Recall},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -996,6 +1006,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BASE_STATS]                 = MULTICHOICE(MultichoiceList_BaseStats),
     [MULTI_HYPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
     [MULTI_MOOMOO_MILK]                = MULTICHOICE(MultichoiceList_MoomooMilk),
+    [MULTI_ROTOM_APPLIANCES]           = MULTICHOICE(MultichoiceList_RotomAppliances),
 };
 
 const u8 *const gStdStrings[] =

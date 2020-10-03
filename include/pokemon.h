@@ -2,6 +2,7 @@
 #define GUARD_POKEMON_H
 
 #include "constants/pokemon.h"
+#include "constants/species.h"
 #include "sprite.h"
 
 struct PokemonSubstruct0
@@ -264,6 +265,7 @@ extern const u8 gStatStageRatios[][2];
 extern const u16 gLinkPlayerFacilityClasses[];
 extern const struct SpriteTemplate gUnknown_08329D98[];
 extern const s8 gNatureStatTable[][5];
+extern const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES];
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);

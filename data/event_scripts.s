@@ -1070,6 +1070,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/AshenWoods/scripts.inc"
 	.include "data/maps/MirageTower_B1F/scripts.inc"
 	.include "data/maps/SandstrewnRuins/scripts.inc"
+	.include "data/scripts/rotom.inc"
 
 	.include "data/maps/Route111_RuinsExterior/scripts.inc"
 
