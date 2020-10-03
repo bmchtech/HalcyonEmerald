@@ -6730,12 +6730,16 @@ static const union AnimCmd sAnim_DRUDDIGON_1[] =
 
 static const union AnimCmd sAnim_GOLETT_1[] =
 {
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_GOLURK_1[] =
 {
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
@@ -6758,6 +6762,8 @@ static const union AnimCmd sAnim_BISHARP_1[] =
 
 static const union AnimCmd sAnim_BOUFFALANT_1[] =
 {
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
