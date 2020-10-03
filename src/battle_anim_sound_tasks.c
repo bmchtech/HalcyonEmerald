@@ -16,6 +16,7 @@ static void sub_8158C04(u8 taskId);
 static void SoundTask_LoopSEAdjustPanning_Step(u8 taskId);
 static void SoundTask_PlayDoubleCry_Step(u8 taskId);
 static void SoundTask_PlayCryWithEcho_Step(u8 taskId);
+static void SoundTask_PlayCryMegaEvolution_Step(u8 taskId);
 static void SoundTask_AdjustPanningVar_Step(u8 taskId);
 static void SoundTask_SeVolumeChange(u8 taskId);
 
@@ -333,6 +334,33 @@ static void SoundTask_PlayCryWithEcho_Step(u8 taskId)
         DestroyAnimVisualTask(taskId);
         break;
     }
+}
+// task end
+
+// task start
+void SoundTask_PlayCryMegaEvolution(u8 taskId)
+{
+    u16 species;
+
+    if (IsContest())
+        species = gContestResources->field_18->species;
+    else
+        species = gAnimBattlerSpecies[gBattleAnimAttacker];
+
+    gTasks[taskId].data[1] = species;
+
+    if (species != SPECIES_NONE)
+        gTasks[taskId].func = SoundTask_PlayCryMegaEvolution_Step;
+    else
+        DestroyAnimVisualTask(taskId);
+}
+
+static void SoundTask_PlayCryMegaEvolution_Step(u8 taskId)
+{
+    u16 species = gTasks[taskId].data[1];
+
+    PlayCry3(species, 0, 6);
+    DestroyAnimVisualTask(taskId);
 }
 // task end
 
