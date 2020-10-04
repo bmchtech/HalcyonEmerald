@@ -24331,7 +24331,6 @@ General_MegaEvolution:
 	call MegaEvolutionParticles
 	call MegaEvolutionParticles
 	createvisualtask AnimTask_TransformMon, 2, 0, 1 @ Moved transform here to hide some of the animation
-	@ waitforvisualfinish
 	playsewithpan SE_W076, SOUND_PAN_ATTACKER
 	createsprite gMegaStoneSpriteTemplate, ANIM_ATTACKER, 41, 0, 0, 0, 0
 	delay 20

@@ -1414,19 +1414,19 @@ void SetBerryEncounters(void)
     u8 noBerryEncounterRate = 70; // Chance of NOT encountering something. Awkward system TBH
     struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
-    if ((Random() % 100) < BerryEncounterRate)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterSproutStage = TRUE;
     }
-    if ((Random() % 100) < BerryEncounterRate)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterTallerStage = TRUE;
     }
-    if ((Random() % 100) < BerryEncounterRate)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterFlowerStage = TRUE;
     }
-    if ((Random() % 100) < BerryEncounterRate)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterBerryStage = TRUE;
     }
