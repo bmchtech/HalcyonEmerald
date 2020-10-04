@@ -3556,23 +3556,43 @@ static const struct TrainerMonItemCustomMoves sParty_Rhett[] = {
     .species = SPECIES_SAWK,
     .spread = SPREAD_10_IV_0_EV,
     .moves = MOVE_RETALIATE, MOVE_BULK_UP, MOVE_LOW_SWEEP, MOVE_BIDE
-    },
+    }
 };
 
 // Route 103 Surfing
 static const struct TrainerMonItemCustomMoves sParty_Pete[] = {
     {
-    .iv = 0,
-    .lvl = 15,
-    .species = SPECIES_TENTACOOL,
+    .lvl = -2,
+    .species = SPECIES_BLASTOISE,
+    .spread = SPREAD_31_IV_60_EV,
+    .moves = MOVE_WATER_PULSE, MOVE_SHELL_SMASH, MOVE_FLASH_CANNON, MOVE_SKULL_BASH
+    },
+    {
+    .lvl = -2,
+    .species = SPECIES_WISHIWASHI,
+    .spread = SPREAD_31_IV_60_EV,
+    .moves = MOVE_HYDRO_PUMP, MOVE_SOAK, MOVE_DOUBLE_EDGE, MOVE_ENDEAVOR
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Isabelle[] = {
     {
-    .iv = 0,
-    .lvl = 15,
-    .species = SPECIES_MARILL,
+    .lvl = -3,
+    .species = SPECIES_TOXAPEX,
+    .spread = SPREAD_31_IV_60_EV,
+    .moves = MOVE_BANEFUL_BUNKER, MOVE_RECOVER, MOVE_POISON_JAB, MOVE_LIQUIDATION
+    },
+    {
+    .lvl = -3,
+    .species = SPECIES_LAPRAS,
+    .spread = SPREAD_31_IV_60_EV,
+    .moves = MOVE_FREEZE_DRY, MOVE_SURF, MOVE_RAIN_DANCE, MOVE_SAFEGUARD
+    },
+    {
+    .lvl = -3,
+    .species = SPECIES_ALOMOMOLA,
+    .spread = SPREAD_31_IV_60_EV,
+    .moves = MOVE_WATERFALL, MOVE_WISH, MOVE_PROTECT, MOVE_AQUA_RING
     }
 };
 

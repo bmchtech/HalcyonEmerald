@@ -1585,7 +1585,7 @@ Route112_Text_CarolPostBattle: @ 8299B4C
 	.string "If you have the most fun, you win!$"
 
 Route112_Text_BryantIntro: @ 8299BAE
-	.string "I caught hot Pokémon in FIERY PATH!\n"
+	.string "I caught hot Pokémon in Fiery Path!\n"
 	.string "Take a look!$"
 
 Route112_Text_BryantDefeat: @ 8299BDF
