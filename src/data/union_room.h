@@ -211,7 +211,7 @@ static const u8 *const sPlayerContactedYouTexts[] = {
     sText_PlayerHasContactedYou
 };
 
-ALIGNED(4) const u8 sText_AwaitingResponseFromTrainer[] = _("Awaiting a response from\nthe other TRAINER…");
+ALIGNED(4) const u8 sText_AwaitingResponseFromTrainer[] = _("Awaiting a response from\nthe other Trainer…");
 ALIGNED(4) const u8 sText_AwaitingResponseFromPlayer[] = _("Awaiting a response from\n{STR_VAR_1}…");
 
 static const u8 *const sAwaitingResponseTexts[] = {
@@ -449,7 +449,7 @@ ALIGNED(4) const u8 sText_RegistrationCanceled2[] = _("The registration has been
 ALIGNED(4) const u8 sText_TradeTrainersWillBeListed[] = _("Trainers wishing to make a trade\nwill be listed."); // unused
 ALIGNED(4) const u8 sText_ChooseTrainerToTradeWith2[] = _("Please choose the Trainer with whom\nyou would like to trade Pokémon."); // unused
 ALIGNED(4) const u8 sText_AskTrainerToMakeTrade[] = _("Would you like to ask {STR_VAR_1} to\nmake a trade?");
-ALIGNED(4) const u8 sText_AwaitingResponseFromTrainer2[] = _("Awaiting a response from\nthe other TRAINER…"); // unused
+ALIGNED(4) const u8 sText_AwaitingResponseFromTrainer2[] = _("Awaiting a response from\nthe other Trainer…"); // unused
 ALIGNED(4) const u8 sText_NotRegisteredAMonForTrade[] = _("You have not registered a Pokémon\nfor trading.\p"); // unused
 ALIGNED(4) const u8 sText_DontHaveTypeTrainerWants[] = _("You don't have a {STR_VAR_2}-type\nPokémon that {STR_VAR_1} wants.\p");
 ALIGNED(4) const u8 sText_DontHaveEggTrainerWants[] = _("You don't have an Egg that\n{STR_VAR_1} wants.\p");

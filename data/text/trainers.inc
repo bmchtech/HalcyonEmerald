@@ -395,13 +395,13 @@ Route104_Text_CindyPostBattle: @ 8295AC3
 Route104_Text_CindyRegister1: @ 8295B01
 	.string "Hello, we meet again.\p"
 	.string "We seem to be drawn together. Let's\n"
-	.string "register each other in our PokéNavS.$"
+	.string "register each other in our PokéNavs.$"
 
 Route104_Text_CindyRegister2: @ 8295B60
 	.string "We should commemorate how we seem\n"
 	.string "to be drawn to each other.\p"
 	.string "Let's register each other in our\n"
-	.string "PokéNavS.$"
+	.string "PokéNavs.$"
 
 Route104_Text_CindyRematchIntro: @ 8295BC8
 	.string "Hello, we meet again.\n"
@@ -1304,7 +1304,7 @@ Route111_Text_DustyRegister: @ 8298C00
 	.string "I haven't been searching for any\n"
 	.string "tough Pokémon.\p"
 	.string "But, for some reason, I sure do like\n"
-	.string "PokéNavS.$"
+	.string "PokéNavs.$"
 
 Route111_Text_DustyRematchIntro: @ 8298C5F
 	.string "For thirty years I have searched for\n"

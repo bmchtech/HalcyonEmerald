@@ -1035,7 +1035,7 @@ LittlerootTown_Text_TownSign: @ 81E8D32
 	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab: @ 81E8D69
-	.string "Prof. Birch'S Pokémon Lab$"
+	.string "Prof. Birch's Pokémon Lab$"
 
 LittlerootTown_Text_PlayersHouse: @ 81E8D83
 	.string "{PLAYER}'s House$"

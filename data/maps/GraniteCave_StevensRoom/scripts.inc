@@ -110,7 +110,7 @@ GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister: @ 822DE6B
 	.string "League one day. That's what I think.\p"
 	.string "I know, since we've gotten to know each\n"
 	.string "other, let's register one another in\l"
-	.string "our PokéNavS.\p"
+	.string "our PokéNavs.\p"
 	.string "… … … … … …$"
 
 GraniteCave_StevensRoom_Text_RegisteredSteven: @ 822DF6A
