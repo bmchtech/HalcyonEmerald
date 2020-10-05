@@ -566,3 +566,5 @@ gSpecials:: @ 81DBA64
 	def_special IsSelectedMonRotom
 	def_special DoesRotomKnowSpecialMove
 	def_special GetRotomNewSpecialMove
+	def_special SetSpeciesAndEggMove
+	def_special SetGiftEggMove

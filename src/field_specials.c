@@ -5516,11 +5516,58 @@ bool8 IsSelectedMonRotom (void)
 }
 
 // Checks if Rotom knows its special move
-bool8 DoesRotomKnowSpecialMove(void)
+bool8 DoesRotomKnowSpecialMove (void)
 {
     u16 initialMove, initialSpecies;
 
     initialSpecies = gSpecialVar_0x8007;
     initialMove = RotomFormToMove(initialSpecies);
     return MonKnowsMove(&gPlayerParty[gSpecialVar_0x8004], initialMove);
+}
+
+// Used to generate a random egg with a special move
+// gSpecialVar_0x8004: Species to give
+// gSpecialVar_0x8005: Move to give the egg
+void SetSpeciesAndEggMove (void)
+{
+    u8 numEggSpecies, randSpecies, randEggMove;
+    u16 eggMoves[][4] = {
+        {SPECIES_BAGON, MOVE_DRAGON_DANCE, MOVE_DRAGON_RUSH, MOVE_THRASH},
+        {SPECIES_ESPURR, MOVE_TRICK, MOVE_YAWN, MOVE_ASSIST},
+        {SPECIES_SNEASEL, MOVE_FAKE_OUT, MOVE_ICICLE_CRASH, MOVE_BITE},
+        {SPECIES_CORPHISH, MOVE_DRAGON_DANCE, MOVE_AQUA_JET, MOVE_BODY_SLAM},
+        {SPECIES_MARILL, MOVE_BELLY_DRUM, MOVE_AQUA_JET, MOVE_PERISH_SONG},
+        {SPECIES_EMOLGA, MOVE_ROOST, MOVE_AIR_SLASH, MOVE_BATON_PASS},
+        {SPECIES_GOOMY, MOVE_ACID_ARMOR, MOVE_POISON_TAIL, MOVE_IRON_TAIL},
+        {SPECIES_RHYHORN, MOVE_CRUNCH, MOVE_METAL_BURST, MOVE_DRAGON_RUSH},
+        {SPECIES_GASTLY, MOVE_PERISH_SONG, MOVE_DISABLE, MOVE_CLEAR_SMOG},
+        {SPECIES_PICHU, MOVE_SURF, MOVE_FLY, MOVE_EXTREME_SPEED},
+        {SPECIES_WIMPOD, MOVE_SPIKES, MOVE_AQUA_JET, MOVE_METAL_CLAW},
+        {SPECIES_PONYTA, MOVE_HYPNOSIS, MOVE_MORNING_SUN, MOVE_HIGH_HORSEPOWER},
+        {SPECIES_SNOVER, MOVE_LEECH_SEED, MOVE_AVALANCHE, MOVE_SEED_BOMB},
+        {SPECIES_FERROSEED, MOVE_SPIKES, MOVE_LEECH_SEED, MOVE_ACID_SPRAY},
+        {SPECIES_TAILLOW, MOVE_BOOMBURST, MOVE_BOOMBURST, MOVE_BOOMBURST}
+    };
+
+    numEggSpecies = 15;
+    randSpecies = Random() % numEggSpecies;
+    randEggMove = (Random() % 3) + 1; // Random number between 1 and 3
+
+    gSpecialVar_0x8004 = eggMoves[randSpecies][0];
+    gSpecialVar_0x8005 = eggMoves[randSpecies][randEggMove];
+}
+
+// Gives a mon in the party a move
+// gSpecialVar_0x8005: Move to give
+// gSpecialVar_0x8006: Party slot
+void SetGiftEggMove (void)
+{
+    if (MonKnowsMove(&gPlayerParty[gSpecialVar_0x8006], MOVE_NONE))
+    {
+        GiveMoveToMon(&gPlayerParty[gSpecialVar_0x8006], gSpecialVar_0x8005);
+    }
+    else
+    {
+        SetMonMoveSlot(&gPlayerParty[gSpecialVar_0x8006], gSpecialVar_0x8005, 0);
+    }
 }
