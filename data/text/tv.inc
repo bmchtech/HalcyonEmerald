@@ -2695,23 +2695,23 @@ gTVPokemonBattleUpdateText07:: @ 0828AE26
 	.string "“Pokémon BATTLE UPDATE!”$"
 
 GabbyAndTy_Text_GabbyPreFirstBattle: @ 0828AF05
-	.string "GABBY: Oh! We've just spotted a tough-\n"
+	.string "Gabby: Oh! We've just spotted a tough-\n"
 	.string "looking Trainer here of all places!\p"
 	.string "Okay, roll camera!\n"
 	.string "Let's get this interview.$"
 
 GabbyAndTy_Text_GabbyIntro: @ 0828AF7D
-	.string "GABBY: Oh! You're {PLAYER}! Hi!\n"
+	.string "Gabby: Oh! You're {PLAYER}! Hi!\n"
 	.string "Do you remember us from last time?\p"
 	.string "Can you show us how much stronger\n"
 	.string "you've become? Okay, cue interview!$"
 
 GabbyAndTy_Text_GabbyDefeatFirstTime: @ 0828B000
-	.string "GABBY: My eyes didn't lie!\n"
+	.string "Gabby: My eyes didn't lie!\n"
 	.string "I did discover an astonishing Trainer!$"
 
 GabbyAndTy_Text_WhoAreYouInterview: @ 0828B042
-	.string "GABBY: Awesome! Awesome!\n"
+	.string "Gabby: Awesome! Awesome!\n"
 	.string "Who are you?!\p"
 	.string "I knew we were onto something wild\n"
 	.string "when we spotted you!\p"
@@ -2722,7 +2722,7 @@ GabbyAndTy_Text_WhoAreYouInterview: @ 0828B042
 	.string "for an interview?$"
 
 GabbyAndTy_Text_QuoteFromLastInterview: @ 0828B137
-	.string "GABBY: “{STR_VAR_1}!”\p"
+	.string "Gabby: “{STR_VAR_1}!”\p"
 	.string "Remember? That's the quote you gave\n"
 	.string "us as the battle clincher last time.\p"
 	.string "I never, ever forget stuff like that!$"
@@ -2765,7 +2765,7 @@ GabbyAndTy_Text_DescribeYourFeelings: @ 0828B433
 	.string "has to be short and sweet. Go!$"
 
 GabbyAndTy_Text_PerfectWellBeSeeingYou: @ 0828B4AB
-	.string "GABBY: Mmm, yeah!\n"
+	.string "Gabby: Mmm, yeah!\n"
 	.string "That's the perfect clincher!\p"
 	.string "I get the feeling that this will make\n"
 	.string "a great TV show.\p"
@@ -2775,20 +2775,20 @@ GabbyAndTy_Text_PerfectWellBeSeeingYou: @ 0828B4AB
 	.string "We'll be seeing you!$"
 
 GabbyAndTy_Text_DontGiveUpKeepingEyeOut: @ 0828B577
-	.string "GABBY: Oh…\p"
+	.string "Gabby: Oh…\p"
 	.string "Okay, but don't give up!\n"
 	.string "We'll be keeping an eye out for you!$"
 
 GabbyAndTy_Text_KeepingAnEyeOutForYou: @ 0828B5C0
-	.string "GABBY: We'll be keeping an eye out\n"
+	.string "Gabby: We'll be keeping an eye out\n"
 	.string "for you!$"
 
 GabbyAndTy_Text_GabbyNotEnoughMons: @ 0828B5EC
-	.string "GABBY: Is there a strong Trainer\n"
+	.string "Gabby: Is there a strong Trainer\n"
 	.string "anywhere with a lot of Pokémon?$"
 
 GabbyAndTy_Text_GiveUsAnInterviewThisTime: @ 0828B62D
-	.string "GABBY: Wow, you are something!\p"
+	.string "Gabby: Wow, you are something!\p"
 	.string "You've gotten a lot stronger--a lot--\n"
 	.string "since we last battled.\p"
 	.string "We were right about you when we\n"
@@ -2798,7 +2798,7 @@ GabbyAndTy_Text_GiveUsAnInterviewThisTime: @ 0828B62D
 	.string "this time?$"
 
 GabbyAndTy_Text_GabbyDefeat: @ 0828B719
-	.string "GABBY: That was an intense battle!\n"
+	.string "Gabby: That was an intense battle!\n"
 	.string "Did you get all that on camera?$"
 
 GabbyAndTy_Text_TyPreFirstBattle: @ 0828B75C
@@ -2832,7 +2832,7 @@ GabbyAndTy_Text_TyDefeat: @ 0828B8F6
 
 gTVInSearchOfTrainersText00:: @ 0828B92C
 	.string "IN SEARCH OF TRAINERS…\p"
-	.string "GABBY: Hi! Today I'm visiting an area\n"
+	.string "Gabby: Hi! Today I'm visiting an area\n"
 	.string "near {STR_VAR_1}.\p"
 	.string "We're trying to spot some up-and-\n"
 	.string "coming new talent in the field.\p"

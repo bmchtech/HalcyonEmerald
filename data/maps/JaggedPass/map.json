@@ -246,8 +246,8 @@
       "x": 22,
       "y": 32,
       "elevation": 3,
-      "item": "ITEM_HEAVY_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_HEAVY_BALL"
+      "item": "ITEM_LEVEL_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_LEVEL_BALL"
     }
   ]
 }

@@ -6,24 +6,34 @@ Route117_PokemonDayCare_OnTransition: @ 822BBB7
 	setflag FLAG_LANDMARK_POKEMON_DAYCARE
 	end
 
-Route117_PokemonDayCare_EventScript_TogepiEgg::
+Route117_PokemonDayCare_EventScript_RandomEgg::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TOGEPI_EGG, Route117_PokemonDayCare_EventScript_ReceivedEgg
+	goto_if_set FLAG_RECEIVED_TOGEPI_EGG, Route117_PokemonDayCare_EventScript_ReceivedTogepi
+	setvar VAR_0x8004, SPECIES_TOGEPI
+	setvar VAR_0x8005, MOVE_EXTRASENSORY
+Route117_PokemonDayCare_EventScript_TryGiveEgg::
 	msgbox Route117_PokemonDayCare_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq Route117_PokemonDayCare_EventScript_DeclineEgg
-	getpartysize
-	compare VAR_RESULT, PARTY_SIZE
+	specialvar VAR_0x8006, CalculatePlayerPartyCount
+	compare VAR_0x8006, PARTY_SIZE
 	goto_if_eq Route117_PokemonDayCare_EventScript_NoRoomForEgg
-	msgbox Route117_PokemonDayCare_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+	msgbox Route117_PokemonDayCare_Text_ThankYou, MSGBOX_DEFAULT
+	setflag FLAG_DAILY_RECEIVED_DAYCARE_EGG
 	setflag FLAG_RECEIVED_TOGEPI_EGG
 	playfanfare MUS_FANFA4
 	message Route117_PokemonDayCare_Text_ReceivedTheEgg
+	special SetSpeciesAndEggMove
 	waitfanfare
-	giveEgg SPECIES_TOGEPI
+	giveEgg VAR_0x8004
+	special SetGiftEggMove
 	release
 	end
+
+Route117_PokemonDayCare_EventScript_ReceivedTogepi::
+	goto_if_set FLAG_DAILY_RECEIVED_DAYCARE_EGG, Route117_PokemonDayCare_EventScript_ReceivedEgg
+	goto Route117_PokemonDayCare_EventScript_TryGiveEgg
 
 Route117_PokemonDayCare_EventScript_ReceivedEgg::
 	msgbox Route117_PokemonDayCare_Text_SometimesEggFoundAtDayCare, MSGBOX_DEFAULT
@@ -48,7 +58,7 @@ Route117_PokemonDayCare_Text_HaveEggWillYouTakeIt:
 	.string "home for it.\p"
 	.string "Would you be interested in taking it?$"
 
-Route117_PokemonDayCare_Text_HopeYoullWalkPlentyWithEgg:
+Route117_PokemonDayCare_Text_ThankYou:
 	.string "Oh, thank you! Please take good care\n"
 	.string "of this Egg!$"
 

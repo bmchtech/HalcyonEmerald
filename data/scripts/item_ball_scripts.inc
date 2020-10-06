@@ -426,8 +426,8 @@ AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope:: @ 829123A
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-AbandonedShip_Rooms2_B1F_EventScript_ItemLureBall:: @ 8291247
-	finditem ITEM_LURE_BALL
+AbandonedShip_Rooms2_B1F_EventScript_ItemLevelBall:: @ 8291247
+	finditem ITEM_LEVEL_BALL
 	end
 
 AbandonedShip_Room_B1F_EventScript_ItemTM13:: @ 8291254

@@ -1411,25 +1411,22 @@ bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
 // Should be called when a berry is planted.
 void SetBerryEncounters(void)
 {
+    u8 noBerryEncounterRate = 70; // Chance of NOT encountering something. Awkward system TBH
     struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
-    u8 encounterStages = Random() % 16;
-    u8 mask = 1;
-
-    // Surely there's a better way to do this
-    if (encounterStages && mask)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterSproutStage = TRUE;
     }
-    if (encounterStages && mask << 1)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterTallerStage = TRUE;
     }
-    if (encounterStages && mask << 2)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterFlowerStage = TRUE;
     }
-    if (encounterStages && mask << 3)
+    if ((Random() % 100) < noBerryEncounterRate)
     {
         tree->EncounterBerryStage = TRUE;
     }

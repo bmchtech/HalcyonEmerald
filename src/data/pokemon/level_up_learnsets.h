@@ -7402,7 +7402,6 @@ static const struct LevelUpMove sLaironLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sAggronLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_HEAD_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
     LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
