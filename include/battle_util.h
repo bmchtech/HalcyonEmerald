@@ -45,6 +45,19 @@ struct TypePower
 
 extern const struct TypePower gNaturalGiftTable[];
 
+void HandleAction_UseMove(void);
+void HandleAction_Switch(void);
+void HandleAction_UseItem(void);
+void HandleAction_Run(void);
+void HandleAction_WatchesCarefully(void);
+void HandleAction_SafariZoneBallThrow(void);
+void HandleAction_ThrowPokeblock(void);
+void HandleAction_GoNear(void);
+void HandleAction_SafariZoneRun(void);
+void HandleAction_WallyBallThrow(void);
+void HandleAction_TryFinish(void);
+void HandleAction_NothingIsFainted(void);
+void HandleAction_ActionFinished(void);
 u8 GetBattlerForBattleScript(u8 caseId);
 void PressurePPLose(u8 target, u8 attacker, u16 move);
 void PressurePPLoseOnUsingPerishSong(u8 attacker);
@@ -57,8 +70,8 @@ void CancelMultiTurnMoves(u8 battlerId);
 bool8 WasUnableToUseMove(u8 battlerId);
 void PrepareStringBattle(u16 stringId, u8 battlerId);
 void ResetSentPokesToOpponentValue(void);
-void sub_803F9EC(u8 battlerId);
-void sub_803FA70(u8 battlerId);
+void OpponentSwitchInResetSentPokesToOpponentValue(u8 battlerId);
+void UpdateSentPokesToOpponentValue(u8 battlerId);
 void BattleScriptPush(const u8* bsPtr);
 void BattleScriptPushCursor(void);
 void BattleScriptPop(void);

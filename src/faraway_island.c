@@ -6,6 +6,7 @@
 #include "metatile_behavior.h"
 #include "sprite.h"
 #include "constants/event_objects.h"
+#include "constants/field_effects.h"
 #include "constants/maps.h"
 #include "constants/metatile_behaviors.h"
 
@@ -23,7 +24,7 @@ static s16 sPlayerToMewDeltaX;
 static s16 sPlayerToMewDeltaY;
 static u8 sMewDirectionCandidates[4];
 
-extern const struct SpritePalette gFieldEffectObjectPaletteInfo1;
+extern const struct SpritePalette gSpritePalette_GeneralFieldEffect1;
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 static const s16 sFarawayIslandRockCoords[4][2] =
@@ -180,40 +181,36 @@ u32 GetMewMoveDirection(void)
     {
         if (ShouldMewMoveEast(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else if (ShouldMewMoveWest(mew, 1))
+        if (ShouldMewMoveWest(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else
-            return DIR_NORTH;
+        return DIR_NORTH;
     }
 
     if (ShouldMewMoveSouth(mew, 0))
     {
         if (ShouldMewMoveEast(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else if (ShouldMewMoveWest(mew, 1))
+        if (ShouldMewMoveWest(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else
-            return DIR_SOUTH;
+         return DIR_SOUTH;
     }
 
     if (ShouldMewMoveEast(mew, 0))
     {
         if (ShouldMewMoveNorth(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else if (ShouldMewMoveSouth(mew, 1))
+        if (ShouldMewMoveSouth(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else
-            return DIR_EAST;
+        return DIR_EAST;
     }
 
     if (ShouldMewMoveWest(mew, 0))
     {
         if (ShouldMewMoveNorth(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else if (ShouldMewMoveSouth(mew, 1))
+        if (ShouldMewMoveSouth(mew, 1))
             return GetRandomMewDirectionCandidate(2);
-        else
-            return DIR_WEST;
+        return DIR_WEST;
     }
 
     // If this point is reached, Mew cannot move without getting closer to the player
@@ -314,8 +311,7 @@ static u8 GetValidMewMoveDirection(u8 ignoredDir)
 
     if (count > 1)
         return sMewDirectionCandidates[VarGet(VAR_FARAWAY_ISLAND_STEP_COUNTER) % count];
-    else
-        return sMewDirectionCandidates[0];
+    return sMewDirectionCandidates[0];
 }
 
 void UpdateFarawayIslandStepCounter(void)
@@ -392,13 +388,13 @@ void SetMewAboveGrass(void)
         if (gSpecialVar_Facing != DIR_NORTH)
             gSprites[mew->spriteId].subpriority = 1;
 
-        LoadSpritePalette(&gFieldEffectObjectPaletteInfo1);
-        UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(gFieldEffectObjectPaletteInfo1.tag));
+        LoadSpritePalette(&gSpritePalette_GeneralFieldEffect1);
+        UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(gSpritePalette_GeneralFieldEffect1.tag));
 
         x = mew->currentCoords.x;
         y = mew->currentCoords.y;
         SetSpritePosToOffsetMapCoords(&x, &y, 8, 8);
-        sGrassSpriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[15], x, y, gSprites[mew->spriteId].subpriority - 1);
+        sGrassSpriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_LONG_GRASS], x, y, gSprites[mew->spriteId].subpriority - 1);
         if (sGrassSpriteId != MAX_SPRITES)
         {
             struct Sprite *sprite = &gSprites[sGrassSpriteId];

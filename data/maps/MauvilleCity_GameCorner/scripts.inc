@@ -58,7 +58,7 @@ MauvilleCity_GameCorner_EventScript_Buy50Coins:: @ 820FC33
 	removemoney COINS_PRICE_50, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -76,7 +76,7 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins:: @ 820FC75
 	removemoney COINS_PRICE_500, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -177,7 +177,7 @@ MauvilleCity_GameCorner_EventScript_BuyTreeckoDoll:: @ 820FDCB
 	removecoins DOLL_COINS
 	adddecoration DECOR_TREECKO_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -193,7 +193,7 @@ MauvilleCity_GameCorner_EventScript_BuyTorchicDoll:: @ 820FE05
 	removecoins DOLL_COINS
 	adddecoration DECOR_TORCHIC_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -209,7 +209,7 @@ MauvilleCity_GameCorner_EventScript_BuyMudkipDoll:: @ 820FE3F
 	removecoins DOLL_COINS
 	adddecoration DECOR_MUDKIP_DOLL
 	updatecoinsbox 1, 1
-	playse SE_REGI
+	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
 	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize
 	end
@@ -649,7 +649,7 @@ MauvilleCity_GameCorner_EventScript_TryGive20Coins:: @ 821023D
 	setflag FLAG_RECEIVED_20_COINS
 	addcoins 20
 	msgbox MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins, MSGBOX_DEFAULT
-	playse SE_REGI
+	playse SE_SHOP
 	goto MauvilleCity_GameCorner_EventScript_PokefanMNormal
 	end
 

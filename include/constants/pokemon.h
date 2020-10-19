@@ -85,36 +85,9 @@
 #define NUM_NATURE_STATS NUM_STATS - 1 // excludes HP
 #define NUM_BATTLE_STATS NUM_STATS + 2 // includes Accuracy and Evasion
 
-// Move flags.
-#define FLAG_MAKES_CONTACT          0x1
-#define FLAG_PROTECT_AFFECTED       0x2
-#define FLAG_MAGICCOAT_AFFECTED     0x4
-#define FLAG_SNATCH_AFFECTED        0x8
-#define FLAG_MIRROR_MOVE_AFFECTED   0x10
-#define FLAG_KINGSROCK_AFFECTED     0x20
-#define FLAG_HIGH_CRIT              0x40
-#define FLAG_RECKLESS_BOOST         0x80
-#define FLAG_IRON_FIST_BOOST        0x100
-#define FLAG_SHEER_FORCE_BOOST      0x200
-#define FLAG_STRONG_JAW_BOOST       0x400
-#define FLAG_MEGA_LAUNCHER_BOOST    0x800
-#define FLAG_STAT_STAGES_IGNORED    0x1000
-#define FLAG_DMG_MINIMIZE           0x2000
-#define FLAG_DMG_UNDERGROUND        0x4000
-#define FLAG_DMG_UNDERWATER         0x8000
-#define FLAG_SOUND                  0x10000
-#define FLAG_BALLISTIC              0x20000
-#define FLAG_PROTECTION_MOVE        0x40000
-#define FLAG_POWDER                 0x80000
-#define FLAG_TARGET_ABILITY_IGNORED 0x100000
-#define FLAG_DANCE                  0x200000
-#define FLAG_DMG_IN_AIR             0x400000 // X2 dmg on air, always hits target on air
-#define FLAG_HIT_IN_AIR             0x800000 // dmg is normal, always hits target on air
-
-// Split defines.
-#define SPLIT_PHYSICAL  0x0
-#define SPLIT_SPECIAL   0x1
-#define SPLIT_STATUS    0x2
+#define MIN_STAT_STAGE     0
+#define DEFAULT_STAT_STAGE 6
+#define MAX_STAT_STAGE    12
 
 // Shiny odds
 #define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
@@ -227,6 +200,8 @@
 #define LEVEL_UP_MOVE_LV   0xFE00
 #define LEVEL_UP_END       0xFFFF
 
+#define MAX_LEVEL_UP_MOVES       30
+
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
@@ -253,18 +228,42 @@
 #define STATUS_PRIMARY_POKERUS   6
 #define STATUS_PRIMARY_FAINTED   7
 
+#define MAX_PER_STAT_EVS 255
 #define MAX_TOTAL_EVS 510
 #define EV_ITEM_RAISE_LIMIT 100
 
 #define UNOWN_FORM_COUNT 28
 
 // Battle move flags
-#define FLAG_MAKES_CONTACT          0x1
-#define FLAG_PROTECT_AFFECTED       0x2
-#define FLAG_MAGICCOAT_AFFECTED     0x4
-#define FLAG_SNATCH_AFFECTED        0x8
-#define FLAG_MIRROR_MOVE_AFFECTED   0x10
-#define FLAG_KINGSROCK_AFFECTED     0x20
+#define FLAG_MAKES_CONTACT          (1 << 0)
+#define FLAG_PROTECT_AFFECTED       (1 << 1)
+#define FLAG_MAGICCOAT_AFFECTED     (1 << 2)
+#define FLAG_SNATCH_AFFECTED        (1 << 3)
+#define FLAG_MIRROR_MOVE_AFFECTED   (1 << 4)
+#define FLAG_KINGSROCK_AFFECTED     (1 << 5)
+#define FLAG_HIGH_CRIT              (1 << 6)
+#define FLAG_RECKLESS_BOOST         (1 << 7)
+#define FLAG_IRON_FIST_BOOST        (1 << 8)
+#define FLAG_SHEER_FORCE_BOOST      (1 << 9)
+#define FLAG_STRONG_JAW_BOOST       (1 << 10)
+#define FLAG_MEGA_LAUNCHER_BOOST    (1 << 11)
+#define FLAG_STAT_STAGES_IGNORED    (1 << 12)
+#define FLAG_DMG_MINIMIZE           (1 << 13)
+#define FLAG_DMG_UNDERGROUND        (1 << 14)
+#define FLAG_DMG_UNDERWATER         (1 << 15)
+#define FLAG_SOUND                  (1 << 16)
+#define FLAG_BALLISTIC              (1 << 17)
+#define FLAG_PROTECTION_MOVE        (1 << 18)
+#define FLAG_POWDER                 (1 << 19)
+#define FLAG_TARGET_ABILITY_IGNORED (1 << 20)
+#define FLAG_DANCE                  (1 << 21)
+#define FLAG_DMG_IN_AIR             (1 << 22) // X2 dmg on air, always hits target on air
+#define FLAG_HIT_IN_AIR             (1 << 23) // dmg is normal, always hits target on air
+
+// Split defines.
+#define SPLIT_PHYSICAL  0x0
+#define SPLIT_SPECIAL   0x1
+#define SPLIT_STATUS    0x2
 
 // Growth rates
 #define GROWTH_MEDIUM_FAST  0
@@ -288,7 +287,7 @@
 
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 
-// Evolution type flags
+// Evolution types
 #define EVO_MEGA_EVOLUTION   0xffff // Not an actual evolution, used to temporarily mega evolve in battle.
 #define EVO_FRIENDSHIP       0x0001 // Pokémon levels up with friendship ≥ 160
 #define EVO_FRIENDSHIP_DAY   0x0002 // Pokémon levels up during the day with friendship ≥ 160

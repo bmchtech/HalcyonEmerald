@@ -93,7 +93,7 @@ void CB2_GoToSellMenu(void);
 void GoToBagMenu(u8 bagMenuType, u8 pocketId, void ( *postExitMenuMainCallback2)());
 void DoWallyTutorialBagMenu(void);
 void ResetBagScrollPositions(void);
-void ChooseBerrySetCallback(void (*callback)(void));
+void ChooseBerryForMachine(void (*exitCallback)(void));
 void CB2_ChooseBerry(void);
 void CB2_ChooseItem(void);
 void CB2_ChoosePokeBall(void);
