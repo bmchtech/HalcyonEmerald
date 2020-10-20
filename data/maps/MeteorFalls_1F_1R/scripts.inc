@@ -258,7 +258,7 @@ MeteorFalls_1F_1R_EventScript_Lost::
 
 MeteorFalls_1F_1R_EventScript_MultiCancelled::
 	lockall
-	playbgm MUS_MGM0, 0
+	playbgm MUS_ENCOUNTER_MAGMA, 0
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, MeteorFalls_1F_1R_Movement_WalkDown2
 	waitmovement 0

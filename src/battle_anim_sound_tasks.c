@@ -342,7 +342,7 @@ void SoundTask_PlayCryMegaEvolution(u8 taskId)
     u16 species;
 
     if (IsContest())
-        species = gContestResources->field_18->species;
+        species = gContestResources->moveAnim->species;
     else
         species = gAnimBattlerSpecies[gBattleAnimAttacker];
 

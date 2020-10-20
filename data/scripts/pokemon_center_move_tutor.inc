@@ -100,7 +100,7 @@ PKMN_Center_MoveDeleter_EventScript_TryForgetMove::
 	compare VAR_RESULT, TRUE
 	goto_if_eq PKMN_Center_MoveDeleter_EventScript_LastMonWithSurf
 	special MoveDeleterForgetMove
-	playfanfare MUS_ME_WASURE
+	playfanfare MUS_MOVE_DELETED
 	waitfanfare
 	msgbox PKMN_Center_MoveDeleter_Text_MonHasForgottenMove, MSGBOX_DEFAULT
 	releaseall

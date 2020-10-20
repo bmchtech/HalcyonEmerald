@@ -822,7 +822,7 @@ Route110_Text_MayExplainItemfinder: @ 81EFD58
 	.string "me, but I think you should train a lot\l"
 	.string "harder for the next time.$"
 
-Route110_Text_BrendayLetsBattle: @ 81EFE3F
+Route110_Text_BrendanLetsBattle: @ 81EFE3F
 	.string "Brendan: Hey, {PLAYER}.\n"
 	.string "So this is where you were.\l"
 	.string "How's it going?\p"

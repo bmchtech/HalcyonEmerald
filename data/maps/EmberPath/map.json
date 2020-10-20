@@ -2,7 +2,7 @@
   "id": "MAP_EMBER_PATH",
   "name": "EmberPath",
   "layout": "LAYOUT_EMBER_PATH",
-  "music": "MUS_AJITO",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_EMBER_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -6014,7 +6014,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         else
             multiplier = 1;
         
-        if ((holdEffect == HOLD_EFFECT_EV_BOOST) && (powerItemStat == (STAT_HP + i)))
+        if ((holdEffect == HOLD_EFFECT_POWER_ITEM) && (powerItemStat == (STAT_HP + i)))
         {
             powerItemBonus = ItemId_GetHoldEffectParam(heldItem);
         }

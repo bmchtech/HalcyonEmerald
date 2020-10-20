@@ -367,7 +367,7 @@ MauvilleCity_GameCorner_EventScript_SendPokemonToPC::
 
 MauvilleCity_GameCorner_EventScript_ReceivedPokemonFanfare::
 	bufferspeciesname 0, VAR_TEMP_1
-	playfanfare MUS_FANFA4
+	playfanfare MUS_OBTAIN_ITEM
 	message MauvilleCity_GameCorner_Text_PlayerReceivedPokemon
 	waitmessage
 	waitfanfare

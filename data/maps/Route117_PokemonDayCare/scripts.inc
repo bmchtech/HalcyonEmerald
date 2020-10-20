@@ -22,7 +22,7 @@ Route117_PokemonDayCare_EventScript_TryGiveEgg::
 	msgbox Route117_PokemonDayCare_Text_ThankYou, MSGBOX_DEFAULT
 	setflag FLAG_DAILY_RECEIVED_DAYCARE_EGG
 	setflag FLAG_RECEIVED_TOGEPI_EGG
-	playfanfare MUS_FANFA4
+	playfanfare MUS_OBTAIN_ITEM
 	message Route117_PokemonDayCare_Text_ReceivedTheEgg
 	special SetSpeciesAndEggMove
 	waitfanfare

@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE111_RUINS_EXTERIOR",
   "name": "Route111_RuinsExterior",
   "layout": "LAYOUT_ROUTE111_RUINS_EXTERIOR",
-  "music": "MUS_DOORO_X1",
+  "music": "MUS_ROUTE110",
   "region_map_section": "MAPSEC_ROUTE_111",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

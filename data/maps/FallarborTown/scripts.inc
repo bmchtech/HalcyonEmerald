@@ -93,7 +93,7 @@ FallarborTown_EventScript_RivalScene::
 	goto_if_eq FallarborTown_EventScript_BrendanScene
 
 FallarborTown_EventScript_MayScene::
-	playbgm MUS_GIRL_SUP, 1
+	playbgm MUS_ENCOUNTER_MAY, 1
 	msgbox FallarborTown_Text_MayDisaster, MSGBOX_DEFAULT
 	closemessage
 	call FallarborTown_EventScript_MoveToPlayer
@@ -102,7 +102,7 @@ FallarborTown_EventScript_MayScene::
 	goto FallarborTown_EventScript_RivalExit
 
 FallarborTown_EventScript_BrendanScene::
-	playbgm MUS_BOY_SUP, 1
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	msgbox FallarborTown_Text_BrendanComeHere, MSGBOX_DEFAULT
 	closemessage
 	call FallarborTown_EventScript_MoveToPlayer

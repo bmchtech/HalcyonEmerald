@@ -119,7 +119,7 @@ Rotom_Appliances_LearnSpecialMove::
     special TeachRotomMove
     bufferpartymonnick 0, VAR_0x8004
     buffermovename 1, VAR_0x8006
-    playfanfare MUS_FANFA1
+    playfanfare MUS_LEVEL_UP
     msgbox Rotom_Text_LearnedMove, MSGBOX_DEFAULT
     releaseall
     end
@@ -227,7 +227,7 @@ Rotom_Text_HasntEnteredAMotor:
     .string "{STR_VAR_1} hasn't entered a motor.$"
 
 Rotom_Text_RotomForgotMove:
-    .string "{PAUSE 32}1, {PAUSE 15}2, and {PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_KON}Poof!\p"
+    .string "{PAUSE 32}1, {PAUSE 15}2, and {PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!\p"
     .string "{STR_VAR_1} forgot how to use\n"
     .string "{STR_VAR_2}.\p"
     .string "And…$"
