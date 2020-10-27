@@ -547,7 +547,7 @@ void CB2_ChooseItem(void)
 
 void CB2_ChoosePokeBall(void)
 {
-    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, POCKET_POKE_BALLS, CB2_ReturnToFieldContinueScript);
+    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, BALLS_POCKET, CB2_ReturnToFieldContinueScript);
 }
 
 void ChooseBerryForMachine(void (*exitCallback)(void))

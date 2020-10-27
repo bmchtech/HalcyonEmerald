@@ -1,58 +1,6 @@
-FallarborTown_Mart_EventScript_MetronomeTutor:: @ 82C80B6
-	lock
-	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_METRONOME, MoveTutor_EventScript_MetronomeTaught
-	msgbox MoveTutor_Text_MetronomeTeach, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_MetronomeDeclined
-	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_MetronomeDeclined
-	msgbox MoveTutor_Text_MetronomeWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, TUTOR_MOVE_METRONOME
-	call MoveTutor_EventScript_OpenPartyMenu
-	compare VAR_RESULT, 0
-	goto_if_eq MoveTutor_EventScript_MetronomeDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_METRONOME
-	goto MoveTutor_EventScript_MetronomeTaught
-	end
-
-MoveTutor_EventScript_MetronomeDeclined:: @ 82C810A
-	msgbox MoveTutor_Text_MetronomeDeclined, MSGBOX_DEFAULT
-	release
-	end
 
 MoveTutor_EventScript_MetronomeTaught:: @ 82C8114
 	msgbox MoveTutor_Text_MetronomeTaught, MSGBOX_DEFAULT
-	release
-	end
-
-LilycoveCity_DepartmentStoreRooftop_EventScript_SubstituteTutor:: @ 82C8186
-	lock
-	faceplayer
-	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE, MoveTutor_EventScript_SubstituteTaught
-	msgbox MoveTutor_Text_SubstituteTeach, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_SubstituteDeclined
-	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
-	compare VAR_RESULT, NO
-	goto_if_eq MoveTutor_EventScript_SubstituteDeclined
-	msgbox MoveTutor_Text_SubstituteWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, 0
-	call MoveTutor_EventScript_OpenPartyMenu
-	compare VAR_RESULT, 0
-	goto_if_eq MoveTutor_EventScript_SubstituteDeclined
-	setflag FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE
-	goto MoveTutor_EventScript_SubstituteTaught
-	end
-
-MoveTutor_EventScript_SubstituteDeclined:: @ 82C81DA
-	msgbox MoveTutor_Text_SubstituteDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-MoveTutor_EventScript_SubstituteTaught:: @ 82C81E4
-	msgbox MoveTutor_Text_SubstituteTaught, MSGBOX_DEFAULT
 	release
 	end
 

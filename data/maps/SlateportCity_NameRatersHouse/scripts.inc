@@ -142,77 +142,77 @@ Nature_Changer_Nature_Change::
 	end
 
 NatureChanger_Text_Intro:
-	.string"Ohohoho! You are a Trainer, yes?\p"
-	.string"How fortunate you are to have\n"
-	.string"stumbled into my home!\p"
-	.string"I was once the greatest {POKEBLOCK}\n"
-	.string"chef in all of Kalos!\p"
-	.string"With but one taste of my {POKEBLOCK}s,\n"
-	.string"your Pokémon will never want anything\l"
-	.string"else again!\p"
-	.string"Now, listen!\p"
-	.string"A Pokémon's taste in {POKEBLOCK}s\n"
-	.string"determines their very Nature!\p"
-	.string"How they battle, how they grow!\n"
-	.string"All decided by their likes and dislikes!\p"
-	.string"So, do you see?\p"
-	.string"If a Pokémon wants only the {POKEBLOCK}\n"
-	.string"flavor I have given them, their Nature\l"
-	.string"will change!$"
+	.string "Ohohoho! You are a Trainer, yes?\p"
+	.string "How fortunate you are to have\n"
+	.string "stumbled into my home!\p"
+	.string "I was once the greatest {POKEBLOCK}\n"
+	.string "chef in all of Kalos!\p"
+	.string "With but one taste of my {POKEBLOCK}s,\n"
+	.string "your Pokémon will never want anything\l"
+	.string "else again!\p"
+	.string "Now, listen!\p"
+	.string "A Pokémon's taste in {POKEBLOCK}s\n"
+	.string "determines their very Nature!\p"
+	.string "How they battle, how they grow!\n"
+	.string "All decided by their likes and dislikes!\p"
+	.string "So, do you see?\p"
+	.string "If a Pokémon wants only the {POKEBLOCK}\n"
+	.string "flavor I have given them, their Nature\l"
+	.string "will change!$"
 
 NatureChanger_Text_ChoosePokemon:
-	.string"Which Pokémon needs the help of my\n"
-	.string"special {POKEBLOCK}s?$"
+	.string "Which Pokémon needs the help of my\n"
+	.string "special {POKEBLOCK}s?$"
 
 NatureChanger_Text_MonHasNature:
-	.string"Ohohoho! I see your {STR_VAR_1} has\n"
-	.string"a {STR_VAR_2} Nature, yes?$"
+	.string "Ohohoho! I see your {STR_VAR_1} has\n"
+	.string "a {STR_VAR_2} Nature, yes?$"
 
 NatureChanger_Text_BadTaste:
-	.string"That means it likes {STR_VAR_1}s.\n"
-	.string"This simply will not do!\p"
-	.string"You will bring me ten Oran Berries,\n"
-	.string"and I shall create a {POKEBLOCK} that\l"
-	.string"will fix this travesty!$"
+	.string "That means it likes {STR_VAR_1}s.\n"
+	.string "This simply will not do!\p"
+	.string "You will bring me ten Oran Berries,\n"
+	.string "and I shall create a {POKEBLOCK} that\l"
+	.string "will fix this travesty!$"
 
 NatureChanger_Text_HowAboutIt:
-	.string"So, we will do this, yes?\n"
-	.string"We will change your Pokémon's Nature?$"
+	.string "So, we will do this, yes?\n"
+	.string "We will change your Pokémon's Nature?$"
 
 NatureChanger_Text_SomeOtherTime:
-	.string"No?!\n"
-	.string"Surely you cannot mean this!$"
+	.string "No?!\n"
+	.string "Surely you cannot mean this!$"
 
 NatureChanger_Text_ThisIsEgg:
-	.string"This is but an Egg!\p$"
-	.string"An Egg cannot eat a {POKEBLOCK}!$"
+	.string "This is but an Egg!\p$"
+	.string "An Egg cannot eat a {POKEBLOCK}!$"
 
 NatureChanger_Text_NeedMoreBerries:
-	.string"I need more Oran Berries than that.\n"
-	.string"Bring me ten!$"
+	.string "I need more Oran Berries than that.\n"
+	.string "Bring me ten!$"
 
 NatureChanger_Text_BoringTaste:
-	.string"That means it will eat any {POKEBLOCK}!\n"
-	.string"This simply will not do!\p"
-	.string"You will bring me ten Oran Berries,\n"
-	.string"and I shall create a {POKEBLOCK} that\l"
-	.string"will fix this travesty!$"
+	.string "That means it will eat any {POKEBLOCK}!\n"
+	.string "This simply will not do!\p"
+	.string "You will bring me ten Oran Berries,\n"
+	.string "and I shall create a {POKEBLOCK} that\l"
+	.string "will fix this travesty!$"
 
 NatureChanger_Text_WhichColorPrefer:
-	.string"Ah! Very good!\p" 
-	.string"Now, which {POKEBLOCK} color should\n"
-	.string"your Pokémon prefer?$"
+	.string "Ah! Very good!\p" 
+	.string "Now, which {POKEBLOCK} color should\n"
+	.string "your Pokémon prefer?$"
 
 NatureChanger_Text_WhichColorDislike:
-	.string"And which {POKEBLOCK} color should\n"
-	.string"it dislike?$"
+	.string "And which {POKEBLOCK} color should\n"
+	.string "it dislike?$"
 
 NatureChanger_Text_SpecialPokeblock:
-	.string"Ohohoho! I will make a special\n"
-	.string"{POKEBLOCK} from your Oran Berries.\p"
-	.string"Your {STR_VAR_1}'s taste in {POKEBLOCK}s\n"
-	.string"shall be much improved!\p"
-	.string"Wait just a moment…$"
+	.string "Ohohoho! I will make a special\n"
+	.string "{POKEBLOCK} from your Oran Berries.\p"
+	.string "Your {STR_VAR_1}'s taste in {POKEBLOCK}s\n"
+	.string "shall be much improved!\p"
+	.string "Wait just a moment…$"
 
 NatureChanger_Text_Pause:
 	.string "… … … … … …\n"
@@ -223,11 +223,11 @@ NatureChanger_Text_Pause:
 	.string "… … … … … …$"
 
 NatureChanger_Text_ItIsDone:
-	.string"Oho! It is done!\p"
-	.string"Your {STR_VAR_1} has much better\n"
-	.string"taste in {POKEBLOCK}s than before!$"
+	.string "Oho! It is done!\p"
+	.string "Your {STR_VAR_1} has much better\n"
+	.string "taste in {POKEBLOCK}s than before!$"
 
 NatureChanger_Text_MonHasNature1:
-	.string"{STR_VAR_1} ate the strange {POKEBLOCK}.\p"
-	.string"It seems {STR_VAR_1} really liked it!\n"
-	.string"{STR_VAR_1}'s Nature became {STR_VAR_2}!$"
+	.string "{STR_VAR_1} ate the strange {POKEBLOCK}.\p"
+	.string "It seems {STR_VAR_1} really liked it!\n"
+	.string "{STR_VAR_1}'s Nature became {STR_VAR_2}!$"
