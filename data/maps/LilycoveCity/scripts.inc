@@ -192,8 +192,8 @@ LilycoveCity_EventScript_DepartmentStoreSign:: @ 81E2D6B
 	msgbox LilycoveCity_Text_DepartmentStoreSign, MSGBOX_SIGN
 	end
 
-LilycoveCity_EventScript_MoveDeletersHouseSign:: @ 81E2D74
-	msgbox LilycoveCity_Text_MoveDeletersHouseSign, MSGBOX_SIGN
+LilycoveCity_EventScript_BallSwappersHouseSign::
+	msgbox LilycoveCity_Text_BallSwappersHouseSign, MSGBOX_SIGN
 	end
 
 LilycoveCity_EventScript_WailmerTrainerGrunt:: @ 81E2D7D
@@ -725,9 +725,9 @@ LilycoveCity_Text_DepartmentStoreSign: @ 81E46BE
 	.string "“A great place to find that something\n"
 	.string "you need!”$"
 
-LilycoveCity_Text_MoveDeletersHouseSign: @ 81E473D
-	.string "MOVE DELETER'S HOUSE\p"
-	.string "“Unwanted Pokémon moves deleted.”$"
+LilycoveCity_Text_BallSwappersHouseSign: @ 81E473D
+	.string "Poké Ball Swapper's House\p"
+	.string "“Move your Pokémon to a new home!”$"
 
 LilycoveCity_Text_DoYouKnowAboutBerryBlender: @ 81E4774
 	.string "Do you know about the machine\n"

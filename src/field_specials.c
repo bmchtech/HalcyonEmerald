@@ -5296,12 +5296,14 @@ bool8 AreChosenMonEVsMaxedOut(void)
 }
 
 // Lets player select an item from the items pocket
+// Chosen item ID is stored in gSpecialVar_Result
 void Bag_ChooseItem(void)
 {
     SetMainCallback2(CB2_ChooseItem);
 }
 
-// Lets player select a ball from the poke balls pocket
+// Lets player select a ball from the Poke Balls pocket
+// Chosen item ID is stored in gSpecialVar_Result
 void Bag_ChoosePokeBall(void)
 {
     SetMainCallback2(CB2_ChoosePokeBall);
@@ -5531,7 +5533,8 @@ bool8 DoesRotomKnowSpecialMove (void)
 // gSpecialVar_0x8005: Move to give the egg
 void SetSpeciesAndEggMove (void)
 {
-    u8 numEggSpecies, randSpecies, randEggMove;
+    u8 numEggSpecies = 16;
+    u8 randSpecies, randEggMove;
     static const u16 eggMoves[][4] = {
         {SPECIES_BAGON, MOVE_DRAGON_DANCE, MOVE_DRAGON_RUSH, MOVE_THRASH},
         {SPECIES_ESPURR, MOVE_TRICK, MOVE_YAWN, MOVE_ASSIST},
@@ -5547,10 +5550,10 @@ void SetSpeciesAndEggMove (void)
         {SPECIES_PONYTA, MOVE_HYPNOSIS, MOVE_MORNING_SUN, MOVE_HIGH_HORSEPOWER},
         {SPECIES_SNOVER, MOVE_LEECH_SEED, MOVE_AVALANCHE, MOVE_SEED_BOMB},
         {SPECIES_FERROSEED, MOVE_SPIKES, MOVE_LEECH_SEED, MOVE_ACID_SPRAY},
-        {SPECIES_TAILLOW, MOVE_BOOMBURST, MOVE_BOOMBURST, MOVE_BOOMBURST}
+        {SPECIES_TAILLOW, MOVE_BOOMBURST, MOVE_BOOMBURST, MOVE_BOOMBURST},
+        {SPECIES_DRATINI, MOVE_EXTREME_SPEED, MOVE_EXTREME_SPEED, MOVE_EXTREME_SPEED}
     };
 
-    numEggSpecies = 15;
     randSpecies = Random() % numEggSpecies;
     randEggMove = (Random() % 3) + 1; // Random number between 1 and 3
 
@@ -5571,4 +5574,15 @@ void SetGiftEggMove (void)
     {
         SetMonMoveSlot(&gPlayerParty[gSpecialVar_0x8006], gSpecialVar_0x8005, 0);
     }
+}
+
+// Changes a chosen mon's Poke Ball to another one in the player's bag
+// gSpecialVar_0x8004: Party slot of chosen mon
+// gSpecialVar_0x8005: Ball to change to
+// gSpecialVar_0x8006: Previous Poke Ball
+void ChangePokeBall (void)
+{
+    u16 pokeball = gSpecialVar_0x8005;
+    // gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL, NULL);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL, &pokeball);
 }

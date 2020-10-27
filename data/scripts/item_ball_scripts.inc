@@ -318,8 +318,8 @@ RustboroCity_EventScript_ItemAbilityCapsule:: @ 82910DB
 	finditem ITEM_ABILITY_CAPSULE
 	end
 
-LilycoveCity_EventScript_ItemMaxRepel:: @ 82910E8
-	finditem ITEM_MAX_REPEL
+LilycoveCity_EventScript_ItemLightClay:: @ 82910E8
+	finditem ITEM_LIGHT_CLAY
 	end
 
 MossdeepCity_EventScript_ItemNetBall:: @ 82910F5

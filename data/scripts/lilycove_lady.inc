@@ -783,7 +783,7 @@ LilycoveCity_PokemonCenter_1F_Text_IllLookForAChallenger: @ 82A9336
     .string "your quiz challenge right away.$"
 
 LilycoveCity_PokemonCenter_1F_Text_ImTheContestLady: @ 82A93A7
-    .string "I'm the Contest LADY!\n"
+    .string "I'm the Contest Lady!\n"
     .string "I sure do love Contests!$"
 
 LilycoveCity_PokemonCenter_1F_Text_ThankForPokeblock: @ 82A93D6
