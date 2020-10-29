@@ -43,7 +43,7 @@ MtPyre_2F_EventScript_Zander:: @ 823118C
 	end
 
 MtPyre_2F_Text_MemoriesOfSkitty: @ 82311A3
-	.string "Memories of my darling SKITTY…\n"
+	.string "Memories of my darling Skitty…\n"
 	.string "My eyes overflow thinking about it.$"
 
 MtPyre_2F_Text_TumbledFromFloorAbove: @ 82311E6

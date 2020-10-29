@@ -11,7 +11,8 @@ MauvilleCity_Mart_EventScript_Clerk:: @ 82110E6
 	release
 	end
 
-MauvilleCity_Mart_Pokemart:
+	.align 2
+MauvilleCity_Mart_Pokemart::
 	.2byte ITEM_UP_GRADE
 	.2byte ITEM_METAL_POWDER
 	.2byte ITEM_STICK
@@ -24,6 +25,7 @@ MauvilleCity_Mart_Pokemart:
 	.2byte ITEM_PRISM_SCALE
 	.2byte ITEM_SACHET
 	.2byte ITEM_WHIPPED_DREAM
+	.2byte ITEM_NONE
 	release
 	end
 

@@ -12104,6 +12104,7 @@ static const struct TrainerMonItemCustomMoves sParty_Braxton[] = {
     .lvl = -1,
     .species = SPECIES_SCOLIPEDE,
     .heldItem = ITEM_SALAC_BERRY,
+    .ability = 2, // Speed Boost
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
     .moves = MOVE_PROTECT, MOVE_IRON_DEFENSE, MOVE_POISON_JAB, MOVE_BATON_PASS
     },
