@@ -5104,7 +5104,7 @@ static void Task_TryLearnNewMoves(u8 taskId)
     if (WaitFanfare(0) && ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON))))
     {
         RemoveLevelUpStatsWindow();
-        learnMove = MonTryLearningNewMove(&gPlayerParty[gPartyMenu.slotId], TRUE, 0);
+        learnMove = MonTryLearningNewMove(&gPlayerParty[gPartyMenu.slotId], TRUE);
         gPartyMenu.learnMoveState = 1;
         switch (learnMove)
         {
@@ -5126,7 +5126,7 @@ static void Task_TryLearnNewMoves(u8 taskId)
 
 static void Task_TryLearningNextMove(u8 taskId)
 {
-    u16 result = MonTryLearningNewMove(&gPlayerParty[gPartyMenu.slotId], FALSE, 0);
+    u16 result = MonTryLearningNewEvolutionMove(&gPlayerParty[gPartyMenu.slotId], FALSE);
 
     switch (result)
     {

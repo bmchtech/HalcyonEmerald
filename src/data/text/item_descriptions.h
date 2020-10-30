@@ -1289,33 +1289,33 @@ static const u8 sShellBellDesc[] = _(
 
 static const u8 sPowerBracerDesc[] = _(
     "A hold item that\n"
-    "promotes ATK gain,\n"
-    "but reduces SPEED.");
+    "promotes Atk gain,\n"
+    "but reduces Speed.");
 
 static const u8 sPowerBeltDesc[] = _(
     "A hold item that\n"
-    "promotes DEF gain,\n"
-    "but reduces SPEED.");
+    "promotes Def gain,\n"
+    "but reduces Speed.");
 
 static const u8 sPowerLensDesc[] = _(
     "Hold item that pro-\n"
     "motes Sp. Atk gain,\n"
-    "but reduces SPEED.");
+    "but reduces Speed.");
 
 static const u8 sPowerBandDesc[] = _(
     "Hold item that pro-\n"
     "motes Sp. Def gain,\n"
-    "but reduces SPEED.");
+    "but reduces Speed.");
 
 static const u8 sPowerAnkletDesc[] = _(
-    "A hold item that\n"
-    "promotes SPD gain,\n"
-    "but reduces SPEED.");
+    "Hold item that pro-\n"
+    "motes Speed gain,\n"
+    "but reduces Speed.");
 
 static const u8 sPowerWeightDesc[] = _(
     "A hold item that\n"
     "promotes HP gain,\n"
-    "but reduces SPEED.");
+    "but reduces Speed.");
 
 static const u8 sSeaIncenseDesc[] = _(
     "A hold item that\n"

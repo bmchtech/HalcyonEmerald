@@ -230,7 +230,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
         {
             // Teach the mon new moves it learned while in the daycare.
             firstMove = TRUE;
-            while ((learnedMove = MonTryLearningNewMove(mon, firstMove, 0)) != 0)
+            while ((learnedMove = MonTryLearningNewMove(mon, firstMove)) != 0)
             {
                 firstMove = FALSE;
                 if (learnedMove == MON_HAS_MAX_MOVES)

@@ -5,6 +5,7 @@
 .set LOCALID_GRUNT_3, 6
 .set LOCALID_GRUNT_4, 7
 .set LOCALID_MAXIE, 8
+.set LOCALID_MATT, 10
 
 MtPyre_Summit_MapScripts:: @ 8231FF7
 	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
@@ -59,6 +60,7 @@ MtPyre_Summit_EventScript_TeamAquaExits:: @ 823203C
 	removeobject LOCALID_GRUNT_2
 	removeobject LOCALID_GRUNT_3
 	removeobject LOCALID_GRUNT_4
+	removeobject LOCALID_MATT
 	setflag FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE
 	setflag FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA
 	fadedefaultbgm
@@ -556,7 +558,7 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis: @ 823290E
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Oh, yes. Was it Team Magma who came\n"
-	.string "and took the Blue Orb first?\p"
+	.string "and took the Red Orb first?\p"
 	.string "Well, in their haste, they left this\n"
 	.string "behind.\p"
 	.string "I couldn't imagine what exactly it\n"

@@ -168,7 +168,8 @@ SlateportCity_EventScript_PowerItems::
 	release
 	end
 
-SlateportCity_Pokemart_PowerItems:
+	.align 2
+SlateportCity_Pokemart_PowerItems::
 	.2byte ITEM_POWER_BRACER
 	.2byte ITEM_POWER_BELT
 	.2byte ITEM_POWER_LENS

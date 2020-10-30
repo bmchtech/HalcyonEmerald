@@ -26,6 +26,7 @@ Route121_EventScript_Nurse::
 	end
 
 Route121_Nurse_EventScript_PlayerIsGenji::
+	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox Route121_Nurse_Text_AllBetter, MSGBOX_DEFAULT
 	release

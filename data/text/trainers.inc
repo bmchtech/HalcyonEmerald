@@ -3298,7 +3298,7 @@ Route121_Text_CaleDefeat: @ 829F97B
 
 Route121_Text_CalePostBattle: @ 829F9AE
 	.string "I bought too much stuff at\n"
-	.string "the Lilycove DEPT. STORE.\p"
+	.string "the Lilycove Dept. Store.\p"
 	.string "It's up the road from here.\n"
 	.string "I wish I had a Bag like yours.$"
 

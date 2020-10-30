@@ -165,8 +165,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_ItemMaxRepel",
-      "flag": "FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL"
+      "script": "LilycoveCity_EventScript_ItemLightClay",
+      "flag": "FLAG_ITEM_LILYCOVE_CITY_LIGHT_CLAY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -412,7 +412,9 @@
       "dest_warp_id": 1
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -492,7 +494,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LilycoveCity_EventScript_MoveDeletersHouseSign"
+      "script": "LilycoveCity_EventScript_BallSwappersHouseSign"
     },
     {
       "type": "hidden_item",
@@ -515,8 +517,8 @@
       "x": 64,
       "y": 31,
       "elevation": 0,
-      "item": "ITEM_POKE_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL"
+      "item": "ITEM_DREAM_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_LILYCOVE_CITY_DREAM_BALL"
     }
   ]
 }

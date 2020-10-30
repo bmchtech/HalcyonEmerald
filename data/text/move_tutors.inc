@@ -51,32 +51,6 @@ MoveTutor_Text_MetronomeTaught: @ 82C75B5
 	.string "Wouldn't it be nice if we could\n"
 	.string "use it, too?$"
 
-MoveTutor_Text_SubstituteTeach: @ 82C77C6
-	.string "When I see the wide world from up\n"
-	.string "here on the roof…\p"
-	.string "I think about how nice it would be\n"
-	.string "if there were more than just one me\l"
-	.string "so I could enjoy all sorts of lives.\p"
-	.string "Of course it's not possible.\n"
-	.string "Giggle…\p"
-	.string "I know! Would you be interested in\n"
-	.string "having a Pokémon learn SUBSTITUTE?$"
-
-MoveTutor_Text_SubstituteDeclined: @ 82C78D1
-	.string "Oh, no?\p"
-	.string "A Pokémon can make a copy of\n"
-	.string "itself using it, you know.$"
-
-MoveTutor_Text_SubstituteWhichMon: @ 82C7911
-	.string "Giggle…\n"
-	.string "Which Pokémon do you want me to\l"
-	.string "teach SUBSTITUTE?$"
-
-MoveTutor_Text_SubstituteTaught: @ 82C794B
-	.string "We human beings should enjoy our\n"
-	.string "own lives to the utmost!\p"
-	.string "I hope you'll get that way, too!$"
-
 MoveTutor_Text_DynamicPunchTeach: @ 82C79A6
 	.string "I can't do this anymore!\p"
 	.string "It's utterly hopeless!\p"
