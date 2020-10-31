@@ -1668,7 +1668,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_ALTARIA] =
     {
         .size = 0x88,
-        .y_offset = 1,
+        .y_offset = 0,
     },
     [SPECIES_WYNAUT] =
     {

@@ -431,7 +431,7 @@ gTVFanClubText00:: @ 08280DEE
 	.string "WE ARE THE Pokémon Fan Club!\p"
 	.string "We're on the air!\p"
 	.string "Today, we'll get rolling with the\n"
-	.string "Pokémon SURVEY CORNER.\p"
+	.string "Pokémon SURVEY Corner.\p"
 	.string "Out of all the tales woven by Pokémon\n"
 	.string "and TRAINERS, what startling new drama\l"
 	.string "will grab our attention today?\p"
@@ -1317,7 +1317,7 @@ gTVHoennTreasureInvestigatorsText01:: @ 08284FA1
 gTVHoennTreasureInvestigatorsText02:: @ 082850F5
 	.string "Wow, we'd better check this letter\n"
 	.string "out! Let me read it to you.\p"
-	.string "…Dear INVESTIGATORS,\n"
+	.string "…Dear Investigators,\n"
 	.string "I hope you are well.\p"
 	.string "I recently saw {STR_VAR_2} on a ferry.\p"
 	.string "The Trainer found the item\n"
@@ -1334,7 +1334,7 @@ gTVFindThatGamerText00:: @ 08285240
 	.string "How's your {STR_VAR_2} spinning?\p"
 	.string "Like always, we'll cast our spotlight\n"
 	.string "on a rare Trainer who's visited the\l"
-	.string "GAME CORNER!\p"
+	.string "Game Corner!\p"
 	.string "Today, our no. 1 gamer is…\n"
 	.string "{STR_VAR_1}!$"
 
@@ -1343,28 +1343,28 @@ gTVFindThatGamerText01:: @ 082852F4
 	.string "and won a rare {STR_VAR_3} Coins.\p"
 	.string "“When {STR_VAR_1} comes, we need to\n"
 	.string "make sure we have enough Coins.”\p"
-	.string "That's what the GAME CORNER clerks\n"
+	.string "That's what the Game Corner clerks\n"
 	.string "mutter when our gamer is in play!\p"
 	.string "Viewers, it's best to watch your Coins\n"
-	.string "like {STR_VAR_1} if you visit the GAME\l"
-	.string "CORNER and play the {STR_VAR_2} game.\p"
-	.string "This is live from the GAME CORNER--\n"
+	.string "like {STR_VAR_1} if you visit the Game\l"
+	.string "Corner and play the {STR_VAR_2} game.\p"
+	.string "This is live from the Game Corner--\n"
 	.string "where you can feel the excitement!\p"
 	.string "That's all for today!$"
 
 gTVFindThatGamerText02:: @ 08285463
 	.string "{STR_VAR_1} played the {STR_VAR_2} game\n"
 	.string "and lost {STR_VAR_3} Coins.\p"
-	.string "“When {STR_VAR_1} comes, our COIN\n"
+	.string "“When {STR_VAR_1} comes, our Coin\n"
 	.string "sales seem to increase.”\p"
-	.string "That's what the GAME CORNER clerks\n"
+	.string "That's what the Game Corner clerks\n"
 	.string "say when our gamer is in play!$"
 
 gTVFindThatGamerText03:: @ 08285500
 	.string "Viewers, it's best to watch your Coins\n"
-	.string "like {STR_VAR_1} if you visit the GAME\l"
-	.string "CORNER and play the {STR_VAR_2} game.\p"
-	.string "This is live from the GAME CORNER--\n"
+	.string "like {STR_VAR_1} if you visit the Game\l"
+	.string "Corner and play the {STR_VAR_2} game.\p"
+	.string "This is live from the Game Corner--\n"
 	.string "where you can feel the excitement!\p"
 	.string "That's all for today!$"
 
@@ -1385,8 +1385,8 @@ gTVBreakingNewsText02:: @ 0828563C
 	.string "the Pokémon {STR_VAR_3}.$"
 
 gTVBreakingNewsText03:: @ 08285682
-	.string "In the battle, the number of POKé\n"
-	.string "BALLS thrown by the Trainer was {STR_VAR_1}.\p"
+	.string "In the battle, the number of Poké\n"
+	.string "Balls thrown by the Trainer was {STR_VAR_1}.\p"
 	.string "Ultimately, the rare Pokémon was\n"
 	.string "caught by the {STR_VAR_2} used last.$"
 
@@ -1588,7 +1588,7 @@ gTVPokemonLotteryWinnerFlashReportText00:: @ 082863CC
 	.string "It's the Pokémon LOTTERY\n"
 	.string "WINNER FLASH REPORT!\p"
 	.string "Hello! We're coming at you live from\n"
-	.string "the Pokémon LOTTERY CORNER on\l"
+	.string "the Pokémon LOTTERY Corner on\l"
 	.string "the ground floor of the Lilycove\l"
 	.string "DEPARTMENT STORE!\p"
 	.string "Like it always happens, another\n"
@@ -2014,7 +2014,7 @@ gTVWhatsNo1InHoennTodayText00:: @ 08287FE0
 
 gTVWhatsNo1InHoennTodayText01:: @ 082880C0
 	.string "In one day, {STR_VAR_1} spun the SLOTS\n"
-	.string "at the GAME CORNER {STR_VAR_2} times.\p"
+	.string "at the Game Corner {STR_VAR_2} times.\p"
 	.string "While playing, {STR_VAR_1} was heard\n"
 	.string "murmuring, “For me, the reels don't\l"
 	.string "even move…”\l"
@@ -2022,8 +2022,8 @@ gTVWhatsNo1InHoennTodayText01:: @ 082880C0
 
 gTVWhatsNo1InHoennTodayText02:: @ 0828815F
 	.string "In one day, {STR_VAR_1} played\n"
-	.string "the ROULETTE game at the GAME\l"
-	.string "CORNER {STR_VAR_2} times.\p"
+	.string "the ROULETTE game at the Game\l"
+	.string "Corner {STR_VAR_2} times.\p"
 	.string "While playing, {STR_VAR_1} shouted,\n"
 	.string "“Let the balls decide!”\p"
 	.string "The Trainer's eyes were focused and\n"
