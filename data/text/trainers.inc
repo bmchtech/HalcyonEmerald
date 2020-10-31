@@ -4230,14 +4230,14 @@ Route128_Text_RubenPostBattle: @ 82A2D0D
 Route128_Text_WayneIntro: @ 82A2D3D
 	.string "I want to visit Ever Grande, so I\n"
 	.string "caught myself a Pokémon that knows\l"
-	.string "the move WaterFALL to crest the falls.$"
+	.string "the move Waterfall to crest the falls.$"
 
 Route128_Text_WayneDefeat: @ 82A2DA9
 	.string "I'm crestfallen!$"
 
 Route128_Text_WaynePostBattle: @ 82A2DBA
 	.string "Awww, phooey!\p"
-	.string "My Pokémon knows WaterFALL, but\n"
+	.string "My Pokémon knows Waterfall, but\n"
 	.string "I don't have the Sootopolis Gym Badge!$"
 
 Route128_Text_HarrisonIntro: @ 82A2E0F

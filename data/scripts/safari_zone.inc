@@ -74,20 +74,20 @@ SafariZone_EventScript_PokeblockPresent:: @ 82A4BEB
 	end
 
 SafariZone_Text_WouldYouLikeToExit: @ 82A4BF4
-	.string "Would you like to exit the SAFARI\n"
-	.string "ZONE right now?$"
+	.string "Would you like to exit the Safari\n"
+	.string "Zone right now?$"
 
 SafariZone_Text_TimesUp: @ 82A4C26
 	.string "Ding-dong! Time's up!\n"
-	.string "Your SAFARI Game is over.$"
+	.string "Your Safari Game is over.$"
 
 SafariZone_Text_OutOfBalls: @ 82A4C56
 	.string "You've run out of Safari Balls.\n"
-	.string "Your SAFARI Game is over.$"
+	.string "Your Safari Game is over.$"
 
 SafariZone_Text_PlacePokeblockOnFeeder: @ 82A4C90
 	.string "Would you like to place a {POKEBLOCK}\n"
-	.string "on the {POKEBLOCK} FEEDER?$"
+	.string "on the {POKEBLOCK} Feeder?$"
 
 SafariZone_Text_PokeblockStillHere: @ 82A4CC5
 	.string "The {STR_VAR_1} you left\n"
@@ -95,7 +95,7 @@ SafariZone_Text_PokeblockStillHere: @ 82A4CC5
 
 SafariZone_Text_PokeblockWasPlaced: @ 82A4CEB
 	.string "The {STR_VAR_1} was placed\n"
-	.string "on the {POKEBLOCK} FEEDER.$"
+	.string "on the {POKEBLOCK} Feeder.$"
 
 Route121_SafariZoneEntrance_Text_WelcomeToSafariZone: @ 82A4D12
 	.string "Welcome to the Safari Zone!\p"
@@ -120,7 +120,7 @@ Route121_SafariZoneEntrance_Text_FirstTimeInfo: @ 82A4EA1
 	.string "When you enter the Safari Zone, you\n"
 	.string "start with 30 Safari Balls for\l"
 	.string "catching Pokémon.\p"
-	.string "The SAFARI Game is over when you run\n"
+	.string "The Safari Game is over when you run\n"
 	.string "out of Safari Balls, or when you've\l"
 	.string "walked 500 steps.\p"
 	.string "Come in and enjoy the Safari Zone!$"
@@ -128,7 +128,7 @@ Route121_SafariZoneEntrance_Text_FirstTimeInfo: @ 82A4EA1
 Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay: @ 82A4F74
 	.string "Welcome to the Safari Zone!\p"
 	.string "All you can catch for just ¥500!\n"
-	.string "Would you like to play a SAFARI Game?$"
+	.string "Would you like to play a Safari Game?$"
 
 Route121_SafariZoneEntrance_Text_PlayAnotherTime: @ 82A4FD7
 	.string "Okay.\n"
@@ -155,15 +155,15 @@ Route121_SafariZoneEntrance_Text_PleaseEnjoyYourself: @ 82A506F
 
 Route121_SafariZoneEntrance_Text_PCIsFull: @ 82A50E5
 	.string "Excuse me!\n"
-	.string "Your PC BOX is full.$"
+	.string "Your PC Box is full.$"
 
 Route121_SafariZoneEntrance_Text_YouNeedPokeblockCase: @ 82A5105
 	.string "Excuse me!\n"
-	.string "You seem to be without a {POKEBLOCK} CASE.\p"
-	.string "Your SAFARI Game will be much more\n"
+	.string "You seem to be without a {POKEBLOCK} Case.\p"
+	.string "Your Safari Game will be much more\n"
 	.string "fruitful if you use {POKEBLOCK}S.\p"
-	.string "Please come back with a {POKEBLOCK} CASE.\p"
-	.string "You may obtain a {POKEBLOCK} CASE from\n"
+	.string "Please come back with a {POKEBLOCK} Case.\p"
+	.string "You may obtain a {POKEBLOCK} Case from\n"
 	.string "the Lilycove Contest Hall.$"
 
 SafariZone_South_Text_StillHaveTimeExit: @ 82A51D4
@@ -176,8 +176,8 @@ SafariZone_South_Text_EnjoyTheRestOfYourAdventure: @ 82A521A
 
 SafariZone_South_Text_ExitEarlyThankYouForPlaying: @ 82A5248
 	.string "Okay.\p"
-	.string "I'll take back your remaining SAFARI\n"
-	.string "BALLS.\p"
+	.string "I'll take back your remaining Safari\n"
+	.string "Balls.\p"
 	.string "Thank you for playing.\n"
 	.string "We hope to see you again.$"
 
@@ -219,7 +219,7 @@ SafariZone_North_Text_Man: @ 82A54F0
 	.string "here and trade them with my friends!$"
 
 SafariZone_South_Text_Youngster: @ 82A553E
-	.string "I put a {POKEBLOCK} on the {POKEBLOCK} FEEDER.\n"
+	.string "I put a {POKEBLOCK} on the {POKEBLOCK} Feeder.\n"
 	.string "But it seems to have disappeared.\p"
 	.string "I guess Pokémon must have eaten it\n"
 	.string "without me noticing.$"
@@ -247,7 +247,7 @@ SafariZone_RestHouse_Text_PsychicM: @ 82A56E1
 	.string "Pokémon that don't flee easily.$"
 
 SafariZone_RestHouse_Text_FatMan: @ 82A5764
-	.string "If you put a {POKEBLOCK} on the FEEDER,\n"
+	.string "If you put a {POKEBLOCK} on the Feeder,\n"
 	.string "Pokémon are attracted to it.\p"
 	.string "I think Pokémon with the same sort of\n"
 	.string "nature are drawn by a certain {POKEBLOCK}.$"
