@@ -604,8 +604,8 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanLilycoveMudkip[] = {
     .lvl = 3,
     .species = SPECIES_SCEPTILE,
     .heldItem = ITEM_SCEPTILITE,
-    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_SOLAR_BEAM, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_GROWTH
+    .spread = SPREAD_31_IV_SPATK_SPEED_HASTY,
+    .moves = MOVE_SOLAR_BEAM, MOVE_DRAGON_PULSE, MOVE_EARTHQUAKE, MOVE_GROWTH
     }
 };
 
@@ -1119,8 +1119,8 @@ static const struct TrainerMonItemCustomMoves sParty_MayLilycoveMudkip[] = {
     .lvl = 3,
     .species = SPECIES_SCEPTILE,
     .heldItem = ITEM_SCEPTILITE,
-    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_SOLAR_BEAM, MOVE_DRAGON_PULSE, MOVE_EARTH_POWER, MOVE_GROWTH
+    .spread = SPREAD_31_IV_SPATK_SPEED_HASTY,
+    .moves = MOVE_SOLAR_BEAM, MOVE_DRAGON_PULSE, MOVE_EARTHQUAKE, MOVE_GROWTH
     }
 };
 

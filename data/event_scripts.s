@@ -889,7 +889,7 @@ gText_UnusedNicknameReceivedPokemon:: @ 8272DB3
 
 gText_PlayerWhitedOut:: @ 8272DE3
 	.string "{PLAYER} is out of usable\n"
-	.string "Pokémon!\p{PLAYER} whited out!$"
+	.string "Pokémon!\p{PLAYER} blacked out!$"
 
 gText_RegisteredTrainerinPokeNav:: @ 8272E0F
 	.string "Registered {STR_VAR_1} {STR_VAR_2}\n"

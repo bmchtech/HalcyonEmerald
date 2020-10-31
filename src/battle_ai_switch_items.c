@@ -137,7 +137,8 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
-    u8 absorbingTypeAbility;
+    u16 absorbingTypeAbilities[3];
+    u8 numAbsorbingAbilities = 0;
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
@@ -165,18 +166,39 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
         battlerIn1 = gActiveBattler;
         battlerIn2 = gActiveBattler;
     }
-
+    // Create an array of possible absorb abilities so the AI considers all of them
     if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_FIRE)
-        absorbingTypeAbility = ABILITY_FLASH_FIRE;
+    {
+        absorbingTypeAbilities[0] = ABILITY_FLASH_FIRE;
+        numAbsorbingAbilities = 1;
+    }
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_WATER)
-        absorbingTypeAbility = ABILITY_WATER_ABSORB;
+    {
+        absorbingTypeAbilities[0] = ABILITY_WATER_ABSORB;
+        absorbingTypeAbilities[1] = ABILITY_STORM_DRAIN;
+        absorbingTypeAbilities[2] = ABILITY_DRY_SKIN;
+        numAbsorbingAbilities = 3;
+    }
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_ELECTRIC)
-        absorbingTypeAbility = ABILITY_VOLT_ABSORB;
+    {
+        absorbingTypeAbilities[0] = ABILITY_VOLT_ABSORB;
+        absorbingTypeAbilities[1] = ABILITY_MOTOR_DRIVE;
+        absorbingTypeAbilities[2] = ABILITY_LIGHTNING_ROD;
+        numAbsorbingAbilities = 3;
+    }
+    else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_GRASS)
+    {
+        absorbingTypeAbilities[0] = ABILITY_SAP_SIPPER;
+        numAbsorbingAbilities = 1;
+    }
     else
         return FALSE;
-
-    if (gBattleMons[gActiveBattler].ability == absorbingTypeAbility)
+    // Check for all absorbing abilities
+    for (i = 0; i < numAbsorbingAbilities; i++)
+    {
+        if (gBattleMons[gActiveBattler].ability == absorbingTypeAbilities[i])
         return FALSE;
+    }
 
     GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
 
@@ -188,7 +210,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
-        u8 monAbility;
+        u16 monAbility;
 
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
@@ -206,17 +228,18 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
+        // Updated to handle hidden abilities
+        monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
 
-        if (absorbingTypeAbility == monAbility && Random() & 1)
+        for (i = 0; i < numAbsorbingAbilities; i++)
         {
-            // we found a mon.
-            *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
-            BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
-            return TRUE;
+            if (absorbingTypeAbilities[i] == monAbility && Random() & 1)
+            {
+                // we found a mon.
+                *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
+                BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+                return TRUE;
+            }
         }
     }
 
@@ -387,10 +410,8 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
+        // Updated to handle hidden abilities
+        monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
 
         CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, monAbility);
         if (gMoveResultFlags & flags)

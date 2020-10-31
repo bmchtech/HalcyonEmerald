@@ -3020,9 +3020,15 @@ void SetMoveEffect(bool32 primary, u32 certain)
 static void Cmd_seteffectwithchance(void)
 {
     u32 percentChance;
+    u8 moveType = gBattleMoves[gCurrentMove].type;
+    u8 moveEffect = gBattleMoves[gCurrentMove].effect;
 
     if (GetBattlerAbility(gBattlerAttacker) == ABILITY_SERENE_GRACE)
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
+    else if (GetBattlerAbility(gBattlerAttacker) == ABILITY_PYROMANCY
+             && moveType == TYPE_FIRE
+             && moveEffect == EFFECT_BURN_HIT)
+        percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 5;
     else
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
 
@@ -9838,7 +9844,7 @@ static u8 AttacksThisTurn(u8 battlerId, u16 move) // Note: returns 1 if it's a c
 {
     // first argument is unused
     if (gBattleMoves[move].effect == EFFECT_SOLARBEAM
-        && (gBattleWeather & WEATHER_SUN_ANY))
+        && ((gBattleWeather & WEATHER_SUN_ANY) || GetBattlerAbility(gBattlerAttacker) == ABILITY_CHLOROPLAST))
         return 2;
 
     if (gBattleMoves[move].effect == EFFECT_SKULL_BASH
@@ -10485,7 +10491,7 @@ static void Cmd_recoverbasedonsunlight(void)
         {
             if (!(gBattleWeather & WEATHER_ANY) || !WEATHER_HAS_EFFECT)
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;
-            else if (gBattleWeather & WEATHER_SUN_ANY)
+            else if ((gBattleWeather & WEATHER_SUN_ANY) || GetBattlerAbility(gBattlerAttacker) == ABILITY_CHLOROPLAST)
                 gBattleMoveDamage = 20 * gBattleMons[gBattlerAttacker].maxHP / 30;
             else // not sunny weather
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 4;

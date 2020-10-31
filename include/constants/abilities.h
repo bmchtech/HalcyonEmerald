@@ -255,6 +255,15 @@
 
 #define ABILITIES_COUNT_GEN7 235
 
-#define ABILITIES_COUNT ABILITIES_COUNT_GEN7
+// Custom Abilities
+
+#define ABILITY_CHLOROPLAST     (ABILITIES_COUNT_GEN7) // Moves function as if it's sunny, regardless of weather
+#define ABILITY_WHITEOUT        (ABILITIES_COUNT_GEN7 + 1) // Boosts the power of Ice attacks in Hail by 50%
+#define ABILITY_PYROMANCY       (ABILITIES_COUNT_GEN7 + 2) // Fire attacks are 5x more likely to inflict a burn
+#define ABILITY_KEEN_EDGE       (ABILITIES_COUNT_GEN7 + 3) // Cutting moves do 30% more damage
+
+#define ABILITIES_COUNT_CUSTOM (ABILITIES_COUNT_GEN7 + 4)
+
+#define ABILITIES_COUNT ABILITIES_COUNT_CUSTOM
 
 #endif  // GUARD_CONSTANTS_ABILITIES_H
