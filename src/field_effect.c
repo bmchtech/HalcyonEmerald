@@ -1,5 +1,6 @@
 #include "global.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
@@ -29,6 +30,7 @@
 #include "constants/field_effects.h"
 #include "constants/event_object_movement.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/moves.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -2564,14 +2566,49 @@ bool8 FldEff_FieldMoveShowMon(void)
     return FALSE;
 }
 
+// gSpecialVar_0x8008: HM move being used
+// gSpecialVar_0x8009: if 0, use player's mon. Otherwise, use Gym Leader's mon
 bool8 FldEff_FieldMoveShowMonInit(void)
 {
     struct Pokemon *pokemon;
     u32 flag = gFieldEffectArguments[0] & 0x80000000;
-    pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
-    gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
-    gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_OT_ID);
-    gFieldEffectArguments[2] = GetMonData(pokemon, MON_DATA_PERSONALITY);
+    if (gSpecialVar_0x8009 == 1)
+    {
+        gFieldEffectArguments[1] = 0;
+        gFieldEffectArguments[2] = 12;
+        switch (gSpecialVar_0x8008)
+        {
+        case MOVE_CUT:
+            gFieldEffectArguments[0] = SPECIES_ANORITH;
+            break;
+        case MOVE_ROCK_SMASH:
+            gFieldEffectArguments[0] = SPECIES_ALOLAN_RAICHU;
+            break;
+        case MOVE_STRENGTH:
+            gFieldEffectArguments[0] = SPECIES_ARCANINE;
+            break;
+        case MOVE_SURF:
+            gFieldEffectArguments[0] = SPECIES_EXPLOUD;
+            break;
+        case MOVE_DIVE:
+            gFieldEffectArguments[0] = SPECIES_SLOWBRO;
+            break;
+        case MOVE_WATERFALL:
+            gFieldEffectArguments[0] = SPECIES_TENTACRUEL;
+            break;                   
+        default:
+            break;
+        }
+    }
+    else
+    {
+        pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
+        gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
+        gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_OT_ID);
+        gFieldEffectArguments[2] = GetMonData(pokemon, MON_DATA_PERSONALITY);
+    }
+
+    gSpecialVar_0x8009 = 0;
     gFieldEffectArguments[0] |= flag;
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON);
     FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
