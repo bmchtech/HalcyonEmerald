@@ -1904,7 +1904,7 @@ AI_CV_Heal_End:
 	
 EncouragePsnVenoshock:
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_VENOSHOCK, EncouragePsnVenoshockEnd
-	score +1
+	score +2
 	if_random_less_than 128, EncouragePsnVenoshockEnd
 	score +1
 EncouragePsnVenoshockEnd:
