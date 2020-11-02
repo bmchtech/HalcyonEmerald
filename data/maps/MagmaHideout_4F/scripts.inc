@@ -19,7 +19,7 @@ MagmaHideout_4F_EventScript_Maxie:: @ 823A560
 	playse SE_M_DETECT
 	dofieldeffectsparkle 18, 42, 0
 	waitfieldeffect FLDEFF_SPARKLE
-	setvar VAR_RESULT, 1
+	setvar VAR_RESULT, 0
 	playfanfare MUS_AWAKEN_LEGEND
 	playse SE_ORB
 	special DoOrbEffect
@@ -34,12 +34,35 @@ MagmaHideout_4F_EventScript_Maxie:: @ 823A560
 	waitmovement 0
 	special FadeOutOrbEffect
 	waitstate
+	playmoncry SPECIES_GROUDON, 2
+	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_MAXIE, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox MagmaHideout_4F_Text_MaxieOhItWasYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFastestUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox MagmaHideout_4F_Text_MaxieWowItsGroudon, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_FacePlayer
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox MagmaHideout_4F_Text_MaxieFightMe, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 8  @ num shakes
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFastestUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	applymovement LOCALID_GROUDON, MagmaHideout_4F_Movement_GroudonExit
 	waitmovement 0
 	removeobject LOCALID_GROUDON
@@ -51,18 +74,9 @@ MagmaHideout_4F_EventScript_Maxie:: @ 823A560
 	special ShakeCamera
 	waitstate
 	delay 30
-	applymovement LOCALID_MAXIE, MagmaHideout_4F_Movement_MaxieLookAround
-	waitmovement 0
-	msgbox MagmaHideout_4F_Text_MaxieGroudonWhatsWrong, MSGBOX_DEFAULT
-	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_FacePlayer
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	delay 30
-	applymovement LOCALID_MAXIE, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox MagmaHideout_4F_Text_MaxieOhItWasYou, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_MAXIE_MAGMA_HIDEOUT, MagmaHideout_4F_Text_MaxieDefeat
 	msgbox MagmaHideout_4F_Text_MaxieImGoingAfterGroudon, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN
@@ -80,6 +94,9 @@ MagmaHideout_4F_EventScript_Maxie:: @ 823A560
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
+
+	@msgbox MagmaHideout_4F_Text_MaxieImGoingAfterGroudon, MSGBOX_DEFAULT
+	@closemessage
 
 MagmaHideout_4F_Movement_GroudonApproach: @ 823A672
 	delay_16
@@ -128,9 +145,14 @@ MagmaHideout_4F_EventScript_Grunt13:: @ 823A6BA
 	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MagmaHideout_4F_EventScript_Tabitha:: @ 823A6D1
+MagmaHideout_4F_EventScript_Tabitha::
 	trainerbattle_single TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat
 	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MagmaHideout_4F_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
+	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MagmaHideout_4F_Text_Grunt11Intro: @ 823A6E8
@@ -185,16 +207,32 @@ MagmaHideout_4F_Text_TabithaDefeat: @ 823A994
 	.string "Hehe…$"
 
 MagmaHideout_4F_Text_TabithaPostBattle: @ 823A9AC
-	.string "…And while you wasted time with me,\n"
+	.string "…And while you wasted time with us,\n"
 	.string "Maxie should have awakened Groudon…$"
+
+MagmaHideout_4F_Text_CourtneyIntro:
+	.string "Ahahaha!\n"
+	.string "So glad you could make it, brat!\p"
+	.string "You're just in time to watch Team Magma's\n"
+	.string "ambitions become reality!\p"
+	.string "With Groudon's power, we'll expand the\n"
+	.string "landmass for the good of all!$"
+
+MagmaHideout_4F_Text_CourtneyDefeat:
+	.string "Ahaha… ha…\n"
+	.string "That could have gone better…$"
+
+MagmaHideout_4F_Text_CourtneyPostBattle:
+	.string "You might have beaten us, but we're\n"
+	.string "still the winners here!$"
 
 MagmaHideout_4F_Text_MaxieAwakenGroudon: @ 823A9F4
 	.string "Maxie: Groudon…\p"
 	.string "Nothing could awaken you from your\n"
 	.string "sleep bathed in magma…\p"
-	.string "This Blue Orb is what you sought.\n"
+	.string "This Red Orb is what you sought.\n"
 	.string "Wasn't it?\p"
-	.string "I have brought you the Blue Orb.\n"
+	.string "I have brought you the Red Orb.\n"
 	.string "Let its shine awaken you!\p"
 	.string "And show me…\n"
 	.string "Show me the full extent of your power!$"
@@ -202,30 +240,39 @@ MagmaHideout_4F_Text_MaxieAwakenGroudon: @ 823A9F4
 MagmaHideout_4F_Text_MaxieGroudonWhatsWrong: @ 823AADA
 	.string "Maxie: Groudon!\n"
 	.string "What's wrong?\p"
-	.string "Wasn't the Blue Orb the key?\p"
+	.string "Wasn't the Red Orb the key?\p"
 	.string "Groudon!\n"
 	.string "Where have you gone…$"
 
 MagmaHideout_4F_Text_MaxieOhItWasYou: @ 823AB33
-	.string "Maxie: Oh, so it was you?\p"
+	.string "Maxie: Oh? You again?\p"
 	.string "I've seen you poking around uninvited\n"
 	.string "here and there…\p"
-	.string "I get it now!\n"
-	.string "You must have pulled a cheap stunt!$"
+	.string "I suppose you came to meddle in our\n"
+	.string "affairs yet again?\p"
+	.string "Or perhaps you wanted to see Groudon\n"
+	.string "up close? Very well…$"
+
+MagmaHideout_4F_Text_MaxieWowItsGroudon:
+	.string "Maxie: Behold! Groudon, the\n"
+	.string "super-ancient Pokémon of the land!\p"
+	.string "With the Red Orb in my possession, I\n"
+	.string "have complete control over it.$"
+
+MagmaHideout_4F_Text_MaxieFightMe:
+	.string "Maxie: With Groudon's power, Team Magma's\n"
+	.string "grand ambition will finally be realized!\p"
+	.string "Maxie: But first… I shall put an end\n"
+	.string "to your meddling, once and for all!$"
 
 MagmaHideout_4F_Text_MaxieDefeat: @ 823ABB5
 	.string "What makes you so adept at handling\n"
 	.string "Pokémon?$"
 
 MagmaHideout_4F_Text_MaxieImGoingAfterGroudon: @ 823ABE2
-	.string "Maxie: There has to be some reason\n"
-	.string "why Groudon fled…\p"
-	.string "That's what you're trying to say,\n"
-	.string "aren't you?\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "Humph…\n"
-	.string "You think I didn't know that?\p"
+	.string "Maxie: No!\p"
+	.string "It seems you defeating Groudon was\n"
+	.string "enough to free it from my control…\n"
 	.string "With Groudon gone, there is no longer\n"
 	.string "any need for this blasted volcano.\p"
 	.string "I am going after Groudon, so this\n"

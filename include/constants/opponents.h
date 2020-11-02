@@ -611,7 +611,7 @@
 #define TRAINER_HALEY_2                     607
 #define TRAINER_HALEY_3                     608
 #define TRAINER_HALEY_4                     609
-#define TRAINER_HALEY_5                     610
+#define TRAINER_COURTNEY_MAGMA_HIDEOUT      610
 #define TRAINER_SALLY                       611
 #define TRAINER_ROBIN                       612
 #define TRAINER_ANDREA                      613
