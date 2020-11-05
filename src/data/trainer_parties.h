@@ -11886,7 +11886,7 @@ static const struct TrainerMonItemCustomMoves sParty_MattMtPyre[] = {
     .species = SPECIES_HELIOLISK,
     .heldItem = ITEM_LIFE_ORB,
     .ability = 0, // Dry Skin
-    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_THUNDER, MOVE_WEATHER_BALL, MOVE_FOCUS_BLAST, MOVE_GRASS_KNOT
     },
     {
@@ -13018,7 +13018,7 @@ static const struct TrainerMonItemCustomMoves sParty_Matt[] = {
     .species = SPECIES_HELIOLISK,
     .heldItem = ITEM_LIFE_ORB,
     .ability = 0, // Dry Skin
-    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_THUNDER, MOVE_WEATHER_BALL, MOVE_FOCUS_BLAST, MOVE_GRASS_KNOT
     },
     {

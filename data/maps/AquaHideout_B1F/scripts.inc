@@ -150,8 +150,8 @@ AquaHideout_B1F_Text_Grunt5Defeat: @ 8233CCA
 	.string "Oh, I lost…$"
 
 AquaHideout_B1F_Text_Grunt5PostBattle: @ 8233CDC
-	.string "If you scurry too much, other TEAM\n"
-	.string "AQUA members might get you.$"
+	.string "If you scurry too much, other Team\n"
+	.string "Aqua members might get you.$"
 
 AquaHideout_B1F_Text_Grunt7Intro: @ 8233D1B
 	.string "Hey!\n"
