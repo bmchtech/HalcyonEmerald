@@ -117,7 +117,7 @@ static void DrawMultichoiceMenuCustom(u8 left, u8 top, u8 multichoiceId, u8 igno
 
 static void DrawMultichoiceMenu(u8 left, u8 top, u8 multichoiceId, u8 ignoreBPress, u8 cursorPos)
 {
-    DrawMultichoiceMenuCustom(left, top, multichoiceId, ignoreBPress, cursorPos, gMultichoiceLists[multichoiceId].list, gMultichoiceLists[multichoiceId].count);
+    DrawMultichoiceMenuCustom(left, top, multichoiceId, ignoreBPress, cursorPos, sMultichoiceLists[multichoiceId].list, sMultichoiceLists[multichoiceId].count);
 }
 
 void TryDrawRepelMenu(void)
