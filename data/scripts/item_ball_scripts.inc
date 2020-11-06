@@ -817,3 +817,7 @@ AquaHideout_B1F_EventScript_ItemTM97DarkPulse::
 SafariZone_South_EventScript_ItemTM93WildCharge::
 	finditem ITEM_TM93_WILD_CHARGE
 	end
+
+Route131_EventScript_SplashPlate::
+	finditem ITEM_SPLASH_PLATE
+	end
