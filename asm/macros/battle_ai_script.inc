@@ -689,6 +689,12 @@
 	.byte \value
 	.4byte \ptr
 	.endm
+
+	.macro if_type_effectiveness_on_ally param0:req, param1:req
+	.byte 0x7A
+	.byte \param0
+	.4byte \param1
+	.endm
 	
 @ useful script macros
 	.macro if_has_physical_move battler:req, ptr:req
