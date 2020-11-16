@@ -14944,7 +14944,7 @@ static const struct TrainerMonItemCustomMoves sParty_TateAndLiza1[] = { // Inver
     .lvl = 2,
     .species = SPECIES_CLAYDOL,
     .heldItem = ITEM_ABSORB_BULB,
-    .spread = SPREAD_31_IV_HP_SPATK_QUIET,
+    .spread = SPREAD_31_IV_HP_DEF_SPDEF_SASSY,
     .moves = MOVE_EARTH_POWER, MOVE_SIGNAL_BEAM, MOVE_PSYCHIC, MOVE_TRICK_ROOM
     },
     {

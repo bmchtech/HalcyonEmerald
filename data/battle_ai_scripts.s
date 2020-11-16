@@ -283,10 +283,8 @@ AI_CBM_Soak:
 	if_type AI_TARGET, TYPE_WATER, Score_Minus10
 	end
 
-@ If target is slower and Trick Room is active, use it again
 AI_CBM_TrickRoom:
 	if_target_faster AI_CBM_IsTrickRoomActive
-	if_field_status STATUS_FIELD_TRICK_ROOM, Score_Plus5
 	end
 
 @ If target is faster but Trick Room is already active, don't use it

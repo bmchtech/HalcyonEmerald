@@ -49,7 +49,9 @@ MossdeepCity_Gym_EventScript_SetSwitch4Metatiles:: @ 8220885
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLiza:: @ 8220898
+	setflag FLAG_SYS_INVERSE_BATTLE
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
+	clearflag FLAG_SYS_INVERSE_BATTLE
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq MossdeepCity_Gym_EventScript_TateAndLizaRematch
@@ -266,15 +268,24 @@ MossdeepCity_Gym_EventScript_Kathleen:: @ 8220BFA
 	msgbox MossdeepCity_Gym_Text_KathleenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MossdeepCity_Gym_EventScript_GymGuide:: @ 8220C11
+MossdeepCity_Gym_EventScript_GymGuide:: 
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_MOSSDEEP_GYM, MossdeepCity_Gym_EventScript_GymGuidePostVictory
-	msgbox MossdeepCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	goto_if_set FLAG_MOSSDEEP_GYM_REVIVAL_HERBS, MossdeepCity_Gym_Guide2
+	msgbox MossdeepCity_Gym_Text_Guide1, MSGBOX_DEFAULT
+	giveitem ITEM_REVIVAL_HERB, 10
+	setflag FLAG_MOSSDEEP_GYM_REVIVAL_HERBS
+	msgbox MossdeepCity_Gym_Text_Guide2, MSGBOX_DEFAULT
 	release
 	end
 
-MossdeepCity_Gym_EventScript_GymGuidePostVictory:: @ 8220C26
+MossdeepCity_Gym_Guide2::
+	msgbox MossdeepCity_Gym_Text_Guide2, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_Gym_EventScript_GymGuidePostVictory:: @ 81FC998
 	msgbox MossdeepCity_Gym_Text_GymGuidePostVictory, MSGBOX_DEFAULT
 	release
 	end
@@ -367,16 +378,18 @@ MossdeepCity_Gym_EventScript_RedFloorSwitch:: @ 8220CBF
 	freerotatingtilepuzzle
 	end
 
-MossdeepCity_Gym_Text_GymGuideAdvice: @ 8220CD5
-	.string "Yo, how's it going, Champion-bound\n"
-	.string "{PLAYER}?\p"
+MossdeepCity_Gym_Text_Guide1: @ 8220CD5
+	.string "Yo, how's it going, Champion-\n"
+	.string "bound {PLAYER}?\p"
+	.string "Please, take these Revival Herbs to\n"
+	.string "help with your challenge!$"
+
+MossdeepCity_Gym_Text_Guide2: @ 8220CD5
 	.string "The Gym Leaders here use\n"
 	.string "Psychic-type Pokémon.\p"
-	.string "If you go up against them with\n"
-	.string "Fighting- or Poison-type Pokémon,\l"
-	.string "they'll inflict horrible damage!\p"
-	.string "Plus, they'll come at you with\n"
-	.string "outstanding combination attacks.\p"
+	.string "They've also got psychic powers\n"
+	.string "themselves, which they'll use to\l"
+	.string "alter the battle field!\p"
 	.string "If you want to win, you'll need to show\n"
 	.string "them how tight you are with your\l"
 	.string "Pokémon. Go for it!$"
@@ -559,6 +572,12 @@ MossdeepCity_Gym_Text_TateAndLizaIntro: @ 8221783
 	.string "Liza: We can each determine what…\p"
 	.string "Tate: The other is thinking…\n"
 	.string "Liza: All in our minds!\p"
+	.string "Tate: Also…\n"
+	.string "Liza: This will be an Inverse Battle!\p"
+	.string "Tate: Supereffective moves will be…\n"
+	.string "Liza: Not very effective!\p"
+	.string "Tate: And not very effective moves…\n"
+	.string "Liza: will be Supereffective!\p"
 	.string "Tate: This combination of ours…\n"
 	.string "Liza: Can you beat it?$"
 
@@ -573,8 +592,8 @@ MossdeepCity_Gym_Text_ReceivedMindBadge: @ 822196A
 	.string "from Liza and Tate.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis: @ 8221999
-	.string "Tate: The Mind Badge enhances the\n"
-	.string "Sp. Atk and Sp. Def of Pokémon.\p"
+	.string "Tate: The Mind Badge will make any\n"
+	.string "Pokémon up to Level 90 obey you.\p"
 	.string "Liza: It also lets you use the HM move\n"
 	.string "Dive outside of battle.\p"
 	.string "Tate: You should also take this, too.$"
