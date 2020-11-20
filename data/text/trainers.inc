@@ -4393,9 +4393,9 @@ Route131_Text_HermanDefeat: @ 82A3626
 	.string "Bleah!$"
 
 Route131_Text_HermanPostBattle: @ 82A362D
-	.string "Bored I am by the sea, but swim I must.\p"
-	.string "I'm a born swimmer!\n"
-	.string "That's what I am.$"
+	.string "Lately it feels like I've been battling\n"
+	.string "nothing but Water-types…\p"
+	.string "Where's the variety?$"
 
 Route131_Text_SusieIntro: @ 82A367B
 	.string "Hi, sweetie, wait!\n"
@@ -4406,10 +4406,8 @@ Route131_Text_SusieDefeat: @ 82A36AB
 	.string "you look!$"
 
 Route131_Text_SusiePostBattle: @ 82A36D6
-	.string "Did you see a guy over there who whines\n"
-	.string "that he's bored of the sea?\p"
-	.string "That's all talk.\n"
-	.string "He's hopelessly in love with the sea!$"
+	.string "What? Not all Ace Trainers are arrogant\n"
+	.string "braggarts you know!$"
 
 Route131_Text_KaraIntro: @ 82A3751
 	.string "Why do men love bathing suits so much?\p"

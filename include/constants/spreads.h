@@ -10,18 +10,18 @@
 #define SPREAD_31_IV_40_EV           		 6
 #define SPREAD_31_IV_60_EV           		 7
 #define SPREAD_31_IV_80_EV           		 8
-#define SPREAD_31_IV_ATK_SPEED_JOLLY         9
-#define SPREAD_31_IV_ATK_SPEED_ADAMANT      10
-#define SPREAD_31_IV_HP_ATK_ADAMANT         11
-#define SPREAD_31_IV_HP_ATK_BRAVE           12
-#define SPREAD_31_IV_SPATK_SPEED_TIMID      13
-#define SPREAD_31_IV_SPATK_SPEED_MODEST	    14
-#define SPREAD_31_IV_HP_SPATK_MODEST        15
-#define SPREAD_31_IV_HP_SPATK_QUIET         16
-#define SPREAD_31_IV_HP_DEF_IMPISH          17
-#define SPREAD_31_IV_HP_DEF_BOLD 			18
-#define SPREAD_31_IV_HP_SPDEF_CALM          19
-#define SPREAD_31_IV_HP_SPDEF_CAREFUL       20
+#define SPREAD_31_IV_ATK_SPEED_JOLLY         9 // Max Speed and Attack
+#define SPREAD_31_IV_ATK_SPEED_ADAMANT      10 // Max Speed and Attack
+#define SPREAD_31_IV_HP_ATK_ADAMANT         11 // Bulky physical attacker
+#define SPREAD_31_IV_HP_ATK_BRAVE           12 // Trick Room physical Attacker
+#define SPREAD_31_IV_SPATK_SPEED_TIMID      13 // Max Speed and Special Attack
+#define SPREAD_31_IV_SPATK_SPEED_MODEST	    14 // Max Speed and Special Attack
+#define SPREAD_31_IV_HP_SPATK_MODEST        15 // Bulky Special attacker
+#define SPREAD_31_IV_HP_SPATK_QUIET         16 // Trick Room special attacker
+#define SPREAD_31_IV_HP_DEF_IMPISH          17 // Physical wall with physical attacks
+#define SPREAD_31_IV_HP_DEF_BOLD 			18 // Physical wall with special attacks
+#define SPREAD_31_IV_HP_SPDEF_CALM          19 // Special wall with special attacks
+#define SPREAD_31_IV_HP_SPDEF_CAREFUL       20 // Special wall with physical attacks
 #define SPREAD_HP_FIRE_TIMID         		21
 #define SPREAD_HP_FIRE_MODEST         		22
 #define SPREAD_HP_FIRE_QUIET         		23
@@ -37,12 +37,13 @@
 #define SPREAD_BRAWLY_ONE_MON             	33
 #define SPREAD_ARCHIE_ONE_MON               34
 #define SPREAD_WATTSON_SPECIAL              35
-#define SPREAD_FLANNERY_SPECIAL             36
-#define SPREAD_FLANNERY_MIXED               37
-#define SPREAD_CHANSEY                      38
+#define SPREAD_FLANNERY_SPECIAL             36 // Max Special Attack, some bulk
+#define SPREAD_FLANNERY_MIXED               37 // Max Attack and Special Attack
+#define SPREAD_CHANSEY                      38 // Eats damage for breakfast
 #define SPREAD_31_IV_ATK_SPEED_NAIVE        39
 #define SPREAD_31_IV_HP_ATK_MIXED           40
 #define SPREAD_31_IV_HP_SPEED_TIMID         41
 #define SPREAD_31_IV_SPATK_SPEED_HASTY      42
+#define SPREAD_31_IV_HP_DEF_SPDEF_SASSY     43 // Bulky Trick Room Setter
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

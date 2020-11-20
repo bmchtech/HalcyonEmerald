@@ -5,6 +5,7 @@
 #include "constants/species.h"
 #include "sprite.h"
 #include "constants/region_map_sections.h"
+#include "constants/pokemon_config.h"
 
 struct PokemonSubstruct0
 {
@@ -206,6 +207,7 @@ struct BaseStats
             u8 noFlip : 1;
 };
 
+#include "constants/battle_config.h"
 struct BattleMove
 {
     u16 effect;

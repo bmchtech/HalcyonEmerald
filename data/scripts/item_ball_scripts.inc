@@ -282,12 +282,12 @@ Route132_EventScript_ItemProtein:: @ 8291066
 	finditem ITEM_PROTEIN
 	end
 
-Route133_EventScript_ItemBigPearl:: @ 8291073
-	finditem ITEM_BIG_PEARL
+Route133_EventScript_ItemPearlString:: @ 8291073
+	finditem ITEM_PEARL_STRING
 	end
 
-Route133_EventScript_ItemStarPiece:: @ 8291080
-	finditem ITEM_STAR_PIECE
+Route133_EventScript_ItemCometShard:: @ 8291080
+	finditem ITEM_COMET_SHARD
 	end
 
 Route133_EventScript_ItemMaxRevive:: @ 829108D
@@ -298,8 +298,8 @@ Route134_EventScript_ItemCarbos:: @ 829109A
 	finditem ITEM_CARBOS
 	end
 
-Route134_EventScript_ItemStarPiece:: @ 82910A7
-	finditem ITEM_STAR_PIECE
+Route134_EventScript_ItemCometShard:: @ 82910A7
+	finditem ITEM_COMET_SHARD
 	end
 
 PetalburgCity_EventScript_ItemMaxRevive:: @ 82910B4
@@ -816,4 +816,8 @@ AquaHideout_B1F_EventScript_ItemTM97DarkPulse::
 
 SafariZone_South_EventScript_ItemTM93WildCharge::
 	finditem ITEM_TM93_WILD_CHARGE
+	end
+
+Route131_EventScript_SplashPlate::
+	finditem ITEM_SPLASH_PLATE
 	end

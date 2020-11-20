@@ -20,6 +20,7 @@
 #include "party_menu.h"
 #include "list_menu.h"
 #include "overworld.h"
+#include "item.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
@@ -31,12 +32,15 @@ static u8 GetDaycareCompatibilityScore(struct DayCare *daycare);
 static void DaycarePrintMonInfo(u8 windowId, s32 daycareSlotId, u8 y);
 static void TransferEggMoves (struct DayCare *daycare);
 static bool8 DoMonsShareEggGroup(struct DayCare *daycare);
+static u8 ModifyBreedingScoreForOvalCharm(u8 score);
 
 // RAM buffers used to assist with BuildEggMoveset()
 EWRAM_DATA static u16 sHatchedEggLevelUpMoves[EGG_LVL_UP_MOVES_ARRAY_COUNT] = {0};
 EWRAM_DATA static u16 sHatchedEggFatherMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggFinalMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggEggMoves[EGG_MOVES_ARRAY_COUNT] = {0};
+EWRAM_DATA static u16 sTransferEggMovesZero[EGG_MOVES_ARRAY_COUNT] = {0};
+EWRAM_DATA static u16 sTransferEggMovesOne[EGG_MOVES_ARRAY_COUNT] = {0};
 EWRAM_DATA static u16 sHatchedEggMotherMoves[MAX_MON_MOVES] = {0};
 
 #include "data/pokemon/egg_moves.h"
@@ -399,7 +403,7 @@ static u16 GetEggSpecies(u16 species)
     // Working backwards up to 5 times seems arbitrary, since the maximum number
     // of times would only be 3 for 3-stage evolutions.
     for (i = 0; i < EVOS_PER_MON; i++)
-    {
+    { 
         found = FALSE;
         for (j = 1; j < NUM_SPECIES; j++)
         {
@@ -638,16 +642,14 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
 
 // Counts the number of egg moves a pokemon learns and stores the moves in
 // the given array.
-static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
+static u8 GetEggMoves(u16 species, u16 *eggMoves)
 {
     u16 eggMoveIdx;
     u16 numEggMoves;
-    u16 species;
     u16 i;
 
     numEggMoves = 0;
     eggMoveIdx = 0;
-    species = GetMonData(pokemon, MON_DATA_SPECIES);
     for (i = 0; i < ARRAY_COUNT(gEggMoves) - 1; i++)
     {
         if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
@@ -707,34 +709,42 @@ static u8 GetBoxMonEggMoves(struct BoxPokemon *boxMon, u16 *eggMoves)
 
 static void TransferEggMoves (struct DayCare *daycare)
 {
-    u16 numEggMoves0, numEggMoves1;
+    u16 numEggMovesZero, numEggMovesOne;
+    u16 baseSpeciesSlotZero, baseSpeciesSlotOne;
     u16 i, j;
 
+    // Clear and/or populate arrays
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         sHatchedEggMotherMoves[i] = MOVE_NONE; 
         sHatchedEggFatherMoves[i] = MOVE_NONE;
     }
     for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
-        sHatchedEggEggMoves[i] = MOVE_NONE;
-
+    {
+        sTransferEggMovesZero[i] = MOVE_NONE;
+        sTransferEggMovesOne[i] = MOVE_NONE;
+    }
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         sHatchedEggFatherMoves[i] = GetBoxMonData(&daycare->mons[0].mon, MON_DATA_MOVE1 + i); // Treat father as slot 0
         sHatchedEggMotherMoves[i] = GetBoxMonData(&daycare->mons[1].mon, MON_DATA_MOVE1 + i); // Treat mother as slot 1
     }
 
-    numEggMoves0 = GetBoxMonEggMoves(&daycare->mons[0].mon, sHatchedEggEggMoves);
-    numEggMoves1 = GetBoxMonEggMoves(&daycare->mons[1].mon, sHatchedEggEggMoves);
+    // Get egg moves for basic form of mon in daycare
+    baseSpeciesSlotZero = GetEggSpecies(GetBoxMonData(&daycare->mons[0].mon, MON_DATA_SPECIES));
+    baseSpeciesSlotOne = GetEggSpecies(GetBoxMonData(&daycare->mons[1].mon, MON_DATA_SPECIES));
+
+    numEggMovesZero = GetEggMoves(baseSpeciesSlotZero, sTransferEggMovesZero);
+    numEggMovesOne = GetEggMoves(baseSpeciesSlotOne, sTransferEggMovesOne);
 
     // Get egg moves from slot 0 mon ("father"), give to slot 1 mon if it has space
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (sHatchedEggFatherMoves[i] != MOVE_NONE)
         {
-            for (j = 0; j < numEggMoves1; j++)
+            for (j = 0; j < numEggMovesOne; j++)
             {
-                if (sHatchedEggFatherMoves[i] == sHatchedEggEggMoves[j])
+                if (sHatchedEggFatherMoves[i] == sTransferEggMovesOne[j])
                 {
                     GiveMoveToBoxMon(&daycare->mons[1].mon, sHatchedEggFatherMoves[i]);
                     break;
@@ -752,9 +762,9 @@ static void TransferEggMoves (struct DayCare *daycare)
     {
         if (sHatchedEggMotherMoves[i] != MOVE_NONE)
         {
-            for (j = 0; j < numEggMoves0; j++)
+            for (j = 0; j < numEggMovesZero; j++)
             {
-                if (sHatchedEggMotherMoves[i] == sHatchedEggEggMoves[j])
+                if (sHatchedEggMotherMoves[i] == sTransferEggMovesZero[j])
                 {
                     GiveMoveToBoxMon(&daycare->mons[0].mon, sHatchedEggMotherMoves[i]);
                     break;
@@ -773,6 +783,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
     u16 numSharedParentMoves;
     u32 numLevelUpMoves;
     u16 numEggMoves;
+    u16 species;
     u16 i, j;
 
     numSharedParentMoves = 0;
@@ -806,7 +817,8 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
         }
     }
 
-    numEggMoves = GetEggMoves(egg, sHatchedEggEggMoves);
+    species = GetMonData(egg, MON_DATA_SPECIES);
+    numEggMoves = GetEggMoves(species, sHatchedEggEggMoves);
 
     // Get egg moves from father. Egg moves from father may overwite level up moves
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -1153,7 +1165,7 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     // Check if an egg should be produced
     if (daycare->offspringPersonality == 0 && validEggs == DAYCARE_MON_COUNT && (daycare->mons[1].steps & 0xFF) == 0xFF)
     {
-        u8 compatability = GetDaycareCompatibilityScore(daycare);
+        u8 compatability = ModifyBreedingScoreForOvalCharm(GetDaycareCompatibilityScore(daycare));
         if (compatability > (Random() * 100u) / USHRT_MAX)
             TriggerPendingDaycareEgg();
     }
@@ -1583,3 +1595,22 @@ void ChooseSendDaycareMon(void)
     ChooseMonForDaycare();
     gMain.savedCallback = CB2_ReturnToField;
 }
+
+static u8 ModifyBreedingScoreForOvalCharm(u8 score)
+{
+    if (CheckBagHasItem(ITEM_OVAL_CHARM, 1))
+    {
+        switch (score)
+        {
+        case 20:
+            return 40;
+        case 50:
+            return 80;
+        case 70:
+            return 88;
+        }
+    }
+    
+    return score;
+}
+

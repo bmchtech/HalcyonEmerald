@@ -179,6 +179,7 @@ static void Cmd_get_considered_move_target(void);
 static void Cmd_compare_speeds(void);
 static void Cmd_is_wakeup_turn(void);
 static void Cmd_if_has_move_with_accuracy_lt(void);
+static void Cmd_if_type_effectiveness_on_ally(void);
 
 // ewram
 EWRAM_DATA const u8 *gAIScriptPtr = NULL;
@@ -311,6 +312,7 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_compare_speeds,                             // 0x77
     Cmd_is_wakeup_turn,                             // 0x78
     Cmd_if_has_move_with_accuracy_lt,               // 0x79
+    Cmd_if_type_effectiveness_on_ally,              // 0x7A
 };
 
 static const u16 sDiscouragedPowerfulMoveEffects[] =
@@ -1801,6 +1803,43 @@ static void Cmd_if_type_effectiveness(void)
         gAIScriptPtr += 6;
 }
 
+static void Cmd_if_type_effectiveness_on_ally(void)
+{
+    u8 damageVar;
+    u32 effectivenessMultiplier;
+
+    gMoveResultFlags = 0;
+    gCurrentMove = AI_THINKING_STRUCT->moveConsidered;
+    effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, sBattler_AI, AI_USER_PARTNER);
+    switch (effectivenessMultiplier)
+    {
+    case UQ_4_12(0.0):
+    default:
+        damageVar = AI_EFFECTIVENESS_x0;
+        break;
+    case UQ_4_12(0.25):
+        damageVar = AI_EFFECTIVENESS_x0_25;
+        break;
+    case UQ_4_12(0.5):
+        damageVar = AI_EFFECTIVENESS_x0_5;
+        break;
+    case UQ_4_12(1.0):
+        damageVar = AI_EFFECTIVENESS_x1;
+        break;
+    case UQ_4_12(2.0):
+        damageVar = AI_EFFECTIVENESS_x2;
+        break;
+    case UQ_4_12(4.0):
+        damageVar = AI_EFFECTIVENESS_x4;
+        break;
+    }
+
+    if (damageVar == gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
+    else
+        gAIScriptPtr += 6;
+}
+
 static void Cmd_nullsub_32(void)
 {
 }
@@ -2607,7 +2646,7 @@ static bool32 HasMoveWithSplit(u32 battler, u32 split)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (moves[i] != MOVE_NONE && moves[i] != 0xFFFF && gBattleMoves[moves[i]].split == split)
+        if (moves[i] != MOVE_NONE && moves[i] != 0xFFFF && GetBattleMoveSplit(moves[i]) == split)
             return TRUE;
     }
 
@@ -2643,7 +2682,7 @@ static bool32 MovesWithSplitUnusable(u32 attacker, u32 target, u32 split)
     {
         if (moves[i] != MOVE_NONE
              && moves[i] != 0xFFFF
-             && gBattleMoves[moves[i]].split == split
+             && GetBattleMoveSplit(moves[i]) == split
              && !(unusable & gBitTable[i]))
         {
             SetTypeBeforeUsingMove(moves[i], attacker);
@@ -2801,13 +2840,13 @@ static void Cmd_get_curr_dmg_hp_percent(void)
 
 static void Cmd_get_move_split_from_result(void)
 {
-    AI_THINKING_STRUCT->funcResult = gBattleMoves[AI_THINKING_STRUCT->funcResult].split;
+    AI_THINKING_STRUCT->funcResult = GetBattleMoveSplit(AI_THINKING_STRUCT->funcResult);
     gAIScriptPtr += 1;
 }
 
 static void Cmd_get_considered_move_split(void)
 {
-    AI_THINKING_STRUCT->funcResult = gBattleMoves[AI_THINKING_STRUCT->moveConsidered].split;
+    AI_THINKING_STRUCT->funcResult = GetBattleMoveSplit(AI_THINKING_STRUCT->moveConsidered);
     gAIScriptPtr += 1;
 }
 

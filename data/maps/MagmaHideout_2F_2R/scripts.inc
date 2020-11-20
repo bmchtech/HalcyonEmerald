@@ -30,7 +30,7 @@ MagmaHideout_2F_2R_Text_Grunt15Defeat: @ 8239EA5
 
 MagmaHideout_2F_2R_Text_Grunt15PostBattle: @ 8239EBB
 	.string "We dug up something beyond belief!\n"
-	.string "And, we got the Blue Orb!\p"
+	.string "And, we got the Red Orb!\p"
 	.string "All that's left is for our leader to…\n"
 	.string "Fufufu… Fwahahaha!$"
 
