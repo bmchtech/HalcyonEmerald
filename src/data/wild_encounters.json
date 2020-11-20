@@ -7585,22 +7585,22 @@
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_ALOLAN_GRAVELER"
+                "species": "SPECIES_GRAVELER_ALOLAN"
               },
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_ALOLAN_GRAVELER"
+                "species": "SPECIES_GRAVELER_ALOLAN"
               },
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_ALOLAN_GRAVELER"
+                "species": "SPECIES_GRAVELER_ALOLAN"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_ALOLAN_GRAVELER"
+                "species": "SPECIES_GRAVELER_ALOLAN"
               }
             ]
           }
@@ -7644,7 +7644,7 @@
               {
                 "min_level": 31,
                 "max_level": 31,
-                "species": "SPECIES_ALOLAN_RATICATE"
+                "species": "SPECIES_RATICATE_ALOLAN"
               },
               {
                 "min_level": 29,
@@ -7654,7 +7654,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_ALOLAN_RATICATE"
+                "species": "SPECIES_RATICATE_ALOLAN"
               },
               {
                 "min_level": 27,
@@ -7664,7 +7664,7 @@
               {
                 "min_level": 31,
                 "max_level": 31,
-                "species": "SPECIES_ALOLAN_RATICATE"
+                "species": "SPECIES_RATICATE_ALOLAN"
               },
               {
                 "min_level": 29,
@@ -7679,22 +7679,22 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_ALOLAN_GRIMER"
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_ALOLAN_GRIMER"
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               }
             ]
           },
@@ -7704,7 +7704,7 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_ALOLAN_GRIMER"
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
                 "min_level": 5,
@@ -7714,17 +7714,17 @@
               {
                 "min_level": 10,
                 "max_level": 30,
-                "species": "SPECIES_ALOLAN_GRIMER"
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
                 "min_level": 10,
                 "max_level": 25,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 10,
                 "max_level": 30,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 25,
@@ -7734,22 +7734,22 @@
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_ALOLAN_MUK"
+                "species": "SPECIES_MUK_ALOLAN"
               }
             ]
           }

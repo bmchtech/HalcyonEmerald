@@ -278,37 +278,37 @@ MauvilleCity_GameCorner_EventScript_Munchlax::
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Vulpix::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_VULPIX
+	setvar VAR_TEMP_1, SPECIES_VULPIX_ALOLAN
 	setvar VAR_0x8006, VULPIX_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Sandshrew::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_SANDSHREW
+	setvar VAR_TEMP_1, SPECIES_SANDSHREW_ALOLAN
 	setvar VAR_0x8006, SANDSHREW_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Rattata::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_RATTATA
+	setvar VAR_TEMP_1, SPECIES_RATTATA_ALOLAN
 	setvar VAR_0x8006, RATTATA_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Meowth::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_MEOWTH
+	setvar VAR_TEMP_1, SPECIES_MEOWTH_ALOLAN
 	setvar VAR_0x8006, MEOWTH_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Grimer::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_GRIMER
+	setvar VAR_TEMP_1, SPECIES_GRIMER_ALOLAN
 	setvar VAR_0x8006, GRIMER_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Diglett::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_DIGLETT
+	setvar VAR_TEMP_1, SPECIES_DIGLETT_ALOLAN
 	setvar VAR_0x8006, DIGLETT_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_Geodude::
-	setvar VAR_TEMP_1, SPECIES_ALOLAN_GEODUDE
+	setvar VAR_TEMP_1, SPECIES_GEODUDE_ALOLAN
 	setvar VAR_0x8006, GEODUDE_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	

@@ -2582,7 +2582,7 @@ bool8 FldEff_FieldMoveShowMonInit(void)
             gFieldEffectArguments[0] = SPECIES_ANORITH;
             break;
         case MOVE_ROCK_SMASH:
-            gFieldEffectArguments[0] = SPECIES_ALOLAN_RAICHU;
+            gFieldEffectArguments[0] = SPECIES_RAICHU_ALOLAN;
             break;
         case MOVE_STRENGTH:
             gFieldEffectArguments[0] = SPECIES_ARCANINE;
@@ -2634,7 +2634,7 @@ static void FieldMoveShowMonOutdoorsEffect_Init(struct Task *task)
 {
     task->data[11] = REG_WININ;
     task->data[12] = REG_WINOUT;
-    StoreWordInTwoHalfwords((u16 *)&task->data[13], (u32)gMain.vblankCallback);
+    StoreWordInTwoHalfwords(&task->data[13], (u32)gMain.vblankCallback);
     task->tWinHoriz = WIN_RANGE(DISPLAY_WIDTH, DISPLAY_WIDTH + 1);
     task->tWinVert = WIN_RANGE(DISPLAY_HEIGHT / 2, DISPLAY_HEIGHT / 2 + 1);
     task->tWinIn = WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR;
