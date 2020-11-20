@@ -286,7 +286,7 @@
 #define TRAINER_KAREN_2                     282
 #define TRAINER_KAREN_3                     283
 #define TRAINER_KAREN_4                     284
-#define TRAINER_KAREN_5                     285
+#define TRAINER_STEVEN_MOSSDEEP                     285
 #define TRAINER_KATE_AND_JOY                286
 #define TRAINER_ANNA_AND_MEG_1              287
 #define TRAINER_ANNA_AND_MEG_2              288
@@ -626,7 +626,7 @@
 #define TRAINER_JAMES_2                     622
 #define TRAINER_JAMES_3                     623
 #define TRAINER_JAMES_4                     624
-#define TRAINER_JAMES_5                     625
+#define TRAINER_COURTNEY_MOSSDEEP                     625
 #define TRAINER_BRICE                       626
 #define TRAINER_TRENT_1                     627
 #define TRAINER_LENNY                       628

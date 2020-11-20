@@ -6,8 +6,9 @@
 .set LOCALID_GRUNT_6, 5
 .set LOCALID_GRUNT_5, 6
 .set LOCALID_GRUNT_7, 7
-.set LOCALID_TABITHA, 8
+.set LOCALID_COURTNEY, 8
 .set LOCALID_MAXIE, 9
+.set LOCALID_TABITHA, 10
 
 MossdeepCity_SpaceCenter_2F_MapScripts:: @ 8223D58
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_SpaceCenter_2F_OnTransition
@@ -181,7 +182,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_Grunt5:: @ 8223F50
 	msgbox MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle, MSGBOX_NPC
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_Tabitha:: @ 8223F59
+MossdeepCity_SpaceCenter_2F_EventScript_Courtney:: @ 8223F59
 	lock
 	faceplayer
 	msgbox MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou, MSGBOX_DEFAULT
@@ -258,40 +259,26 @@ MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt:: @ 8223FDA
 MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle:: @ 822400C
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
-	special SavePlayerParty
-	fadescreen FADE_TO_BLACK
-	special ChooseHalfPartyForBattle
-	waitstate
-	compare VAR_RESULT, 0
-	goto_if_ne MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle
-	special LoadPlayerParty
-	goto MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
+    msgbox MossdeepCity_SpaceCenter_Text_ChooseMons, MSGBOX_DEFAULT
+    choose_mons
+    compare VAR_RESULT, 0
+    goto_if_ne MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle
+    goto MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
 
-MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle:: @ 8224032
-	special ReducePlayerPartyToSelectedMons
-	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
-	setvar VAR_0x8004, SPECIAL_BATTLE_STEVEN
-	setvar VAR_0x8005, 0
-	special DoSpecialTrainerBattle
-	waitstate
-	frontier_saveparty
-	special LoadPlayerParty
-	switch VAR_RESULT
-	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
-	fadescreen FADE_TO_BLACK
-	special SetCB2WhiteOut
-	waitstate
-
-MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha:: @ 8224071
+MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
+    multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_COURTNEY_MOSSDEEP, MossdeepCity_SpaceCenter_Text_CourtneyDefeat, TRAINER_STEVEN_MOSSDEEP, TRAINER_BACK_PIC_STEVEN
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_LOST
+	goto_if_eq MossdeepCity_SpaceCenter_2F_EventScript_Lost
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_COURTNEY, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	delay 60
 	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFastestUp
-	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFastestRight
+	applymovement LOCALID_COURTNEY, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	delay 20
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT
@@ -306,8 +293,9 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha:: @ 8224071
 	removeobject LOCALID_GRUNT_6
 	removeobject LOCALID_GRUNT_7
 	removeobject LOCALID_GRUNT_5
-	removeobject LOCALID_TABITHA
+	removeobject LOCALID_COURTNEY
 	removeobject LOCALID_MAXIE
+	removeobject LOCALID_TABITHA
 	setobjectxy LOCALID_SCIENTIST, 5, 6
 	turnobject LOCALID_SCIENTIST, DIR_SOUTH
 	setobjectxy LOCALID_GENTLEMAN, 11, 8
@@ -333,6 +321,11 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha:: @ 8224071
 	fadescreen FADE_FROM_BLACK
 	end
 
+MossdeepCity_SpaceCenter_2F_EventScript_Lost::
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
+
 MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer:: @ 8224131
 	switch VAR_FACING
 	case DIR_SOUTH, MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth
@@ -351,8 +344,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer:: @ 8224157
 	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, 0, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer:: @ 8224166
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
+MossdeepCity_SpaceCenter_2F_EventScript_CourtneyTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_COURTNEY_MOSSDEEP, 0, MossdeepCity_SpaceCenter_Text_CourtneyDefeat, MossdeepCity_SpaceCenter_Text_CourtneyDefeat
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_Tabitha::
+	trainerbattle_single TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaIntro, MossdeepCity_SpaceCenter_Text_TabithaDefeat
+	msgbox MossdeepCity_SpaceCenter_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall:: @ 8224175
@@ -453,7 +451,7 @@ MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle: @ 82245AF
 	.string "at all?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou: @ 82245D9
-	.string "Hehehe!\p"
+	.string "Ahahaha!\p"
 	.string "We come all the way here to get some\n"
 	.string "fuel, and we're interfered with again!\p"
 	.string "If you're going to mess with us too,\n"
@@ -493,7 +491,7 @@ MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand: @ 822487C
 	.string "All I want…\n"
 	.string "I just want to expand the land mass…$"
 
-MossdeepCity_SpaceCenter_Text_TabithaDefeat: @ 82248AD
+MossdeepCity_SpaceCenter_Text_CourtneyDefeat: @ 82248AD
 	.string "I'm with our leader…$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided: @ 82248C2
@@ -526,3 +524,20 @@ MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome: @ 8224A4A
 	.string "after this.\p"
 	.string "Oh, yes, I don't live in Rustboro City.\n"
 	.string "I live right here on this island.$"
+
+MossdeepCity_SpaceCenter_Text_TabithaIntro:
+	.string "Hehehe!\p"
+	.string "We're taking the fuel, and no amount\n"
+	.string "of meddling is going to stop us!$"
+
+MossdeepCity_SpaceCenter_Text_TabithaDefeat:
+	.string "Hehe…\n"
+	.string "Well, maybe that's enough to stop me…$"
+
+MossdeepCity_SpaceCenter_Text_TabithaPostBattle:
+	.string "Hehe…\p"
+	.string "It's all up to our Leader and Courtney\n"
+	.string "now.$"
+
+MossdeepCity_SpaceCenter_Text_ChooseMons:
+	.string "Choose which Pokémon will battle.$"

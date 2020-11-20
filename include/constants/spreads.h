@@ -20,7 +20,7 @@
 #define SPREAD_31_IV_HP_SPATK_QUIET         16 // Trick Room special attacker
 #define SPREAD_31_IV_HP_DEF_IMPISH          17 // Physical wall with physical attacks
 #define SPREAD_31_IV_HP_DEF_BOLD 			18 // Physical wall with special attacks
-#define SPREAD_31_IV_HP_SPDEF_CALM          19 // Special wall with physical attacks
+#define SPREAD_31_IV_HP_SPDEF_CALM          19 // Special wall with special attacks
 #define SPREAD_31_IV_HP_SPDEF_CAREFUL       20 // Special wall with physical attacks
 #define SPREAD_HP_FIRE_TIMID         		21
 #define SPREAD_HP_FIRE_MODEST         		22
