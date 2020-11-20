@@ -211,7 +211,7 @@ EventScript_RockSmash:: @ 82907A6
 	end
 
 EventScript_RaichuSmash::
-	setvar VAR_0x8004, SPECIES_ALOLAN_RAICHU
+	setvar VAR_0x8004, SPECIES_RAICHU_ALOLAN
 	setvar VAR_0x8008, MOVE_ROCK_SMASH
 	setvar VAR_0x8009, 1
 	bufferspeciesname 0, VAR_0x8004	

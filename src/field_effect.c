@@ -2582,7 +2582,7 @@ bool8 FldEff_FieldMoveShowMonInit(void)
             gFieldEffectArguments[0] = SPECIES_ANORITH;
             break;
         case MOVE_ROCK_SMASH:
-            gFieldEffectArguments[0] = SPECIES_ALOLAN_RAICHU;
+            gFieldEffectArguments[0] = SPECIES_RAICHU_ALOLAN;
             break;
         case MOVE_STRENGTH:
             gFieldEffectArguments[0] = SPECIES_ARCANINE;

@@ -2400,31 +2400,6 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x77,
         .y_offset = 5,
     },
-    [SPECIES_ROTOM_HEAT] =
-    {
-        .size = 0x77,
-        .y_offset = 12,
-    },
-    [SPECIES_ROTOM_WASH] =
-    {
-        .size = 0x77,
-        .y_offset = 11,
-    },
-    [SPECIES_ROTOM_FROST] =
-    {
-        .size = 0x87,
-        .y_offset = 7,
-    },
-    [SPECIES_ROTOM_FAN] =
-    {
-        .size = 0x77,
-        .y_offset = 8,
-    },
-    [SPECIES_ROTOM_MOW] =
-    {
-        .size = 0x77,
-        .y_offset = 10,
-    },
     [SPECIES_UXIE] =
     {
         .size = 0x76,
@@ -4704,27 +4679,27 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ROTOM_HEAT] =
     {
         .size = 0x77,
-        .y_offset = 5,
+        .y_offset = 12,
     },
     [SPECIES_ROTOM_WASH] =
     {
         .size = 0x77,
-        .y_offset = 5,
+        .y_offset = 11,
     },
     [SPECIES_ROTOM_FROST] =
     {
-        .size = 0x77,
-        .y_offset = 5,
+        .size = 0x87,
+        .y_offset = 7,
     },
     [SPECIES_ROTOM_FAN] =
     {
         .size = 0x77,
-        .y_offset = 5,
+        .y_offset = 8,
     },
     [SPECIES_ROTOM_MOW] =
     {
         .size = 0x77,
-        .y_offset = 5,
+        .y_offset = 10,
     },
     // Giratina
     [SPECIES_GIRATINA_ORIGIN] =
