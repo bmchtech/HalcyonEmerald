@@ -6139,6 +6139,20 @@ BattleScript_MegaEvolution::
 	switchinabilities BS_ATTACKER
 	end2
 
+BattleScript_WishMegaEvolution::
+	printstring STRINGID_FERVENTWISHREACHED
+	waitmessage 0x40
+	setbyte gIsCriticalHit, 0
+	handlemegaevo BS_ATTACKER, 0
+	handlemegaevo BS_ATTACKER, 1
+	playanimation BS_ATTACKER, B_ANIM_MEGA_EVOLUTION, NULL
+	waitanimation
+	handlemegaevo BS_ATTACKER, 2
+	printstring STRINGID_MEGAEVOEVOLVED
+	waitmessage 0x40
+	switchinabilities BS_ATTACKER
+	end2
+
 BattleScript_AttackerFormChange::
 	pause 0x5
 	copybyte gBattlerAbility, gBattlerAttacker
@@ -6557,7 +6571,7 @@ BattleScript_DefiantActivates::
 BattleScript_AbilityPopUp:
 	showabilitypopup BS_ABILITY_BATTLER
 	recordability BS_ABILITY_BATTLER
-	pause 0x10
+	pause 40
 	return
 
 BattleScript_SpeedBoostActivates::
@@ -6759,6 +6773,12 @@ BattleScript_IntimidateActivatesLoop:
 	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_IntimidatePrevented
+#if B_UPDATED_INTIMIDATE >= GEN_8
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_IntimidatePrevented
+#endif
 	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_IntimidateActivatesLoopIncrement
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 0x1, BattleScript_IntimidateActivatesLoopIncrement
 	setgraphicalstatchangevalues
@@ -6773,7 +6793,10 @@ BattleScript_IntimidateActivatesReturn:
 	return
 BattleScript_IntimidatePrevented:
 	pause 0x20
-	printstring STRINGID_PREVENTEDFROMWORKING
+	call BattleScript_AbilityPopUp
+	setbyte gBattleCommunication STAT_ATK
+	stattextbuffer BS_ATTACKER
+	printstring STRINGID_STATWASNOTLOWERED
 	waitmessage 0x40
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_IntimidateActivatesLoopIncrement
