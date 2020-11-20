@@ -15508,7 +15508,7 @@ static const struct TrainerMonItemCustomMoves sParty_MaxieMossdeep[] = {
     .heldItem = ITEM_CAMERUPTITE,
     .ability = 2, // Anger Point (for Trace) -> Sheer Force
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
-    .moves = MOVE_EARTH_POWER, MOVE_FIRE_BLAST, MOVE_SOLAR_BEAM, MOVE_FLASH_CANNON
+    .moves = MOVE_EARTH_POWER, MOVE_HEAT_WAVE, MOVE_SOLAR_BEAM, MOVE_FLASH_CANNON
     }
 };
 
@@ -15531,7 +15531,7 @@ static const struct TrainerMonItemCustomMoves sParty_StevenMossdeep[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_METAGROSS,
+    .species = SPECIES_METAGROSS_MEGA, // temporary work around for bug
     .heldItem = ITEM_METAGROSSITE,
     .ability = 0, // Clear Body -> Tough Claws
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
