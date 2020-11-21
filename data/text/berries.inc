@@ -203,14 +203,14 @@ SootopolisCity_Text_NameIsKiriHaveOneOfThese: @ 82A7BB0
 	.string "Hi, what's your name?\p"
 	.string "… … …  … … …  … … …\n"
 	.string "Okay. That's nice!\p"
-	.string "My name is KIRI.\p"
+	.string "My name is Kiri.\p"
 	.string "My mommy and daddy named me that so\n"
 	.string "I would grow healthy and warmhearted.\l"
 	.string "That's what they wished.\p"
 	.string "You can have one of these.$"
 
 SootopolisCity_Text_GiveYouThisBerryToo: @ 82A7C7C
-	.string "KIRI will give you this Berry, too!\n"
+	.string "Kiri will give you this Berry, too!\n"
 	.string "I really like it lots!$"
 
 SootopolisCity_Text_WhatKindOfWishInYourName: @ 82A7CB7
@@ -224,7 +224,7 @@ SootopolisCity_Text_LikeSeasonBornIn: @ 82A7CEC
 	.string "summer, do you like the summer?$"
 
 SootopolisCity_Text_ThenILoveAutumn: @ 82A7D80
-	.string "Then KIRI was born in the autumn,\n"
+	.string "Then Kiri was born in the autumn,\n"
 	.string "so I love the autumn!\p"
 	.string "Which season do you like?$"
 
