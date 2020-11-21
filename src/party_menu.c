@@ -5406,6 +5406,14 @@ static void TryTutorSelectedMon(u8 taskId)
             DisplayLearnMoveMessageAndClose(taskId, gText_PkmnAlreadyKnows);
             return;
         default:
+            if (gSpecialVar_0x8008 == TRUE) // Move requires max friendship to learn
+            {
+                if (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP) != MAX_FRIENDSHIP)
+                {
+                    DisplayLearnMoveMessageAndClose(taskId, gText_PkmnFriendshipNotHighEnough);
+                    return;
+                }
+            }
             if (GiveMoveToMon(mon, gPartyMenu.data1) != MON_HAS_MAX_MOVES)
             {
                 Task_LearnedMove(taskId);
