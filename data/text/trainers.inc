@@ -3968,7 +3968,7 @@ Route126_Text_BrendaPostBattle: @ 82A1E70
 
 Route126_Text_PabloIntro: @ 82A1EA5
 	.string "Check out this sculpted body!\n"
-	.string "I'm more cut than a BLACK BELT!$"
+	.string "I'm more cut than a Black Belt!$"
 
 Route126_Text_PabloDefeat: @ 82A1EE3
 	.string "Whoops! Too strong!\n"
@@ -4072,7 +4072,7 @@ Route127_Text_JonahPostBattle: @ 82A240C
 
 Route127_Text_HenryIntro: @ 82A2450
 	.string "Whoops! Don't tell me I snagged\n"
-	.string "a SurfING Pokémon?$"
+	.string "a Surfing Pokémon?$"
 
 Route127_Text_HenryDefeat: @ 82A2483
 	.string "I can't keep up!$"

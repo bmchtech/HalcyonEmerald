@@ -2155,7 +2155,7 @@ MatchCall_Text_Flannery2:: @ 82B2C0E
 MatchCall_Text_Flannery3:: @ 82B2CF1
 	.string "Flannery: Oh, {PLAYER}?\n"
 	.string "Our Gym's ready!\p"
-	.string "Come to LAVARIDGE for a soak\n"
+	.string "Come to Lavaridge for a soak\n"
 	.string "in the hot spring and a challenge!$"
 
 MatchCall_Text_Flannery4:: @ 82B2D54
@@ -2257,7 +2257,7 @@ MatchCall_Text_Juan4:: @ 82B341E
 	.string "of you soaring with the melody…$"
 
 MatchCall_Text_Sidney:: @ 82B34CC
-	.string "SIDNEY: Yo, {PLAYER}!\p"
+	.string "Sidney: Yo, {PLAYER}!\p"
 	.string "If you want to battle with me\n"
 	.string "again, you come on back whenever\l"
 	.string "you like to the Pokémon League.\p"
@@ -2265,7 +2265,7 @@ MatchCall_Text_Sidney:: @ 82B34CC
 	.string "I'll be waiting!$"
 
 MatchCall_Text_Phoebe:: @ 82B3561
-	.string "PHOEBE: Hi, {PLAYER}!\p"
+	.string "Phoebe: Hi, {PLAYER}!\p"
 	.string "How about coming back here again\n"
 	.string "sometime?\p"
 	.string "I'd like to see how much tighter\n"
@@ -2273,7 +2273,7 @@ MatchCall_Text_Phoebe:: @ 82B3561
 	.string "Pokémon.$"
 
 MatchCall_Text_Glacia:: @ 82B35E4
-	.string "GLACIA: Hello, {PLAYER}.\p"
+	.string "Glacia: Hello, {PLAYER}.\p"
 	.string "I trust you haven't become\n"
 	.string "complacent with your power?\p"
 	.string "If you feel the need to cool your\n"
@@ -2281,11 +2281,11 @@ MatchCall_Text_Glacia:: @ 82B35E4
 	.string "to the Pokémon League…$"
 
 MatchCall_Text_Drake:: @ 82B368B
-	.string "DRAKE: That voice… {PLAYER}, is it?\n"
+	.string "Drake: That voice… {PLAYER}, is it?\n"
 	.string "You sound well…\p"
 	.string "I understand that there is now\n"
-	.string "a facility called the BATTLE\l"
-	.string "FRONTIER that tests the skills of\l"
+	.string "a facility called the Battle\l"
+	.string "Frontier that tests the skills of\l"
 	.string "Trainers.\p"
 	.string "However, if you wish to have real\n"
 	.string "battles, there is no substitute for\l"
@@ -2304,13 +2304,13 @@ MatchCall_Text_Wallace:: @ 82B3790
 	.string "I'm sure he's digging in a cave or\n"
 	.string "a craggy mountain somewhere.\p"
 	.string "But what is a rare stone exactly?\n"
-	.string "All I can think of is a METEORITE…$"
+	.string "All I can think of is a Meteorite…$"
 
 MatchCall_Text_MayRayquazaCall: @ 82B38C1
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "May: Hi, {PLAYER}{KUN}!\p"
-	.string "I was just in PACIFIDLOG a little\n"
+	.string "I was just in Pacifidlog a little\n"
 	.string "while ago.\p"
 	.string "I saw a giant green Pokémon\n"
 	.string "flying high in the sky.\p"
@@ -2325,7 +2325,7 @@ MatchCall_Text_BrendanRayquazaCall: @ 82B39C6
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "Brendan: Hey, {PLAYER}!\n"
-	.string "I was in PACIFIDLOG just now.\p"
+	.string "I was in Pacifidlog just now.\p"
 	.string "I saw this huge green Pokémon\n"
 	.string "flying across the sky.\p"
 	.string "I've never seen anything that\n"
@@ -2379,8 +2379,8 @@ MatchCall_Text_May5:: @ 2B3D4B
 
 MatchCall_Text_May6:: @ 2B3DD1
 	.string "May: Hi, {PLAYER}{KUN}!\p"
-	.string "Did you know about the MIRAGE\n"
-	.string "TOWER in the desert?\p"
+	.string "Did you know about the Mirage\n"
+	.string "Tower in the desert?\p"
 	.string "They say, like a mirage, it seems\n"
 	.string "to mysteriously come and go.\p"
 	.string "I wish I could see it.$"
@@ -2402,16 +2402,16 @@ MatchCall_Text_May8:: @ 2B3ECD
 MatchCall_Text_May9:: @ 2B3F2B
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "I was thinking of going to the hot\n"
-	.string "spring in LAVARIDGE.\p"
-	.string "But on the way, around JAGGED\n"
-	.string "PASS, I ran into some bad-looking\l"
+	.string "spring in Lavaridge.\p"
+	.string "But on the way, around Jagged\n"
+	.string "Pass, I ran into some bad-looking\l"
 	.string "characters. The mood was ugly!$"
 
 MatchCall_Text_May10:: @ 2B3FFB
 	.string "May: Hi, {PLAYER}{KUN}!\n"
 	.string "Did you see the news?\p"
 	.string "They say Capt. Stern discovered\n"
-	.string "the SEAFLOOR CAVERN while on his\l"
+	.string "the Seafloor Cavern while on his\l"
 	.string "submarine expedition.$"
 
 MatchCall_Text_May11:: @ 2B402B
@@ -2448,7 +2448,7 @@ MatchCall_Text_May14:: @ 2B42E0
 	.string "May: {PLAYER}{KUN}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the Sootopolis Gym\n"
-	.string "LEADER?\p"
+	.string "Leader?\p"
 	.string "That means you don't have far\n"
 	.string "to go, do you?$"
 
@@ -2462,7 +2462,7 @@ MatchCall_Text_May15:: @ 2B4350
 
 MatchCall_Text_Brendan1:: @ 2B43EF
 	.string "Brendan: Hey, {PLAYER}!\p"
-	.string "Mr. Briney retired as a SAILOR,\n"
+	.string "Mr. Briney retired as a Sailor,\n"
 	.string "but I still see him out on the sea\l"
 	.string "with his pet Peeko sometimes.\p"
 	.string "I guess he must love\n"
@@ -2493,7 +2493,7 @@ MatchCall_Text_Brendan4:: @ 2B463F
 	.string "Brendan: This voice… {PLAYER}?\p"
 	.string "They gave Rusturf Tunnel its name\n"
 	.string "because it joins Rustboro and\l"
-	.string "VERDANTURF.\p"
+	.string "Verdanturf.\p"
 	.string "Did you know that?$"
 
 MatchCall_Text_Brendan5:: @ 2B46B7
@@ -2506,8 +2506,8 @@ MatchCall_Text_Brendan5:: @ 2B46B7
 
 MatchCall_Text_Brendan6:: @ 2B4761
 	.string "Brendan: Hey, {PLAYER}!\p"
-	.string "Did you know about the MIRAGE\n"
-	.string "TOWER in the desert?\p"
+	.string "Did you know about the Mirage\n"
+	.string "Tower in the desert?\p"
 	.string "They say, like a mirage, it can be\n"
 	.string "seen only sometimes.\p"
 	.string "I'd like to see that!$"
@@ -2529,7 +2529,7 @@ MatchCall_Text_Brendan8:: @ 2B4882
 MatchCall_Text_Brendan9:: @ 2B4909
 	.string "Brendan: Hey there, {PLAYER}.\p"
 	.string "I was on my way back to the hot\n"
-	.string "spring in LAVARIDGE.\p"
+	.string "spring in Lavaridge.\p"
 	.string "But around Jagged Pass, I ran into\n"
 	.string "some nasty-looking characters.\p"
 	.string "Those creeps…\n"
@@ -2539,7 +2539,7 @@ MatchCall_Text_Brendan10:: @ 2B49C4
 	.string "Brendan: Hi, {PLAYER}!\n"
 	.string "Did you catch the news?\p"
 	.string "They say Capt. Stern discovered\n"
-	.string "the SEAFLOOR CAVERN while on his\l"
+	.string "the Seafloor Cavern while on his\l"
 	.string "submarine expedition.$"
 
 MatchCall_Text_Brendan11:: @ 2B4A44
@@ -2575,7 +2575,7 @@ MatchCall_Text_Brendan14:: @ 2B4CD8
 	.string "Brendan: {PLAYER}!\n"
 	.string "I heard the rumors!\p"
 	.string "You beat the Sootopolis Gym\n"
-	.string "LEADER? Awesome!\p"
+	.string "Leader? Awesome!\p"
 	.string "You're getting awful close now!$"
 
 MatchCall_Text_Brendan15:: @ 2B4D46
@@ -2700,19 +2700,19 @@ MatchCall_Text_Scott6:: @ 2B5541
 	.string "It's something you can look\n"
 	.string "forward to.\p"
 	.string "When you've won your way through\n"
-	.string "the Pokémon League into the HALL\l"
-	.string "OF FAME!$"
+	.string "the Pokémon League into the Hall\l"
+	.string "of Fame!$"
 
 MatchCall_Text_Scott7:: @ 2B56CA
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "SCOTT appears to be out of\n"
+	.string "Scott appears to be out of\n"
 	.string "the PokéNav's service area…$"
 
 MatchCall_Text_Norman1:: @ 82B5719
 	.string "Dad: In Rustboro, there's a man\n"
 	.string "that goes by the odd name of\l"
-	.string "the CUTTER.\p"
+	.string "the Cutter.\p"
 	.string "If you're in the area, you should\n"
 	.string "pay him a visit.$"
 
@@ -2777,10 +2777,10 @@ MatchCall_Text_Steven1:: @ 82B5B95
 	.string "Steven: Hi, {PLAYER}{KUN}!\p"
 	.string "Have you been to Mauville\n"
 	.string "already?\p"
-	.string "You should visit the Bike SHOP\n"
+	.string "You should visit the Bike Shop\n"
 	.string "and get a Mach Bike.\p"
-	.string "Then, try exploring the GRANITE\n"
-	.string "CAVE thoroughly.\p"
+	.string "Then, try exploring the Granite\n"
+	.string "Cave thoroughly.\p"
 	.string "You may make a new discovery\n"
 	.string "there.$"
 
@@ -2825,7 +2825,7 @@ MatchCall_Text_Steven6:: @ 82B5EA2
 
 MatchCall_Text_Steven7:: @ 82B5ED9
 	.string "Steven: {PLAYER}{KUN}… Congratulations\n"
-	.string "for entering the HALL OF FAME.\p"
+	.string "for entering the Hall of Fame.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "I hope we can meet again\n"
