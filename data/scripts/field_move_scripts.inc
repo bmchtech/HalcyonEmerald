@@ -514,9 +514,10 @@ Text_MonUsedWaterfall: @ 8290AFC
 
 EventScript_UseDive:: @ 8290B0F
 	lockall
+	goto_if_unset FLAG_BADGE07_GET, EventScript_CantDive
 	checkpartymove MOVE_DIVE
 	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq EventScript_CantDive
+	goto_if_eq EventScript_SlowbroDive
 	bufferpartymonnick 0, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	setfieldeffectargument 1, 1
@@ -534,8 +535,6 @@ EventScript_SlowbroDive::
 	setvar VAR_0x8009, 1
 	bufferspeciesname 0, VAR_0x8004	
 	buffermovename 1, VAR_0x8008
-	setfieldeffectargument 0, VAR_RESULT
-	setfieldeffectargument 1, 1
 	msgbox Text_SlowbroDive, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_EndDive
@@ -575,9 +574,6 @@ EventScript_SlowbroSurface::
 	setvar VAR_0x8009, 1
 	bufferspeciesname 0, VAR_0x8004
 	buffermovename 1, VAR_0x8008
-	bufferpartymonnick 0, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
-	setfieldeffectargument 1, 1
 	msgbox Text_WantToSurface, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_EndSurface
@@ -600,7 +596,7 @@ Text_WantToDive: @ 8290BE8
 
 Text_SlowbroDive:
 	.string "The sea is deep here.\n"
-	.string "Call Liza & Tate's Slowbro to Dive?$"
+	.string "Call Tate & Liza's Slowbro to Dive?$"
 
 Text_MonUsedDive: @ 8290C1A
 	.string "{STR_VAR_1} used Dive.$"
