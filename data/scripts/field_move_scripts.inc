@@ -464,6 +464,7 @@ Text_StrengthActivated: @ 8290A16
 
 EventScript_UseWaterfall:: @ 8290A49
 	lockall
+	goto_if_unset FLAG_BADGE07_GET, EventScript_CannotUseWaterfall
 	checkpartymove MOVE_WATERFALL
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_TentacruelWaterfall
@@ -477,7 +478,9 @@ EventScript_UseWaterfall:: @ 8290A49
 	goto EventScript_EndWaterfall
 
 EventScript_CannotUseWaterfall:: @ 8290A83
-	lockall
+	msgbox Text_CantWaterfall, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EventScript_TentacruelWaterfall::
 	setvar VAR_0x8004, SPECIES_TENTACRUEL
