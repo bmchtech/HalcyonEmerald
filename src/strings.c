@@ -2107,3 +2107,11 @@ const u8 gText_Refrigerator[] = _("Refrigerator");
 const u8 gText_ElectricFan[] = _("Electric Fan");
 const u8 gText_Lawnmower[] = _("Lawnmower");
 const u8 gText_Recall[] = _("Recall");
+
+// Starter Tutor Moves
+const u8 gText_GrassPledge[] = _("Grass Pledge");
+const u8 gText_FirePledge[] = _("Fire Pledge");
+const u8 gText_WaterPledge[] = _("Water Pledge");
+const u8 gText_FrenzyPlant[] = _("Frenzy Plant");
+const u8 gText_BlastBurn[] = _("Blast Burn");
+const u8 gText_HydroCannon[] = _("Hydro Cannon");

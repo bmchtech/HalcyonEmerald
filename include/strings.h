@@ -3357,4 +3357,11 @@ extern const u8 gText_ElectricFan[];
 extern const u8 gText_Lawnmower[];
 extern const u8 gText_Recall[];
 
+extern const u8 gText_GrassPledge[];
+extern const u8 gText_FirePledge[];
+extern const u8 gText_WaterPledge[];
+extern const u8 gText_FrenzyPlant[];
+extern const u8 gText_BlastBurn[];
+extern const u8 gText_HydroCannon[];
+
 #endif // GUARD_STRINGS_H

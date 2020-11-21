@@ -868,6 +868,16 @@ const struct MenuAction MultichoiceList_RotomAppliances[] =
     {gText_Recall},
 };
 
+const struct MenuAction MultichoiceList_StarterMoves[] = 
+{
+    {gText_GrassPledge},
+    {gText_FirePledge},
+    {gText_WaterPledge},
+    {gText_FrenzyPlant},
+    {gText_BlastBurn},
+    {gText_HydroCannon},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1007,6 +1017,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HYPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_HyperTrainingMenu),
     [MULTI_MOOMOO_MILK]                = MULTICHOICE(MultichoiceList_MoomooMilk),
     [MULTI_ROTOM_APPLIANCES]           = MULTICHOICE(MultichoiceList_RotomAppliances),
+    [MULTI_STARTER_MOVES]              = MULTICHOICE(MultichoiceList_StarterMoves),
 };
 
 const u8 *const gStdStrings[] =
