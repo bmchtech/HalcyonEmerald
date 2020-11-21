@@ -608,7 +608,7 @@ MossdeepCity_Gym_Text_ExplainCalmMind: @ 8221A40
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza: @ 8221AEA
-	.string "Registered Gym Leaders Liza & Tate\n"
+	.string "Registered Gym Leaders Tate & Liza\n"
 	.string "in the PokéNav.$"
 
 MossdeepCity_Gym_Text_TateAndLizaPostBattle: @ 8221B1D

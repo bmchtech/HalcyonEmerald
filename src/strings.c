@@ -1979,7 +1979,7 @@ const u8 gText_ElectricTerrain[] = _("ElectroField");
 const u8 gText_MistyTerrain[] = _("Misty Field");
 const u8 gText_PsychicTerrain[] = _("PsychicField");
 
-// Unlocked after beating Liza & Tate
+// Unlocked after beating Tate & Liza
 const u8 gText_DoubleEdge[] = _("Double-Edge");
 const u8 gText_PlayRough[] = _("Play Rough");
 const u8 gText_NastyPlot[] = _("Nasty Plot");
