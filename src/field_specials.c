@@ -5586,3 +5586,19 @@ void ChangePokeBall (void)
     // gSpecialVar_0x8006 = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL, NULL);
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_POKEBALL, &pokeball);
 }
+
+// Returns TRUE if the player has a Diancie with maximum friendship, FALSE otherwise
+bool8 GetDiancieFriendshipScore(void)
+{
+    u8 i = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) == SPECIES_DIANCIE)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP) == MAX_FRIENDSHIP)
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
