@@ -14214,13 +14214,6 @@ static const struct TrainerMonItemCustomMoves sParty_Kara[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Herman[] = { // Ace, with Susie
     {
-    .lvl = 0,
-    .species = SPECIES_HERACROSS,
-    .heldItem = ITEM_HERACRONITE,
-    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_PIN_MISSILE, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_CLOSE_COMBAT
-    },
-    {
     .lvl = -1,
     .species = SPECIES_FLORGES,
     .heldItem = ITEM_LEFTOVERS,
@@ -14240,7 +14233,7 @@ static const struct TrainerMonItemCustomMoves sParty_Herman[] = { // Ace, with S
     .species = SPECIES_BRONZONG,
     .heldItem = ITEM_OCCA_BERRY,
     .spread = SPREAD_31_IV_HP_ATK_BRAVE,
-    .moves = MOVE_GYRO_BALL, MOVE_PAYBACK, MOVE_CURSE, MOVE_TRICK_ROOM
+    .moves = MOVE_GYRO_BALL, MOVE_PAYBACK, MOVE_CURSE, MOVE_ZEN_HEADBUTT
     },
     {
     .lvl = -1,
@@ -14248,6 +14241,13 @@ static const struct TrainerMonItemCustomMoves sParty_Herman[] = { // Ace, with S
     .heldItem = ITEM_FLAME_ORB,
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN, MOVE_FLAMETHROWER, MOVE_PSYCHIC
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_HERACROSS,
+    .heldItem = ITEM_HERACRONITE,
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_PIN_MISSILE, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_CLOSE_COMBAT
     }
 };
 
@@ -14263,7 +14263,7 @@ static const struct TrainerMonItemCustomMoves sParty_Susie[] = { // Ace, with He
     .lvl = -1,
     .species = SPECIES_PROBOPASS,
     .heldItem = ITEM_LIFE_ORB,
-    .ability = 1, // Misty Surge
+    .ability = 1, 
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_POWER_GEM, MOVE_FLASH_CANNON, MOVE_THUNDER, MOVE_EARTH_POWER
     },

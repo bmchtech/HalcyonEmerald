@@ -3765,7 +3765,6 @@ AI_DoubleBattle:
 	if_has_move AI_USER_PARTNER, MOVE_HELPING_HAND, AI_DoubleBattlePartnerHasHelpingHand
 	end
 
-
 AI_DoubleBattleFireMove:
 	if_move MOVE_LAVA_PLUME, AI_DoubleBattleAllHittingFireMove
 	if_move MOVE_SEARING_SHOT, AI_DoubleBattleAllHittingFireMove
@@ -3785,6 +3784,7 @@ AI_DoubleBattleGroundMove:
 AI_DoubleBattleWaterMove:
 	if_move MOVE_SURF, AI_DoubleBattleAllHittingWaterMove
 	if_move MOVE_SPARKLING_ARIA, AI_DoubleBattleAllHittingWaterMove
+	end
 
 AI_DoubleBattleElectricMove:
 	if_move MOVE_DISCHARGE, AI_DoubleBattleAllHittingElectricMove
@@ -3793,6 +3793,7 @@ AI_DoubleBattleElectricMove:
 	score -2
 	if_no_type AI_TARGET_PARTNER, TYPE_GROUND, AI_DoubleBattleElectricMoveEnd
 	score -8
+	end
 
 AI_DoubleBattleElectricMoveEnd:
 	end
