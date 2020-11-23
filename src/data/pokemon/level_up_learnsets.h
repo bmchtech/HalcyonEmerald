@@ -12423,11 +12423,10 @@ static const struct LevelUpMove sEelektrikLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sEelektrossLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 1, MOVE_CRUNCH),
-	LEVEL_UP_MOVE( 1, MOVE_THRASH),
+	LEVEL_UP_MOVE( 0, MOVE_CRUSH_CLAW),
+    LEVEL_UP_MOVE( 1, MOVE_CRUNCH),
 	LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
 	LEVEL_UP_MOVE( 1, MOVE_ION_DELUGE),
-	LEVEL_UP_MOVE( 1, MOVE_CRUSH_CLAW),
     LEVEL_UP_MOVE( 1, MOVE_HEADBUTT),
 	LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
 	LEVEL_UP_MOVE( 1, MOVE_SPARK),
@@ -12440,6 +12439,8 @@ static const struct LevelUpMove sEelektrossLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(38, MOVE_THUNDERBOLT),
 	LEVEL_UP_MOVE(44, MOVE_COIL),
 	LEVEL_UP_MOVE(48, MOVE_WILD_CHARGE),
+    LEVEL_UP_MOVE(52, MOVE_PARABOLIC_CHARGE),
+    LEVEL_UP_MOVE(56, MOVE_THRASH),
 	LEVEL_UP_END
 };
 
@@ -14535,6 +14536,7 @@ static const struct LevelUpMove sSliggooLevelUpLearnset[] = {
 
 static const struct LevelUpMove sGoodraLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_AQUA_TAIL),
+	LEVEL_UP_MOVE( 1, MOVE_DRAGON_RUSH),
 	LEVEL_UP_MOVE( 1, MOVE_FEINT),
 	LEVEL_UP_MOVE( 1, MOVE_TACKLE),
 	LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
