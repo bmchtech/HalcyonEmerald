@@ -193,6 +193,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     }
     else
         return FALSE;
+    
     // Check for all absorbing abilities
     for (i = 0; i < numAbsorbingAbilities; i++)
     {
@@ -211,6 +212,8 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     {
         u16 species;
         u16 monAbility;
+        u8 monAbilityNum;
+        u8 j;
 
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
@@ -226,14 +229,22 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             continue;
         if (i == *(gBattleStruct->monToSwitchIntoId + battlerIn2))
             continue;
-
+        
         species = GetMonData(&party[i], MON_DATA_SPECIES);
         // Updated to handle hidden abilities
-        monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
-
-        for (i = 0; i < numAbsorbingAbilities; i++)
+        monAbilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
+        if (monAbilityNum < 2)
         {
-            if (absorbingTypeAbilities[i] == monAbility && Random() & 1)
+            monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
+        }
+        else
+        {
+            monAbility = gBaseStats[species].abilityHidden;
+        }
+        
+        for (j = 0; j < numAbsorbingAbilities; j++)
+        {
+            if (absorbingTypeAbilities[j] == monAbility && Random() & 1)
             {
                 // we found a mon.
                 *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
@@ -242,7 +253,6 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             }
         }
     }
-
     return FALSE;
 }
 

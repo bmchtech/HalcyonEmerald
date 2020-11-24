@@ -14156,6 +14156,13 @@ static const struct TrainerMonItemCustomMoves sParty_Kara[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Herman[] = { // Ace, with Susie
     {
+    .lvl = 0,
+    .species = SPECIES_HERACROSS,
+    .heldItem = ITEM_HERACRONITE,
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_PIN_MISSILE, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_CLOSE_COMBAT
+    },
+    {
     .lvl = -1,
     .species = SPECIES_FLORGES,
     .heldItem = ITEM_LEFTOVERS,
@@ -14183,13 +14190,6 @@ static const struct TrainerMonItemCustomMoves sParty_Herman[] = { // Ace, with S
     .heldItem = ITEM_FLAME_ORB,
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN, MOVE_FLAMETHROWER, MOVE_PSYCHIC
-    },
-    {
-    .lvl = 0,
-    .species = SPECIES_HERACROSS,
-    .heldItem = ITEM_HERACRONITE,
-    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_PIN_MISSILE, MOVE_BULLET_SEED, MOVE_ROCK_BLAST, MOVE_CLOSE_COMBAT
     }
 };
 
