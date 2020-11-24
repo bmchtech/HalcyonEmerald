@@ -5588,7 +5588,7 @@ void ChangePokeBall (void)
 }
 
 // Returns TRUE if the player has a Diancie with maximum friendship, FALSE otherwise
-bool8 GetDiancieFriendshipScore(void)
+bool8 GetDiancieFriendshipScore (void)
 {
     u8 i = 0;
 
@@ -5601,4 +5601,19 @@ bool8 GetDiancieFriendshipScore(void)
         }
     }
     return FALSE;
+}
+
+// Returns TRUE if the player's party contains six Magikarp, FALSE otherwise
+bool8 CheckMagikarpBattle (void)
+{
+    u8 i = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) != SPECIES_MAGIKARP)
+        {
+            return FALSE;
+        }
+    }
+    return TRUE;
 }
