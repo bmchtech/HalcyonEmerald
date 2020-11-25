@@ -15571,7 +15571,7 @@ static const struct TrainerMonItemCustomMoves sParty_Archie[] = {
     .species = SPECIES_EELEKTROSS,
     .heldItem = ITEM_ASSAULT_VEST,
     .ability = 2, // Swift Swim
-    .spread = SPREAD_31_IV_HP_SPATK_MODEST,
+    .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
     .moves = MOVE_THUNDER, MOVE_GRASS_KNOT, MOVE_FLASH_CANNON, MOVE_ACID_SPRAY
     },
     {
