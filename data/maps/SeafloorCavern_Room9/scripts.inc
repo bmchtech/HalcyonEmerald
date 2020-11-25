@@ -32,14 +32,13 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre:: @ 8234DC9
 	msgbox SeafloorCavern_Room9_Text_ArchieBeholdKyogre, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox SeafloorCavern_Room9_Text_ArchieYouMustDisappear, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_Room9_Text_ArchieDefeat
-	msgbox SeafloorCavern_Room9_Text_ArchieWithThisRedOrb, MSGBOX_DEFAULT
 	setweather WEATHER_NONE
 	doweather
 	special Script_FadeOutMapMusic
 	waitstate
-	msgbox SeafloorCavern_Room9_Text_RedOrbShinesByItself, MSGBOX_DEFAULT
+	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox SeafloorCavern_Room9_Text_BlueOrbShinesByItself, MSGBOX_DEFAULT
 	special WaitWeather
 	waitstate
 	setvar VAR_RESULT, 1
@@ -47,7 +46,7 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre:: @ 8234DC9
 	dofieldeffectsparkle 16, 42, 0
 	waitfieldeffect FLDEFF_SPARKLE
 	closemessage
-	setvar VAR_RESULT, 0
+	setvar VAR_RESULT, 1
 	playfanfare MUS_AWAKEN_LEGEND
 	playse SE_ORB
 	special DoOrbEffect
@@ -63,6 +62,16 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre:: @ 8234DC9
 	waitmovement 0
 	special FadeOutOrbEffect
 	waitstate
+	playmoncry SPECIES_KYOGRE, 2
+	waitmoncry
+	applymovement VAR_0x8004, Common_Movement_FacePlayer
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox SeafloorCavern_Room9_Text_ArchieYouMustDisappear, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_Room9_Text_ArchieDefeat
+	msgbox SeafloorCavern_Room9_Text_ArchieWithThisBlueOrb, MSGBOX_DEFAULT
+	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 8  @ num shakes
@@ -239,6 +248,11 @@ SeafloorCavern_Room9_Text_ArchieBeholdKyogre: @ 82350A6
 	.string "I have waited so long for this day to\n"
 	.string "come…$"
 
+SeafloorCavern_Room9_Text_BlueOrbShinesByItself: @ 8235279
+	.string "Archie: Now! Awaken, Kyogre!\p"
+	.string "Return the world back to nature, for\n"
+	.string "the good of Pokémon everywhere!$"
+
 SeafloorCavern_Room9_Text_ArchieYouMustDisappear: @ 823512C
 	.string "Archie: It surprises me, how you've\n"
 	.string "managed to chase me here.\p"
@@ -250,22 +264,17 @@ SeafloorCavern_Room9_Text_ArchieDefeat: @ 82351BC
 	.string "What?!\n"
 	.string "I lost to a mere child like you?!$"
 
-SeafloorCavern_Room9_Text_ArchieWithThisRedOrb: @ 82351E5
+SeafloorCavern_Room9_Text_ArchieWithThisBlueOrb: @ 82351E5
 	.string "Archie: Fufufu…\p"
 	.string "I commend you. I must recognize that\n"
 	.string "you are truly gifted.\p"
 	.string "But!\n"
 	.string "I have this in my possession!\p"
-	.string "With this Red Orb, I can make Kyogre…$"
-
-SeafloorCavern_Room9_Text_RedOrbShinesByItself: @ 8235279
-	.string "The Red Orb suddenly began shining\n"
-	.string "by itself!$"
+	.string "With this Blue Orb, I can make Kyogre…$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo: @ 82352A7
 	.string "Archie: What?!\p"
 	.string "I didn't do anything.\n"
-	.string "Why did the Red Orb…\p"
 	.string "Where did Kyogre go?$"
 
 SeafloorCavern_Room9_Text_ArchieAMessageFromOutside: @ 82352F6
@@ -290,7 +299,7 @@ SeafloorCavern_Room9_Text_ArchieWhatRainingTooHard: @ 823532B
 
 SeafloorCavern_Room9_Text_ArchieWhyDidKyogreDisappear: @ 823546F
 	.string "Archie: There's something wrong…\p"
-	.string "The Red Orb is supposed to awaken\n"
+	.string "The Blue Orb is supposed to awaken\n"
 	.string "and control Kyogre…\p"
 	.string "But… Why?\n"
 	.string "Why did Kyogre disappear?\p"
@@ -310,7 +319,7 @@ SeafloorCavern_Room9_Text_ArchieDontGetAllHighAndMighty: @ 82355C2
 	.string "Don't get all high and mighty with me!\p"
 	.string "Wasn't it you, Team Magma, that\n"
 	.string "infuriated Groudon?\p"
-	.string "So long as I have this Red Orb,\n"
+	.string "So long as I have this Blue Orb,\n"
 	.string "I should be able to control Kyogre…\p"
 	.string "I should be able to control it…$"
 

@@ -64,7 +64,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern:: @ 820BB00
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
 	special HealPlayerParty
-	trainerbattle_no_intro TRAINER_ARCHIE_1, SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat
+	trainerbattle_no_intro TRAINER_ARCHIE_SLATEPORT, SlateportCity_OceanicMuseum_2F_Text_ArchieDefeat
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieDefeated, MSGBOX_DEFAULT
 	closemessage
 	savebgm MUS_DUMMY

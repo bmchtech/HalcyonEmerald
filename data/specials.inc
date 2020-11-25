@@ -569,3 +569,5 @@ gSpecials:: @ 81DBA64
 	def_special SetSpeciesAndEggMove
 	def_special SetGiftEggMove
 	def_special ChangePokeBall
+	def_special GetDiancieFriendshipScore
+	def_special CheckMagikarpBattle

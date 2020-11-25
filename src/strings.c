@@ -407,6 +407,7 @@ const u8 gText_MoveNotLearned[] = _("{STR_VAR_1} did not learn the\nmove {STR_VA
 const u8 gText_WhichMoveToForget[] = _("Which move should be forgotten?{PAUSE_UNTIL_PRESS}");
 const u8 gText_12PoofForgotMove[] = _("1, {PAUSE 15}2, and{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!\p{STR_VAR_1} forgot how to\nuse {STR_VAR_2}.\pAnd…{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnAlreadyKnows[] = _("{STR_VAR_1} already knows\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PkmnFriendshipNotHighEnough[] = _("Hmm… This Pokémon can learn this move.\pBut your bond of friendship is not yet\nstrong enough.\pThat means I cannot teach it this move.");
 const u8 gText_PkmnHPRestoredByVar2[] = _("{STR_VAR_1}'s HP was restored\nby {STR_VAR_2} point(s).{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnCuredOfPoison[] = _("{STR_VAR_1} was cured of its\npoisoning.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PkmnCuredOfParalysis[] = _("{STR_VAR_1} was cured of\nparalysis.{PAUSE_UNTIL_PRESS}");
@@ -2106,3 +2107,11 @@ const u8 gText_Refrigerator[] = _("Refrigerator");
 const u8 gText_ElectricFan[] = _("Electric Fan");
 const u8 gText_Lawnmower[] = _("Lawnmower");
 const u8 gText_Recall[] = _("Recall");
+
+// Starter Tutor Moves
+const u8 gText_GrassPledge[] = _("Grass Pledge");
+const u8 gText_FirePledge[] = _("Fire Pledge");
+const u8 gText_WaterPledge[] = _("Water Pledge");
+const u8 gText_FrenzyPlant[] = _("Frenzy Plant");
+const u8 gText_BlastBurn[] = _("Blast Burn");
+const u8 gText_HydroCannon[] = _("Hydro Cannon");

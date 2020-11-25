@@ -43,6 +43,85 @@ MauvilleCity_House2_EventScript_DeclineTrade:: @ 8210CE4
 	release
 	end
 
+MauvilleCity_House2_EventScript_Tutor::
+	lock
+	faceplayer
+	msgbox MauvilleCity_House2_Text_StarterMoveTeach, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_House2_EventScript_StarterMoveDeclined
+	setvar VAR_0x8008, TRUE
+	msgbox MauvilleCity_House2_Text_StarterMoveWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	multichoice 0, 0, MULTI_STARTER_MOVES, 0
+	switch VAR_RESULT
+	case 0, MauvilleCity_House2_EventScript_StarterMoveGrassPledge
+	case 1, MauvilleCity_House2_EventScript_StarterMoveFirePledge
+	case 2, MauvilleCity_House2_EventScript_StarterMoveWaterPledge
+	case 3, MauvilleCity_House2_EventScript_StarterMoveFrenzyPlant
+	case 4, MauvilleCity_House2_EventScript_StarterMoveBlastBurn
+	case 5, MauvilleCity_House2_EventScript_StarterMoveHydroCannon
+	case MULTI_B_PRESSED, MauvilleCity_House2_Text_StarterMoveDeclined
+	goto MauvilleCity_House2_Text_StarterMoveDeclined
+	end
+
+	MauvilleCity_House2_EventScript_StarterMoveGrassPledge::
+	setvar VAR_0x8005, TUTOR_MOVE_GRASS_PLEDGE
+	setvar VAR_0x8006, MOVE_GRASS_PLEDGE
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_StarterMoveFirePledge::
+	setvar VAR_0x8005, TUTOR_MOVE_FIRE_PLEDGE
+	setvar VAR_0x8006, MOVE_FIRE_PLEDGE
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_StarterMoveWaterPledge::
+	setvar VAR_0x8005, TUTOR_MOVE_WATER_PLEDGE
+	setvar VAR_0x8006, MOVE_WATER_PLEDGE
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_StarterMoveFrenzyPlant::
+	setvar VAR_0x8005, TUTOR_MOVE_FRENZY_PLANT
+	setvar VAR_0x8006, MOVE_FRENZY_PLANT
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_StarterMoveBlastBurn::
+	setvar VAR_0x8005, TUTOR_MOVE_BLAST_BURN
+	setvar VAR_0x8006, MOVE_BLAST_BURN
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_StarterMoveHydroCannon::
+	setvar VAR_0x8005, TUTOR_MOVE_HYDRO_CANNON
+	setvar VAR_0x8006, MOVE_HYDRO_CANNON
+	goto MauvilleCity_House2_EventScript_TeachMove
+
+	MauvilleCity_House2_EventScript_TeachMove::
+	buffermovename 0, VAR_0x8006
+	msgbox MauvilleCity_House2_Text_StarterMoveWhichMon, MSGBOX_DEFAULT
+	call MauvilleCity_House2_EventScript_OpenPartyMenu
+	compare VAR_RESULT, 0
+	goto_if_eq MauvilleCity_House2_EventScript_StarterMoveDeclined
+	goto MauvilleCity_House2_EventScript_StarterMoveTaught
+	end
+
+MauvilleCity_House2_EventScript_StarterMoveDeclined::
+	setvar VAR_0x8008, FALSE
+	msgbox MauvilleCity_House2_Text_StarterMoveDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House2_EventScript_OpenPartyMenu:: @ 82C8326
+	special ChooseMonForMoveTutor
+	waitstate
+	lock
+	faceplayer
+	return
+
+MauvilleCity_House2_EventScript_StarterMoveTaught::
+	setvar VAR_0x8008, FALSE
+	msgbox MauvilleCity_House2_Text_StarterMoveTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MauvilleCity_House2_Text_BuyIceStoneAtSlateport: @ 8210CEE
 	.string "If I had a Bike, it'd be easy to cycle to\n"
 	.string "Slateport for some shopping.\p"
@@ -67,3 +146,24 @@ MauvilleCity_House2_Text_ThatsDisappointing: @ 8210E16
 	.string "A Coin Case is needed for the\n"
 	.string "Game Corner.$"
 
+MauvilleCity_House2_Text_StarterMoveTeach:
+	.string "If you've got any Pokémon from a\n"
+	.string "Professor - starter Pokémon, in other\l"
+	.string "words - I can teach them special moves.\p"
+	.string "Would you like a Pokémon to learn one?$"
+
+MauvilleCity_House2_Text_StarterMoveDeclined:
+	.string "Suit yourself. Come back if you change\n"
+	.string "your mind.$"
+
+MauvilleCity_House2_Text_StarterMoveTaught:
+	.string "If you want to try out more of these\n"
+	.string "moves, you can get more starter\l"
+	.string "Pokémon at the Game Corner.$"
+
+MauvilleCity_House2_Text_StarterMoveWhichMove:
+	.string "Which move should I teach?$"
+
+MauvilleCity_House2_Text_StarterMoveWhichMon:
+	.string "Which Pokémon should learn\n"
+	.string "{STR_VAR_1}?$"

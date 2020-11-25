@@ -1223,6 +1223,7 @@ void DoOrbEffect(void)
     {
         tBlueOrb = TRUE;
         // tCenterX = 136;
+        tCenterX = 104;
     }
     else if (gSpecialVar_Result == 2)
     {

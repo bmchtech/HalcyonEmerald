@@ -2843,7 +2843,7 @@ const struct Item gItems[] =
     {
         .name = _("White Herb"),
         .itemId = ITEM_WHITE_HERB,
-        .price = 100,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = sWhiteHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -2909,7 +2909,7 @@ const struct Item gItems[] =
     {
         .name = _("Mental Herb"),
         .itemId = ITEM_MENTAL_HERB,
-        .price = 100,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_CURE_ATTRACT,
         .description = sMentalHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6233,7 +6233,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Herb"),
         .itemId = ITEM_POWER_HERB,
-        .price = 200,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = sPowerHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6285,7 +6285,7 @@ const struct Item gItems[] =
     {
         .name = _("Focus Sash"),
         .itemId = ITEM_FOCUS_SASH,
-        .price = 200,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_FOCUS_SASH,
         .description = sFocusSashDesc,
         .pocket = POCKET_ITEMS,
@@ -6469,7 +6469,7 @@ const struct Item gItems[] =
     {
         .name = _("Shed Shell"),
         .itemId = ITEM_SHED_SHELL,
-        .price = 200,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SHED_SHELL,
         .description = sShedShellDesc,
         .pocket = POCKET_ITEMS,
@@ -7145,7 +7145,7 @@ const struct Item gItems[] =
     {
         .name = _("Absorb Bulb"),
         .itemId = ITEM_ABSORB_BULB,
-        .price = 2000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_ABSORB_BULB,
         .holdEffectParam = 0,
         .description = sAbsorbBulbDesc,
@@ -7159,7 +7159,7 @@ const struct Item gItems[] =
     {
         .name = _("Cell Battery"),
         .itemId = ITEM_CELL_BATTERY,
-        .price = 2000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_CELL_BATTERY,
         .holdEffectParam = 0,
         .description = sCellBatteryDesc,
@@ -7173,7 +7173,7 @@ const struct Item gItems[] =
     {
         .name = _("LuminousMoss"),
         .itemId = ITEM_LUMINOUS_MOSS,
-        .price = 2000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_LUMINOUS_MOSS,
         .holdEffectParam = 0,
         .description = sLuminousMossDesc,
@@ -7187,7 +7187,7 @@ const struct Item gItems[] =
     {
         .name = _("Snowball"),
         .itemId = ITEM_SNOWBALL,
-        .price = 2000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SNOWBALL,
         .holdEffectParam = 0,
         .description = sSnowballDesc,
@@ -7201,7 +7201,7 @@ const struct Item gItems[] =
     {
         .name = _("Weak. Policy"),
         .itemId = ITEM_WEAKNESS_POLICY,
-        .price = 1000,
+        .price = 4000,
         .holdEffect = HOLD_EFFECT_WEAKNESS_POLICY,
         .holdEffectParam = 0,
         .description = sWeaknessPolicyDesc,
@@ -8209,7 +8209,7 @@ const struct Item gItems[] =
     {
         .name = _("Electric Seed"),
         .itemId = ITEM_ELECTRIC_SEED,
-        .price = 4000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SEEDS,
         .description = sElectricSeedDesc,
         .pocket = POCKET_ITEMS,
@@ -8222,7 +8222,7 @@ const struct Item gItems[] =
     {
         .name = _("Grassy Seed"),
         .itemId = ITEM_GRASSY_SEED,
-        .price = 4000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SEEDS,
         .description = sGrassySeedDesc,
         .pocket = POCKET_ITEMS,
@@ -8235,7 +8235,7 @@ const struct Item gItems[] =
     {
         .name = _("Misty Seed"),
         .itemId = ITEM_MISTY_SEED,
-        .price = 4000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SEEDS,
         .description = sMistySeedDesc,
         .pocket = POCKET_ITEMS,
@@ -8248,7 +8248,7 @@ const struct Item gItems[] =
     {
         .name = _("Psychic Seed"),
         .itemId = ITEM_PSYCHIC_SEED,
-        .price = 4000,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_SEEDS,
         .description = sPsychicSeedDesc,
         .pocket = POCKET_ITEMS,

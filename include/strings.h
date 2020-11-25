@@ -489,6 +489,7 @@ extern const u8 gText_PkmnFriendlyBaseVar2Fell[];
 extern const u8 gText_PkmnFriendlyBaseVar2CantFall[];
 extern const u8 gText_PkmnAdoresBaseVar2Fell[];
 extern const u8 gText_PkmnAlreadyKnows[];
+extern const u8 gText_PkmnFriendshipNotHighEnough[];
 extern const u8 gText_PkmnCantLearnMove[];
 extern const u8 gText_PkmnNeedsToReplaceMove[];
 extern const u8 gText_PkmnLearnedMove3[];
@@ -3355,5 +3356,12 @@ extern const u8 gText_Refrigerator[];
 extern const u8 gText_ElectricFan[];
 extern const u8 gText_Lawnmower[];
 extern const u8 gText_Recall[];
+
+extern const u8 gText_GrassPledge[];
+extern const u8 gText_FirePledge[];
+extern const u8 gText_WaterPledge[];
+extern const u8 gText_FrenzyPlant[];
+extern const u8 gText_BlastBurn[];
+extern const u8 gText_HydroCannon[];
 
 #endif // GUARD_STRINGS_H

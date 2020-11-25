@@ -98,28 +98,3 @@ MoveTutor_Text_DoubleEdgeWhichMon: @ 82C7C98
 MoveTutor_Text_DoubleEdgeTaught: @ 82C7CC8
 	.string "I won't live for love anymore!\n"
 	.string "I'll become tough!$"
-
-MoveTutor_Text_ExplosionTeach: @ 82C7CFA
-	.string "I don't intend to be going nowhere\n"
-	.string "fast in the sticks like this forever.\p"
-	.string "You watch me, I'll get out to the city\n"
-	.string "and become a huge hit.\p"
-	.string "Seriously, I'm going to cause\n"
-	.string "a huge EXPLOSION of popularity!\p"
-	.string "If you overheard that, I'll happily\n"
-	.string "teach EXPLOSION to your Pokémon!$"
-
-MoveTutor_Text_ExplosionDeclined: @ 82C7E04
-	.string "Gaah! You're turning me down because\n"
-	.string "I live in the country?$"
-
-MoveTutor_Text_ExplosionWhichMon: @ 82C7E40
-	.string "Fine! An EXPLOSION it is!\n"
-	.string "Which Pokémon wants to blow up?$"
-
-MoveTutor_Text_ExplosionTaught: @ 82C7E7A
-	.string "For a long time, I've taught Pokémon\n"
-	.string "how to use EXPLOSION, but I've yet\l"
-	.string "to ignite my own EXPLOSION…\p"
-	.string "Maybe it's because deep down,\n"
-	.string "I would rather stay here…$"

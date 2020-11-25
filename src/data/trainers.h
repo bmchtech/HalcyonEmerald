@@ -8875,7 +8875,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Lucas2},
     },
 
-    [TRAINER_ARCHIE_1] =
+    [TRAINER_ARCHIE_SLATEPORT] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_AQUA_LEADER,
