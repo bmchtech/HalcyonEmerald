@@ -360,6 +360,33 @@ static bool8 AreStatsRaised(void)
     return (buffedStatsValue > 3);
 }
 
+// AI should switch if it's become setup fodder and has something better to switch to
+static bool8 AreAttackingStatsLowered(void)
+{
+    // Mon is physical attacker and its attack isn't below -1, don't switch
+    if (gBattleMons[gActiveBattler].statStages[MON_DATA_ATK - MON_DATA_MAX_HP] >= DEFAULT_STAT_STAGE - 1)
+    {
+        if (gBattleMons[gActiveBattler].attack > gBattleMons[gActiveBattler].spAttack)
+            return FALSE;
+    }
+
+    // Mon is special attacker and its special attack isn't below -1, don't switch
+    if (gBattleMons[gActiveBattler].statStages[MON_DATA_SPATK - MON_DATA_MAX_HP] >= DEFAULT_STAT_STAGE - 1)
+    {
+        if (gBattleMons[gActiveBattler].spAttack > gBattleMons[gActiveBattler].attack)
+            return FALSE;
+    }
+    
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 1))
+        return TRUE;
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 1))
+        return TRUE;
+
+    *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+    BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+    return TRUE;
+}
+
 static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
 {
     u8 battlerIn1, battlerIn2;
@@ -421,8 +448,15 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
         // Updated to handle hidden abilities
-        monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
-
+        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) < 2)
+        {
+            monAbility = gBaseStats[species].abilities[GetMonData(&party[i], MON_DATA_ABILITY_NUM)];
+        }
+        else
+        {
+            monAbility = gBaseStats[species].abilityHidden;
+        }
+        
         CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, monAbility);
         if (gMoveResultFlags & flags)
         {
@@ -523,6 +557,8 @@ static bool8 ShouldSwitch(void)
         return FALSE;
     if (AreStatsRaised())
         return FALSE;
+    if (AreAttackingStatsLowered())
+        return TRUE;
     if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 2)
         || FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 3))
         return TRUE;
