@@ -87,7 +87,7 @@ SootopolisCity_Gym_1F_EventScript_Juan:: @ 8224F44
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanRematch
-	goto_if_unset FLAG_RECEIVED_TM03, SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2
+	goto_if_unset FLAG_RECEIVED_TM03, SootopolisCity_Gym_1F_EventScript_GiveScald2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
 	release
@@ -107,7 +107,7 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1
 	setvar VAR_0x8008, 8
 	call Common_EventScript_SetGymTrainers
-	call SootopolisCity_Gym_1F_EventScript_GiveWaterPulse
+	call SootopolisCity_Gym_1F_EventScript_GiveScald
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -119,19 +119,19 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	release
 	end
 
-SootopolisCity_Gym_1F_EventScript_GiveWaterPulse:: @ 8224FD4
-	giveitem ITEM_TM03_WATER_PULSE
+SootopolisCity_Gym_1F_EventScript_GiveScald:: @ 8224FD4
+	giveitem ITEM_TM55_SCALD
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_BagIsFull
-	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_ExplainScald, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	return
 
-SootopolisCity_Gym_1F_EventScript_GiveWaterPulse2:: @ 8224FF7
-	giveitem ITEM_TM03_WATER_PULSE
+SootopolisCity_Gym_1F_EventScript_GiveScald2:: @ 8224FF7
+	giveitem ITEM_TM55_SCALD
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	msgbox SootopolisCity_Gym_1F_Text_ExplainWaterPulse, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Gym_1F_Text_ExplainScald, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM03
 	release
 	end
@@ -185,18 +185,18 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice: @ 8225093
 	.string "Yo! How's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
 	.string "Sootopolis's Gym Leader Juan is\n"
-	.string "a master of WATER-type Pokémon.\p"
+	.string "a master of Water-type Pokémon.\p"
 	.string "And, to get to Juan, an icy floor\n"
 	.string "will hamper your progress…\p"
-	.string "Listen, I'm sorry, but that's all the\n"
-	.string "advice that I have for you.\p"
+	.string "Listen, I'm sorry, but that's all I\n"
+	.string "have for you.\p"
 	.string "The rest of the way, you have to\n"
 	.string "go for it yourself!$"
 
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory: @ 82251AF
 	.string "Yow! You've beaten even Juan, who\n"
 	.string "was supposedly the best in all Hoenn!\p"
-	.string "Okay! Check out your Trainer CARD.\p"
+	.string "Okay! Check out your Trainer Card.\p"
 	.string "If you've gotten all the Badges, you're\n"
 	.string "set for the Pokémon League challenge!$"
 
@@ -252,11 +252,11 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis: @ 82255BE
 	.string "And, so that you never forget the\n"
 	.string "battle we shared, take this…$"
 
-SootopolisCity_Gym_1F_Text_ExplainWaterPulse: @ 82256C1
+SootopolisCity_Gym_1F_Text_ExplainScald: @ 82256C1
 	.string "The Technical Machine I handed you\n"
-	.string "contains Water Pulse.\p"
-	.string "In use, it will occasionally confuse\n"
-	.string "the target with ultrasonic waves.\p"
+	.string "contains Scald.\p"
+	.string "In use, it will occasionally burn\n"
+	.string "the target with boiling hot water.\p"
 	.string "… … … … … …$"
 
 SootopolisCity_Gym_1F_Text_RegisteredJuan: @ 822574D
