@@ -1691,8 +1691,9 @@ static s32 AI_GetAbility(u32 battlerId, bool32 guess)
         {
             // AI has no knowledge of opponent, so it guesses which ability.
             if (guess)
-                return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 1];
+                return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 2];
         }
+        // Doesn't account for HA
         else
         {
             return gBaseStats[gBattleMons[battlerId].species].abilities[0]; // It's definitely ability 1.
@@ -1810,7 +1811,7 @@ static void Cmd_if_type_effectiveness_on_ally(void)
 
     gMoveResultFlags = 0;
     gCurrentMove = AI_THINKING_STRUCT->moveConsidered;
-    effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, sBattler_AI, AI_USER_PARTNER);
+    effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, sBattler_AI, AI_USER_PARTNER); // Not sure this works
     switch (effectivenessMultiplier)
     {
     case UQ_4_12(0.0):

@@ -70,6 +70,7 @@ AI_CBM_CheckIfNegatesType:
 	if_equal ABILITY_STORM_DRAIN, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_DRY_SKIN, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_FLASH_FIRE, CheckIfFlashFireCancelsFire
+	if_equal ABILITY_SAP_SIPPER, CheckIfSapSipperCancelsGrass
 	if_equal ABILITY_WONDER_GUARD, CheckIfWonderGuardCancelsMove
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
 	if_equal ABILITY_SOUNDPROOF, CheckIfSoundproofCancelsMove
@@ -92,6 +93,11 @@ CheckIfWaterAbsorbCancelsWater: @ 82DBFCA
 CheckIfFlashFireCancelsFire: @ 82DBFD7
 	get_curr_move_type
 	if_equal TYPE_FIRE, Score_Minus12
+	goto AI_CheckBadMove_CheckEffect
+
+CheckIfSapSipperCancelsGrass:
+	get_curr_move_type
+	if_equal TYPE_GRASS, Score_Minus12
 	goto AI_CheckBadMove_CheckEffect
 
 CheckIfWonderGuardCancelsMove: @ 82DBFE4
@@ -1035,6 +1041,20 @@ AI_WeakDmg:
 	if_equal MOVE_POWER_BEST, Score_Minus8
 	score -10
 	end
+
+AI_ChoiceLocked:
+	if_holds_item AI_USER, ITEM_CHOICE_BAND, AI_ChoiceDamage
+	if_holds_item AI_USER, ITEM_CHOICE_SPECS, AI_ChoiceDamage
+	if_holds_item AI_USER, ITEM_CHOICE_SCARF, AI_ChoiceDamage
+	end
+
+@ If move doesn't do meaningful damage, switch out
+AI_ChoiceDamage:
+	get_considered_move_power
+	if_equal 0, Score_Minus10
+	get_curr_dmg_hp_percent
+	if_less_than 60, Score_Minus10
+	end
 	
 AI_DiscourageMagicGuard:
 	if_no_ability AI_TARGET, ABILITY_MAGIC_GUARD, AI_DiscourageMagicGuardEnd
@@ -1054,6 +1074,7 @@ AI_CheckViability:
 	call AI_CheckIfAlreadyDead
 	call AI_CV_DmgMove
 	call AI_WeakDmg
+	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
@@ -3250,6 +3271,8 @@ AI_CV_Recycle_ItemsToEncourage:
     .byte ITEM_CHESTO_BERRY
     .byte ITEM_LUM_BERRY
     .byte ITEM_STARF_BERRY
+	.byte ITEM_BERRY_JUICE
+	.byte ITEM_FIGY_BERRY
     .byte -1
 
 AI_CV_Revenge:
