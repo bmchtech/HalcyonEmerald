@@ -3020,6 +3020,11 @@ static const u8 sDianciteDesc[] = _(
     "Diancie to Mega\n"
     "Evolve in battle.");
 
+static const u8 sMiloticiteDesc[] = _(
+    "This stone enables\n"
+    "Milotic to Mega\n"
+    "Evolve in battle.");
+
 static const u8 sCameruptiteDesc[] = _(
     "This stone enables\n"
     "Camerupt to Mega\n"

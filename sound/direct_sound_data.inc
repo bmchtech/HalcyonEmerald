@@ -3811,6 +3811,10 @@ Cry_Diancie_Mega::
 	.incbin "sound/direct_sound_samples/cries/cry_not_mega_diancie.bin"
 
 	.align 2
+Cry_Milotic_Mega::
+	.incbin "sound/direct_sound_samples/cries/cry_not_mega_milotic.bin"
+
+	.align 2
 Cry_Rayquaza_Mega::
 	.incbin "sound/direct_sound_samples/cries/cry_not_mega_rayquaza.bin"
 

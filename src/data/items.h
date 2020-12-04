@@ -8115,6 +8115,19 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
+    [ITEM_MILOTICITE] =
+    {
+        .name = _("Miloticite"),
+        .itemId = ITEM_MILOTICITE,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMiloticiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+    },
+
     [ITEM_CAMERUPTITE] =
     {
         .name = _("Cameruptite"),

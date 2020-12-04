@@ -21665,6 +21665,31 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
+    [SPECIES_MILOTIC_MEGA] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 70,
+        .baseDefense   = 109,
+        .baseSpeed     = 81,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 155,
+        .type1 = TYPE_WATER,
+        .type2 = TYPE_FAIRY,
+        .catchRate = 60,
+        .expYield = 229,
+        .evYield_SpDefense = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 70,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroup1 = EGG_GROUP_WATER_1,
+        .eggGroup2 = EGG_GROUP_DRAGON,
+        .abilities = {ABILITY_PRISM_SCALES, ABILITY_PRISM_SCALES},
+        .abilityHidden = ABILITY_PRISM_SCALES,
+        .bodyColor = BODY_COLOR_PINK,
+        .noFlip = FALSE,
+    },
+
     [SPECIES_RAYQUAZA_MEGA] =
     {
         .baseHP        = 105,

@@ -1423,6 +1423,9 @@ const u32 gItemIconPalette_Glalitite[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIcon_Diancite[] = INCBIN_U32("graphics/items/icons/diancite.4bpp.lz");
 const u32 gItemIconPalette_Diancite[] = INCBIN_U32("graphics/items/icon_palettes/diancite.gbapal.lz");
 
+const u32 gItemIcon_Miloticite[] = INCBIN_U32("graphics/items/icons/miloticite.4bpp.lz");
+const u32 gItemIconPalette_Miloticite[] = INCBIN_U32("graphics/items/icon_palettes/miloticite.gbapal.lz");
+
 const u32 gItemIcon_Cameruptite[] = INCBIN_U32("graphics/items/icons/cameruptite.4bpp.lz");
 const u32 gItemIconPalette_Cameruptite[] = INCBIN_U32("graphics/items/icon_palettes/cameruptite.gbapal.lz");
 
