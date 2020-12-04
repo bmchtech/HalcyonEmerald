@@ -43,7 +43,8 @@
 #define SPREAD_31_IV_ATK_SPEED_NAIVE        39
 #define SPREAD_31_IV_HP_ATK_MIXED           40
 #define SPREAD_31_IV_HP_SPEED_TIMID         41
-#define SPREAD_31_IV_SPATK_SPEED_HASTY      42
+#define SPREAD_31_IV_SPATK_SPEED_HASTY      42 // Mixed attacker, special focus
 #define SPREAD_31_IV_HP_DEF_SPDEF_SASSY     43 // Bulky Trick Room Setter
+#define SPREAD_31_IV_DEF_SPATK              44 // Offensive Blissey
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

@@ -429,7 +429,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
-        u8 monAbility;
+        u16 monAbility;
 
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
