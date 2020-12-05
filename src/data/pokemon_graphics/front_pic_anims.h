@@ -8206,6 +8206,18 @@ static const union AnimCmd sAnim_DIANCIE_MEGA_1[] =
 	ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_MILOTIC_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+/*     ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15), */
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_RATTATA_ALOLAN_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -13008,6 +13020,11 @@ static const union AnimCmd *const sAnims_DIANCIE_MEGA[] ={
 	sAnim_DIANCIE_MEGA_1,
 };
 
+static const union AnimCmd *const sAnims_MILOTIC_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MILOTIC_MEGA_1,
+};
+
 static const union AnimCmd *const sAnims_RATTATA_ALOLAN[] ={
     sAnim_GeneralFrame0,
     sAnim_RATTATA_ALOLAN_1,
@@ -14068,6 +14085,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(GALLADE_MEGA),
     ANIM_CMD(AUDINO_MEGA),
     ANIM_CMD(DIANCIE_MEGA),
+    ANIM_CMD(MILOTIC_MEGA),
     ANIM_CMD(RAYQUAZA_MEGA),
     ANIM_CMD(KYOGRE_PRIMAL),
     ANIM_CMD(GROUDON_PRIMAL),

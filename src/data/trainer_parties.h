@@ -16690,7 +16690,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     {
     .lvl = 2,
     .species = SPECIES_ZAPDOS,
-    .heldItem = ITEM_WHITE_HERB,
+    .heldItem = ITEM_LIFE_ORB,
     .ability = 2, // Static
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_THUNDER, MOVE_HURRICANE, MOVE_WEATHER_BALL, MOVE_ROOST
@@ -16698,7 +16698,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     {
     .lvl = 3,
     .species = SPECIES_MILOTIC,
-    //.heldItem = ITEM_MILOTICITE,
+    .heldItem = ITEM_MILOTICITE,
     .ability = 1, // Competitive -> Prism Scales
     .spread = SPREAD_31_IV_HP_DEF_BOLD,
     .moves = MOVE_SCALD, MOVE_MOONBLAST, MOVE_CALM_MIND, MOVE_RECOVER

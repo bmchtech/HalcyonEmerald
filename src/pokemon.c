@@ -1171,6 +1171,7 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     [SPECIES_GALLADE_MEGA - 1] = NATIONAL_DEX_GALLADE,
     [SPECIES_AUDINO_MEGA - 1] = NATIONAL_DEX_AUDINO,
     [SPECIES_DIANCIE_MEGA - 1] = NATIONAL_DEX_DIANCIE,
+    [SPECIES_MILOTIC_MEGA - 1] = NATIONAL_DEX_MILOTIC,
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA - 1] = NATIONAL_DEX_RAYQUAZA,
     [SPECIES_KYOGRE_PRIMAL - 1] = NATIONAL_DEX_KYOGRE,
@@ -5221,6 +5222,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (dataUnsigned == 0)
                                 dataUnsigned = 1;
                             break;
+                        case ITEM6_HEAL_QUARTER:
+                            dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 4;
+                            if (dataUnsigned == 0)
+                            dataUnsigned = 1;
+                            break;
                         case ITEM6_HEAL_LVL_UP:
                             dataUnsigned = gBattleScripting.levelUpHP;
                             break;
@@ -6743,10 +6749,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_PKMN_TRAINER_3:
-            if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_VS_RIVAL;
-            if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
-                return MUS_VS_TRAINER;
+            //if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
+                //return MUS_RG_VS_CHAMPION;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;

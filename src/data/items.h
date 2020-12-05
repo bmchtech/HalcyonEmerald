@@ -2068,8 +2068,8 @@ const struct Item gItems[] =
         .name = _("Sitrus Berry"),
         .itemId = ITEM_SITRUS_BERRY,
         .price = 20,
-        .holdEffect = HOLD_EFFECT_RESTORE_HP,
-        .holdEffectParam = 30,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 25, //restores 25% of the max HP
         .description = sSitrusBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = 1,
@@ -8109,6 +8109,19 @@ const struct Item gItems[] =
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sDianciteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = 4,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
+    },
+
+    [ITEM_MILOTICITE] =
+    {
+        .name = _("Miloticite"),
+        .itemId = ITEM_MILOTICITE,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMiloticiteDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

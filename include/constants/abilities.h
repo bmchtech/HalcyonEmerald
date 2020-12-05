@@ -298,10 +298,10 @@
 #define ABILITY_WHITEOUT        (ABILITIES_COUNT_LATEST_GEN + 1) // Boosts the power of Ice attacks in Hail by 50%
 #define ABILITY_PYROMANCY       (ABILITIES_COUNT_LATEST_GEN + 2) // Fire attacks are 5x more likely to inflict a burn
 #define ABILITY_KEEN_EDGE       (ABILITIES_COUNT_LATEST_GEN + 3) // Cutting moves do 30% more damage
+#define ABILITY_PRISM_SCALES    (ABILITIES_COUNT_LATEST_GEN + 4) // Reduces special damage taken by 30%
 
-#define ABILITIES_COUNT_CUSTOM (ABILITIES_COUNT_LATEST_GEN + 4)
+#define ABILITIES_COUNT_CUSTOM (ABILITY_PRISM_SCALES + 1)
 
 #define ABILITIES_COUNT ABILITIES_COUNT_CUSTOM
-
 
 #endif  // GUARD_CONSTANTS_ABILITIES_H

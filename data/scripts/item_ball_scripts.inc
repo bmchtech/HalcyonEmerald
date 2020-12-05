@@ -606,8 +606,8 @@ VictoryRoad_1F_EventScript_ItemMaxElixir:: @ 8291483
 	finditem ITEM_MAX_ELIXIR
 	end
 
-VictoryRoad_1F_EventScript_ItemPPUp:: @ 8291490
-	finditem ITEM_PP_UP
+VictoryRoad_1F_EventScript_ItemMetagrossite:: @ 8291490
+	finditem ITEM_METAGROSSITE
 	end
 
 VictoryRoad_B1F_EventScript_ItemTM29:: @ 829149D

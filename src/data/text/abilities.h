@@ -258,6 +258,7 @@ static const u8 sChloroplastDescription[] = _("Battles as if in sunlight.");
 static const u8 sWhiteoutDescription[] = _("Boosts Ice moves in Hail.");
 static const u8 sPyromancyDescription[] = _("Fire moves burn more often.");
 static const u8 sKeenEdgeDescription[] = _("Boosts slashing moves.");
+static const u8 sPrismScalesDescription[] = _("Weakens Special Attacks.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -533,6 +534,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_WHITEOUT] = _("Whiteout"),
     [ABILITY_PYROMANCY] = _("Pyromancy"),
     [ABILITY_KEEN_EDGE] = _("Keen Edge"),
+    [ABILITY_PRISM_SCALES] = _("Prism Scales"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -809,4 +811,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_WHITEOUT] = sWhiteoutDescription,
     [ABILITY_PYROMANCY] = sPyromancyDescription,
     [ABILITY_KEEN_EDGE] = sKeenEdgeDescription,
+    [ABILITY_PRISM_SCALES] = sPrismScalesDescription,
 };

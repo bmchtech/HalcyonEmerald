@@ -858,6 +858,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_GALLADE_MEGA] = _("Gallade"),
     [SPECIES_AUDINO_MEGA] = _("Audino"),
     [SPECIES_DIANCIE_MEGA] = _("Diancie"),
+    [SPECIES_MILOTIC_MEGA] = _("Milotic"),
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA] = _("Rayquaza"),
     [SPECIES_KYOGRE_PRIMAL] = _("Kyogre"),

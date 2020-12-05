@@ -769,8 +769,8 @@ static const u8 sLumBerryDesc[] = _(
 
 static const u8 sSitrusBerryDesc[] = _(
     "A hold item that\n"
-    "restores 30 HP in\n"
-    "battle.");
+    "restores up to 1/4\n"
+    "of max HP in battle.");
 
 static const u8 sFigyBerryDesc[] = _(
     "A hold item that\n"
@@ -3018,6 +3018,11 @@ static const u8 sGlalititeDesc[] = _(
 static const u8 sDianciteDesc[] = _(
     "This stone enables\n"
     "Diancie to Mega\n"
+    "Evolve in battle.");
+
+static const u8 sMiloticiteDesc[] = _(
+    "This stone enables\n"
+    "Milotic to Mega\n"
     "Evolve in battle.");
 
 static const u8 sCameruptiteDesc[] = _(

@@ -7293,6 +7293,14 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             MulModifier(&finalModifier, UQ_4_12(0.75));
         break;
+    case ABILITY_ICE_SCALES:
+        if (IS_MOVE_SPECIAL(move))
+            MulModifier(&finalModifier, UQ_4_12(0.50));
+        break;
+    case ABILITY_PRISM_SCALES:
+        if (IS_MOVE_SPECIAL(move))
+            MulModifier(&finalModifier, UQ_4_12(0.70));
+        break;
     }
 
     // target's ally's abilities

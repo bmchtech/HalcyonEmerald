@@ -695,7 +695,13 @@
 	.byte \param0
 	.4byte \param1
 	.endm
-	
+
+	.macro if_effect_chance param0:req, param1:req
+	.byte 0x7B
+	.byte \param0
+	.4byte \param1
+	.endm
+
 @ useful script macros
 	.macro if_has_physical_move battler:req, ptr:req
 	if_has_move_with_split \battler, SPLIT_PHYSICAL, \ptr
