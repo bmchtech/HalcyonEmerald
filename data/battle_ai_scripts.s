@@ -1687,9 +1687,9 @@ AI_CV_DefenseDown3:
 AI_CV_DefenseDown_End:
 	end
 
-AI_CV_SpeedDownFromChance: @ 82DCE6B
-	if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
-	if_effect_chance 100, AI_CV_SpeedDown
+AI_CV_SpeedDownFromChance:
+	@if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
+	@if_effect_chance 100, AI_CV_SpeedDown
 	end
 
 AI_CV_SpeedDown: @ 82DCE81
@@ -3778,43 +3778,38 @@ AI_DoubleBattle:
 	get_curr_move_type
 	if_equal TYPE_ELECTRIC, AI_DoubleBattleElectricMove
 	if_equal TYPE_FIRE, AI_DoubleBattleFireMove
-	if_equal TYPE_GROUND, AI_DoubleBattleGroundMove
-	if_equal TYPE_WATER, AI_DoubleBattleWaterMove
-	if_move MOVE_PETAL_BLIZZARD, AI_DoubleBattleAllHittingGrassMove
-	if_move MOVE_SLUDGE_WAVE, AI_DoubleBattleAllHittingPoisonMove
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingMove
 	get_ability AI_USER
 	if_not_equal ABILITY_GUTS, AI_DoubleBattleCheckUserStatus
 	if_has_move AI_USER_PARTNER, MOVE_HELPING_HAND, AI_DoubleBattlePartnerHasHelpingHand
 	end
 
 AI_DoubleBattleFireMove:
-	if_move MOVE_LAVA_PLUME, AI_DoubleBattleAllHittingFireMove
-	if_move MOVE_SEARING_SHOT, AI_DoubleBattleAllHittingFireMove
-	if_move MOVE_MIND_BLOWN, AI_DoubleBattleAllHittingFireMove
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingFireMove
 	if_flash_fired AI_USER, AI_DoubleBattleFireMove2
 	end
 
 AI_DoubleBattleFireMove2:
 	goto Score_Plus1
 
-AI_DoubleBattleGroundMove:
-	if_move MOVE_EARTHQUAKE, AI_DoubleBattleAllHittingGroundMove
-	if_move MOVE_MAGNITUDE, AI_DoubleBattleAllHittingGroundMove
-	if_move MOVE_BULLDOZE, AI_DoubleBattleAllHittingGroundMove
-	end
-
-AI_DoubleBattleWaterMove:
-	if_move MOVE_SURF, AI_DoubleBattleAllHittingWaterMove
-	if_move MOVE_SPARKLING_ARIA, AI_DoubleBattleAllHittingWaterMove
-	end
-
 AI_DoubleBattleElectricMove:
-	if_move MOVE_DISCHARGE, AI_DoubleBattleAllHittingElectricMove
-	if_move MOVE_PARABOLIC_CHARGE, AI_DoubleBattleAllHittingElectricMove
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingElectricMove
 	if_no_ability AI_TARGET_PARTNER, ABILITY_LIGHTNING_ROD, AI_DoubleBattleElectricMoveEnd
 	score -2
 	if_no_type AI_TARGET_PARTNER, TYPE_GROUND, AI_DoubleBattleElectricMoveEnd
 	score -8
+	end
+
+@ Electric and Fire moves have other cases to consider so aren't handled here
+AI_DoubleBattleAllHittingMove:
+	get_curr_move_type
+	if_equal TYPE_WATER, AI_DoubleBattleAllHittingWaterMove
+	if_equal TYPE_GRASS, AI_DoubleBattleAllHittingGrassMove
+	if_equal TYPE_GROUND, AI_DoubleBattleAllHittingGroundMove
+	if_equal TYPE_POISON, AI_DoubleBattleAllHittingPoisonMove
 	end
 
 AI_DoubleBattleElectricMoveEnd:
@@ -3838,58 +3833,38 @@ AI_DoubleBattleCheckUserStatus2:
 
 AI_DoubleBattleAllHittingGroundMove:
 	if_ability AI_USER_PARTNER, ABILITY_LEVITATE, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_FLYING, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_FIRE, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ELECTRIC, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_POISON, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ROCK, Score_Minus10
-	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
-	goto Score_Minus3
+	goto AI_EffectivenessOnAlly
 
 AI_DoubleBattleAllHittingWaterMove:
 	if_ability AI_USER_PARTNER, ABILITY_STORM_DRAIN, Score_Plus5
 	if_ability AI_USER_PARTNER, ABILITY_WATER_ABSORB, Score_Plus2
 	if_ability AI_USER_PARTNER, ABILITY_DRY_SKIN, Score_Plus2
 	if_holds_item AI_USER_PARTNER, ITEM_ABSORB_BULB, Score_Plus5
-	if_type AI_USER_PARTNER, TYPE_FIRE, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_GROUND, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ROCK, Score_Minus10
-	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
-	goto Score_Minus3
+	goto AI_EffectivenessOnAlly
 
 AI_DoubleBattleAllHittingElectricMove:
 	if_ability AI_USER_PARTNER, ABILITY_LIGHTNING_ROD, Score_Plus5
 	if_ability AI_USER_PARTNER, ABILITY_VOLT_ABSORB, Score_Plus2
 	if_ability AI_USER_PARTNER, ABILITY_MOTOR_DRIVE, Score_Plus5
 	if_holds_item AI_USER_PARTNER, ITEM_CELL_BATTERY, Score_Plus5
-	if_type AI_USER_PARTNER, TYPE_GROUND, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_FLYING, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_WATER, Score_Minus10
-	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
-	goto Score_Minus3
+	goto AI_EffectivenessOnAlly
 
 AI_DoubleBattleAllHittingGrassMove:
 	if_ability AI_USER_PARTNER, ABILITY_SAP_SIPPER, Score_Plus5
-	if_type AI_USER_PARTNER, TYPE_ROCK, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_WATER, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_GROUND, Score_Minus10
-	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
-	goto Score_Minus3
+	goto AI_EffectivenessOnAlly
 
 AI_DoubleBattleAllHittingFireMove:
 	if_ability AI_USER_PARTNER, ABILITY_FLASH_FIRE, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_STEEL, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_GRASS, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ICE, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_BUG, Score_Minus10
-	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
-	goto Score_Minus3
+	goto AI_EffectivenessOnAlly
 
 AI_DoubleBattleAllHittingPoisonMove:
-	if_type AI_USER_PARTNER, TYPE_STEEL, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_GRASS, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_FAIRY, Score_Minus10
+	goto AI_EffectivenessOnAlly
+
+AI_EffectivenessOnAlly:
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x2,  Score_Minus10
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x4, Score_Minus10
 	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0,  Score_Plus2
 	goto Score_Minus3
 
 AI_DoubleBattleSkillSwap:

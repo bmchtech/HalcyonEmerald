@@ -698,7 +698,7 @@
 
 	.macro if_effect_chance param0:req, param1:req
 	.byte 0x7B
-	.2byte \param0: secondary effect chance to check for
+	.byte \param0: secondary effect chance to check for
 	.4byte \param1: script to jump to
 	.endm
 	
