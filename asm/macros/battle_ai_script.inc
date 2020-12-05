@@ -695,6 +695,12 @@
 	.byte \param0
 	.4byte \param1
 	.endm
+
+	.macro if_effect_chance param0:req, param1:req
+	.byte 0x7B
+	.2byte \param0: secondary effect chance to check for
+	.4byte \param1: script to jump to
+	.endm
 	
 @ useful script macros
 	.macro if_has_physical_move battler:req, ptr:req

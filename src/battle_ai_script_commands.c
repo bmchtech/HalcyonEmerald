@@ -180,6 +180,7 @@ static void Cmd_compare_speeds(void);
 static void Cmd_is_wakeup_turn(void);
 static void Cmd_if_has_move_with_accuracy_lt(void);
 static void Cmd_if_type_effectiveness_on_ally(void);
+static void Cmd_if_effect_chance(void);
 
 // ewram
 EWRAM_DATA const u8 *gAIScriptPtr = NULL;
@@ -313,6 +314,7 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_is_wakeup_turn,                             // 0x78
     Cmd_if_has_move_with_accuracy_lt,               // 0x79
     Cmd_if_type_effectiveness_on_ally,              // 0x7A
+    Cmd_if_effect_chance,                           // 0x7B
 };
 
 static const u16 sDiscouragedPowerfulMoveEffects[] =
@@ -2908,4 +2910,12 @@ static void Cmd_if_has_move_with_accuracy_lt(void)
         gAIScriptPtr += 7;
     else
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 3);
+}
+
+static void Cmd_if_effect_chance(void)
+{
+    if (gBattleMoves[AI_THINKING_STRUCT->moveConsidered].secondaryEffectChance == T1_READ_16(gAIScriptPtr + 1))
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 3);
+    else
+        gAIScriptPtr += 7;
 }

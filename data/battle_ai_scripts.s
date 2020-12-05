@@ -1688,9 +1688,8 @@ AI_CV_DefenseDown_End:
 	end
 
 AI_CV_SpeedDownFromChance: @ 82DCE6B
-	if_move MOVE_ICY_WIND, AI_CV_SpeedDown
-	if_move MOVE_ROCK_TOMB, AI_CV_SpeedDown
-	if_move MOVE_MUD_SHOT, AI_CV_SpeedDown
+	if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
+	if_effect_chance 100, AI_CV_SpeedDown
 	end
 
 AI_CV_SpeedDown: @ 82DCE81
