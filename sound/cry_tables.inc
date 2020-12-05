@@ -858,6 +858,7 @@ gCryTable:: @ 869DCF4
 	cry_not Cry_Gallade_Mega
 	cry_not Cry_Audino_Mega
 	cry_not Cry_Diancie_Mega
+	cry_not Cry_Milotic_Mega
     @ Special Mega + Primals
 	cry_not Cry_Rayquaza_Mega
 	cry_not Cry_Kyogre_Primal
@@ -1984,6 +1985,7 @@ gCryTable2:: @ 869EF24
 	cry2_not Cry_Gallade_Mega
 	cry2_not Cry_Audino_Mega
 	cry2_not Cry_Diancie_Mega
+	cry2_not Cry_Milotic_Mega
     @ Special Mega + Primals
 	cry2_not Cry_Rayquaza_Mega
 	cry2_not Cry_Kyogre_Primal
