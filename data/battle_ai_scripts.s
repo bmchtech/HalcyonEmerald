@@ -1688,8 +1688,8 @@ AI_CV_DefenseDown_End:
 	end
 
 AI_CV_SpeedDownFromChance:
-	@if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
-	@if_effect_chance 100, AI_CV_SpeedDown
+	if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
+	if_effect_chance 100, AI_CV_SpeedDown
 	end
 
 AI_CV_SpeedDown: @ 82DCE81

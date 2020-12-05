@@ -314,7 +314,7 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_is_wakeup_turn,                             // 0x78
     Cmd_if_has_move_with_accuracy_lt,               // 0x79
     Cmd_if_type_effectiveness_on_ally,              // 0x7A
-    Cmd_if_effect_chance                            // 0x7B
+    Cmd_if_effect_chance,                           // 0x7B
 };
 
 static const u16 sDiscouragedPowerfulMoveEffects[] =
