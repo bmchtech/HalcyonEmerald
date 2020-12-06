@@ -1855,6 +1855,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     s32 i, j = 0;
     u8 monsCount;
     u8 level;
+    u8 friendship;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1975,6 +1976,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 {
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                }
+                // Set friendship value if trainer mon knows Return
+                if (MonKnowsMove(&party[i], MOVE_RETURN))
+                {
+                    friendship = MAX_FRIENDSHIP;
+                    SetMonData(&party[i], MON_DATA_FRIENDSHIP, &friendship);
                 }
                 break;
             }
