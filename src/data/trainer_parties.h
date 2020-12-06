@@ -15873,7 +15873,7 @@ static const struct TrainerMonItemCustomMoves sParty_Samuel[] = {
     .lvl = 0,
     .species = SPECIES_GENGAR,
     .heldItem = ITEM_GENGARITE,
-    .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_SHADOW_BALL, MOVE_SLUDGE_WAVE, MOVE_AURA_SPHERE, MOVE_ENERGY_BALL
     },
     {

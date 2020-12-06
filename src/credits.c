@@ -212,7 +212,7 @@ static const u8 sTheEnd_LetterDMap[] =
 };
 
 static const u8 gCreditsText_EmptyString[] = _("");
-static const u8 gCreditsText_PkmnEmeraldVersion[] = _("Pokémon EMERALD VERSION");
+static const u8 gCreditsText_PkmnEmeraldVersion[] = _("Pokémon Inclement Emerald");
 static const u8 gCreditsText_Credits[] = _("Credits");
 static const u8 gCreditsText_ExecutiveDirector[] = _("Executive Director");
 static const u8 gCreditsText_Director[] = _("Director");

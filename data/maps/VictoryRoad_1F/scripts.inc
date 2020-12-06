@@ -187,7 +187,7 @@ VictoryRoad_1F_Text_AlbertPostBattle: @ 82362A4
 
 VictoryRoad_1F_Text_HopeIntro: @ 82362EE
 	.string "This seemingly infinite and harsh road\n"
-	.string "lives up to its name of VICTORY.$"
+	.string "lives up to its name of Victory.$"
 
 VictoryRoad_1F_Text_HopeDefeat: @ 8236336
 	.string "Your battle style is fantastic…$"
