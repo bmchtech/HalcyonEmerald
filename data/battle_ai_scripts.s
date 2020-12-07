@@ -1030,13 +1030,14 @@ AI_CV_DmgMove:
 	end
 	
 @ If move deals shit damage, and there are other mons to switch in, use support moves instead
+@ If strongest move deals shit damage, greatly lower score so that AI switches instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
+	if_effect EFFECT_LEVEL_DAMAGE, AI_Ret
 	if_has_no_move_with_split AI_USER, SPLIT_STATUS, AI_Ret
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
-	@if_more_than 20, Score_Minus1
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_BEST, Score_Minus8
 	score -10
@@ -3595,13 +3596,12 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
 	.2byte EFFECT_AURORA_VEIL
     .2byte 0xFFFF
 
-
 AI_PreferStrongestMove:
 	if_target_is_ally AI_Ret
 	get_how_powerful_move_is
 	if_not_equal MOVE_POWER_BEST, AI_PreferStrongestMove_End
 	@if_random_less_than 100, AI_PreferStrongestMove_End
-	score +3
+	score +2
 AI_PreferStrongestMove_End:
 	end
 
@@ -3838,7 +3838,7 @@ AI_DoubleBattleCheckUserStatus2:
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_DISCOURAGED, Score_Minus5
 	score +1
-	if_equal MOVE_POWER_BEST, Score_Plus5
+	if_equal MOVE_POWER_BEST, Score_Plus2
 	end
 
 AI_DoubleBattleAllHittingGroundMove:
