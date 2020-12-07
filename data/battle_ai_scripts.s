@@ -330,7 +330,7 @@ AI_CBM_HealBell_End:
 AI_CBM_Taunt:
 	if_target_taunted Score_Minus10
 	end
-	
+
 AI_CBM_Protect:
 	get_protect_count AI_USER
 	if_more_than 2, Score_Minus10
@@ -2199,6 +2199,8 @@ AI_CV_VitalThrow_End:
 	end
 
 AI_CV_Substitute:
+	goto AI_IsHealingAbilityActive
+AI_CV_SubstituteStart:
 	if_not_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_Substitute1
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_SubstitutePlus3Continue
 	if_status AI_TARGET, STATUS1_BURN | STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
@@ -2244,6 +2246,26 @@ AI_CV_Substitute8:
 	if_random_less_than 100, AI_CV_Substitute_End
 	score +1
 AI_CV_Substitute_End:
+	end
+
+@ Check for abilities that let the user spam Substitute under certain conditions
+AI_IsHealingAbilityActive:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_HealPoison
+	if_ability AI_USER, ABILITY_ICE_BODY, AI_HealHail
+	if_ability AI_USER, ABILITY_RAIN_DISH, AI_HealRain
+	if_ability AI_USER, ABILITY_DRY_SKIN, AI_HealRain
+	goto AI_CV_SubstituteStart
+
+AI_HealPoison:
+	if_status AI_USER, STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
+	end
+
+AI_HealHail:
+	if_equal AI_WEATHER_HAIL, AI_CV_SubstitutePlus1Continue
+	end
+	
+AI_HealRain:
+	if_equal AI_WEATHER_RAIN, AI_CV_SubstitutePlus1Continue
 	end
 
 AI_CV_Recharge:
@@ -2586,7 +2608,7 @@ AI_CV_Curse_End:
 
 AI_CV_Protect:
 	get_protect_count AI_USER
-	if_more_than 1, AI_CV_Protect_ScoreDown2
+	if_more_than 1, AI_CV_Protect_ScoreDown3
 	if_status  AI_USER, STATUS1_PSN_ANY | STATUS1_BURN, AI_CV_ProtectUserStatused
 	if_status2 AI_USER, STATUS2_CURSED | STATUS2_INFATUATION, AI_CV_ProtectUserStatused
 	if_status3 AI_USER, STATUS3_PERISH_SONG | STATUS3_LEECHSEED | STATUS3_YAWN, AI_CV_ProtectUserStatused
@@ -2612,6 +2634,7 @@ AI_CV_Protect4:
 	score -1
 	goto AI_CV_Protect_End
 AI_CV_ProtectUserStatused:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_CV_Protect_ScoreUp2
 	score -1
 	if_double_battle AI_CV_Protect4
 	score -1
@@ -2620,8 +2643,8 @@ AI_CV_Protect3:
 	get_last_used_bank_move AI_TARGET
 	get_move_effect_from_result
 	if_not_equal EFFECT_LOCK_ON, AI_CV_Protect_End
-AI_CV_Protect_ScoreDown2:
-	score -2
+AI_CV_Protect_ScoreDown3:
+	score -3
 AI_CV_Protect_End:
 	end
 
