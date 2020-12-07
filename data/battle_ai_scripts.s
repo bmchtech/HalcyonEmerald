@@ -159,8 +159,8 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_RECHARGE, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_LEECH_SEED, AI_CBM_LeechSeed
 	if_effect EFFECT_DISABLE, AI_CBM_Disable
-	if_effect EFFECT_LEVEL_DAMAGE, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_PSYWAVE, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LEVEL_DAMAGE, AI_CV_Hit
+	if_effect EFFECT_PSYWAVE, AI_CV_Hit
 	if_effect EFFECT_COUNTER, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_ENCORE, AI_CBM_Encore
 	if_effect EFFECT_SNORE, AI_CBM_DamageDuringSleep
@@ -177,13 +177,13 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SWAGGER, AI_CBM_Confuse
 	if_effect EFFECT_ATTRACT, AI_CBM_Attract
 	if_effect EFFECT_CAPTIVATE, AI_CBM_Captivate
-	if_effect EFFECT_RETURN, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_RETURN, AI_CV_Hit
 	if_effect EFFECT_PRESENT, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_FRUSTRATION, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_FRUSTRATION, AI_CV_Hit
 	if_effect EFFECT_SAFEGUARD, AI_CBM_Safeguard
 	if_effect EFFECT_MAGNITUDE, AI_CBM_Magnitude
 	if_effect EFFECT_BATON_PASS, AI_CBM_BatonPass
-	if_effect EFFECT_SONICBOOM, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_SONICBOOM, AI_CV_Hit
 	if_effect EFFECT_RAIN_DANCE, AI_CBM_RainDance
 	if_effect EFFECT_SUNNY_DAY, AI_CBM_SunnyDay
 	if_effect EFFECT_BELLY_DRUM, AI_CBM_BellyDrum
@@ -212,7 +212,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_ENDEAVOR, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_IMPRISON, AI_CBM_Imprison
 	if_effect EFFECT_REFRESH, AI_CBM_Refresh
-	if_effect EFFECT_LOW_KICK, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LOW_KICK, AI_CV_Hit
 	if_effect EFFECT_MUD_SPORT, AI_CBM_MudSport
 	if_effect EFFECT_TICKLE, AI_CBM_Tickle
 	if_effect EFFECT_COSMIC_POWER, AI_CBM_CosmicPower
