@@ -1050,10 +1050,20 @@ AI_ChoiceLocked:
 
 @ If move doesn't do meaningful damage, switch out
 AI_ChoiceDamage:
-	get_considered_move_power
-	if_equal 0, Score_Minus10
 	get_curr_dmg_hp_percent
-	if_less_than 60, Score_Minus10
+	if_less_than 60, AI_ChoiceUturn
+	end
+
+AI_ChoiceUturn:
+	if_effect EFFECT_HIT_ESCAPE, AI_ChoiceUturnCheckSwitchIns
+	end
+
+@ Don't lock into U turn etc if there's nothing else to bring in
+AI_ChoiceUturnCheckSwitchIns:
+	count_usable_party_mons AI_USER
+	if_equal 0, AI_ChoiceEnd
+	score +3
+AI_ChoiceEnd:
 	end
 	
 AI_DiscourageMagicGuard:
