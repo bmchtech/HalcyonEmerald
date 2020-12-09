@@ -1350,7 +1350,7 @@ AI_CV_Sleep: @ 82DCA92
 	goto AI_CV_Sleep1
 
 AI_CV_SleepEncourageSlpDamage: @ 82DCAA5
-	score +2
+	score +3
 	if_random_less_than 128, AI_CV_Sleep1
 	score +1
 
@@ -1481,8 +1481,26 @@ AI_CV_MirrorMove_EncouragedMovesToMirror: @ 82DCB6C
     .2byte MOVE_SKILL_SWAP
     .2byte 0xFFFF
 
-AI_IsTargetAsleep:
-	if_status AI_TARGET, STATUS1_SLEEP, Score_Plus5
+AI_SetUpVsSleep:
+	if_not_status AI_TARGET, STATUS1_SLEEP, AI_Ret
+	if_stat_level_more_than AI_USER, STAT_ATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_DEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	score +3
+	end
+
+AI_SetUpVsSleep1:
+	if_stat_level_more_than AI_USER, STAT_ATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_DEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	if_random_less_than 128, AI_Ret
+	score +3
 	end
 
 @AI has Sturdy/a Focus Sash and a stat boosting move. Only one thing to do!
@@ -1494,7 +1512,7 @@ AI_CheckFreeSetup:
 	end
 
 AI_CV_AttackUp: @ 82DCBBC
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_physical_moves_unusable AI_USER, AI_TARGET, Score_Minus8
 	if_stat_level_less_than AI_USER, STAT_ATK, 9, AI_CV_AttackUp2
@@ -1519,7 +1537,7 @@ AI_CV_AttackUp_End: @ 82DCBF6
 	end
 
 AI_CV_DefenseUp: @ 82DCBF7
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_DEF, 9, AI_CV_DefenseUp2
 	if_random_less_than 100, AI_CV_DefenseUp3
@@ -1555,7 +1573,7 @@ AI_CV_DefenseUp_End: @ 82DCC52
 	end
 
 AI_CV_SpeedUp: @ 82DCC5D
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_target_faster AI_CV_SpeedUp2
 	score -3
@@ -1569,7 +1587,7 @@ AI_CV_SpeedUp_End: @ 82DCC72
 	end
 
 AI_CV_SpAtkUp: @ 82DCC73
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPATK, 9, AI_CV_SpAtkUp2
 	if_random_less_than 100, AI_CV_SpAtkUp3
@@ -1593,7 +1611,7 @@ AI_CV_SpAtkUp_End: @ 82DCCAD
 	end
 
 AI_CV_SpDefUp: @ 82DCCAE
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPDEF, 9, AI_CV_SpDefUp2
 	if_random_less_than 100, AI_CV_SpDefUp3
@@ -3539,7 +3557,7 @@ AI_CV_WaterSport_End:
 	end
 
 AI_CV_BoostSpeedOffense:
-	call AI_IsTargetAsleep
+	call AI_SetUpVsSleep
 	call AI_CheckFreeSetup
 	if_target_faster AI_CV_BoostSpeedOffense2
 	if_hp_more_than AI_USER, 60, AI_CV_BoostSpeedOffense2
@@ -3549,7 +3567,7 @@ AI_CV_BoostSpeedOffense:
 
 AI_CV_BoostSpeedOffense2:
 	if_random_less_than 128, AI_CV_BoostSpeedOffense_End
-	score +3
+	score +2
 
 AI_CV_BoostSpeedOffense_End:
 	end
