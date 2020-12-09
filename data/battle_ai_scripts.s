@@ -1082,6 +1082,19 @@ AI_DiscourageMagicGuard:
 AI_DiscourageMagicGuardEnd:
 	end
 
+@ If a priority move can KO, prefer it over other moves to avoid taking unnecessary damage
+AI_FaintWithPriority:
+	if_can_faint AI_FaintWithPriority1
+	end
+	
+AI_FaintWithPriority1:
+	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
+	end
+
+AI_FaintWithPriority_ScoreUp:
+	score +10
+	end
+
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
@@ -1091,6 +1104,7 @@ AI_CheckViability:
 	call AI_WeakDmg
 	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
+	call AI_FaintWithPriority
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
 	if_effect EFFECT_ABSORB, AI_CV_Absorb

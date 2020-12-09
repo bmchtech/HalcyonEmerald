@@ -181,6 +181,7 @@ static void Cmd_is_wakeup_turn(void);
 static void Cmd_if_has_move_with_accuracy_lt(void);
 static void Cmd_if_type_effectiveness_on_ally(void);
 static void Cmd_if_effect_chance(void);
+static void Cmd_if_move_priority_greater_than(void);
 
 // ewram
 EWRAM_DATA const u8 *gAIScriptPtr = NULL;
@@ -315,6 +316,7 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_if_has_move_with_accuracy_lt,               // 0x79
     Cmd_if_type_effectiveness_on_ally,              // 0x7A
     Cmd_if_effect_chance,                           // 0x7B
+    Cmd_if_move_priority_greater_than               // 0x7C
 };
 
 static const u16 sDiscouragedPowerfulMoveEffects[] =
@@ -2914,8 +2916,16 @@ static void Cmd_if_has_move_with_accuracy_lt(void)
 
 static void Cmd_if_effect_chance(void)
 {
-    if (gBattleMoves[AI_THINKING_STRUCT->moveConsidered].secondaryEffectChance == T1_READ_16(gAIScriptPtr + 1))
-        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 3);
+    if (gBattleMoves[AI_THINKING_STRUCT->moveConsidered].secondaryEffectChance == gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
     else
-        gAIScriptPtr += 7;
+        gAIScriptPtr += 6;
+}
+
+static void Cmd_if_move_priority_greater_than(void)
+{
+    if (GetMovePriority(sBattler_AI, AI_THINKING_STRUCT->moveConsidered) > gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
+    else
+        gAIScriptPtr += 6;
 }
