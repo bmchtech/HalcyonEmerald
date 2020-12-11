@@ -1487,7 +1487,7 @@ AI_SetUpVsSleep:
 	if_stat_level_more_than AI_USER, STAT_DEF, 6, AI_SetUpVsSleep1
 	if_stat_level_more_than AI_USER, STAT_SPATK, 6, AI_SetUpVsSleep1
 	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
-	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPEED, 6, AI_SetUpVsSleep1
 	if_hp_less_than 30, AI_TARGET, AI_Ret
 	score +3
 	end
@@ -1497,7 +1497,7 @@ AI_SetUpVsSleep1:
 	if_stat_level_more_than AI_USER, STAT_DEF, 7, Score_Minus2
 	if_stat_level_more_than AI_USER, STAT_SPATK, 7, Score_Minus2
 	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
-	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPEED, 7, Score_Minus2
 	if_hp_less_than 30, AI_TARGET, AI_Ret
 	if_random_less_than 128, AI_Ret
 	score +3
