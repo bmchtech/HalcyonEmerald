@@ -51,10 +51,10 @@ AI_CheckBadMove:
 	if_move_flag FLAG_POWDER, AI_CBM_PowderMoves
 	goto AI_CBM_CheckIfNegatesType
 AI_CBM_PowderMoves:
-	if_type AI_TARGET, TYPE_GRASS, Score_Minus10
-	if_ability AI_TARGET, ABILITY_OVERCOAT, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, Score_Minus30
+	if_ability AI_TARGET, ABILITY_OVERCOAT, Score_Minus30
 	get_hold_effect AI_TARGET
-	if_equal HOLD_EFFECT_SAFETY_GOOGLES Score_Minus10
+	if_equal HOLD_EFFECT_SAFETY_GOOGLES Score_Minus30
 
 AI_CBM_CheckIfNegatesType:
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
@@ -159,8 +159,8 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_RECHARGE, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_LEECH_SEED, AI_CBM_LeechSeed
 	if_effect EFFECT_DISABLE, AI_CBM_Disable
-	if_effect EFFECT_LEVEL_DAMAGE, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_PSYWAVE, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LEVEL_DAMAGE, AI_CV_Hit
+	if_effect EFFECT_PSYWAVE, AI_CV_Hit
 	if_effect EFFECT_COUNTER, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_ENCORE, AI_CBM_Encore
 	if_effect EFFECT_SNORE, AI_CBM_DamageDuringSleep
@@ -177,13 +177,13 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SWAGGER, AI_CBM_Confuse
 	if_effect EFFECT_ATTRACT, AI_CBM_Attract
 	if_effect EFFECT_CAPTIVATE, AI_CBM_Captivate
-	if_effect EFFECT_RETURN, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_RETURN, AI_CV_Hit
 	if_effect EFFECT_PRESENT, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_FRUSTRATION, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_FRUSTRATION, AI_CV_Hit
 	if_effect EFFECT_SAFEGUARD, AI_CBM_Safeguard
 	if_effect EFFECT_MAGNITUDE, AI_CBM_Magnitude
 	if_effect EFFECT_BATON_PASS, AI_CBM_BatonPass
-	if_effect EFFECT_SONICBOOM, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_SONICBOOM, AI_CV_Hit
 	if_effect EFFECT_RAIN_DANCE, AI_CBM_RainDance
 	if_effect EFFECT_SUNNY_DAY, AI_CBM_SunnyDay
 	if_effect EFFECT_BELLY_DRUM, AI_CBM_BellyDrum
@@ -212,7 +212,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_ENDEAVOR, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_IMPRISON, AI_CBM_Imprison
 	if_effect EFFECT_REFRESH, AI_CBM_Refresh
-	if_effect EFFECT_LOW_KICK, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LOW_KICK, AI_CV_Hit
 	if_effect EFFECT_MUD_SPORT, AI_CBM_MudSport
 	if_effect EFFECT_TICKLE, AI_CBM_Tickle
 	if_effect EFFECT_COSMIC_POWER, AI_CBM_CosmicPower
@@ -330,7 +330,7 @@ AI_CBM_HealBell_End:
 AI_CBM_Taunt:
 	if_target_taunted Score_Minus10
 	end
-	
+
 AI_CBM_Protect:
 	get_protect_count AI_USER
 	if_more_than 2, Score_Minus10
@@ -543,10 +543,14 @@ AI_CBM_StickyWeb:
 	
 AI_CBM_Sleep: @ 82DC2D4
 	get_ability AI_TARGET
-	if_equal ABILITY_INSOMNIA, Score_Minus10
-	if_equal ABILITY_VITAL_SPIRIT, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_INSOMNIA, Score_Minus30
+	if_equal ABILITY_VITAL_SPIRIT, Score_Minus30
+	if_equal ABILITY_COMATOSE, Score_Minus30
+	if_has_move_with_effect AI_TARGET, EFFECT_SLEEP_TALK, Score_Minus12
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
+	if_field_status STATUS_FIELD_ELECTRIC_TERRAIN, Score_Minus30
+	if_field_status STATUS_FIELD_MISTY_TERRAIN, Score_Minus30
 	end
 
 AI_CBM_Explosion: @ 82DC2F7
@@ -1017,7 +1021,7 @@ AI_CheckIfAlreadyDead:
 AI_CheckIfAlreadyDeadPriorities:
 	if_target_faster Score_Minus1
 	if_random_less_than 126, AI_Ret
-	score +1
+	score +3
 	end
 	
 @ The purpose is to use a move effect that hits the hardest or similar
@@ -1030,13 +1034,14 @@ AI_CV_DmgMove:
 	end
 	
 @ If move deals shit damage, and there are other mons to switch in, use support moves instead
+@ If strongest move deals shit damage, greatly lower score so that AI switches instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
+	if_effect EFFECT_LEVEL_DAMAGE, AI_Ret
 	if_has_no_move_with_split AI_USER, SPLIT_STATUS, AI_Ret
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
-	@if_more_than 20, Score_Minus1
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_BEST, Score_Minus8
 	score -10
@@ -1050,10 +1055,20 @@ AI_ChoiceLocked:
 
 @ If move doesn't do meaningful damage, switch out
 AI_ChoiceDamage:
-	get_considered_move_power
-	if_equal 0, Score_Minus10
 	get_curr_dmg_hp_percent
-	if_less_than 60, Score_Minus10
+	if_less_than 60, AI_ChoiceUturn
+	end
+
+AI_ChoiceUturn:
+	if_effect EFFECT_HIT_ESCAPE, AI_ChoiceUturnCheckSwitchIns
+	end
+
+@ Don't lock into U turn etc if there's nothing else to bring in
+AI_ChoiceUturnCheckSwitchIns:
+	count_usable_party_mons AI_USER
+	if_equal 0, AI_ChoiceEnd
+	score +3
+AI_ChoiceEnd:
 	end
 	
 AI_DiscourageMagicGuard:
@@ -1067,6 +1082,19 @@ AI_DiscourageMagicGuard:
 AI_DiscourageMagicGuardEnd:
 	end
 
+@ If a priority move can KO, prefer it over other moves to avoid taking unnecessary damage
+AI_FaintWithPriority:
+	if_can_faint AI_FaintWithPriority1
+	end
+	
+AI_FaintWithPriority1:
+	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
+	end
+
+AI_FaintWithPriority_ScoreUp:
+	score +10
+	end
+
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
@@ -1076,6 +1104,7 @@ AI_CheckViability:
 	call AI_WeakDmg
 	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
+	call AI_FaintWithPriority
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
 	if_effect EFFECT_ABSORB, AI_CV_Absorb
@@ -1201,7 +1230,7 @@ AI_CheckViability:
 	if_effect EFFECT_BULK_UP, AI_CV_DefenseUp
 	if_effect EFFECT_WATER_SPORT, AI_CV_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CV_SpDefUp
-	if_effect EFFECT_DRAGON_DANCE, AI_CV_DragonDance
+	if_effect EFFECT_DRAGON_DANCE, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_POWDER, AI_CV_Powder
 	if_effect EFFECT_MISTY_TERRAIN, AI_CV_MistyTerrain
 	if_effect EFFECT_GRASSY_TERRAIN, AI_CV_GrassyTerrain
@@ -1213,6 +1242,11 @@ AI_CheckViability:
 	if_effect EFFECT_TOXIC_SPIKES, AI_CV_Hazards
 	if_effect EFFECT_PERISH_SONG, AI_CV_PerishSong
 	if_effect EFFECT_TRICK_ROOM, AI_CV_TrickRoom
+	if_effect EFFECT_SHELL_SMASH, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_SHIFT_GEAR, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_QUIVER_DANCE, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_GEOMANCY, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_COIL, AI_CV_DefenseUp
 	end
 	
 AI_CV_PerishSong:
@@ -1310,16 +1344,27 @@ AI_CV_Hit:
 	end
 
 AI_CV_Sleep: @ 82DCA92
-	if_has_move_with_effect AI_TARGET, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
-	if_has_move_with_effect AI_TARGET, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
-	goto AI_CV_Sleep_End
+	if_has_move_with_effect AI_USER, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_HEX, AI_CV_SleepEncourageSlpDamage
+	goto AI_CV_Sleep1
 
 AI_CV_SleepEncourageSlpDamage: @ 82DCAA5
-	score +2
-	if_random_less_than 128, AI_CV_Sleep_End
+	score +3
+	if_random_less_than 128, AI_CV_Sleep1
 	score +1
 
-AI_CV_Sleep_End: @ 82DCAAD
+@ Sleep OP, use it if possible
+AI_CV_Sleep1: @ 82DCAAD
+	get_last_used_bank_move AI_USER
+	get_move_effect_from_result
+	if_equal EFFECT_SLEEP, AI_CV_Sleep_End @ If you just missed a sleep move, try something else
+	score +3
+	if_random_less_than 128, AI_CV_Sleep_End
+	score +2
+	end
+
+AI_CV_Sleep_End:
 	end
 
 AI_CV_Absorb: @ 82DCAAE
@@ -1436,7 +1481,39 @@ AI_CV_MirrorMove_EncouragedMovesToMirror: @ 82DCB6C
     .2byte MOVE_SKILL_SWAP
     .2byte 0xFFFF
 
+AI_SetUpVsSleep:
+	if_not_status AI_TARGET, STATUS1_SLEEP, AI_Ret
+	if_stat_level_more_than AI_USER, STAT_ATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_DEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPEED, 6, AI_SetUpVsSleep1
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	score +3
+	end
+
+AI_SetUpVsSleep1:
+	if_stat_level_more_than AI_USER, STAT_ATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_DEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPEED, 7, Score_Minus2
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	if_random_less_than 128, AI_Ret
+	score +3
+	end
+
+@AI has Sturdy/a Focus Sash and a stat boosting move. Only one thing to do!
+AI_CheckFreeSetup:
+	if_hp_less_than 100, AI_USER, AI_Ret
+	if_no_ability AI_USER, ABILITY_STURDY, AI_Ret
+	if_holds_item AI_USER, ITEM_FOCUS_SASH, Score_Plus5
+	score +5
+	end
+
 AI_CV_AttackUp: @ 82DCBBC
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_physical_moves_unusable AI_USER, AI_TARGET, Score_Minus8
 	if_stat_level_less_than AI_USER, STAT_ATK, 9, AI_CV_AttackUp2
 	if_random_less_than 100, AI_CV_AttackUp3
@@ -1460,6 +1537,8 @@ AI_CV_AttackUp_End: @ 82DCBF6
 	end
 
 AI_CV_DefenseUp: @ 82DCBF7
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_DEF, 9, AI_CV_DefenseUp2
 	if_random_less_than 100, AI_CV_DefenseUp3
 	score -1
@@ -1494,6 +1573,8 @@ AI_CV_DefenseUp_End: @ 82DCC52
 	end
 
 AI_CV_SpeedUp: @ 82DCC5D
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_target_faster AI_CV_SpeedUp2
 	score -3
 	goto AI_CV_SpeedUp_End
@@ -1506,6 +1587,8 @@ AI_CV_SpeedUp_End: @ 82DCC72
 	end
 
 AI_CV_SpAtkUp: @ 82DCC73
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPATK, 9, AI_CV_SpAtkUp2
 	if_random_less_than 100, AI_CV_SpAtkUp3
 	score -1
@@ -1528,6 +1611,8 @@ AI_CV_SpAtkUp_End: @ 82DCCAD
 	end
 
 AI_CV_SpDefUp: @ 82DCCAE
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPDEF, 9, AI_CV_SpDefUp2
 	if_random_less_than 100, AI_CV_SpDefUp3
 	score -1
@@ -2188,6 +2273,8 @@ AI_CV_VitalThrow_End:
 	end
 
 AI_CV_Substitute:
+	goto AI_IsHealingAbilityActive
+AI_CV_SubstituteStart:
 	if_not_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_Substitute1
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_SubstitutePlus3Continue
 	if_status AI_TARGET, STATUS1_BURN | STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
@@ -2233,6 +2320,26 @@ AI_CV_Substitute8:
 	if_random_less_than 100, AI_CV_Substitute_End
 	score +1
 AI_CV_Substitute_End:
+	end
+
+@ Check for abilities that let the user spam Substitute under certain conditions
+AI_IsHealingAbilityActive:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_HealPoison
+	if_ability AI_USER, ABILITY_ICE_BODY, AI_HealHail
+	if_ability AI_USER, ABILITY_RAIN_DISH, AI_HealRain
+	if_ability AI_USER, ABILITY_DRY_SKIN, AI_HealRain
+	goto AI_CV_SubstituteStart
+
+AI_HealPoison:
+	if_status AI_USER, STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
+	end
+
+AI_HealHail:
+	if_equal AI_WEATHER_HAIL, AI_CV_SubstitutePlus1Continue
+	end
+	
+AI_HealRain:
+	if_equal AI_WEATHER_RAIN, AI_CV_SubstitutePlus1Continue
 	end
 
 AI_CV_Recharge:
@@ -2575,7 +2682,7 @@ AI_CV_Curse_End:
 
 AI_CV_Protect:
 	get_protect_count AI_USER
-	if_more_than 1, AI_CV_Protect_ScoreDown2
+	if_more_than 1, AI_CV_Protect_ScoreDown3
 	if_status  AI_USER, STATUS1_PSN_ANY | STATUS1_BURN, AI_CV_ProtectUserStatused
 	if_status2 AI_USER, STATUS2_CURSED | STATUS2_INFATUATION, AI_CV_ProtectUserStatused
 	if_status3 AI_USER, STATUS3_PERISH_SONG | STATUS3_LEECHSEED | STATUS3_YAWN, AI_CV_ProtectUserStatused
@@ -2601,6 +2708,7 @@ AI_CV_Protect4:
 	score -1
 	goto AI_CV_Protect_End
 AI_CV_ProtectUserStatused:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_CV_Protect_ScoreUp2
 	score -1
 	if_double_battle AI_CV_Protect4
 	score -1
@@ -2609,8 +2717,8 @@ AI_CV_Protect3:
 	get_last_used_bank_move AI_TARGET
 	get_move_effect_from_result
 	if_not_equal EFFECT_LOCK_ON, AI_CV_Protect_End
-AI_CV_Protect_ScoreDown2:
-	score -2
+AI_CV_Protect_ScoreDown3:
+	score -3
 AI_CV_Protect_End:
 	end
 
@@ -3217,6 +3325,7 @@ AI_CV_ChangeSelfAbility_AbilitiesToEncourage:
 AI_CV_Superpower:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Superpower_ScoreDown1
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Superpower_ScoreDown1
+	if_ability AI_USER, ABILITY_CONTRARY, Score_Plus2
 	if_stat_level_less_than AI_USER, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_Superpower_ScoreDown1
 	if_target_faster AI_CV_Superpower2
 	if_hp_more_than AI_USER, 40, AI_CV_Superpower_ScoreDown1
@@ -3415,6 +3524,7 @@ AI_CV_MudSport_End:
 AI_CV_Overheat:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Overheat_ScoreDown1
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Overheat_ScoreDown1
+	if_ability AI_USER, ABILITY_CONTRARY, Score_Plus2
 	if_target_faster AI_CV_Overheat2
 	if_hp_more_than AI_USER, 60, AI_CV_Overheat_End
 	goto AI_CV_Overheat_ScoreDown1
@@ -3446,18 +3556,20 @@ AI_CV_WaterSport_ScoreDown1:
 AI_CV_WaterSport_End:
 	end
 
-AI_CV_DragonDance:
-	if_target_faster AI_CV_DragonDance2
-	if_hp_more_than AI_USER, 50, AI_CV_DragonDance_End
-	if_random_less_than 70, AI_CV_DragonDance_End
+AI_CV_BoostSpeedOffense:
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
+	if_target_faster AI_CV_BoostSpeedOffense2
+	if_hp_more_than AI_USER, 60, AI_CV_BoostSpeedOffense2
+	if_random_less_than 70, AI_CV_BoostSpeedOffense_End
 	score -1
-	goto AI_CV_DragonDance_End
+	goto AI_CV_BoostSpeedOffense_End
 
-AI_CV_DragonDance2:
-	if_random_less_than 128, AI_CV_DragonDance_End
-	score +1
+AI_CV_BoostSpeedOffense2:
+	if_random_less_than 128, AI_CV_BoostSpeedOffense_End
+	score +2
 
-AI_CV_DragonDance_End:
+AI_CV_BoostSpeedOffense_End:
 	end
 
 AI_TryToFaint:
@@ -3585,13 +3697,12 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
 	.2byte EFFECT_AURORA_VEIL
     .2byte 0xFFFF
 
-
 AI_PreferStrongestMove:
 	if_target_is_ally AI_Ret
 	get_how_powerful_move_is
 	if_not_equal MOVE_POWER_BEST, AI_PreferStrongestMove_End
 	@if_random_less_than 100, AI_PreferStrongestMove_End
-	score +3
+	score +2
 AI_PreferStrongestMove_End:
 	end
 
@@ -3828,7 +3939,7 @@ AI_DoubleBattleCheckUserStatus2:
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_DISCOURAGED, Score_Minus5
 	score +1
-	if_equal MOVE_POWER_BEST, Score_Plus5
+	if_equal MOVE_POWER_BEST, Score_Plus2
 	end
 
 AI_DoubleBattleAllHittingGroundMove:

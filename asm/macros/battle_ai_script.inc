@@ -690,16 +690,22 @@
 	.4byte \ptr
 	.endm
 
-	.macro if_type_effectiveness_on_ally param0:req, param1:req
+	.macro if_type_effectiveness_on_ally param0:req, ptr:req
 	.byte 0x7A
 	.byte \param0
-	.4byte \param1
+	.4byte \ptr
 	.endm
 
-	.macro if_effect_chance param0:req, param1:req
+	.macro if_effect_chance param0:req, ptr:req
 	.byte 0x7B
 	.byte \param0
-	.4byte \param1
+	.4byte \ptr
+	.endm
+
+	.macro if_move_priority_greater_than param0:req, ptr:req
+	.byte 0x7C
+	.byte \param0
+	.4byte \ptr
 	.endm
 
 @ useful script macros

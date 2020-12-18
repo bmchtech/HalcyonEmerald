@@ -46,5 +46,7 @@
 #define SPREAD_31_IV_SPATK_SPEED_HASTY      42 // Mixed attacker, special focus
 #define SPREAD_31_IV_HP_DEF_SPDEF_SASSY     43 // Bulky Trick Room Setter
 #define SPREAD_31_IV_DEF_SPATK              44 // Offensive Blissey
+#define SPREAD_31_IV_ATK_SPDEF              45 // Steven's Melmetal
+#define SPREAD_31_IV_ATK_SPEED_NAUGHTY      46 // Max Attack mixed attacker
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

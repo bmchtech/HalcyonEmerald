@@ -7504,7 +7504,7 @@ static const struct LevelUpMove sLileepLevelUpLearnset[] = {
 
 static const struct LevelUpMove sCradilyLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_POWER_GEM),
-    LEVEL_UP_MOVE( 1, MOVE_WRING_OUT),
+    LEVEL_UP_MOVE( 1, MOVE_ACID_SPRAY),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 1, MOVE_CONSTRICT),
     LEVEL_UP_MOVE( 1, MOVE_ACID),
