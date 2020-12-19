@@ -5145,7 +5145,7 @@ void BufferChosenMonEV (void)
 
 void BufferChosenMonAllEVs (void)
 {
-    u8 i;
+    u32 i;
     u8 EV[NUM_STATS] = {0};
 
     for (i = 0; i < NUM_STATS; i++)
@@ -5163,7 +5163,7 @@ void BufferChosenMonAllEVs (void)
 
 void BufferChosenMonAllIVs (void)
 {
-    u8 i;
+    u32 i;
     u8 IV[NUM_STATS] = {0};
 
     for (i = 0; i < NUM_STATS; i++)
@@ -5199,6 +5199,7 @@ void ChangeChosenMonHiddenPower (void)
 {
     u8 hiddenPowerType = gSpecialVar_0x8007;
     // Potato code @ 12:37am because pointers are hard
+    // seriously put these into an array or something
     u8 thirtyOne = 31;
     u8 thirty = 30;
     u8 zero = 0;
