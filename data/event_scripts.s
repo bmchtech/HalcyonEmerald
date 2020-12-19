@@ -1076,3 +1076,9 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/SandstrewnRuins_B1F/scripts.inc"
 	.include "data/maps/SandstrewnRuins_2F/scripts.inc"
 	.include "data/maps/SandstrewnRuins_3F/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_B1F/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_B2F/scripts.inc"
+
+	.include "data/maps/ScorchedSlab_HeatransRoom/scripts.inc"

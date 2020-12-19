@@ -442,7 +442,10 @@
     "SandstrewnRuins_B1F",
     "Route111_RuinsExterior",
     "SandstrewnRuins_2F",
-    "SandstrewnRuins_3F"
+    "SandstrewnRuins_3F",
+    "ScorchedSlab_B1F",
+    "ScorchedSlab_B2F",
+    "ScorchedSlab_HeatransRoom"
   ],
   "gMapGroup25": [
     "SecretBase_RedCave1",
