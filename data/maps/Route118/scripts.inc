@@ -27,7 +27,7 @@ Route118_OnFrame: @ 81F3E0A
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
-Route118_EventScript_GoodRodFisherman:: @ 81F3E14
+Route114_EventScript_GoodRodFisherman:: @ 81F3E14
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_GOOD_ROD, Route118_EventScript_ReceivedGoodRod
@@ -255,6 +255,100 @@ Route118_EventScript_Deandre:: @ 81F40A7
 	trainerbattle_single TRAINER_DEANDRE, Route118_Text_DeandreIntro, Route118_Text_DeandreDefeat
 	msgbox Route118_Text_DeandrePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route114_EventScript_MagikarpGuy::
+	lock
+	faceplayer
+	goto_if_set FLAG_ROUTE118_GYARADOSITE, Route118_EventScript_ReceivedGyaradosite
+	msgbox Route118_Text_DoYouLiekKarp, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Route118_EventScript_ILuurveKarp
+	compare VAR_RESULT, NO
+	goto_if_eq Route118_EventScript_DontLikeKarp
+	release
+	end
+
+Route118_EventScript_ReceivedGyaradosite::
+	msgbox Route118_Text_KarpBetterThanGyara, MSGBOX_DEFAULT
+	release
+	end
+
+Route118_EventScript_ILuurveKarp::
+	msgbox Route118_Text_ILuurveKarp, MSGBOX_DEFAULT
+	closemessage
+	msgbox Route118_Text_ReadyForKarpFite, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Route118_EventScript_CheckParty
+	release
+	end
+
+Route118_EventScript_DontLikeKarp::
+	msgbox Route118_Text_DontLikeKarp, MSGBOX_DEFAULT
+	release
+	end
+
+Route118_EventScript_CheckParty::
+	specialvar VAR_RESULT, CheckMagikarpBattle
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route118_EventScript_NeedMoreKarp
+	msgbox Route118_Text_KarpFiteStart, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_MAGIKARP_GUY, Route118_Text_MagikarpDefeat
+	msgbox Route118_Text_TakeGyaradosite, MSGBOX_DEFAULT
+	giveitem ITEM_GYARADOSITE
+	setflag FLAG_ROUTE118_GYARADOSITE
+	msgbox Route118_Text_KarpBetterThanGyara, MSGBOX_DEFAULT
+	release
+	end
+
+Route118_EventScript_NeedMoreKarp::
+	msgbox Route118_Text_NeedMoreKarp, MSGBOX_DEFAULT
+	release
+	end
+
+Route118_Text_DoYouLiekKarp:
+	.string "Do you like the Pokémon Magikarp?$"
+
+Route118_Text_DontLikeKarp:
+	.string "Oh… That's disappointing.\n"
+	.string "I was hoping you were a fellow\l"
+	.string "Magikarp aficionado…$"
+
+Route118_Text_ILuurveKarp:
+	.string "You do?!\n"
+	.string "That's great!\p"
+	.string "Not many people appreciate the true\n"
+	.string "majesty of Magikarp…\p"
+	.string "Oh, I know! If you can show me you\n"
+	.string "truly love Magikarp, I'll give you this\l"
+	.string "Gyaradosite I found!\p"
+	.string "Here's what I want you to do…\p"
+	.string "You must defeat my team of Magikarp\n"
+	.string "all stars…\p"
+	.string "With your own team of Magikarp!$"
+
+Route118_Text_ReadyForKarpFite:
+	.string "So, are you ready for our magical\n"
+	.string "showdown?$"
+
+Route118_Text_NeedMoreKarp:
+	.string "Hmm… You don't have enough Magikarp\n"
+	.string "to challenge me.\p"
+	.string "Please come back once you've fished up\n"
+	.string "a full team of them!$"
+
+Route118_Text_KarpFiteStart:
+	.string "Oho! Then let us begin!$"
+
+Route118_Text_MagikarpDefeat:
+	.string "Ah! Your love for Magikarp is clear!$"
+
+Route118_Text_TakeGyaradosite:
+	.string "Here, take this Gyaradosite - you\n"
+	.string "earned it!$"
+
+Route118_Text_KarpBetterThanGyara:
+	.string "Gyarados might not be Magikarp, but\n"
+	.string "it's almost as good!$"
 
 Route118_Text_StevenQuestions: @ 81F40BE
 	.string "Steven: Hi, {PLAYER}{KUN}!\p"
