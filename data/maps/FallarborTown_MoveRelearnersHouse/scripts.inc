@@ -95,7 +95,8 @@ FallarborTown_SuperTrainer::
 	goto FallarborTown_SuperMainMenu
 
 FallarborTown_SuperMainMenu::
-	msgbox SuperTraining_String_8, MSGBOX_DEFAULT
+	bufferpartymonnick 0, VAR_0x8004
+	msgbox SuperTraining_Text_HowCanIHelp, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_SUPER_TRAINING_MENU, 0
 	switch VAR_RESULT
 	case 0, FallarborTown_ChangeEV
@@ -238,11 +239,11 @@ FallarborTown_ChangeEV252::
 	goto FallarborTown_DoSuperTraining
 
 FallarborTown_ResetEVs::
-	msgbox SuperTraining_String_7, MSGBOX_YESNO
+	msgbox SuperTraining_Text_ICanResetEVs, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FallarborTown_SuperMainMenu
 	special ResetChosenMonEVs
-	msgbox SuperTraining_String_9, MSGBOX_DEFAULT
+	msgbox SuperTraining_Text_EVsReset, MSGBOX_DEFAULT
 	goto FallarborTown_SuperMainMenu
 	
 FallarborTown_DoSuperTraining::
@@ -262,7 +263,7 @@ FallarborTown_DoSuperTraining::
 	special IncreaseChosenMonEVs
 	bufferpartymonnick 0, VAR_0x8004
 	buffernumberstring 1, VAR_0x8007
-	msgbox SuperTraining_String6
+	msgbox SuperTraining_Text_EVsHaveIncreased
 	hidemoneybox
 	goto FallarborTown_ChangeEV
 
@@ -362,11 +363,11 @@ SuperTraining_ReportSpDef::
 	.string "{STR_VAR_1} has {STR_VAR_2} Sp. Def EVs.\n"
 	.string "How many EVs would you like to add?$"
 
-SuperTraining_String6::
+SuperTraining_Text_EVsHaveIncreased::
 	.string "{STR_VAR_1}'s EVs in that stat have\n"
 	.string "increased to {STR_VAR_2}!$"
 
-SuperTraining_String_7::
+SuperTraining_Text_ICanResetEVs::
 	.string "I can completely reset your\n"
 	.string "{STR_VAR_1}'s EVs for free!\p"
 	.string "This will remove all of its EVs, so\n"
@@ -375,10 +376,10 @@ SuperTraining_String_7::
 	.string "Would you like me to reset\n"
 	.string "{STR_VAR_1}'s EVs?$"
 
-SuperTraining_String_8::
+SuperTraining_Text_HowCanIHelp::
 	.string "How can I help {STR_VAR_1} today?$"
 	
-SuperTraining_String_9::
+SuperTraining_Text_EVsReset::
 	.string "{STR_VAR_1}'s EVs have been reset!$"
 
 SuperTraining_ReportMaxEVs::
