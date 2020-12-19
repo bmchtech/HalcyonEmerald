@@ -6803,18 +6803,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_AmyAndLiv3},
     },
 
-    [TRAINER_GINA_AND_MIA_2] =
+    [TRAINER_MAGIKARP_GUY] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_TWINS,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
-        .trainerPic = TRAINER_PIC_TWINS,
-        .trainerName = _("Gina & Mia"),
+        .trainerClass = TRAINER_CLASS_MAGIKARP_GUY,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = _("Guy"),
         .items = {},
-        .doubleBattle = TRUE,
+        .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_GinaAndMia2),
-        .party = {.ItemCustomMoves = sParty_GinaAndMia2},
+        .partySize = ARRAY_COUNT(sParty_MagikarpGuy),
+        .party = {.ItemCustomMoves = sParty_MagikarpGuy},
     },
 
     [TRAINER_AMY_AND_LIV_4] =

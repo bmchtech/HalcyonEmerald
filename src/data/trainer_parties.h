@@ -2209,7 +2209,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jerry3[] = {
     .species = SPECIES_PANGORO,
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_HAMMER_ARM, MOVE_CRUNCH, MOVE_BULLET_PUNCH, MOVE_PARTING_SHOT
-    }
+    },
     {
     .lvl = -2,
     .species = SPECIES_BANETTE,
@@ -6276,6 +6276,49 @@ static const struct TrainerMonItemCustomMoves sParty_Coby[] = {
 };
 
 // Route 114
+
+static const struct TrainerMonItemCustomMoves sParty_MagikarpGuy[] = { // Unused
+    {
+    .lvl = -1,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE
+    },
+    {
+    .lvl = -1,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .spread = SPREAD_15_IV_0_EV,
+    .moves = MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE
+    },
+    {
+    .lvl = 1,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .spread = SPREAD_31_IV_0_EV,
+    .moves = MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE
+    },
+    {
+    .lvl = 2,
+    .species = SPECIES_MAGIKARP,
+    .heldItem = ITEM_LEFTOVERS,
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_HYDRO_PUMP, MOVE_TACKLE, MOVE_BOUNCE, MOVE_REVERSAL
+    }
+};
 
 static const struct TrainerMonItemCustomMoves sParty_Nolan[] = {
     {
@@ -16836,19 +16879,6 @@ static const struct TrainerMonItemCustomMoves sParty_MayLinkPlaceholder[] = {
 };
 
 // Unused Trainers
-
-static const struct TrainerMonItemCustomMoves sParty_GinaAndMia2[] = { // Unused
-    {
-    .lvl = 10,
-    .species = SPECIES_DUSKULL,
-    .moves = MOVE_NIGHT_SHADE, MOVE_DISABLE, MOVE_NONE, MOVE_NONE
-    },
-    {
-    .lvl = 10,
-    .species = SPECIES_SHROOMISH,
-    .moves = MOVE_ABSORB, MOVE_LEECH_SEED, MOVE_NONE, MOVE_NONE
-    }
-};
 
 static const struct TrainerMonItemCustomMoves sParty_Grunt28[] = { // Unused
     {

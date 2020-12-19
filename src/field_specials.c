@@ -5606,7 +5606,7 @@ bool8 GetDiancieFriendshipScore (void)
 // Returns TRUE if the player's party contains six Magikarp, FALSE otherwise
 bool8 CheckMagikarpBattle (void)
 {
-    u8 i = 0;
+    u32 i = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
