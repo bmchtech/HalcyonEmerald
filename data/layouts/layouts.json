@@ -4530,6 +4530,36 @@
       "secondary_tileset": "gTileset_MirageTower",
       "border_filepath": "data/layouts/SandstrewnRuins_3F/border.bin",
       "blockdata_filepath": "data/layouts/SandstrewnRuins_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_B1F",
+      "name": "ScorchedSlab_B1F_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ScorchedSlab_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_B2F",
+      "name": "ScorchedSlab_B2F_Layout",
+      "width": 36,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ScorchedSlab_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SCORCHED_SLAB_HEATRANS_ROOM",
+      "name": "ScorchedSlab_HeatransRoom_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/ScorchedSlab_HeatransRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ScorchedSlab_HeatransRoom/map.bin"
     }
   ]
 }

@@ -821,3 +821,7 @@ SafariZone_South_EventScript_ItemTM93WildCharge::
 Route131_EventScript_SplashPlate::
 	finditem ITEM_SPLASH_PLATE
 	end
+
+ScorchedSlab_EventScript_ItemTyranitarite::
+	finditem ITEM_TYRANITARITE
+	end

@@ -1,10 +1,6 @@
 #ifndef GUARD_CONSTANTS_MAP_GROUPS_H
 #define GUARD_CONSTANTS_MAP_GROUPS_H
 
-//
-// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json
-//
-
 // Map Group 0
 #define MAP_PETALBURG_CITY      (0 | (0 << 8))
 #define MAP_SLATEPORT_CITY      (1 | (0 << 8))
@@ -412,6 +408,9 @@
 #define MAP_ROUTE111_RUINS_EXTERIOR                  (117 | (24 << 8))
 #define MAP_SANDSTREWN_RUINS_2F                      (118 | (24 << 8))
 #define MAP_SANDSTREWN_RUINS_3F                      (119 | (24 << 8))
+#define MAP_SCORCHED_SLAB_B1F                        (120 | (24 << 8))
+#define MAP_SCORCHED_SLAB_B2F                        (121 | (24 << 8))
+#define MAP_SCORCHED_SLAB_HEATRANS_ROOM              (122 | (24 << 8))
 
 // Map Group 25
 #define MAP_SECRET_BASE_RED_CAVE1           (0 | (25 << 8))
