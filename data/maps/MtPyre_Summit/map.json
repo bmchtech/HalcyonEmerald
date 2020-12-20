@@ -119,7 +119,7 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 38,
       "y": 21,
       "elevation": 3,

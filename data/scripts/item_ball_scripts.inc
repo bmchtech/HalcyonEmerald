@@ -126,7 +126,7 @@ Route115_EventScript_ItemPPUp:: @ 8290E6B
 	finditem ITEM_PP_UP
 	end
 
-Route116_EventScript_ItemXSpecial:: @ 8290E78
+Route116_EventScript_TM77StruggleBug:: @ 8290E78
 	finditem ITEM_TM77_STRUGGLE_BUG
 	end
 
@@ -824,4 +824,20 @@ Route131_EventScript_SplashPlate::
 
 ScorchedSlab_EventScript_ItemTyranitarite::
 	finditem ITEM_TYRANITARITE
+	end
+
+GraniteCave_B1F_EventScript_ItemTM65ShadowClaw::
+	finditem ITEM_TM65_SHADOW_CLAW
+	end
+
+Route117_EventScript_Mawilite::
+	finditem ITEM_MAWILITE
+	end
+
+Meteor_Falls1F_2R_EventScript_Salamencite::
+	finditem ITEM_SALAMENCITE
+	end
+
+Mirage_Tower_4F_EventScript_Aerodactylite::
+	finditem ITEM_AERODACTYLITE
 	end
