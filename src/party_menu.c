@@ -254,7 +254,7 @@ static bool16 IsMonAllowedInPokemonJump(struct Pokemon*);
 static bool16 IsMonAllowedInDodrioBerryPicking(struct Pokemon*);
 static void Task_CancelParticipationYesNo(u8);
 static void Task_HandleCancelParticipationYesNoInput(u8);
-static bool32 CanLearnTutorMove(u16, u8);
+// static bool32 CanLearnTutorMove(u16, u8);
 static u16 GetTutorMove(u8);
 static bool8 ShouldUseChooseMonText(void);
 static void SetPartyMonFieldSelectionActions(struct Pokemon*, u8);
@@ -1990,7 +1990,7 @@ static u16 GetTutorMove(u8 tutor)
     return gTutorMoves[tutor];
 }
 
-static bool32 CanLearnTutorMove(u16 species, u8 tutor) // note the change to bool32
+bool32 CanLearnTutorMove(u16 species, u8 tutor) // note the change to bool32
 {
     if (tutor < 32)
     {
