@@ -841,3 +841,7 @@ Meteor_Falls1F_2R_EventScript_Salamencite::
 Mirage_Tower_4F_EventScript_Aerodactylite::
 	finditem ITEM_AERODACTYLITE
 	end
+
+Sootopolis_City_EventScript_Miloticite::
+	finditem ITEM_MILOTICITE
+	end
