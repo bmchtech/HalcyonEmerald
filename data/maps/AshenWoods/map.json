@@ -41,7 +41,7 @@
       "flag": "FLAG_ASHEN_WOODS_FLAME_ORB"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 26,
       "y": 43,
       "elevation": 3,

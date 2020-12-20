@@ -119,7 +119,7 @@
       "flag": "FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 37,
       "y": 7,
       "elevation": 3,
