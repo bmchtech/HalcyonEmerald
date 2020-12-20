@@ -829,3 +829,15 @@ ScorchedSlab_EventScript_ItemTyranitarite::
 GraniteCave_B1F_EventScript_ItemTM65ShadowClaw::
 	finditem ITEM_TM65_SHADOW_CLAW
 	end
+
+Route117_EventScript_Mawilite::
+	finditem ITEM_MAWILITE
+	end
+
+Meteor_Falls1F_2R_EventScript_Salamencite::
+	finditem ITEM_SALAMENCITE
+	end
+
+Mirage_Tower_4F_EventScript_Aerodactylite::
+	finditem ITEM_AERODACTYLITE
+	end
