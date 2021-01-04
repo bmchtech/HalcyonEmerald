@@ -1070,18 +1070,18 @@
 #define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
-#define FLAG_ITEM_ROUTE_120_PIDGEOTITE                               0x407
-#define FLAG_ITEM_ROUTE_123_WIDE_LENS                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_ITEM_ROUTE_120_PIDGEOTITE                              0x407
+#define FLAG_ITEM_ROUTE_123_WIDE_LENS                               0x408
+#define FLAG_ITEM_RUSTBORO_FLOAT_STONE                              0x409
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
 #define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
-#define FLAG_ITEM_ROUTE_133_PEARL_STRING                               0x40D
-#define FLAG_ITEM_ROUTE_133_COMET_SHARD                              0x40E
+#define FLAG_ITEM_ROUTE_133_PEARL_STRING                            0x40D
+#define FLAG_ITEM_ROUTE_133_COMET_SHARD                             0x40E
 #define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
 #define FLAG_ITEM_PETALBURG_CITY_VENUSAURITE                        0x410
 #define FLAG_ITEM_RUSTBORO_CITY_ABILITY_CAPSULE                     0x411
-#define FLAG_ITEM_LILYCOVE_CITY_LIGHT_CLAY                           0x412
+#define FLAG_ITEM_LILYCOVE_CITY_LIGHT_CLAY                          0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23                          0x414
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_COMET_SHARD                    0x415
@@ -1210,8 +1210,8 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_KANGASKHANITE              0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_TM53_ENERGY_BALL           0x492
+#define FLAG_HIDE_RUSTBORO_HIKER                               0x493
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
