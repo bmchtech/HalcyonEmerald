@@ -20,7 +20,15 @@ Route119_WeatherInstitute_1F_EventScript_LittleBoy:: @ 826FAA4
 	special GetPlayerBigGuyGirlString
 	compare VAR_WEATHER_INSTITUTE_STATE, 0
 	goto_if_eq Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere
+	goto_if_set FLAG_WEATHER_INSTITUTE_ROCKS, Route119_WeatherInstitute_1F_EventScript_LittleBoyGaveRocks
 	msgbox Route119_WeatherInstitute_1F_Text_WowYoureStrong, MSGBOX_DEFAULT
+	giveitem ITEM_HEAT_ROCK
+	giveitem ITEM_DAMP_ROCK
+	giveitem ITEM_ICY_ROCK
+	giveitem ITEM_SMOOTH_ROCK
+	setflag FLAG_WEATHER_INSTITUTE_ROCKS
+Route119_WeatherInstitute_1F_EventScript_LittleBoyGaveRocks:
+	msgbox Route119_WeatherInstitute_1F_Text_Rocks, MSGBOX_DEFAULT
 	release
 	end
 
@@ -101,14 +109,18 @@ Route119_WeatherInstitute_1F_Text_Grunt4PostBattle: @ 826FC60
 	.string "I'll catch an earful for losing to a kid…\p"
 	.string "I should just take a nap in the bed…$"
 
-Route119_WeatherInstitute_1F_Text_EveryoneWentUpstairs: @ 826FCB7
+Route119_WeatherInstitute_1F_Text_EveryoneWentUpstairs:
 	.string "While I was sleeping, everyone went\n"
 	.string "upstairs!$"
 
-Route119_WeatherInstitute_1F_Text_WowYoureStrong: @ 826FCE5
+Route119_WeatherInstitute_1F_Text_WowYoureStrong:
 	.string "Wow, you're really strong!\p"
-	.string "I wish I could be a Pokémon Trainer\n"
-	.string "like you!$"
+	.string "A Trainer like you should have these!$"
+
+Route119_WeatherInstitute_1F_Text_Rocks:
+	.string "We've got lots of these rocks here!\p"
+	.string "They make weather from moves like\n"
+	.string "Rain Dance last longer.$"
 
 Route119_WeatherInstitute_1F_Text_ProfStudyingRain: @ 826FD2E
 	.string "The Professor loves rain.\n"

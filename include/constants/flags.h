@@ -1179,27 +1179,27 @@
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
 #define FLAG_ITEM_ROUTE_124_TM85_DREAM_EATER                        0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
-#define FLAG_ITEM_ROUTE_109_POTION                                  0x474
+#define FLAG_ITEM_ROUTE_109_ZOOM_LENS                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HERACRONITE                             0x478
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_TM97_DARK_PULSE                  0x479
-#define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
+#define FLAG_ITEM_ROUTE_116_BINDING_BAND                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
 #define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
 #define FLAG_ITEM_ROUTE_121_ZINC                                    0x47E
 #define FLAG_ITEM_MAGMA_HIDEOUT_1F_RARE_CANDY                       0x47F
 #define FLAG_ITEM_ROUTE_123_PP_UP                                   0x480
-#define FLAG_ITEM_ROUTE_123_TM99_DAZZLING_GLEAM                            0x481
+#define FLAG_ITEM_ROUTE_123_TM99_DAZZLING_GLEAM                     0x481
 #define FLAG_ITEM_ROUTE_125_BIG_PEARL                               0x482
 #define FLAG_ITEM_ROUTE_127_RARE_CANDY                              0x483
 #define FLAG_ITEM_ROUTE_132_PROTEIN                                 0x484
 #define FLAG_ITEM_ROUTE_133_MAX_REVIVE                              0x485
 #define FLAG_ITEM_ROUTE_134_CARBOS                                  0x486
-#define FLAG_ITEM_ROUTE_134_COMET_SHARD                              0x487
-#define FLAG_ITEM_ROUTE_114_ENERGY_POWDER                           0x488
+#define FLAG_ITEM_ROUTE_134_COMET_SHARD                             0x487
+#define FLAG_ITEM_ROUTE_114_PROTECTIVE_PADS                         0x488
 #define FLAG_ITEM_ROUTE_115_PP_UP                                   0x489
 #define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
@@ -1210,10 +1210,10 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_KANGASKHANITE              0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_TM53_ENERGY_BALL           0x492
-#define FLAG_HIDE_RUSTBORO_HIKER                               0x493
+#define FLAG_HIDE_RUSTBORO_HIKER                                    0x493
+#define FLAG_WEATHER_INSTITUTE_ROCKS                                0x494
+#define FLAG_ITEM_TRICK_HOUSE_TERRAIN_EXTENDER                      0x495
 
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
