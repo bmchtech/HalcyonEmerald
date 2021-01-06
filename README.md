@@ -1,3 +1,7 @@
+# About this branch
+
+This is a backup of [googleben](https://github.com/googleben)'s [EmeraldPartyRandomizer repository](https://github.com/googleben/EmeraldPartyRandomizer).
+
 # Pokemon Emerald Party Randomizer
 
 This is a romhack for Pokemon Emerald that randomizes your party's pokemon at the beginning of every battle; each pokemon in your party becomes a new pokmeon chosen randomly from every pokemon in the game. It preserves EVs, IVs, contest conditions, HP percentage, XP percentage, shiny/pokerus, and nickname across randomizations, and the moves of the new pokemon are the same as if they were found in the wild at that level. Pokemon will also be added to the pokedex if you get them through randomization. I made this romhack for SmallAnt to stream by request. You can watch him play it [here](https://youtu.be/LtBBhlnLzs4).
