@@ -791,4 +791,23 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_NAUGHTY
 	},
+	[SPREAD_31_IV_HP_SPEED_JOLLY]  = {
+		.EVs = {
+			252,	// HP
+			  0,	// Attack
+			  0,	// Defense
+			252,	// Speed
+			  0,	// Special Attack	
+			  4		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	31,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_JOLLY
+	},
 };

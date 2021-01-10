@@ -1039,6 +1039,7 @@ AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
 	if_effect EFFECT_LEVEL_DAMAGE, AI_Ret
+	if_effect EFFECT_TRAP, AI_Ret
 	if_has_no_move_with_split AI_USER, SPLIT_STATUS, AI_Ret
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
