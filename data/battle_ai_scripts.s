@@ -1062,6 +1062,8 @@ AI_ChoiceDamage:
 
 AI_ChoiceUturn:
 	if_effect EFFECT_HIT_ESCAPE, AI_ChoiceUturnCheckSwitchIns
+	if_hp_less_than AI_USER, 30, AI_Ret @ Don't bother switching out a weakened mon
+	score -20
 	end
 
 @ Don't lock into U turn etc if there's nothing else to bring in
