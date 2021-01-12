@@ -273,5 +273,6 @@ EventScript_ResetAllMapFlags:: @ 82715DE
 	setflag FLAG_HIDE_RAYQUAZA_SKY_TOWER_SUMMIT
 	setflag FLAG_HIDE_FALLARBOR_RIVAL_ON_BIKE
 	setflag FLAG_HIDE_RUSTBORO_HIKER
+	setflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	call EventScript_ResetAllBerries
 	end

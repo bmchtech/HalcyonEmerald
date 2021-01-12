@@ -2032,8 +2032,13 @@ EncouragePsnVenoshock:
 EncouragePsnVenoshockEnd:
 	end
 
+AI_ToxicTrappedTarget:
+	if_status2 AI_TARGET, STATUS2_WRAPPED, Score_Plus3
+	end
+
 AI_CV_Toxic:
 	call EncouragePsnVenoshock
+	call AI_ToxicTrappedTarget
 AI_CV_LeechSeed:
 	if_user_has_no_attacking_moves AI_CV_Toxic3
 	if_hp_more_than AI_USER, 50, AI_CV_Toxic2
@@ -2109,7 +2114,7 @@ AI_CV_SuperFang_End:
 	end
 	
 AI_CV_Trap:
-	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_TrapEnd
+	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, Score_Minus3
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_Trap5
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_PERISH_SONG, AI_CV_Trap1
 	score +3
