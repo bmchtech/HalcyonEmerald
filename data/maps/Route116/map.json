@@ -347,8 +347,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route116_EventScript_ItemPotion",
-      "flag": "FLAG_ITEM_ROUTE_116_POTION"
+      "script": "Route116_EventScript_ItemBindingBand",
+      "flag": "FLAG_ITEM_ROUTE_116_BINDING_BAND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",

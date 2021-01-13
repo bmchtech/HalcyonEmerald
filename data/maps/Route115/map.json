@@ -459,6 +459,14 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 21,
+      "elevation": 3,
+      "item": "ITEM_FIST_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_FIST_PLATE"
     }
   ]
 }

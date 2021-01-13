@@ -48,5 +48,6 @@
 #define SPREAD_31_IV_DEF_SPATK              44 // Offensive Blissey
 #define SPREAD_31_IV_ATK_SPDEF              45 // Steven's Melmetal
 #define SPREAD_31_IV_ATK_SPEED_NAUGHTY      46 // Max Attack mixed attacker
+#define SPREAD_31_IV_HP_SPEED_JOLLY         47 // Stall Crobat
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS

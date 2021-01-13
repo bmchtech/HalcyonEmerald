@@ -1,3 +1,5 @@
+.set LOCALID_SPENSER, 6
+
 FortreeCity_Mart_MapScripts:: @ 8217665
 	.byte 0
 
@@ -36,6 +38,71 @@ FortreeCity_Mart_EventScript_Boy:: @ 82176AA
 	msgbox FortreeCity_Mart_Text_RareCandyMakesMonGrow, MSGBOX_NPC
 	end
 
+FortreeCity_Mart_EventScript_Spenser::
+	lock
+	faceplayer
+	compare VAR_LAVARIDGE_LUCY_STATE, 2
+	goto_if_eq FortreeCity_Mart_EventScript_SpenserBeatLucy
+FortreeCity_Mart_EventScript_SpenserBattle::
+	msgbox FortreeCity_Mart_Text_SpenserBeforeBattle, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SPENSER_FORTREE, FortreeCity_Mart_Text_SpenserDefeat
+	msgbox FortreeCity_Mart_Text_SpenserGiveChoiceScarf, MSGBOX_DEFAULT
+	giveitem ITEM_CHOICE_SCARF
+	giveitem ITEM_BOTTLE_CAP, 3
+	msgbox FortreeCity_Mart_Text_SpenserFarewell, MSGBOX_AUTOCLOSE
+	switch VAR_FACING
+	case DIR_NORTH, FortreeCity_Mart_EventScript_SpenserExitNorth
+	case DIR_WEST, FortreeCity_Mart_EventScript_SpenserExitDown
+	case DIR_EAST, FortreeCity_Mart_EventScript_SpenserExitDown
+	end
+
+FortreeCity_Mart_EventScript_SpenserExitNorth::
+	applymovement LOCALID_SPENSER, FortreeCity_Mart_Movement_SpenserExitNorth
+	waitmovement 0
+	goto FortreeCity_Mart_EventScript_SpenserLeave
+
+FortreeCity_Mart_EventScript_SpenserExitDown::
+	applymovement LOCALID_SPENSER, FortreeCity_Mart_Movement_SpenserExitDown
+	waitmovement 0
+	goto FortreeCity_Mart_EventScript_SpenserLeave
+
+FortreeCity_Mart_EventScript_SpenserLeave::
+	playse SE_SLIDING_DOOR
+	removeobject LOCALID_SPENSER
+	release
+	end
+
+FortreeCity_Mart_EventScript_SpenserBeatLucy::
+	msgbox FortreeCity_Mart_Text_SpenserBeatLucy, MSGBOX_DEFAULT
+	goto FortreeCity_Mart_EventScript_SpenserBattle
+
+FortreeCity_Mart_Text_SpenserBeatLucy:
+	.string "Hm? You're the youngster who beat Lucy!\n"
+	.string "Gwahahah! She wasn't happy about that!$"
+
+FortreeCity_Mart_Text_SpenserIntro:
+	.string "Hm? You're the youngster Scott's\n"
+	.string "always talking about!$"
+
+FortreeCity_Mart_Text_SpenserBeforeBattle:
+	.string "I'd like to see your skills for myself.\p"
+	.string "Can your bonds of trust with your\n"
+	.string "Pokémon match mine?\p"
+	.string "If not, you will never beat my\n"
+	.string "brethren!$"
+
+FortreeCity_Mart_Text_SpenserDefeat:
+	.string "Gwahahah!$"
+
+FortreeCity_Mart_Text_SpenserGiveChoiceScarf:
+	.string "Hahahaha! Saw right through my\n"
+	.string "bluster, did you?\p"
+	.string "Here, take these things!$"
+
+FortreeCity_Mart_Text_SpenserFarewell:
+	.string "I look forward to our next battle.\n"
+	.string "Farewell for now!$"
+
 FortreeCity_Mart_Text_SuperRepelBetter: @ 82176B3
 	.string "Super Repel lasts a long time,\n"
 	.string "and it gets the job done.\p"
@@ -52,3 +119,21 @@ FortreeCity_Mart_Text_RareCandyMakesMonGrow: @ 821778E
 	.string "A Rare Candy makes a Pokémon grow\n"
 	.string "immediately by one level.$"
 
+FortreeCity_Mart_Movement_SpenserExitNorth:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_8
+	step_end
+
+FortreeCity_Mart_Movement_SpenserExitDown:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_8
+	step_end

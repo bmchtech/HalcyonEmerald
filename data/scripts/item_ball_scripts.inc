@@ -42,8 +42,8 @@ Route109_EventScript_ItemPPUp:: @ 8290D5A
 	finditem ITEM_PP_UP
 	end
 
-Route109_EventScript_ItemPotion:: @ 8290D67
-	finditem ITEM_POTION
+Route109_EventScript_ItemZoomLens:: @ 8290D67
+	finditem ITEM_ZOOM_LENS
 	end
 
 Route110_EventScript_ItemRareCandy:: @ 8290D74
@@ -98,8 +98,8 @@ Route114_EventScript_ItemTM54Psyshock:: @ 8290E10
 	finditem ITEM_TM54_PSYSHOCK
 	end
 
-Route114_EventScript_ItemEnergyPowder:: @ 8290E1D
-	finditem ITEM_ENERGY_POWDER
+Route114_EventScript_ItemProtectivePads:: @ 8290E1D
+	finditem ITEM_PROTECTIVE_PADS
 	end
 
 Route115_EventScript_ItemSuperPotion:: @ 8290E2A
@@ -142,8 +142,8 @@ Route116_EventScript_ItemHPUp:: @ 8290E9F
 	finditem ITEM_HP_UP
 	end
 
-Route116_EventScript_ItemPotion:: @ 8290EAC
-	finditem ITEM_SUPER_POTION
+Route116_EventScript_ItemBindingBand:: @ 8290EAC
+	finditem ITEM_BINDING_BAND
 	end
 
 Route117_EventScript_ItemGreatBall:: @ 8290EB9
@@ -844,4 +844,8 @@ Mirage_Tower_4F_EventScript_Aerodactylite::
 
 Sootopolis_City_EventScript_Miloticite::
 	finditem ITEM_MILOTICITE
+	end
+
+TrickHouse5_EventScript_TerrainExtender::
+	finditem ITEM_TERRAIN_EXTENDER
 	end

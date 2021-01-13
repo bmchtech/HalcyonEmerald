@@ -688,6 +688,38 @@ SlateportCity_EventScript_CaptStern:: @ 81DD1F8
 	releaseall
 	end
 
+SlateportCity_EventScript_Greta::
+	lock
+	faceplayer
+	checkflag FLAG_DEFEATED_SLATEPORT_GRETA
+	goto_if_eq SlateportCity_EventScript_GretaDefeated
+	msgbox SlateportCity_Text_GretaHowdy, MSGBOX_DEFAULT
+	goto_if_unset FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY, SlateportCity_EventScript_GretaNotStrongEnough
+	goto_if_unset FLAG_HIDE_FORTREE_POKECENTER_SPENSER, SlateportCity_EventScript_GretaNotStrongEnough
+	msgbox SlateportCity_Text_GretaReadyForBattle, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_EventScript_GretaRefuse
+	msgbox SlateportCity_Text_GretaLetsBattle, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GRETA_SLATEPORT, SlateportCity_Text_GretaDefeat
+	msgbox SlateportCity_Text_GretaHereHaveStuff, MSGBOX_AUTOCLOSE
+	giveitem ITEM_CHOICE_SPECS
+	giveitem ITEM_BOTTLE_CAP, 6
+	setflag FLAG_DEFEATED_SLATEPORT_GRETA
+SlateportCity_EventScript_GretaDefeated::
+	msgbox SlateportCity_Text_GretaDefeated, MSGBOX_AUTOCLOSE
+	release
+	end
+
+SlateportCity_EventScript_GretaNotStrongEnough::
+	msgbox SlateportCity_Text_GretaMaybeNot, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_GretaRefuse::
+	msgbox SlateportCity_Text_GretaRefused, MSGBOX_DEFAULT
+	release
+	end
+
 SlateportCity_Movement_OldWomanConcern: @ 81DD309
 	delay_16
 	delay_16
@@ -1457,3 +1489,37 @@ SlateportCity_Text_TakingBattleTentChallenge: @ 81DF28C
 	.string "After all, a tough Trainer is\n"
 	.string "the perfect fit for the Battle Tent!\p"
 	.string "Give it your best effort!$"
+
+SlateportCity_Text_GretaHowdy:
+	.string "Hey! Howdy! Up for a battle, Trainer?$"
+
+SlateportCity_Text_GretaReadyForBattle:
+	.string "Hmm… yeah, you look like you're up\n"
+	.string "for this. Is your team ready to go?$"
+
+SlateportCity_Text_GretaMaybeNot:
+	.string "Hmm… no, maybe not. To be blunt, you\n"
+	.string "look pretty weak.\p"
+	.string "Come see me again once you've trained\n"
+	.string "up a bit more. Or a lot more!$"
+
+SlateportCity_Text_GretaLetsBattle:
+	.string "Great! Be ready for a thrashing!$"
+
+SlateportCity_Text_GretaRefused:
+	.string "Huh? Really? Shouldn't you always be\n"
+	.string "ready for a battle?$"
+
+SlateportCity_Text_GretaDefeat:
+	.string "No way! You're tough after all!$"
+
+SlateportCity_Text_GretaHereHaveStuff:
+	.string "Hey, not bad! {PLAYER}, was it?\n"
+	.string "I'll remember that.\p"
+	.string "Here, take these with you!$"
+
+SlateportCity_Text_GretaDefeated:
+	.string "Next time we battle will be a lot more\n"
+	.string "fun, but I won't lose again!\p"
+	.string "You'd better do some serious training;\n"
+	.string "no halfhearted rematch allowed!$"

@@ -2421,18 +2421,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Jack},
     },
 
-    [TRAINER_DUDLEY] =
+    [TRAINER_GRETA_SLATEPORT] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_SWIMMER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .trainerName = _("Dudley"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_4,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_ARENA_TYCOON_GRETA,
+        .trainerName = _("Greta"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Dudley),
-        .party = {.ItemCustomMoves = sParty_Dudley},
+        .partySize = ARRAY_COUNT(sParty_GretaSlateport),
+        .party = {.ItemCustomMoves = sParty_GretaSlateport},
     },
 
     [TRAINER_CHAD] =
@@ -7951,18 +7951,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Grunt27},
     },
 
-    [TRAINER_GRUNT_UNUSED] =
+    [TRAINER_LUCY_LAVARIDGE] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
-        .trainerName = _("Grunt"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_4,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_PIKE_QUEEN_LUCY,
+        .trainerName = _("Lucy"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Grunt28),
-        .party = {.ItemCustomMoves = sParty_Grunt28},
+        .partySize = ARRAY_COUNT(sParty_LucyLavaridge),
+        .party = {.ItemCustomMoves = sParty_LucyLavaridge},
     },
 
     [TRAINER_GRUNT_MT_PYRE_4] =
@@ -8861,18 +8861,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Eric},
     },
 
-    [TRAINER_LUCAS_2] =
+    [TRAINER_SPENSER_FORTREE] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_HIKER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_HIKER,
-        .trainerName = _("Lucas"),
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_4,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_PALACE_MAVEN_SPENSER,
+        .trainerName = _("Spenser"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Lucas2),
-        .party = {.ItemCustomMoves = sParty_Lucas2},
+        .partySize = ARRAY_COUNT(sParty_SpenserFortree),
+        .party = {.ItemCustomMoves = sParty_SpenserFortree},
     },
 
     [TRAINER_ARCHIE_SLATEPORT] =

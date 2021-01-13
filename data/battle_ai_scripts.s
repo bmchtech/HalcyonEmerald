@@ -1039,6 +1039,7 @@ AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
 	if_effect EFFECT_LEVEL_DAMAGE, AI_Ret
+	if_effect EFFECT_TRAP, AI_Ret
 	if_has_no_move_with_split AI_USER, SPLIT_STATUS, AI_Ret
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
@@ -1061,6 +1062,8 @@ AI_ChoiceDamage:
 
 AI_ChoiceUturn:
 	if_effect EFFECT_HIT_ESCAPE, AI_ChoiceUturnCheckSwitchIns
+	if_hp_less_than AI_USER, 30, AI_Ret @ Don't bother switching out a weakened mon
+	score -20
 	end
 
 @ Don't lock into U turn etc if there's nothing else to bring in
@@ -2031,8 +2034,13 @@ EncouragePsnVenoshock:
 EncouragePsnVenoshockEnd:
 	end
 
+AI_ToxicTrappedTarget:
+	if_status2 AI_TARGET, STATUS2_WRAPPED, Score_Plus3
+	end
+
 AI_CV_Toxic:
 	call EncouragePsnVenoshock
+	call AI_ToxicTrappedTarget
 AI_CV_LeechSeed:
 	if_user_has_no_attacking_moves AI_CV_Toxic3
 	if_hp_more_than AI_USER, 50, AI_CV_Toxic2
@@ -2108,7 +2116,7 @@ AI_CV_SuperFang_End:
 	end
 	
 AI_CV_Trap:
-	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_TrapEnd
+	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, Score_Minus3
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_Trap5
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_PERISH_SONG, AI_CV_Trap1
 	score +3

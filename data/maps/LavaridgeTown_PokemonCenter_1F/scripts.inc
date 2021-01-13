@@ -1,4 +1,5 @@
 .set LOCALID_NURSE, 1
+.set LOCALID_LUCY, 8
 
 LavaridgeTown_PokemonCenter_1F_MapScripts:: @ 81FFAFA
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_PokemonCenter_1F_OnTransition
@@ -92,6 +93,107 @@ LavaridgeTown_PokemonCenter_1F_EventScript_NotEnoughSpace::
 	release
 	end
 
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyTrigger::
+	lock
+	addobject LOCALID_LUCY
+	setvar VAR_LAVARIDGE_LUCY_STATE, 1
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyYouThere, MSGBOX_AUTOCLOSE
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyEnter
+	waitmovement 0
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_ScottSaid, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq LavaridgeTown_PokemonCenter_1F_EventScript_LucyRefuse
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyBattle::
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyBattle, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LUCY_LAVARIDGE, LavaridgeTown_PokemonCenter_1F_Text_LucyDefeat
+	setvar VAR_LAVARIDGE_LUCY_STATE, 2
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyGiveChoiceBand, MSGBOX_DEFAULT
+	giveitem ITEM_CHOICE_BAND
+	giveitem ITEM_BOTTLE_CAP, 3
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyGoodbye, MSGBOX_AUTOCLOSE
+	waitmessage
+	getplayerxy VAR_0x8004, VAR_0x8005
+	compare VAR_0x8004, 2
+	goto_if_eq LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitFromSprings
+	switch VAR_FACING
+	case DIR_NORTH, LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitNorth
+	case DIR_WEST, LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitWest
+	case DIR_EAST, LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitEast
+	end
+
+LavaridgeTown_PokemonCenter_1F_EventScript_Lucy::
+	applymovement LOCALID_LUCY, Common_Movement_FacePlayer
+	waitmovement 0
+	goto LavaridgeTown_PokemonCenter_1F_EventScript_LucyBattle
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyRefuse::
+	msgbox LavaridgeTown_PokemonCenter_1F_Text_VeryWell, MSGBOX_AUTOCLOSE	
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyGoWait
+	waitmovement 0
+	release
+	end
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitFromSprings::
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyExitFromSprings
+	waitmovement 0
+	goto LavaridgeTown_PokemonCenter_1F_EventScript_LucyLeave
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitNorth:
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyExitNorth
+	waitmovement 0
+	goto LavaridgeTown_PokemonCenter_1F_EventScript_LucyLeave
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitWest:
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyExitNorth
+	waitmovement 0
+	goto LavaridgeTown_PokemonCenter_1F_EventScript_LucyLeave
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyExitEast:
+	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyExitEast
+	waitmovement 0
+	goto LavaridgeTown_PokemonCenter_1F_EventScript_LucyLeave
+
+LavaridgeTown_PokemonCenter_1F_EventScript_LucyLeave::
+	playse SE_SLIDING_DOOR
+	removeobject LOCALID_LUCY
+	release
+	end
+
+LavaridgeTown_PokemonCenter_1F_Text_LucyYouThere:
+	.string "???: You there… Stop.$"
+
+LavaridgeTown_PokemonCenter_1F_Text_ScottSaid:
+	.string "???: Scott said I might find you here.\n"
+	.string "I am Lucy…\p"
+	.string "I'm not one for idle chatter… I want\n"
+	.string "to battle. Are you ready?$"
+
+LavaridgeTown_PokemonCenter_1F_Text_VeryWell:
+	.string "Lucy: Very well…\n"
+	.string "I'll be by the PC.\p"
+	.string "Don't keep me waiting…$"
+
+LavaridgeTown_PokemonCenter_1F_Text_LucyDefeat:
+	.string "Urk…$"
+
+LavaridgeTown_PokemonCenter_1F_Text_LucyBattle:
+	.string "Lucy: Ready? Good.\n"
+	.string "Let's make this quick…$"
+
+LavaridgeTown_PokemonCenter_1F_Text_LucyGiveChoiceBand:
+	.string "Lucy: You were lucky, this time…\n"
+	.string "Here. Take these…$"
+
+LavaridgeTown_PokemonCenter_1F_Text_LucyGoodbye:
+	.string "Lucy: Perhaps we'll meet again…\n"
+	.string "If your luck holds up.\p"
+	.string "Good-bye, for now…$"
+
 LavaridgeTown_PokemonCenter_1F_Text_WantToBuyMoomooMilk:
 	.string "Moomoo Milk?\p"
 	.string "It's great before entering the\n"
@@ -126,3 +228,60 @@ LavaridgeTown_PokemonCenter_1F_Text_TrainersShouldRestToo: @ 81FFC21
 	.string "If Pokémon are getting rest, so too\n"
 	.string "should their Trainers.$"
 
+LavaridgeTown_PokemonCenter_1F_Movement_LucyEnter:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+LavaridgeTown_PokemonCenter_1F_Movement_LucyGoWait:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+LavaridgeTown_PokemonCenter_1F_Movement_LucyExitFromSprings:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+LavaridgeTown_PokemonCenter_1F_Movement_LucyExitNorth:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_8
+	step_end
+
+LavaridgeTown_PokemonCenter_1F_Movement_LucyExitEast:
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	delay_8
+	step_end
