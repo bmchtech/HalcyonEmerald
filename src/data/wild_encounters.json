@@ -12097,6 +12097,144 @@
           }
         },
         {
+          "map": "MAP_DEWFORD_MEADOW",
+          "base_label": "gDewfordMeadow",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_CUTIEFLY"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_ORICORIO_POM_POM"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_YELLOW_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_ORANGE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_COMBEE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_COMBEE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_COMBEE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_COMBEE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_DEWFORD_MANOR_1F",
+          "base_label": "gDewfordManor",
+          "land_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_SOLOSIS"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LITWICK"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_LITWICK"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MIMEJR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MIMEJR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MIMEJR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MIMEJR"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_SCORCHED_SLAB",
           "base_label": "gScorchedSlab",
           "land_mons": {

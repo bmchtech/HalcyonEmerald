@@ -1,0 +1,104 @@
+{
+  "id": "MAP_DEWFORD_MEADOW",
+  "name": "DewfordMeadow",
+  "layout": "LAYOUT_DEWFORD_MEADOW",
+  "music": "MUS_DEWFORD",
+  "region_map_section": "MAPSEC_DEWFORD_MEADOW",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "direction": "right",
+      "offset": -10,
+      "map": "MAP_DEWFORD_TOWN"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DewfordMeadow_EventScript_RingTarget",
+      "flag": "FLAG_ITEM_DEWFORD_MEADOW_RING_TARGET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "x": 4,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DewfordMeadow_EventScript_TM95Snarl",
+      "flag": "FLAG_ITEM_DEWFORD_MEADOW_TM95"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_DEWFORD_MANOR_1F",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_YELLOW_NECTAR",
+      "flag": "FLAG_DAILY_YELLOW_NECTAR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_PINK_NECTAR",
+      "flag": "FLAG_DAILY_PINK_NECTAR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 21,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_RED_NECTAR",
+      "flag": "FLAG_DAILY_RED_NECTAR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_PURPLE_NECTAR",
+      "flag": "FLAG_DAILY_PURPLE_NECTAR"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DewfordMeadow_EventScript_ManorSign"
+    }
+  ]
+}

@@ -4560,6 +4560,26 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/ScorchedSlab_HeatransRoom/border.bin",
       "blockdata_filepath": "data/layouts/ScorchedSlab_HeatransRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_MEADOW",
+      "name": "DewfordMeadow_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/DewfordMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_DEWFORD_MANOR_1F",
+      "name": "DewfordManor_1F_Layout",
+      "width": 24,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/DewfordManor_1F/border.bin",
+      "blockdata_filepath": "data/layouts/DewfordManor_1F/map.bin"
     }
   ]
 }
