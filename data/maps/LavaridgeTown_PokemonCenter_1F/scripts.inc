@@ -114,6 +114,7 @@ LavaridgeTown_PokemonCenter_1F_EventScript_LucyBattle::
 	setvar VAR_LAVARIDGE_LUCY_STATE, 2
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyGiveChoiceBand, MSGBOX_DEFAULT
 	giveitem ITEM_CHOICE_BAND
+	giveitem ITEM_BOTTLE_CAP, 3
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyGoodbye, MSGBOX_AUTOCLOSE
 	waitmessage
 	getplayerxy VAR_0x8004, VAR_0x8005
@@ -186,7 +187,7 @@ LavaridgeTown_PokemonCenter_1F_Text_LucyBattle:
 
 LavaridgeTown_PokemonCenter_1F_Text_LucyGiveChoiceBand:
 	.string "Lucy: You were lucky, this time…\n"
-	.string "Here. Take this…$"
+	.string "Here. Take these…$"
 
 LavaridgeTown_PokemonCenter_1F_Text_LucyGoodbye:
 	.string "Lucy: Perhaps we'll meet again…\n"

@@ -48,6 +48,7 @@ FortreeCity_Mart_EventScript_SpenserBattle::
 	trainerbattle_no_intro TRAINER_SPENSER, FortreeCity_Mart_Text_SpenserDefeat
 	msgbox FortreeCity_Mart_Text_SpenserGiveChoiceScarf, MSGBOX_DEFAULT
 	giveitem ITEM_CHOICE_SCARF
+	giveitem ITEM_BOTTLE_CAP, 3
 	msgbox FortreeCity_Mart_Text_SpenserFarewell, MSGBOX_AUTOCLOSE
 	switch VAR_FACING
 	case DIR_NORTH, FortreeCity_Mart_EventScript_SpenserExitNorth
@@ -94,9 +95,9 @@ FortreeCity_Mart_Text_SpenserDefeat:
 	.string "Gwahahah!$"
 
 FortreeCity_Mart_Text_SpenserGiveChoiceScarf:
-	.string "Hahahaha! Saw right through my bluster\n"
-	.string "did you?\p"
-	.string "Here, take this thing!$"
+	.string "Hahahaha! Saw right through my\n"
+	.string "bluster, did you?\p"
+	.string "Here, take these things!$"
 
 FortreeCity_Mart_Text_SpenserFarewell:
 	.string "I look forward to our next battle.\n"
