@@ -700,7 +700,7 @@ SlateportCity_EventScript_Greta::
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_EventScript_GretaRefuse
 	msgbox SlateportCity_Text_GretaLetsBattle, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRETA, SlateportCity_Text_GretaDefeat
+	trainerbattle_no_intro TRAINER_GRETA_SLATEPORT, SlateportCity_Text_GretaDefeat
 	msgbox SlateportCity_Text_GretaHereHaveStuff, MSGBOX_AUTOCLOSE
 	giveitem ITEM_CHOICE_SPECS
 	giveitem ITEM_BOTTLE_CAP, 6
