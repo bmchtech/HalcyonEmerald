@@ -1006,46 +1006,50 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_LEFTOVERS, 
+        .heldItem = ITEM_MUSCLE_BAND, 
         .mailNum = 0,
         .otName = _("ROMAN"), 
         .otGender = MALE, 
         .sheen = 10,
         .requestedSpecies = SPECIES_CROAGUNK,
         .nature = NATURE_JOLLY,
-        .level = 17
+        .level = 21
     }, 
-    [INGAME_TRADE_HORSEA] = 
+    [INGAME_TRADE_HAPPINY] = 
     {
-        .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
-        .abilityNum = 0, 
+        .nickname = _("Happy"),
+        .species = SPECIES_HAPPINY,
+        .ivs = {31, 15, 31, 15, 15, 31},
+        .abilityNum = 0, // Natural Cure
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL, 
+        .heldItem = ITEM_WISE_GLASSES, 
         .mailNum = 1,
         .otName = _("SKYLAR"), 
         .otGender = MALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_PYUKUMUKU,
+        .nature = NATURE_BOLD,
+        .level = 32
     }, 
-    [INGAME_TRADE_MEOWTH] = 
+    [INGAME_TRADE_KARRABLAST] = 
     {
-        .nickname = _("MEOWOW"),
-        .species = SPECIES_MEOWTH,
-        .ivs = {4, 5, 4, 5, 4, 4},
-        .abilityNum = 0, 
+        .nickname = _("Escarslow"),
+        .species = SPECIES_KARRABLAST,
+        .ivs = {31, 31, 31, 0, 15, 15},
+        .abilityNum = 2, // Overcoat
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL, 
+        .heldItem = ITEM_FOCUS_SASH, 
         .mailNum = 2,
         .otName = _("ISIS"), 
         .otGender = FEMALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_SKITTY
+        .requestedSpecies = SPECIES_SHELMET,
+        .nature = NATURE_BRAVE,
+        .level = 50
     }
 };
 

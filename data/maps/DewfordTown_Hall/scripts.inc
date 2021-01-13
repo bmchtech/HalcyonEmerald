@@ -271,6 +271,82 @@ DewfordTown_Hall_EventScript_ReceivedSludgeBomb:: @ 81FD80E
 	release
 	end
 
+DewfordTown_Hall_EventScript_Trader:: @ 82162BB
+	lock
+	faceplayer
+	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, DewfordTown_Hall_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_TROPIUS
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox DewfordTown_Hall_Text_YouWillTradeWontYou, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq DewfordTown_Hall_EventScript_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	compare VAR_0x8004, 255
+	goto_if_eq DewfordTown_Hall_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne DewfordTown_Hall_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	bufferspeciesname 0, VAR_0x8009
+	msgbox DewfordTown_Hall_Text_MonYouTakeCare, MSGBOX_DEFAULT
+	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
+	release
+	end
+
+DewfordTown_Hall_EventScript_DeclineTrade:: @ 821633D
+	msgbox DewfordTown_Hall_Text_YouWontTradeMe, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_Hall_EventScript_NotRequestedMon:: @ 8216347
+	bufferspeciesname 0, VAR_0x8009
+	msgbox DewfordTown_Hall_Text_ThisIsntAMon, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_Hall_EventScript_TradeCompleted:: @ 8216355
+	msgbox DewfordTown_Hall_Text_GoingToMakeVolbeatStrong, MSGBOX_DEFAULT
+	release
+	end
+	
+DewfordTown_Hall_Text_YouWillTradeWontYou: @ 821637B
+	.string "Wrooooaaar! I need it!\n"
+	.string "I have to get me a {STR_VAR_1}!\l"
+	.string "I'll do anything for it!\p"
+	.string "…Uh… Did you hear that?\n"
+	.string "My shout from the bottom of my heart?\p"
+	.string "Having heard that, you will trade\n"
+	.string "your {STR_VAR_1} for my {STR_VAR_2},\l"
+	.string "won't you?$"
+
+DewfordTown_Hall_Text_MonYouTakeCare: @ 8216440
+	.string "Oh, yeah, right on!\p"
+	.string "{STR_VAR_1}, welcome!\n"
+	.string "{STR_VAR_2}, you take care!$"
+
+DewfordTown_Hall_Text_ThisIsntAMon: @ 8216474
+	.string "Uh, no, I don't think so.\n"
+	.string "That isn't a {STR_VAR_1}.$"
+
+DewfordTown_Hall_Text_YouWontTradeMe: @ 821649F
+	.string "No? You won't trade me?\n"
+	.string "Even after I bared my heart to you?$"
+
+DewfordTown_Hall_Text_GoingToMakeVolbeatStrong: @ 82164DB
+	.string "I'm going to make Croagunk super\n"
+	.string "strong from this moment on!\p"
+	.string "I hope you do the same with Tropius!$"
+
 DewfordTown_Hall_Text_CantImagineLifeWithoutTrend: @ 81FD818
 	.string "What's in vogue? Why, it has to be\n"
 	.string "“{STR_VAR_1}”!\p"
