@@ -1082,3 +1082,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/ScorchedSlab_B2F/scripts.inc"
 
 	.include "data/maps/ScorchedSlab_HeatransRoom/scripts.inc"
+
+	.include "data/maps/DewfordMeadow/scripts.inc"

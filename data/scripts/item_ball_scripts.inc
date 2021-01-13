@@ -849,3 +849,11 @@ Sootopolis_City_EventScript_Miloticite::
 TrickHouse5_EventScript_TerrainExtender::
 	finditem ITEM_TERRAIN_EXTENDER
 	end
+
+DewfordMeadow_EventScript_TM95Snarl::
+	finditem ITEM_TM95_SNARL
+	end
+
+DewfordMeadow_EventScript_RingTarget::
+	finditem ITEM_RING_TARGET
+	end

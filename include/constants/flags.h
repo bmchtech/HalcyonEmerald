@@ -1216,8 +1216,8 @@
 #define FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY                         0x496
 #define FLAG_HIDE_FORTREE_POKECENTER_SPENSER                        0x497
 #define FLAG_DEFEATED_SLATEPORT_GRETA                               0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
+#define FLAG_ITEM_DEWFORD_MEADOW_TM95                               0x499
+#define FLAG_ITEM_DEWFORD_MEADOW_RING_TARGET                        0x49A
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
@@ -1580,11 +1580,11 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 #define FLAG_DAILY_RECEIVED_DAYCARE_EGG             (DAILY_FLAGS_START + 0x15)
+#define FLAG_DAILY_RED_NECTAR                       (DAILY_FLAGS_START + 0x16)
+#define FLAG_DAILY_PINK_NECTAR                      (DAILY_FLAGS_START + 0x17)
+#define FLAG_DAILY_PURPLE_NECTAR                    (DAILY_FLAGS_START + 0x18)
+#define FLAG_DAILY_YELLOW_NECTAR                    (DAILY_FLAGS_START + 0x19)
 
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
