@@ -1261,6 +1261,7 @@ extern const u8 gText_TM24AndPrice[];
 extern const u8 gText_TM13AndPrice[];
 extern const u8 gText_50CoinsAndPrice[];
 extern const u8 gText_500CoinsAndPrice[];
+extern const u8 gText_5000CoinsAndPrice[];
 extern const u8 gText_Excellent2[];
 extern const u8 gText_NotSoGood[];
 extern const u8 gText_LilycoveCity[];
@@ -3365,6 +3366,9 @@ extern const u8 gText_GameCornerMeowth[];
 extern const u8 gText_GameCornerGrimer[];
 extern const u8 gText_GameCornerDiglett[];
 extern const u8 gText_GameCornerGeodude[];
+extern const u8 gText_GameCornerRaichu[];
+extern const u8 gText_GameCornerMarowak[];
+extern const u8 gText_GameCornerExeggutor[];
 
 extern const u8 gText_GameCornerBulbasaur[];
 extern const u8 gText_GameCornerChikorita[];
