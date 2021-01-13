@@ -2087,7 +2087,6 @@ static const struct LevelUpMove sExeggcuteLevelUpLearnset[] = {
 
 static const struct LevelUpMove sExeggutorLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_STOMP),
-	LEVEL_UP_MOVE( 1, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE( 1, MOVE_SEED_BOMB),
     LEVEL_UP_MOVE( 1, MOVE_REFLECT),
     LEVEL_UP_MOVE( 1, MOVE_LEECH_SEED),
@@ -16943,7 +16942,6 @@ static const struct LevelUpMove sMukAlolanLevelUpLearnset[] = {
 
 static const struct LevelUpMove sExeggutorAlolanLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_DRAGON_HAMMER),
-    LEVEL_UP_MOVE( 1, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE( 1, MOVE_SEED_BOMB),
     LEVEL_UP_MOVE( 1, MOVE_REFLECT),
     LEVEL_UP_MOVE( 1, MOVE_LEECH_SEED),

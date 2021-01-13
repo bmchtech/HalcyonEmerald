@@ -11,11 +11,15 @@ MauvilleCity_GameCorner_MapScripts:: @ 820FBB8
 	.set GRIMER_COINS,  	2000
 	.set DIGLETT_COINS,  	2000
 	.set GEODUDE_COINS,  	2000
+	.set RAICHU_COINS,  	4500
+	.set MAROWAK_COINS,  	4500
+	.set EXEGGUTOR_COINS,  	4500
 	.set STARTER_COINS, 	2500
 	.set DOLL_COINS,  		1000
 
-	.set COINS_PRICE_50,  500
-	.set COINS_PRICE_500, 5000
+	.set COINS_PRICE_50,    500
+	.set COINS_PRICE_500,   5000
+	.set COINS_PRICE_5000,  50000
 
 MauvilleCity_GameCorner_EventScript_CoinsClerk:: @ 820FBB9
 	lock
@@ -35,6 +39,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50:: @ 820FBE5
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
+	case 2, MauvilleCity_GameCorner_EventScript_Buy5000Coins
 	goto MauvilleCity_GameCorner_EventScript_CancelBuyCoins
 	end
 
@@ -74,6 +79,24 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins:: @ 820FC75
 	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
 	addcoins 500
 	removemoney COINS_PRICE_500, 0
+	updatemoneybox 0, 0
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	hidemoneybox
+	hidecoinsbox 0, 5
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_Buy5000Coins::
+	checkcoins VAR_TEMP_1
+	compare VAR_TEMP_1, (MAX_COINS + 1 - 5000)
+	goto_if_ge MauvilleCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_5000, 0
+	compare VAR_RESULT, FALSE
+	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 5000
+	removemoney COINS_PRICE_5000, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
 	playse SE_SHOP
@@ -263,7 +286,10 @@ MauvilleCity_GameCorner_EventScript_ChoosePokemonPrize::
 	case 6, MauvilleCity_GameCorner_EventScript_Grimer
 	case 7, MauvilleCity_GameCorner_EventScript_Diglett
 	case 8, MauvilleCity_GameCorner_EventScript_Geodude
-	case 9, MauvilleCity_GameCorner_EventScript_CancelPokemonSelect
+	case 9, MauvilleCity_GameCorner_EventScript_Raichu
+	case 10, MauvilleCity_GameCorner_EventScript_Marowak
+	case 11, MauvilleCity_GameCorner_EventScript_Exeggutor
+	case 12, MauvilleCity_GameCorner_EventScript_CancelPokemonSelect
 	goto MauvilleCity_GameCorner_EventScript_CancelPokemonSelect
 	end
 
@@ -310,6 +336,21 @@ MauvilleCity_GameCorner_EventScript_Diglett::
 MauvilleCity_GameCorner_EventScript_Geodude::
 	setvar VAR_TEMP_1, SPECIES_GEODUDE_ALOLAN
 	setvar VAR_0x8006, GEODUDE_COINS
+	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
+
+MauvilleCity_GameCorner_EventScript_Raichu::
+	setvar VAR_TEMP_1, SPECIES_RAICHU_ALOLAN
+	setvar VAR_0x8006, RAICHU_COINS
+	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
+
+MauvilleCity_GameCorner_EventScript_Marowak::
+	setvar VAR_TEMP_1, SPECIES_MAROWAK_ALOLAN
+	setvar VAR_0x8006, MAROWAK_COINS
+	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
+
+MauvilleCity_GameCorner_EventScript_Exeggutor::
+	setvar VAR_TEMP_1, SPECIES_EXEGGUTOR_ALOLAN
+	setvar VAR_0x8006, EXEGGUTOR_COINS
 	goto MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize
 	
 MauvilleCity_GameCorner_EventScript_ConfirmPokemonPrize::

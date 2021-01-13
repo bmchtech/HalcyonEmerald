@@ -672,6 +672,7 @@ const u8 gText_TorchicDollAndPrice[] = _("Torchic Doll 1,000 Coins");
 const u8 gText_MudkipDollAndPrice[] = _("Mudkip Doll   1,000 Coins");
 const u8 gText_50CoinsAndPrice[] = _("  50 Coins    ¥500");
 const u8 gText_500CoinsAndPrice[] = _("500 Coins  ¥5,000");
+const u8 gText_5000CoinsAndPrice[] = _("5000 Coins ¥50,000");
 const u8 gText_Excellent2[] = _("Excellent");
 const u8 gText_NotSoGood[] = _("Not so good");
 const u8 gText_RedShard[] = _("Red Shard");
@@ -2023,6 +2024,9 @@ const u8 gText_GameCornerMeowth[] = 	_("Meowth{CLEAR_TO 0x48}2000 Coins");
 const u8 gText_GameCornerGrimer[] = 	_("Grimer{CLEAR_TO 0x48}2000 Coins");
 const u8 gText_GameCornerDiglett[] = 	_("Diglett{CLEAR_TO 0x48}2000 Coins");
 const u8 gText_GameCornerGeodude[] = 	_("Geodude{CLEAR_TO 0x48}2000 Coins");
+const u8 gText_GameCornerRaichu[] = 	_("Raichu{CLEAR_TO 0x48}4500 Coins");
+const u8 gText_GameCornerMarowak[] = 	_("Marowak{CLEAR_TO 0x48}4500 Coins");
+const u8 gText_GameCornerExeggutor[] = 	_("Exeggutor{CLEAR_TO 0x48}4500 Coins");
 // Grass Starters
 const u8 gText_GameCornerBulbasaur[] = 	_("Bulbasaur{CLEAR_TO 0x48}2500 Coins");
 const u8 gText_GameCornerChikorita[] = 	_("Chikorita{CLEAR_TO 0x48}2500 Coins");
