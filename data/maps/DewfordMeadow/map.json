@@ -2,8 +2,8 @@
   "id": "MAP_DEWFORD_MEADOW",
   "name": "DewfordMeadow",
   "layout": "LAYOUT_DEWFORD_MEADOW",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_DEWFORD_TOWN",
+  "music": "MUS_DEWFORD",
+  "region_map_section": "MAPSEC_DEWFORD_MEADOW",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -52,7 +52,7 @@
       "x": 10,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_DEWFORD_MEADOW",
+      "dest_map": "MAP_DEWFORD_MANOR_1F",
       "dest_warp_id": 0
     }
   ],
@@ -91,6 +91,14 @@
       "elevation": 3,
       "item": "ITEM_PURPLE_NECTAR",
       "flag": "FLAG_DAILY_PURPLE_NECTAR"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DewfordMeadow_EventScript_ManorSign"
     }
   ]
 }

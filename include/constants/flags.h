@@ -654,7 +654,6 @@
 #define FLAG_SANDSTREWN_RUINS_PROTECTOR                      (FLAG_HIDDEN_ITEMS_START + 0x75)
 #define FLAG_SANDSTREWN_RUINS_BIG_NUGGET                     (FLAG_HIDDEN_ITEMS_START + 0x76)
 #define FLAG_HIDDEN_ITEM_SCORCHED_SLAB_STONE_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x77)
-
 #define FLAG_HIDDEN_ITEM_METEOR_FALLS_DRACO_PLATE            (FLAG_HIDDEN_ITEMS_START + 0x78)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_ZAP_PLATE                 (FLAG_HIDDEN_ITEMS_START + 0x79)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_124_PIXIE_PLATE          (FLAG_HIDDEN_ITEMS_START + 0x7A)
@@ -662,7 +661,7 @@
 #define FLAG_HIDDEN_ITEM_SKY_PILLAR_SKY_PLATE                (FLAG_HIDDEN_ITEMS_START + 0x7C)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_MIND_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7D)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7E)
-#define FLAG_HIDDEN_ITEM_SPOOKY_HOUSE_DREAD_PLATE            (FLAG_HIDDEN_ITEMS_START + 0x7F)
+#define FLAG_HIDDEN_ITEM_DEWFORD_MANOR_DREAD_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7F)
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
@@ -1218,8 +1217,8 @@
 #define FLAG_DEFEATED_SLATEPORT_GRETA                               0x498
 #define FLAG_ITEM_DEWFORD_MEADOW_TM95                               0x499
 #define FLAG_ITEM_DEWFORD_MEADOW_RING_TARGET                        0x49A
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
+#define FLAG_ITEM_DEWFORD_MANOR_TM100                               0x49B
+#define FLAG_ITEM_DEWFORD_MANOR_BANETTITE                           0x49C
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
