@@ -5621,3 +5621,30 @@ bool8 CheckMagikarpBattle (void)
     }
     return TRUE;
 }
+
+void ResetDailyHiddenItemFlags(void)
+{
+    u16 *specVar = &gSpecialVar_0x8004;
+    u16 flag;
+    u32 i = 0;
+    static const u16 dailyItemflags[] = 
+    {
+        FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_1,
+        FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_2,
+        FLAG_HIDDEN_ITEM_RUINS_EXTERIOR_STAR_PIECE_1,
+        FLAG_HIDDEN_ITEM_RUINS_EXTERIOR_STAR_PIECE_2,
+        FLAG_HIDDEN_ITEM_RED_NECTAR,
+        FLAG_HIDDEN_ITEM_PINK_NECTAR,
+        FLAG_HIDDEN_ITEM_PURPLE_NECTAR,
+        FLAG_HIDDEN_ITEM_YELLOW_NECTAR,
+        0xFFFF
+    };
+
+    while (dailyItemflags[i] != 0xFFFF)
+    {
+        flag = dailyItemflags[i];
+        *specVar = flag;
+        FlagClear(flag);
+        i++;
+    }
+}
