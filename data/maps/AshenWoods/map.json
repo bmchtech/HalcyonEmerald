@@ -193,7 +193,7 @@
       "y": 38,
       "elevation": 3,
       "item": "ITEM_BALM_MUSHROOM",
-      "flag": "FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_2"
+      "flag": "FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_2"
     },
     {
       "type": "hidden_item",
@@ -209,7 +209,7 @@
       "y": 39,
       "elevation": 3,
       "item": "ITEM_BALM_MUSHROOM",
-      "flag": "FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_1"
+      "flag": "FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_1"
     }
   ]
 }

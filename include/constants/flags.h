@@ -662,14 +662,14 @@
 #define FLAG_HIDDEN_ITEM_UNDERWATER_127_MIND_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7D)
 #define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7E)
 #define FLAG_HIDDEN_ITEM_DEWFORD_MANOR_DREAD_PLATE           (FLAG_HIDDEN_ITEMS_START + 0x7F)
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
+#define FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_1         (FLAG_HIDDEN_ITEMS_START + 0x7E)
+#define FLAG_HIDDEN_ITEM_ASHEN_WOODS_BALM_MUSHROOM_2         (FLAG_HIDDEN_ITEMS_START + 0x7F)
+#define FLAG_HIDDEN_ITEM_RUINS_EXTERIOR_STAR_PIECE_1         (FLAG_HIDDEN_ITEMS_START + 0x80)
+#define FLAG_HIDDEN_ITEM_RUINS_EXTERIOR_STAR_PIECE_2         (FLAG_HIDDEN_ITEMS_START + 0x81)
+#define FLAG_HIDDEN_ITEM_RED_NECTAR                          (FLAG_HIDDEN_ITEMS_START + 0x82)
+#define FLAG_HIDDEN_ITEM_PINK_NECTAR                         (FLAG_HIDDEN_ITEMS_START + 0x83)
+#define FLAG_HIDDEN_ITEM_PURPLE_NECTAR                       (FLAG_HIDDEN_ITEMS_START + 0x84)
+#define FLAG_HIDDEN_ITEM_YELLOW_NECTAR                       (FLAG_HIDDEN_ITEMS_START + 0x85)
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
@@ -1560,10 +1560,10 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_1      (DAILY_FLAGS_START + 0x3)
-#define FLAG_DAILY_ASHEN_WOODS_BALM_MUSHROOM_2      (DAILY_FLAGS_START + 0x4)
-#define FLAG_DAILY_RUINS_EXTERIOR_STAR_PIECE_1      (DAILY_FLAGS_START + 0x5)
-#define FLAG_DAILY_RUINS_EXTERIOR_STAR_PIECE_2      (DAILY_FLAGS_START + 0x6)
+#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
+#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
 #define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
@@ -1579,11 +1579,10 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 #define FLAG_DAILY_RECEIVED_DAYCARE_EGG             (DAILY_FLAGS_START + 0x15)
-#define FLAG_DAILY_RED_NECTAR                       (DAILY_FLAGS_START + 0x16)
-#define FLAG_DAILY_PINK_NECTAR                      (DAILY_FLAGS_START + 0x17)
-#define FLAG_DAILY_PURPLE_NECTAR                    (DAILY_FLAGS_START + 0x18)
-#define FLAG_DAILY_YELLOW_NECTAR                    (DAILY_FLAGS_START + 0x19)
-
+#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
+#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
+#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
+#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
