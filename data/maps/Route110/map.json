@@ -760,6 +760,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_CyclingRoadSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 41,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE110_BOTTLE_CAP"
     }
   ]
 }

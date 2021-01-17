@@ -43,14 +43,14 @@
   ],
   "warp_events": [
     {
-      "x": 12,
+      "x": 11,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_MEADOW",
       "dest_warp_id": 0
     },
     {
-      "x": 13,
+      "x": 12,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_MEADOW",
@@ -68,6 +68,14 @@
       "elevation": 3,
       "item": "ITEM_DREAD_PLATE",
       "flag": "FLAG_HIDDEN_ITEM_DEWFORD_MANOR_DREAD_PLATE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_DEWFORD_MANOR_BOTTLE_CAP"
     }
   ]
 }

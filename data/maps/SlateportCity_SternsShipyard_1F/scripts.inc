@@ -74,7 +74,7 @@ SlateportCity_SternsShipyard_1F_Text_CantMakeHeadsOrTails: @ 8208008
 
 SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern: @ 82080A5
 	.string "Hm?\n"
-	.string "Hi, I'm DOCK.\p"
+	.string "Hi, I'm Dock.\p"
 	.string "Capt. Stern commissioned me to\n"
 	.string "design a ferry.\p"
 	.string "Oh! That there…\n"
@@ -83,8 +83,8 @@ SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern: @ 82080A5
 	.string "This won't do…\p"
 	.string "Capt. Stern went off somewhere.\n"
 	.string "He said he had some work to do.\p"
-	.string "Could I get you to go find CAPT.\n"
-	.string "STERN and deliver that to him?$"
+	.string "Could I get you to go find Capt.\n"
+	.string "Stern and deliver that to him?$"
 
 SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern: @ 82081A5
 	.string "Dock: Where could Capt. Stern have\n"
@@ -119,11 +119,11 @@ SlateportCity_SternsShipyard_1F_Text_DecidedToHelpDock: @ 82083EE
 	.string "It's been too long!\p"
 	.string "Aye, since I met you, this old sea dog's\n"
 	.string "been feeling frisky!\p"
-	.string "So I've decided to help DOCK make\n"
+	.string "So I've decided to help Dock make\n"
 	.string "a ferry.\p"
 	.string "Aye, after all, a ferry would be able\n"
 	.string "to carry a lot of people.\p"
-	.string "But, you know, that DOCK is really\n"
+	.string "But, you know, that Dock is really\n"
 	.string "something special.\p"
 	.string "With his knack for technology and\n"
 	.string "my experience, I'm sure that we can\l"

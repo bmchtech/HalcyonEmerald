@@ -346,55 +346,22 @@ SlateportCity_Harbor_EventScript_FerryFinished:: @ 820CD2E
 	end
 
 SlateportCity_Harbor_EventScript_AskToTradeScanner:: @ 820CD38
-	message SlateportCity_Harbor_Text_WouldYouTradeScanner
-	waitmessage
-	goto SlateportCity_Harbor_EventScript_ChooseScannerTrade
-	end
-
-SlateportCity_Harbor_EventScript_ChooseScannerTrade:: @ 820CD44
-	multichoice 0, 0, MULTI_STERN_DEEPSEA, 0
-	switch VAR_RESULT
-	case 0, SlateportCity_Harbor_EventScript_DeepSeaTooth
-	case 1, SlateportCity_Harbor_EventScript_DeepSeaScale
-	case 2, SlateportCity_Harbor_EventScript_DeclineTrade
-	case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_DeclineTrade
-	end
-
-SlateportCity_Harbor_EventScript_DeepSeaTooth:: @ 820CD7B
-	msgbox SlateportCity_Harbor_Text_TradeForDeepSeaTooth, MSGBOX_YESNO
+	message SlateportCity_Harbor_Text_WouldYouTradeScanner, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq SlateportCity_Harbor_EventScript_ChooseDifferentTrade
-	giveitem ITEM_DEEP_SEA_TOOTH
+	goto SlateportCity_Harbor_EventScript_DeclineTrade
+	giveitem ITEM_BOTTLE_CAP, 12
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	removeitem ITEM_SCANNER
 	msgbox SlateportCity_Harbor_Text_HandedScannerToStern, MSGBOX_DEFAULT
 	setflag FLAG_EXCHANGED_SCANNER
 	goto SlateportCity_Harbor_EventScript_TradedScanner
-	end
-
-SlateportCity_Harbor_EventScript_DeepSeaScale:: @ 820CDBB
-	msgbox SlateportCity_Harbor_Text_TradeForDeepSeaScale, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq SlateportCity_Harbor_EventScript_ChooseDifferentTrade
-	giveitem ITEM_DEEP_SEA_SCALE
-	compare VAR_RESULT, FALSE
-	goto_if_eq Common_EventScript_ShowBagIsFull
-	removeitem ITEM_SCANNER
-	msgbox SlateportCity_Harbor_Text_HandedScannerToStern, MSGBOX_DEFAULT
-	setflag FLAG_EXCHANGED_SCANNER
-	goto SlateportCity_Harbor_EventScript_TradedScanner
+	release
 	end
 
 SlateportCity_Harbor_EventScript_DeclineTrade:: @ 820CDFB
 	msgbox SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow, MSGBOX_DEFAULT
 	release
-	end
-
-SlateportCity_Harbor_EventScript_ChooseDifferentTrade:: @ 820CE05
-	message SlateportCity_Harbor_Text_WhichOneDoYouWant
-	waitmessage
-	goto SlateportCity_Harbor_EventScript_ChooseScannerTrade
 	end
 
 SlateportCity_Harbor_EventScript_TradedScanner:: @ 820CE11
@@ -461,7 +428,7 @@ SlateportCity_Harbor_Text_SubTooSmallForMe: @ 820D194
 	.string "the ocean floor exploration.\p"
 	.string "But the sub's too small for me.\p"
 	.string "If I squeezed in, there wouldn't be\n"
-	.string "any room for the CAPTAIN…$"
+	.string "any room for the Captain…$"
 
 SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum: @ 820D232
 	.string "Capt. Stern: Those thugs…\p"
@@ -534,25 +501,14 @@ SlateportCity_Harbor_Text_WouldYouTradeScanner: @ 820D76C
 	.string "help us on our explorations.\p"
 	.string "{PLAYER}{KUN}, would you trade your\n"
 	.string "Scanner for something?\p"
-	.string "Like, say, a DeepSeaTooth or\n"
-	.string "a DeepSeaScale that I have?$"
+	.string "Like, say, these twelve Bottle Caps\n"
+	.string "that I have?$"
 
 SlateportCity_Harbor_Text_IfYouWantToTradeLetMeKnow: @ 820D841
 	.string "Capt. Stern: Are you certain?\n"
 	.string "It's useless to you, {PLAYER}{KUN}…\p"
 	.string "Well, okay, then. If you want to trade\n"
 	.string "your Scanner, let me know.$"
-
-SlateportCity_Harbor_Text_TradeForDeepSeaTooth: @ 820D8BC
-	.string "Capt. Stern: So you'll trade it for\n"
-	.string "my DeepSeaTooth?$"
-
-SlateportCity_Harbor_Text_TradeForDeepSeaScale: @ 820D8F1
-	.string "Capt. Stern: So you'll trade it for\n"
-	.string "my DeepSeaScale?$"
-
-SlateportCity_Harbor_Text_WhichOneDoYouWant: @ 820D926
-	.string "Capt. Stern: Which one do you want?$"
 
 SlateportCity_Harbor_Text_HandedScannerToStern: @ 820D94A
 	.string "{PLAYER} handed the Scanner to\n"

@@ -386,7 +386,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -451,6 +453,22 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 21,
+      "y": 14,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP2"
     }
   ]
 }

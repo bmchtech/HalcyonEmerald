@@ -60,7 +60,14 @@ Route119_WeatherInstitute_1F_EventScript_StudyingRain:: @ 826FB05
 	end
 
 Route119_WeatherInstitute_1F_EventScript_InstituteWorker2:: @ 826FB0F
-	msgbox Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_WEATHER_INSTITUTE_BOTTLE_CAPS, Route119_WeatherInstitute_1F_EventScript_ReceivedCaps
+	msgbox Route119_WeatherInstitute_1F_Text_PleaseTakeThese, MSGBOX_DEFAULT
+	giveitem ITEM_BOTTLE_CAP, 4
+Route119_WeatherInstitute_1F_EventScript_ReceivedCaps::
+	msgbox Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo, MSGBOX_AUTOCLOSE
+	release
 	end
 
 Route119_WeatherInstitute_1F_EventScript_Bed:: @ 826FB18
@@ -138,9 +145,12 @@ Route119_WeatherInstitute_1F_Text_NoticingAbnormalWeather: @ 826FDE8
 	.string "isolated cases of droughts and\l"
 	.string "heavy rain lately…$"
 
-Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo: @ 826FE94
+Route119_WeatherInstitute_1F_Text_PleaseTakeThese:
 	.string "Hello!\n"
 	.string "We've been saved by your actions!\p"
+	.string "Please take these as a reward!$"
+
+Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo:
 	.string "What I don't understand is what on\n"
 	.string "earth the Aquas were up to.$"
 
