@@ -64,6 +64,7 @@ Route124_DivingTreasureHuntersHouse_EventScript_HasShard:: @ 8270AD0
 	goto Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
 	end
 
+@ lmao wtf is this. Should really replace it with something less stupid sometime.
 Route124_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions:: @ 8270ADE
 	message Route124_DivingTreasureHuntersHouse_Text_WhatDoYouWantToTrade
 	waitmessage
@@ -224,22 +225,22 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYBG:: @ 8270E3D
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeRedShard:: @ 8270E84
 	setvar VAR_0x8008, ITEM_RED_SHARD
-	setvar VAR_0x8009, ITEM_FIRE_STONE
+	setvar VAR_0x8009, ITEM_BOTTLE_CAP
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeYellowShard:: @ 8270E93
 	setvar VAR_0x8008, ITEM_YELLOW_SHARD
-	setvar VAR_0x8009, ITEM_THUNDER_STONE
+	setvar VAR_0x8009, ITEM_BOTTLE_CAP
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeBlueShard:: @ 8270EA2
 	setvar VAR_0x8008, ITEM_BLUE_SHARD
-	setvar VAR_0x8009, ITEM_WATER_STONE
+	setvar VAR_0x8009, ITEM_BOTTLE_CAP
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeGreenShard:: @ 8270EB1
 	setvar VAR_0x8008, ITEM_GREEN_SHARD
-	setvar VAR_0x8009, ITEM_LEAF_STONE
+	setvar VAR_0x8009, ITEM_BOTTLE_CAP
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard:: @ 8270EC0
@@ -289,10 +290,6 @@ Route124_DivingTreasureHuntersHouse_EventScript_EndTrade:: @ 8270F61
 	release
 	end
 
-Route124_DivingTreasureHuntersHouse_EventScript_ShardTradeBoard:: @ 8270F63
-	msgbox Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard, MSGBOX_SIGN
-	end
-
 Route124_DivingTreasureHuntersHouse_Text_Greeting: @ 8270F6C
 	.string "I'm the Diving Treasure Hunter!\p"
 	.string "I'm the awesome dude who makes\n"
@@ -300,7 +297,7 @@ Route124_DivingTreasureHuntersHouse_Text_Greeting: @ 8270F6C
 	.string "resting at the bottom.$"
 
 Route124_DivingTreasureHuntersHouse_Text_HaveYouSeenAnyShards: @ 8270FE5
-	.string "Tell me, have you seen any SHARDS of\n"
+	.string "Tell me, have you seen any Shards of\n"
 	.string "tools made in ancient times?$"
 
 Route124_DivingTreasureHuntersHouse_Text_YouHaventGotAnyShards: @ 8271027
@@ -320,7 +317,7 @@ Route124_DivingTreasureHuntersHouse_Text_WhatDoYouWantToTrade: @ 8271117
 
 Route124_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone: @ 8271132
 	.string "You'll trade your {STR_VAR_1} for\n"
-	.string "my {STR_VAR_2}, then?$"
+	.string "my Bottle Cap, then?$"
 
 Route124_DivingTreasureHuntersHouse_Text_ItsADeal: @ 8271158
 	.string "It's a done deal!\n"
@@ -336,13 +333,3 @@ Route124_DivingTreasureHuntersHouse_Text_BagFull: @ 82711A0
 Route124_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind: @ 82711D8
 	.string "No? That's a downer.\n"
 	.string "Well, if you change your mind, come back.$"
-
-Route124_DivingTreasureHuntersHouse_Text_ShardTradeBoard: @ 8271217
-	.string "{CLEAR_TO 0x0a}Wanted item{CLEAR_TO 0x7c}Trade item\n"
-	.string "{CLEAR_TO 0x0f}Red Shard{CLEAR_TO 0x59}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 0x7b}Fire Stone{CLEAR_TO 0xc8}\p"
-	.string "{CLEAR_TO 0x0a}Wanted item{CLEAR_TO 0x7c}Trade item\n"
-	.string "{CLEAR_TO 0x06}Yellow Shard{CLEAR_TO 0x59}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 0x73}Thunderstone{CLEAR_TO 0xc8}\p"
-	.string "{CLEAR_TO 0x0a}Wanted item{CLEAR_TO 0x7c}Trade item\n"
-	.string "{CLEAR_TO 0x0c}Blue Shard{CLEAR_TO 0x59}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 0x79}Water Stone{CLEAR_TO 0xc8}\p"
-	.string "{CLEAR_TO 0x0a}Wanted item{CLEAR_TO 0x7c}Trade item\n"
-	.string "{CLEAR_TO 0x08}Green Shard{CLEAR_TO 0x59}{LEFT_ARROW}{RIGHT_ARROW}{CLEAR_TO 0x7b}Leaf Stone$"
