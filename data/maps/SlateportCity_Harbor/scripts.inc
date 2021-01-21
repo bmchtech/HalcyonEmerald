@@ -346,7 +346,7 @@ SlateportCity_Harbor_EventScript_FerryFinished:: @ 820CD2E
 	end
 
 SlateportCity_Harbor_EventScript_AskToTradeScanner:: @ 820CD38
-	message SlateportCity_Harbor_Text_WouldYouTradeScanner, MSGBOX_YESNO
+	msgbox SlateportCity_Harbor_Text_WouldYouTradeScanner, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto SlateportCity_Harbor_EventScript_DeclineTrade
 	giveitem ITEM_BOTTLE_CAP, 12

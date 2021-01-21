@@ -4,6 +4,7 @@
 .set LOCALID_GRUNT, 10
 .set LOCALID_RIVAL, 14
 .set LOCALID_SCIENTIST, 15
+.set LOCALID_ROXANNE, 17
 
 RustboroCity_MapScripts:: @ 81E06BD
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_OnTransition
@@ -862,7 +863,7 @@ RustboroCity_EventScript_MayEncounter:: @ 81E100B
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	setvar VAR_RUSTBORO_CITY_STATE, 9
+	setvar VAR_RUSTBORO_CITY_STATE, 10
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
 	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_YESNO
@@ -933,7 +934,7 @@ RustboroCity_EventScript_BrendanEncounter:: @ 81E1114
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	setvar VAR_RUSTBORO_CITY_STATE, 9
+	setvar VAR_RUSTBORO_CITY_STATE, 10
 	setvar VAR_ROUTE104_STATE, 2
 	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
 	compare VAR_RESULT, YES
@@ -978,13 +979,50 @@ RustboroCity_EventScript_BattleBrendanTorchic:: @ 81E11E8
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
 
-RustboroCity_EventScript_BattleBrendanMudkip:: @ 81E11FB
+RustboroCity_EventScript_BattleBrendanMudkip::
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
 
-RustboroCity_Movement_RivalApproachPlayer0: @ 81E120E
+RustboroCity_EventScript_Pokecall_Trigger1::
+	lockall
+	addobject LOCALID_ROXANNE
+	goto RustboroCity_EventScript_PokecallMoveRoxanne
+
+RustboroCity_EventScript_Pokecall_Trigger2::
+	lockall
+	addobject LOCALID_ROXANNE
+	setobjectxy LOCALID_ROXANNE, 25, 22
+	goto RustboroCity_EventScript_PokecallMoveRoxanne
+
+RustboroCity_EventScript_PokecallMoveRoxanne::
+	applymovement LOCALID_ROXANNE, RustboroCity_Movement_RoxanneApproachPlayer
+	waitmovement 0
+	msgbox RustboroCity_Text_RoxanneOhHello, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox RustboroCity_Text_RegisteredAnorith, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox RustboroCity_Movement_RoxanneOneMoreThing, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox RustboroCity_Text_RegisteredRoxanne, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox RustboroCity_Text_RoxanneBye, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_ROXANNE, RustboroCity_Movement_RoxanneLeave
+	waitmovement 0
+	removeobject LOCALID_ROXANNE
+	releaseall
+	end
+
+RustboroCity_Movement_RivalApproachPlayer0:
 	walk_down
 	walk_left
 	walk_left
@@ -993,7 +1031,7 @@ RustboroCity_Movement_RivalApproachPlayer0: @ 81E120E
 	walk_down
 	step_end
 
-RustboroCity_Movement_RivalApproachPlayer1: @ 81E1215
+RustboroCity_Movement_RivalApproachPlayer1:
 	walk_down
 	walk_left
 	walk_left
@@ -1001,14 +1039,14 @@ RustboroCity_Movement_RivalApproachPlayer1: @ 81E1215
 	walk_down
 	step_end
 
-RustboroCity_Movement_RivalApproachPlayer2: @ 81E121B
+RustboroCity_Movement_RivalApproachPlayer2:
 	walk_down
 	walk_left
 	walk_left
 	walk_down
 	step_end
 
-RustboroCity_Movement_RivalApproachPlayer3: @ 81E1220
+RustboroCity_Movement_RivalApproachPlayer3:
 	walk_down
 	walk_left
 	walk_down
@@ -1040,9 +1078,67 @@ RustboroCity_Movement_RivalApproachPlayer7: @ 81E1230
 	walk_down
 	step_end
 
+RustboroCity_Movement_RoxanneApproachPlayer:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+RustboroCity_Movement_RoxanneLeave:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 RustboroCity_EventScript_Boy1:: @ 81E1236
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
+
+RustboroCity_Text_RoxanneOhHello:
+	.string "Roxanne: Oh, hello, {PLAYER}.\p"
+	.string "I see you've got a PokéNav! Did you\n"
+	.string "know about its PokéCall function?\p"
+	.string "Let me explain: you can register\n"
+	.string "Pokémon as well as people.\p"
+	.string "When you're out in the field, you'll\n"
+	.string "be able to call registered Pokémon\l"
+	.string "to help you get through obstacles, like\l"
+	.string "the small trees in Petalburg Woods.\p"
+	.string "Here, I'll register my Anorith for\n"
+	.string "you. Try it out on those trees!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"
+
+RustboroCity_Movement_RoxanneOneMoreThing:
+	.string "One more thing: I'd rather not think\n"
+	.string "that I can't beat you.\p"
+	.string "I promise, I will shape up my Gym\n"
+	.string "so that you may challenge us again.\p"
+	.string "I hope you'll be looking forward to\n"
+	.string "that occasion as much as me!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"
+
+RustboroCity_Text_RegisteredAnorith:
+	.string "Registered Roxanne's Anorith\n"
+	.string "in the PokéNav.$"
+
+RustboroCity_Text_RegisteredRoxanne:
+	.string "Registered Gym Leader Roxanne\n"
+	.string "in the PokéNav.$"
+
+RustboroCity_Text_RoxanneBye:
+	.string "Good luck in your next Gym Battle,\n"
+	.string "{PLAYER}!\p"
+	.string "Goodbye for now!$"
 
 RustboroCity_Text_WeShortenItToDevon: @ 81E123F
 	.string "The Devon Corporation…\n"
@@ -1125,7 +1221,7 @@ RustboroCity_Text_OutOfTheWay: @ 81E17FE
 
 RustboroCity_Text_WaitDontTakeMyGoods: @ 81E1817
 	.string "Wait! Pleeeaaase!\p"
-	.string "Don't take my GOODS!$"
+	.string "Don't take my Goods!$"
 
 RustboroCity_Text_HelpMeIWasRobbed: @ 81E183E
 	.string "Oh, it's you!\p"

@@ -1302,14 +1302,14 @@ MatchCall_PersonalizedText59:: @ 82AF480
 	.string "This is {STR_VAR_1}!\p"
 	.string "I went to Dewford's Gym again\n"
 	.string "for training.\p"
-	.string "BRAWLY, the Gym Leader, seems\n"
+	.string "Brawly, the Gym Leader, seems\n"
 	.string "to be tougher now.\p"
 	.string "Something about being toughened\n"
 	.string "by the wild waves…\p"
 	.string "But he's still as cool as ever.\n"
 	.string "The ladies adore him!\l"
 	.string "It makes me envious, frankly.\p"
-	.string "I wonder… Is his friend BRUNO\n"
+	.string "I wonder… Is his friend Bruno\n"
 	.string "the same way as Brawly?\p"
 	.string "You know, all sweaty or smelly,\n"
 	.string "and prone to calling people\l"
@@ -2068,7 +2068,7 @@ MatchCall_Text_Roxanne4:: @ 82B2607
 	.string "is a matter of pride.$"
 
 MatchCall_Text_Brawly1:: @ 82B2659
-	.string "BRAWLY: Hey, there, {PLAYER}{KUN}!\p"
+	.string "Brawly: Hey, there, {PLAYER}{KUN}!\p"
 	.string "I learned a lot from the battle we\n"
 	.string "had together.\p"
 	.string "I intend to do my training over,\n"
@@ -2079,7 +2079,7 @@ MatchCall_Text_Brawly1:: @ 82B2659
 	.string "I want you to challenge us again.$"
 
 MatchCall_Text_Brawly2:: @ 82B275D
-	.string "BRAWLY: Hey, {PLAYER}{KUN}!\n"
+	.string "Brawly: Hey, {PLAYER}{KUN}!\n"
 	.string "Congratulations!\p"
 	.string "Word about your exploits arrived\n"
 	.string "on tidal winds!\p"
@@ -2091,13 +2091,13 @@ MatchCall_Text_Brawly2:: @ 82B275D
 	.string "I want you to challenge us again.$"
 
 MatchCall_Text_Brawly3:: @ 82B286F
-	.string "BRAWLY: Hey, {PLAYER}{KUN}!\n"
+	.string "Brawly: Hey, {PLAYER}{KUN}!\n"
 	.string "My Gym's ready for action!\p"
 	.string "Come back to Dewford anytime\n"
 	.string "for another challenge!$"
 
 MatchCall_Text_Brawly4:: @ 82B28D1
-	.string "BRAWLY: {PLAYER}{KUN}, I don't think\n"
+	.string "Brawly: {PLAYER}{KUN}, I don't think\n"
 	.string "I'll ever get bored of battling you!$"
 
 MatchCall_Text_Wattson1:: @ 82B2912
