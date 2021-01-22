@@ -987,18 +987,17 @@ RustboroCity_EventScript_BattleBrendanMudkip::
 
 RustboroCity_EventScript_Pokecall_Trigger1::
 	lockall
-	addobject LOCALID_ROXANNE
+	applymovement LOCALID_ROXANNE, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	goto RustboroCity_EventScript_PokecallMoveRoxanne
 
-RustboroCity_EventScript_Pokecall_Trigger2::
+RustboroCity_EventScript_Roxanne::
 	lockall
-	addobject LOCALID_ROXANNE
-	setobjectxy LOCALID_ROXANNE, 25, 22
+	faceplayer
 	goto RustboroCity_EventScript_PokecallMoveRoxanne
 
 RustboroCity_EventScript_PokecallMoveRoxanne::
-	applymovement LOCALID_ROXANNE, RustboroCity_Movement_RoxanneApproachPlayer
-	waitmovement 0
 	msgbox RustboroCity_Text_RoxanneOhHello, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -1016,9 +1015,10 @@ RustboroCity_EventScript_PokecallMoveRoxanne::
 	closemessage
 	delay 30
 	msgbox RustboroCity_Text_RoxanneBye, MSGBOX_AUTOCLOSE
-	applymovement LOCALID_ROXANNE, RustboroCity_Movement_RoxanneLeave
-	waitmovement 0
+	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROXANNE
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_RUSTBORO_CITY_STATE, 9
 	releaseall
 	end
 
@@ -1078,26 +1078,6 @@ RustboroCity_Movement_RivalApproachPlayer7: @ 81E1230
 	walk_down
 	step_end
 
-RustboroCity_Movement_RoxanneApproachPlayer:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-RustboroCity_Movement_RoxanneLeave:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
 RustboroCity_EventScript_Boy1:: @ 81E1236
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
@@ -1113,11 +1093,12 @@ RustboroCity_Text_RoxanneOhHello:
 	.string "to help you get through obstacles, like\l"
 	.string "the small trees in Petalburg Woods.\p"
 	.string "Here, I'll register my Anorith for\n"
-	.string "you. Try it out on those trees!\p"
+	.string "you.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
 RustboroCity_Movement_RoxanneOneMoreThing:
+	.string "Use it in the same way you'd use Cut.\p"
 	.string "One more thing: I'd rather not think\n"
 	.string "that I can't beat you.\p"
 	.string "I promise, I will shape up my Gym\n"
