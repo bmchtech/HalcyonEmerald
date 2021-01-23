@@ -90,6 +90,14 @@ MauvilleCity_Gym_EventScript_WattsonDefeated:: @ 820DF2B
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MauvilleCity_Gym_Text_RegisteredRaichu, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox MauvilleCity_Gym_Text_ExplainTakeThis, MSGBOX_DEFAULT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
 	setflag FLAG_DEFEATED_MAUVILLE_GYM
@@ -381,8 +389,12 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge: @ 820E77F
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis: @ 820E7AA
 	.string "With the Dynamo Badge, Pokémon can\n"
 	.string "use Rock Smash out of battle.\p"
-	.string "And, it will make your Pokémon a little\n"
-	.string "bit faster, too.\p"
+	.string "And, I'll register my Raichu in your\n"
+	.string "PokéNav. It'll help you by smashing\l"
+	.string "any rocks in your way.\p"
+	.string "… … … … … …$"
+
+MauvilleCity_Gym_Text_ExplainTakeThis:
 	.string "Hmm…\n"
 	.string "You should take this, too!$"
 
@@ -395,6 +407,10 @@ MauvilleCity_Gym_Text_ExplainVoltSwitch: @ 820E844
 
 MauvilleCity_Gym_Text_RegisteredWattson: @ 820E8B5
 	.string "Registered Gym Leader Wattson\n"
+	.string "in the PokéNav.$"
+
+MauvilleCity_Gym_Text_RegisteredRaichu: @ 820E8B5
+	.string "Registered Wattson's Raichu\n"
 	.string "in the PokéNav.$"
 
 MauvilleCity_Gym_Text_WattsonPostBattle: @ 820E8E3

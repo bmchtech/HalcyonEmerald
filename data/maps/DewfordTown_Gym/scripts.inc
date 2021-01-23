@@ -435,6 +435,10 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis: @ 81FD0A8
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
 	.string "Flash outside of battle.\p"
+	.string "Oh, yeah. You don't need to teach a\n"
+	.string "Pokémon Flash to use it.\p"
+	.string "If your Pokémon can learn Flash, it\n"
+	.string "can always use it outside of battle.\p"
 	.string "If you'd like, use this Technical\n"
 	.string "Machine, too.$"
 

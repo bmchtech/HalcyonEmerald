@@ -430,6 +430,14 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox PetalburgCity_Gym_Text_RegisteredExploud, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox PetalburgCity_Gym_Text_TakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	setvar VAR_PETALBURG_GYM_STATE, 7
 	setflag FLAG_BADGE05_GET
@@ -1273,7 +1281,7 @@ PetalburgCity_Gym_Text_WallyIdLikeAPokemon: @ 82058B1
 
 PetalburgCity_Gym_Text_DadOhYoureWallyRight: @ 82058DB
 	.string "Dad: Hm? You're… Uh… Oh, right.\n"
-	.string "You're WALLY, right?$"
+	.string "You're Wally, right?$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon: @ 8205910
 	.string "Wally: I'm going to go stay with my\n"
@@ -1293,8 +1301,8 @@ PetalburgCity_Gym_Text_DadPlayerGoWithWally: @ 82059E8
 	.string "safely catches a Pokémon.$"
 
 PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon: @ 8205A46
-	.string "WALLY, here, I'll loan you my Pokémon.\p"
-	.string "Wally received a ZIGZAGOON!$"
+	.string "Wally, here, I'll loan you my Pokémon.\p"
+	.string "Wally received a Zigzagoon!$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall: @ 8205A89
 	.string "Wally: Oh, wow!\n"
@@ -1418,18 +1426,26 @@ PetalburgCity_Gym_Text_ReceivedBalanceBadge: @ 8206162
 	.string "from Dad!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis: @ 820618A
-	.string "Dad: With that Badge, the Defense\n"
-	.string "of all your Pokémon will increase.\p"
-	.string "Pokémon that know the HM move Surf\n"
-	.string "will be able to travel over water.\p"
+	.string "Dad: With that Badge, Pokémon that\n"
+	.string "know the HM move Surf will be able\l"
+	.string "to travel over water.\p"
+	.string "If you like, you can borrow my Exploud\n"
+	.string "to Surf if you don't want to teach the\l"
+	.string "move to any of your own Pokémon.\p"
+	.string "… … … … … …$"
+
+PetalburgCity_Gym_Text_RegisteredExploud: @ 81FF517
+	.string "Registered Dad's Exploud\n"
+	.string "in the PokéNav.$"
+
+PetalburgCity_Gym_Text_TakeThis:
 	.string "This is my gift to you. {PLAYER}, I'm\n"
 	.string "sure you can use it correctly.$"
 
 PetalburgCity_Gym_Text_ExplainFacade: @ 8206254
 	.string "Dad: TM42 contains Facade.\p"
-	.string "It doubles the power of moves if\n"
-	.string "the Pokémon is poisoned, paralyzed,\l"
-	.string "or burned.\p"
+	.string "It doubles in power if the Pokémon\n"
+	.string "is poisoned, paralyzed, or burned.\p"
 	.string "It might be able to turn a bad\n"
 	.string "situation into an advantage.$"
 
