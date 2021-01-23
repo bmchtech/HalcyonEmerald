@@ -1220,7 +1220,7 @@
 #define FLAG_ITEM_DEWFORD_MANOR_TM100                               0x49B
 #define FLAG_ITEM_DEWFORD_MANOR_BANETTITE                           0x49C
 #define FLAG_WEATHER_INSTITUTE_BOTTLE_CAPS                          0x49D
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_HIDE_RUSTBORO_ROXANNE                                  0x49E
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag

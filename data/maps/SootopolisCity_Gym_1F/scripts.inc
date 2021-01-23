@@ -98,6 +98,14 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated:: @ 8224F82
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox SootopolisCity_Gym_1F_Text_RegisteredKabutops, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox SootopolisCity_Gym_1F_Text_TakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
 	setflag FLAG_BADGE08_GET
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS
@@ -249,6 +257,16 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis: @ 82255BE
 	.string "The Rain Badge also allows the use\n"
 	.string "of the HM move Waterfall to scale\l"
 	.string "walls of cascading water.\p"
+	.string "If you require assistance finding a\n"
+	.string "Pokémon to use Waterfall for you,\l"
+	.string "you may borrow my Kabutops.\p"
+	.string "… … … … … …$"
+
+SootopolisCity_Gym_1F_Text_RegisteredKabutops:
+	.string "Registered Juan's Kabutops\n"
+	.string "in the PokéNav.$"
+
+SootopolisCity_Gym_1F_Text_TakeThis:
 	.string "And, so that you never forget the\n"
 	.string "battle we shared, take this…$"
 

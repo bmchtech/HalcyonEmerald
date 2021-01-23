@@ -464,10 +464,10 @@ Text_StrengthActivated: @ 8290A16
 
 EventScript_UseWaterfall:: @ 8290A49
 	lockall
-	goto_if_unset FLAG_BADGE07_GET, EventScript_CannotUseWaterfall
+	goto_if_unset FLAG_BADGE08_GET, EventScript_CannotUseWaterfall
 	checkpartymove MOVE_WATERFALL
 	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq EventScript_TentacruelWaterfall
+	goto_if_eq EventScript_KabutopsWaterfall
 	bufferpartymonnick 0, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
@@ -482,14 +482,14 @@ EventScript_CannotUseWaterfall:: @ 8290A83
 	releaseall
 	end
 
-EventScript_TentacruelWaterfall::
-	setvar VAR_0x8004, SPECIES_TENTACRUEL
+EventScript_KabutopsWaterfall::
+	setvar VAR_0x8004, SPECIES_KABUTOPS
 	setvar VAR_0x8008, MOVE_WATERFALL
 	setvar VAR_0x8009, 1
 	bufferspeciesname 0, VAR_0x8004	
 	buffermovename 1, VAR_0x8008
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_TentacruelWaterfall, MSGBOX_YESNO
+	msgbox Text_KabutopsWaterfall, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
@@ -508,9 +508,9 @@ Text_WantToWaterfall: @ 8290AC3
 	.string "It's a large waterfall.\n"
 	.string "Would you like to use Waterfall?$"
 
-Text_TentacruelWaterfall:
+Text_KabutopsWaterfall:
 	.string "It's a large waterfall.\n"
-	.string "Call Juan's Tentacruel to climb it?$"
+	.string "Call Juan's Kabutops to climb it?$"
 
 Text_MonUsedWaterfall: @ 8290AFC
 	.string "{STR_VAR_1} used Waterfall.$"

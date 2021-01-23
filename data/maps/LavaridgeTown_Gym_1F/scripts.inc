@@ -63,6 +63,14 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated:: @ 81FE7C1
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox LavaridgeTown_Gym_1F_Text_RegisteredArcanine, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox LavaridgeTown_Gym_1F_Text_TakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
 	setflag FLAG_BADGE04_GET
@@ -363,6 +371,10 @@ LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis: @ 81FF359
 	.string "you completely.\p"
 	.string "And, it lets Pokémon use the HM move\n"
 	.string "Strength outside of battle.\p"
+	.string "I'll even let you call on my Arcanine\n"
+	.string "to use Strength for you.$"
+
+LavaridgeTown_Gym_1F_Text_TakeThis:
 	.string "This is a token of my appreciation.\n"
 	.string "Don't be shy about taking it!$"
 
@@ -376,6 +388,10 @@ LavaridgeTown_Gym_1F_Text_ExplainOverheat: @ 81FF45C
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery: @ 81FF517
 	.string "Registered Gym Leader Flannery\n"
+	.string "in the PokéNav.$"
+
+LavaridgeTown_Gym_1F_Text_RegisteredArcanine: @ 81FF517
+	.string "Registered Flannery's Arcanine\n"
 	.string "in the PokéNav.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle: @ 81FF546

@@ -65,6 +65,14 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MossdeepCity_Gym_Text_RegisteredSlowbro, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	msgbox MossdeepCity_Gym_Text_TakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_MOSSDEEP_GYM
 	setflag FLAG_BADGE07_GET
 	setflag FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
@@ -595,8 +603,16 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis: @ 8221999
 	.string "Tate: The Mind Badge will make any\n"
 	.string "Pokémon up to Level 90 obey you.\p"
 	.string "Liza: It also lets you use the HM move\n"
-	.string "Dive outside of battle.\p"
-	.string "Tate: You should also take this, too.$"
+	.string "Dive outside of battle, so we'll lend\l"
+	.string "you our Slowbro whenever you need it!\p"
+	.string "… … … … … …$"
+
+MossdeepCity_Gym_Text_RegisteredSlowbro: @ 8221AEA
+	.string "Registered Tate & Liza's Slowbro\n"
+	.string "in the PokéNav.$"
+
+MossdeepCity_Gym_Text_TakeThis:
+	.string "Liza: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind: @ 8221A40
 	.string "Tate: That TM04 contains…\n"

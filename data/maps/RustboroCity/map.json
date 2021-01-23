@@ -237,6 +237,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RustboroCity_EventScript_Boy1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ROXANNE",
+      "x": 17,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RustboroCity_EventScript_Roxanne",
+      "flag": "FLAG_HIDE_RUSTBORO_ROXANNE"
     }
   ],
   "warp_events": [
@@ -449,7 +462,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger0"
     },
     {
@@ -458,7 +471,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger1"
     },
     {
@@ -467,7 +480,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger2"
     },
     {
@@ -476,7 +489,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger3"
     },
     {
@@ -485,7 +498,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger4"
     },
     {
@@ -494,7 +507,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger5"
     },
     {
@@ -503,7 +516,7 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger6"
     },
     {
@@ -512,8 +525,17 @@
       "y": 53,
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
-      "var_value": "8",
+      "var_value": "9",
       "script": "RustboroCity_EventScript_RivalTrigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "8",
+      "script": "RustboroCity_EventScript_Pokecall_Trigger1"
     }
   ],
   "bg_events": [
