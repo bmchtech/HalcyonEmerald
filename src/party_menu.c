@@ -2011,12 +2011,18 @@ bool32 CanLearnTutorMove(u16 species, u8 tutor) // note the change to bool32
 
         return sTutorLearnsets[species][2] & mask;
     }
-
-    else // thanks to BluRose for suggesting this
+ 
+    else if (tutor < 128)
     {
         u32 mask = 1 << (tutor - 96);
 
         return sTutorLearnsets[species][3] & mask;
+    }
+    else
+    {
+        u32 mask = 1 << (tutor - 128);
+
+        return sTutorLearnsets[species][4] & mask;
     }
 }
 
