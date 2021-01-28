@@ -19,7 +19,7 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags:: @ 82717C1
 	setflag FLAG_HIDE_LILYCOVE_CITY_RIVAL
 	special UpdateTrainerFanClubGameClear
 	call_if_unset FLAG_RECEIVED_SS_TICKET, EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent
-	call_if_unset FLAG_RECEIVED_BELDUM, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
+	call_if_unset FLAG_RECEIVED_MELTAN, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 0
@@ -39,7 +39,7 @@ EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady:: @ 8271839
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum:: @ 827183F
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_MELTAN_POKEBALL
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent:: @ 8271843

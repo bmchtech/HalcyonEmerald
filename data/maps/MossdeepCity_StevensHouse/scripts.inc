@@ -1,5 +1,5 @@
 .set LOCALID_STEVEN, 1
-.set LOCALID_BELDUM_BALL, 2
+.set LOCALID_MELTAN_BALL, 2
 
 MossdeepCity_StevensHouse_MapScripts:: @ 8222784
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_StevensHouse_OnLoad
@@ -73,66 +73,66 @@ MossdeepCity_StevensHouse_Movement_StevenReturn: @ 822283B
 	walk_in_place_fastest_up
 	step_end
 
-MossdeepCity_StevensHouse_EventScript_BeldumPokeball:: @ 8222841
+MossdeepCity_StevensHouse_EventScript_MeltanPokeball:: @ 8222841
 	lockall
-	msgbox MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum, MSGBOX_YESNO
+	msgbox MossdeepCity_StevensHouse_Text_TakeBallContainingMeltan, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq MossdeepCity_StevensHouse_EventScript_LeaveBeldum
-	goto MossdeepCity_StevensHouse_EventScript_GiveBeldum
+	goto_if_eq MossdeepCity_StevensHouse_EventScript_LeaveMeltan
+	goto MossdeepCity_StevensHouse_EventScript_GiveMeltan
 	end
 
-MossdeepCity_StevensHouse_EventScript_LeaveBeldum:: @ 822285B
+MossdeepCity_StevensHouse_EventScript_LeaveMeltan:: @ 822285B
 	msgbox MossdeepCity_StevensHouse_Text_LeftPokeBallWhereItWas, MSGBOX_DEFAULT
 	releaseall
 	end
 
-MossdeepCity_StevensHouse_EventScript_GiveBeldum:: @ 8222865
-	setvar VAR_TEMP_1, SPECIES_BELDUM
-	givemon SPECIES_BELDUM, 5, ITEM_NONE
+MossdeepCity_StevensHouse_EventScript_GiveMeltan:: @ 8222865
+	setvar VAR_TEMP_1, SPECIES_MELTAN
+	givemon SPECIES_MELTAN, 5, ITEM_NONE
 	compare VAR_RESULT, 0
-	goto_if_eq MossdeepCity_StevensHouse_EventScript_SendBeldumParty
+	goto_if_eq MossdeepCity_StevensHouse_EventScript_SendMeltanParty
 	compare VAR_RESULT, 1
-	goto_if_eq MossdeepCity_StevensHouse_EventScript_SendBeldumPC
+	goto_if_eq MossdeepCity_StevensHouse_EventScript_SendMeltanPC
 	goto Common_EventScript_NoMoreRoomForPokemon
 	end
 
-MossdeepCity_StevensHouse_EventScript_SendBeldumParty:: @ 8222895
-	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
+MossdeepCity_StevensHouse_EventScript_SendMeltanParty:: @ 8222895
+	call MossdeepCity_StevensHouse_EventScript_ReceivedMeltanFanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
+	goto_if_eq MossdeepCity_StevensHouse_EventScript_ReceivedMeltan
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
-	goto MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
+	goto MossdeepCity_StevensHouse_EventScript_ReceivedMeltan
 	end
 
-MossdeepCity_StevensHouse_EventScript_SendBeldumPC:: @ 82228BD
-	call MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare
+MossdeepCity_StevensHouse_EventScript_SendMeltanPC:: @ 82228BD
+	call MossdeepCity_StevensHouse_EventScript_ReceivedMeltanFanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
+	goto_if_eq MossdeepCity_StevensHouse_EventScript_MeltanTransferredToPC
 	call Common_EventScript_NameReceivedBoxMon
-	goto MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC
+	goto MossdeepCity_StevensHouse_EventScript_MeltanTransferredToPC
 	end
 
-MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC:: @ 82228E0
+MossdeepCity_StevensHouse_EventScript_MeltanTransferredToPC:: @ 82228E0
 	call Common_EventScript_TransferredToPC
-	goto MossdeepCity_StevensHouse_EventScript_ReceivedBeldum
+	goto MossdeepCity_StevensHouse_EventScript_ReceivedMeltan
 	end
 
-MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare:: @ 82228EB
-	bufferspeciesname 1, SPECIES_BELDUM
-	removeobject LOCALID_BELDUM_BALL
+MossdeepCity_StevensHouse_EventScript_ReceivedMeltanFanfare:: @ 82228EB
+	bufferspeciesname 1, SPECIES_MELTAN
+	removeobject LOCALID_MELTAN_BALL
 	playfanfare MUS_OBTAIN_ITEM
-	message MossdeepCity_StevensHouse_Text_ObtainedBeldum
+	message MossdeepCity_StevensHouse_Text_ObtainedMeltan
 	waitmessage
 	waitfanfare
-	bufferspeciesname 0, SPECIES_BELDUM
+	bufferspeciesname 0, SPECIES_MELTAN
 	return
 
-MossdeepCity_StevensHouse_EventScript_ReceivedBeldum:: @ 8222901
-	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL
-	setflag FLAG_RECEIVED_BELDUM
+MossdeepCity_StevensHouse_EventScript_ReceivedMeltan:: @ 8222901
+	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_MELTAN_POKEBALL
+	setflag FLAG_RECEIVED_MELTAN
 	releaseall
 	end
 
@@ -183,14 +183,14 @@ MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis: @ 8222B
 	.string "You know, the one that Capt. Stern\n"
 	.string "found in his submarine.$"
 
-MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum: @ 8222B9E
+MossdeepCity_StevensHouse_Text_TakeBallContainingMeltan: @ 8222B9E
 	.string "{PLAYER} checked the Poké Ball.\p"
 	.string "It contained the Pokémon\n"
-	.string "Beldum.\p"
+	.string "Meltan.\p"
 	.string "Take the Poké Ball?$"
 
-MossdeepCity_StevensHouse_Text_ObtainedBeldum: @ 8222BED
-	.string "{PLAYER} obtained a Beldum.$"
+MossdeepCity_StevensHouse_Text_ObtainedMeltan: @ 8222BED
+	.string "{PLAYER} obtained a Meltan.$"
 
 @ Unused
 MossdeepCity_StevensHouse_Text_NoSpaceForAnotherMon: @ 8222C03
@@ -211,8 +211,8 @@ MossdeepCity_StevensHouse_Text_LetterFromSteven: @ 8222C4E
 	.string "I have a favor to ask of you.\p"
 	.string "I want you to take the Poké Ball on\n"
 	.string "the desk.\p"
-	.string "Inside it is a Beldum, my favorite\n"
-	.string "Pokémon.\p"
+	.string "Inside it is a Meltan, one of my\n"
+	.string "favorite Pokémon.\p"
 	.string "I'm counting on you.\p"
 	.string "May our paths cross someday.\p"
 	.string "Steven Stone$"
