@@ -423,11 +423,46 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender:: @ 81E3058
 	msgbox LilycoveCity_Text_ExplainBerryBlender, MSGBOX_DEFAULT
 	return
 
+LilycoveCity_EventScript_GiveAltarianite::
+	lockall
+	faceplayer
+	goto_if_set FLAG_ITEM_LILYCOVE_CITY_ALTARIANITE, LilycoveCity_EventScript_ExplainAltarianite
+	msgbox LilycoveCity_Text_CloudDragon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq LilycoveCity_EventScript_AltariaRefuse
+	special ChoosePartyMon
+	waitstate
+	lock
+	faceplayer
+	compare VAR_0x8004, 255
+	goto_if_eq LilycoveCity_EventScript_AltariaRefuse
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_ALTARIA
+	goto_if_eq LilycoveCity_EventScript_YesAltaria
+LilycoveCity_EventScript_NotAltaria::
+	msgbox LilycoveCity_Text_NotAltaria, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LilycoveCity_EventScript_YesAltaria::
+	msgbox LilycoveCity_Text_YesAltaria, MSGBOX_DEFAULT
+	giveitem ITEM_ALTARIANITE
+	setflag FLAG_ITEM_LILYCOVE_CITY_ALTARIANITE
+LilycoveCity_EventScript_ExplainAltarianite::
+	msgbox LilycoveCity_Text_ExplainAltarianite, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LilycoveCity_EventScript_AltariaRefuse::
+	msgbox LilycoveCity_Text_AltariaRefuse, MSGBOX_DEFAULT
+	releaseall
+	end
+
 LilycoveCity_Text_MayShoppingLetsBattle: @ 81E3061
 	.string "May: Oh, hey?\n"
 	.string "{PLAYER}{KUN}, are you shopping, too?\p"
 	.string "I bought a whole bunch of Dolls and\n"
-	.string "POSTERS.\p"
+	.string "Posters.\p"
 	.string "Of course, I've also caught a lot of\n"
 	.string "Pokémon, and I'm raising them\l"
 	.string "properly, too.\p"
@@ -770,3 +805,25 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon: @ 81E49F4
 	.string "Pokémon as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
 
+LilycoveCity_Text_CloudDragon:
+	.string "Can you show me a Dragon Pokémon\n"
+	.string "that looks like a cloud?$"
+
+LilycoveCity_Text_YesAltaria:
+	.string "Yes! That's it! An Altaria,\n"
+	.string "just like Winona's!\p"
+	.string "You can have this, so your Altaria\n"
+	.string "can be as strong as hers!$"
+
+LilycoveCity_Text_AltariaRefuse:
+	.string "That's a shame. I'll give you something\n"
+	.string "nice if you change your mind.$"
+
+LilycoveCity_Text_NotAltaria:
+	.string "Hmmm, no. Try again!$"
+
+LilycoveCity_Text_ExplainAltarianite:
+	.string "If you don't already know what that\n"
+	.string "stone does, Winona can show you.\p"
+	.string "Just challenge her to a battle\n"
+	.string "and see for yourself!$"
