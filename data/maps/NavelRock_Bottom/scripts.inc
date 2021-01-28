@@ -54,8 +54,9 @@ NavelRock_Bottom_EventScript_Lugia:: @ 82692A2
 	playmoncry SPECIES_LUGIA, 2
 	waitmoncry
 	delay 20
+	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_LUGIA
-	setvar VAR_0x8005, 70  @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateObedientEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
