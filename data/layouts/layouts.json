@@ -4580,6 +4580,16 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/DewfordManor_1F/border.bin",
       "blockdata_filepath": "data/layouts/DewfordManor_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAVE_OF_ORIGIN_DIANCIES_ROOM",
+      "name": "CaveOfOrigin_DianciesRoom_Layout",
+      "width": 19,
+      "height": 19,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/CaveOfOrigin_DianciesRoom/border.bin",
+      "blockdata_filepath": "data/layouts/CaveOfOrigin_DianciesRoom/map.bin"
     }
   ]
 }

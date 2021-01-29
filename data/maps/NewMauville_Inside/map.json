@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewMauville_Inside_EventScript_Zapdos",
-      "flag": "FLAG_DEFEATED_ZADPOS"
+      "flag": "FLAG_DEFEATED_ZAPDOS"
     }
   ],
   "warp_events": [

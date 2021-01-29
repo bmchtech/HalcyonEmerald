@@ -275,5 +275,6 @@ EventScript_ResetAllMapFlags:: @ 82715DE
 	setflag FLAG_HIDE_RUSTBORO_HIKER
 	setflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	setflag FLAG_HIDE_RUSTBORO_ROXANNE
+	setflag FLAG_DEFEATED_HEATRAN
 	call EventScript_ResetAllBerries
 	end

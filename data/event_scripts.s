@@ -1097,3 +1097,5 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/DewfordMeadow/scripts.inc"
 
 	.include "data/maps/DewfordManor_1F/scripts.inc"
+
+	.include "data/maps/CaveOfOrigin_DianciesRoom/scripts.inc"
