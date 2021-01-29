@@ -1223,7 +1223,7 @@
 #define FLAG_HIDE_RUSTBORO_ROXANNE                                  0x49E
 #define FLAG_ITEM_LILYCOVE_CITY_ALTARIANITE                         0x49F
 #define FLAG_DEFEATED_ARTICUNO                                      0x4A0
-#define FLAG_DEFEATED_ZADPOS                                        0x4A1
+#define FLAG_DEFEATED_ZAPDOS                                        0x4A1
 #define FLAG_DEFEATED_MOLTRES                                       0x4A2
 #define FLAG_DEFEATED_MEWTWO                                        0x4A3
 #define FLAG_DEFEATED_ENTEI                                         0x4A4

@@ -12,7 +12,7 @@ NewMauville_Inside_OnResume: @ 82373E7
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, NewMauville_Inside_EventScript_TryRemoveVoltorb
 	end
 
-NewMauville_Inside_EventScript_TryRemoveVoltorb:: @ 8237407
+NewMauville_Inside_EventScript_TryRemoveVoltorb:: @ Also handles Zapdos
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
@@ -356,6 +356,41 @@ NewMauville_Inside_EventScript_Electrode3:: @ 8237849
 NewMauville_Inside_EventScript_DefeatedVoltorb3:: @ 823788D
 	setflag FLAG_DEFEATED_ELECTRODE_3_NEW_MAUVILLE
 	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+NewMauville_Inside_EventScript_Zapdos::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ZAPDOS, 2
+	delay 40
+	waitmoncry
+	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	copyvar VAR_0x800A, VAR_RESULT
+	setwildbattle SPECIES_ZAPDOS, VAR_0x800A, ITEM_OCCA_BERRY
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartKantoLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq NewMauville_Inside_EventScript_DefeatedZapdos
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq NewMauville_Inside_EventScript_RanFromZapdos
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq NewMauville_Inside_EventScript_RanFromZapdos
+	setflag FLAG_DEFEATED_ZAPDOS
+	release
+	end
+
+NewMauville_Inside_EventScript_DefeatedZapdos:: @ 8238F9F
+	setflag FLAG_DEFEATED_ZAPDOS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+NewMauville_Inside_EventScript_RanFromZapdos:: @ 8238FA8
+	setvar VAR_0x8004, SPECIES_ZAPDOS
+	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NewMauville_Inside_Text_GeneratorRadiatingHeat: @ 8237896
