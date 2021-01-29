@@ -4590,6 +4590,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CaveOfOrigin_DianciesRoom/border.bin",
       "blockdata_filepath": "data/layouts/CaveOfOrigin_DianciesRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_METEOR_FALLS_JIRACHIS_ROOM",
+      "name": "MeteorFalls_JirachisRoom_Layout",
+      "width": 15,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/MeteorFalls_JirachisRoom/border.bin",
+      "blockdata_filepath": "data/layouts/MeteorFalls_JirachisRoom/map.bin"
     }
   ]
 }
