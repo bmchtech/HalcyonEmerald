@@ -1,3 +1,5 @@
+.set LOCALID_HEATRAN, 1
+
 ScorchedSlab_HeatransRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Common_EventScript_RemoveOverworldAfterBattle
 	.byte 0
@@ -37,5 +39,30 @@ ScorchedSlab_HeatransRoom_EventScript_RanFromHeatran::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
-Event_Script_HeatransRoom_MagmaStone::
+ScorchedSlab_HeatransRoom_EventScript_MagmaStone::
+	lockall
+	checkitem ITEM_MAGMA_STONE, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq ScorchedSlab_HeatransRoom_EventScript_PlaceMagmaStone
+	release
 	end
+
+ScorchedSlab_HeatransRoom_EventScript_PlaceMagmaStone::
+	msgbox ScorchedSlab_HeatransRoom_Text_PlaceMagmaStone, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ScorchedSlab_HeatransRoom_EventScript_MagmaStoneEnd
+	fadescreen FADE_TO_BLACK
+	waitse
+	playmoncry SPECIES_HEATRAN, 2
+	delay 40
+	waitmoncry
+	addobject LOCALID_HEATRAN
+	fadescreen FADE_FROM_BLACK
+ScorchedSlab_HeatransRoom_EventScript_MagmaStoneEnd::
+	releaseall
+	end
+
+ScorchedSlab_HeatransRoom_Text_PlaceMagmaStone:
+	.string "The Magma Stone is reacting\n"
+	.string "to something…\p"
+	.string "Will you set it down here?$"
