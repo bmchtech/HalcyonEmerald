@@ -9,7 +9,7 @@ CaveOfOrigin_DianciesRoom_EventScript_Diancie::
 	playmoncry SPECIES_DIANCIE, 2
 	delay 40
 	waitmoncry
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_DIANCIE, VAR_0x800A, ITEM_FAIRY_GEM
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

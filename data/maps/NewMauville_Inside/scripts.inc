@@ -200,7 +200,7 @@ NewMauville_Inside_EventScript_RotomEncounter::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	msgbox NewMauville_Inside_Text_PokemonCameOut, MSGBOX_DEFAULT
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ROTOM, VAR_0x800A ITEM_NONE
 	waitse
@@ -274,7 +274,7 @@ NewMauville_Inside_EventScript_GeneratorOff:: @ 82377A5
 NewMauville_Inside_EventScript_Electrode1:: @ 82377AF
 	lock
 	faceplayer
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ELECTRODE, VAR_0x800A ITEM_NONE
 	waitse
@@ -303,7 +303,7 @@ NewMauville_Inside_EventScript_DefeatedVoltorb1:: @ 82377F3
 NewMauville_Inside_EventScript_Electrode2:: @ 82377FC
 	lock
 	faceplayer
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ELECTRODE, VAR_0x800A ITEM_NONE
 	waitse
@@ -332,7 +332,7 @@ NewMauville_Inside_EventScript_DefeatedVoltorb2:: @ 8237840
 NewMauville_Inside_EventScript_Electrode3:: @ 8237849
 	lock
 	faceplayer
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ELECTRODE, VAR_0x800A ITEM_NONE
 	waitse
@@ -365,7 +365,7 @@ NewMauville_Inside_EventScript_Zapdos::
 	playmoncry SPECIES_ZAPDOS, 2
 	delay 40
 	waitmoncry
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ZAPDOS, VAR_0x800A, ITEM_OCCA_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

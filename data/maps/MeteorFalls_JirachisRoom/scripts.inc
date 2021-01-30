@@ -9,7 +9,7 @@ MeteorFalls_JirachisRoom_EventScript_Jirachi::
 	playmoncry SPECIES_JIRACHI, 2
 	delay 40
 	waitmoncry
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_JIRACHI, VAR_0x800A, ITEM_OCCA_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

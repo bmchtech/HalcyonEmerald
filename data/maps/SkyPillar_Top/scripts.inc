@@ -51,7 +51,7 @@ SkyPillar_Top_EventScript_Rayquaza:: @ 8239722
 	playmoncry SPECIES_RAYQUAZA, 2
 	delay 40
 	waitmoncry
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_RAYQUAZA, VAR_0x800A, ITEM_DRAGON_GEM
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

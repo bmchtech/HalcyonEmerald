@@ -9,7 +9,7 @@ ScorchedSlab_HeatransRoom_EventScript_Heatran::
 	playmoncry SPECIES_HEATRAN, 2
 	delay 40
 	waitmoncry
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_HEATRAN, VAR_0x800A, ITEM_OCCA_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

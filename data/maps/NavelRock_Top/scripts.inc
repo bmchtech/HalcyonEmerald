@@ -58,7 +58,7 @@ NavelRock_Top_EventScript_HoOh:: @ 826916F
 	applymovement LOCALID_HO_OH, NavelRock_Top_Movement_HoOhApproach
 	waitmovement 0
 	special RemoveCameraObject
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_HO_OH
 	setvar VAR_0x8006, ITEM_NONE

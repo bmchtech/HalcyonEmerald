@@ -30,7 +30,7 @@ AquaHideout_B1F_EventScript_ShowElectrode2:: @ 82339E7
 AquaHideout_B1F_EventScript_Electrode1:: @ 82339EB
 	lock
 	faceplayer
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ELECTRODE, VAR_0x800A, ITEM_NONE
 	waitse
@@ -59,7 +59,7 @@ AquaHideout_B1F_EventScript_DefeatedElectrode1:: @ 8233A2F
 AquaHideout_B1F_EventScript_Electrode2:: @ 8233A38
 	lock
 	faceplayer
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ELECTRODE, VAR_0x800A, ITEM_NONE
 	waitse

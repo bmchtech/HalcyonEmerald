@@ -115,7 +115,7 @@ SouthernIsland_Interior_EventScript_Sign:: @ 8242B9A
 	end
 
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars:: @ 8242BA4
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_LATIOS
 	setvar VAR_0x8006, ITEM_SOUL_DEW
@@ -123,7 +123,7 @@ SouthernIsland_Interior_EventScript_SetLatiosBattleVars:: @ 8242BA4
 	return
 
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars:: @ 8242BB7
-	specialVar VAR_RESULT, GetHighestLevelInPlayerParty
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_LATIAS
 	setvar VAR_0x8006, ITEM_SOUL_DEW

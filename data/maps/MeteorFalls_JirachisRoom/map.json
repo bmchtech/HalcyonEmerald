@@ -2,7 +2,7 @@
   "id": "MAP_METEOR_FALLS_JIRACHIS_ROOM",
   "name": "MeteorFalls_JirachisRoom",
   "layout": "LAYOUT_METEOR_FALLS_JIRACHIS_ROOM",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_CAVE_OF_ORIGIN",
   "region_map_section": "MAPSEC_METEOR_FALLS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
