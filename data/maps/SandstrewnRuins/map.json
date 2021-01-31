@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
-      "x": 10,
-      "y": 5,
+      "x": 5,
+      "y": 56,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -430,6 +430,13 @@
       "elevation": 3,
       "dest_map": "MAP_SANDSTREWN_RUINS_B1F",
       "dest_warp_id": 0
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_DESERT_UNDERPASS",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [
