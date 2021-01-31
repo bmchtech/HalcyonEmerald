@@ -571,3 +571,6 @@ gSpecials:: @ 81DBA64
 	def_special ChangePokeBall
 	def_special GetDiancieFriendshipScore
 	def_special CheckMagikarpBattle
+	def_special BattleSetup_StartKantoLegendaryBattle
+	def_special GetHighestLevelInPlayerParty
+	def_special CheckSpeciesInParty

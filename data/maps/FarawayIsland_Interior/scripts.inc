@@ -138,8 +138,9 @@ FarawayIsland_Interior_EventScript_Mew:: @ 8267DF2
 	special DestroyMewEmergingGrassSprite
 	delay 40
 	waitmoncry
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
+	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_MEW
-	setvar VAR_0x8005, 30 @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateObedientEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE

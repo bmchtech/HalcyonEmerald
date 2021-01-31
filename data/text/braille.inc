@@ -221,3 +221,18 @@ AncientTomb_Braille_ShineInTheMiddle: @ 82A6D06
 	.braille "INHERIT OUR\n"
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
+
+SealedChamber_InnerRoom_Braille_Regigigas:
+	.byte 3
+	.byte 0
+	.byte 25
+	.byte 19
+	.byte 6
+	.byte 3
+	.braille "A BODY OF ROCK.\n"
+	.braille "A BODY OF ICE.\n"
+	.braille "A BODY OF STEEL.\n"
+	.braille "WHEN GATHERS\n"
+	.braille "THE THREE, THE\n"
+	.braille "KING SHALL\n"
+	.braille "APPEAR.$"

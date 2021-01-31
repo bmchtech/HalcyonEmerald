@@ -833,6 +833,17 @@ Common_EventScript_PlayerHandedOverTheItem:: @ 82723E4
 	removeitem VAR_0x8004
 	return
 
+Common_EventScript_RemoveOverworldAfterBattle:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, Common_EventScript_TryRemoveMon
+	end
+
+Common_EventScript_TryRemoveMon::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
 	.include "data/scripts/elite_four.inc"
 	.include "data/scripts/movement.inc"
 	.include "data/scripts/check_furniture.inc"
@@ -1086,3 +1097,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/DewfordMeadow/scripts.inc"
 
 	.include "data/maps/DewfordManor_1F/scripts.inc"
+
+	.include "data/maps/CaveOfOrigin_DianciesRoom/scripts.inc"
+
+	.include "data/maps/MeteorFalls_JirachisRoom/scripts.inc"

@@ -8,7 +8,7 @@
 
 Rotom_Appliances_Main::
     lockall
-    specialVar VAR_RESULT, CountRotomInParty
+    specialvar VAR_RESULT, CountRotomInParty
     switch VAR_RESULT
     case 0, Rotom_Appliances_NoRotomInParty
     case 1, Rotom_Appliances_RotomInParty
@@ -84,7 +84,7 @@ Rotom_Appliances_CheckForSpecialMove::
     special GetRotomNewSpecialMove
     special ChangeRotomForm @ Change form here so new form is shown while choosing move to forget
     msgbox Rotom_Text_EnteredTheMotor, MSGBOX_DEFAULT
-    specialVar VAR_RESULT, DoesRotomKnowSpecialMove
+    specialvar VAR_RESULT, DoesRotomKnowSpecialMove
     compare VAR_RESULT, TRUE
     goto_if_eq Rotom_Appliances_DeleteSpecialMove
     special GetNumMovesSelectedMonHas
@@ -130,7 +130,7 @@ Rotom_Appliances_RecallFromMotor::
     special GetRotomNewSpecialMove
     special ChangeRotomForm
     msgbox Rotom_Text_EmergedFromTheMotor, MSGBOX_DEFAULT
-    specialVar VAR_RESULT, DoesRotomKnowSpecialMove
+    specialvar VAR_RESULT, DoesRotomKnowSpecialMove
     compare VAR_RESULT, TRUE
     goto_if_eq Rotom_Appliances_DeleteSpecialMove
     releaseall

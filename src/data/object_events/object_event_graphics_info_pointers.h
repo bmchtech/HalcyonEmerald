@@ -246,7 +246,19 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldM
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GoldItemBall;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Articuno;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raikou;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Entei;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Celebi;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jirachi;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Heatran;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regigigas;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Carbink;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diancie;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -490,6 +502,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
     [OBJ_EVENT_GFX_GOLD_ITEM_BALL] =           &gObjectEventGraphicsInfo_GoldItemBall,
     [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
+    [OBJ_EVENT_GFX_ARTICUNO] =                 &gObjectEventGraphicsInfo_Articuno,
+    [OBJ_EVENT_GFX_ZAPDOS] = &gObjectEventGraphicsInfo_Zapdos,
+    [OBJ_EVENT_GFX_MOLTRES] = &gObjectEventGraphicsInfo_Moltres,
+    [OBJ_EVENT_GFX_MEWTWO] = &gObjectEventGraphicsInfo_Mewtwo,
+    [OBJ_EVENT_GFX_RAIKOU] = &gObjectEventGraphicsInfo_Raikou,
+    [OBJ_EVENT_GFX_ENTEI] = &gObjectEventGraphicsInfo_Entei,
+    [OBJ_EVENT_GFX_SUICUNE] = &gObjectEventGraphicsInfo_Suicune,
+    [OBJ_EVENT_GFX_CELEBI] = &gObjectEventGraphicsInfo_Celebi,
+    [OBJ_EVENT_GFX_JIRACHI] = &gObjectEventGraphicsInfo_Jirachi,
+    [OBJ_EVENT_GFX_HEATRAN] = &gObjectEventGraphicsInfo_Heatran,
+    [OBJ_EVENT_GFX_REGIGIGAS] = &gObjectEventGraphicsInfo_Regigigas,
+    [OBJ_EVENT_GFX_CARBINK] = &gObjectEventGraphicsInfo_Carbink,
+    [OBJ_EVENT_GFX_DIANCIE] = &gObjectEventGraphicsInfo_Diancie,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

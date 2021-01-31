@@ -95,7 +95,9 @@ IslandCave_EventScript_Regice:: @ 8238F58
 	playmoncry SPECIES_REGICE, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGICE, 40, ITEM_NONE
+	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
+	copyvar VAR_0x800A, VAR_RESULT
+	setwildbattle SPECIES_REGICE, VAR_0x800A, ITEM_NEVER_MELT_ICE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
