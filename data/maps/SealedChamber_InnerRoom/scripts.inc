@@ -24,7 +24,7 @@ SealedChamber_InnerRoom_EventScript_Regigigas::
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_REGIGIGAS, VAR_0x800A, ITEM_NORMAL_GEM
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartKantoLegendaryBattle
+	special StartRegiBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
