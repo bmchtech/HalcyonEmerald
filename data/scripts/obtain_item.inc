@@ -14,41 +14,62 @@ EventScript_ObtainItemMessage:: @ 8271AE3
 	call_if_eq EventScript_NoRoomForItem
 	return
 
-EventScript_BufferPocketNameAndTryFanfare:: @ 8271B08
+EventScript_BufferPocketNameAndTryFanfare::
 	switch VAR_RESULT
 	case POCKET_ITEMS, EventScript_BufferItemsPocket
-	case POCKET_KEY_ITEMS, EventScript_BufferKeyItemsPocket
-	case POCKET_POKE_BALLS, EventScript_BufferPokeballsPocket
+	case POCKET_MEDICINE, EventScript_BufferMedicinePocket
+	case POCKET_BATTLE, EventScript_BufferBattlePocket
 	case POCKET_TM_HM, EventScript_BufferTMHMsPocket
 	case POCKET_BERRIES, EventScript_BufferBerriesPocket
+	case POCKET_POKE_BALLS, EventScript_BufferPokeballsPocket
+	case POCKET_KEY_ITEMS, EventScript_BufferKeyItemsPocket
+	case POCKET_MEGA_STONES, EventScript_BufferMegaStonesPocket
 	end
 
-EventScript_BufferItemsPocket:: @ 8271B45
+EventScript_BufferItemsPocket::
 	bufferstdstring 2, STDSTRING_ITEMS
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_BufferKeyItemsPocket:: @ 8271B55
-	bufferstdstring 2, STDSTRING_KEYITEMS
+EventScript_BufferMedicinePocket::
+	bufferstdstring 2, STDSTRING_MEDICINE
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_BufferPokeballsPocket:: @ 8271B65
-	bufferstdstring 2, STDSTRING_POKEBALLS
+EventScript_BufferBattlePocket::
+	bufferstdstring 2, STDSTRING_BATTLEITEMS
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_BufferTMHMsPocket:: @ 8271B75
+EventScript_BufferTMHMsPocket::
 	bufferstdstring 2, STDSTRING_TMHMS
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedTMHM
 	return
 
-EventScript_BufferBerriesPocket:: @ 8271B85
+EventScript_BufferPokeballsPocket::
+	bufferstdstring 2, STDSTRING_POKEBALLS
+	compare VAR_0x8007, 1
+	call_if_eq EventScript_PlayFanfareObtainedItem
+	return
+
+EventScript_BufferBerriesPocket::
 	bufferstdstring 2, STDSTRING_BERRIES
+	compare VAR_0x8007, 1
+	call_if_eq EventScript_PlayFanfareObtainedItem
+	return
+
+EventScript_BufferKeyItemsPocket::
+	bufferstdstring 2, STDSTRING_KEYITEMS
+	compare VAR_0x8007, 1
+	call_if_eq EventScript_PlayFanfareObtainedItem
+	return
+
+EventScript_BufferMegaStonesPocket
+	bufferstdstring 2, STDSTRING_MEGASTONE
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return

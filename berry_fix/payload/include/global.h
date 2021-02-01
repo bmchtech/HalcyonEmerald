@@ -100,12 +100,15 @@ enum LanguageId
 #define SECRET_BASES_COUNT  20
 #define TV_SHOWS_COUNT      25
 #define POKE_NEWS_COUNT     16
-#define PC_ITEMS_COUNT      50
-#define BAG_ITEMS_COUNT     20
-#define BAG_KEYITEMS_COUNT  20
-#define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT      64
-#define BAG_BERRIES_COUNT   46
+#define PC_ITEMS_COUNT      20
+#define BAG_ITEMS_COUNT     130
+#define BAG_MEDICINE_COUNT  44
+#define BAG_BATTLE_COUNT    128
+#define BAG_TMHM_COUNT      108
+#define BAG_BERRIES_COUNT   66
+#define BAG_POKEBALLS_COUNT 27
+#define BAG_KEYITEMS_COUNT  45
+#define BAG_MEGASTONES_COUNT 60
 
 enum
 {
@@ -656,10 +659,13 @@ struct SaveBlock1 /* 0x02025734 */
     /*0x496*/ u16 registeredItem; // registered for use with SELECT button
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
-    /*0x5B0*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
-    /*0x600*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
-    /*0x640*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
-    /*0x740*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+    /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
+    /*0x650*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
+    /*0x690*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
+    /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+    /*0x650*/ struct ItemSlot bagPocket_Medicine[BAG_MEDICINE_COUNT];
+    /*0x690*/ struct ItemSlot bagPocket_Battle[BAG_BATTLE_COUNT];
+    /*0x790*/ struct ItemSlot bagPocket_MegaStones[BAG_MEGASTONES_COUNT];
     /*0x7F8*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
     /*0x938*/ u8 dexSeen2[DEX_FLAGS_NO];
     /*0x96C*/ u16 berryBlenderRecords[3];
