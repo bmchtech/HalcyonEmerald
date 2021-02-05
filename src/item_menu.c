@@ -236,6 +236,16 @@ static const u8 sContextMenuItems_ItemsPocket[] = {
     ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
 };
 
+static const u8 sContextMenuItems_MedicinePocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
+    ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BattlePocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
+    ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
 static const u8 sContextMenuItems_KeyItemsPocket[] = {
     ITEMMENUACTION_USE,         ITEMMENUACTION_REGISTER,
     ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
@@ -255,6 +265,11 @@ static const u8 sContextMenuItems_BerriesPocket[] = {
     ITEMMENUACTION_CHECK_TAG,   ITEMMENUACTION_DUMMY,
     ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
     ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_MegaStonesPocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_REGISTER,
+    ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BattleUse[] = {
@@ -705,11 +720,11 @@ bool8 SetupBagMenu(void)
     case 13:
         BagMenu_PrintPocketNames(gPocketNamesStringsTable[gBagPositionStruct.pocket], 0);
         BagMenu_CopyPocketNameToWindow(0);
-        BagMenu_DrawPocketIndicatorSquare(0, 0);
-        BagMenu_DrawPocketIndicatorSquare(5, 0);
-        BagMenu_DrawPocketIndicatorSquare(6, 0);
-        BagMenu_DrawPocketIndicatorSquare(7, 0);
-        BagMenu_DrawPocketIndicatorSquare(8, 0);
+        DrawPocketIndicatorSquare(0, 0);
+        DrawPocketIndicatorSquare(5, 0);
+        DrawPocketIndicatorSquare(6, 0);
+        DrawPocketIndicatorSquare(7, 0);
+        DrawPocketIndicatorSquare(8, 0);
         DrawPocketIndicatorSquare(gBagPositionStruct.pocket, TRUE);
         gMain.state++;
         break;
