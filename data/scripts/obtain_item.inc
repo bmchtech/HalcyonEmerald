@@ -68,7 +68,7 @@ EventScript_BufferKeyItemsPocket::
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_BufferMegaStonesPocket
+EventScript_BufferMegaStonesPocket::
 	bufferstdstring 2, STDSTRING_MEGASTONE
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
