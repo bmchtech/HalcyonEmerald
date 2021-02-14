@@ -100,15 +100,15 @@ enum LanguageId
 #define SECRET_BASES_COUNT  4
 #define TV_SHOWS_COUNT      25
 #define POKE_NEWS_COUNT     16
-#define PC_ITEMS_COUNT      20
-#define BAG_ITEMS_COUNT     130
+#define PC_ITEMS_COUNT      30
+#define BAG_ITEMS_COUNT     93
 #define BAG_MEDICINE_COUNT  44
-#define BAG_BATTLE_COUNT    128
+#define BAG_BATTLE_COUNT    180
 #define BAG_TMHM_COUNT      108
 #define BAG_BERRIES_COUNT   66
 #define BAG_POKEBALLS_COUNT 27
-#define BAG_KEYITEMS_COUNT  45
-#define BAG_MEGASTONES_COUNT 60
+#define BAG_KEYITEMS_COUNT  55
+#define BAG_MEGASTONES_COUNT 70
 
 enum
 {
