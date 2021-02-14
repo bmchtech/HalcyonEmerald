@@ -574,3 +574,4 @@ gSpecials:: @ 81DBA64
 	def_special BattleSetup_StartKantoLegendaryBattle
 	def_special GetHighestLevelInPlayerParty
 	def_special CheckSpeciesInParty
+	def_special SetTotemBoost

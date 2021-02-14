@@ -227,6 +227,9 @@
 #define STATUS_PRIMARY_POKERUS   6
 #define STATUS_PRIMARY_FAINTED   7
 
+#define MAX_PER_STAT_IVS 31
+#define MAX_IV_MASK 31
+#define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
 #define MAX_PER_STAT_EVS 255
 #define MAX_TOTAL_EVS 510
 #define EV_ITEM_RAISE_LIMIT 100
@@ -236,10 +239,10 @@
 // Battle move flags
 #define FLAG_MAKES_CONTACT          (1 << 0)
 #define FLAG_PROTECT_AFFECTED       (1 << 1)
-#define FLAG_MAGICCOAT_AFFECTED     (1 << 2)
+#define FLAG_MAGIC_COAT_AFFECTED    (1 << 2)
 #define FLAG_SNATCH_AFFECTED        (1 << 3)
 #define FLAG_MIRROR_MOVE_AFFECTED   (1 << 4)
-#define FLAG_KINGSROCK_AFFECTED     (1 << 5)
+#define FLAG_KINGS_ROCK_AFFECTED    (1 << 5)
 #define FLAG_HIGH_CRIT              (1 << 6)
 #define FLAG_RECKLESS_BOOST         (1 << 7)
 #define FLAG_IRON_FIST_BOOST        (1 << 8)
@@ -314,7 +317,7 @@
 #define EVO_ITEM_HOLD_NIGHT               22     // Pokémon levels up, holds specified item at night
 #define EVO_MOVE                          23     // Pokémon levels up, knows specified move
 #define EVO_MOVE_TYPE                     24     // Pokémon levels up, knows move with specified type
-#define EVO_MAP                           25     // Pokémon levels up on specified map
+#define EVO_MAPSEC                        25     // Pokémon levels up on specified mapsec
 #define EVO_ITEM_MALE                     26     // specified item is used on a male Pokémon
 #define EVO_ITEM_FEMALE                   27     // specified item is used on a female Pokémon
 #define EVO_LEVEL_RAIN                    28     // Pokémon reaches the specified level while it's raining
@@ -322,8 +325,9 @@
 #define EVO_LEVEL_DARK_TYPE_MON_IN_PARTY  30     // Pokémon reaches the specified level with a Dark Type Pokémon in party
 #define EVO_TRADE_SPECIFIC_MON            31     // Pokémon is traded for a specified Pokémon
 #define EVO_ITEM_HOLD                     32     // Pokémon levels up, holds specified item
+#define EVO_SPECIFIC_MAP                  33     // Pokémon levels up on specified map
 
-#define EVOS_PER_MON 8
+#define EVOS_PER_MON 10
 
 #define NUM_MALE_LINK_FACILITY_CLASSES   8
 #define NUM_FEMALE_LINK_FACILITY_CLASSES 8

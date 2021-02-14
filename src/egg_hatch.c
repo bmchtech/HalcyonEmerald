@@ -324,7 +324,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
     ability = GetMonData(egg, MON_DATA_ABILITY_NUM);
     ball = GetMonData(egg, MON_DATA_POKEBALL);
 
-    CreateMon(temp, species, EGG_HATCH_LEVEL, 32, TRUE, personality, OT_ID_PLAYER_ID, 0);
+    CreateMon(temp, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -434,9 +434,9 @@ static u8 EggHatchCreateMonSprite(u8 a0, u8 switchID, u8 pokeID, u16* speciesLoc
         {
             u16 species = GetMonData(mon, MON_DATA_SPECIES);
             u32 pid = GetMonData(mon, MON_DATA_PERSONALITY);
-            HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species],
-                                                      gMonSpritesGfxPtr->sprites[(a0 * 2) + 1],
-                                                      species, pid);
+            HandleLoadSpecialPokePic(&gMonFrontPicTable[species],
+                                     gMonSpritesGfxPtr->sprites.ptr[(a0 * 2) + 1],
+                                     species, pid);
             LoadCompressedSpritePalette(GetMonSpritePalStruct(mon));
             *speciesLoc = species;
         }

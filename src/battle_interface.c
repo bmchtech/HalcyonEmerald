@@ -1011,7 +1011,7 @@ void UpdateOamPriorityInAllHealthboxes(u8 priority)
         if (indicatorSpriteId != 0xFF)
             gSprites[indicatorSpriteId].oam.priority = priority;
         
-        #if HIDE_HEALTHBOXES_DURING_ANIMS
+        #if B_HIDE_HEALTHBOXES_DURING_ANIMS
         if (IsBattlerAlive(i))
             TryToggleHealboxVisibility(priority, healthboxLeftSpriteId, healthboxRightSpriteId, healthbarSpriteId, indicatorSpriteId);
         #endif
@@ -2059,7 +2059,6 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
     void *ptr;
-    const u8 *genderTxt;
     u32 windowId, spriteTileNum, species;
     u8 *windowTileData;
     u8 gender;
@@ -3062,6 +3061,9 @@ void CreateAbilityPopUp(u8 battlerId, u32 ability, bool32 isDoubleBattle)
         gSprites[spriteId1].tRightToLeft = FALSE;
         gSprites[spriteId2].tRightToLeft = FALSE;
     }
+    
+    gBattleStruct->abilityPopUpSpriteIds[gBattleAnimAttacker][0] = spriteId1;
+    gBattleStruct->abilityPopUpSpriteIds[gBattleAnimAttacker][1] = spriteId2;
 
     taskId = CreateTask(Task_FreeAbilityPopUpGfx, 5);
     gTasks[taskId].tSpriteId1 = spriteId1;
@@ -3110,9 +3112,17 @@ static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
         }
         else
         {
-            sprite->tFrames--;
+            if (!gBattleScripting.fixedPopup)
+                sprite->tFrames--;
         }
     }
+}
+
+void DestroyAbilityPopUp(u8 battlerId)
+{
+    gSprites[gBattleStruct->abilityPopUpSpriteIds[battlerId][0]].tFrames = 0;
+    gSprites[gBattleStruct->abilityPopUpSpriteIds[battlerId][1]].tFrames = 0;
+    gBattleScripting.fixedPopup = FALSE;
 }
 
 static void Task_FreeAbilityPopUpGfx(u8 taskId)
