@@ -6184,7 +6184,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem, u
                 if (j == WEATHER_RAIN || j == WEATHER_RAIN_THUNDERSTORM || j == WEATHER_DOWNPOUR)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            case EVO_MAPSEC:
+            case EVO_SPECIFIC_MAPSEC:
                 if (gMapHeader.regionMapSectionId == gEvolutionTable[species][i].param)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;

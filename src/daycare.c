@@ -1043,7 +1043,7 @@ static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare
             *species = SPECIES_CHANSEY;
         }
         break;
-    case SPECIES_MIMEJR:
+    case SPECIES_MIME_JR:
         if (motherItem != ITEM_ODD_INCENSE && fatherItem != ITEM_ODD_INCENSE)
         {
             *species = SPECIES_MR_MIME;

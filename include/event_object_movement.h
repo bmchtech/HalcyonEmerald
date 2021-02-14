@@ -424,7 +424,7 @@ u8 MovementType_Invisible_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_Invisible_Step2(struct ObjectEvent *, struct Sprite *);
 void SetObjectEventSpriteInvisibility(u8 objectEventId, bool32 invisible);
 bool32 IsObjectEventSpriteInvisible(u8 objectEventId);
-void SetObjectEventSpriteGraphics(u8 objectEventId, u8 graphicsId);
+void SetObjectEventSpriteGraphics(u8 objectEventId, u16 graphicsId);
 void SetObjectEventSpriteAnim(u8 objectEventId, u8 animNum);
 bool32 IsObjectEventSpriteAnimating(u8 objectEventId);
 

@@ -31,7 +31,7 @@
 #define ITEM_DREAM_BALL   (ITEM_NONE + 25)
 #define ITEM_BEAST_BALL   (ITEM_NONE + 26)
 #define ITEM_PREMIER_BALL   (ITEM_NONE + 27)
-// Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
+// Note: If moving ball IDs around, updating FIRST_BALL_INDEX/LAST_BALL is not sufficient
 //       Several places expect the ball IDs to be first and contiguous (e.g. gBattlescriptsForBallThrow and MON_DATA_POKEBALL)
 //       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
 
@@ -734,15 +734,52 @@
 #define ITEM_TEA   (LAST_MEGA_STONE_INDEX + 61)
 #define ITEM_RUBY   (LAST_MEGA_STONE_INDEX + 62)
 #define ITEM_SAPPHIRE   (LAST_MEGA_STONE_INDEX + 63)
+// Z-crystals, unused for now
+#define ITEM_Z_RING                   (LAST_MEGA_STONE_INDEX + 64)
+#define ITEM_NORMALIUM_Z              (LAST_MEGA_STONE_INDEX + 65)
+#define ITEM_FIGHTINIUM_Z             (LAST_MEGA_STONE_INDEX + 66)
+#define ITEM_FLYINIUM_Z               (LAST_MEGA_STONE_INDEX + 67)
+#define ITEM_POISONIUM_Z              (LAST_MEGA_STONE_INDEX + 68)
+#define ITEM_GROUNDIUM_Z              (LAST_MEGA_STONE_INDEX + 69)
+#define ITEM_ROCKIUM_Z                (LAST_MEGA_STONE_INDEX + 70)
+#define ITEM_BUGINIUM_Z               (LAST_MEGA_STONE_INDEX + 71)
+#define ITEM_GHOSTIUM_Z               (LAST_MEGA_STONE_INDEX + 72)
+#define ITEM_STEELIUM_Z               (LAST_MEGA_STONE_INDEX + 73)
+#define ITEM_FIRIUM_Z                 (LAST_MEGA_STONE_INDEX + 74)
+#define ITEM_WATERIUM_Z               (LAST_MEGA_STONE_INDEX + 75)
+#define ITEM_GRASSIUM_Z               (LAST_MEGA_STONE_INDEX + 76)
+#define ITEM_ELECTRIUM_Z              (LAST_MEGA_STONE_INDEX + 77)
+#define ITEM_PSYCHIUM_Z               (LAST_MEGA_STONE_INDEX + 78)
+#define ITEM_ICIUM_Z                  (LAST_MEGA_STONE_INDEX + 79)
+#define ITEM_DRAGONIUM_Z              (LAST_MEGA_STONE_INDEX + 80)
+#define ITEM_DARKINIUM_Z              (LAST_MEGA_STONE_INDEX + 81)
+#define ITEM_FAIRIUM_Z                (LAST_MEGA_STONE_INDEX + 82)
+#define ITEM_ALORAICHIUM_Z            (LAST_MEGA_STONE_INDEX + 83)
+#define ITEM_DECIDIUM_Z               (LAST_MEGA_STONE_INDEX + 84)
+#define ITEM_EEVIUM_Z                 (LAST_MEGA_STONE_INDEX + 85)
+#define ITEM_INCINIUM_Z               (LAST_MEGA_STONE_INDEX + 86)
+#define ITEM_KOMMONIUM_Z              (LAST_MEGA_STONE_INDEX + 87)
+#define ITEM_LUNALIUM_Z               (LAST_MEGA_STONE_INDEX + 88)
+#define ITEM_LYCANIUM_Z               (LAST_MEGA_STONE_INDEX + 89)
+#define ITEM_MARSHADIUM_Z             (LAST_MEGA_STONE_INDEX + 90)
+#define ITEM_MEWNIUM_Z                (LAST_MEGA_STONE_INDEX + 91)
+#define ITEM_MIMIKIUM_Z               (LAST_MEGA_STONE_INDEX + 92)
+#define ITEM_PIKANIUM_Z               (LAST_MEGA_STONE_INDEX + 93)
+#define ITEM_PIKASHUNIUM_Z            (LAST_MEGA_STONE_INDEX + 94)
+#define ITEM_PRIMARIUM_Z              (LAST_MEGA_STONE_INDEX + 95)
+#define ITEM_SNORLIUM_Z               (LAST_MEGA_STONE_INDEX + 96)
+#define ITEM_SOLGANIUM_Z              (LAST_MEGA_STONE_INDEX + 97)
+#define ITEM_TAPUNIUM_Z               (LAST_MEGA_STONE_INDEX + 98)
+#define ITEM_ULTRANECROZIUM_Z         (LAST_MEGA_STONE_INDEX + 99)
 
-#define ITEMS_COUNT   (ITEM_SAPPHIRE + 1) // No need to add more unused items
+#define ITEMS_COUNT   (ITEM_ULTRANECROZIUM_Z + 1) // No need to add more unused items
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 #define FIRST_BERRY_INDEX             ITEM_CHERI_BERRY
 #define LAST_BERRY_INDEX              ITEM_ENIGMA_BERRY
 #define FIRST_MEDICINE_INDEX          ITEM_POTION
 #define LAST_MEDICINE_INDEX           ITEM_ABILITY_PATCH
-#define FIRST_BALL_INDEX              ITEM_MASTER_BALL
+#define FIRST_BALL_INDEX                    ITEM_MASTER_BALL
 #define LAST_BALL_INDEX               ITEM_PREMIER_BALL
 #define FIRST_BATTLE_ITEM_INDEX       ITEM_GUARD_SPEC
 #define LAST_BATTLE_ITEM_INDEX        ITEM_BATTLE_TEMP_10
@@ -754,6 +791,7 @@
 #define LAST_KEY_ITEM_INDEX           ITEM_KEY_TEMP_6
 #define FIRST_MEGA_STONE_INDEX        ITEM_ABOMASITE
 #define LAST_MEGA_STONE_INDEX         ITEM_MEGA_STONE_TEMP_20
+#define FIRST_MAIL_INDEX              ITEM_ORANGE_MAIL
 
 // Range of berries given out by various NPCS
 #define FIRST_BERRY_MASTER_BERRY      ITEM_POMEG_BERRY

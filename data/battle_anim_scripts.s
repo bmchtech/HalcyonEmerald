@@ -27,7 +27,7 @@ gBattleAnims_Moves::
 	.4byte Move_ICE_PUNCH
 	.4byte Move_THUNDER_PUNCH
 	.4byte Move_SCRATCH
-	.4byte Move_VICE_GRIP
+	.4byte MOVE_VISE_GRIP
 	.4byte Move_GUILLOTINE
 	.4byte Move_RAZOR_WIND
 	.4byte Move_SWORDS_DANCE
@@ -201,7 +201,7 @@ gBattleAnims_Moves::
 	.4byte Move_PROTECT
 	.4byte Move_MACH_PUNCH
 	.4byte Move_SCARY_FACE
-	.4byte Move_FAINT_ATTACK
+	.4byte MOVE_FEINT_ATTACK
 	.4byte Move_SWEET_KISS
 	.4byte Move_BELLY_DRUM
 	.4byte Move_SLUDGE_BOMB
@@ -15473,7 +15473,7 @@ Move_PAIN_SPLIT:
 	createvisualtask AnimTask_PainSplitMovement, 2, ANIM_TARGET, 2
 	end
 
-Move_VICE_GRIP:
+MOVE_VISE_GRIP:
 	loadspritegfx ANIM_TAG_CUT
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -18778,7 +18778,7 @@ SmogCloud:
 	delay 7
 	return
 
-Move_FAINT_ATTACK:
+MOVE_FEINT_ATTACK:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_ATTACKER
 	fadetobg BG_DARK
