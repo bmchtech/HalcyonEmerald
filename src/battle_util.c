@@ -349,7 +349,7 @@ void HandleAction_UseItem(void)
 
     gLastUsedItem = gBattleResources->bufferB[gBattlerAttacker][1] | (gBattleResources->bufferB[gBattlerAttacker][2] << 8);
 
-    if (gLastUsedItem <= LAST_BALL) // is ball
+    if (gLastUsedItem <= LAST_BALL_INDEX) // is ball
     {
         gBattlescriptCurrInstr = gBattlescriptsForBallThrow[gLastUsedItem];
     }

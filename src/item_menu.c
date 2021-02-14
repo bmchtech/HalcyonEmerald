@@ -236,6 +236,16 @@ static const u8 sContextMenuItems_ItemsPocket[] = {
     ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
 };
 
+static const u8 sContextMenuItems_MedicinePocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
+    ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BattlePocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
+    ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
 static const u8 sContextMenuItems_KeyItemsPocket[] = {
     ITEMMENUACTION_USE,         ITEMMENUACTION_REGISTER,
     ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
@@ -255,6 +265,11 @@ static const u8 sContextMenuItems_BerriesPocket[] = {
     ITEMMENUACTION_CHECK_TAG,   ITEMMENUACTION_DUMMY,
     ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
     ITEMMENUACTION_TOSS,        ITEMMENUACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_MegaStonesPocket[] = {
+    ITEMMENUACTION_USE,         ITEMMENUACTION_REGISTER,
+    ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BattleUse[] = {
@@ -495,6 +510,8 @@ struct ListBuffer2 {
 
 struct TempWallyStruct {
     struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
+    struct ItemSlot bagPocket_Medicine[BAG_MEDICINE_COUNT];
+    struct ItemSlot bagPocket_Battle[BAG_BATTLE_COUNT];
     struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
     u16 cursorPosition[POCKETS_COUNT];
     u16 scrollPosition[POCKETS_COUNT];
@@ -703,6 +720,11 @@ bool8 SetupBagMenu(void)
     case 13:
         BagMenu_PrintPocketNames(gPocketNamesStringsTable[gBagPositionStruct.pocket], 0);
         BagMenu_CopyPocketNameToWindow(0);
+        DrawPocketIndicatorSquare(0, 0);
+        DrawPocketIndicatorSquare(5, 0);
+        DrawPocketIndicatorSquare(6, 0);
+        DrawPocketIndicatorSquare(7, 0);
+        DrawPocketIndicatorSquare(8, 0);
         DrawPocketIndicatorSquare(gBagPositionStruct.pocket, TRUE);
         gMain.state++;
         break;
@@ -1356,9 +1378,9 @@ void sub_81AC23C(u8 a)
 static void DrawPocketIndicatorSquare(u8 x, bool8 isCurrentPocket)
 {
     if (!isCurrentPocket)
-        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 5, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 4, 3, 1, 1);
     else
-        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 5, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 4, 3, 1, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -1555,6 +1577,28 @@ void OpenContextMenu(u8 unused)
                         if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
                             gBagMenu->contextMenuItemsBuffer[0] = ITEMMENUACTION_CHECK;
                         break;
+                    case MEDICINE_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_MedicinePocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_MedicinePocket);
+                        memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_ItemsPocket, sizeof(sContextMenuItems_ItemsPocket));
+                        break;
+                    case BATTLE_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattlePocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattlePocket);
+                        memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_ItemsPocket, sizeof(sContextMenuItems_ItemsPocket)); // Are these memcpys needed?
+                        break;
+                    case TMHM_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_TmHmPocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_TmHmPocket);
+                        break;
+                    case BERRIES_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerriesPocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerriesPocket);
+                        break;
+                    case BALLS_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_BallsPocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BallsPocket);
+                        break;
                     case KEYITEMS_POCKET:
                         gBagMenu->contextMenuItemsPtr = gBagMenu->contextMenuItemsBuffer;
                         gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_KeyItemsPocket);
@@ -1567,17 +1611,10 @@ void OpenContextMenu(u8 unused)
                                 gBagMenu->contextMenuItemsBuffer[0] = ITEMMENUACTION_WALK;
                         }
                         break;
-                    case BALLS_POCKET:
-                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_BallsPocket;
-                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BallsPocket);
-                        break;
-                    case TMHM_POCKET:
-                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_TmHmPocket;
-                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_TmHmPocket);
-                        break;
-                    case BERRIES_POCKET:
-                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerriesPocket;
-                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerriesPocket);
+                    case MEGA_STONES_POCKET:
+                        gBagMenu->contextMenuItemsPtr = sContextMenuItems_MegaStonesPocket;
+                        gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_MegaStonesPocket);
+                        memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_ItemsPocket, sizeof(sContextMenuItems_ItemsPocket));
                         break;
                 }
             }
@@ -2220,6 +2257,8 @@ void PrepareBagForWallyTutorial(void)
 
     sTempWallyBag = AllocZeroed(sizeof(struct TempWallyStruct));
     memcpy(sTempWallyBag->bagPocket_Items, gSaveBlock1Ptr->bagPocket_Items, sizeof(gSaveBlock1Ptr->bagPocket_Items));
+    memcpy(sTempWallyBag->bagPocket_Medicine, gSaveBlock1Ptr->bagPocket_Medicine, sizeof(gSaveBlock1Ptr->bagPocket_Medicine));
+    memcpy(sTempWallyBag->bagPocket_Battle, gSaveBlock1Ptr->bagPocket_Battle, sizeof(gSaveBlock1Ptr->bagPocket_Battle));
     memcpy(sTempWallyBag->bagPocket_PokeBalls, gSaveBlock1Ptr->bagPocket_PokeBalls, sizeof(gSaveBlock1Ptr->bagPocket_PokeBalls));
     sTempWallyBag->pocket = gBagPositionStruct.pocket;
     for (i = 0; i <= 4; i++)
@@ -2228,6 +2267,7 @@ void PrepareBagForWallyTutorial(void)
         sTempWallyBag->scrollPosition[i] = gBagPositionStruct.scrollPosition[i];
     }
     ClearItemSlots(gSaveBlock1Ptr->bagPocket_Items, BAG_ITEMS_COUNT);
+    ClearItemSlots(gSaveBlock1Ptr->bagPocket_Medicine, BAG_MEDICINE_COUNT);
     ClearItemSlots(gSaveBlock1Ptr->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT);
     ResetBagScrollPositions();
 }
@@ -2237,6 +2277,8 @@ void RestoreBagAfterWallyTutorial(void)
     u32 i;
 
     memcpy(gSaveBlock1Ptr->bagPocket_Items, sTempWallyBag->bagPocket_Items, sizeof(sTempWallyBag->bagPocket_Items));
+    memcpy(gSaveBlock1Ptr->bagPocket_Medicine, sTempWallyBag->bagPocket_Medicine, sizeof(sTempWallyBag->bagPocket_Medicine));
+    memcpy(gSaveBlock1Ptr->bagPocket_Battle, sTempWallyBag->bagPocket_Battle, sizeof(sTempWallyBag->bagPocket_Battle));
     memcpy(gSaveBlock1Ptr->bagPocket_PokeBalls, sTempWallyBag->bagPocket_PokeBalls, sizeof(sTempWallyBag->bagPocket_PokeBalls));
     gBagPositionStruct.pocket = sTempWallyBag->pocket;
     for (i = 0; i <= 4; i++)
@@ -2252,7 +2294,7 @@ void DoWallyTutorialBagMenu(void)
     PrepareBagForWallyTutorial();
     AddBagItem(ITEM_POTION, 1);
     AddBagItem(ITEM_POKE_BALL, 1);
-    GoToBagMenu(ITEMMENULOCATION_WALLY, ITEMS_POCKET, CB2_SetUpReshowBattleScreenAfterMenu2);
+    GoToBagMenu(ITEMMENULOCATION_WALLY, MEDICINE_POCKET, CB2_SetUpReshowBattleScreenAfterMenu2);
 }
 
 void Task_WallyTutorialBagMenu(u8 taskId)

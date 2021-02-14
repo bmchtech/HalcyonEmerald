@@ -20,12 +20,15 @@ static void ApplyNewEncryptionKeyToAllEncryptedData(u32 encryptionKey);
 
 struct LoadedSaveData
 {
- /*0x0000*/ struct ItemSlot items[BAG_ITEMS_COUNT];
- /*0x0078*/ struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
- /*0x00F0*/ struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
- /*0x0130*/ struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
- /*0x0230*/ struct ItemSlot berries[BAG_BERRIES_COUNT];
- /*0x02E8*/ struct MailStruct mail[MAIL_COUNT];
+    struct ItemSlot items[BAG_ITEMS_COUNT];
+    struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
+    struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
+    struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
+    struct ItemSlot berries[BAG_BERRIES_COUNT];
+    struct ItemSlot medicine[BAG_MEDICINE_COUNT];
+    struct ItemSlot battle[BAG_BATTLE_COUNT];
+    struct ItemSlot megaStones[BAG_MEGASTONES_COUNT];
+    struct MailStruct mail[MAIL_COUNT];
 };
 
 // EWRAM DATA
@@ -233,6 +236,18 @@ void LoadPlayerBag(void)
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gLoadedSaveData.berries[i] = gSaveBlock1Ptr->bagPocket_Berries[i];
 
+    // load player medicine.
+    for (i = 0; i < BAG_MEDICINE_COUNT; i++)
+        gLoadedSaveData.medicine[i] = gSaveBlock1Ptr->bagPocket_Medicine[i];
+
+    // load player battle items.
+    for (i = 0; i < BAG_BATTLE_COUNT; i++)
+        gLoadedSaveData.battle[i] = gSaveBlock1Ptr->bagPocket_Battle[i];
+
+    // load player mega stones.
+    for (i = 0; i < BAG_MEGASTONES_COUNT; i++)
+        gLoadedSaveData.megaStones[i] = gSaveBlock1Ptr->bagPocket_MegaStones[i];
+
     // load mail.
     for (i = 0; i < MAIL_COUNT; i++)
         gLoadedSaveData.mail[i] = gSaveBlock1Ptr->mail[i];
@@ -264,6 +279,18 @@ void SavePlayerBag(void)
     // save player berries.
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gSaveBlock1Ptr->bagPocket_Berries[i] = gLoadedSaveData.berries[i];
+
+    // load player medicine.
+    for (i = 0; i < BAG_MEDICINE_COUNT; i++)
+        gSaveBlock1Ptr->bagPocket_Medicine[i] = gLoadedSaveData.medicine[i];
+
+    // load player battle items.
+    for (i = 0; i < BAG_BATTLE_COUNT; i++)
+        gSaveBlock1Ptr->bagPocket_Battle[i] = gLoadedSaveData.battle[i];
+
+    // load player mega stones.
+    for (i = 0; i < BAG_MEGASTONES_COUNT; i++)
+        gSaveBlock1Ptr->bagPocket_MegaStones[i] = gLoadedSaveData.megaStones[i];
 
     // save mail.
     for (i = 0; i < MAIL_COUNT; i++)
