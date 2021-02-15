@@ -1,9 +1,9 @@
 gText_Birch_Welcome:: @ 82C897B
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of Pokémon!\p"
-	.string "My name is BIRCH.\p"
+	.string "My name is Birch.\p"
 	.string "But everyone calls me the Pokémon\n"
-	.string "PROFESSOR.\p"
+	.string "Professor.\p"
 	.string "$"
 
 gText_Birch_Pokemon:: @ 82C89FB
