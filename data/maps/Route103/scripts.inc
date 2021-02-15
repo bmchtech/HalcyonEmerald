@@ -318,7 +318,7 @@ Route103_Text_MayTimeToHeadBack: @ 81EC8AE
 	.string "You might be able to befriend any\n"
 	.string "kind of Pokémon easily.\p"
 	.string "Well, it's time to head back to\n"
-	.string "the LAB.$"
+	.string "the Lab.$"
 
 Route103_Text_BrendanRoute103Pokemon: @ 81EC989
 	.string "Brendan: Okay, so it's this one and\n"
@@ -343,7 +343,7 @@ Route103_Text_BrendanTimeToHeadBack: @ 81ECA79
 	.string "even though you just got it.\p"
 	.string "{PLAYER}, I get the feeling that you\n"
 	.string "could befriend any Pokémon with ease.\p"
-	.string "We should head back to the LAB.$"
+	.string "We should head back to the Lab.$"
 
 Route103_Text_ShouldHaveBroughtPotion: @ 81ECB73
 	.string "My Pokémon is staggeringly tired…\n"
