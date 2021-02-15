@@ -52,6 +52,7 @@ extern const u8 EventScript_ResetAllMapFlags[];
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesResults(void);
+static void RandomizeBerryEncounters(void);
 
 // EWRAM vars
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
@@ -206,6 +207,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    RandomizeBerryEncounters();
 }
 
 static void ResetMiniGamesResults(void)
@@ -214,4 +216,22 @@ static void ResetMiniGamesResults(void)
     SetBerryPowder(&gSaveBlock2Ptr->berryCrush.berryPowderAmount, 0);
     ResetPokeJumpResults();
     CpuFill16(0, &gSaveBlock2Ptr->berryPick, sizeof(struct BerryPickingResults));
+}
+
+// Determines whether or not the player should encounter a Pokemon in new game berry trees
+static void RandomizeBerryEncounters(void)
+{
+    u8 treeId = 0;
+    int i = 0;
+
+    struct BerryTree *tree;
+
+    for (i = 0; i < BERRY_TREES_COUNT; i++)
+    {
+        if (Random() % 2) // 50/50 encounter chance
+        {
+            tree = &gSaveBlock1Ptr->berryTrees[i];
+            tree->EncounterBerryStage = TRUE;
+        }
+    }
 }
