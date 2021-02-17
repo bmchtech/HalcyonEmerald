@@ -450,6 +450,11 @@ static const u8 sAbilityCapsuleDesc[] = _(
     "Switches a Poké-\n"
     "mon's ability.");
 
+static const u8 sAbilityPatchDesc[] = _(
+    "Switches a Poké-\n"
+    "mon's ability to\n"
+    "its hidden ability.");
+
 static const u8 sEscapeRopeDesc[] = _(
     "Use to escape\n"
     "instantly from a\n"

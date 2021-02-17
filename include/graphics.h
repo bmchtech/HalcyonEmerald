@@ -7805,6 +7805,8 @@ extern const u32 gItemIcon_MegaBracelet[];
 extern const u32 gItemIconPalette_MegaBracelet[];
 extern const u32 gItemIcon_AbilityCapsule[];
 extern const u32 gItemIconPalette_AbilityCapsule[];
+extern const u32 gItemIcon_AbilityPatch[];
+extern const u32 gItemIconPalette_AbilityPatch[];
 extern const u32 gItemIcon_RoseliBerry[];
 extern const u32 gItemIconPalette_RoseliBerry[];
 extern const u32 gItemIcon_KeeBerry[];
