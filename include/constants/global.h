@@ -120,4 +120,8 @@
 #define DIR_NORTHWEST   7
 #define DIR_NORTHEAST   8
 
+#define DIFFICULTY_NORMAL     0
+#define DIFFICULTY_HARD       1
+#define DIFFICULTY_INSANITY   2
+
 #endif // GUARD_CONSTANTS_GLOBAL_H

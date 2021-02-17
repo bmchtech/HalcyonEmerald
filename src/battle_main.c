@@ -1857,6 +1857,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 monsCount;
     u8 level;
     u8 friendship;
+    u8 difficultySetting = gSaveBlock2Ptr->gameDifficulty;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1964,11 +1965,20 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 SetMonData(&party[i], MON_DATA_ABILITY_NUM, &partyData[i].ability);
 
-                // Set EVs and IVs from premade spreads
+                // Set IVs from premade spreads
                 for (j = 0; j < 6; j++)
                 {
-                    SetMonData(&party[i], MON_DATA_HP_EV + j, &gSets[partyData[i].spread].EVs[j]);
                     SetMonData(&party[i], MON_DATA_HP_IV + j, &gSets[partyData[i].spread].IVs[j]);
+                }
+
+                // Set EVs from premade spreads if difficulty is Hard or higher
+                // Separate loops so that difficulty is not checked in each loop
+                if (difficultySetting > DIFFICULTY_NORMAL)
+                {
+                    for (j = 0; j < 6; j++)
+                    {
+                        SetMonData(&party[i], MON_DATA_HP_EV + j, &gSets[partyData[i].spread].EVs[j]);
+                    }
                 }
 
                 CalculateMonStats(&party[i]); // called twice; fix in future
@@ -1978,7 +1988,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
-                // Set friendship value if trainer mon knows Return
+                // Set max friendship if trainer mon knows Return
                 if (MonKnowsMove(&party[i], MOVE_RETURN))
                 {
                     friendship = MAX_FRIENDSHIP;

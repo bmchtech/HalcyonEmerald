@@ -1,4 +1,4 @@
-gText_Birch_Welcome:: @ 82C897B
+gText_Birch_Welcome::
 	.string "Hi! Sorry to keep you waiting!\p"
 	.string "Welcome to the world of Pokémon!\p"
 	.string "My name is Birch.\p"
@@ -57,5 +57,46 @@ gText_Birch_AreYouReady:: @ 82C8C7A
 	.string "world of Pokémon where dreams,\l"
 	.string "adventure, and friendships await!\p"
 	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my Pokémon LAB.\p"
+	.string "Come see me in my Pokémon Lab.\p"
+	.string "$"
+
+gText_Pie_Welcome::
+	.string "Oh, wait!\p"
+	.string "Before you go, a message from this\n"
+	.string "hack's creator:\p"
+	.string "Welcome to Pokémon Inclement Emerald!\p"
+	.string "This is a difficulty hack with modern\n"
+	.string "mechanics, many quality of life\l"
+	.string "changes, and massive Pokémon variety!\p"
+	.string "You can build your team using almost\n"
+	.string "any Pokémon from the first seven\l"
+	.string "generations, and gen eight will be\l"
+	.string "added soon too!\p"
+	.string "Before you get started, you'll need\n"
+	.string "to choose a difficulty setting.\p"
+	.string "Currently you can choose between\n"
+	.string "Normal Mode or Hard Mode.\p"
+	.string "In Normal Mode, Trainers won't have\n"
+	.string "EVs, so you won't need to worry about\l"
+	.string "your own Pokémon's stats.\p"
+	.string "In Hard Mode, Trainers will eventually\n"
+	.string "have fully EV trained teams, so you\l"
+	.string "might need to EV train your own team.\p"
+	.string "You can do this passively - no\n"
+	.string "grinding required - so don't let that\l"
+	.string "put you off Hard Mode!\p"
+	.string "$"
+
+gText_Pie_Difficulty::
+	.string "So, would you like to play on\n"
+	.string "Normal Mode or Hard Mode?$"
+
+gText_Pie_Documents::
+	.string "Great! If you want more information,\n"
+	.string "please check the documents that came\l"
+	.string "with the hack's patch.\p"
+	.string "They cover everything from Pokémon and\n"
+	.string "item locations to new ability effects.\p"
+	.string "Finally, I hope you enjoy the hack!\n"
+	.string "- Buffel Saft\p"
 	.string "$"
