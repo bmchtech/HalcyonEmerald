@@ -1206,7 +1206,7 @@ const struct Item gItems[] =
         .description = sPokeVialDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
     },
 

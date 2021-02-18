@@ -69,8 +69,7 @@ static void UseTMHMYesNo(u8 taskId);
 static void UseTMHM(u8 taskId);
 static void Task_StartUseRepel(u8 taskId);
 static void Task_UseRepel(u8 taskId);
-static void Task_StartUsePokeVial(u8 taskId);
-static void Task_UsePokeVial(u8 taskId);
+static void ItemUseOnFieldCB_PokeVial(u8 taskId);
 static void Task_CloseCantUseKeyItemMessage(u8 taskId);
 static void SetDistanceOfClosestHiddenItem(u8 taskId, s16 x, s16 y);
 static void CB2_OpenPokeblockFromBag(void);
@@ -951,28 +950,21 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
 {
     if (VarGet(VAR_POKE_VIAL_CHARGES) == 0)
     {
-        DisplayItemMessage(taskId, 1, gText_PokeVialEmpty, BagMenu_InitListsMenu);
+        DisplayItemMessageOnField(taskId, gText_PokeVialEmpty, Task_CloseCantUseKeyItemMessage);
     }
     else
     {
-        gTasks[taskId].func = Task_StartUsePokeVial;
+        sItemUseOnFieldCB = ItemUseOnFieldCB_PokeVial;
+        SetUpItemUseOnFieldCallback(taskId);
     }
 }
 
-static void Task_StartUsePokeVial(u8 taskId)
+static void ItemUseOnFieldCB_PokeVial(u8 taskId)
 {
     PlaySE(SE_USE_ITEM);
-    gTasks[taskId].func = Task_UsePokeVial;
-}
-
-static void Task_UsePokeVial(u8 taskId)
-{
-    if (!IsSEPlaying())
-    {
-        HealPlayerParty();
-        VarSet(VAR_POKE_VIAL_CHARGES, VarGet(VAR_POKE_VIAL_CHARGES - 1));
-        DisplayItemMessage(taskId, 1, gText_UsedPokeVial, BagMenu_InitListsMenu);
-    }
+    HealPlayerParty();
+    VarSet(VAR_POKE_VIAL_CHARGES, VarGet(VAR_POKE_VIAL_CHARGES - 1));
+    DisplayItemMessageOnField(taskId, gText_UsedPokeVial, Task_CloseCantUseKeyItemMessage);
 }
 
 void ItemUseInBattle_PokeBall(u8 taskId)
