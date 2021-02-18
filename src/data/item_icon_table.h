@@ -616,6 +616,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_MEGA_BRACELET] = {gItemIcon_MegaBracelet, gItemIconPalette_MegaBracelet},
     [ITEM_ABILITY_CAPSULE] = {gItemIcon_AbilityCapsule, gItemIconPalette_AbilityCapsule},
     [ITEM_ABILITY_PATCH] = {gItemIcon_AbilityPatch, gItemIconPalette_AbilityPatch},
+    [ITEM_POKE_VIAL] = {gItemIcon_PokeVial, gItemIconPalette_PokeVial},
     [ITEM_ROSELI_BERRY] = {gItemIcon_RoseliBerry, gItemIconPalette_RoseliBerry},
     [ITEM_KEE_BERRY] = {gItemIcon_KeeBerry, gItemIconPalette_KeeBerry},
     [ITEM_MARANGA_BERRY] = {gItemIcon_MarangaBerry, gItemIconPalette_MarangaBerry},

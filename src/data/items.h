@@ -1197,6 +1197,20 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
     },
 
+    [ITEM_POKE_VIAL] =
+    {
+        .name = _("Poké Vial"),
+        .itemId = ITEM_POKE_VIAL,
+        .price = 0,
+        .holdEffectParam = 0,
+        .description = sPokeVialDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
+    },
+
+
     [ITEM_ESCAPE_ROPE] =
     {
         .name = _("Escape Rope"),

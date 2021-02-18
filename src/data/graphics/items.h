@@ -1447,6 +1447,9 @@ const u32 gItemIconPalette_AbilityCapsule[] = INCBIN_U32("graphics/items/icon_pa
 const u32 gItemIcon_AbilityPatch[] = INCBIN_U32("graphics/items/icons/ability_patch.4bpp.lz");
 const u32 gItemIconPalette_AbilityPatch[] = INCBIN_U32("graphics/items/icon_palettes/ability_patch.gbapal.lz");
 
+const u32 gItemIcon_PokeVial[] = INCBIN_U32("graphics/items/icons/poke_vial.4bpp.lz");
+const u32 gItemIconPalette_PokeVial[] = INCBIN_U32("graphics/items/icon_palettes/poke_vial.gbapal.lz");
+
 const u32 gItemIcon_RoseliBerry[] = INCBIN_U32("graphics/items/icons/roseli_berry.4bpp.lz");
 const u32 gItemIconPalette_RoseliBerry[] = INCBIN_U32("graphics/items/icon_palettes/roseli_berry.gbapal.lz");
 
