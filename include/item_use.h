@@ -22,6 +22,7 @@ void ItemUseOutOfBattle_Repel(u8);
 void ItemUseOutOfBattle_EscapeRope(u8);
 void ItemUseOutOfBattle_BlackWhiteFlute(u8);
 void ItemUseOutOfBattle_EvolutionStone(u8);
+void ItemUseOutOfBattle_PokeVial(u8);
 void ItemUseOutOfBattle_Berry(u8);
 void ItemUseOutOfBattle_EnigmaBerry(u8);
 void ItemUseOutOfBattle_CannotUse(u8);

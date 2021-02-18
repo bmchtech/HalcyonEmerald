@@ -1185,6 +1185,32 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
     },
 
+    [ITEM_ABILITY_PATCH] =
+    {
+        .name = _("AbilityPatch"),
+        .itemId = ITEM_ABILITY_PATCH,
+        .price = 4000,
+        .holdEffectParam = 0,
+        .description = sAbilityPatchDesc,
+        .pocket = POCKET_MEDICINE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
+    },
+
+    [ITEM_POKE_VIAL] =
+    {
+        .name = _("Poké Vial"),
+        .itemId = ITEM_POKE_VIAL,
+        .price = 0,
+        .holdEffectParam = 0,
+        .description = sPokeVialDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
+    },
+
+
     [ITEM_ESCAPE_ROPE] =
     {
         .name = _("Escape Rope"),
