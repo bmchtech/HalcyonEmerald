@@ -722,7 +722,6 @@ bool8 SetupBagMenu(void)
         DrawPocketIndicatorSquare(5, 0);
         DrawPocketIndicatorSquare(6, 0);
         DrawPocketIndicatorSquare(7, 0);
-        DrawPocketIndicatorSquare(8, 0);
         DrawPocketIndicatorSquare(gBagPositionStruct.pocket, TRUE);
         gMain.state++;
         break;
