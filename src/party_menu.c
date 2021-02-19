@@ -4477,7 +4477,8 @@ void Task_AbilityCapsule(u8 taskId)
 
         if (item == ITEM_ABILITY_CAPSULE)
         {
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, tAbilityNum ^ 1)]);
+            tAbilityNum ^= 1;
+            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, tAbilityNum)]);
             StringExpandPlaceholders(gStringVar4, askText);
         }
         else
