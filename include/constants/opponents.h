@@ -44,14 +44,14 @@
 #define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
-#define TRAINER_GRUNT_METEOR_FALLS                       43
+#define TRAINER_GRUNT_METEOR_FALLS           43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45
 #define TRAINER_FOSTER                       46
 #define TRAINER_DUSTY_2                      47
 #define TRAINER_DUSTY_3                      48
 #define TRAINER_DUSTY_4                      49
-#define TRAINER_COURTNEY_1                      50
+#define TRAINER_COURTNEY_METEOR_FALLS        50
 #define TRAINER_GABBY_AND_TY_1               51
 #define TRAINER_GABBY_AND_TY_2               52
 #define TRAINER_GABBY_AND_TY_3               53
@@ -64,14 +64,14 @@
 #define TRAINER_LOLA_2                       60
 #define TRAINER_LOLA_3                       61
 #define TRAINER_LOLA_4                       62
-#define MAY_TREECKO_METEOR_FALLS                       63
+#define MAY_TREECKO_METEOR_FALLS             63
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65
 #define TRAINER_CHARLIE                      66
 #define TRAINER_RICKY_2                      67
 #define TRAINER_RICKY_3                      68
 #define TRAINER_RICKY_4                      69
-#define MAY_TORCHIC_METEOR_FALLS                      70
+#define MAY_TORCHIC_METEOR_FALLS             70
 #define TRAINER_RANDALL                      71
 #define TRAINER_PARKER                       72
 #define TRAINER_GEORGE                       73
@@ -88,7 +88,7 @@
 #define TRAINER_WILTON_2                     84
 #define TRAINER_WILTON_3                     85
 #define TRAINER_WILTON_4                     86
-#define MAY_MUDKIP_METEOR_FALLS                     87
+#define MAY_MUDKIP_METEOR_FALLS              87
 #define TRAINER_WARREN                       88
 #define TRAINER_MARY                         89
 #define TRAINER_ALEXIA                       90
@@ -105,7 +105,7 @@
 #define TRAINER_BROOKE_2                    101
 #define TRAINER_BROOKE_3                    102
 #define TRAINER_BROOKE_4                    103
-#define BRENDAN_TREECKO_METEOR_FALLS                    104
+#define BRENDAN_TREECKO_METEOR_FALLS        104
 #define TRAINER_PATRICIA                    105
 #define TRAINER_KINDRA                      106
 #define TRAINER_TAMMY                       107
@@ -114,7 +114,7 @@
 #define TRAINER_VALERIE_2                   110
 #define TRAINER_VALERIE_3                   111
 #define TRAINER_VALERIE_4                   112
-#define BRENDAN_TORCHIC_METEOR_FALLS                   113
+#define BRENDAN_TORCHIC_METEOR_FALLS        113
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116
@@ -174,7 +174,7 @@
 #define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172
-#define TRAINER_GRETA_SLATEPORT                      173
+#define TRAINER_GRETA_SLATEPORT             173
 #define TRAINER_CHAD                        174
 #define TRAINER_TONY_2                      175
 #define TRAINER_TONY_3                      176
@@ -286,7 +286,7 @@
 #define TRAINER_KAREN_2                     282
 #define TRAINER_KAREN_3                     283
 #define TRAINER_KAREN_4                     284
-#define TRAINER_STEVEN_MOSSDEEP                     285
+#define TRAINER_STEVEN_MOSSDEEP             285
 #define TRAINER_KATE_AND_JOY                286
 #define TRAINER_ANNA_AND_MEG_1              287
 #define TRAINER_ANNA_AND_MEG_2              288
@@ -487,7 +487,7 @@
 #define TRAINER_GINA_AND_MIA_1              483
 #define TRAINER_MIU_AND_YUKI                484
 #define TRAINER_AMY_AND_LIV_3               485
-#define TRAINER_MAGIKARP_GUY              486
+#define TRAINER_MAGIKARP_GUY                486
 #define TRAINER_AMY_AND_LIV_4               487
 #define TRAINER_AMY_AND_LIV_5               488
 #define TRAINER_AMY_AND_LIV_6               489
@@ -626,7 +626,7 @@
 #define TRAINER_JAMES_2                     622
 #define TRAINER_JAMES_3                     623
 #define TRAINER_JAMES_4                     624
-#define TRAINER_COURTNEY_MOSSDEEP                     625
+#define TRAINER_COURTNEY_MOSSDEEP           625
 #define TRAINER_BRICE                       626
 #define TRAINER_TRENT_1                     627
 #define TRAINER_LENNY                       628
@@ -634,8 +634,8 @@
 #define TRAINER_ALAN                        630
 #define TRAINER_CLARK                       631
 #define TRAINER_ERIC                        632
-#define TRAINER_SPENSER_FORTREE                     633
-#define TRAINER_ARCHIE_SLATEPORT                    634
+#define TRAINER_SPENSER_FORTREE             633
+#define TRAINER_ARCHIE_SLATEPORT            634
 #define TRAINER_MIKE_2                      635
 #define TRAINER_TRENT_2                     636
 #define TRAINER_TRENT_3                     637

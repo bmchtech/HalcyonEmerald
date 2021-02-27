@@ -699,7 +699,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Dusty4},
     },
 
-    [TRAINER_COURTNEY_1] =
+    [TRAINER_COURTNEY_METEOR_FALLS] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
@@ -709,8 +709,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Courtney1),
-        .party = {.ItemCustomMoves = sParty_Courtney1},
+        .partySize = ARRAY_COUNT(sParty_Courtney_MeteorFalls),
+        .party = {.ItemCustomMoves = sParty_Courtney_MeteorFalls},
     },
 
     [TRAINER_GABBY_AND_TY_1] =
@@ -8815,8 +8815,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Lucas1),
-        .party = {.ItemCustomMoves = sParty_Lucas1},
+        .partySize = ARRAY_COUNT(sParty_Lucas),
+        .party = {.ItemCustomMoves = sParty_Lucas},
     },
 
     [TRAINER_ALAN] =
