@@ -9466,9 +9466,9 @@ static const struct LevelUpMove sLickilickyLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRhyperiorLevelUpLearnset[] = {
-	LEVEL_UP_MOVE(1, MOVE_BULLDOZE),
-	LEVEL_UP_MOVE(1, MOVE_HAMMER_ARM),
+	LEVEL_UP_MOVE(0, MOVE_HAMMER_ARM),
 	LEVEL_UP_MOVE(1, MOVE_POISON_JAB),
+	LEVEL_UP_MOVE(1, MOVE_BULLDOZE),
 	LEVEL_UP_MOVE(1, MOVE_SMACK_DOWN),
 	LEVEL_UP_MOVE(1, MOVE_TACKLE),
 	LEVEL_UP_MOVE(1, MOVE_TAIL_WHIP),
