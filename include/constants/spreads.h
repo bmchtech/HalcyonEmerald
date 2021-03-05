@@ -49,5 +49,8 @@
 #define SPREAD_31_IV_ATK_SPDEF              45 // Steven's Melmetal
 #define SPREAD_31_IV_ATK_SPEED_NAUGHTY      46 // Max Attack mixed attacker
 #define SPREAD_31_IV_HP_SPEED_JOLLY         47 // Stall Crobat
+#define SPREAD_HP_FIRE_MODEST_BULKY         48 // Roxanne's Probopass
+#define SPREAD_LYCANROC_MIDDAY              49 // Roxanne's Lycanroc
+#define SPREAD_STAKATAKA                    50 // Roxanne's Stakataka
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS
