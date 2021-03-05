@@ -37,113 +37,205 @@ static const struct TrainerMonItemCustomMoves sParty_WallyMauville[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_WallyVR2[] = {
     {
-    .lvl = 47,
-    .species = SPECIES_ALTARIA,
-    .moves = MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE
+    .lvl = 1,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 2, // Rough Skin
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_DRAGON_RUSH, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK
     },
     {
-    .lvl = 46,
-    .species = SPECIES_DELCATTY,
-    .moves = MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_FEINT_ATTACK
+    .lvl = 1,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_AIR_BALLOON,
+    .ability = 1, // Sturdy
+    .spread = SPREAD_HP_FIRE_MODEST,
+    .moves = MOVE_FLASH_CANNON, MOVE_HIDDEN_POWER, MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE
     },
     {
-    .lvl = 47,
-    .species = SPECIES_ROSELIA,
-    .moves = MOVE_MAGICAL_LEAF, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN, MOVE_TOXIC
+    .lvl = 1,
+    .species = SPECIES_AZUMARILL,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .ability = 1, // Huge Power
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_LIQUIDATION, MOVE_PLAY_ROUGH, MOVE_IRON_TAIL, MOVE_AQUA_JET
     },
     {
-    .lvl = 44,
-    .species = SPECIES_MAGNETON,
-    .moves = MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH
+    .lvl = 1,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .ability = 2, // Technician
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_QUIVER_DANCE
     },
     {
-    .lvl = 48,
-    .species = SPECIES_GARDEVOIR,
-    .moves = MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT
+    .lvl = 1,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = 2, // Gale Wings
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_STEEL_WING, MOVE_U_TURN
+    },
+    {
+    .lvl = 2,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_GALLADITE,
+    .ability = 1, // Trace -> Keen Edge
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_NIGHT_SLASH, MOVE_ICE_PUNCH
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_WallyVR3[] = {
     {
-    .lvl = 50,
-    .species = SPECIES_ALTARIA,
-    .moves = MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE
+    .lvl = 1,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 2, // Rough Skin
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK
     },
     {
-    .lvl = 49,
-    .species = SPECIES_DELCATTY,
-    .moves = MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_FEINT_ATTACK
+    .lvl = 1,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_CUSTAP_BERRY,
+    .ability = 1, // Sturdy
+    .spread = SPREAD_HP_FIRE_MODEST,
+    .moves = MOVE_FLASH_CANNON, MOVE_HIDDEN_POWER, MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE
     },
     {
-    .lvl = 50,
-    .species = SPECIES_ROSELIA,
-    .moves = MOVE_MAGICAL_LEAF, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN, MOVE_TOXIC
+    .lvl = 1,
+    .species = SPECIES_AZUMARILL,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .ability = 1, // Huge Power
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_LIQUIDATION, MOVE_PLAY_ROUGH, MOVE_IRON_TAIL, MOVE_AQUA_JET
     },
     {
-    .lvl = 47,
-    .species = SPECIES_MAGNETON,
-    .moves = MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH
+    .lvl = 1,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .ability = 2, // Technician
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_QUIVER_DANCE
     },
     {
-    .lvl = 51,
-    .species = SPECIES_GARDEVOIR,
-    .moves = MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT
+    .lvl = 1,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = 2, // Gale Wings
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_STEEL_WING, MOVE_U_TURN
+    },
+    {
+    .lvl = 2,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_GALLADITE,
+    .ability = 1, // Trace -> Keen Edge
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_NIGHT_SLASH, MOVE_ICE_PUNCH
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_WallyVR4[] = {
     {
-    .lvl = 53,
-    .species = SPECIES_ALTARIA,
-    .moves = MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE
+    .lvl = 5,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 2, // Rough Skin
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK
     },
     {
-    .lvl = 52,
-    .species = SPECIES_DELCATTY,
-    .moves = MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_FEINT_ATTACK
+    .lvl = 5,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_CUSTAP_BERRY,
+    .ability = 1, // Sturdy
+    .spread = SPREAD_HP_FIRE_MODEST,
+    .moves = MOVE_FLASH_CANNON, MOVE_HIDDEN_POWER, MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE
     },
     {
-    .lvl = 53,
-    .species = SPECIES_ROSELIA,
-    .moves = MOVE_MAGICAL_LEAF, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN, MOVE_TOXIC
+    .lvl = 5,
+    .species = SPECIES_AZUMARILL,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .ability = 1, // Huge Power
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_LIQUIDATION, MOVE_PLAY_ROUGH, MOVE_KNOCK_OFF, MOVE_AQUA_JET
     },
     {
-    .lvl = 50,
-    .species = SPECIES_MAGNETON,
-    .moves = MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH
+    .lvl = 5,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .ability = 2, // Technician
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_QUIVER_DANCE
     },
     {
-    .lvl = 54,
-    .species = SPECIES_GARDEVOIR,
-    .moves = MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT
+    .lvl = 5,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = 2, // Gale Wings
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_STEEL_WING, MOVE_U_TURN
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_GALLADITE,
+    .ability = 1, // Trace -> Keen Edge
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_NIGHT_SLASH, MOVE_ICE_PUNCH
     }
 };
 
 static const struct TrainerMonItemCustomMoves sParty_WallyVR5[] = {
     {
-    .lvl = 56,
-    .species = SPECIES_ALTARIA,
-    .moves = MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE
+    .lvl = 5,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 2, // Rough Skin
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK
     },
     {
-    .lvl = 55,
-    .species = SPECIES_DELCATTY,
-    .moves = MOVE_SING, MOVE_ASSIST, MOVE_CHARM, MOVE_FEINT_ATTACK
+    .lvl = 5,
+    .species = SPECIES_MAGNEZONE,
+    .heldItem = ITEM_CUSTAP_BERRY,
+    .ability = 1, // Sturdy
+    .spread = SPREAD_HP_FIRE_MODEST,
+    .moves = MOVE_FLASH_CANNON, MOVE_HIDDEN_POWER, MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE
     },
     {
-    .lvl = 56,
-    .species = SPECIES_ROSELIA,
-    .moves = MOVE_MAGICAL_LEAF, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN, MOVE_TOXIC
+    .lvl = 5,
+    .species = SPECIES_AZUMARILL,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .ability = 1, // Huge Power
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_LIQUIDATION, MOVE_PLAY_ROUGH, MOVE_KNOCK_OFF, MOVE_AQUA_JET
     },
     {
-    .lvl = 53,
-    .species = SPECIES_MAGNETON,
-    .moves = MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH
+    .lvl = 5,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .ability = 2, // Technician
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_QUIVER_DANCE
     },
     {
-    .lvl = 57,
-    .species = SPECIES_GARDEVOIR,
-    .moves = MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT
+    .lvl = 5,
+    .species = SPECIES_TALONFLAME,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = 2, // Gale Wings
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_BRAVE_BIRD, MOVE_FLARE_BLITZ, MOVE_STEEL_WING, MOVE_U_TURN
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_GALLADE,
+    .heldItem = ITEM_GALLADITE,
+    .ability = 1, // Trace -> Keen Edge
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_SACRED_SWORD, MOVE_PSYCHO_CUT, MOVE_NIGHT_SLASH, MOVE_ICE_PUNCH
     }
 };
 
