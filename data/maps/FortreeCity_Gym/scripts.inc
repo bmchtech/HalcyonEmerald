@@ -81,6 +81,7 @@ FortreeCity_Gym_EventScript_SetSingles::
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaSinglesRematch
 	trainerbattle_single TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
@@ -90,18 +91,21 @@ FortreeCity_Gym_EventScript_SetDoubles::
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaDoublesRematch
 	trainerbattle_double TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaSinglesRematch::
 	trainerbattle_single TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaDoublesRematch::
 	trainerbattle_double TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 

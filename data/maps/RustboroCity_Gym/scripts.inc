@@ -53,6 +53,7 @@ RustboroCity_Gym_EventScript_SetSingles::
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneSinglesRematch
 	trainerbattle_single TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
@@ -62,18 +63,21 @@ RustboroCity_Gym_EventScript_SetDoubles::
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneDoublesRematch
 	trainerbattle_double TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_RoxanneSinglesRematch::
 	trainerbattle_single TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_RoxanneDoublesRematch::
 	trainerbattle_double TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
