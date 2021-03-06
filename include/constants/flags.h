@@ -1579,16 +1579,16 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 #define FLAG_DAILY_RECEIVED_DAYCARE_EGG             (DAILY_FLAGS_START + 0x15)
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
+#define FLAG_DAILY_REMATCH_ROXANNE                  (DAILY_FLAGS_START + 0x16)
+#define FLAG_DAILY_REMATCH_BRAWLY                   (DAILY_FLAGS_START + 0x17)
+#define FLAG_DAILY_REMATCH_WATTSON                  (DAILY_FLAGS_START + 0x18)
+#define FLAG_DAILY_REMATCH_FLANNERY                 (DAILY_FLAGS_START + 0x19)
+#define FLAG_DAILY_REMATCH_NORMAN                   (DAILY_FLAGS_START + 0x1A)
+#define FLAG_DAILY_REMATCH_WINONA                   (DAILY_FLAGS_START + 0x1B)
+#define FLAG_DAILY_REMATCH_TATE_AND_LIZA            (DAILY_FLAGS_START + 0x1C)
+#define FLAG_DAILY_REMATCH_JUAN                     (DAILY_FLAGS_START + 0x1D)
+#define FLAG_DAILY_REMATCH_RIVAL                    (DAILY_FLAGS_START + 0x1E)
+#define FLAG_DAILY_REMATCH_STEVEN                   (DAILY_FLAGS_START + 0x1F)
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag

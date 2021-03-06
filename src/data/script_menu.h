@@ -879,6 +879,13 @@ const struct MenuAction MultichoiceList_StarterMoves[] =
     {gText_HydroCannon},
 };
 
+const struct MenuAction MultichoiceList_RematchBattleMode[] = 
+{
+    {gText_SingleBattle},
+    {gText_DoubleBattle},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1019,6 +1026,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_MOOMOO_MILK]                = MULTICHOICE(MultichoiceList_MoomooMilk),
     [MULTI_ROTOM_APPLIANCES]           = MULTICHOICE(MultichoiceList_RotomAppliances),
     [MULTI_STARTER_MOVES]              = MULTICHOICE(MultichoiceList_StarterMoves),
+    [MULTI_REMATCH_BATTLE_MODE]        = MULTICHOICE(MultichoiceList_RematchBattleMode),
 };
 
 const u8 *const gStdStrings[] =

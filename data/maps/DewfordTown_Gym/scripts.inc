@@ -144,10 +144,9 @@ DewfordTown_Gym_EventScript_StopCountingTrainers:: @ 81FC7C1
 	return
 
 DewfordTown_Gym_EventScript_Brawly:: @ 81FC7C2
+	goto_if_set FLAG_DAILY_REMATCH_BRAWLY, DewfordTown_Gym_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, DewfordTown_Gym_EventScript_BrawlyRematch
 	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq DewfordTown_Gym_EventScript_BrawlyRematch
 	goto_if_unset FLAG_RECEIVED_TM08, DewfordTown_Gym_EventScript_GiveBulkUp2
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle, MSGBOX_DEFAULT
 	release
@@ -197,9 +196,54 @@ DewfordTown_Gym_EventScript_GiveBulkUp2: @ 81FC878
 	release
 	end
 
-DewfordTown_Gym_EventScript_BrawlyRematch:: @ 81FC89C
-	trainerbattle_rematch_double TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+DewfordTown_Gym_EventScript_BrawlyRematch::
+	msgbox DewfordTown_Gym_Text_BrawlyChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, DewfordTown_Gym_EventScript_SetSingles
+	case 1, DewfordTown_Gym_EventScript_SetDoubles
+	case 2, DewfordTown_Gym_EventScript_Exit
+	case 127, DewfordTown_Gym_EventScript_Exit
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_SetSingles::
+	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Gym_EventScript_BrawlySinglesRematch
+	trainerbattle_single TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_SetDoubles::
+	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Gym_EventScript_BrawlyDoublesRematch
+	trainerbattle_double TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_BrawlySinglesRematch::
+	trainerbattle_single TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat
+	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_BrawlyDoublesRematch::
+	trainerbattle_double TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_AlreadyRematched::
+	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+DewfordTown_Gym_EventScript_Exit::
+	releaseall
 	end
 
 DewfordTown_Gym_EventScript_Takao:: @ 81FC8B7
@@ -319,9 +363,8 @@ DewfordTown_Gym_Text_Guide2::
 	.string "and the rest of his team are no joke!\p"
 	.string "Bringing a Ghost-type Pokémon\n"
 	.string "could give you an advantage.\p"
-	.string "You can find wild Sableye in\n"
-	.string "Granite Cave, so try catching one\l"
-	.string "if you need a bit of an edge!\p"
+	.string "You can find some in Granite Cave,\n"
+	.string "Petalburg Woods or Dewford Manor.\p"
 	.string "Also, the Gym is as dark as the\n"
 	.string "ocean floor.\p"
 	.string "But it will get brighter after defeating\n"
@@ -466,11 +509,7 @@ DewfordTown_Gym_Text_GymStatueCertified: @ 81FD28B
 	.string "{PLAYER}$"
 
 DewfordTown_Gym_Text_BrawlyPreRematch: @ 81FD2C4
-	.string "Brawly: A wave may draw back, but it\n"
-	.string "always returns to the shore.\p"
-	.string "A giant wave of a talent like you…\n"
-	.string "I knew you would return!\p"
-	.string "Show me how much higher\n"
+	.string "Brawly: Show me how much higher\n"
 	.string "you've gone!$"
 
 DewfordTown_Gym_Text_BrawlyRematchDefeat: @ 81FD367
@@ -483,11 +522,20 @@ DewfordTown_Gym_Text_BrawlyPostRematch: @ 81FD37B
 	.string "It's just like the sea of Hoenn!$"
 
 DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons: @ 81FD3DE
-	.string "Brawly: A wave may draw back, but it\n"
-	.string "always returns to the shore.\p"
-	.string "A giant wave of a talent like you…\n"
-	.string "I knew you would return!\p"
 	.string "Oh? You only have one Pokémon\n"
 	.string "that can battle.\p"
 	.string "I'm sorry, but I'd like you to come back\n"
 	.string "with at least two Pokémon.$"
+
+DewfordTown_Gym_Text_BrawlyChooseFormat:
+	.string "Brawly: A wave may draw back, but it\n"
+	.string "always returns to the shore.\p"
+	.string "A giant wave of a talent like you…\n"
+	.string "I knew you would return!\p"
+	.string "So, you want our rematch to be a\n"
+	.string "single battle or a double battle?$"
+
+DewfordTown_Gym_Text_BrawlyAllowLegends:
+	.string "Brawly: And how about battling my\n"
+	.string "Legendary Pokémon? Think you're up\l"
+	.string "to the challenge?$"

@@ -58,12 +58,9 @@ PetalburgCity_Gym_EventScript_MoveNormanToEntrance:: @ 8204955
 	return
 
 PetalburgCity_Gym_EventScript_CheckNormanForRematch:: @ 820495D
-	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1
-	specialvar VAR_RESULT, IsTrainerReadyForRematch
-	compare VAR_RESULT, TRUE
-	goto_if_eq PetalburgCity_Gym_EventScript_DontMoveNormanToFront
+	goto_if_unset FLAG_DAILY_REMATCH_NORMAN, PetalburgCity_Gym_EventScript_DontMoveNormanToFront
 	compare VAR_PETALBURG_GYM_STATE, 8
-	goto_if_eq PetalburgCity_Gym_EventScript_DontMoveNormanToFront
+	goto_if_eq PetalburgCity_Gym_EventScript_DontMoveNormanToFront @ If var = 8 set var = 8? Why
 	setobjectxyperm LOCALID_NORMAN, 4, 107
 	return
 
@@ -374,9 +371,54 @@ PetalburgCity_Gym_EventScript_GiveFacade2:: @ 8204DAC
 	release
 	end
 
-PetalburgCity_Gym_EventScript_NormanRematch:: @ 8204DB3
-	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+PetalburgCity_Gym_EventScript_NormanRematch::
+	msgbox PetalburgCity_Gym_Text_NormanChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, PetalburgCity_Gym_EventScript_SetSingles
+	case 1, PetalburgCity_Gym_EventScript_SetDoubles
+	case 2, PetalburgCity_Gym_EventScript_Exit
+	case 127, PetalburgCity_Gym_EventScript_Exit
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_SetSingles::
+	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_NormanSinglesRematch
+	trainerbattle_single TRAINER_NORMAN_4, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_SetDoubles::
+	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_NormanDoublesRematch
+	trainerbattle_double TRAINER_NORMAN_5, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_NormanSinglesRematch::
+	trainerbattle_single TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat
+	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_NormanDoublesRematch::
+	trainerbattle_double TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_AlreadyRematched::
+	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_Exit::
+	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry:: @ 8204DCE
@@ -1714,14 +1756,7 @@ PetalburgCity_Gym_Text_GymStatueCertified: @ 8207467
 	.string "{PLAYER}$"
 
 PetalburgCity_Gym_Text_NormanPreRematch: @ 82074A2
-	.string "Dad: {PLAYER}…\n"
-	.string "I had a feeling that you would come.\p"
-	.string "I would never refuse to accept\n"
-	.string "a challenge from you.\p"
-	.string "You do understand, don't you?\p"
-	.string "Inside a Gym, it doesn't matter that\n"
-	.string "we are a parent and child.\p"
-	.string "…No, because we are parent and child,\n"
+	.string "Because we are parent and child,\n"
 	.string "we owe it to each other to do the best\l"
 	.string "we can. Isn't that right, {PLAYER}?$"
 
@@ -1737,6 +1772,13 @@ PetalburgCity_Gym_Text_NormanPostRematch: @ 82075F7
 	.string "It has already come true, actually.$"
 
 PetalburgCity_Gym_Text_NormanRematchNeedTwoMons: @ 820764A
+	.string "Dad: Hm? Wait a second, {PLAYER}.\p"
+	.string "Do you only have one Pokémon that is\n"
+	.string "capable of battle?\p"
+	.string "Sorry, but you'll have to come back\n"
+	.string "with at least two Pokémon.$"
+
+PetalburgCity_Gym_Text_NormanChooseFormat:
 	.string "Dad: {PLAYER}…\n"
 	.string "I had a feeling that you would come.\p"
 	.string "I would never refuse to accept\n"
@@ -1744,9 +1786,11 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons: @ 820764A
 	.string "You do understand, don't you?\p"
 	.string "Inside a Gym, it doesn't matter that\n"
 	.string "we are a parent and child.\p"
-	.string "Hm? Wait a second, {PLAYER}.\p"
-	.string "Do you only have one Pokémon that is\n"
-	.string "capable of battle?\p"
-	.string "Sorry, but you'll have to come back\n"
-	.string "with at least two Pokémon.$"
+	.string "I'll let you set the rules for our\n"
+	.string "rematch.\p$"
+	.string "So what'll it be: a single battle,\n"
+	.string "or a double battle?\p$"
 
+PetalburgCity_Gym_Text_NormanAllowLegends:
+	.string "Dad: Do you want to try battling my\n"
+	.string "Legendary Pokémon?$"
