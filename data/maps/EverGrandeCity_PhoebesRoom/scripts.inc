@@ -40,6 +40,7 @@ EverGrandeCity_PhoebesRoom_EventScript_CloseDoor:: @ 82281C5
 EverGrandeCity_PhoebesRoom_EventScript_Phoebe:: @ 82281CB
 	lock
 	faceplayer
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
@@ -47,8 +48,43 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe:: @ 82281CB
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated
 	end
 
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch::
+	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeechRematch
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
+	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT
+	switch VAR_ELITE_4_MODE
+	case 0, EverGrandeCity_PhoebesRoom_EventScript_PhoebeSingles
+	case 1, EverGrandeCity_PhoebesRoom_EventScript_PhoebeSinglesLegends
+	case 2, EverGrandeCity_PhoebesRoom_EventScript_PhoebeDoubles
+	case 3, EverGrandeCity_PhoebesRoom_EventScript_PhoebeDoublesLegends
+
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeSingles::
+	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
+	goto EverGrandeCity_PhoebesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeSinglesLegends::
+	trainerbattle_no_intro TRAINER_PHOEBE_3, EverGrandeCity_PhoebesRoom_Text_Defeat
+	goto EverGrandeCity_PhoebesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeDoubles::
+	trainerbattle_no_intro TRAINER_PHOEBE_2, EverGrandeCity_PhoebesRoom_Text_Defeat
+	goto EverGrandeCity_PhoebesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_PhoebeDoublesLegends::
+	trainerbattle_no_intro TRAINER_PHOEBE_4, EverGrandeCity_PhoebesRoom_Text_Defeat
+	goto EverGrandeCity_PhoebesRoom_EventScript_DefeatedRematch
+	end
+
 EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech:: @ 82281F2
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeechRematch::
+	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -56,6 +92,13 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated:: @ 82281FC
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_DefeatedRematch::
+	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_PhoebesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -83,3 +126,18 @@ EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech: @ 8228343
 	.string "will carry you.\p"
 	.string "Go ahead, move on to the next room.$"
 
+EverGrandeCity_PhoebesRoom_Text_IntroSpeechRematch:
+	.string "Ahaha! I've been waiting for you!\p"
+	.string "I'm bringing a little something\n"
+	.string "new to the table this time!\p"
+	.string "Prepare yourself and bring it on!$"
+
+EverGrandeCity_PhoebesRoom_Text_PostBattleSpeechRematch:
+	.string "Hmmp, what a shame.\n"
+	.string "I lost again, huh?\p"
+	.string "But on the bright side…\n"
+	.string "We fought together, so the bonds\l"
+	.string "between my Pokémon and me got even\l" 
+	.string "deeper!\p"
+	.string "I look forward to being able to\n"
+	.string "battle you again sometime!$"

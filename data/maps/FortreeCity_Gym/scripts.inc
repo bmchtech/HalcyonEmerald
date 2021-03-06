@@ -16,10 +16,9 @@ FortreeCity_Gym_EventScript_InitRotatingGates:: @ 82165C4
 	end
 
 FortreeCity_Gym_EventScript_Winona:: @ 82165C8
+	goto_if_set FLAG_DAILY_REMATCH_WINONA, FortreeCity_Gym_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, FortreeCity_Gym_EventScript_WinonaRematch
 	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq FortreeCity_Gym_EventScript_WinonaRematch
 	goto_if_unset FLAG_RECEIVED_TM51, FortreeCity_Gym_EventScript_GiveRoost2
 	msgbox FortreeCity_Gym_Text_WinonaPostBattle, MSGBOX_DEFAULT
 	release
@@ -65,9 +64,58 @@ FortreeCity_Gym_EventScript_GiveRoost:: @ 821666A
 	setflag FLAG_RECEIVED_TM51
 	return
 
-FortreeCity_Gym_EventScript_WinonaRematch:: @ 821668D
-	trainerbattle_rematch_double TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
+FortreeCity_Gym_EventScript_WinonaRematch::
+	msgbox FortreeCity_Gym_Text_WinonaChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, FortreeCity_Gym_EventScript_SetSingles
+	case 1, FortreeCity_Gym_EventScript_SetDoubles
+	case 2, FortreeCity_Gym_EventScript_Exit
+	case 127, FortreeCity_Gym_EventScript_Exit
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_SetSingles::
+	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq FortreeCity_Gym_EventScript_WinonaSinglesRematch
+	trainerbattle_single TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_SetDoubles::
+	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq FortreeCity_Gym_EventScript_WinonaDoublesRematch
+	trainerbattle_double TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
+	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_WinonaSinglesRematch::
+	trainerbattle_single TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
+	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_WinonaDoublesRematch::
+	trainerbattle_double TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
+	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_AlreadyRematched::
+	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+FortreeCity_Gym_EventScript_Exit::
+	releaseall
 	end
 
 FortreeCity_Gym_EventScript_Jared:: @ 82166A8
@@ -305,14 +353,8 @@ FortreeCity_Gym_Text_GymStatueCertified: @ 82170C7
 	.string "{PLAYER}$"
 
 FortreeCity_Gym_Text_WinonaPreRematch: @ 8217100
-	.string "Winona: We humans can never escape\n"
-	.string "gravity's pull on the ground.\p"
-	.string "But by striving for excellence,\n"
-	.string "we have the power to soar!\p"
-	.string "You have scaled the pinnacle as\n"
-	.string "the reigning Champion.\p"
-	.string "Please, allow me to see your power\n"
-	.string "at full flight!$"
+	.string "Winona: Please, allow me to see your\n"
+	.string "power at full flight!$"
 
 FortreeCity_Gym_Text_WinonaRematchDefeat: @ 82171E6
 	.string "I failed to reach your height again…$"
@@ -325,6 +367,12 @@ FortreeCity_Gym_Text_WinonaPostRematch: @ 821720B
 	.string "I am convinced of it!$"
 
 FortreeCity_Gym_Text_WinonaRematchNeedTwoMons: @ 8217292
+	.string "Oh, no… Do you have but one\n"
+	.string "Pokémon with you?\p"
+	.string "Please return with two Pokémon\n"
+	.string "at the very least.$"
+
+FortreeCity_Gym_Text_WinonaChooseFormat:
 	.string "Winona: We humans can never escape\n"
 	.string "gravity's pull on the ground.\p"
 	.string "But by striving for excellence,\n"
@@ -333,7 +381,9 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons: @ 8217292
 	.string "the reigning Champion.\p"
 	.string "Please, allow me to see your power\n"
 	.string "at full flight!\p"
-	.string "Oh, no… Do you have but one\n"
-	.string "Pokémon with you?\p"
-	.string "Please return with two Pokémon\n"
-	.string "at the very least.$"
+	.string "Now, please tell me - how would you$"
+	.string "like to battle?$"
+
+FortreeCity_Gym_Text_WinonaAllowLegends:
+	.string "Winona: and would you like to challenge\n"
+	.string "my Legendary Pokémon?$"

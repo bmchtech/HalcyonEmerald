@@ -50,10 +50,10 @@ MossdeepCity_Gym_EventScript_SetSwitch4Metatiles:: @ 8220885
 
 MossdeepCity_Gym_EventScript_TateAndLiza:: @ 8220898
 	setflag FLAG_SYS_INVERSE_BATTLE
+	goto_if_set FLAG_DAILY_REMATCH_TATE_AND_LIZA, MossdeepCity_Gym_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_Gym_EventScript_TateAndLizaRematch
 	trainerbattle_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaIntro, MossdeepCity_Gym_Text_TateAndLizaDefeat, MossdeepCity_Gym_Text_TateAndLizaNeedTwoMons, MossdeepCity_Gym_EventScript_TateAndLizaDefeated, NO_MUSIC
 	clearflag FLAG_SYS_INVERSE_BATTLE
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
 	goto_if_eq MossdeepCity_Gym_EventScript_TateAndLizaRematch
 	goto_if_unset FLAG_RECEIVED_TM04, MossdeepCity_Gym_EventScript_GiveCalmMind2
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostBattle, MSGBOX_DEFAULT
@@ -117,9 +117,34 @@ MossdeepCity_Gym_EventScript_GiveCalmMind:: @ 822095B
 	setflag FLAG_RECEIVED_TM04
 	return
 
-MossdeepCity_Gym_EventScript_TateAndLizaRematch:: @ 822097E
-	trainerbattle_rematch_double TRAINER_TATE_AND_LIZA_1, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
+MossdeepCity_Gym_EventScript_TateAndLizaRematch::
+	msgbox MossdeepCity_Gym_Text_TateAndLizaAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq MossdeepCity_Gym_EventScript_TateAndLizaDoublesRematch
+	trainerbattle_double TRAINER_TATE_AND_LIZA_5, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_TATE_AND_LIZA
+	clearflag FLAG_SYS_INVERSE_BATTLE
+	releaseall
+	end
+
+MossdeepCity_Gym_EventScript_TateAndLizaDoublesRematch::
+	trainerbattle_double TRAINER_TATE_AND_LIZA_3, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
+	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_TATE_AND_LIZA
+	clearflag FLAG_SYS_INVERSE_BATTLE
+	releaseall
+	end
+
+MossdeepCity_Gym_EventScript_AlreadyRematched::
+	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
+	clearflag FLAG_SYS_INVERSE_BATTLE
+	releaseall
+	end
+
+MossdeepCity_Gym_EventScript_Exit::
+	clearflag FLAG_SYS_INVERSE_BATTLE
+	releaseall
 	end
 
 @ All the below switch scripts are leftover from RS and are functionally unused
@@ -652,14 +677,6 @@ MossdeepCity_Gym_Text_GymStatueCertified: @ 8221CCA
 	.string "{PLAYER}$"
 
 MossdeepCity_Gym_Text_TateAndLizaPreRematch: @ 8221D0B
-	.string "Tate: Pokémon…\n"
-	.string "Liza: Pokémon…\p"
-	.string "Tate: By changing the party's mix…\n"
-	.string "Liza: The battle style changes.\p"
-	.string "Tate: But me…\n"
-	.string "Liza: But me…\p"
-	.string "Tate: I'll always be with Liza!\n"
-	.string "Liza: I'll always be with Tate!\p"
 	.string "Tate: Our combination…\n"
 	.string "Liza: We'll show you again and again!$"
 
@@ -674,13 +691,21 @@ MossdeepCity_Gym_Text_TateAndLizaPostRematch: @ 8221E45
 	.string "we always support each other!$"
 
 MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons: @ 8221EB8
-	.string "Tate: You're back again…\n"
-	.string "Liza: You're back again…\p"
-	.string "Tate: To give us a rematch.\n"
-	.string "Liza: To give us a rematch.\p"
-	.string "Tate: But…\n"
+	.string "Tate: Oh…\n"
 	.string "Liza: For our match…\p"
 	.string "Tate: You brought just one Pokémon!\n"
 	.string "Liza: You brought just one Pokémon!\p"
 	.string "Tate: We need you to bring at least…\n"
 	.string "Liza: Two Pokémon when you come back.$"
+
+MossdeepCity_Gym_Text_TateAndLizaAllowLegends:
+	.string "Tate: Pokémon…\n"
+	.string "Liza: Pokémon…\p"
+	.string "Tate: By changing the party's mix…\n"
+	.string "Liza: The battle style changes.\p"
+	.string "Tate: But me…\n"
+	.string "Liza: But me…\p"
+	.string "Tate: I'll always be with Liza!\n"
+	.string "Liza: I'll always be with Tate!\p"
+	.string "Tate: Tell us - will you battle…\n"
+	.string "Liza: Our Legendary Pokémon?\p"

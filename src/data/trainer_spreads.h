@@ -810,4 +810,61 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_JOLLY
 	},
+	[SPREAD_HP_FIRE_MODEST_BULKY]  = {
+		.EVs = {
+			252,	// HP
+			  0,	// Attack
+			  0,	// Defense
+			  0,	// Speed
+			252,	// Special Attack	
+			  4		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	 0,		// Attack
+			31,		// Defense
+			30,		// Speed
+			30,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_MODEST
+	},
+	[SPREAD_LYCANROC_MIDDAY]  = {
+		.EVs = {
+			192,	// HP
+			252,	// Attack
+			  0,	// Defense
+			 64,	// Speed
+			  0,	// Special Attack	
+			  0		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	31,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_JOLLY
+	},
+	[SPREAD_STAKATAKA]  = {
+		.EVs = {
+			252,	// HP
+			252,	// Attack
+			  0,	// Defense
+			  0,	// Speed
+			  0,	// Special Attack	
+			  4		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	31,		// Attack
+			15,		// Defense
+			 0,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_LONELY
+	},
 };

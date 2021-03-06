@@ -1,10 +1,10 @@
 RustboroCity_Gym_MapScripts:: @ 8212F30
 	.byte 0
 
-RustboroCity_Gym_EventScript_Roxanne:: @ 8212F31
+RustboroCity_Gym_EventScript_Roxanne::
+	goto_if_set FLAG_DAILY_REMATCH_ROXANNE, RustboroCity_Gym_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, RustboroCity_Gym_EventScript_RoxanneRematch
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM39, RustboroCity_Gym_EventScript_GiveRockTomb
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
@@ -36,9 +36,58 @@ RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
 	release
 	end
 
-RustboroCity_Gym_EventScript_RoxanneRematch:: @ 8212FC8
-	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+RustboroCity_Gym_EventScript_RoxanneRematch::
+	msgbox RustboroCity_Gym_Text_RoxanneChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, RustboroCity_Gym_EventScript_SetSingles
+	case 1, RustboroCity_Gym_EventScript_SetDoubles
+	case 2, RustboroCity_Gym_EventScript_Exit
+	case 127, RustboroCity_Gym_EventScript_Exit
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_SetSingles::
+	msgbox RustboroCity_Gym_Text_RoxanneAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq RustboroCity_Gym_EventScript_RoxanneSinglesRematch
+	trainerbattle_single TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_SetDoubles::
+	msgbox RustboroCity_Gym_Text_RoxanneAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq RustboroCity_Gym_EventScript_RoxanneDoublesRematch
+	trainerbattle_double TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_RoxanneSinglesRematch::
+	trainerbattle_single TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_RoxanneDoublesRematch::
+	trainerbattle_double TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_ROXANNE
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_AlreadyRematched::
+	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+RustboroCity_Gym_EventScript_Exit::
+	releaseall
 	end
 
 RustboroCity_Gym_EventScript_Josh:: @ 8212FE3
@@ -271,8 +320,8 @@ RustboroCity_Gym_Text_Tips::
 	.string "I'm here to provide expert advice!\p"
 	.string "Roxanne, the Gym Leader, is a user\n"
 	.string "of Rock-type Pokémon.\p"
-	.string "She has a full team of six, and\n"
-	.string "they're around Level 14.\p"
+	.string "She has a full team of six, with good\n"
+	.string "type variety.\p"
 	.string "You should make sure your first\n"
 	.string "partner Pokémon has evolved once\l"
 	.string "before you challenge her.\p"
@@ -423,12 +472,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne: @ 8213C01
 	.string "in the PokéNav.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch: @ 8213C2F
-	.string "Roxanne: I'm so glad to see you again.\n"
-	.string "I'm Roxanne, the Gym Leader here.\p"
-	.string "I'm sure we've both experienced many\n"
-	.string "battles since we last met.\p"
-	.string "I would like to see how much better\n"
-	.string "we've become. Let us battle!$"
+	.string "Roxanne: Let us battle!$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat: @ 8213CF9
 	.string "Grr…\n"
@@ -441,13 +485,21 @@ RustboroCity_Gym_Text_RoxannePostRematch: @ 8213D12
 	.string "all that much more!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons: @ 8213D93
+	.string "Roxanne: Oh, no…\n"
+	.string "You only have one Pokémon with you?\p"
+	.string "Please return with at least one more\n"
+	.string "Pokémon.$"
+
+RustboroCity_Gym_Text_RoxanneChooseFormat:
 	.string "Roxanne: I'm so glad to see you again.\n"
 	.string "I'm Roxanne, the Gym Leader here.\p"
 	.string "I'm sure we've both experienced many\n"
 	.string "battles since we last met.\p"
 	.string "I would like to see how much better\n"
-	.string "we've become…\p"
-	.string "Oh, no…\n"
-	.string "You only have one Pokémon with you?\p"
-	.string "Please return with at least one more\n"
-	.string "Pokémon.$"
+	.string "we've become.\p"
+	.string "Would you prefer a single battle\n"
+	.string "or a double battle?$"
+
+RustboroCity_Gym_Text_RoxanneAllowLegends:
+	.string "And would you like me to battle with\n"
+	.string "Legendary Pokémon?$"

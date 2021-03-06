@@ -135,6 +135,7 @@
 #define MULTI_MOOMOO_MILK                  124
 #define MULTI_ROTOM_APPLIANCES             125
 #define MULTI_STARTER_MOVES                126
+#define MULTI_REMATCH_BATTLE_MODE          127
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

@@ -49,10 +49,9 @@ LavaridgeTown_Gym_1F_EventScript_EndCheckHideTrainers:: @ 81FE78B
 	return
 
 LavaridgeTown_Gym_1F_EventScript_Flannery:: @ 81FE78C
+	goto_if_set FLAG_DAILY_REMATCH_FLANNERY, LavaridgeTown_Gym_1F_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM50, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostBattle, MSGBOX_DEFAULT
 	release
@@ -110,9 +109,58 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat:: @ 81FE841
 	setflag FLAG_RECEIVED_TM50
 	return
 
-LavaridgeTown_Gym_1F_EventScript_FlanneryRematch:: @ 81FE864
-	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, LavaridgeTown_Gym_1F_EventScript_SetSingles
+	case 1, LavaridgeTown_Gym_1F_EventScript_SetDoubles
+	case 2, LavaridgeTown_Gym_1F_EventScript_Exit
+	case 127, LavaridgeTown_Gym_1F_EventScript_Exit
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_SetSingles::
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LavaridgeTown_Gym_1F_EventScript_FlannerySinglesRematch
+	trainerbattle_single TRAINER_FLANNERY_4, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_FLANNERY
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_SetDoubles::
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LavaridgeTown_Gym_1F_EventScript_FlanneryDoublesRematch
+	trainerbattle_double TRAINER_FLANNERY_5, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_FLANNERY
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_FlannerySinglesRematch::
+	trainerbattle_single TRAINER_FLANNERY_2, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_FLANNERY
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_FlanneryDoublesRematch::
+	trainerbattle_double TRAINER_FLANNERY_3, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_FLANNERY
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_AlreadyRematched::
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+LavaridgeTown_Gym_1F_EventScript_Exit::
+	releaseall
 	end
 
 LavaridgeTown_Gym_1F_EventScript_Cole:: @ 81FE87F
@@ -408,13 +456,8 @@ LavaridgeTown_Gym_1F_Text_GymStatueCertified: @ 81FF5C4
 	.string "{PLAYER}$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryPreRematch: @ 81FF601
-	.string "Flannery: Losing a battle isn't going\n"
-	.string "to deflate me.\p"
-	.string "I love Pokémon.\n"
-	.string "I love to battle.\l"
-	.string "And… I love this Gym!\p"
-	.string "Let's exchange superhot moves\n"
-	.string "in another battle!$"
+	.string "Flannery: Let's exchange superhot\n"
+	.string "moves in another battle!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat: @ 81FF69F
 	.string "Whew!\n"
@@ -429,14 +472,20 @@ LavaridgeTown_Gym_1F_Text_FlanneryPostRematch: @ 81FF6BF
 	.string "again sometime!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons: @ 81FF75E
+	.string "Oh, wait. Do you only have one Pokémon\n"
+	.string "that can battle?\p"
+	.string "I hate to say this, but when you come\n"
+	.string "see me, bring at least two Pokémon.$"
+
+LavaridgeTown_Gym_1F_Text_FlanneryChooseFormat:
 	.string "Flannery: Losing a battle isn't going\n"
 	.string "to deflate me.\p"
 	.string "I love Pokémon.\n"
 	.string "I love to battle.\l"
 	.string "And… I love this Gym!\p"
-	.string "Let's exchange superhot moves\n"
-	.string "in another battle!\p"
-	.string "Oh, wait. Do you only have one Pokémon\n"
-	.string "that can battle?\p"
-	.string "I hate to say this, but when you come\n"
-	.string "see me, bring at least two Pokémon.$"
+	.string "So… Let's choose some rules for our$"
+	.string "rematch: singles or doubles?$"
+
+LavaridgeTown_Gym_1F_Text_FlanneryAllowLegends:
+	.string "Flannery: And can I turn up the heat\n"
+	.string "with some Legendary Pokémon?$"

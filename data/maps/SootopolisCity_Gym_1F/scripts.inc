@@ -83,10 +83,9 @@ SootopolisCity_Gym_1F_Movement_FallThroughIce: @ 8224F42
 	step_end
 
 SootopolisCity_Gym_1F_EventScript_Juan:: @ 8224F44
+	goto_if_set FLAG_DAILY_REMATCH_JUAN, SootopolisCity_Gym_1F_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, SootopolisCity_Gym_1F_EventScript_JuanRematch
 	trainerbattle_single TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanIntro, SootopolisCity_Gym_1F_Text_JuanDefeat, SootopolisCity_Gym_1F_EventScript_JuanDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanRematch
 	goto_if_unset FLAG_RECEIVED_TM03, SootopolisCity_Gym_1F_EventScript_GiveScald2
 	goto_if_unset FLAG_BADGE06_GET, SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostBattle, MSGBOX_DEFAULT
@@ -149,9 +148,58 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge:: @ 822501B
 	release
 	end
 
-SootopolisCity_Gym_1F_EventScript_JuanRematch:: @ 8225025
-	trainerbattle_rematch_double TRAINER_JUAN_1, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
+SootopolisCity_Gym_1F_EventScript_JuanRematch::
+	msgbox SootopolisCity_Gym_1F_Text_JuanChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, SootopolisCity_Gym_1F_EventScript_SetSingles
+	case 1, SootopolisCity_Gym_1F_EventScript_SetDoubles
+	case 2, SootopolisCity_Gym_1F_EventScript_Exit
+	case 127, SootopolisCity_Gym_1F_EventScript_Exit
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_SetSingles::
+	msgbox SootopolisCity_Gym_1F_Text_JuanAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanSinglesRematch
+	trainerbattle_single TRAINER_JUAN_4, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_JUAN
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_SetDoubles::
+	msgbox SootopolisCity_Gym_1F_Text_JuanAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanDoublesRematch
+	trainerbattle_double TRAINER_JUAN_5, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_JUAN
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_JuanSinglesRematch::
+	trainerbattle_single TRAINER_JUAN_2, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_JUAN
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_JuanDoublesRematch::
+	trainerbattle_double TRAINER_JUAN_3, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_JUAN
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_AlreadyRematched::
+	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	releaseall
+	end
+
+SootopolisCity_Gym_1F_EventScript_Exit::
+	releaseall
 	end
 
 SootopolisCity_Gym_1F_EventScript_GymGuide:: @ 8225040
@@ -296,7 +344,7 @@ SootopolisCity_Gym_1F_Text_GoGetFortreeBadge: @ 8225865
 	.string "obtain in Hoenn.\p"
 	.string "If you wish to challenge the Pokémon\n"
 	.string "League, you must obtain the last\l"
-	.string "Badge from the Gym in FORTREE.$"
+	.string "Badge from the Gym in Fortree.$"
 
 SootopolisCity_Gym_1F_Text_GymStatue: @ 82258FA
 	.string "Sootopolis City Pokémon Gym$"
@@ -307,13 +355,8 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified: @ 8225916
 	.string "{PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_JuanPreRematch: @ 8225950
-	.string "Juan: Ah, this Gym had returned to its\n"
-	.string "usual state of serenity…\p"
-	.string "But our young typhoon has returned\n"
-	.string "to put us to the test again!\p"
-	.string "Well, my friend, most certainly!\p"
-	.string "I shall be delighted to dance with you\n"
-	.string "as often as you wish!$"
+	.string "Juan: Very Good!\n"
+	.string "Let the dance begin!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchDefeat: @ 8225A2E
 	.string "Ahahaha, you are the winner!\n"
@@ -330,14 +373,21 @@ SootopolisCity_Gym_1F_Text_JuanPostRematch: @ 8225A67
 	.string "of nobility!$"
 
 SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons: @ 8225B48
-	.string "Juan: Ah, this Gym had returned to its\n"
-	.string "usual state of serenity…\p"
-	.string "But our young typhoon has returned\n"
-	.string "to put us to the test again!\p"
-	.string "Well, my friend, most certainly!\n"
-	.string "I shall be delighted to dance with you…\p"
-	.string "Ah, no, no, no.\n"
+	.string "Juan: Ah, no, no, no.\n"
 	.string "You have with you but one Pokémon.\p"
 	.string "I wish that you would return with\n"
 	.string "two, perhaps more, Pokémon, please.$"
 
+SootopolisCity_Gym_1F_Text_JuanChooseFormat:
+	.string "Juan: Ah, this Gym had returned to its\n"
+	.string "usual state of serenity…\p"
+	.string "But our young typhoon has returned\n"
+	.string "to put us to the test again!\p"
+	.string "Well, my friend, most certainly!\p"
+	.string "I shall be delighted to dance with you\n"
+	.string "as often as you wish!\p"
+	.string "So, how shall we do this?$"
+
+SootopolisCity_Gym_1F_Text_JuanAllowLegends:
+	.string "And would you allow me to dance with\n"
+	.string "Legendary Pokémon?$"
