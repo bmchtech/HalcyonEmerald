@@ -41,6 +41,7 @@ EverGrandeCity_DrakesRoom_EventScript_CloseDoor:: @ 82286ED
 EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
 	lock
 	faceplayer
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
@@ -48,8 +49,44 @@ EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
+EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
+	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
+	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT
+	switch VAR_ELITE_4_MODE
+	case 0, EverGrandeCity_DrakesRoom_EventScript_DrakeSingles
+	case 1, EverGrandeCity_DrakesRoom_EventScript_DrakeSinglesLegends
+	case 2, EverGrandeCity_DrakesRoom_EventScript_DrakeDoubles
+	case 3, EverGrandeCity_DrakesRoom_EventScript_DrakeDoublesLegends
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DrakeSingles::
+	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
+	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DrakeSinglesLegends::
+	trainerbattle_no_intro TRAINER_DRAKE_3, EverGrandeCity_DrakesRoom_Text_Defeat
+	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DrakeDoubles::
+	trainerbattle_no_intro TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_Defeat
+	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DrakeDoublesLegends::
+	trainerbattle_no_intro TRAINER_DRAKE_4, EverGrandeCity_DrakesRoom_Text_Defeat
+	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
+	end
+
 EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech:: @ 822871A
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch::
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -59,6 +96,15 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated:: @ 8228724
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch::
+	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
+	special Script_TryGainNewFanFromCounter
+	setflag FLAG_DEFEATED_ELITE_4_DRAKE
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -91,3 +137,16 @@ EverGrandeCity_DrakesRoom_Text_PostBattleSpeech: @ 82288B0
 	.string "Go! Go onwards!\n"
 	.string "The Champion is waiting!$"
 
+EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch:
+	.string "Oh, I've been waitin' for you!\p"
+	.string "My Pokémon and I are going to\n"
+	.string "show you everything we've got!\p"
+	.string "Well then, you had better\n"
+	.string "get ready to try and stop me!$"
+
+EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch:
+	.string "I got a glimpse inside your heart!\n"
+	.string "There's nothing for me to say to you!\p"
+	.string "Go forth, Trainer!\p"
+	.string "Go on to your next challenge\n"
+	.string "with your head held high!$"

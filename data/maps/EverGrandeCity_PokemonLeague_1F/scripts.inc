@@ -10,13 +10,7 @@ EverGrandeCity_PokemonLeague_1F_MapScripts:: @ 82295D2
 EverGrandeCity_PokemonLeague_1F_OnTransition: @ 82295DD
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
 	setflag FLAG_LANDMARK_POKEMON_LEAGUE
-	call_if_unset FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor
 	end
-
-EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor:: @ 82295ED
-	setobjectxyperm LOCALID_GUARD_1, 9, 2
-	setobjectxyperm LOCALID_GUARD_2, 10, 2
-	return
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Nurse:: @ 82295FC
 	setvar VAR_0x800B, LOCALID_NURSE
@@ -31,21 +25,8 @@ EverGrandeCity_PokemonLeague_1F_EventScript_Clerk:: @ 822960A
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart EverGrandeCity_PokemonLeague_1F_Pokemart
+	pokemart PokeMart_Poke_Center_Feather_Badge
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-EverGrandeCity_PokemonLeague_1F_Pokemart: @ 8229624
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_RESTORE
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_NONE
 	release
 	end
 
@@ -59,6 +40,7 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromRight
 	compare VAR_TEMP_0, 8
 	call_if_le EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromLeft
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_PokemonLeague_1F_EventScript_Rematches
 	message EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges
 	waitmessage
 	delay 120
@@ -70,6 +52,54 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	delay 10
 	playfanfare MUS_OBTAIN_BADGE
 	message EverGrandeCity_PokemonLeague_1F_Text_GoForth
+	waitmessage
+	waitfanfare
+	closemessage
+	copyobjectxytoperm LOCALID_GUARD_1
+	copyobjectxytoperm LOCALID_GUARD_2
+	setflag FLAG_ENTERED_ELITE_FOUR
+	releaseall
+	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_Rematches::
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_ChooseFormat, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, EverGrandeCity_PokemonLeague_1F_EventScript_SetSingles
+	case 1, EverGrandeCity_PokemonLeague_1F_EventScript_SetDoubles
+	case 2, EverGrandeCity_PokemonLeague_1F_EventScript_Exit
+	case 127, EverGrandeCity_PokemonLeague_1F_EventScript_Exit
+
+EverGrandeCity_PokemonLeague_1F_EventScript_SetSingles::
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_Legendaries, MSGBOX_YESNO
+	compare VAR_RESULT, 1
+	goto_if_eq EverGrandeCity_PokemonLeague_1F_EventScript_SetSinglesLegendaries
+	setvar VAR_ELITE_4_MODE, 0
+	goto EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards
+
+EverGrandeCity_PokemonLeague_1F_EventScript_SetSinglesLegendaries::
+	setvar VAR_ELITE_4_MODE, 1
+	goto EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards
+
+EverGrandeCity_PokemonLeague_1F_EventScript_SetDoubles::
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_Legendaries, MSGBOX_YESNO
+	compare VAR_RESULT, 1
+	goto_if_eq EverGrandeCity_PokemonLeague_1F_EventScript_SetDoublesLegendaries
+	setvar VAR_ELITE_4_MODE, 2
+	goto EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards
+
+EverGrandeCity_PokemonLeague_1F_EventScript_SetDoublesLegendaries::
+	setvar VAR_ELITE_4_MODE, 3
+	goto EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards
+
+EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards::
+	closemessage
+	applymovement LOCALID_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
+	applymovement LOCALID_GUARD_2, EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay
+	waitmovement 0
+	delay 10
+	playfanfare MUS_OBTAIN_BADGE
+	message EverGrandeCity_PokemonLeague_1F_Text_GoForthChampion
 	waitmessage
 	waitfanfare
 	closemessage
@@ -102,6 +132,10 @@ EverGrandeCity_PokemonLeague_1F_EventScript_GoForth:: @ 82296BB
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	releaseall
+	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_Exit::
 	releaseall
 	end
 
@@ -143,3 +177,18 @@ EverGrandeCity_PokemonLeague_1F_Text_GoForth: @ 82297EF
 	.string "Trainer! Believe in yourself and your\n"
 	.string "Pokémon, and go forth!$"
 
+EverGrandeCity_PokemonLeague_1F_Text_ChooseFormat:
+	.string "Welcome, Champion!\p"
+	.string "If you wish to take on the Pokémon\n"
+	.string "League again, you must first set the\l"
+	.string "rules for your challenge.\p"
+	.string "Which battle format would you like?$"
+
+EverGrandeCity_PokemonLeague_1F_Text_Legendaries:
+	.string "Would you like to test yourself\n"
+	.string "against the power of Legendary\l"
+	.string "Pokémon?$"
+
+EverGrandeCity_PokemonLeague_1F_Text_GoForthChampion:
+	.string "Champion! Believe in yourself and your\n"
+	.string "Pokémon, and go forth!$"
