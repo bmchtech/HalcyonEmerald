@@ -216,6 +216,7 @@ PokeMart_Poke_Center_Feather_Badge::
 	.2byte ITEM_ETHER
 	.2byte ITEM_MAX_ETHER
 	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL

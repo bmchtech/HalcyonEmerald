@@ -26,8 +26,8 @@ Route104_EventScript_ItemSootheBell:: @ 8290D26
 	finditem ITEM_SOOTHE_BELL
 	end
 
-Route105_EventScript_ItemIron:: @ 8290D33
-	finditem ITEM_IRON
+Route105_EventScript_ItemAbilityPatch:: @ 8290D33
+	finditem ITEM_ABILITY_PATCH
 	end
 
 Route106_EventScript_ItemProtein:: @ 8290D40
@@ -590,16 +590,16 @@ Route110_TrickHousePuzzle4_EventScript_ItemAssaultVest:: @ 829144F
 	finditem ITEM_ASSAULT_VEST
 	end
 
-Route110_TrickHousePuzzle6_EventScript_ItemGlitterMail:: @ 829145C
-	finditem ITEM_GLITTER_MAIL
+Route110_TrickHousePuzzle6_EventScript_MewtwoniteX:: @ 829145C
+	finditem ITEM_MEWTWONITE_X
 	end
 
-Route110_TrickHousePuzzle7_EventScript_ItemTropicMail:: @ 8291469
-	finditem ITEM_TROPIC_MAIL
+Route110_TrickHousePuzzle7_EventScript_ItemLuckyEgg:: @ 8291469
+	finditem ITEM_LUCKY_EGG
 	end
 
-Route110_TrickHousePuzzle8_EventScript_ItemBeadMail:: @ 8291476
-	finditem ITEM_BEAD_MAIL
+Route110_TrickHousePuzzle8_EventScript_ItemDestinyKnot:: @ 8291476
+	finditem ITEM_DESTINY_KNOT
 	end
 
 VictoryRoad_1F_EventScript_ItemMaxElixir:: @ 8291483
