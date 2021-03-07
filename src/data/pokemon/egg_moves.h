@@ -777,7 +777,8 @@ const u16 gEggMoves[] = {
         MOVE_NATURAL_GIFT,
         MOVE_STORED_POWER,
         MOVE_SYNCHRONOISE,
-        MOVE_CAPTIVATE),
+        MOVE_CAPTIVATE,
+        MOVE_EXTREME_SPEED),
 
     egg_moves(OMANYTE,
         MOVE_BUBBLE_BEAM,
