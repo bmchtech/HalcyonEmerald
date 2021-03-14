@@ -1570,8 +1570,9 @@ static const struct TrainerMonItemCustomMoves sParty_Tiana[] = {
 
 static const struct TrainerMonItemCustomMoves sParty_Billy[] = {
     {
-    .lvl = -4,
+    .lvl = -5,
     .species = SPECIES_LITLEO,
+    .ability = 1, // Unnerve, Rivalry OP
     .moves = MOVE_TACKLE, MOVE_LEER, MOVE_EMBER
     },
     {
