@@ -2178,15 +2178,15 @@ const struct SpriteFrameImage gObjectEventPicTable_GoldItemBall[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_MegaStone[] = {
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 1),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 2),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 1),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MegaStone, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 1),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 2),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 1),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MegaStone, 2, 2, 0),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Articuno[] = {
