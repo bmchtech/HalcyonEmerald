@@ -925,6 +925,55 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     GET_MOVE_TYPE(move, moveType);
     dmg = CalculateMoveDamage(move, battlerAtk, battlerDef, moveType, 0, AI_GetIfCrit(move, battlerAtk, battlerDef), FALSE, FALSE);
 
+    // Account for moves with special damage calculations
+    switch (gBattleMoves[move].effect)
+    {
+    case EFFECT_LEVEL_DAMAGE:
+        dmg = gBattleMons[battlerAtk].level;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND) // Parental Bond makes fixed damage moves hit twice at full power
+            dmg *= 2;
+        break;
+    case EFFECT_DRAGON_RAGE:
+        dmg = 40;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+            dmg *= 2;
+        break;
+    case EFFECT_SONICBOOM:
+        dmg = 20;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+            dmg *= 2;
+        break;
+    case EFFECT_PSYWAVE:
+        {
+            u32 randDamage;
+            if (B_PSYWAVE_DMG >= GEN_6)
+                randDamage = (Random() % 101);
+            else
+                randDamage = (Random() % 11) * 10;
+            dmg = gBattleMons[battlerAtk].level * (randDamage + 50) / 100;
+            if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+                dmg *= 2;
+        }
+        break;
+    case EFFECT_SUPER_FANG:
+        dmg = gBattleMons[battlerDef].hp/2;
+        break;
+    case EFFECT_MULTI_HIT:
+        if (gBattleMons[battlerAtk].ability == ABILITY_SKILL_LINK)
+            dmg *= 5;
+        else
+            dmg *= 3; // Average number of hits is three
+        break;
+    case EFFECT_DOUBLE_HIT:
+            dmg *= 2;
+        break;
+    case EFFECT_TRIPLE_KICK: // Triple kick buffed to 20 base power and 20 bonus power, so it's effectively 20 + 40 + 60 = 120
+            dmg *= 6;
+        break;
+    default:
+        break;
+    }
+
     RestoreBattlerData(battlerAtk);
     RestoreBattlerData(battlerDef);
 
