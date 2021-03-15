@@ -4894,7 +4894,7 @@ static const struct LevelUpMove sTyrogueLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sHitmontopLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 0, MOVE_TRIPLE_KICK),
+	LEVEL_UP_MOVE( 0, MOVE_ROLLING_KICK),
 	LEVEL_UP_MOVE( 1, MOVE_FAKE_OUT),
 	LEVEL_UP_MOVE( 1, MOVE_FEINT),
 	LEVEL_UP_MOVE( 1, MOVE_FOCUS_ENERGY),
@@ -4915,6 +4915,7 @@ static const struct LevelUpMove sHitmontopLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(36, MOVE_CLOSE_COMBAT),
 	LEVEL_UP_MOVE(40, MOVE_COUNTER),
 	LEVEL_UP_MOVE(44, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(48, MOVE_TRIPLE_KICK),
 	LEVEL_UP_END
 };
 
