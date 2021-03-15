@@ -145,8 +145,8 @@ PKMN_Center_Move_Tutor_MoveTutorMenu::
 	case 4, PKMN_Center_Move_Tutor_MoveList5
 	case 5, PKMN_Center_Move_Tutor_MoveList6
 	case 6, PKMN_Center_Move_Tutor_MoveList7
-	case 7, PKMN_Center_Move_Tutor
-	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor
+	case 7, PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn
+	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn
 	releaseall
 	end
 	
@@ -254,8 +254,12 @@ PKMN_Center_Move_Tutor_CloseDescriptionWindow::
     special CloseBattleFrontierTutorWindow
     goto PKMN_Center_Move_Tutor_MoveTutorMenu
 
+PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn::
+    special CloseBattleFrontierTutorWindow
+    goto PKMN_Center_Move_Tutor
+
 PKMN_Center_Move_Tutor_Exit::
-    @ special CloseBattleFrontierTutorWindow
+	special CloseBattleFrontierTutorWindow
     msgbox PKMN_Center_Move_Tutor_Text_SeeYou, MSGBOX_DEFAULT
 	releaseall
 	end
