@@ -371,7 +371,7 @@ const u32 gObjectEventPic_Lugia[] = INCBIN_U32("graphics/object_events/pics/poke
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
 const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokemon/ho_oh.4bpp");
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
-const u16 gObjectEventPalette31[] = INCBIN_U16("graphics/object_events/palettes/31.gbapal");
+//const u16 gObjectEventPalette31[] = INCBIN_U16("graphics/object_events/palettes/31.gbapal");
 // New OWs
 const u32 gObjectEventPic_GoldItemBall[] = INCBIN_U32("graphics/object_events/pics/misc/gold_item_ball.4bpp");
 const u32 gObjectEventPic_MegaStone[] = INCBIN_U32("graphics/object_events/pics/misc/mega_stone.4bpp");
