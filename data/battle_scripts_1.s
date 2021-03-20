@@ -7949,3 +7949,24 @@ BattleScript_JabocaRowapBerryActivate_Dmg:
 	removeitem BS_TARGET
 	return
 
+BattleScript_EjectButton::
+	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_EJECTBUTTONACTIVATES
+	waitmessage 0x40
+	removeitem BS_TARGET
+	playanimation BS_TARGET, B_ANIM_SLIDE_OFFSCREEN, NULL
+	waitanimation
+	openpartyscreen BS_TARGET, BattleScript_EjectButtonRet
+	switchoutabilities BS_TARGET
+	waitstate
+	switchhandleorder BS_TARGET, 2
+	returntoball BS_TARGET
+	getswitchedmondata BS_TARGET
+	switchindataupdate BS_TARGET
+	hpthresholds BS_TARGET
+	printstring STRINGID_SWITCHINMON
+	switchinanim BS_TARGET, TRUE
+	waitstate
+	switchineffects BS_TARGET
+BattleScript_EjectButtonRet:
+	return
