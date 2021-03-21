@@ -5061,6 +5061,22 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_EJECT_BUTTON: // Should trigger before Emergency Exit
+            if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_EJECT_BUTTON
+                && IsBattlerAlive(gBattlerTarget)
+                && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
+                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) && TARGET_TURN_DAMAGED
+                && CanBattlerSwitch(gBattlerTarget))
+            {
+                BattleScriptPushCursor();
+                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
+                {
+                    gBattlescriptCurrInstr = BattleScript_EjectButton;
+                }
+                return;
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_EMERGENCY_EXIT: // Special case, because moves hitting multiple opponents stop after switching out
             for (i = 0; i < gBattlersCount; i++)
             {
