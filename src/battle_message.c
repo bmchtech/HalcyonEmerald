@@ -698,14 +698,9 @@ static const u8 sText_CanActFaster[] = _("{B_ATK_NAME_WITH_PREFIX} can act faste
 static const u8 sText_MicleBerryActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} boosted the accuracy of its\nnext move using {B_LAST_ITEM}!");
 static const u8 sText_EjectButtonActivates[] = _("{B_DEF_NAME_WITH_PREFIX} is switched out\nwith the Eject Button!");
 static const u8 sText_RedCardActivates[] = _("{B_DEF_NAME_WITH_PREFIX} held up its Red Card\nagainst {B_ATK_NAME_WITH_PREFIX}!");
-// Red Card versions of other strings
-static const u8 sText_PkmnAnchoredItselfRedCard[] = _("{B_ATK_NAME_WITH_PREFIX} anchored\nitself with its roots!");
-static const u8 sText_PkmnAnchorsItselfWithRedCard[] = _("{B_ATK_NAME_WITH_PREFIX} anchors\nitself with {B_ATK_NAME_WITH_PREFIX}!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
-    [STRINGID_PKMNANCHORSITSELFWITHREDCARD - 12] = sText_PkmnAnchorsItselfWithRedCard,
-    [STRINGID_PKMNANCHOREDITSELFREDCARD - 12] = sText_PkmnAnchoredItselfRedCard,
     [STRINGID_REDCARDACTIVATES - 12] = sText_RedCardActivates,
     [STRINGID_EJECTBUTTONACTIVATES - 12] = sText_EjectButtonActivates,
     [STRINGID_MICLEBERRYACTIVATES - 12] = sText_MicleBerryActivates,

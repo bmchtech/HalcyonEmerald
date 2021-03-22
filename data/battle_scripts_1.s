@@ -8008,13 +8008,19 @@ BattleScript_RedCardSuccessRet:
 
 BattleScript_PrintMonIsRootedRedCard::
 	pause 0x20
-	printstring STRINGID_PKMNANCHOREDITSELFREDCARD
+	copybyte sBATTLER, gBattlerTarget
+	copybyte gBattlerTarget, gBattlerAttacker
+	copybyte gBattlerAttacker, sBATTLER
+	printstring STRINGID_PKMNANCHOREDITSELF
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
 
 BattleScript_AbilityPreventsPhasingOutRedCard::
 	pause 0x20
+	copybyte sBATTLER, gBattlerTarget
+	copybyte gBattlerTarget, gBattlerAttacker
+	copybyte gBattlerAttacker, sBATTLER
 	call BattleScript_AbilityPopUp
-	printstring STRINGID_PKMNANCHORSITSELFWITHREDCARD
+	printstring STRINGID_PKMNANCHORSITSELFWITH
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
