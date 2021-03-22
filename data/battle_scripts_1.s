@@ -2537,7 +2537,7 @@ BattleScript_EffectRoar::
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
 BattleScript_ForceRandomSwitch::
-	forcerandomswitch BattleScript_ButItFailed
+	forcerandomswitch BattleScript_ButItFailed, FALSE
 
 BattleScript_EffectMultiHit::
 	attackcanceler
@@ -7970,3 +7970,57 @@ BattleScript_EjectButton::
 	switchineffects BS_TARGET
 BattleScript_EjectButtonRet:
 	return
+
+BattleScript_RedCard::
+	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
+	printstring STRINGID_REDCARDACTIVATES
+	waitmessage 0x40
+	removeitem BS_TARGET
+	jumpifstatus3 BS_ATTACKER, STATUS3_ROOTED, BattleScript_PrintMonIsRootedRedCard
+	jumpifability BS_ATTACKER, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOutRedCard
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ButItFailed
+	playanimation BS_ATTACKER, B_ANIM_SLIDE_OFFSCREEN, NULL
+	waitanimation
+	forcerandomswitch BattleScript_ButItFailed, TRUE
+	return
+
+@ Red Card needs to print the attacker's info in all these scripts
+BattleScript_RedCardSuccessSwitch::
+	call BattleScript_RedCardSuccessRet
+	getswitchedmondata BS_TARGET
+	switchindataupdate BS_TARGET
+	switchinanim BS_TARGET, FALSE
+	waitstate
+	printstring STRINGID_PKMNWASDRAGGEDOUT
+	switchineffects BS_TARGET
+	goto BattleScript_MoveEnd
+
+BattleScript_RedCardSuccessEndBattle::
+	call BattleScript_RedCardSuccessRet
+	setoutcomeonteleport BS_ATTACKER
+	finishaction
+
+BattleScript_RedCardSuccessRet:
+	switchoutabilities BS_TARGET
+	returntoball BS_TARGET
+	waitstate
+	return
+
+BattleScript_PrintMonIsRootedRedCard::
+	pause 0x20
+	copybyte sBATTLER, gBattlerTarget
+	copybyte gBattlerTarget, gBattlerAttacker
+	copybyte gBattlerAttacker, sBATTLER
+	printstring STRINGID_PKMNANCHOREDITSELF
+	waitmessage 0x40
+	goto BattleScript_MoveEnd
+
+BattleScript_AbilityPreventsPhasingOutRedCard::
+	pause 0x20
+	copybyte sBATTLER, gBattlerTarget
+	copybyte gBattlerTarget, gBattlerAttacker
+	copybyte gBattlerAttacker, sBATTLER
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNANCHORSITSELFWITH
+	waitmessage 0x40
+	goto BattleScript_MoveEnd
