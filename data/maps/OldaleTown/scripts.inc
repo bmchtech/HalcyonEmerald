@@ -399,7 +399,7 @@ OldaleTown_Text_MayLetsGoBack: @ 81E9462
 
 OldaleTown_Text_BrendanLetsGoBack: @ 81E948A
 	.string "Brendan: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
+	.string "Lab now.\l"
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_CitySign: @ 81E94DA
