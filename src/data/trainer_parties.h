@@ -19909,7 +19909,7 @@ static const struct TrainerMonItemCustomMoves sParty_Phoebe[] = {
     {
     .lvl = 1,
     .species = SPECIES_DUSKNOIR,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_SHELL_BELL,
     .ability = 1, // Iron Fist
     .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
     .moves = MOVE_SHADOW_PUNCH, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH, MOVE_EARTHQUAKE

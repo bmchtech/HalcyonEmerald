@@ -364,16 +364,16 @@ static bool8 AreStatsRaised(void)
 static bool8 AreAttackingStatsLowered(void)
 {
     // Mon is physical attacker and its attack isn't below -1, don't switch
-    if (gBattleMons[gActiveBattler].statStages[MON_DATA_ATK - MON_DATA_MAX_HP] >= DEFAULT_STAT_STAGE - 1)
+    if (gBattleMons[gActiveBattler].statStages[MON_DATA_ATK - MON_DATA_MAX_HP] > DEFAULT_STAT_STAGE - 2)
     {
-        if (gBattleMons[gActiveBattler].attack > gBattleMons[gActiveBattler].spAttack)
+        if (gBattleMons[gActiveBattler].attack >= gBattleMons[gActiveBattler].spAttack)
             return FALSE;
     }
 
     // Mon is special attacker and its special attack isn't below -1, don't switch
-    if (gBattleMons[gActiveBattler].statStages[MON_DATA_SPATK - MON_DATA_MAX_HP] >= DEFAULT_STAT_STAGE - 1)
+    if (gBattleMons[gActiveBattler].statStages[MON_DATA_SPATK - MON_DATA_MAX_HP] > DEFAULT_STAT_STAGE - 2)
     {
-        if (gBattleMons[gActiveBattler].spAttack > gBattleMons[gActiveBattler].attack)
+        if (gBattleMons[gActiveBattler].spAttack >= gBattleMons[gActiveBattler].attack)
             return FALSE;
     }
     

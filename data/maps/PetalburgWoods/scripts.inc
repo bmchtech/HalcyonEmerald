@@ -376,10 +376,11 @@ PetalburgWoods_Text_ThatWasAwfullyClose: @ 822E63D
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "A Pokémon holding that Exp. Share\n"
-	.string "will get 100% of the Exp. points from\l"
+	.string "will get half of the Exp. points from\l"
 	.string "battle, even if it didn't participate.\p"
-	.string "It's quite useful for raising weak\n"
-	.string "Pokémon!\p"
+	.string "Normally they'd only get a quarter of\n"
+	.string "the Exp. points, so It's quite useful\l"
+	.string "for raising weak Pokémon!\p"
 	.string "Didn't that Team Aqua thug say\n"
 	.string "they were after something in\l"
 	.string "Rustboro, too?$"
@@ -468,11 +469,11 @@ PetalburgWoods_Text_MiracleSeedExplanation: @ 822EB63
 PetalburgWoods_Text_TrainerTipsExperience: @ 822EC10
 	.string "Trainer Tips\p"
 	.string "Any Pokémon that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
+	.string "in a battle is awarded Exp. Points.\p"
 	.string "To raise a weak Pokémon, put it at the\n"
 	.string "left of the team list.\p"
 	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
+	.string "out. It will earn Exp. Points without\l"
 	.string "being exposed to any harm.$"
 
 PetalburgWoods_Text_TrainerTipsPP: @ 822ED07
