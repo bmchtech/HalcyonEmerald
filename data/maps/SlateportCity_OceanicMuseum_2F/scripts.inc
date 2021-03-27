@@ -282,7 +282,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3:: @ 820BD76
 	end
 
 SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts: @ 820BD8D
-	.string "Yes? If you're looking for STERN,\n"
+	.string "Yes? If you're looking for Stern,\n"
 	.string "that would be me.\p"
 	.string "Ah! Those must be the parts I ordered\n"
 	.string "from Mr. Stone of Devon.\p"
@@ -449,7 +449,7 @@ SlateportCity_OceanicMuseum_2F_Text_SSTidalReplica: @ 820C82F
 	.string "construction at Stern's Shipyard.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_SubmarineReplica: @ 820C88B
-	.string "“Submarine Explorer 1\p"
+	.string "“SUBMARINE EXPLORER 1\p"
 	.string "“A replica of the high-performance\n"
 	.string "ocean floor exploration submarine.”$"
 
