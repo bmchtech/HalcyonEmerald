@@ -3257,6 +3257,7 @@ const u16 gEggMoves[] = {
         MOVE_SUCKER_PUNCH,
         MOVE_TICKLE,
         MOVE_SLEEP_TALK,
+        MOVE_BULLET_PUNCH, // New
         MOVE_BELCH),
 
     egg_moves(DURANT,
@@ -3272,11 +3273,9 @@ const u16 gEggMoves[] = {
         MOVE_ICE_FANG,
         MOVE_DOUBLE_HIT,
         MOVE_ASTONISH,
-        MOVE_EARTH_POWER,
         MOVE_SCREECH,
         MOVE_HEAD_SMASH,
         MOVE_ASSURANCE,
-        MOVE_DARK_PULSE,
         MOVE_BELCH),
 
     egg_moves(LARVESTA,
@@ -3298,7 +3297,8 @@ const u16 gEggMoves[] = {
         MOVE_HYPNOSIS,
         MOVE_HEAT_WAVE,
         MOVE_MAGIC_COAT,
-        MOVE_PSYCHIC_TERRAIN),
+        MOVE_PSYCHIC_TERRAIN,
+        MOVE_INFERNO), // New
 
     egg_moves(FROAKIE,
         MOVE_BESTOW,
