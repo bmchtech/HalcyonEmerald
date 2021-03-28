@@ -598,8 +598,9 @@ MtChimney_Text_TabithaIntro: @ 822F6AA
 	.string "Hehehe!\p"
 	.string "So you've come all the way here!\p"
 	.string "But you're too late!\n"
-	.string "I've already delivered the Meteorite\l"
-	.string "from Meteor Falls to the Boss!$"
+	.string "Courtney's already delivered the\l"
+	.string "Meteorite from Meteor Falls to\l"
+	.string "the Boss!$"
 
 MtChimney_Text_TabithaDefeat: @ 822F72C
 	.string "Hehehe…\p"
@@ -688,8 +689,8 @@ MtChimney_Text_ArchieIHaveMyHandsFull: @ 822FBC7
 MtChimney_Text_ArchieThankYou: @ 822FC3D
 	.string "Archie: {PLAYER}!\n"
 	.string "Thank you!\p"
-	.string "With your help, we thwarted TEAM\n"
-	.string "MAGMA's destructive plan!\p"
+	.string "With your help, we thwarted Team\n"
+	.string "Magma's destructive plan!\p"
 	.string "But… You…\n"
 	.string "Whose side are you on?\p"
 	.string "Ah, it doesn't matter.\p"
@@ -703,7 +704,7 @@ MtChimney_Text_MagmaOutnumbersUs: @ 822FD1F
 
 MtChimney_Text_LessHabitatForWaterPokemon: @ 822FD5B
 	.string "If they expand the land, there'll be\n"
-	.string "less habitats for WATER Pokémon!$"
+	.string "less habitats for Water Pokémon!$"
 
 MtChimney_Text_MagmasNameSimilar: @ 822FDA1
 	.string "We're Team Aqua!\p"
@@ -753,8 +754,8 @@ MtChimney_Text_MachineMakesNoResponse: @ 822FFC0
 	.string "It makes no response whatsoever.$"
 
 MtChimney_Text_RouteSign: @ 822FFFA
-	.string "{DOWN_ARROW} JAGGED PATH\n"
-	.string "Lavaridge Town AHEAD$"
+	.string "{DOWN_ARROW} Jagged Pass\n"
+	.string "Lavaridge Town Ahead$"
 
 MtChimney_Text_ShelbyIntro: @ 823001D
 	.string "I've been to the hot springs and\n"
@@ -854,4 +855,3 @@ MtChimney_Text_SawyerRematchDefeat: @ 82305E3
 MtChimney_Text_SawyerPostRematch: @ 8230614
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"
-

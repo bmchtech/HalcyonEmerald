@@ -481,8 +481,8 @@ MeteorFalls_1F_1R_Text_MayPlayerHere:
 	.string "Battle together with me!$"
 
 MeteorFalls_1F_1R_Text_BrendanPlayerHere:
-	.string "Brendan:{PLAYER}! You finally made it,\n" 
-	.string "huh!\p"
+	.string "Brendan: {PLAYER}! You finally made\n" 
+	.string "it, huh!\p"
 	.string "We've gotta protect the professor\n"
 	.string "from these lunatics!\p"
 	.string "There's two of them…\n"
@@ -507,7 +507,7 @@ MeteorFalls_1F_1R_Text_CourtneyLose:
 
 MeteorFalls_1F_1R_Text_GruntLose:
 	.string "Are you telling me you're that strong\n"
-	.string "and still just a kid?!$"
+	.string "and still just kids?!$"
 
 MeteorFalls_1F_1R_Text_ChooseMons:
 	.string "Choose which Pokémon will battle.$"

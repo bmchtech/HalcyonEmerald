@@ -1,5 +1,5 @@
 .set LOCALID_NURSE, 1
-.set LOCALID_LANETTE, 4
+.set LOCALID_LANETTE, 6
 
 FallarborTown_PokemonCenter_1F_MapScripts:: @ 8200BCD
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_PokemonCenter_1F_OnTransition
