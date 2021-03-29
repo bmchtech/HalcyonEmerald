@@ -950,7 +950,14 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
 {
     if (VarGet(VAR_POKE_VIAL_CHARGES) == 0)
     {
-        DisplayItemMessageOnField(taskId, gText_PokeVialEmpty, Task_CloseCantUseKeyItemMessage);
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+        {
+            DisplayItemMessage(taskId, 1, gText_PokeVialEmpty, BagMenu_InitListsMenu);
+        }
+        else
+        {
+            DisplayItemMessageOnField(taskId, gText_PokeVialEmpty, Task_CloseCantUseKeyItemMessage);
+        }
     }
     else
     {
@@ -959,11 +966,12 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     }
 }
 
+
 static void ItemUseOnFieldCB_PokeVial(u8 taskId)
 {
     PlaySE(SE_USE_ITEM);
     HealPlayerParty();
-    VarSet(VAR_POKE_VIAL_CHARGES, VarGet(VAR_POKE_VIAL_CHARGES - 1));
+    VarSet(VAR_POKE_VIAL_CHARGES, VarGet(VAR_POKE_VIAL_CHARGES) - 1);
     DisplayItemMessageOnField(taskId, gText_UsedPokeVial, Task_CloseCantUseKeyItemMessage);
 }
 
