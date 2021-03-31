@@ -1383,7 +1383,7 @@ bool32 ObjectEventInteractionWaterBerryTree(void)
 }
 
 // Used when encountering a Pokemon on a growing berry tree to set the encounter to "done"
-bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
+void ObjectEventInteractionBerryTreePokemonEncounter(void)
 {
     struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
@@ -1401,10 +1401,7 @@ bool8 ObjectEventInteractionBerryTreePokemonEncounter(void)
     case BERRY_STAGE_BERRIES:
         tree->EncounterBerryStage = TRUE;
         break;
-    default:
-        return FALSE;
     }
-    return TRUE;
 }
 
 // Sets encounter bits for a Berry tree. If true, the player won't encounter a Pokemon at that stage.
@@ -1437,25 +1434,32 @@ void GetBerryEncounter(void)
 {
     struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
-    if (tree->EncounterSproutStage && tree->stage == BERRY_STAGE_SPROUTED)
+    if (!VarGet(VAR_REPEL_STEP_COUNT))
     {
-        gSpecialVar_Result = FALSE;
-    }
-    else if (tree->EncounterTallerStage && tree->stage == BERRY_STAGE_TALLER)
-    {
-        gSpecialVar_Result = FALSE;
-    }
-    else if (tree->EncounterFlowerStage && tree->stage == BERRY_STAGE_FLOWERING)
-    {
-        gSpecialVar_Result = FALSE;
-    }
-    else if (tree->EncounterBerryStage && tree->stage == BERRY_STAGE_BERRIES)
-    {
-        gSpecialVar_Result = FALSE;
+        if (tree->EncounterSproutStage && tree->stage == BERRY_STAGE_SPROUTED)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (tree->EncounterTallerStage && tree->stage == BERRY_STAGE_TALLER)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (tree->EncounterFlowerStage && tree->stage == BERRY_STAGE_FLOWERING)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (tree->EncounterBerryStage && tree->stage == BERRY_STAGE_BERRIES)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else
+        {
+            gSpecialVar_Result = TRUE;
+        }
     }
     else
     {
-        gSpecialVar_Result = TRUE;
+        gSpecialVar_Result = FALSE;
     }
 }
 
