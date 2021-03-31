@@ -7,7 +7,7 @@ bool32 IsEnigmaBerryValid(void);
 const struct Berry *GetBerryInfo(u8 berry);
 struct BerryTree *GetBerryTreeInfo(u8 id);
 bool32 ObjectEventInteractionWaterBerryTree(void);
-bool8 ObjectEventInteractionBerryTreePokemonEncounter(void);
+void ObjectEventInteractionBerryTreePokemonEncounter(void);
 void SetBerryEncounters(void);
 void GetBerryEncounter(void);
 void DoBerryEncounter(void);

@@ -190,7 +190,8 @@ SlateportCity_EventScript_IncenseStand::
 	release
 	end
 
-SlateportCity_Pokemart_Incense:
+	.align 2
+SlateportCity_Pokemart_Incense::
 	.2byte ITEM_SEA_INCENSE
 	.2byte ITEM_LAX_INCENSE
 	.2byte ITEM_ROSE_INCENSE

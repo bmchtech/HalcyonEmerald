@@ -216,13 +216,13 @@ FallarborTown_Movement_RivalExit:
 	step_end
 
 FallarborTown_Text_MayDisaster:
-	.string "Oh! {PLAYER}{KUN}! Help!$"
+	.string "May: Oh! {PLAYER}{KUN}! Help!$"
 
 FallarborTown_Text_BrendanComeHere:
-	.string "{PLAYER}! C'mere!$"
+	.string "Brendan: {PLAYER}! C'mere!$"
 
 FallarborTown_Text_MayWeirdos:
-	.string "You've got to come with me!\p"
+	.string "May: You've got to come with me!\p"
 	.string "Y-you see…\n"
 	.string "Professor Cozmo…\p"
 	.string "He got abducted by some weirdos\n"
@@ -234,7 +234,7 @@ FallarborTown_Text_MayWeirdos:
 	.string "Let's meet up at Meteor Falls!$"
 
 FallarborTown_Text_BrendanNuts:
-	.string "Everything's a mess!p"
+	.string "Brendan: Everything's a mess!\p"
 	.string "It's ridiculous…\n"
 	.string "Professor Cozmo…\p"
 	.string "They say that he was just up and\n"

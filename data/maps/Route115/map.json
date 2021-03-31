@@ -29,7 +29,7 @@
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 14,
       "y": 64,
-      "elevation": 3,
+      "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
