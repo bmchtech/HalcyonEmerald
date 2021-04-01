@@ -650,6 +650,11 @@ CheckIfAbilityBlocksStatChange: @ 82DC3F6
 	get_ability AI_TARGET
 	if_equal ABILITY_CLEAR_BODY, Score_Minus10
 	if_equal ABILITY_WHITE_SMOKE, Score_Minus10
+	if_equal ABILITY_FULL_METAL_BODY, Score_Minus10
+	if_equal ABILITY_MAGIC_BOUNCE, Score_Minus10
+	if_equal ABILITY_CONTRARY, Score_Minus10
+	if_equal ABILITY_DEFIANT, Score_Minus10
+	if_equal ABILITY_COMPETITIVE, Score_Minus10
 	end
 
 AI_CBM_Haze: @ 82DC405
@@ -744,11 +749,12 @@ AI_CBM_Reflect: @ 82DC53A
 	end
 
 AI_CBM_Paralyze: @ 82DC545
-	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
+	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_LIMBER, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_LIMBER, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -1033,7 +1039,6 @@ AI_CV_DmgMove:
 	end
 	
 @ If move deals shit damage, and there are other mons to switch in, use support moves instead
-@ If strongest move deals shit damage, greatly lower score so that AI switches instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
@@ -1043,8 +1048,8 @@ AI_WeakDmg:
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_BEST, Score_Minus8
-	score -10
+	if_equal MOVE_POWER_BEST, Score_Minus5
+	score -4
 	end
 
 AI_ChoiceLocked:
@@ -2071,7 +2076,7 @@ AI_CV_LightScreen_End:
 AI_CV_Rest:
 	if_target_faster AI_CV_Rest4
 	if_hp_not_equal AI_USER, 100, AI_CV_Rest2
-	score -8
+	score -30 @ Don't rest at full HP
 	goto AI_CV_Rest_End
 
 AI_CV_Rest2:
