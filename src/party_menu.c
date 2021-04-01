@@ -5419,6 +5419,7 @@ static void TryTutorSelectedMon(u8 taskId)
 {
     struct Pokemon *mon;
     s16 *move;
+    u8 friendship;
 
     if (!gPaletteFade.active)
     {
@@ -5428,6 +5429,15 @@ static void TryTutorSelectedMon(u8 taskId)
         gPartyMenu.data1 = GetTutorMove(gSpecialVar_0x8005);
         StringCopy(gStringVar2, gMoveNames[gPartyMenu.data1]);
         move[1] = 2;
+        if (gSpecialVar_0x8005 == TUTOR_MOVE_DRACO_METEOR)
+        {
+            friendship = 255;
+        }
+        else
+        {
+            friendship = 200;
+        }
+        
         switch (CanMonLearnTMTutor(mon, 0, gSpecialVar_0x8005))
         {
         case CANNOT_LEARN_MOVE:
@@ -5437,9 +5447,9 @@ static void TryTutorSelectedMon(u8 taskId)
             DisplayLearnMoveMessageAndClose(taskId, gText_PkmnAlreadyKnows);
             return;
         default:
-            if (gSpecialVar_0x8008 == TRUE) // Move requires max friendship to learn
+            if (gSpecialVar_0x8008 == TRUE) // Move has a minimum friendship requirement
             {
-                if (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP) != MAX_FRIENDSHIP)
+                if (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP) < friendship)
                 {
                     DisplayLearnMoveMessageAndClose(taskId, gText_PkmnFriendshipNotHighEnough);
                     return;

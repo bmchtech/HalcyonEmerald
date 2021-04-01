@@ -1049,7 +1049,7 @@ AI_WeakDmg:
 	if_more_than 30, AI_Ret
 	get_how_powerful_move_is
 	if_equal MOVE_POWER_BEST, Score_Minus5
-	score -4
+	score -6
 	end
 
 AI_ChoiceLocked:
