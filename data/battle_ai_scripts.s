@@ -276,6 +276,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_MAGIC_ROOM, AI_CBM_MagicRoom
 	if_effect EFFECT_SOAK, AI_CBM_Soak
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
+	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
 	end
 	
 AI_CBM_LockOn:
@@ -871,7 +872,7 @@ AI_CBM_FutureSight: @ 82DC669
 
 AI_CBM_FakeOut: @ 82DC680
 	is_first_turn_for AI_USER
-	if_equal 0, Score_Minus10
+	if_equal 0, Score_Minus30
 	end
 
 AI_CBM_Stockpile: @ 82DC689
@@ -962,6 +963,15 @@ AI_CBM_CalmMind: @ 82DC767
 AI_CBM_DragonDance: @ 82DC778
 	if_stat_level_equal AI_USER, STAT_ATK, MAX_STAT_STAGE, Score_Minus10
 	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
+	end
+
+@ Don't spam sucker punch if player is using a status move
+AI_CBM_SuckerPunch:
+	get_last_used_bank_move AI_TARGET
+	get_move_split_from_result
+	if_not_equal SPLIT_STATUS, AI_Ret
+	if_random_less_than 126, AI_Ret
+	score -10 @ big score drop to negate bonus from priority KO check
 	end
 
 Score_Minus1:
@@ -1096,6 +1106,12 @@ AI_FaintWithPriority:
 	
 AI_FaintWithPriority1:
 	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
+	if_ability AI_USER, ABILITY_GALE_WINGS, AI_FaintWithPriority_GaleWings
+	end
+
+AI_FaintWithPriority_GaleWings:
+	get_curr_move_type
+	if_equal TYPE_FLYING, AI_FaintWithPriority_ScoreUp
 	end
 
 AI_FaintWithPriority_ScoreUp:
@@ -3128,10 +3144,12 @@ AI_HailResistantAbilities:
 AI_CV_FakeOut:
 	if_ability AI_TARGET, ABILITY_INNER_FOCUS, AI_CV_FakeOut_End
 	if_double_battle AI_CV_FakeOut_Double
-	score +5
+	is_first_turn_for AI_USER
+	if_not_equal 0, AI_CV_FakeOut_Double
+	score +2
 	end
 AI_CV_FakeOut_Double:
-	score +2
+	score +5
 AI_CV_FakeOut_End:
 	end
 
