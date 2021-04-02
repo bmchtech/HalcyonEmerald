@@ -198,17 +198,17 @@ static const u8 sMaxReviveDesc[] = _(
 static const u8 sFreshWaterDesc[] = _(
     "A mineral water\n"
     "that restores HP\n"
-    "by 30 points.");
+    "by 50 points.");
 
 static const u8 sSodaPopDesc[] = _(
     "A fizzy soda drink\n"
     "that restores HP\n"
-    "by 50 points.");
+    "by 60 points.");
 
 static const u8 sLemonadeDesc[] = _(
     "A very sweet drink\n"
     "that restores HP\n"
-    "by 70 points.");
+    "by 80 points.");
 
 static const u8 sMoomooMilkDesc[] = _(
     "A nutritious milk\n"
@@ -223,7 +223,7 @@ static const u8 sEnergyPowderDesc[] = _(
 static const u8 sEnergyRootDesc[] = _(
     "A bitter root\n"
     "that restores HP\n"
-    "by 120 points.");
+    "by 200 points.");
 
 static const u8 sHealPowderDesc[] = _(
     "A bitter powder\n"
