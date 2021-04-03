@@ -256,8 +256,7 @@ static const u8 sContextMenuItems_BallsPocket[] = {
 };
 
 static const u8 sContextMenuItems_TmHmPocket[] = {
-    ITEMMENUACTION_USE,         ITEMMENUACTION_GIVE,
-    ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
+    ITEMMENUACTION_USE,        ITEMMENUACTION_CANCEL,
 };
 
 static const u8 sContextMenuItems_BerriesPocket[] = {
@@ -267,8 +266,7 @@ static const u8 sContextMenuItems_BerriesPocket[] = {
 };
 
 static const u8 sContextMenuItems_MegaStonesPocket[] = {
-    ITEMMENUACTION_USE,         ITEMMENUACTION_REGISTER,
-    ITEMMENUACTION_DUMMY,       ITEMMENUACTION_CANCEL
+    ITEMMENUACTION_GIVE,        ITEMMENUACTION_CANCEL,
 };
 
 static const u8 sContextMenuItems_BattleUse[] = {
