@@ -5312,7 +5312,7 @@ void Bag_ChoosePokeBall(void)
 // Gets a fossil item from gSpecialVar_0x8008 and stores the species it becomes in gSpecialVar_0x8006
 void FossilToSpecies(void)
 {
-    u16 species;
+    u16 species = SPECIES_NONE;
     u16 item = gSpecialVar_0x8008;
 
     switch (item)
@@ -5373,15 +5373,16 @@ bool8 IsItemFossil (void)
 // Checks player's bag for a fossil item. Better than 12 "checkItem" lines in a script!
 bool8 DoesPlayerHaveFossil (void)
 {
-    u16 fossil;
+  u16 fossil = ITEM_ARMOR_FOSSIL;
+    // This isn't working now
     for (fossil = ITEM_ARMOR_FOSSIL; fossil < (ITEM_CLAW_FOSSIL + 1); fossil++)
     {
-        if (CheckBagHasItem(fossil, 1));
+        if (CheckBagHasItem(fossil, 1))
         {
             return TRUE;
         }
     }
-    if (CheckBagHasItem(ITEM_OLD_AMBER, 1));
+    if (CheckBagHasItem(ITEM_OLD_AMBER, 1))
     {
         return TRUE;
     }

@@ -109,14 +109,14 @@
   "warp_events": [
     {
       "x": 8,
-      "y": 6,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_WOODS_2",
       "dest_warp_id": 2
     },
     {
       "x": 9,
-      "y": 6,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_WOODS_2",
       "dest_warp_id": 3

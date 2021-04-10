@@ -71,6 +71,7 @@ FallarborTown_CozmosHouse_EventScript_GiveGalladite::
 	end
 
 FallarborTown_CozmosHouse_EventScript_CozmoIsHappy:: @ 8200FE4
+	goto_if_unset FLAG_RECEIVED_GALLADITE, FallarborTown_CozmosHouse_EventScript_GiveGalladite
 	msgbox FallarborTown_CozmosHouse_Text_CozmoIsSoHappy, MSGBOX_DEFAULT
 	release
 	end

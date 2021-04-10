@@ -1272,7 +1272,7 @@ PetalburgCity_Gym_EventScript_GymGuide:: @ 820574F
 	msgbox PetalburgCity_Gym_Text_GymGuideAdvice1, MSGBOX_DEFAULT
 	giveitem ITEM_CHILAN_BERRY, 15
 	setflag FLAG_PETALBURG_GYM_CHILAN_BERRIES
-	msgbox PetalburgCity_Gym_EventScript_GymGuide2, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_GymGuideAdvice2, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1531,13 +1531,11 @@ PetalburgCity_Gym_Text_GymGuideAdvice1: @ 8206542
 	.string "Please, take these Chilan Berries\n"
 	.string "to help with your challenge.$"
 
-PetalburgCity_Gym_Text_GymGuideAdvice2: @ 8206542
+PetalburgCity_Gym_Text_GymGuideAdvice2:
 	.string "The doors in this Gym open when you\n"
 	.string "beat the awaiting Trainers.\p"
 	.string "Whoops! The doors in this room are\n"
 	.string "already open, so don't attack me!\p"
-	.string "The Trainers of Petalburg Gym\n"
-	.string "use all kinds of items.\p"
 	.string "The door at the left leads to\n"
 	.string "the Speed Room.\p"
 	.string "The door at the right leads to\n"

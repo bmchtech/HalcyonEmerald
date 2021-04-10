@@ -276,6 +276,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_MAGIC_ROOM, AI_CBM_MagicRoom
 	if_effect EFFECT_SOAK, AI_CBM_Soak
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
+	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
 	end
 	
 AI_CBM_LockOn:
@@ -650,6 +651,11 @@ CheckIfAbilityBlocksStatChange: @ 82DC3F6
 	get_ability AI_TARGET
 	if_equal ABILITY_CLEAR_BODY, Score_Minus10
 	if_equal ABILITY_WHITE_SMOKE, Score_Minus10
+	if_equal ABILITY_FULL_METAL_BODY, Score_Minus10
+	if_equal ABILITY_MAGIC_BOUNCE, Score_Minus10
+	if_equal ABILITY_CONTRARY, Score_Minus10
+	if_equal ABILITY_DEFIANT, Score_Minus10
+	if_equal ABILITY_COMPETITIVE, Score_Minus10
 	end
 
 AI_CBM_Haze: @ 82DC405
@@ -744,11 +750,12 @@ AI_CBM_Reflect: @ 82DC53A
 	end
 
 AI_CBM_Paralyze: @ 82DC545
-	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
+	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_LIMBER, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_LIMBER, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -865,7 +872,7 @@ AI_CBM_FutureSight: @ 82DC669
 
 AI_CBM_FakeOut: @ 82DC680
 	is_first_turn_for AI_USER
-	if_equal 0, Score_Minus10
+	if_equal 0, Score_Minus30
 	end
 
 AI_CBM_Stockpile: @ 82DC689
@@ -958,6 +965,15 @@ AI_CBM_DragonDance: @ 82DC778
 	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
 	end
 
+@ Don't spam sucker punch if player is using a status move
+AI_CBM_SuckerPunch:
+	get_last_used_bank_move AI_TARGET
+	get_move_split_from_result
+	if_not_equal SPLIT_STATUS, AI_Ret
+	if_random_less_than 126, AI_Ret
+	score -10 @ big score drop to negate bonus from priority KO check
+	end
+
 Score_Minus1:
 	score -1
 	end
@@ -1033,7 +1049,6 @@ AI_CV_DmgMove:
 	end
 	
 @ If move deals shit damage, and there are other mons to switch in, use support moves instead
-@ If strongest move deals shit damage, greatly lower score so that AI switches instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
@@ -1043,8 +1058,8 @@ AI_WeakDmg:
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_BEST, Score_Minus8
-	score -10
+	if_equal MOVE_POWER_BEST, Score_Minus5
+	score -6
 	end
 
 AI_ChoiceLocked:
@@ -1091,6 +1106,12 @@ AI_FaintWithPriority:
 	
 AI_FaintWithPriority1:
 	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
+	if_ability AI_USER, ABILITY_GALE_WINGS, AI_FaintWithPriority_GaleWings
+	end
+
+AI_FaintWithPriority_GaleWings:
+	get_curr_move_type
+	if_equal TYPE_FLYING, AI_FaintWithPriority_ScoreUp
 	end
 
 AI_FaintWithPriority_ScoreUp:
@@ -2071,7 +2092,7 @@ AI_CV_LightScreen_End:
 AI_CV_Rest:
 	if_target_faster AI_CV_Rest4
 	if_hp_not_equal AI_USER, 100, AI_CV_Rest2
-	score -8
+	score -30 @ Don't rest at full HP
 	goto AI_CV_Rest_End
 
 AI_CV_Rest2:
@@ -3123,10 +3144,12 @@ AI_HailResistantAbilities:
 AI_CV_FakeOut:
 	if_ability AI_TARGET, ABILITY_INNER_FOCUS, AI_CV_FakeOut_End
 	if_double_battle AI_CV_FakeOut_Double
-	score +5
+	is_first_turn_for AI_USER
+	if_not_equal 0, AI_CV_FakeOut_Double
+	score +2
 	end
 AI_CV_FakeOut_Double:
-	score +2
+	score +5
 AI_CV_FakeOut_End:
 	end
 

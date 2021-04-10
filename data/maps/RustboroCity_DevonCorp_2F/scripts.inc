@@ -85,7 +85,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeFossil::
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
-	message RustboroCity_DevonCorp_2F_Text_TwoFossilsPickOne
+	msgbox RustboroCity_DevonCorp_2F_Text_FossilsPickOne, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special Bag_ChooseItem
 	waitstate
@@ -248,13 +248,9 @@ RustboroCity_DevonCorp_2F_Text_OhIsThatSo: @ 8212046
 	.string "Devon's technological expertise\n"
 	.string "is outstanding, I tell you.$"
 
-RustboroCity_DevonCorp_2F_Text_TwoFossilsPickOne: @ 8212092
-	.string "Oh, now that's a surprise!\n"
-	.string "You have not one, but two, fossils?\p"
-	.string "Unfortunately, my machine can only\n"
-	.string "regenerate one Pokémon at a time.\p"
-	.string "Would you like to pick one of your\n"
-	.string "fossils for regeneration?$"
+RustboroCity_DevonCorp_2F_Text_FossilsPickOne: @ 8212092
+	.string "Which fossil would you like to\n"
+	.string "regenerate?$"
 
 RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher: @ 8212153
 	.string "Excellent!\n"
