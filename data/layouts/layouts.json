@@ -4600,6 +4600,16 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/MeteorFalls_JirachisRoom/border.bin",
       "blockdata_filepath": "data/layouts/MeteorFalls_JirachisRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_VERDANTURF_MEADOW",
+      "name": "VerdanturfMeadow_Layout",
+      "width": 15,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/VerdanturfMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/VerdanturfMeadow/map.bin"
     }
   ]
 }
