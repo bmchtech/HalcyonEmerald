@@ -22,6 +22,11 @@
       "direction": "right",
       "offset": 0,
       "map": "MAP_ROUTE117"
+    },
+    {
+      "direction": "down",
+      "offset": -2,
+      "map": "MAP_VERDANTURF_MEADOW"
     }
   ],
   "object_events": [

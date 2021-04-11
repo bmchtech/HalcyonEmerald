@@ -73,8 +73,8 @@
       "x": 8,
       "y": 11,
       "elevation": 3,
-      "item": "ITEM_PINK_NECTAR",
-      "flag": "FLAG_HIDDEN_ITEM_PINK_NECTAR"
+      "item": "ITEM_GRASS_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_DEWFORD_MEADOW_GRASS_GEM"
     },
     {
       "type": "hidden_item",
@@ -89,8 +89,8 @@
       "x": 28,
       "y": 17,
       "elevation": 3,
-      "item": "ITEM_PURPLE_NECTAR",
-      "flag": "FLAG_HIDDEN_ITEM_PURPLE_NECTAR"
+      "item": "ITEM_FAIRY_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_DEWFORD_MEADOW_FAIRY_GEM"
     },
     {
       "type": "sign",

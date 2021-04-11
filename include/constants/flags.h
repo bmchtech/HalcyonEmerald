@@ -682,8 +682,8 @@
 #define FLAG_HIDDEN_ITEM_GAME_CORNER_BOTTLE_CAP1             (FLAG_HIDDEN_ITEMS_START + 0x8F)
 #define FLAG_HIDDEN_ITEM_GAME_CORNER_BOTTLE_CAP2             (FLAG_HIDDEN_ITEMS_START + 0x90)
 #define FLAG_HIDDEN_ITEM_MOSSDEEP_CITY_BOTTLE_CAP            (FLAG_HIDDEN_ITEMS_START + 0x91)
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
+#define FLAG_HIDDEN_ITEM_DEWFORD_MEADOW_GRASS_GEM            (FLAG_HIDDEN_ITEMS_START + 0x92)
+#define FLAG_HIDDEN_ITEM_DEWFORD_MEADOW_FAIRY_GEM            (FLAG_HIDDEN_ITEMS_START + 0x93)
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
 #define FLAG_UNUSED_0x28B  0x28B // Unused Flag
 #define FLAG_UNUSED_0x28C  0x28C // Unused Flag
@@ -1287,7 +1287,7 @@
 #define FLAG_DEFEATED_ARTICUNO_GALAR                                0x4DE
 #define FLAG_DEFEATED_ZAPDOS_GALAR                                  0x4DF
 #define FLAG_DEFEATED_MOLTRES_GALAR                                 0x4E0
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
+#define FLAG_TM21_FRUSTRATION                                       0x4E1
 #define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
 #define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
 #define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag

@@ -204,6 +204,7 @@ static const u8 sMapName_AshenWoods[] = _("Ashen Woods");
 static const u8 sMapName_SandstrewnRuins[] = _("Sandstrewn Ruins");
 static const u8 sMapName_DewfordMeadow[] = _("Dewford Meadow");
 static const u8 sMapName_DewfordManor[] = _("Dewford Manor");
+static const u8 sMapName_VerdanturfMeadow[] = _("Verdant Glade");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
