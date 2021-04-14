@@ -13,6 +13,7 @@ FortreeCity_Mart_EventScript_Clerk:: @ 8217666
 	release
 	end
 
+	.align 2
 FortreeCity_Mart_Pokemart:
 	.2byte ITEM_PROTECTOR
 	.2byte ITEM_ELECTIRIZER
