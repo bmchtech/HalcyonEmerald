@@ -598,7 +598,7 @@ const struct SpriteFrameImage gObjectEventPicTable_CustapBerryTree[] = {
     overworld_frame(gObjectEventPic_CustapBerryTree, 2, 4, 5),
 };
 
-const u8 gBerryTreePaletteSlotTable_Custap[] = {3, 4, 3, 3, 3};
+const u8 gBerryTreePaletteSlotTable_Custap[] = {3, 4, 5, 5, 5};
 
 const struct SpriteFrameImage gObjectEventPicTable_JabocaBerryTree[] = {
     overworld_frame(gObjectEventPic_BerryTreeDirtPile, 2, 2, 0),
@@ -612,7 +612,7 @@ const struct SpriteFrameImage gObjectEventPicTable_JabocaBerryTree[] = {
     overworld_frame(gObjectEventPic_JabocaBerryTree, 2, 4, 5),
 };
 
-const u8 gBerryTreePaletteSlotTable_Jaboca[] = {3, 4, 1, 1, 1};
+const u8 gBerryTreePaletteSlotTable_Jaboca[] = {3, 4, 5, 5, 5};
 
 const struct SpriteFrameImage gObjectEventPicTable_RowapBerryTree[] = {
     overworld_frame(gObjectEventPic_BerryTreeDirtPile, 2, 2, 0),
@@ -626,7 +626,7 @@ const struct SpriteFrameImage gObjectEventPicTable_RowapBerryTree[] = {
     overworld_frame(gObjectEventPic_RowapBerryTree, 2, 4, 5),
 };
 
-const u8 gBerryTreePaletteSlotTable_Rowap[] = {3, 4, 1, 1, 1};
+const u8 gBerryTreePaletteSlotTable_Rowap[] = {3, 4, 5, 5, 5};
 
 
 const u8 gDeadBerryTreeObjectEventGraphicsIdTable[] = {OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES, OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES, OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES, OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES, OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES};
