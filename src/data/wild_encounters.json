@@ -4028,22 +4028,32 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_KECLEON"
+                "species": "SPECIES_TROPIUS"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_TROPIUS"
+                "species": "SPECIES_PUMPKABOO"
               },
               {
                 "min_level": 26,
                 "max_level": 26,
-                "species": "SPECIES_PUMPKABOO"
+                "species": "SPECIES_PUMPKABOO_SMALL"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_PUMPKABOO"
+                "species": "SPECIES_PUMPKABOO_LARGE"
+              },
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_PUMPKABOO_LARGE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_PUMPKABOO_SUPER"
               },
               {
                 "min_level": 27,
@@ -4053,17 +4063,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PUMPKABOO"
-              },
-              {
-                "min_level": 27,
-                "max_level": 27,
-                "species": "SPECIES_PUMPKABOO"
-              },
-              {
-                "min_level": 25,
-                "max_level": 25,
-                "species": "SPECIES_PUMPKABOO"
+                "species": "SPECIES_PUMPKABOO_SUPER"
               },
               {
                 "min_level": 25,
@@ -12342,12 +12342,12 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_BUTTERFREE"
+                "species": "SPECIES_STUFFUL"
               },
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_BUTTERFREE"
+                "species": "SPECIES_STUFFUL"
               },
               {
                 "min_level": 41,
