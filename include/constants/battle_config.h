@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_BATTLE_CONFIG_H
 
 // Species with peculiar battle effects.
-#ifndef POKEMON_EXPANSION
+/* #ifndef POKEMON_EXPANSION
     #define SPECIES_DIALGA                  0
     #define SPECIES_PALKIA                  0
     #define SPECIES_GIRATINA                0
@@ -35,7 +35,7 @@
     #define SPECIES_ZYGARDE                 0     // 50%
     #define SPECIES_ZYGARDE_10              10011 // 10 %
     #define SPECIES_ZYGARDE_COMPLETE        10012 // 100 %
-#endif
+#endif */
 
 #ifndef GEN_3
     #define GEN_3 0

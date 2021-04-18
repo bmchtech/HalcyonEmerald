@@ -865,3 +865,7 @@ DewfordManor_EventScript_TM100Curse::
 DewfordManor_EventScript_Banettite::
 	finditem ITEM_BANETTITE
 	end
+
+VerdanturfMeadow_EventScript_TM21::
+	finditem ITEM_TM21_FRUSTRATION
+	end

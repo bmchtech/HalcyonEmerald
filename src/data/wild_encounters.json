@@ -1508,7 +1508,7 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_RATTATA"
+                "species": "SPECIES_MEOWTH"
               },
               {
                 "min_level": 13,
@@ -1578,7 +1578,7 @@
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_FLOETTE"
               },
               {
                 "min_level": 5,
@@ -4033,7 +4033,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_ESPURR"
+                "species": "SPECIES_TROPIUS"
               },
               {
                 "min_level": 26,
@@ -12179,7 +12179,7 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_ORICORIO_POM_POM"
+                "species": "SPECIES_ORICORIO"
               },
               {
                 "min_level": 41,
@@ -12199,11 +12199,6 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
-              },
-              {
-                "min_level": 41,
-                "max_level": 43,
                 "species": "SPECIES_COMBEE"
               },
               {
@@ -12214,22 +12209,27 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_COMBEE"
+                "species": "SPECIES_BUTTERFREE"
               },
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+                "species": "SPECIES_BUTTERFREE"
               },
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_COMBEE"
+                "species": "SPECIES_BUTTERFREE"
               },
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+                "species": "SPECIES_BUTTERFREE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_BUTTERFREE"
               }
             ]
           }
@@ -12238,7 +12238,7 @@
           "map": "MAP_DEWFORD_MANOR_1F",
           "base_label": "gDewfordManor",
           "land_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 41,
@@ -12299,6 +12299,75 @@
                 "min_level": 41,
                 "max_level": 43,
                 "species": "SPECIES_MIME_JR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_VERDANTURF_MEADOW",
+          "base_label": "gVerdanturfMeadow",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_MUNNA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_ESPURR"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_VIVILLON_POKE_BALL"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLOETTE_WHITE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLOETTE_WHITE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_BUTTERFREE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_BUTTERFREE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
               }
             ]
           }

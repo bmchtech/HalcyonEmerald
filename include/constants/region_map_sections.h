@@ -220,7 +220,8 @@
 #define MAPSEC_SANDSTREWN_RUINS             0xD8
 #define MAPSEC_DEWFORD_MEADOW               0xD9
 #define MAPSEC_DEWFORD_MANOR                0xDA
-#define MAPSEC_NONE                         0xDB
+#define MAPSEC_VERDANTURF_MEADOW            0xDB
+#define MAPSEC_NONE                         0xDC
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
