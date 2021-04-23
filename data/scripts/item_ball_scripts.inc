@@ -869,3 +869,7 @@ DewfordManor_EventScript_Banettite::
 VerdanturfMeadow_EventScript_TM21::
 	finditem ITEM_TM21_FRUSTRATION
 	end
+
+MagmaHideout_2F_2R_EventScript_ItemMagmaStone::
+	finditem ITEM_MAGMA_STONE
+	end
