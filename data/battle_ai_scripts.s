@@ -47,8 +47,8 @@ gBattleAI_ScriptsTable:: @ 82DBEF8
 
 AI_CheckBadMove:
 	if_target_is_ally AI_Ret
-@ Check powder moves
-	if_move_flag FLAG_POWDER, AI_CBM_PowderMoves
+	if_move_flag FLAG_POWDER, AI_CBM_PowderMoves @ Check powder moves
+	call AI_CBM_CheckIfPriorityCancelled @ Check if move is blocked by psychic terrain or ability
 	goto AI_CBM_CheckIfNegatesType
 AI_CBM_PowderMoves:
 	if_type AI_TARGET, TYPE_GRASS, Score_Minus30
@@ -75,7 +75,7 @@ AI_CBM_CheckIfNegatesType:
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
 	if_equal ABILITY_SOUNDPROOF, CheckIfSoundproofCancelsMove
 	goto AI_CheckBadMove_CheckEffect
-	
+
 CheckIfSoundproofCancelsMove:
 	if_move_flag FLAG_SOUND, Score_Minus10
 	goto AI_CheckBadMove_CheckEffect
@@ -108,6 +108,26 @@ CheckIfWonderGuardCancelsMove: @ 82DBFE4
 CheckIfLevitateCancelsGroundMove: @ 82DBFEF
 	get_curr_move_type
 	if_equal TYPE_GROUND, Score_Minus10
+
+AI_CBM_CheckIfPriorityCancelled:
+	if_field_status STATUS_FIELD_PSYCHIC_TERRAIN, CheckIfTerrainCancelsPriority2
+	if_ability AI_TARGET, ABILITY_QUEENLY_MAJESTY, TargetBlocksPriority
+	if_ability AI_TARGET, ABILITY_DAZZLING, TargetBlocksPriority
+	end
+
+CheckIfTerrainCancelsPriority2:
+	if_grounded AI_TARGET, TargetBlocksPriority
+	end
+
+TargetBlocksPriority:
+	if_ability AI_USER, ABILITY_GALE_WINGS, GaleWingsStatusMoves
+	if_move_priority_greater_than 0, Score_Minus30
+	end
+
+GaleWingsStatusMoves:
+	if_effect EFFECT_ROOST, AI_Ret
+	if_effect EFFECT_TAILWIND, AI_Ret
+	end
 
 AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SLEEP, AI_CBM_Sleep
@@ -1106,12 +1126,6 @@ AI_FaintWithPriority:
 	
 AI_FaintWithPriority1:
 	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
-	if_ability AI_USER, ABILITY_GALE_WINGS, AI_FaintWithPriority_GaleWings
-	end
-
-AI_FaintWithPriority_GaleWings:
-	get_curr_move_type
-	if_equal TYPE_FLYING, AI_FaintWithPriority_ScoreUp
 	end
 
 AI_FaintWithPriority_ScoreUp:
