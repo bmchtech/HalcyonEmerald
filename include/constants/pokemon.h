@@ -262,7 +262,8 @@
 #define FLAG_DMG_IN_AIR             (1 << 22) // X2 dmg on air, always hits target on air
 #define FLAG_HIT_IN_AIR             (1 << 23) // dmg is normal, always hits target on air
 #define FLAG_KEEN_EDGE_BOOST        (1 << 24)
-#define FLAG_DAMAGE_AIRBORNE           (1 << 25) // For Thousand Arrows
+#define FLAG_DAMAGE_AIRBORNE        (1 << 25) // For Thousand Arrows
+#define FLAG_THAW_HIT               (1 << 26) // For moves that thaw the user
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0
