@@ -14462,7 +14462,7 @@ static const struct TrainerMonItemCustomMoves sParty_Fredrick[] = { // With Jack
     .lvl = -1,
     .species = SPECIES_COMFEY,
     .heldItem = ITEM_LEFTOVERS,
-    .ability = 1, // Triage
+    .ability = 0, // No Triage due to psychic terrain from ally
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_CALM_MIND, MOVE_CHARM
     },
