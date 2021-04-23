@@ -24392,7 +24392,6 @@ General_TotemFlare::
 
 General_ItemHealsHP::
 	loadspritegfx ANIM_TAG_THIN_RING
-	loadspritegfx ANIM_TAG_SPARKLE_2
 	loadspritegfx ANIM_TAG_ORBS
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	delay 0
