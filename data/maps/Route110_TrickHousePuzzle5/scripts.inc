@@ -376,7 +376,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll2Quiz3:: @ 826CFF4
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz3, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL2_Q3, 1
 	switch VAR_RESULT
-	case 0, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 2, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
