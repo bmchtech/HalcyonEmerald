@@ -297,6 +297,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SOAK, AI_CBM_Soak
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
 	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
+	if_effect EFFECT_SOLARBEAM, AI_CBM_SolarBeam
 	end
 	
 AI_CBM_LockOn:
@@ -992,6 +993,15 @@ AI_CBM_SuckerPunch:
 	if_not_equal SPLIT_STATUS, AI_Ret
 	if_random_less_than 126, AI_Ret
 	score -10 @ big score drop to negate bonus from priority KO check
+	end
+
+@ Don't use Solar Beam if it needs to charge
+AI_CBM_SolarBeam:
+	if_ability AI_USER, ABILITY_CHLOROPLAST, AI_Ret
+	if_holds_item AI_USER, ITEM_POWER_HERB, AI_Ret
+	get_weather
+	if_equal AI_WEATHER_SUN, AI_Ret
+	score -10
 	end
 
 Score_Minus1:
@@ -2925,7 +2935,7 @@ AI_CV_SunnyDay:
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_SunnyDay2
 	goto AI_CV_SunnyDay_Rock
 AI_CV_SunnyDay2:
-	score +1
+	score +3
 	goto AI_CV_SunnyDay_Rock
 AI_CV_SunnyDay_ScoreDown1:
 	score -1
@@ -2941,7 +2951,7 @@ AI_CV_SunnyDay_Moves:
 	if_has_move_with_type AI_USER, TYPE_FIRE, AI_CV_SunnyDay_MovesPlus
 	goto AI_CV_SunnyDay_Abilities
 AI_CV_SunnyDay_MovesPlus:
-	score +1
+	score +3
 AI_CV_SunnyDay_Abilities:
 	if_user_faster AI_CV_SunnyDay_Abilities2
 	if_ability AI_USER, ABILITY_CHLOROPHYLL, AI_CV_SunnyDay_AbilitiesPlus
