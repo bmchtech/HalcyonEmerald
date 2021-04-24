@@ -15269,7 +15269,7 @@ static const struct TrainerMonItemCustomMoves sParty_Matt[] = {
     .species = SPECIES_DHELMISE,
     .heldItem = ITEM_STEEL_GEM,
     .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_POWER_WHIP, MOVE_SHADOW_CLAW, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE
+    .moves = MOVE_ANCHOR_SHOT, MOVE_SHADOW_CLAW, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE
     },
     {
     .lvl = 0,
