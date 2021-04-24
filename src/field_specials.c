@@ -5416,7 +5416,7 @@ u8 CountRotomInParty (void)
 // Vars used:
 // gSpecialVar_0x8004: set to the party slot of the chosen Rotom, or the first Rotom found if there's only one
 // gSpecialVar_0x8005: set to the form to change Rotom to (e.g. SPECIES_ROTOM_WASH)
-// gSpecialVar_0x8006: special move learned by Rotom after form change (set by ChangeRotomForm)
+// gSpecialVar_0x8006: special move learned by Rotom after form change (set by GetRotomNewSpecialMove)
 // gSpecialVar_0x8007: Rotom's initial form
 // gSpecialVar_0x8008: Rotom's initial special move (set by RotomForgetSpecialMove)
 
@@ -5485,16 +5485,15 @@ void RotomForgetSpecialMove (void)
     }
 }
 
-// Changes Rotom's form
-void ChangeRotomForm (void)
+// Changes the chosen party mon's species to the one stored in gSpecialVar_0x8005
+void ChangeMonSpecies (void)
 {
-    u16 currentForm, newForm;
+    u16 newSpecies;
     
-    currentForm = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2, NULL);
-    newForm = gSpecialVar_0x8005;
+    newSpecies = gSpecialVar_0x8005;
 
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, &newForm);
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2, &newForm);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, &newSpecies);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2, &newSpecies);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
@@ -5662,7 +5661,7 @@ bool8 CheckSpeciesInParty (void)
     u16 species3 = gSpecialVar_0x8006;
     u32 numSpecies = gSpecialVar_0x8007;
     u32 i;
-    u8 speciesFound = 0;
+    u32 speciesFound = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -5681,6 +5680,22 @@ bool8 CheckSpeciesInParty (void)
     }
 
     if (speciesFound == numSpecies){
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// Checks if the species stored in gSpecialVar_0x8004 is an Eeveelution
+bool8 IsSelectedMonEeveelution (void)
+{
+    u32 species;
+
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2, NULL);
+
+    if (species == SPECIES_VAPOREON || species == SPECIES_JOLTEON || species == SPECIES_FLAREON
+       || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_LEAFEON
+       || species == SPECIES_GLACEON || species == SPECIES_SYLVEON)
+    {
         return TRUE;
     }
     return FALSE;

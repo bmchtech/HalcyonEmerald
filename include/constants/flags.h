@@ -1288,7 +1288,7 @@
 #define FLAG_DEFEATED_ZAPDOS_GALAR                                  0x4DF
 #define FLAG_DEFEATED_MOLTRES_GALAR                                 0x4E0
 #define FLAG_TM21_FRUSTRATION                                       0x4E1
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAGMA_STONE                   0x4E2
 #define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
 #define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
 #define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag

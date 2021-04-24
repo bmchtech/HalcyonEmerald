@@ -561,7 +561,7 @@ gSpecials:: @ 81DBA64
 	def_special CountRotomInParty
 	def_special GetRotomState
 	def_special RotomForgetSpecialMove
-	def_special ChangeRotomForm
+	def_special ChangeMonSpecies
 	def_special TeachRotomMove
 	def_special IsSelectedMonRotom
 	def_special DoesRotomKnowSpecialMove
@@ -575,3 +575,4 @@ gSpecials:: @ 81DBA64
 	def_special GetHighestLevelInPlayerParty
 	def_special CheckSpeciesInParty
 	def_special SetTotemBoost
+	def_special IsSelectedMonEeveelution

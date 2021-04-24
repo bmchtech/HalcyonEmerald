@@ -14462,7 +14462,7 @@ static const struct TrainerMonItemCustomMoves sParty_Fredrick[] = { // With Jack
     .lvl = -1,
     .species = SPECIES_COMFEY,
     .heldItem = ITEM_LEFTOVERS,
-    .ability = 1, // Triage
+    .ability = 0, // No Triage due to psychic terrain from ally
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_DRAINING_KISS, MOVE_GIGA_DRAIN, MOVE_CALM_MIND, MOVE_CHARM
     },
@@ -15269,7 +15269,7 @@ static const struct TrainerMonItemCustomMoves sParty_Matt[] = {
     .species = SPECIES_DHELMISE,
     .heldItem = ITEM_STEEL_GEM,
     .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_POWER_WHIP, MOVE_SHADOW_CLAW, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE
+    .moves = MOVE_ANCHOR_SHOT, MOVE_SHADOW_CLAW, MOVE_LIQUIDATION, MOVE_ROCK_SLIDE
     },
     {
     .lvl = 0,

@@ -230,9 +230,9 @@
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
-#define MAX_PER_STAT_EVS 255
+#define MAX_PER_STAT_EVS 252
 #define MAX_TOTAL_EVS 510
-#define EV_ITEM_RAISE_LIMIT 100
+#define EV_ITEM_RAISE_LIMIT 252
 
 #define UNOWN_FORM_COUNT 28
 
@@ -262,7 +262,8 @@
 #define FLAG_DMG_IN_AIR             (1 << 22) // X2 dmg on air, always hits target on air
 #define FLAG_HIT_IN_AIR             (1 << 23) // dmg is normal, always hits target on air
 #define FLAG_KEEN_EDGE_BOOST        (1 << 24)
-#define FLAG_DAMAGE_AIRBORNE           (1 << 25) // For Thousand Arrows
+#define FLAG_DAMAGE_AIRBORNE        (1 << 25) // For Thousand Arrows
+#define FLAG_THAW_HIT               (1 << 26) // For moves that thaw the user
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0

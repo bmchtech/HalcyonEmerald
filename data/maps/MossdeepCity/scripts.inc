@@ -283,6 +283,23 @@ MossdeepCity_EventScript_ScottExitEast:: @ 81E4CC2
 	waitmovement 0
 	return
 
+MossdeepCity_EventScript_AvalancheTM::
+	lock
+	faceplayer
+	checkitem ITEM_TM96_AVALANCHE, 1
+	compare VAR_RESULT, 1
+	goto_if_eq MossdeepCity_EventScript_ReceivedTM96
+	msgbox MossdeepCity_Text_AvalancheNonsense, MSGBOX_DEFAULT
+	giveitem ITEM_TM96_AVALANCHE
+	msgbox MossdeepCity_Text_HaveTM96, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_ReceivedTM96::
+	msgbox MossdeepCity_Text_HaveTM96, MSGBOX_DEFAULT
+	release
+	end
+
 MossdeepCity_Movement_PlayerWatchScottExit: @ 81E4CD4
 	delay_16
 	delay_16
@@ -437,3 +454,11 @@ MossdeepCity_Text_SootopolisNewGymLeader: @ 81E5581
 	.string "People tell me the new Leader once\n"
 	.string "mentored Wallace.$"
 
+MossdeepCity_Text_AvalancheNonsense:
+	.string "You Trainer?\p"
+	.string "Take TM!$"
+
+MossdeepCity_Text_HaveTM96:
+	.string "… … … … … … … … … … … … … … … …\p"
+	.string "… … … … … … … … … … … … … … … …\p"
+	.string "(Seems he has nothing more to say…)$"

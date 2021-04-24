@@ -2,7 +2,7 @@
 @ Vars used:
 @ gSpecialVar_0x8004: set to the party slot of the chosen Rotom, or the first Rotom found if there's only one
 @ gSpecialVar_0x8005: set to the form to change Rotom to (e.g. SPECIES_ROTOM_WASH)
-@ gSpecialVar_0x8006: special move learned by Rotom after form change (set by ChangeRotomForm)
+@ gSpecialVar_0x8006: special move learned by Rotom after form change (set by ChangeMonSpecies)
 @ gSpecialVar_0x8007: Rotom's initial form
 @ gSpecialVar_0x8008: Rotom's initial special move (set by RotomForgetSpecialMove)
 
@@ -82,7 +82,7 @@ Rotom_Appliances_CheckForSpecialMove::
     compare VAR_0x8005, VAR_0x8007
     goto_if_eq Rotom_Appliances_AlreadyEnteredThatMotor
     special GetRotomNewSpecialMove
-    special ChangeRotomForm @ Change form here so new form is shown while choosing move to forget
+    special ChangeMonSpecies @ Change form here so new form is shown while choosing move to forget
     msgbox Rotom_Text_EnteredTheMotor, MSGBOX_DEFAULT
     specialvar VAR_RESULT, DoesRotomKnowSpecialMove
     compare VAR_RESULT, TRUE
@@ -128,7 +128,7 @@ Rotom_Appliances_RecallFromMotor::
     compare VAR_0x8007, SPECIES_ROTOM
     goto_if_eq Rotom_Appliances_RotomHasntEnteredMotor
     special GetRotomNewSpecialMove
-    special ChangeRotomForm
+    special ChangeMonSpecies
     msgbox Rotom_Text_EmergedFromTheMotor, MSGBOX_DEFAULT
     specialvar VAR_RESULT, DoesRotomKnowSpecialMove
     compare VAR_RESULT, TRUE
@@ -158,7 +158,7 @@ Rotom_Appliances_NoRotomInParty::
 
 Rotom_Appliances_GaveUpOnEnteringMotor::
     copyvar VAR_0x8005, VAR_0x8007
-    special ChangeRotomForm
+    special ChangeMonSpecies
     msgbox Rotom_Text_NicknameReluctantlyGaveUp, MSGBOX_DEFAULT
     releaseall
     end
