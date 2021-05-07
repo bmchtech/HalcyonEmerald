@@ -934,7 +934,7 @@
 	.macro givemon species:req, level:req, item:req
 	.byte 0x79
 	.2byte \species
-	.byte \level
+	.2byte \level
 	.2byte \item
 	.4byte 0x0
 	.4byte 0x0

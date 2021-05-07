@@ -1289,8 +1289,8 @@
 #define FLAG_DEFEATED_MOLTRES_GALAR                                 0x4E0
 #define FLAG_TM21_FRUSTRATION                                       0x4E1
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAGMA_STONE                   0x4E2
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
+#define FLAG_SANDSTREWN_RUINS_ODD_KEYSTONE                          0x4E3
+#define FLAG_RECEIVED_AUDINO                                        0x4E4
 #define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
 #define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
 #define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag

@@ -2842,29 +2842,6 @@ void TryClearRageAndFuryCutter(void)
     }
 }
 
-static bool32 IsThawingMove(u8 battlerId, u16 move)
-{
-    switch (move)
-    {
-    case MOVE_BURN_UP:
-        if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_FIRE))
-            return FALSE;
-        //fallthrough
-    case MOVE_FLAME_WHEEL:
-    case MOVE_FLARE_BLITZ:
-    case MOVE_FUSION_FLARE:
-    case MOVE_PYRO_BALL:
-    case MOVE_SACRED_FIRE:
-    case MOVE_SCALD:
-    case MOVE_SCORCHING_SANDS:
-    case MOVE_SIZZLY_SLIDE:
-    case MOVE_STEAM_ERUPTION:
-        return TRUE;
-    default:
-        return FALSE;
-    }
-}
-
 enum
 {
     CANCELLER_FLAGS,
@@ -3164,7 +3141,7 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_THAW: // move thawing
             if (gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE)
             {
-                if (IsThawingMove(gBattlerAttacker, gCurrentMove))
+                if (gBattleMoves[gCurrentMove].flags & FLAG_THAW_HIT)
                 {
                     gBattleMons[gBattlerAttacker].status1 &= ~(STATUS1_FREEZE);
                     BattleScriptPushCursor();
