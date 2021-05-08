@@ -184,10 +184,6 @@ Rotom_Text_RotomWouldLikeToInvestigate:
     .string "motors of the electrical appliances…\l"
     .string "Is that OK?$"
 
-Rotom_Text_RotomReluctantlyGaveUp:
-    .string "Rotom reluctantly gave up on entering\n"
-    .string "a motor…$"
-
 Rotom_Text_NicknameReluctantlyGaveUp:
     .string "{STR_VAR_1} reluctantly gave up on\n"
     .string "entering a motor…$"

@@ -5373,8 +5373,8 @@ bool8 IsItemFossil (void)
 // Checks player's bag for a fossil item. Better than 12 "checkItem" lines in a script!
 bool8 DoesPlayerHaveFossil (void)
 {
-  u16 fossil = ITEM_ARMOR_FOSSIL;
-    // This isn't working now
+    u16 fossil = ITEM_ARMOR_FOSSIL;
+
     for (fossil = ITEM_ARMOR_FOSSIL; fossil < (ITEM_CLAW_FOSSIL + 1); fossil++)
     {
         if (CheckBagHasItem(fossil, 1))
