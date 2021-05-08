@@ -9,9 +9,8 @@
 
 extern struct MusicPlayerInfo gMPlayInfo_SE1;
 
-// this file's functions
-static void sub_8158B98(u8 taskId);
-static void sub_8158C04(u8 taskId);
+static void SoundTask_FireBlast_Step1(u8 taskId);
+static void SoundTask_FireBlast_Step2(u8 taskId);
 static void SoundTask_LoopSEAdjustPanning_Step(u8 taskId);
 static void SoundTask_PlayDoubleCry_Step(u8 taskId);
 static void SoundTask_PlayCryWithEcho_Step(u8 taskId);
@@ -19,8 +18,14 @@ static void SoundTask_PlayCryMegaEvolution_Step(u8 taskId);
 static void SoundTask_AdjustPanningVar_Step(u8 taskId);
 static void SoundTask_SeVolumeChange(u8 taskId);
 
-// task start
-void sub_8158B30(u8 taskId)
+// Loops the specified sound effect and pans from the
+// attacker to the target. The second specified sound effect
+// is played at the very end. This task is effectively
+// hardcoded to the move FIRE_BLAST due to the baked-in
+// durations.
+// arg 0: looped sound effect
+// arg 1: ending sound effect
+void SoundTask_FireBlast(u8 taskId)
 {
     s8 pan1, pan2, panIncrement;
 
@@ -36,10 +41,10 @@ void sub_8158B30(u8 taskId)
     gTasks[taskId].data[4] = panIncrement;
     gTasks[taskId].data[10] = 10;
 
-    gTasks[taskId].func = sub_8158B98;
+    gTasks[taskId].func = SoundTask_FireBlast_Step1;
 }
 
-static void sub_8158B98(u8 taskId)
+static void SoundTask_FireBlast_Step1(u8 taskId)
 {
     s16 pan = gTasks[taskId].data[2];
     s8 panIncrement = gTasks[taskId].data[4];
@@ -47,7 +52,7 @@ static void sub_8158B98(u8 taskId)
     {
         gTasks[taskId].data[10] = 5;
         gTasks[taskId].data[11] = 0;
-        gTasks[taskId].func = sub_8158C04;
+        gTasks[taskId].func = SoundTask_FireBlast_Step2;
     }
     else
     {
@@ -61,7 +66,7 @@ static void sub_8158B98(u8 taskId)
     }
 }
 
-static void sub_8158C04(u8 taskId)
+static void SoundTask_FireBlast_Step2(u8 taskId)
 {
     if (++gTasks[taskId].data[10] == 6)
     {
@@ -74,9 +79,7 @@ static void sub_8158C04(u8 taskId)
             DestroyAnimSoundTask(taskId);
     }
 }
-// task end
 
-// task start
 void SoundTask_LoopSEAdjustPanning(u8 taskId)
 {
     u16 songId = gBattleAnimArgs[0];
@@ -128,9 +131,7 @@ static void SoundTask_LoopSEAdjustPanning_Step(u8 taskId)
         gTasks[taskId].data[11] = KeepPanInRange(gTasks[taskId].data[11], oldPan);
     }
 }
-// task end
 
-// task start
 void SoundTask_PlayCryHighPitch(u8 taskId)
 {
     u16 species = 0;
@@ -174,9 +175,7 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
 
     DestroyAnimVisualTask(taskId);
 }
-// task end
 
-// task start
 void SoundTask_PlayDoubleCry(u8 taskId)
 {
     u16 species = 0;
@@ -263,7 +262,6 @@ static void SoundTask_PlayDoubleCry_Step(u8 taskId)
         }
     }
 }
-// task end
 
 void SoundTask_WaitForCry(u8 taskId)
 {
@@ -278,7 +276,6 @@ void SoundTask_WaitForCry(u8 taskId)
     }
 }
 
-// task start
 void SoundTask_PlayCryWithEcho(u8 taskId)
 {
     u16 species;
@@ -334,7 +331,6 @@ static void SoundTask_PlayCryWithEcho_Step(u8 taskId)
         break;
     }
 }
-// task end
 
 // task start
 void SoundTask_PlayCryMegaEvolution(u8 taskId)
@@ -479,4 +475,3 @@ static void SoundTask_SeVolumeChange(u8 taskId)
         m4aMPlayVolumeControl(&gMPlayInfo_SE1, 0xFFFF, gTasks[taskId].tCurrentVolume);
     }
 }
-

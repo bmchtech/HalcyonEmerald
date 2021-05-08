@@ -86,7 +86,7 @@ BirthIsland_Exterior_EventScript_Deoxys:: @ 8267FC1
 	copyvar VAR_0x8005, VAR_RESULT @ level
 	setvar VAR_0x8004, SPECIES_DEOXYS
 	setvar VAR_0x8006, ITEM_NONE
-	special CreateObedientEnemyMon
+	special CreateEventLegalEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

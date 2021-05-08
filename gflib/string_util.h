@@ -1,13 +1,13 @@
 #ifndef GUARD_STRING_UTIL_H
 #define GUARD_STRING_UTIL_H
 
-extern u8 gStringVar1[];
-extern u8 gStringVar2[];
-extern u8 gStringVar3[];
+extern u8 gStringVar1[0x100];
+extern u8 gStringVar2[0x100];
+extern u8 gStringVar3[0x100];
 extern u8 gExtraStringVar1[];
 extern u8 gExtraStringVar2[];
 extern u8 gExtraStringVar3[];
-extern u8 gStringVar4[];
+extern u8 gStringVar4[0x3E8];
 
 enum StringConvertMode
 {

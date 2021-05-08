@@ -35,7 +35,7 @@ MauvilleCity_GameCorner_EventScript_CoinsClerk:: @ 820FBB9
 	goto MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50
 
 MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50:: @ 820FBE5
-	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 0, 0
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 0, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
@@ -45,7 +45,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50:: @ 820FBE5
 
 @ Unused
 MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault500:: @ 820FC0C
-	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 1, 0
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 1, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
@@ -155,7 +155,7 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseDollPrize:: @ 820FD20
 	goto MauvilleCity_GameCorner_EventScript_ChooseDollPrize
 
 MauvilleCity_GameCorner_EventScript_ChooseDollPrize:: @ 820FD2B
-	multichoice 12, 0, MULTI_GAME_CORNER_DOLLS, 0
+	multichoice 12, 0, MULTI_GAME_CORNER_DOLLS, FALSE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_TreeckoDoll
 	case 1, MauvilleCity_GameCorner_EventScript_TorchicDoll
