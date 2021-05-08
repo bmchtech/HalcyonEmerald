@@ -2070,40 +2070,6 @@ const u8 gText_GrassType[] = _("Grass-type");
 const u8 gText_FireType[] = _("Fire-type");
 const u8 gText_WaterType[] = _("Water-type");
 
-// IVs for the Hyper Training NPC. Lazy implementation, but oh well
-const u8 gText_31[] = _("31");
-const u8 gText_30[] = _("30");
-const u8 gText_29[] = _("29");
-const u8 gText_28[] = _("28");
-const u8 gText_27[] = _("27");
-const u8 gText_26[] = _("26");
-const u8 gText_25[] = _("25");
-const u8 gText_24[] = _("24");
-const u8 gText_23[] = _("23");
-const u8 gText_22[] = _("22");
-const u8 gText_21[] = _("21");
-const u8 gText_20[] = _("20");
-const u8 gText_19[] = _("19");
-const u8 gText_18[] = _("18");
-const u8 gText_17[] = _("17");
-const u8 gText_16[] = _("16");
-const u8 gText_15[] = _("15");
-const u8 gText_14[] = _("14");
-const u8 gText_13[] = _("13");
-const u8 gText_12[] = _("12");
-const u8 gText_11[] = _("11");
-const u8 gText_10[] = _("10");
-const u8 gText_9[] = _("9");
-const u8 gText_8[] = _("8");
-const u8 gText_7[] = _("7");
-const u8 gText_6[] = _("6");
-const u8 gText_5[] = _("5");
-const u8 gText_4[] = _("4");
-const u8 gText_3[] = _("3");
-const u8 gText_2[] = _("2");
-const u8 gText_1[] = _("1");
-const u8 gText_0[] = _("0");
-
 // Region names
 const u8 gText_Kanto[] =    _("Kanto");
 const u8 gText_Johto[] =    _("Johto");
@@ -2133,6 +2099,18 @@ const u8 gText_WaterPledge[] = _("Water Pledge");
 const u8 gText_FrenzyPlant[] = _("Frenzy Plant");
 const u8 gText_BlastBurn[] = _("Blast Burn");
 const u8 gText_HydroCannon[] = _("Hydro Cannon");
+
+// Fufrou forms
+const u8 gText_HeartTrim[] = _("Heart Trim");
+const u8 gText_StarTrim[] = _("Star Trim");
+const u8 gText_DiamondTrim[] = _("Diamond Trim");
+const u8 gText_DebutanteTrim[] = _("Debutante Trim");
+const u8 gText_MatronTrim[] = _("Matron Trim");
+const u8 gText_DandyTrim[] = _("Dandy Trim"); 
+const u8 gText_LaReineTrim[] = _("La Reine Trim");
+const u8 gText_KabukiTrim[] = _("Kabuki Trim");
+const u8 gText_PharaohTrim[] = _("Pharaoh Trim");
+const u8 gText_BackToNatural[] = _("Back to natural");
 
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_EV[]          = _("EV: ");

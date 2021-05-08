@@ -3441,6 +3441,18 @@ extern const u8 gText_WaterPledge[];
 extern const u8 gText_FrenzyPlant[];
 extern const u8 gText_BlastBurn[];
 extern const u8 gText_HydroCannon[];
+
+extern const u8 gText_HeartTrim[];
+extern const u8 gText_StarTrim[];
+extern const u8 gText_DiamondTrim[];
+extern const u8 gText_DebutanteTrim[];
+extern const u8 gText_MatronTrim[];
+extern const u8 gText_DandyTrim[]; 
+extern const u8 gText_LaReineTrim[];
+extern const u8 gText_KabukiTrim[];
+extern const u8 gText_PharaohTrim[];
+extern const u8 gText_BackToNatural[];
+
 // Battle Factory Screen
 extern const u8 gText_RentalPkmn2[];
 extern const u8 gText_SelectFirstPkmn[];

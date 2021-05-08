@@ -1620,6 +1620,15 @@
 	.2byte \quantity
 	.endm
 
+	.macro checkPartyHasSpecies species:req
+	.byte 0xe3
+	.2byte \species
+	.endm
+
+	.macro isChosenMonSpecies species:req
+	.byte 0xe4
+	.2byte \species
+	.endm
 
 @ Supplementary
 
@@ -1855,4 +1864,3 @@
 	.macro totemboost_evas2 battler:req
 	settotemboost \battler, 0, 0, 0, 0, 0, 0, 2
 	.endm
-

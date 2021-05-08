@@ -32,7 +32,7 @@ Rotom_Appliances_WhichRotom::
 	special IsSelectedMonEgg
 	compare VAR_RESULT, TRUE
     goto_if_eq Rotom_Appliances_SelectedMonIsEgg
-    specialvar VAR_RESULT, IsSelectedMonRotom
+    isChosenMonSpecies SPECIES_ROTOM
     compare VAR_RESULT, FALSE
     goto_if_eq Rotom_Appliances_SelectedMonIsntRotom
 	compare VAR_0x8004, PARTY_SIZE
