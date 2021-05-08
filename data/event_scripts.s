@@ -1097,3 +1097,4 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/maps/MeteorFalls_JirachisRoom/scripts.inc"
 	.include "data/maps/VerdanturfMeadow/scripts.inc"
 	.include "data/scripts/eevee.inc"
+	.include "data/scripts/furfrou.inc"

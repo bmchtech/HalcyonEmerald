@@ -886,6 +886,21 @@ const struct MenuAction MultichoiceList_RematchBattleMode[] =
     {gText_Exit},
 };
 
+const struct MenuAction MultichoiceList_FurfrouTrims[] = 
+{
+    {gText_HeartTrim},
+    {gText_StarTrim},
+    {gText_DiamondTrim},
+    {gText_DebutanteTrim},
+    {gText_MatronTrim},
+    {gText_DandyTrim}, 
+    {gText_LaReineTrim},
+    {gText_KabukiTrim},
+    {gText_PharaohTrim},
+    {gText_BackToNatural},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},

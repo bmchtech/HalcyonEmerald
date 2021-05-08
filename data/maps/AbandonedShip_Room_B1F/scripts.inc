@@ -3,14 +3,10 @@ AbandonedShip_Room_B1F_MapScripts:: @ 82380A5
 
 AbandonedShip_Room_B1F_EventScript_Spiritomb::
 	lock
-	setvar VAR_0x8004, SPECIES_LICKITUNG
-	setvar VAR_0x8007, 1
-	specialvar VAR_RESULT, CheckSpeciesInParty
+	checkPartyHasSpecies SPECIES_LICKITUNG
 	compare VAR_RESULT, TRUE
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_CheckOddKeystone
-	setvar VAR_0x8004, SPECIES_WOBBUFFET
-	setvar VAR_0x8007, 1
-	specialvar VAR_RESULT, CheckSpeciesInParty
+	checkPartyHasSpecies SPECIES_WOBBUFFET
 	compare VAR_RESULT, TRUE
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_CheckOddKeystone
 AbandonedShip_Room_B1F_EventScript_ItsEmpty::

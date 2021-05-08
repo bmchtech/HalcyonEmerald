@@ -2491,6 +2491,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_FURFROU_TRIMS:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 11;
+            task->tLeft = 22;
+            task->tTop = 1;
+            task->tWidth = 12;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         default:
             gSpecialVar_Result = MULTI_B_PRESSED;
             DestroyTask(taskId);
@@ -2867,6 +2877,20 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Kalos,
         gText_Alola,
         // gText_Galar,
+    },
+    [SCROLL_MULTI_FURFROU_TRIMS] = 
+    {
+        gText_HeartTrim,
+        gText_StarTrim,
+        gText_DiamondTrim,
+        gText_DebutanteTrim,
+        gText_MatronTrim,
+        gText_DandyTrim, 
+        gText_LaReineTrim,
+        gText_KabukiTrim,
+        gText_PharaohTrim,
+        gText_BackToNatural,
+        gText_Exit
     }
 };
 
@@ -5503,19 +5527,6 @@ void ChangeMonSpecies (void)
 void TeachRotomMove (void)
 {
     GiveMoveToMon(&gPlayerParty[gSpecialVar_0x8004], gSpecialVar_0x8006);
-}
-
-// Checks if the species stored in gSpecialVar_0x8004 is a Rotom form
-bool8 IsSelectedMonRotom (void)
-{
-    u32 species;
-
-    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES2, NULL);
-    if (gSpeciesToNationalPokedexNum[species - 1] == SPECIES_ROTOM)
-    {
-        return TRUE;
-    }
-    return FALSE;
 }
 
 // Checks if Rotom knows its special move
