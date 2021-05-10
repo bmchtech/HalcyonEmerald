@@ -975,7 +975,7 @@ static void Task_BuyMenu(u8 taskId)
                         else
                         {
                             tItemCount = 1;
-                            ConvertIntToDecimalStringN(gStringVar2, gShopDataPtr->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                            ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                             StringCopy(gStringVar4, gMoveNames[ItemIdToBattleMoveId(itemId)]);
                             StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                             BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);

@@ -166,7 +166,7 @@
 #define MON_DATA_ARTIST_RIBBON     70
 #define MON_DATA_EFFORT_RIBBON     71
 #define MON_DATA_FATEFUL_ENCOUNTER 72 // was 79
-#define MON_DATA_OBEDIENCE         75
+#define MON_DATA_EVENT_LEGAL       75
 #define MON_DATA_KNOWN_MOVES       76
 #define MON_DATA_RIBBON_COUNT      77
 #define MON_DATA_RIBBONS           78

@@ -2398,7 +2398,7 @@ u8 GetRibbonCount(struct Pokemon *pokemon)
     return nRibbons;
 }
 
-u8 TV_MonDataIdxToRibbon(u8 monDataIdx)
+u8 MonDataIdxToRibbon(u8 monDataIdx)
 {
     if (monDataIdx == MON_DATA_CHAMPION_RIBBON) return CHAMPION_RIBBON;
     if (monDataIdx == MON_DATA_COOL_RIBBON)     return COOL_RIBBON_NORMAL;

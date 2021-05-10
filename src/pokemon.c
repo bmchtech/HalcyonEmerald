@@ -5562,10 +5562,10 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         dataUnsigned = itemEffect[itemEffectParam++];
                         switch (dataUnsigned)
                         {
-                        case ITEM6_HEAL_HP_FULL:
+                        case ITEM6_HEAL_FULL:
                             dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) - GetMonData(mon, MON_DATA_HP, NULL);
                             break;
-                        case ITEM6_HEAL_HP_HALF:
+                        case ITEM6_HEAL_HALF:
                             dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 2;
                             if (dataUnsigned == 0)
                                 dataUnsigned = 1;
@@ -5575,7 +5575,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (dataUnsigned == 0)
                             dataUnsigned = 1;
                             break;
-                        case ITEM6_HEAL_HP_LVL_UP:
+                        case ITEM6_HEAL_LVL_UP:
                             dataUnsigned = gBattleScripting.levelUpHP;
                             break;
                         }

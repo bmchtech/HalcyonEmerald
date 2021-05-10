@@ -562,7 +562,7 @@ static void CreateShedinja(u16 preEvoSpecies, struct Pokemon* mon)
 
         for (i = MON_DATA_COOL_RIBBON; i < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; i++)
             SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
-        for (i = MON_DATA_CHAMPION_RIBBON; i <= MON_DATA_UNUSED_RIBBONS; i++)
+        for (i = MON_DATA_CHAMPION_RIBBON; i <= MON_DATA_EFFORT_RIBBON; i++)
             SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
 
         SetMonData(&gPlayerParty[gPlayerPartyCount], MON_DATA_STATUS, &data);
@@ -776,8 +776,8 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0))
         {
-            var = MonTryLearningNewEvolutionMove(mon, gTasks[taskID].tLearnsFirstMove);
-            if (var != MOVE_NONE && !gTasks[taskID].tEvoWasStopped)
+            var = MonTryLearningNewEvolutionMove(mon, gTasks[taskId].tLearnsFirstMove);
+            if (var != MOVE_NONE && !gTasks[taskId].tEvoWasStopped)
             {
                 u8 text[20];
 
@@ -1197,8 +1197,8 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_TRY_LEARN_MOVE:
         if (!IsTextPrinterActive(0) && IsFanfareTaskInactive() == TRUE)
         {
-            var = MonTryLearningNewEvolutionMove(mon, gTasks[taskID].tLearnsFirstMove);
-            if (var != MOVE_NONE && !gTasks[taskID].tEvoWasStopped)
+            var = MonTryLearningNewEvolutionMove(mon, gTasks[taskId].tLearnsFirstMove);
+            if (var != MOVE_NONE && !gTasks[taskId].tEvoWasStopped)
             {
                 u8 text[20];
 

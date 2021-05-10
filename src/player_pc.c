@@ -603,19 +603,12 @@ static u8 GetMailboxMailCount(void)
 static void Mailbox_UpdateMailList(void)
 {
     struct MailStruct mailBuffer;
-    u8 i, j;
 
-    for (i = PARTY_SIZE; i < MAIL_COUNT - 1; i++)
+    if (gSaveBlock1Ptr->mail[0].itemId == 0)
     {
-        for (j = i + 1; j < MAIL_COUNT; j++)
-        {
-            if (gSaveBlock1Ptr->mail[i].itemId == 0)
-            {
-                mailBuffer = gSaveBlock1Ptr->mail[i];
-                gSaveBlock1Ptr->mail[i] = gSaveBlock1Ptr->mail[j];
-                gSaveBlock1Ptr->mail[j] = mailBuffer;
-            }
-        }
+        mailBuffer = gSaveBlock1Ptr->mail[0];
+        gSaveBlock1Ptr->mail[0] = gSaveBlock1Ptr->mail[0];
+        gSaveBlock1Ptr->mail[0] = mailBuffer;
     }
 }
 

@@ -64,7 +64,7 @@ struct PokemonSubstruct3
  /* 0x0B */ u32 artistRibbon:1;
  /* 0x0B */ u32 effortRibbon:1;
  /* 0x0B */ u32 fatefulEncounter:4;
- /* 0x0B */ u32 obedient:1;
+ /* 0x0B */ u32 eventLegal:1;
 };
 
 union PokemonSubstruct
