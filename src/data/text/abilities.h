@@ -1,5 +1,5 @@
 static const u8 sNoneDescription[] = _("No special ability.");
-static const u8 sStenchDescription[] = _("Helps repel wild Pokémon.");
+static const u8 sStenchDescription[] = _("May cause a foe to flinch.");
 static const u8 sDrizzleDescription[] = _("Summons rain in battle.");
 static const u8 sSpeedBoostDescription[] = _("Gradually boosts Speed.");
 static const u8 sBattleArmorDescription[] = _("Blocks critical hits.");
@@ -517,7 +517,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_STEELY_SPIRIT] = _("SteelySpirit"),
     [ABILITY_PERISH_BODY] = _("Perish Body"),
     [ABILITY_WANDERING_SPIRIT] = _("WandrngSprit"),
-    [ABILITY_GORILLA_TACTICS] = _("GorillaTacti"),
+    [ABILITY_GORILLA_TACTICS] = _("GorillaTactx"),
     [ABILITY_NEUTRALIZING_GAS] = _("NeutrlzngGas"),
     [ABILITY_PASTEL_VEIL] = _("Pastel Veil"),
     [ABILITY_HUNGER_SWITCH] = _("HungerSwitch"),
