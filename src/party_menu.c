@@ -4462,7 +4462,7 @@ void Task_AbilityCapsule(u8 taskId)
         }
         else // if (item == ITEM_ABILITY_PATCH)
         {
-            if (gBaseStats[tSpecies].abilityHidden == 0)
+            if (gBaseStats[tSpecies].abilities[2] == 0)
             {
                 gPartyMenuUseExitCallback = FALSE;
                 PlaySE(SE_SELECT);
