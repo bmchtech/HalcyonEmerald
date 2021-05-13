@@ -6744,7 +6744,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson2[] = { // singles
     {
     .lvl = 0,
     .species = SPECIES_ELECTRODE,
-    .ability = 1, // Electric Surge
+    .ability = 2, // Electric Surge
     .heldItem = ITEM_TERRAIN_EXTENDER,
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_VOLT_SWITCH, MOVE_OVERHEAT, MOVE_ELECTRO_BALL, MOVE_FOUL_PLAY
@@ -6792,7 +6792,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson3[] = { // Doubles
     {
     .lvl = 0,
     .species = SPECIES_ELECTRODE,
-    .ability = 1, // Electric Surge
+    .ability = 2, // Electric Surge
     .heldItem = ITEM_TERRAIN_EXTENDER,
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_VOLT_SWITCH, MOVE_OVERHEAT, MOVE_ELECTRO_BALL, MOVE_FOUL_PLAY
