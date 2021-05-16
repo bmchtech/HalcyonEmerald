@@ -645,6 +645,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute119Torchic[] = 
     .lvl = 2,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_HP_ATK_MIXED,
     .moves = MOVE_HYDRO_CANNON, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE
     }
@@ -787,6 +788,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanLilycoveTorchic[] = 
     .lvl = 3,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE
     }
@@ -1156,6 +1158,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute119Torchic[] = {
     .lvl = 2,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_HP_ATK_MIXED,
     .moves = MOVE_HYDRO_CANNON, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE
     }
@@ -1300,6 +1303,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayLilycoveTorchic[] = {
     .lvl = 3,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE
     }
@@ -14678,7 +14682,7 @@ static const struct TrainerMonItemCustomMoves sParty_Grunt40[] = {
     {
     .lvl = -1,
     .species = SPECIES_UMBREON,
-    .ability = 2, // Magic Guard
+    .ability = 1, // Magic Guard
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_PAYBACK, MOVE_CURSE, MOVE_MOONLIGHT, MOVE_TOXIC
     }
@@ -18555,7 +18559,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan1[] = {
     .lvl = 2,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
-    .ability = 1, // Swift Swim
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_SUPERPOWER
     },
@@ -18606,7 +18610,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan2[] = { // singles
     .lvl = 0,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
-    .ability = 1, // Swift Swim
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_SUPERPOWER
     },
@@ -18656,7 +18660,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan3[] = { // Doubles
     .lvl = 0,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
-    .ability = 1, // Swift Swim
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_LIQUIDATION, MOVE_HIGH_HORSEPOWER, MOVE_ICE_PUNCH, MOVE_SUPERPOWER
     },
@@ -18704,7 +18708,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan4[] = { // singles lege
     .lvl = 0,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
-    .ability = 1, // Swift Swim
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_SUPERPOWER
     },
@@ -18753,7 +18757,7 @@ static const struct TrainerMonItemCustomMoves sParty_Juan5[] = { // doubles lege
     .lvl = 0,
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_SWAMPERTITE,
-    .ability = 1, // Swift Swim
+    .ability = 2, // Swift Swim
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_LIQUIDATION, MOVE_HIGH_HORSEPOWER, MOVE_ICE_PUNCH, MOVE_SUPERPOWER
     },
@@ -19325,7 +19329,7 @@ static const struct TrainerMonItemCustomMoves sParty_Julie[] = {
     .lvl = 0,
     .species = SPECIES_FLYGON,
     .heldItem = ITEM_WHITE_HERB,
-    .ability = 0, // Tinted Lens
+    .ability = 2, // Tinted Lens
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_EARTH_POWER, MOVE_DRACO_METEOR, MOVE_FIRE_BLAST, MOVE_QUIVER_DANCE
     }
@@ -20294,7 +20298,7 @@ static const struct TrainerMonItemCustomMoves sParty_GretaSlateport[] = {
     .lvl = 1,
     .species = SPECIES_UMBREON,
     .heldItem = ITEM_LEFTOVERS,
-    .ability = 0, // Magic Guard
+    .ability = 1, // Magic Guard
     .spread = SPREAD_31_IV_HP_SPDEF_CAREFUL,
     .moves = MOVE_PAYBACK, MOVE_CURSE, MOVE_MOONLIGHT, MOVE_TOXIC
     },
