@@ -20666,7 +20666,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia2[] = { // Doubles
     .heldItem = ITEM_LIFE_ORB,
     .ability = 2, // Slush Rush
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_THUNDERBOLT, MOVE_WATER_PULSE
+    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_FREEZE_DRY, MOVE_WATER_PULSE
     },
     {
     .lvl = 2,
@@ -20716,7 +20716,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia3[] = { // legendarie
     .heldItem = ITEM_LIFE_ORB,
     .ability = 2, // Slush Rush
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_THUNDERBOLT, MOVE_WATER_PULSE
+    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_FREEZE_DRY, MOVE_WATER_PULSE
     },
     {
     .lvl = 2,
@@ -20766,7 +20766,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia4[] = {
     .heldItem = ITEM_LIFE_ORB,
     .ability = 2, // Slush Rush
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_THUNDERBOLT, MOVE_WATER_PULSE
+    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_FREEZE_DRY, MOVE_WATER_PULSE
     },
     {
     .lvl = 2,
