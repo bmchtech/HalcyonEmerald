@@ -96,7 +96,7 @@ enum LanguageId
 #define BERRY_TREES_COUNT   128
 #define FLAGS_COUNT         288
 #define VARS_COUNT          256
-#define MAIL_COUNT          16
+#define MAIL_COUNT          1
 #define SECRET_BASES_COUNT  4
 #define TV_SHOWS_COUNT      25
 #define POKE_NEWS_COUNT     16

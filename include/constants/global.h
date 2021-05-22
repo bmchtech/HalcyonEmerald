@@ -55,6 +55,8 @@
 #define MAX_REMATCH_ENTRIES 78 // only REMATCH_TABLE_ENTRIES (78) are used
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
+#define GIFT_RIBBONS_COUNT 11
+#define SAVED_TRENDS_COUNT 5
 
 #define PYRAMID_BAG_ITEMS_COUNT 10
 #define HALL_FACILITIES_COUNT 9 // 7 facilities for single mode + tower double mode + tower multi mode.
@@ -73,7 +75,7 @@
 
 // party sizes
 #define PARTY_SIZE 6
-#define MULTI_PARTY_SIZE PARTY_SIZE / 2
+#define MULTI_PARTY_SIZE (PARTY_SIZE / 2)
 #define FRONTIER_PARTY_SIZE         3
 #define FRONTIER_DOUBLES_PARTY_SIZE 4
 #define FRONTIER_MULTI_PARTY_SIZE   2
@@ -87,6 +89,7 @@
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
 #define MOVE_NAME_LENGTH 12
+#define NUM_QUESTIONNAIRE_WORDS 4
 
 #define MALE 0
 #define FEMALE 1

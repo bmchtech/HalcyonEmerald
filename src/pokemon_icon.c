@@ -8,6 +8,8 @@
 
 #define POKE_ICON_BASE_PAL_TAG 56000
 
+#define INVALID_ICON_SPECIES SPECIES_NONE // Oddly specific, used when an icon should be a ?. Any of the 'old unown' would work
+
 struct MonIconSpriteTemplate
 {
     const struct OamData *oam;
@@ -2561,7 +2563,7 @@ u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u
     return spriteId;
 }
 
-u8 sub_80D2D78(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority)
+u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority)
 {
     u8 spriteId;
     struct MonIconSpriteTemplate iconTemplate =
@@ -2593,7 +2595,7 @@ u16 GetIconSpecies(u16 species, u32 personality)
     else
     {
         if (species > NUM_SPECIES)
-            result = 260;
+            result = INVALID_ICON_SPECIES;
         else
             result = species;
     }
@@ -2609,7 +2611,7 @@ u16 GetUnownLetterByPersonality(u32 personality)
         return GET_UNOWN_LETTER(personality);
 }
 
-u16 sub_80D2E84(u16 species)
+u16 GetIconSpeciesNoPersonality(u16 species)
 {
     u16 value;
 
@@ -2621,7 +2623,7 @@ u16 sub_80D2E84(u16 species)
     else
     {
         if (species > NUM_SPECIES)
-            species = 0;
+            species = INVALID_ICON_SPECIES;
 
         return GetIconSpecies(species, 0);
     }
@@ -2649,7 +2651,7 @@ void SafeLoadMonIconPalette(u16 species)
 {
     u8 palIndex;
     if (species > NUM_SPECIES)
-        species = 260;
+        species = INVALID_ICON_SPECIES;
     palIndex = gMonIconPaletteIndices[species];
     if (IndexOfSpritePaletteTag(gMonIconPaletteTable[palIndex].tag) == 0xFF)
         LoadSpritePalette(&gMonIconPaletteTable[palIndex]);
@@ -2665,7 +2667,7 @@ void LoadMonIconPalette(u16 species)
 void FreeMonIconPalettes(void)
 {
     u8 i;
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
         FreeSpritePaletteByTag(gMonIconPaletteTable[i].tag);
 }
 
@@ -2674,7 +2676,7 @@ void SafeFreeMonIconPalette(u16 species)
 {
     u8 palIndex;
     if (species > NUM_SPECIES)
-        species = 260;
+        species = INVALID_ICON_SPECIES;
     palIndex = gMonIconPaletteIndices[species];
     FreeSpritePaletteByTag(gMonIconPaletteTable[palIndex].tag);
 }
@@ -2721,7 +2723,7 @@ void sub_80D304C(u16 offset)
 u8 GetValidMonIconPalIndex(u16 species)
 {
     if (species > NUM_SPECIES)
-        species = 260;
+        species = INVALID_ICON_SPECIES;
     return gMonIconPaletteIndices[species];
 }
 
@@ -2733,7 +2735,7 @@ u8 GetMonIconPaletteIndexFromSpecies(u16 species)
 const u16* GetValidMonIconPalettePtr(u16 species)
 {
     if (species > NUM_SPECIES)
-        species = 260;
+        species = INVALID_ICON_SPECIES;
     return gMonIconPaletteTable[gMonIconPaletteIndices[species]].data;
 }
 

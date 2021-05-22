@@ -75,7 +75,7 @@ struct PokemonSubstruct3
  /* 0x0B */ u32 artistRibbon:1;
  /* 0x0B */ u32 effortRibbon:1;
  /* 0x0B */ u32 fatefulEncounter:4;
- /* 0x0B */ u32 obedient:1;
+ /* 0x0B */ u32 eventLegal:1;
 }; /* size = 12 */
 
 union PokemonSubstruct
@@ -202,12 +202,11 @@ struct BaseStats
  /* 0x13 */ u8 growthRate;
  /* 0x14 */ u8 eggGroup1;
  /* 0x15 */ u8 eggGroup2;
- /* 0x16 */ u16 abilities[2];
- /* 0x18 */ u16 abilityHidden;
+ /* 0x16 */ u16 abilities[NUM_ABILITY_SLOTS];
  /* 0x19 */ u8 safariZoneFleeRate;
  /* 0x1A */ u8 bodyColor : 7;
             u8 noFlip : 1;
- /* 0x1B */ u8 flags;
+            u8 flags;
 };
 
 #include "constants/battle_config.h"
@@ -281,7 +280,7 @@ extern const u8 gPPUpSetMask[];
 extern const u8 gPPUpAddMask[];
 extern const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2];
 extern const u16 gLinkPlayerFacilityClasses[];
-extern const struct SpriteTemplate gUnknown_08329D98[];
+extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const s8 gNatureStatTable[][5];
 extern const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES];
 
@@ -302,11 +301,11 @@ void CreateBattleTowerMon2(struct Pokemon *mon, struct BattleTowerPokemon *src, 
 void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 monId);
 void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u8 evSpread, u32 otId);
 void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerPokemon *dest);
-void CreateObedientMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
-bool8 sub_80688F8(u8 caseId, u8 battlerId);
+void CreateEventLegalMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
+bool8 ShouldIgnoreDeoxysForm(u8 caseId, u8 battlerId);
 u16 GetUnionRoomTrainerPic(void);
 u16 GetUnionRoomTrainerClass(void);
-void CreateObedientEnemyMon(void);
+void CreateEventLegalEnemyMon(void);
 void CalculateMonStats(struct Pokemon *mon);
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest);
 u8 GetLevelFromMonExp(struct Pokemon *mon);
