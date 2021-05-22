@@ -6017,7 +6017,7 @@ static const struct TrainerMonItemCustomMoves sParty_Irene[] = {
     {
     .lvl = -2,
     .species = SPECIES_TREVENANT,
-    .ability = 2, // Harvest
+    .ability = 1, // Harvest
     .heldItem = ITEM_SITRUS_BERRY,
     .spread = SPREAD_15_IV_0_EV,
     .moves = MOVE_HORN_LEECH, MOVE_SHADOW_CLAW, MOVE_WILL_O_WISP, MOVE_FORESTS_CURSE
@@ -19636,7 +19636,7 @@ static const struct TrainerMonItemCustomMoves sParty_Edgar[] = {
     .lvl = -1,
     .species = SPECIES_TREVENANT,
     .heldItem = ITEM_TERRAIN_EXTENDER,
-    .ability = 1, // Grassy Surge
+    .ability = 2, // Grassy Surge
     .spread = SPREAD_31_IV_HP_DEF_IMPISH,
     .moves = MOVE_HORN_LEECH, MOVE_WILL_O_WISP, MOVE_SHADOW_CLAW, MOVE_LEECH_SEED
     },
