@@ -18420,7 +18420,7 @@ static const struct TrainerMonItemCustomMoves sParty_Crissy[] = {
     .lvl = -1,
     .species = SPECIES_GOLISOPOD,
     .heldItem = ITEM_LEFTOVERS,
-    .ability = 1, // Shell Armor
+    .ability = 2, // Shell Armor
     .spread = SPREAD_31_IV_HP_SPDEF_CAREFUL,
     .moves = MOVE_LIQUIDATION, MOVE_LEECH_LIFE, MOVE_DRILL_RUN, MOVE_BULK_UP
     },
