@@ -4665,6 +4665,7 @@ static const struct TrainerMonItemCustomMoves sParty_Everett[] = { // with Marie
     {
     .lvl = -3,
     .species = SPECIES_BEHEEYEM,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_SKILL_SWAP, MOVE_PSYCHIC, MOVE_PROTECT, MOVE_RECOVER
     }
@@ -8511,6 +8512,7 @@ static const struct TrainerMonItemCustomMoves sParty_Alix[] = {
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_60_EV,
     .moves = MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_MOONLIGHT, MOVE_YAWN
     },
@@ -12833,7 +12835,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona3[] = { // Doubles
     {
     .lvl = 0,
     .species = SPECIES_ARCHEOPS,
-    .ability = 1, // Klutz
+    .ability = 2, // Klutz
     .spread = SPREAD_31_IV_ATK_SPEED_NAIVE,
     .moves = MOVE_ROCK_SLIDE, MOVE_ACROBATICS, MOVE_HEAT_WAVE, MOVE_CRUNCH
     },
@@ -13758,6 +13760,7 @@ static const struct TrainerMonItemCustomMoves sParty_William[] = { // with Gabri
     {
     .lvl = -3,
     .species = SPECIES_BEHEEYEM,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_TRICK_ROOM, MOVE_NASTY_PLOT
     },
@@ -14350,6 +14353,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jacki1[] = { // with Fredri
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_DREAM_EATER, MOVE_YAWN, MOVE_MOONBLAST, MOVE_MOONLIGHT
     },
@@ -14371,6 +14375,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jacki2[] = {
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_DREAM_EATER, MOVE_YAWN, MOVE_MOONBLAST, MOVE_MOONLIGHT
     },
@@ -14398,6 +14403,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jacki3[] = {
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_DREAM_EATER, MOVE_YAWN, MOVE_MOONBLAST, MOVE_MOONLIGHT
     },
@@ -14425,6 +14431,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jacki4[] = {
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .spread = SPREAD_31_IV_HP_DEF_BOLD,
     .moves = MOVE_DREAM_EATER, MOVE_YAWN, MOVE_MOONBLAST, MOVE_CALM_MIND
     },
@@ -17117,6 +17124,7 @@ static const struct TrainerMonItemCustomMoves sParty_Warren[] = { // Ace
     {
     .lvl = -1,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .heldItem = ITEM_LEFTOVERS,
     .spread = SPREAD_31_IV_HP_SPATK_QUIET,
     .moves = MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_YAWN, MOVE_TRICK_ROOM
@@ -17584,6 +17592,7 @@ static const struct TrainerMonItemCustomMoves sParty_Maura[] = { // with Preston
     {
     .lvl = -1,
     .species = SPECIES_BEHEEYEM,
+    .ability = 2, // Psychic Surge
     .heldItem = ITEM_PSYCHIC_SEED,
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_DARK_PULSE, MOVE_NASTY_PLOT
@@ -17692,6 +17701,7 @@ static const struct TrainerMonItemCustomMoves sParty_Nicholas[] = { // with Kath
     {
     .lvl = -2,
     .species = SPECIES_MUSHARNA,
+    .ability = 2, // Psychic Surge
     .heldItem = ITEM_PSYCHIC_SEED,
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
     .moves = MOVE_FUTURE_SIGHT, MOVE_HYPNOSIS, MOVE_REFLECT, MOVE_LIGHT_SCREEN
