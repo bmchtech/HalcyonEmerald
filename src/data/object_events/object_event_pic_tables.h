@@ -2252,3 +2252,15 @@ const struct SpriteFrameImage gObjectEventPicTable_Carbink[] = {
 const struct SpriteFrameImage gObjectEventPicTable_Diancie[] = {
     obj_frame_tiles(gObjectEventPic_Diancie),
 };
+
+const struct SpriteFrameImage gObjectEventPicTable_Chansey[] = {
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 3),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 4),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 5),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 6),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 7),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 8),
+};
