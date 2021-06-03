@@ -41,7 +41,7 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_UNUSED_0x020                   0x20  // Unused Flag
+#define FLAG_HIDE_ROUTE111_CHANSEY          0x20
 #define FLAG_UNUSED_0x021                   0x21  // Unused Flag
 #define PETALBURG_WOODS_2_SUPER_POTION      0x22
 #define PETALBURG_WOODS_2_HEAL_BALL         0x23
@@ -879,7 +879,7 @@
 #define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN                      0x348
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN               0x349
 #define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                         0x34A
-#define FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY                      0x34B
+#define FLAG_HIDE_ROUTE_111_NURSE                                   0x34B
 #define FLAG_HIDE_RUSTBORO_CITY_SCIENTIST                           0x34C
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT                  0x34D
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE                      0x34E
