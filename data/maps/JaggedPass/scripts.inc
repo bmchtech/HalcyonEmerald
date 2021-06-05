@@ -1,4 +1,5 @@
 .set LOCALID_HIDEOUT_GUARD, 5
+.set LOCALID_CHANSEY, 8
 
 JaggedPass_MapScripts:: @ 8230656
 	map_script MAP_SCRIPT_ON_RESUME, JaggedPass_OnResume
@@ -97,6 +98,84 @@ JaggedPass_EventScript_GuardDefeated:: @ 8230766
 	waitmovement 0
 	releaseall
 	end
+
+JaggedPass_EventScript_Chansey::
+	lockall
+	applymovement LOCALID_CHANSEY, Common_Movement_FacePlayer
+	waitmovement 0
+	getplayerxy VAR_0x8004, VAR_0x8005
+	compare VAR_0x8004, 11
+	goto_if_eq JaggedPass_EventScript_ChanseyShove
+	applymovement LOCALID_CHANSEY, JaggedPass_Movement_ChanseyJumpRight
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_CHANSEY, 0
+	delay 40
+	waitmoncry
+	applymovement LOCALID_CHANSEY, JaggedPass_Movement_ChanseyEscape
+	waitmovement 0
+	removeObject LOCALID_CHANSEY
+	setvar VAR_CHANSEY_NURSE_STATE, 3
+	releaseall
+	end
+
+JaggedPass_EventScript_ChanseyShove::
+	applymovement LOCALID_CHANSEY, JaggedPass_Movement_ChanseyJumpLeft
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_CHANSEY, 0
+	delay 40
+	waitmoncry
+	applymovement LOCALID_CHANSEY, JaggedPass_Movement_ChanseyShove
+	applymovement OBJ_EVENT_ID_PLAYER, JaggedPass_Movement_PlayerShove
+	waitmovement 0
+	applymovement LOCALID_CHANSEY, JaggedPass_Movement_ChanseyEscape
+	waitmovement 0
+	removeObject LOCALID_CHANSEY
+	setvar VAR_CHANSEY_NURSE_STATE, 3
+	releaseall
+	end
+
+JaggedPass_Movement_ChanseyJumpRight:
+	jump_in_place_right
+	delay_4
+	jump_in_place_right
+	step_end
+
+JaggedPass_Movement_ChanseyJumpLeft:
+	jump_in_place_left
+	delay_4
+	jump_in_place_left
+	step_end
+
+JaggedPass_Movement_ChanseyEscape:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	jump_left
+	walk_up
+	delay_4
+	step_end
+
+JaggedPass_Movement_ChanseyShove:
+	walk_left
+	jump_in_place_down
+	walk_left
+	walk_left
+	walk_left
+	jump_left
+	walk_up
+	delay_4
+	step_end
+
+JaggedPass_Movement_PlayerShove:
+ 	walk_in_place_fastest_up
+    lock_facing_direction
+	walk_down
+	jump_down
+	unlock_facing_direction
+	step_end
 
 JaggedPass_EventScript_Eric:: @ 8230785
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat

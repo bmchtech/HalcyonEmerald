@@ -617,8 +617,28 @@ Route111_EventScript_ChanseyBlob::
 Route111_EventScript_VialUpgradeNurse::
 	lock
 	faceplayer
+	compare VAR_CHANSEY_NURSE_STATE, 6
+	goto_if_eq Route111_EventScript_UpgradeVialHideNurse
 	msgbox Route111_Text_BringBlobBack, MSGBOX_DEFAULT
 	release
+	end
+
+Route111_EventScript_UpgradeVialHideNurse::
+	msgbox Route111_Text_ThanksPlayer, MSGBOX_AUTOCLOSE
+	setvar VAR_POKE_VIAL_MAX_CHARGES, 2
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq Route111_EventScript_NurseLeaves2
+	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves1
+	waitmovement 0
+	removeobject LOCALID_NURSE
+	releaseall
+	end
+
+Route111_EventScript_NurseLeaves2::
+	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves2
+	waitmovement 0
+	releaseall
 	end
 
 Route111_Movement_ChanseyJump:
@@ -633,6 +653,29 @@ Route111_Movement_ChanseyEscape:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+Route111_Movement_NurseLeaves1:
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route111_Movement_NurseLeaves2:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Route111_Text_BlobGetBackHere:
@@ -665,6 +708,13 @@ Route111_Text_BlobGetInAnyHealBall:
 Route111_Text_BringBlobBack:
 	.string "Blob ran off up Route 111.\p"
 	.string "Please bring it back to me!$\p"
+
+Route111_Text_ThanksPlayer:
+	.string "Thanks for catching Blob for me!\p"
+	.string "As promised, you'll get an extra dose\n"
+	.string "when you refill your Poké Vial from\l"
+	.string "now on.\p"
+	.string "See you around, {PLAYER}!$"
 
 Route111_Text_BattleOurFamily: @ 81F1475
 	.string "Hello! I take it you're a traveler.\p"
