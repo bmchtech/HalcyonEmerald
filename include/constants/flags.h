@@ -41,8 +41,8 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_UNUSED_0x020                   0x20  // Unused Flag
-#define FLAG_UNUSED_0x021                   0x21  // Unused Flag
+#define FLAG_HIDE_ROUTE111_CHANSEY          0x20
+#define FLAG_HIDE_ROUTE112_CHANSEY          0x21
 #define PETALBURG_WOODS_2_SUPER_POTION      0x22
 #define PETALBURG_WOODS_2_HEAL_BALL         0x23
 #define PETALBURG_WOODS_2_SUN_STONE         0x24
@@ -879,7 +879,7 @@
 #define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN                      0x348
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN               0x349
 #define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                         0x34A
-#define FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY                      0x34B
+#define FLAG_HIDE_ROUTE_111_NURSE                                   0x34B
 #define FLAG_HIDE_RUSTBORO_CITY_SCIENTIST                           0x34C
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT                  0x34D
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE                      0x34E
@@ -903,7 +903,7 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
-#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
+#define FLAG_HIDE_JAGGED_PASS_CHANSEY                               0x363
 #define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
 #define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0x366
@@ -1010,9 +1010,9 @@
 #define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
 #define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
 #define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
-#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_1                            0x3CE
-#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_2                            0x3CF
-#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_3                            0x3D0
+#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_1                          0x3CE
+#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_2                          0x3CF
+#define FLAG_HIDE_NEW_MAUVILLE_ELECTRODE_3                          0x3D0
 #define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1                      0x3D1
 #define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2                      0x3D2
 #define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
@@ -1291,8 +1291,8 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAGMA_STONE                   0x4E2
 #define FLAG_SANDSTREWN_RUINS_ODD_KEYSTONE                          0x4E3
 #define FLAG_RECEIVED_AUDINO                                        0x4E4
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
+#define FLAG_HIDE_ASHEN_WOODS_CHANSEY                               0x4E5
+#define FLAG_HIDE_ASHEN_WOODS_POKE_BALL                             0x4E6
 #define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag

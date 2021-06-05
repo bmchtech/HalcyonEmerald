@@ -734,13 +734,13 @@ const struct SpriteFrameImage gObjectEventPicTable_Nurse[] = {
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 8),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 9),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_ItemBall[] = {
@@ -2251,4 +2251,16 @@ const struct SpriteFrameImage gObjectEventPicTable_Carbink[] = {
 
 const struct SpriteFrameImage gObjectEventPicTable_Diancie[] = {
     obj_frame_tiles(gObjectEventPic_Diancie),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Chansey[] = {
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 3),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 4),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 5),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 6),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 7),
+    overworld_frame(gObjectEventPic_Chansey, 2, 2, 8),
 };

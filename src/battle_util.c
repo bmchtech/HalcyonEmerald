@@ -3177,10 +3177,15 @@ u8 AtkCanceller_UnableToUseMove(void)
             {
                 if (gBattleMoves[gCurrentMove].flags & FLAG_THAW_HIT)
                 {
-                    gBattleMons[gBattlerAttacker].status1 &= ~(STATUS1_FREEZE);
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_MoveUsedUnfroze;
-                    gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+                    if (gBattleMoves[gCurrentMove].effect == EFFECT_BURN_UP && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE))
+                        /* Do nothing */;
+                    else
+                    {
+                        gBattleMons[gBattlerAttacker].status1 &= ~(STATUS1_FREEZE);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_MoveUsedUnfroze;
+                        gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+                    }
                 }
                 effect = 2;
             }

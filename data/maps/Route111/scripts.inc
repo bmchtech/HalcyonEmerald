@@ -2,8 +2,9 @@
 .set LOCALID_VICTORIA, 2
 .set LOCALID_VIVI, 3
 .set LOCALID_VICKY, 4
-.set LOCALID_PLAYER_FALLING, 45
-.set LOCALID_ROCK_SMASH_MAN, 46
+.set LOCALID_PLAYER_FALLING, 44
+.set LOCALID_NURSE, 45
+.set LOCALID_CHANSEY, 46
 
 Route111_MapScripts:: @ 81F0CA7
 	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
@@ -443,17 +444,6 @@ Route111_EventScript_HikerMirageTowerVisible:: @ 81F11DA
 	release
 	end
 
-Route111_EventScript_RockSmashTipFatMan:: @ 81F11E4
-	lockall
-	applymovement LOCALID_ROCK_SMASH_MAN, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox Route111_Text_MauvilleUncleToldMeToTakeRockSmash, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_ROCK_SMASH_MAN, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	releaseall
-	end
-
 Route111_EventScript_Drew:: @ 81F1204
 	trainerbattle_single TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
 	msgbox Route111_Text_DrewPostBattle, MSGBOX_AUTOCLOSE
@@ -593,6 +583,138 @@ Route111_EventScript_Branden:: @ 81F1455
 Route111_EventScript_TrainerHillSign:: @ 81F146C
 	msgbox Route111_Text_TrainerHillSign, MSGBOX_SIGN
 	end
+
+Route111_EventScript_ChanseyBlob::
+	lockall
+	applymovement LOCALID_NURSE, Common_Movement_WalkInPlaceFastestUp
+	applymovement LOCALID_CHANSEY, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route111_Text_BlobGetBackHere, MSGBOX_DEFAULT
+	applymovement LOCALID_CHANSEY, Route111_Movement_ChanseyJump
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_CHANSEY, 0
+	delay 40
+	waitmoncry
+	applymovement LOCALID_CHANSEY, Route111_Movement_ChanseyEscape
+	waitmovement 0
+	msgbox Route111_Text_ThatsJustGreat, MSGBOX_DEFAULT
+	playse SE_PIN
+	applymovement LOCALID_NURSE, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_NURSE, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route111_Text_DidYouSeeThat, MSGBOX_DEFAULT
+	giveitem ITEM_HEAL_BALL
+	msgbox Route111_Text_BlobGetInAnyHealBall, MSGBOX_DEFAULT
+	setvar VAR_CHANSEY_NURSE_STATE, 1
+	removeobject LOCALID_CHANSEY
+	releaseall
+	end
+
+Route111_EventScript_VialUpgradeNurse::
+	lock
+	faceplayer
+	compare VAR_CHANSEY_NURSE_STATE, 6
+	goto_if_eq Route111_EventScript_UpgradeVialHideNurse
+	msgbox Route111_Text_BringBlobBack, MSGBOX_DEFAULT
+	release
+	end
+
+Route111_EventScript_UpgradeVialHideNurse::
+	msgbox Route111_Text_ThanksPlayer, MSGBOX_AUTOCLOSE
+	setvar VAR_POKE_VIAL_MAX_CHARGES, 2
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq Route111_EventScript_NurseLeaves2
+	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves1
+	waitmovement 0
+	removeobject LOCALID_NURSE
+	releaseall
+	end
+
+Route111_EventScript_NurseLeaves2::
+	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves2
+	waitmovement 0
+	releaseall
+	end
+
+Route111_Movement_ChanseyJump:
+	jump_in_place_down
+	delay_4
+	jump_in_place_down
+	step_end
+
+Route111_Movement_ChanseyEscape:
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route111_Movement_NurseLeaves1:
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route111_Movement_NurseLeaves2:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route111_Text_BlobGetBackHere:
+	.string "Blob!\n"
+	.string "Stop goofing around and get back here!\p"
+	.string "Argh, how did you even get over there?$"
+
+Route111_Text_ThatsJustGreat:
+	.string "Blob, wait! Stop!\p"
+	.string "Oh, that's just great…$"
+
+Route111_Text_DidYouSeeThat:
+	.string "Oh, a Trainer!\p"
+	.string "Did you see that? My Chansey's\n"
+	.string "escaped!\p"
+	.string "Please, you've got to help me get it\n"
+	.string "back!\p"
+	.string "I'll make it worth your while.\p"
+	.string "If you can bring Blob back to me, I'll\n"
+	.string "get all the nurses to give you an extra\l"
+	.string "dose when they refill your Poké Vial.\p"
+	.string "Sounds good, right? Good!\p"
+	.string "Here, take Blob's Poké Ball.$"
+
+Route111_Text_BlobGetInAnyHealBall:
+	.string "Blob will get in any old Heal Ball,\n"
+	.string "so don't worry if you lose that one.\p"
+	.string "Good luck!$"
+
+Route111_Text_BringBlobBack:
+	.string "Blob ran off up Route 111.\p"
+	.string "Please bring it back to me!$\p"
+
+Route111_Text_ThanksPlayer:
+	.string "Thanks for catching Blob for me!\p"
+	.string "As promised, you'll get an extra dose\n"
+	.string "when you refill your Poké Vial from\l"
+	.string "now on.\p"
+	.string "See you around, {PLAYER}!$"
 
 Route111_Text_BattleOurFamily: @ 81F1475
 	.string "Hello! I take it you're a traveler.\p"
@@ -734,14 +856,6 @@ Route111_Text_ClawFossilDisappeared: @ 81F1C74
 Route111_Text_RootFossilDisappeared: @ 81F1C9F
 	.string "The Root Fossil disappeared into\n"
 	.string "the sand…$"
-
-Route111_Text_MauvilleUncleToldMeToTakeRockSmash: @ 81F1CCA
-	.string "Oh, no!\p"
-	.string "My uncle in Mauville told me to take\n"
-	.string "Rock Smash with me if I was going to\l"
-	.string "Route 111!\p"
-	.string "My uncle? He lives across from\n"
-	.string "the bike shop in Mauville.$"
 
 Route111_Text_TrainerHillSign: @ 81F1D61
 	.string "{RIGHT_ARROW} Trainer Hill Entrance\p"

@@ -1,5 +1,6 @@
 .set LOCALID_GRUNT_1, 1
 .set LOCALID_GRUNT_2, 6
+.set LOCALID_CHANSEY, 15
 
 Route112_MapScripts:: @ 81F1DA8
 	map_script MAP_SCRIPT_ON_TRANSITION, Route112_OnTransition
@@ -44,6 +45,21 @@ Route112_EventScript_MagmaGrunts:: @ 81F1DB7
 	closemessage
 	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	releaseall
+	end
+
+Route112_EventScript_ChanseyBlob::
+	lockall
+	applymovement LOCALID_CHANSEY, Route112_Movement_ChanseyJump
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_CHANSEY, 0
+	delay 40
+	waitmoncry
+	applymovement LOCALID_CHANSEY, Route112_Movement_ChanseyEscape
+	waitmovement 0
+	setvar VAR_CHANSEY_NURSE_STATE, 2
+	removeobject LOCALID_CHANSEY
 	releaseall
 	end
 
@@ -110,6 +126,20 @@ Route112_EventScript_Shayla:: @ 81F1F28
 	msgbox Route112_Text_ShaylaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route112_Movement_ChanseyJump:
+	jump_in_place_down
+	delay_4
+	jump_in_place_down
+	step_end
+
+Route112_Movement_ChanseyEscape:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
 Route112_Text_LeaderGoingToAwakenThing: @ 81F1F3F
 	.string "Hey, man, is our leader really going\n"
 	.string "to awaken that thing?$"
@@ -120,7 +150,7 @@ Route112_Text_YeahWeNeedMeteorite: @ 81F1F7A
 
 Route112_Text_OhThatsWhyCrewWentToFallarbor: @ 81F1FBA
 	.string "Oh, I get it now. That's why the rest\n"
-	.string "of the crew went out to FALLARBOR.$"
+	.string "of the crew went out to Fallarbor.$"
 
 Route112_Text_CantLetAnyonePassUntilTheyreBack: @ 81F2003
 	.string "You got it. And until they come back,\n"
@@ -129,7 +159,7 @@ Route112_Text_CantLetAnyonePassUntilTheyreBack: @ 81F2003
 Route112_Text_NotEasyToGetBackToLavaridge: @ 81F204E
 	.string "Eh, I'd like to get to Mauville, but if\n"
 	.string "I went down these ledges, it'd be no\l"
-	.string "easy matter to get back to LAVARIDGE.$"
+	.string "easy matter to get back to Lavaridge.$"
 
 Route112_Text_MtChimneyCableCarSign: @ 81F20C1
 	.string "Mt. Chimney Cable Car\n"
