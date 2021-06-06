@@ -202,6 +202,9 @@ static void Anim_ShakeGlowGreen_Slow(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Fast(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue(struct Sprite *sprite);
 static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite);
+static void Anim_ShakeGlowBlack_Slow(struct Sprite *sprite);
+static void Anim_ShakeGlowWhite_Slow(struct Sprite *sprite);
+static void Anim_ShakeGlowPurple_Slow(struct Sprite *sprite);
 
 static void WaitAnimEnd(struct Sprite *sprite);
 
@@ -778,7 +781,10 @@ static void (* const sMonAnimFunctions[])(struct Sprite *sprite) =
     [ANIM_SHAKE_GLOW_GREEN_SLOW]             = Anim_ShakeGlowGreen_Slow,
     [ANIM_SHAKE_GLOW_BLUE_FAST]              = Anim_ShakeGlowBlue_Fast,
     [ANIM_SHAKE_GLOW_BLUE]                   = Anim_ShakeGlowBlue,
-    [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow
+    [ANIM_SHAKE_GLOW_BLUE_SLOW]              = Anim_ShakeGlowBlue_Slow,
+    [ANIM_SHAKE_GLOW_BLACK_SLOW]             = Anim_ShakeGlowBlack_Slow,
+    [ANIM_SHAKE_GLOW_WHITE_SLOW]             = Anim_ShakeGlowWhite_Slow,
+    [ANIM_SHAKE_GLOW_PURPLE_SLOW]            = Anim_ShakeGlowPurple_Slow
 };
 
 // Each back anim set has 3 possible animations depending on nature
@@ -2021,7 +2027,7 @@ static void Anim_GlowYellow(struct Sprite *sprite)
 
 static void Anim_GlowPurple(struct Sprite *sprite)
 {
-    GlowColor(RGB(24, 0, 24), 12, 2);
+    GlowColor(RGB_PURPLE, 12, 2);
 }
 
 static void BackAndLunge_0(struct Sprite *sprite);
@@ -5305,7 +5311,9 @@ enum {
     SHAKEGLOW_RED,
     SHAKEGLOW_GREEN,
     SHAKEGLOW_BLUE,
-    SHAKEGLOW_BLACK
+    SHAKEGLOW_BLACK,
+    SHAKEGLOW_WHITE,
+    SHAKEGLOW_PURPLE
 };
 
 static void ShakeGlow_Blend(struct Sprite *sprite)
@@ -5315,7 +5323,9 @@ static void ShakeGlow_Blend(struct Sprite *sprite)
         [SHAKEGLOW_RED]   = RGB_RED,
         [SHAKEGLOW_GREEN] = RGB_GREEN,
         [SHAKEGLOW_BLUE]  = RGB_BLUE,
-        [SHAKEGLOW_BLACK] = RGB_BLACK
+        [SHAKEGLOW_BLACK] = RGB_BLACK,
+        [SHAKEGLOW_WHITE] = RGB_WHITE,
+        [SHAKEGLOW_PURPLE] = RGB_PURPLE
     };
 
     if (sprite->data[2] > 127)
@@ -5531,6 +5541,69 @@ static void Anim_ShakeGlowBlue_Slow(struct Sprite *sprite)
         sprite->data[4] = 1;
         sprite->data[3] = 0;
         sprite->data[1] = SHAKEGLOW_BLUE;
+    }
+
+    if (sprite->data[2] % 2 == 0)
+        ShakeGlow_Blend(sprite);
+
+    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
+        ShakeGlow_Move(sprite);
+
+    sprite->data[2]++;
+}
+
+static void Anim_ShakeGlowBlack_Slow(struct Sprite *sprite)
+{
+    if (sprite->data[2] == 0)
+    {
+        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
+        sprite->data[0] = 80;
+        sprite->data[5] = 0;
+        sprite->data[4] = 1;
+        sprite->data[3] = 0;
+        sprite->data[1] = SHAKEGLOW_BLACK;
+    }
+
+    if (sprite->data[2] % 2 == 0)
+        ShakeGlow_Blend(sprite);
+
+    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
+        ShakeGlow_Move(sprite);
+
+    sprite->data[2]++;
+}
+
+static void Anim_ShakeGlowWhite_Slow(struct Sprite *sprite)
+{
+    if (sprite->data[2] == 0)
+    {
+        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
+        sprite->data[0] = 80;
+        sprite->data[5] = 0;
+        sprite->data[4] = 1;
+        sprite->data[3] = 0;
+        sprite->data[1] = SHAKEGLOW_WHITE;
+    }
+
+    if (sprite->data[2] % 2 == 0)
+        ShakeGlow_Blend(sprite);
+
+    if (sprite->data[2] >= (128 - sprite->data[0] * sprite->data[4]) / 2)
+        ShakeGlow_Move(sprite);
+
+    sprite->data[2]++;
+}
+
+static void Anim_ShakeGlowPurple_Slow(struct Sprite *sprite)
+{
+    if (sprite->data[2] == 0)
+    {
+        sprite->data[7] = (sprite->oam.paletteNum * 16) + 256;
+        sprite->data[0] = 80;
+        sprite->data[5] = 0;
+        sprite->data[4] = 1;
+        sprite->data[3] = 0;
+        sprite->data[1] = SHAKEGLOW_PURPLE;
     }
 
     if (sprite->data[2] % 2 == 0)

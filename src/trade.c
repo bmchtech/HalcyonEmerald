@@ -4260,10 +4260,10 @@ static bool8 AnimateTradeSequenceWireless(void)
     case TS_STATE_POKEBALL_ARRIVE_WAIT:
         if (gSprites[sTradeData->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
-            HandleLoadSpecialPokePic_2(&gMonFrontPicTable[sTradeData->monSpecies[TRADE_PARTNER]], 
-                                        gMonSpritesGfxPtr->sprites.ptr[3], 
-                                        sTradeData->monSpecies[TRADE_PARTNER], 
-                                        sTradeData->monPersonalities[TRADE_PARTNER]);
+            HandleLoadSpecialPokePic(&gMonFrontPicTable[sTradeData->monSpecies[TRADE_PARTNER]], 
+                                      gMonSpritesGfxPtr->sprites.ptr[3], 
+                                      sTradeData->monSpecies[TRADE_PARTNER], 
+                                      sTradeData->monPersonalities[TRADE_PARTNER]);
             sTradeData->state++;
         }
         break;

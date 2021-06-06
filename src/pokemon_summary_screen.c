@@ -3963,11 +3963,19 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
         {
             if (gMonSpritesGfxPtr != NULL)
             {
-                    HandleLoadSpecialPokePic_2(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites.ptr[1], summary->species2, summary->pid);
-                else
-                    HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites.ptr[1], summary->species2, summary->pid);
+                HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites.ptr[1], summary->species2, summary->pid);
             }
             else
+            {
+                HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], sub_806F4F8(0, 1), summary->species2, summary->pid);
+            }
+        }
+        (*state)++;
+        return 0xFF;
+    case 1:
+        pal = GetMonSpritePalStructFromOtIdPersonality(summary->species2, summary->OTID, summary->pid);
+        LoadCompressedSpritePalette(pal);
+        SetMultiuseSpriteTemplateToPokemon(pal->tag, 1);
         (*state)++;
         return 0xFF;
     }
