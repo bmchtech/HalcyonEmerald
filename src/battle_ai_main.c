@@ -540,7 +540,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
           && DoesBattlerIgnoreAbilityChecks(AI_DATA->atkAbility, move))
           || AI_DATA->defHoldEffect == HOLD_EFFECT_AIR_BALLOON
           || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
-          && move != MOVE_THOUSAND_ARROWS)
+          && !TestMoveFlags(move, FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
         {
             RETURN_SCORE_MINUS(20);
         }
@@ -600,20 +600,20 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 break;
             case ABILITY_SOUNDPROOF:
                 if (TestMoveFlags(move, FLAG_SOUND))
-                    RETURN_SCORE_MINUS(10);
+                    RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_BULLETPROOF:
                 if (TestMoveFlags(move, FLAG_BALLISTIC))
-                    RETURN_SCORE_MINUS(10);
+                    RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_DAZZLING:
             case ABILITY_QUEENLY_MAJESTY:
                 if (atkPriority > 0)
-                    RETURN_SCORE_MINUS(10);
+                    RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_AROMA_VEIL:
                 if (IsAromaVeilProtectedMove(move))
-                    RETURN_SCORE_MINUS(10);
+                    RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_SWEET_VEIL:
                 if (moveEffect == EFFECT_SLEEP || moveEffect == EFFECT_YAWN)
@@ -1857,10 +1857,12 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_SOLARBEAM:
             if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB
-              || (AI_WeatherHasEffect() && gBattleWeather & WEATHER_SUN_ANY && AI_DATA->atkHoldEffect != HOLD_EFFECT_UTILITY_UMBRELLA))
+              || (AI_WeatherHasEffect() && gBattleWeather & WEATHER_SUN_ANY && AI_DATA->atkHoldEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+              || AI_DATA->atkAbility == ABILITY_CHLOROPLAST)
                 break;
             if (CanTargetFaintAi(battlerDef, battlerAtk)) //Attacker can be knocked out
                 score -= 4;
+            score -= 10;
             break;
         case EFFECT_SEMI_INVULNERABLE:
             if (predictedMove != MOVE_NONE
@@ -2315,6 +2317,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_SUCKER_PUNCH:
             if (predictedMove != MOVE_NONE)
             {
+                if (Random() % 100 < 50) // Random chance to do something else. Makes AI less exploitable
+                    score -= 5;
                 if (IS_MOVE_STATUS(predictedMove) || GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 1) // opponent going first
                     score -= 10;
             }
@@ -2870,7 +2874,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         score++;
     
     // check thawing moves
-    if ((gBattleMons[battlerAtk].status1 & STATUS1_FREEZE) && gBattleMoves[move].flags & FLAG_THAW_USER)
+    if ((gBattleMons[battlerAtk].status1 & STATUS1_FREEZE) && TestMoveFlags(move, FLAG_THAW_USER))
         score += (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) ? 20 : 10;
     
     // check burn
@@ -2892,18 +2896,27 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
     }
     
-    // ability checks
+    // Attacker ability checks
     switch (AI_DATA->atkAbility)
     {
     case ABILITY_MOXIE:
     case ABILITY_BEAST_BOOST:
+    case ABILITY_SOUL_HEART:
+    case ABILITY_GRIM_NEIGH:
+    case ABILITY_CHILLING_NEIGH:
+    case ABILITY_AS_ONE_ICE_RIDER:
+    case ABILITY_AS_ONE_SHADOW_RIDER:
         if (GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 0) // attacker should go first
         {
             if (CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
                 score += 8; // prioritize killing target for stat boost
         }
         break;
-    case ABILITY_MAGIC_GUARD:
+    } // Attacker ability checks
+
+    // Magic Guard Check
+    if (AI_DATA->defAbility == ABILITY_MAGIC_GUARD)
+    {
         switch (moveEffect)
         {
         case EFFECT_POISON:
@@ -2917,19 +2930,16 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 5;
             break;
         }
-        break;
-    } // ability checks    
-    
+    } // Magic Guard Check
+
     // move effect checks
     switch (moveEffect)
     {
-        
     case EFFECT_HIT:
         break;
     case EFFECT_SLEEP:
     case EFFECT_YAWN:
-        if (AI_RandLessThan(128))
-            IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
+        IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
 	case EFFECT_ABSORB:
         if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
@@ -3161,6 +3171,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ACC, &score);
         break;
     case EFFECT_GROWTH:
+            if ((AI_WeatherHasEffect() && gBattleWeather & WEATHER_SUN_ANY && AI_DATA->atkHoldEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+              || AI_DATA->atkAbility == ABILITY_CHLOROPLAST)
+              score++;
+              // fallthrough
     case EFFECT_ATTACK_SPATK_UP:    // work up
         if (GetHealthPercentage(battlerAtk) <= 40 || AI_DATA->atkAbility == ABILITY_CONTRARY)
             break;
@@ -4789,7 +4803,6 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_ROOST:
             case EFFECT_MEMENTO:
             case EFFECT_GRUDGE:
-            case EFFECT_OVERHEAT:
                 score -= 2;
                 break;
             default:

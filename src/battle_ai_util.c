@@ -355,12 +355,10 @@ static const u16 sDiscouragedPowerfulMoveEffects[] =
     EFFECT_DREAM_EATER,
     EFFECT_RECHARGE,
     EFFECT_SKULL_BASH,
-    EFFECT_SOLARBEAM,
     EFFECT_SPIT_UP,
     EFFECT_FOCUS_PUNCH,
     EFFECT_SUPERPOWER,
     EFFECT_ERUPTION,
-    EFFECT_OVERHEAT,
     EFFECT_MIND_BLOWN,
     0xFFFF
 };
@@ -1355,6 +1353,13 @@ bool32 IsSemiInvulnerable(u8 battlerDef, u16 move)
 
 bool32 IsMoveEncouragedToHit(u8 battlerAtk, u8 battlerDef, u16 move)
 {
+    // No Guard and Toxic can hit semi-invulnerable mons
+    if (AI_GetAbility(battlerDef) == ABILITY_NO_GUARD || AI_GetAbility(battlerAtk) == ABILITY_NO_GUARD)
+        return TRUE;
+    
+    if (B_TOXIC_NEVER_MISS >= GEN_6 && gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+        return TRUE;
+
     if (IsSemiInvulnerable(battlerDef, move))
         return FALSE;
     
@@ -1362,12 +1367,6 @@ bool32 IsMoveEncouragedToHit(u8 battlerAtk, u8 battlerDef, u16 move)
         
     // always hits
     if (gStatuses3[battlerDef] & STATUS3_ALWAYS_HITS || gDisableStructs[battlerDef].battlerWithSureHit == battlerAtk)
-        return TRUE;
-    
-    if (AI_GetAbility(battlerDef) == ABILITY_NO_GUARD || AI_GetAbility(battlerAtk) == ABILITY_NO_GUARD)
-        return TRUE;
-    
-    if (B_TOXIC_NEVER_MISS >= GEN_6 && gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
         return TRUE;
         
     // discouraged from hitting
@@ -1394,9 +1393,7 @@ bool32 ShouldTryOHKO(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbilit
     u32 holdEffect = AI_GetHoldEffect(battlerDef);
         
     gPotentialItemEffectBattler = battlerDef;
-    if (holdEffect == HOLD_EFFECT_FOCUS_BAND && (Random() % 100) < GetBattlerHoldEffectParam(battlerDef))
-        return FALSE;   //probabilistically speaking, focus band should activate so dont OHKO
-    else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && AtMaxHp(battlerDef))
+    if (holdEffect == HOLD_EFFECT_FOCUS_SASH && AtMaxHp(battlerDef))
         return FALSE;
     
     if (!DoesBattlerIgnoreAbilityChecks(atkAbility, move) && defAbility == ABILITY_STURDY)
@@ -1427,7 +1424,6 @@ bool32 ShouldSetSandstorm(u8 battler, u16 ability, u16 holdEffect)
     
     if (ability == ABILITY_SAND_VEIL
       || ability == ABILITY_SAND_RUSH
-      || ability == ABILITY_SAND_FORCE
       || ability == ABILITY_SAND_FORCE
       || ability == ABILITY_OVERCOAT
       || ability == ABILITY_MAGIC_GUARD
@@ -1945,7 +1941,7 @@ bool32 HasThawingMove(u8 battlerId)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (moves[i] != MOVE_NONE && moves[i] != 0xFFFF && gBattleMoves[moves[i]].flags & FLAG_THAW_USER)
+        if (moves[i] != MOVE_NONE && moves[i] != 0xFFFF && TestMoveFlags(moves[i], FLAG_THAW_USER))
             return TRUE;
     }
 
@@ -2578,6 +2574,7 @@ bool32 CanSleep(u8 battler, u16 ability)
 {
     if (ability == ABILITY_INSOMNIA
       || ability == ABILITY_VITAL_SPIRIT
+      || ability == ABILITY_COMATOSE
       || gBattleMons[battler].status1 & STATUS1_ANY
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || (gFieldStatuses & (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN))
@@ -2600,6 +2597,7 @@ bool32 CanBePoisoned(u8 battler, u16 ability)
 {
     if (ability == ABILITY_IMMUNITY
       || ability == ABILITY_PASTEL_VEIL
+      || ability == ABILITY_COMATOSE
       || gBattleMons[battler].status1 & STATUS1_ANY
       || IsAbilityStatusProtected(battler)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
@@ -2640,6 +2638,7 @@ bool32 AI_CanPoison(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, u16 
 static bool32 CanBeParayzed(u8 battler, u16 ability)
 {
     if (ability == ABILITY_LIMBER
+      || ability == ABILITY_COMATOSE
       || IS_BATTLER_OF_TYPE(battler, TYPE_ELECTRIC)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || IsAbilityStatusProtected(battler))
@@ -2685,6 +2684,7 @@ bool32 CanBeBurned(u8 battler, u16 ability)
 {
     if (ability == ABILITY_WATER_VEIL
       || ability == ABILITY_WATER_BUBBLE
+      || ability == ABILITY_COMATOSE
       || IS_BATTLER_OF_TYPE(battler, TYPE_FIRE)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || IsAbilityStatusProtected(battler)
@@ -3308,6 +3308,9 @@ void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score)
     
     if (GetHealthPercentage(battlerAtk) < 80 && AI_RandLessThan(128))
         return;
+
+    if(gBattleMons[battlerDef].status1 & STATUS1_SLEEP)
+            *score += 5;
     
     switch (statId)
     {
@@ -3435,10 +3438,13 @@ void IncreaseParalyzeScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 void IncreaseSleepScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 {
     if (AI_CanPutToSleep(battlerAtk, battlerDef, AI_DATA->defAbility, move, AI_DATA->partnerMove))
-        *score += 2;
+        *score += 3; // Sleep good, use it
     else
         return;
-      
+    
+    if (AI_RandLessThan(128))
+        *score += 2;
+
     if ((HasMoveEffect(battlerAtk, EFFECT_DREAM_EATER) || HasMoveEffect(battlerAtk, EFFECT_NIGHTMARE))
       && !(HasMoveEffect(battlerDef, EFFECT_SNORE) || HasMoveEffect(battlerDef, EFFECT_SLEEP_TALK)))
         (*score)++;
