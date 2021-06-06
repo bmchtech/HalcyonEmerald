@@ -3126,7 +3126,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             {
                 if (Random() % 5)
                 {
-                    if (!(gBattleMoves[gCurrentMove].flags & FLAG_THAW_HIT)) // unfreezing via a move effect happens in case 13
+                    if (!(gBattleMoves[gCurrentMove].flags & FLAG_THAW_USER)) // unfreezing via a move effect happens in case 13
                     {
                         gBattlescriptCurrInstr = BattleScript_MoveUsedIsFrozen;
                         gHitMarker |= HITMARKER_NO_ATTACKSTRING;
@@ -3337,7 +3337,7 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_THAW: // move thawing
             if (gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE)
             {
-                if (gBattleMoves[gCurrentMove].flags & FLAG_THAW_HIT)
+                if (gBattleMoves[gCurrentMove].flags & FLAG_THAW_USER)
                 {
                     if (gBattleMoves[gCurrentMove].effect == EFFECT_BURN_UP && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE))
                         /* Do nothing */;

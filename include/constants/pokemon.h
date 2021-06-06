@@ -310,7 +310,7 @@
 #define FLAG_DMG_IN_AIR             (1 << 23) // If target is in the air, can hit.
 #define FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING (1 << 24) // Makes a Ground type move do 1x damage to flying and levitating targets
 #define FLAG_KEEN_EDGE_BOOST        (1 << 25)
-#define FLAG_THAW_HIT               (1 << 26) // For moves that thaw the user
+#define FLAG_THAW_USER              (1 << 26) // For moves that thaw the user
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0
