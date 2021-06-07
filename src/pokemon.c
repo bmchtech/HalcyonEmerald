@@ -7690,13 +7690,15 @@ void StopPokemonAnimationDelayTask(void)
 
 void BattleAnimateBackSprite(struct Sprite* sprite, u16 species)
 {
-    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+    u8 speciesBackAnimSet = GetSpeciesBackAnimSet(species);
+
+    if ((speciesBackAnimSet == 0) && (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))))
     {
         sprite->callback = SpriteCallbackDummy;
     }
     else
     {
-        LaunchAnimationTaskForBackSprite(sprite, GetSpeciesBackAnimSet(species));
+        LaunchAnimationTaskForBackSprite(sprite, speciesBackAnimSet);
         sprite->callback = SpriteCallbackDummy_2;
     }
 }
