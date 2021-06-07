@@ -755,6 +755,11 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     switch (moveEffect)
     {
         case EFFECT_HIT:
+        case EFFECT_POISON_HIT:
+        case EFFECT_BURN_HIT:
+        case EFFECT_FREEZE_HIT:
+        case EFFECT_PARALYZE_HIT:
+        case EFFECT_CONFUSE_HIT:
         default:
             break;  // check move damage
         case EFFECT_SLEEP:
@@ -2442,10 +2447,7 @@ static s16 AI_TryToFaint(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 4;
             break;
         case AI_EFFECTIVENESS_x2:
-            if (AI_RandLessThan(176))
-                score += 2;
-            else
-                score++;
+            score += 2;
             break;
         }
     }
@@ -2936,6 +2938,11 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     switch (moveEffect)
     {
     case EFFECT_HIT:
+    case EFFECT_POISON_HIT:
+    case EFFECT_BURN_HIT:
+    case EFFECT_FREEZE_HIT:
+    case EFFECT_PARALYZE_HIT:
+    // case EFFECT_CONFUSE_HIT:
         break;
     case EFFECT_SLEEP:
     case EFFECT_YAWN:
@@ -4165,7 +4172,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
         break;
     case EFFECT_SHELL_SMASH:
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_RESTORE_STATS)
             score += 3;
         
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPEED, &score);
@@ -4286,9 +4293,9 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_TRICK_ROOM:
         if (!(gFieldStatuses & STATUS_FIELD_TRICK_ROOM) && GetBattlerSideSpeedAverage(battlerAtk) < GetBattlerSideSpeedAverage(battlerDef))
-            score += 3;
+            score += 5; // Make setting Trick Room more important than a KO. It usually gets multiple KOs afterward
         else if ((gFieldStatuses & STATUS_FIELD_TRICK_ROOM) && GetBattlerSideSpeedAverage(battlerAtk) >= GetBattlerSideSpeedAverage(battlerDef))
-            score += 3;
+            score += 5;
         break;
     case EFFECT_MAGIC_ROOM:
         score++;
