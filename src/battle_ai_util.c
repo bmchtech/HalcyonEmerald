@@ -846,7 +846,7 @@ u8 GetMoveDamageResult(u16 move)
             }
         }
 
-        hp = gBattleMons[gBattlerTarget].hp + (20 * gBattleMons[gBattlerTarget].hp / 100); // 20 % add to make sure the battler is always fainted
+        hp = gBattleMons[gBattlerTarget].hp + (5 * gBattleMons[gBattlerTarget].hp / 100); // 5 % add to account for some randomness
         // If a move can faint battler, it doesn't matter how much damage it does
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
