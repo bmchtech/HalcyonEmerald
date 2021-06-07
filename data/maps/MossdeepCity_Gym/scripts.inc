@@ -579,7 +579,7 @@ MossdeepCity_Gym_Text_MaceyDefeat: @ 8221658
 
 MossdeepCity_Gym_Text_MaceyPostBattle: @ 8221680
 	.string "Humph! You may be strong, but you're\n"
-	.string "not suitable for the PSYCHIC type!\p"
+	.string "not suitable for the Psychic type!\p"
 	.string "The way you battle is somehow brutal!$"
 
 MossdeepCity_Gym_Text_NicholasIntro: @ 82216EE
