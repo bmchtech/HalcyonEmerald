@@ -1210,7 +1210,7 @@ bool32 IsConfusionMoveEffect(u16 moveEffect)
 {
     switch (moveEffect)
     {
-    case EFFECT_CONFUSE_HIT:
+    // case EFFECT_CONFUSE_HIT: This is only called for Electric Terrain, which shouldn't discourage Signal Beam et al.
     case EFFECT_SWAGGER:
     case EFFECT_FLATTER:
     case EFFECT_TEETER_DANCE:
@@ -3457,7 +3457,8 @@ void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
 {
     if (AI_CanConfuse(battlerAtk, battlerDef, AI_DATA->defAbility, AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove)
       && AI_DATA->defHoldEffect != HOLD_EFFECT_CURE_CONFUSION
-      && AI_DATA->defHoldEffect != HOLD_EFFECT_CURE_STATUS)
+      && AI_DATA->defHoldEffect != HOLD_EFFECT_CURE_STATUS
+      && (gBattleMoves[move].secondaryEffectChance >= 30 || gBattleMoves[move].split == SPLIT_STATUS))
     {
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
           || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
