@@ -334,7 +334,7 @@ MossdeepCity_Movement_ScottExitEast: @ 81E4CE2
 MossdeepCity_Text_WantKingsRockStevenGaveMe: @ 81E4CED
 	.string "I got this from Steven, but I don't\n"
 	.string "know what it's good for.\p"
-	.string "I think it's called KING'S ROCK.\n"
+	.string "I think it's called King's Rock.\n"
 	.string "Do you want it?$"
 
 MossdeepCity_Text_YouCanKeepIt: @ 81E4D5B

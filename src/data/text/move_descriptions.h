@@ -958,11 +958,11 @@ static const u8 sTwisterDescription[] = _(
     "to tear at the foe.");
 
 static const u8 sRainDanceDescription[] = _(
-    "Boosts the power of WATER-\n"
+    "Boosts the power of Water-\n"
     "type moves for 5 turns.");
 
 static const u8 sSunnyDayDescription[] = _(
-    "Boosts the power of FIRE-\n"
+    "Boosts the power of Fire-\n"
     "type moves for 5 turns.");
 
 static const u8 sCrunchDescription[] = _(
@@ -1426,8 +1426,8 @@ static const u8 sGRAVITYDescription[] = _(
     "negating levitation.");
 
 static const u8 sMIRACLE_EYEDescription[] = _(
-    "Makes GHOSTS and evasive\n"
-    "foes easier to hit.");
+    "Negate evasiveness and\n"
+    "Dark-type's immunities.");
 
 static const u8 sWAKE_UP_SLAPDescription[] = _(
     "Powerful against sleeping\n"
@@ -2430,7 +2430,7 @@ static const u8 sSPARKLING_ARIADescription[] = _(
     "burns on contact.");
 
 static const u8 sICE_HAMMERDescription[] = _(
-	"Swings the fist to strike.\n"
+	"Swings a fist to strike.\n"
 	"Lowers the user's Speed.");
 
 static const u8 sFLORAL_HEALINGDescription[] = _(
@@ -2471,7 +2471,7 @@ static const u8 sGEAR_UPDescription[] = _(
 
 static const u8 sTHROAT_CHOPDescription[] = _(
     "Chops the throat to disable\n"
-    "sound moves for a while.");
+    "sound moves for 2 turns.");
 
 static const u8 sPOLLEN_PUFFDescription[] = _(
     "Explodes on foes, but\n"
