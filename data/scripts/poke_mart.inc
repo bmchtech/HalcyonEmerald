@@ -75,7 +75,6 @@ PokeMart_Dynamo_Badge::
 	.2byte ITEM_ABSORB_BULB
     .2byte ITEM_SNOWBALL
     .2byte ITEM_LUMINOUS_MOSS
-    .2byte ITEM_AIR_BALLOON
 	.2byte ITEM_NONE
 	release
 	end
@@ -98,7 +97,6 @@ PokeMart_Heat_Badge::
     .2byte ITEM_SNOWBALL
     .2byte ITEM_LUMINOUS_MOSS
     .2byte ITEM_AIR_BALLOON
-    .2byte ITEM_SHED_SHELL
 	.2byte ITEM_NONE
 	release
 	end
@@ -121,7 +119,6 @@ PokeMart_Balance_Badge::
     .2byte ITEM_SNOWBALL
     .2byte ITEM_LUMINOUS_MOSS
     .2byte ITEM_AIR_BALLOON
-    .2byte ITEM_SHED_SHELL
     .2byte ITEM_ELECTRIC_SEED
     .2byte ITEM_GRASSY_SEED
     .2byte ITEM_MISTY_SEED
@@ -148,7 +145,6 @@ PokeMart_Feather_Badge::
     .2byte ITEM_SNOWBALL
     .2byte ITEM_LUMINOUS_MOSS
     .2byte ITEM_AIR_BALLOON
-    .2byte ITEM_SHED_SHELL
     .2byte ITEM_ELECTRIC_SEED
     .2byte ITEM_GRASSY_SEED
     .2byte ITEM_MISTY_SEED
@@ -176,7 +172,6 @@ PokeMart_Mind_Badge::
     .2byte ITEM_SNOWBALL
     .2byte ITEM_LUMINOUS_MOSS
     .2byte ITEM_AIR_BALLOON
-    .2byte ITEM_SHED_SHELL
     .2byte ITEM_ELECTRIC_SEED
     .2byte ITEM_GRASSY_SEED
     .2byte ITEM_MISTY_SEED
