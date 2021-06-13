@@ -110,8 +110,8 @@ Route115_EventScript_ItemTM01:: @ 8290E37
 	finditem ITEM_TM01_FOCUS_PUNCH
 	end
 
-Route115_EventScript_ItemIron:: @ 8290E44
-	finditem ITEM_IRON
+Route115_EventScript_ItemMoonBall:: @ 8290E44
+	finditem ITEM_MOON_BALL
 	end
 
 Route115_EventScript_ItemGreatBall:: @ 8290E51
