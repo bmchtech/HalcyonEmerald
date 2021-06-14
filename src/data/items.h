@@ -3327,10 +3327,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_UP_GRADE] =
+    [ITEM_UPGRADE] =
     {
         .name = _("Upgrade"),
-        .itemId = ITEM_UP_GRADE,
+        .itemId = ITEM_UPGRADE,
         .price = 2000,
         .holdEffect = HOLD_EFFECT_UP_GRADE,
         .description = sUpGradeDesc,
@@ -3588,10 +3588,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_STICK] =
+    [ITEM_LEEK] =
     {
         .name = _("Leek"),
-        .itemId = ITEM_STICK,
+        .itemId = ITEM_LEEK,
         .price = 1000,
         .holdEffect = HOLD_EFFECT_STICK,
         .description = sStickDesc,

@@ -613,7 +613,7 @@ RustboroCity_EventScript_ReturnGoods:: @ 81E0C5B
 	compare VAR_TEMP_1, 4
 	call_if_eq RustboroCity_EventScript_EmployeeFacePlayerRight
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
-	giveitem ITEM_DREAM_BALL, 5
+	giveitem ITEM_DREAM_BALL, 2
 	compare VAR_RESULT, FALSE
 	call_if_eq RustboroCity_EventScript_BagFull
 	msgbox RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT

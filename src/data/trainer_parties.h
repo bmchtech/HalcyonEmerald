@@ -4585,7 +4585,7 @@ static const struct TrainerMonItemCustomMoves sParty_Benny[] = {
     {
     .lvl = -3,
     .species = SPECIES_FARFETCHD,
-    .heldItem = ITEM_STICK,
+    .heldItem = ITEM_LEEK,
     .ability = 0, // Super Luck
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_BRAVE_BIRD, MOVE_CLOSE_COMBAT, MOVE_LEAF_BLADE, MOVE_KNOCK_OFF
@@ -6473,7 +6473,7 @@ static const struct TrainerMonItemCustomMoves sParty_Branden[] = {
     {
     .lvl = -3,
     .species = SPECIES_FARFETCHD,
-    .heldItem = ITEM_STICK,
+    .heldItem = ITEM_LEEK,
     .spread = SPREAD_31_IV_0_EV,
     .moves = MOVE_SACRED_SWORD, MOVE_WING_ATTACK, MOVE_LEAF_BLADE, MOVE_POISON_JAB
     },
@@ -11785,7 +11785,7 @@ static const struct TrainerMonItemCustomMoves sParty_Phil[] = {
     {
     .lvl = -2,
     .species = SPECIES_FARFETCHD,
-    .heldItem = ITEM_STICK,
+    .heldItem = ITEM_LEEK,
     .spread = SPREAD_31_IV_60_EV,
     .moves = MOVE_BRAVE_BIRD, MOVE_CLOSE_COMBAT, MOVE_LEAF_BLADE, MOVE_POISON_JAB
     }

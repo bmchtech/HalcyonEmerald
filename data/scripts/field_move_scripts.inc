@@ -154,7 +154,7 @@ EventScript_CutTreeEVBerry::
 	end
 
 EventScript_CutTreeStick::
-	finditem ITEM_STICK
+	finditem ITEM_LEEK
 	releaseall
 	end
 

@@ -13,9 +13,9 @@ MauvilleCity_Mart_EventScript_Clerk:: @ 82110E6
 
 	.align 2
 MauvilleCity_Mart_Pokemart::
-	.2byte ITEM_UP_GRADE
+	.2byte ITEM_UPGRADE
 	.2byte ITEM_METAL_POWDER
-	.2byte ITEM_STICK
+	.2byte ITEM_LEEK
 	.2byte ITEM_LIGHT_BALL
 	.2byte ITEM_THICK_CLUB
 	.2byte ITEM_DEEP_SEA_TOOTH

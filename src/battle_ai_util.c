@@ -723,13 +723,34 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     switch (gBattleMoves[move].effect)
     {
     case EFFECT_LEVEL_DAMAGE:
-        dmg = gBattleMons[battlerAtk].level;
+        if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+            dmg = 2 * gBattleMons[battlerAtk].level;
+        else
+            dmg = gBattleMons[battlerAtk].level;
         break;
     case EFFECT_DRAGON_RAGE:
-        dmg = 40;
+        if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+            dmg = 80;
+        else
+            dmg = 40;
         break;
     case EFFECT_SONICBOOM:
-        dmg = 20;
+        if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+            dmg = 40;
+        else
+            dmg = 20;
+        break;
+    case EFFECT_MULTI_HIT:
+        if (AI_DATA->atkAbility == ABILITY_SKILL_LINK)
+            dmg *= 5;
+        else
+            dmg *= 3; // Average number of hits is 3
+        break;
+    case EFFECT_DOUBLE_HIT:
+            dmg *= 2;
+        break;
+    case EFFECT_TRIPLE_KICK:
+            dmg *= 6; // Buffed Triple Kick and Triple Axel do 6x their base damage if they don't miss
         break;
     case EFFECT_PSYWAVE:
         {
