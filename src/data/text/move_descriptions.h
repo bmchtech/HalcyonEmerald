@@ -257,9 +257,15 @@ static const u8 sPeckDescription[] = _(
     "Attacks the foe with a\n"
     "jabbing beak, etc.");
 
-static const u8 sDrillPeckDescription[] = _(
-    "A corkscrewing attack with\n"
-    "the beak acting as a drill.");
+#ifdef REBALANCED_VERSION
+    static const u8 sDrillPeckDescription[] = _(
+        "A corkscrewing attack with\n"
+        "a high critical-hit ratio.");
+#else
+    static const u8 sDrillPeckDescription[] = _(
+        "A corkscrewing attack with\n"
+        "the beak acting as a drill.");
+#endif
 
 static const u8 sSubmissionDescription[] = _(
     "A reckless body slam that\n"
@@ -617,9 +623,15 @@ static const u8 sFurySwipesDescription[] = _(
     "Rakes the foe with sharp\n"
     "claws, etc., 2 to 5 times.");
 
-static const u8 sBonemerangDescription[] = _(
-    "Throws a bone boomerang\n"
-    "that strikes twice.");
+#ifdef REBALANCED_VERSION
+    static const u8 sBonemerangDescription[] = _(
+        "Throws a bone. Hits airborne\n"
+        "targets and strikes twice.");
+#else
+    static const u8 sBonemerangDescription[] = _(
+        "Throws a bone boomerang\n"
+        "that strikes twice.");
+#endif
 
 static const u8 sRestDescription[] = _(
     "The user sleeps for 2 turns,\n"
@@ -789,9 +801,15 @@ static const u8 sDetectDescription[] = _(
     "Evades attack, but may fail\n"
     "if used in succession.");
 
-static const u8 sBoneRushDescription[] = _(
-    "Hits with a bone 2 to 5\n"
-    "times. Strikes first.");
+#ifdef REBALANCED_VERSION
+    static const u8 sBoneRushDescription[] = _(
+        "Strikes with a bone 2 to 5\n"
+        "times. Always goes first.");
+#else
+    static const u8 sBoneRushDescription[] = _(
+        "Strikes the foe with a bone\n"
+        "in hand 2 to 5 times.");
+#endif
 
 static const u8 sLockOnDescription[] = _(
     "Locks on to the foe to\n"
@@ -1613,9 +1631,15 @@ static const u8 sAIR_SLASHDescription[] = _(
     "Attacks with a blade of\n"
     "air. May cause flinching.");
 
-static const u8 sX_SCISSORDescription[] = _(
-    "Slashes the foe with crossed\n"
-    "scythes, claws, etc.");
+#ifdef REBALANCED_VERSION
+    static const u8 sX_SCISSORDescription[] = _(
+        "Cuts likes scissors.\n"
+        "High critical-hit ratio.");
+#else
+    static const u8 sX_SCISSORDescription[] = _(
+        "Slashes the foe with crossed\n"
+        "scythes, claws, etc.");
+#endif
 
 static const u8 sBUG_BUZZDescription[] = _(
     "A damaging sound wave that\n"
