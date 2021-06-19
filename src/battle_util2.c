@@ -27,6 +27,7 @@ void AllocateBattleResources(void)
     gBattleResources->beforeLvlUp = AllocZeroed(sizeof(*gBattleResources->beforeLvlUp));
     gBattleResources->ai = AllocZeroed(sizeof(*gBattleResources->ai));
     gBattleResources->battleHistory = AllocZeroed(sizeof(*gBattleResources->battleHistory));
+    gBattleResources->AI_ScriptsStack = AllocZeroed(sizeof(*gBattleResources->AI_ScriptsStack));
 
     gLinkBattleSendBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
     gLinkBattleRecvBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
@@ -58,6 +59,7 @@ void FreeBattleResources(void)
         FREE_AND_SET_NULL(gBattleResources->beforeLvlUp);
         FREE_AND_SET_NULL(gBattleResources->ai);
         FREE_AND_SET_NULL(gBattleResources->battleHistory);
+        FREE_AND_SET_NULL(gBattleResources->AI_ScriptsStack);
         FREE_AND_SET_NULL(gBattleResources);
 
         FREE_AND_SET_NULL(gLinkBattleSendBuffer);

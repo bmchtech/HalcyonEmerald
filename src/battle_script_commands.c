@@ -4,8 +4,7 @@
 #include "constants/battle_script_commands.h"
 #include "battle_message.h"
 #include "battle_anim.h"
-#include "battle_ai_main.h"
-#include "battle_ai_util.h"
+#include "battle_ai_script_commands.h"
 #include "battle_scripts.h"
 #include "constants/moves.h"
 #include "constants/abilities.h"
@@ -826,7 +825,13 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_metalburstdamagecalculator,              //0xFF
 };
 
-const struct StatFractions gAccuracyStageRatios[] =
+struct StatFractions
+{
+    u8 dividend;
+    u8 divisor;
+};
+
+static const struct StatFractions sAccuracyStageRatios[] =
 {
     { 33, 100}, // -6
     { 36, 100}, // -5
@@ -1619,8 +1624,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
     if (defAbility == ABILITY_WONDER_SKIN && gBattleMoves[move].power == 0)
         moveAcc = 50;
 
-    calc = gAccuracyStageRatios[buff].dividend * moveAcc;
-    calc /= gAccuracyStageRatios[buff].divisor;
+    calc = sAccuracyStageRatios[buff].dividend * moveAcc;
+    calc /= sAccuracyStageRatios[buff].divisor;
 
     if (atkAbility == ABILITY_COMPOUND_EYES)
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
@@ -7823,25 +7828,51 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         return;
     case VARIOUS_SET_SIMPLE_BEAM:
-        if (IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gActiveBattler].ability))
+        switch (gBattleMons[gActiveBattler].ability)
         {
+        case ABILITY_SIMPLE:
+        case ABILITY_TRUANT:
+        case ABILITY_STANCE_CHANGE:
+        case ABILITY_DISGUISE:
+        case ABILITY_MULTITYPE:
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
-        }
-        else
-        {
+            break;
+        default:
             gBattleMons[gActiveBattler].ability = ABILITY_SIMPLE;
             gBattlescriptCurrInstr += 7;
             break;
         }
         return;
     case VARIOUS_TRY_ENTRAINMENT:
-        if (IsEntrainmentBannedAbilityAttacker(gBattleMons[gBattlerAttacker].ability)
-          || IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].ability))
+        switch (gBattleMons[gBattlerTarget].ability)
         {
+        case ABILITY_TRUANT:
+        case ABILITY_MULTITYPE:
+        case ABILITY_STANCE_CHANGE:
+        case ABILITY_SCHOOLING:
+        case ABILITY_COMATOSE:
+        case ABILITY_SHIELDS_DOWN:
+        case ABILITY_DISGUISE:
+        case ABILITY_RKS_SYSTEM:
+        case ABILITY_BATTLE_BOND:
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
             return;
         }
-
+        switch (gBattleMons[gBattlerAttacker].ability)
+        {
+        case ABILITY_TRACE:
+        case ABILITY_FORECAST:
+        case ABILITY_FLOWER_GIFT:
+        case ABILITY_ZEN_MODE:
+        case ABILITY_ILLUSION:
+        case ABILITY_IMPOSTER:
+        case ABILITY_POWER_OF_ALCHEMY:
+        case ABILITY_RECEIVER:
+        case ABILITY_DISGUISE:
+        case ABILITY_POWER_CONSTRUCT:
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            return;
+        }
         if (gBattleMons[gBattlerTarget].ability == gBattleMons[gBattlerAttacker].ability)
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
@@ -11187,12 +11218,6 @@ static void Cmd_callterrainattack(void) // nature power
     gBattlescriptCurrInstr++;
 }
 
-u16 GetNaturePowerMove(void)
-{
-    //TODO terrain
-    return sNaturePowerMoves[gBattleTerrain];
-}
-
 static void Cmd_cureifburnedparalysedorpoisoned(void) // refresh
 {
     if (gBattleMons[gBattlerAttacker].status1 & (STATUS1_POISON | STATUS1_BURN | STATUS1_PARALYSIS | STATUS1_TOXIC_POISON))
@@ -11365,20 +11390,18 @@ static void Cmd_tryswapitems(void) // trick
 
 static void Cmd_trycopyability(void) // role play
 {
-    u16 defAbility = gBattleMons[gBattlerTarget].ability;
-
-    if (gBattleMons[gBattlerAttacker].ability == defAbility
-      || defAbility == ABILITY_NONE
-      || IsRolePlayBannedAbilityAtk(gBattleMons[gBattlerAttacker].ability)
-      || IsRolePlayBannedAbility(defAbility))
+    switch (gBattleMons[gBattlerTarget].ability)
     {
-        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    }
-    else
-    {
-        gBattleMons[gBattlerAttacker].ability = defAbility;
-        gLastUsedAbility = defAbility;
-        gBattlescriptCurrInstr += 5;
+        case ABILITY_NONE:
+        case ABILITY_WONDER_GUARD:
+        case ABILITY_DISGUISE:
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+            break;
+        default:
+            gBattleMons[gBattlerAttacker].ability = gBattleMons[gBattlerTarget].ability;
+            gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+            gBattlescriptCurrInstr += 5;
+            break;
     }
 }
 
@@ -11432,14 +11455,28 @@ static void Cmd_settoxicspikes(void)
 
 static void Cmd_setgastroacid(void)
 {
-    if (IsGastroAcidBannedAbility(gBattleMons[gBattlerTarget].ability))
+    switch (gBattleMons[gBattlerTarget].ability)
     {
+    case ABILITY_AS_ONE_ICE_RIDER:
+    case ABILITY_AS_ONE_SHADOW_RIDER:
+    case ABILITY_BATTLE_BOND:
+    case ABILITY_COMATOSE:
+    case ABILITY_DISGUISE:
+    case ABILITY_GULP_MISSILE:
+    case ABILITY_ICE_FACE:
+    case ABILITY_MULTITYPE:
+    case ABILITY_POWER_CONSTRUCT:
+    case ABILITY_RKS_SYSTEM:
+    case ABILITY_SCHOOLING:
+    case ABILITY_SHIELDS_DOWN:
+    case ABILITY_STANCE_CHANGE:
+    case ABILITY_ZEN_MODE:
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    }
-    else
-    {
+        break;
+    default:
         gStatuses3[gBattlerTarget] |= STATUS3_GASTRO_ACID;
         gBattlescriptCurrInstr += 5;
+        break;
     }
 }
 
@@ -11508,9 +11545,20 @@ static void Cmd_setroom(void)
 
 static void Cmd_tryswapabilities(void) // skill swap
 {
-    if (IsSkillSwapBannedAbility(gBattleMons[gBattlerAttacker].ability)
-      || IsSkillSwapBannedAbility(gBattleMons[gBattlerTarget].ability))
+    switch (gBattleMons[gBattlerAttacker].ability)
     {
+    case ABILITY_NONE:
+    case ABILITY_WONDER_GUARD:
+    case ABILITY_DISGUISE:
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        return;
+    }
+
+    switch (gBattleMons[gBattlerTarget].ability)
+    {
+    case ABILITY_NONE:
+    case ABILITY_WONDER_GUARD:
+    case ABILITY_DISGUISE:
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
         return;
     }
@@ -11985,13 +12033,6 @@ static void Cmd_tryrecycleitem(void)
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
-}
-
-bool32 CanCamouflage(u8 battlerId)
-{
-    if (IS_BATTLER_OF_TYPE(battlerId, sTerrainToType[gBattleTerrain]))
-        return FALSE;
-    return TRUE;
 }
 
 static void Cmd_settypetoterrain(void)
@@ -12701,36 +12742,11 @@ static void Cmd_trainerslideout(void)
     gBattlescriptCurrInstr += 2;
 }
 
-static const u16 sTelekinesisBanList[] =
-{
-	SPECIES_DIGLETT,
-	SPECIES_DUGTRIO,
-    #ifdef POKEMON_EXPANSION
-	SPECIES_DIGLETT_ALOLAN,
-	SPECIES_DUGTRIO_ALOLAN,
-	SPECIES_SANDYGAST,
-	SPECIES_PALOSSAND,
-	SPECIES_GENGAR_MEGA,
-    #endif
-};
-
-bool32 IsTelekinesisBannedSpecies(u16 species)
-{
-    u32 i;
-
-    for (i = 0; i < ARRAY_COUNT(sTelekinesisBanList); i++)
-    {
-        if (species == sTelekinesisBanList[i])
-            return TRUE;
-    }
-    return FALSE;
-}
-
 static void Cmd_settelekinesis(void)
 {
     if (gStatuses3[gBattlerTarget] & (STATUS3_TELEKINESIS | STATUS3_ROOTED | STATUS3_SMACKED_DOWN)
         || gFieldStatuses & STATUS_FIELD_GRAVITY
-        || IsTelekinesisBannedSpecies(gBattleMons[gBattlerTarget].species))
+        || (gBattleMons[gBattlerTarget].species == SPECIES_DIGLETT || gBattleMons[gBattlerTarget].species == SPECIES_DUGTRIO))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
@@ -12798,14 +12814,19 @@ static void Cmd_trygetbaddreamstarget(void)
 
 static void Cmd_tryworryseed(void)
 {
-    if (IsWorrySeedBannedAbility(gBattleMons[gBattlerTarget].ability))
+    switch (gBattleMons[gBattlerTarget].ability)
     {
+    case ABILITY_INSOMNIA:
+    case ABILITY_MULTITYPE:
+    case ABILITY_TRUANT:
+    case ABILITY_STANCE_CHANGE:
+    case ABILITY_DISGUISE:
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    }
-    else
-    {
+        break;
+    default:
         gBattleMons[gBattlerTarget].ability = ABILITY_INSOMNIA;
         gBattlescriptCurrInstr += 5;
+        break;
     }
 }
 
