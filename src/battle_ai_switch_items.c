@@ -1,7 +1,6 @@
 #include "global.h"
 #include "battle.h"
-#include "battle_ai_main.h"
-#include "battle_ai_util.h"
+#include "battle_ai_script_commands.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_setup.h"
@@ -466,7 +465,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     return FALSE;
 }
 
-bool32 ShouldSwitch(void)
+static bool8 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
     s32 firstId;
