@@ -47,14 +47,14 @@ gBattleAI_ScriptsTable:: @ 82DBEF8
 
 AI_CheckBadMove:
 	if_target_is_ally AI_Ret
-@ Check powder moves
-	if_move_flag FLAG_POWDER, AI_CBM_PowderMoves
+	if_move_flag FLAG_POWDER, AI_CBM_PowderMoves @ Check powder moves
+	call AI_CBM_CheckIfPriorityCancelled @ Check if move is blocked by psychic terrain or ability
 	goto AI_CBM_CheckIfNegatesType
 AI_CBM_PowderMoves:
-	if_type AI_TARGET, TYPE_GRASS, Score_Minus10
-	if_ability AI_TARGET, ABILITY_OVERCOAT, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, Score_Minus30
+	if_ability AI_TARGET, ABILITY_OVERCOAT, Score_Minus30
 	get_hold_effect AI_TARGET
-	if_equal HOLD_EFFECT_SAFETY_GOOGLES Score_Minus10
+	if_equal HOLD_EFFECT_SAFETY_GOOGLES Score_Minus30
 
 AI_CBM_CheckIfNegatesType:
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
@@ -70,11 +70,12 @@ AI_CBM_CheckIfNegatesType:
 	if_equal ABILITY_STORM_DRAIN, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_DRY_SKIN, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_FLASH_FIRE, CheckIfFlashFireCancelsFire
+	if_equal ABILITY_SAP_SIPPER, CheckIfSapSipperCancelsGrass
 	if_equal ABILITY_WONDER_GUARD, CheckIfWonderGuardCancelsMove
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
 	if_equal ABILITY_SOUNDPROOF, CheckIfSoundproofCancelsMove
 	goto AI_CheckBadMove_CheckEffect
-	
+
 CheckIfSoundproofCancelsMove:
 	if_move_flag FLAG_SOUND, Score_Minus10
 	goto AI_CheckBadMove_CheckEffect
@@ -94,6 +95,11 @@ CheckIfFlashFireCancelsFire: @ 82DBFD7
 	if_equal TYPE_FIRE, Score_Minus12
 	goto AI_CheckBadMove_CheckEffect
 
+CheckIfSapSipperCancelsGrass:
+	get_curr_move_type
+	if_equal TYPE_GRASS, Score_Minus12
+	goto AI_CheckBadMove_CheckEffect
+
 CheckIfWonderGuardCancelsMove: @ 82DBFE4
 	if_type_effectiveness AI_EFFECTIVENESS_x2, AI_CheckBadMove_CheckEffect
 	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_CheckBadMove_CheckEffect
@@ -102,6 +108,26 @@ CheckIfWonderGuardCancelsMove: @ 82DBFE4
 CheckIfLevitateCancelsGroundMove: @ 82DBFEF
 	get_curr_move_type
 	if_equal TYPE_GROUND, Score_Minus10
+
+AI_CBM_CheckIfPriorityCancelled:
+	if_field_status STATUS_FIELD_PSYCHIC_TERRAIN, CheckIfTerrainCancelsPriority2
+	if_ability AI_TARGET, ABILITY_QUEENLY_MAJESTY, TargetBlocksPriority
+	if_ability AI_TARGET, ABILITY_DAZZLING, TargetBlocksPriority
+	end
+
+CheckIfTerrainCancelsPriority2:
+	if_grounded AI_TARGET, TargetBlocksPriority
+	end
+
+TargetBlocksPriority:
+	if_ability AI_USER, ABILITY_GALE_WINGS, GaleWingsStatusMoves
+	if_move_priority_greater_than 0, Score_Minus30
+	end
+
+GaleWingsStatusMoves:
+	if_effect EFFECT_ROOST, AI_Ret
+	if_effect EFFECT_TAILWIND, AI_Ret
+	end
 
 AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SLEEP, AI_CBM_Sleep
@@ -126,8 +152,8 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_ROAR, AI_CBM_Roar
 	if_effect EFFECT_TOXIC, AI_CBM_Toxic
 	if_effect EFFECT_LIGHT_SCREEN, AI_CBM_LightScreen
+	if_effect EFFECT_AURORA_VEIL, AI_CBM_AuroraVeil
 	if_effect EFFECT_OHKO, AI_CBM_OneHitKO
-	if_effect EFFECT_SUPER_FANG, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_MIST, AI_CBM_Mist
 	if_effect EFFECT_FOCUS_ENERGY, AI_CBM_FocusEnergy
 	if_effect EFFECT_CONFUSE, AI_CBM_Confuse
@@ -152,8 +178,8 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_RECHARGE, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_LEECH_SEED, AI_CBM_LeechSeed
 	if_effect EFFECT_DISABLE, AI_CBM_Disable
-	if_effect EFFECT_LEVEL_DAMAGE, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_PSYWAVE, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LEVEL_DAMAGE, AI_CV_Hit
+	if_effect EFFECT_PSYWAVE, AI_CV_Hit
 	if_effect EFFECT_COUNTER, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_ENCORE, AI_CBM_Encore
 	if_effect EFFECT_SNORE, AI_CBM_DamageDuringSleep
@@ -170,13 +196,13 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SWAGGER, AI_CBM_Confuse
 	if_effect EFFECT_ATTRACT, AI_CBM_Attract
 	if_effect EFFECT_CAPTIVATE, AI_CBM_Captivate
-	if_effect EFFECT_RETURN, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_RETURN, AI_CV_Hit
 	if_effect EFFECT_PRESENT, AI_CBM_HighRiskForDamage
-	if_effect EFFECT_FRUSTRATION, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_FRUSTRATION, AI_CV_Hit
 	if_effect EFFECT_SAFEGUARD, AI_CBM_Safeguard
 	if_effect EFFECT_MAGNITUDE, AI_CBM_Magnitude
 	if_effect EFFECT_BATON_PASS, AI_CBM_BatonPass
-	if_effect EFFECT_SONICBOOM, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_SONICBOOM, AI_CV_Hit
 	if_effect EFFECT_RAIN_DANCE, AI_CBM_RainDance
 	if_effect EFFECT_SUNNY_DAY, AI_CBM_SunnyDay
 	if_effect EFFECT_BELLY_DRUM, AI_CBM_BellyDrum
@@ -205,7 +231,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_ENDEAVOR, AI_CBM_HighRiskForDamage
 	if_effect EFFECT_IMPRISON, AI_CBM_Imprison
 	if_effect EFFECT_REFRESH, AI_CBM_Refresh
-	if_effect EFFECT_LOW_KICK, AI_CBM_HighRiskForDamage
+	if_effect EFFECT_LOW_KICK, AI_CV_Hit
 	if_effect EFFECT_MUD_SPORT, AI_CBM_MudSport
 	if_effect EFFECT_TICKLE, AI_CBM_Tickle
 	if_effect EFFECT_COSMIC_POWER, AI_CBM_CosmicPower
@@ -270,6 +296,8 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_MAGIC_ROOM, AI_CBM_MagicRoom
 	if_effect EFFECT_SOAK, AI_CBM_Soak
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
+	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
+	if_effect EFFECT_SOLARBEAM, AI_CBM_SolarBeam
 	end
 	
 AI_CBM_LockOn:
@@ -281,9 +309,14 @@ AI_CBM_LockOn:
 AI_CBM_Soak:
 	if_type AI_TARGET, TYPE_WATER, Score_Minus10
 	end
-	
+
 AI_CBM_TrickRoom:
-	if_field_status STATUS_FIELD_TRICK_ROOM, Score_Minus10
+	if_target_faster AI_CBM_IsTrickRoomActive
+	end
+
+@ If target is faster but Trick Room is already active, don't use it
+AI_CBM_IsTrickRoomActive:
+	if_field_status STATUS_FIELD_TRICK_ROOM, Score_Minus30 
 	end
 	
 AI_CBM_WonderRoom:
@@ -318,7 +351,7 @@ AI_CBM_HealBell_End:
 AI_CBM_Taunt:
 	if_target_taunted Score_Minus10
 	end
-	
+
 AI_CBM_Protect:
 	get_protect_count AI_USER
 	if_more_than 2, Score_Minus10
@@ -531,10 +564,14 @@ AI_CBM_StickyWeb:
 	
 AI_CBM_Sleep: @ 82DC2D4
 	get_ability AI_TARGET
-	if_equal ABILITY_INSOMNIA, Score_Minus10
-	if_equal ABILITY_VITAL_SPIRIT, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_INSOMNIA, Score_Minus30
+	if_equal ABILITY_VITAL_SPIRIT, Score_Minus30
+	if_equal ABILITY_COMATOSE, Score_Minus30
+	if_has_move_with_effect AI_TARGET, EFFECT_SLEEP_TALK, Score_Minus12
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
+	if_field_status STATUS_FIELD_ELECTRIC_TERRAIN, Score_Minus30
+	if_field_status STATUS_FIELD_MISTY_TERRAIN, Score_Minus30
 	end
 
 AI_CBM_Explosion: @ 82DC2F7
@@ -635,6 +672,11 @@ CheckIfAbilityBlocksStatChange: @ 82DC3F6
 	get_ability AI_TARGET
 	if_equal ABILITY_CLEAR_BODY, Score_Minus10
 	if_equal ABILITY_WHITE_SMOKE, Score_Minus10
+	if_equal ABILITY_FULL_METAL_BODY, Score_Minus10
+	if_equal ABILITY_MAGIC_BOUNCE, Score_Minus10
+	if_equal ABILITY_CONTRARY, Score_Minus10
+	if_equal ABILITY_DEFIANT, Score_Minus10
+	if_equal ABILITY_COMPETITIVE, Score_Minus10
 	end
 
 AI_CBM_Haze: @ 82DC405
@@ -682,6 +724,12 @@ AI_CBM_LightScreen: @ 82DC4C5
 	if_side_affecting AI_USER, SIDE_STATUS_LIGHTSCREEN, Score_Minus8
 	end
 
+AI_CBM_AuroraVeil:
+	if_side_affecting AI_USER, SIDE_STATUS_AURORA_VEIL, Score_Minus30
+	get_weather
+	if_not_equal AI_WEATHER_HAIL, Score_Minus30
+	end
+
 AI_CBM_OneHitKO: @ 82DC4D0
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
 	get_ability AI_TARGET
@@ -723,11 +771,12 @@ AI_CBM_Reflect: @ 82DC53A
 	end
 
 AI_CBM_Paralyze: @ 82DC545
-	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus10
+	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_LIMBER, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_equal ABILITY_LIMBER, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
+	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -844,7 +893,7 @@ AI_CBM_FutureSight: @ 82DC669
 
 AI_CBM_FakeOut: @ 82DC680
 	is_first_turn_for AI_USER
-	if_equal 0, Score_Minus10
+	if_equal 0, Score_Minus30
 	end
 
 AI_CBM_Stockpile: @ 82DC689
@@ -937,6 +986,24 @@ AI_CBM_DragonDance: @ 82DC778
 	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
 	end
 
+@ Don't spam sucker punch if player is using a status move
+AI_CBM_SuckerPunch:
+	get_last_used_bank_move AI_TARGET
+	get_move_split_from_result
+	if_not_equal SPLIT_STATUS, AI_Ret
+	if_random_less_than 126, AI_Ret
+	score -10 @ big score drop to negate bonus from priority KO check
+	end
+
+@ Don't use Solar Beam if it needs to charge
+AI_CBM_SolarBeam:
+	if_ability AI_USER, ABILITY_CHLOROPLAST, AI_Ret
+	if_holds_item AI_USER, ITEM_POWER_HERB, AI_Ret
+	get_weather
+	if_equal AI_WEATHER_SUN, AI_Ret
+	score -10
+	end
+
 Score_Minus1:
 	score -1
 	end
@@ -999,7 +1066,7 @@ AI_CheckIfAlreadyDead:
 AI_CheckIfAlreadyDeadPriorities:
 	if_target_faster Score_Minus1
 	if_random_less_than 126, AI_Ret
-	score +1
+	score +3
 	end
 	
 @ The purpose is to use a move effect that hits the hardest or similar
@@ -1007,20 +1074,48 @@ AI_CV_DmgMove:
 	get_considered_move_power
 	if_equal 0, AI_Ret
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_WEAK, Score_Minus1
+	if_equal MOVE_POWER_WEAK, Score_Minus5
+	if_equal MOVE_POWER_BEST, Score_Plus2
 	end
 	
 @ If move deals shit damage, and there are other mons to switch in, use support moves instead
 AI_WeakDmg:
 	get_considered_move_power
 	if_equal 0, AI_Ret
+	if_effect EFFECT_LEVEL_DAMAGE, AI_Ret
+	if_effect EFFECT_TRAP, AI_Ret
 	if_has_no_move_with_split AI_USER, SPLIT_STATUS, AI_Ret
 	get_curr_dmg_hp_percent
 	if_more_than 30, AI_Ret
-	if_more_than 20, Score_Minus1
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_BEST, Score_Minus2
-	score -3
+	if_equal MOVE_POWER_BEST, Score_Minus5
+	score -6
+	end
+
+AI_ChoiceLocked:
+	if_holds_item AI_USER, ITEM_CHOICE_BAND, AI_ChoiceDamage
+	if_holds_item AI_USER, ITEM_CHOICE_SPECS, AI_ChoiceDamage
+	if_holds_item AI_USER, ITEM_CHOICE_SCARF, AI_ChoiceDamage
+	end
+
+@ If move doesn't do meaningful damage, switch out
+AI_ChoiceDamage:
+	get_curr_dmg_hp_percent
+	if_less_than 60, AI_ChoiceUturn
+	end
+
+AI_ChoiceUturn:
+	if_effect EFFECT_HIT_ESCAPE, AI_ChoiceUturnCheckSwitchIns
+	if_hp_less_than AI_USER, 30, AI_Ret @ Don't bother switching out a weakened mon
+	score -20
+	end
+
+@ Don't lock into U turn etc if there's nothing else to bring in
+AI_ChoiceUturnCheckSwitchIns:
+	count_usable_party_mons AI_USER
+	if_equal 0, AI_ChoiceEnd
+	score +3
+AI_ChoiceEnd:
 	end
 	
 AI_DiscourageMagicGuard:
@@ -1034,6 +1129,19 @@ AI_DiscourageMagicGuard:
 AI_DiscourageMagicGuardEnd:
 	end
 
+@ If a priority move can KO, prefer it over other moves to avoid taking unnecessary damage
+AI_FaintWithPriority:
+	if_can_faint AI_FaintWithPriority1
+	end
+	
+AI_FaintWithPriority1:
+	if_move_priority_greater_than 0, AI_FaintWithPriority_ScoreUp
+	end
+
+AI_FaintWithPriority_ScoreUp:
+	score +10
+	end
+
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
@@ -1041,7 +1149,9 @@ AI_CheckViability:
 	call AI_CheckIfAlreadyDead
 	call AI_CV_DmgMove
 	call AI_WeakDmg
+	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
+	call AI_FaintWithPriority
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
 	if_effect EFFECT_ABSORB, AI_CV_Absorb
@@ -1074,7 +1184,7 @@ AI_CheckViability:
 	if_effect EFFECT_LIGHT_SCREEN, AI_CV_LightScreen
 	if_effect EFFECT_REST, AI_CV_Rest
 	if_effect EFFECT_OHKO, AI_CV_OneHitKO
-	if_effect EFFECT_SUPER_FANG, AI_CV_SuperFang
+	if_effect EFFECT_SUPER_FANG, AI_CV_Hit
 	if_effect EFFECT_TRAP, AI_CV_Trap
 	if_effect EFFECT_CONFUSE, AI_CV_Confuse
 	if_effect EFFECT_FOCUS_ENERGY, AI_CV_FocusEnergy
@@ -1167,7 +1277,7 @@ AI_CheckViability:
 	if_effect EFFECT_BULK_UP, AI_CV_DefenseUp
 	if_effect EFFECT_WATER_SPORT, AI_CV_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CV_SpDefUp
-	if_effect EFFECT_DRAGON_DANCE, AI_CV_DragonDance
+	if_effect EFFECT_DRAGON_DANCE, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_POWDER, AI_CV_Powder
 	if_effect EFFECT_MISTY_TERRAIN, AI_CV_MistyTerrain
 	if_effect EFFECT_GRASSY_TERRAIN, AI_CV_GrassyTerrain
@@ -1178,6 +1288,12 @@ AI_CheckViability:
 	if_effect EFFECT_STICKY_WEB, AI_CV_Hazards
 	if_effect EFFECT_TOXIC_SPIKES, AI_CV_Hazards
 	if_effect EFFECT_PERISH_SONG, AI_CV_PerishSong
+	if_effect EFFECT_TRICK_ROOM, AI_CV_TrickRoom
+	if_effect EFFECT_SHELL_SMASH, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_SHIFT_GEAR, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_QUIVER_DANCE, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_GEOMANCY, AI_CV_BoostSpeedOffense
+	if_effect EFFECT_COIL, AI_CV_DefenseUp
 	end
 	
 AI_CV_PerishSong:
@@ -1212,6 +1328,15 @@ AI_CV_HzardsEnd:
 AI_CV_StealthRock2:
 	score -2
 	goto AI_CV_HzardsEnd
+
+AI_CV_TrickRoom:
+	if_target_faster AI_EncourageTrickRoom
+	score +3
+	end
+
+AI_EncourageTrickRoom:
+	score +4
+	end
 	
 AI_CV_MistyTerrain:
 	call AI_CV_TerrainExpander
@@ -1266,15 +1391,27 @@ AI_CV_Hit:
 	end
 
 AI_CV_Sleep: @ 82DCA92
-	if_has_move_with_effect AI_TARGET, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
-	if_has_move_with_effect AI_TARGET, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
-	goto AI_CV_Sleep_End
+	if_has_move_with_effect AI_USER, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_HEX, AI_CV_SleepEncourageSlpDamage
+	goto AI_CV_Sleep1
 
 AI_CV_SleepEncourageSlpDamage: @ 82DCAA5
-	if_random_less_than 128, AI_CV_Sleep_End
+	score +3
+	if_random_less_than 128, AI_CV_Sleep1
 	score +1
 
-AI_CV_Sleep_End: @ 82DCAAD
+@ Sleep OP, use it if possible
+AI_CV_Sleep1: @ 82DCAAD
+	get_last_used_bank_move AI_USER
+	get_move_effect_from_result
+	if_equal EFFECT_SLEEP, AI_CV_Sleep_End @ If you just missed a sleep move, try something else
+	score +3
+	if_random_less_than 128, AI_CV_Sleep_End
+	score +2
+	end
+
+AI_CV_Sleep_End:
 	end
 
 AI_CV_Absorb: @ 82DCAAE
@@ -1389,9 +1526,41 @@ AI_CV_MirrorMove_EncouragedMovesToMirror: @ 82DCB6C
     .2byte MOVE_TRICK
     .2byte MOVE_SUPERPOWER
     .2byte MOVE_SKILL_SWAP
-    .2byte -1
+    .2byte 0xFFFF
+
+AI_SetUpVsSleep:
+	if_not_status AI_TARGET, STATUS1_SLEEP, AI_Ret
+	if_stat_level_more_than AI_USER, STAT_ATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_DEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPATK, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 6, AI_SetUpVsSleep1
+	if_stat_level_more_than AI_USER, STAT_SPEED, 6, AI_SetUpVsSleep1
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	score +3
+	end
+
+AI_SetUpVsSleep1:
+	if_stat_level_more_than AI_USER, STAT_ATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_DEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPATK, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPDEF, 7, Score_Minus2
+	if_stat_level_more_than AI_USER, STAT_SPEED, 7, Score_Minus2
+	if_hp_less_than 30, AI_TARGET, AI_Ret
+	if_random_less_than 128, AI_Ret
+	score +3
+	end
+
+@AI has Sturdy/a Focus Sash and a stat boosting move. Only one thing to do!
+AI_CheckFreeSetup:
+	if_hp_less_than 100, AI_USER, AI_Ret
+	if_no_ability AI_USER, ABILITY_STURDY, AI_Ret
+	if_holds_item AI_USER, ITEM_FOCUS_SASH, Score_Plus5
+	score +5
+	end
 
 AI_CV_AttackUp: @ 82DCBBC
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_physical_moves_unusable AI_USER, AI_TARGET, Score_Minus8
 	if_stat_level_less_than AI_USER, STAT_ATK, 9, AI_CV_AttackUp2
 	if_random_less_than 100, AI_CV_AttackUp3
@@ -1415,6 +1584,8 @@ AI_CV_AttackUp_End: @ 82DCBF6
 	end
 
 AI_CV_DefenseUp: @ 82DCBF7
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_DEF, 9, AI_CV_DefenseUp2
 	if_random_less_than 100, AI_CV_DefenseUp3
 	score -1
@@ -1449,6 +1620,8 @@ AI_CV_DefenseUp_End: @ 82DCC52
 	end
 
 AI_CV_SpeedUp: @ 82DCC5D
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_target_faster AI_CV_SpeedUp2
 	score -3
 	goto AI_CV_SpeedUp_End
@@ -1461,6 +1634,8 @@ AI_CV_SpeedUp_End: @ 82DCC72
 	end
 
 AI_CV_SpAtkUp: @ 82DCC73
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPATK, 9, AI_CV_SpAtkUp2
 	if_random_less_than 100, AI_CV_SpAtkUp3
 	score -1
@@ -1483,6 +1658,8 @@ AI_CV_SpAtkUp_End: @ 82DCCAD
 	end
 
 AI_CV_SpDefUp: @ 82DCCAE
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
 	if_stat_level_less_than AI_USER, STAT_SPDEF, 9, AI_CV_SpDefUp2
 	if_random_less_than 100, AI_CV_SpDefUp3
 	score -1
@@ -1642,10 +1819,9 @@ AI_CV_DefenseDown3:
 AI_CV_DefenseDown_End:
 	end
 
-AI_CV_SpeedDownFromChance: @ 82DCE6B
-	if_move MOVE_ICY_WIND, AI_CV_SpeedDown
-	if_move MOVE_ROCK_TOMB, AI_CV_SpeedDown
-	if_move MOVE_MUD_SHOT, AI_CV_SpeedDown
+AI_CV_SpeedDownFromChance:
+	if_ability AI_USER, ABILITY_SHEER_FORCE, AI_Ret
+	if_effect_chance 100, AI_CV_SpeedDown
 	end
 
 AI_CV_SpeedDown: @ 82DCE81
@@ -1874,7 +2050,7 @@ AI_CV_Heal2:
 	if_random_less_than 70, AI_CV_Heal5
 
 AI_CV_Heal3:
-	score -3
+	score -12 @ Don't try to heal if you have full HP
 	goto AI_CV_Heal_End
 
 AI_CV_Heal4:
@@ -1896,14 +2072,19 @@ AI_CV_Heal_End:
 	
 EncouragePsnVenoshock:
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_VENOSHOCK, EncouragePsnVenoshockEnd
-	score +1
+	score +2
 	if_random_less_than 128, EncouragePsnVenoshockEnd
 	score +1
 EncouragePsnVenoshockEnd:
 	end
 
+AI_ToxicTrappedTarget:
+	if_status2 AI_TARGET, STATUS2_WRAPPED, Score_Plus3
+	end
+
 AI_CV_Toxic:
 	call EncouragePsnVenoshock
+	call AI_ToxicTrappedTarget
 AI_CV_LeechSeed:
 	if_user_has_no_attacking_moves AI_CV_Toxic3
 	if_hp_more_than AI_USER, 50, AI_CV_Toxic2
@@ -1926,31 +2107,16 @@ AI_CV_Toxic_End:
 AI_CV_LightScreen:
 	call EncourageLightClay
 	if_hp_less_than AI_USER, 50, AI_CV_LightScreen_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
-	get_target_type2
-	if_in_bytes AI_CV_LightScreen_SpecialTypeList, AI_CV_LightScreen_End
 	if_random_less_than 50, AI_CV_LightScreen_End
 AI_CV_LightScreen_ScoreDown2:
 	score -2
 AI_CV_LightScreen_End:
 	end
 
-AI_CV_LightScreen_SpecialTypeList:
-    .byte TYPE_FIRE
-    .byte TYPE_WATER
-    .byte TYPE_GRASS
-    .byte TYPE_ELECTRIC
-    .byte TYPE_PSYCHIC
-    .byte TYPE_ICE
-    .byte TYPE_DRAGON
-    .byte TYPE_DARK
-    .byte -1
-
 AI_CV_Rest:
 	if_target_faster AI_CV_Rest4
 	if_hp_not_equal AI_USER, 100, AI_CV_Rest2
-	score -8
+	score -30 @ Don't rest at full HP
 	goto AI_CV_Rest_End
 
 AI_CV_Rest2:
@@ -1985,16 +2151,9 @@ AI_CV_Rest_End:
 AI_CV_OneHitKO:
 	if_status3 AI_TARGET, STATUS3_ALWAYS_HITS, Score_Plus5
 	end
-
-AI_CV_SuperFang:
-	if_hp_more_than AI_TARGET, 50, AI_CV_SuperFang_End
-	score -1
-
-AI_CV_SuperFang_End:
-	end
 	
 AI_CV_Trap:
-	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_TrapEnd
+	if_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, Score_Minus3
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_Trap5
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_PERISH_SONG, AI_CV_Trap1
 	score +3
@@ -2095,33 +2254,19 @@ EncourageLightClayEnd:
 	end
 	
 AI_CV_AuroraVeil:
+	get_weather
+	if_equal AI_WEATHER_HAIL, Score_Plus5
 	call EncourageLightClay
 	end
 
 AI_CV_Reflect:
 	call EncourageLightClay
 	if_hp_less_than AI_USER, 50, AI_CV_Reflect_ScoreDown2
-	get_target_type1
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
-	get_target_type2
-	if_in_bytes AI_CV_Reflect_PhysicalTypeList, AI_CV_Reflect_End
 	if_random_less_than 50, AI_CV_Reflect_End
 AI_CV_Reflect_ScoreDown2:
 	score -2
 AI_CV_Reflect_End:
 	end
-
-AI_CV_Reflect_PhysicalTypeList:
-    .byte TYPE_NORMAL
-    .byte TYPE_FIGHTING
-    .byte TYPE_FLYING
-    .byte TYPE_POISON
-    .byte TYPE_GROUND
-    .byte TYPE_ROCK
-    .byte TYPE_BUG
-    .byte TYPE_GHOST
-    .byte TYPE_STEEL
-    .byte -1
 
 AI_CV_ToxicThread:
 	if_status AI_TARGET, STATUS1_ANY, AI_CV_ToxicThreadSpd
@@ -2173,6 +2318,8 @@ AI_CV_VitalThrow_End:
 	end
 
 AI_CV_Substitute:
+	goto AI_IsHealingAbilityActive
+AI_CV_SubstituteStart:
 	if_not_status2 AI_TARGET, STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION, AI_CV_Substitute1
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, AI_CV_SubstitutePlus3Continue
 	if_status AI_TARGET, STATUS1_BURN | STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
@@ -2218,6 +2365,26 @@ AI_CV_Substitute8:
 	if_random_less_than 100, AI_CV_Substitute_End
 	score +1
 AI_CV_Substitute_End:
+	end
+
+@ Check for abilities that let the user spam Substitute under certain conditions
+AI_IsHealingAbilityActive:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_HealPoison
+	if_ability AI_USER, ABILITY_ICE_BODY, AI_HealHail
+	if_ability AI_USER, ABILITY_RAIN_DISH, AI_HealRain
+	if_ability AI_USER, ABILITY_DRY_SKIN, AI_HealRain
+	goto AI_CV_SubstituteStart
+
+AI_HealPoison:
+	if_status AI_USER, STATUS1_PSN_ANY, AI_CV_SubstitutePlus1Continue
+	end
+
+AI_HealHail:
+	if_equal AI_WEATHER_HAIL, AI_CV_SubstitutePlus1Continue
+	end
+	
+AI_HealRain:
+	if_equal AI_WEATHER_RAIN, AI_CV_SubstitutePlus1Continue
 	end
 
 AI_CV_Recharge:
@@ -2322,69 +2489,79 @@ AI_CV_Encore_End:
 	end
 
 AI_CV_Encore_EncouragedMovesToEncore:
-    .byte EFFECT_DREAM_EATER
-    .byte EFFECT_ATTACK_UP
-    .byte EFFECT_DEFENSE_UP
-    .byte EFFECT_SPEED_UP
-    .byte EFFECT_SPECIAL_ATTACK_UP
-    .byte EFFECT_HAZE
-    .byte EFFECT_ROAR
-    .byte EFFECT_CONVERSION
-    .byte EFFECT_TOXIC
-    .byte EFFECT_LIGHT_SCREEN
-    .byte EFFECT_REST
-    .byte EFFECT_SUPER_FANG
-    .byte EFFECT_SPECIAL_DEFENSE_UP_2
-    .byte EFFECT_CONFUSE
-    .byte EFFECT_POISON
-    .byte EFFECT_PARALYZE
-    .byte EFFECT_LEECH_SEED
-    .byte EFFECT_DO_NOTHING
-    .byte EFFECT_ATTACK_UP_2
-    .byte EFFECT_ENCORE
-    .byte EFFECT_CONVERSION_2
-    .byte EFFECT_LOCK_ON
-    .byte EFFECT_HEAL_BELL
-    .byte EFFECT_MEAN_LOOK
-    .byte EFFECT_NIGHTMARE
-    .byte EFFECT_PROTECT
-    .byte EFFECT_SKILL_SWAP
-    .byte EFFECT_FORESIGHT
-    .byte EFFECT_PERISH_SONG
-    .byte EFFECT_SANDSTORM
-    .byte EFFECT_ENDURE
-    .byte EFFECT_SWAGGER
-    .byte EFFECT_ATTRACT
-    .byte EFFECT_SAFEGUARD
-    .byte EFFECT_RAIN_DANCE
-    .byte EFFECT_SUNNY_DAY
-    .byte EFFECT_BELLY_DRUM
-    .byte EFFECT_PSYCH_UP
-    .byte EFFECT_FUTURE_SIGHT
-    .byte EFFECT_FAKE_OUT
-    .byte EFFECT_STOCKPILE
-    .byte EFFECT_SPIT_UP
-    .byte EFFECT_SWALLOW
-    .byte EFFECT_HAIL
-    .byte EFFECT_TORMENT
-    .byte EFFECT_WILL_O_WISP
-    .byte EFFECT_FOLLOW_ME
-    .byte EFFECT_CHARGE
-    .byte EFFECT_TRICK
-    .byte EFFECT_ROLE_PLAY
-    .byte EFFECT_INGRAIN
-    .byte EFFECT_RECYCLE
-    .byte EFFECT_KNOCK_OFF
-    .byte EFFECT_SKILL_SWAP
-    .byte EFFECT_IMPRISON
-    .byte EFFECT_REFRESH
-    .byte EFFECT_GRUDGE
-    .byte EFFECT_TEETER_DANCE
-    .byte EFFECT_MUD_SPORT
-    .byte EFFECT_WATER_SPORT
-    .byte EFFECT_DRAGON_DANCE
-    .byte EFFECT_CAMOUFLAGE
-    .byte -1
+    .2byte EFFECT_DREAM_EATER
+    .2byte EFFECT_ATTACK_UP
+    .2byte EFFECT_DEFENSE_UP
+    .2byte EFFECT_SPEED_UP
+    .2byte EFFECT_SPECIAL_ATTACK_UP
+    .2byte EFFECT_HAZE
+    .2byte EFFECT_ROAR
+    .2byte EFFECT_CONVERSION
+    .2byte EFFECT_TOXIC
+    .2byte EFFECT_LIGHT_SCREEN
+	.2byte EFFECT_AURORA_VEIL
+    .2byte EFFECT_REST
+    .2byte EFFECT_SUPER_FANG
+    .2byte EFFECT_SPECIAL_DEFENSE_UP_2
+    .2byte EFFECT_CONFUSE
+    .2byte EFFECT_POISON
+    .2byte EFFECT_PARALYZE
+    .2byte EFFECT_LEECH_SEED
+    .2byte EFFECT_DO_NOTHING
+    .2byte EFFECT_ATTACK_UP_2
+    .2byte EFFECT_ENCORE
+    .2byte EFFECT_CONVERSION_2
+    .2byte EFFECT_LOCK_ON
+    .2byte EFFECT_HEAL_BELL
+    .2byte EFFECT_MEAN_LOOK
+    .2byte EFFECT_NIGHTMARE
+    .2byte EFFECT_PROTECT
+    .2byte EFFECT_SKILL_SWAP
+    .2byte EFFECT_FORESIGHT
+    .2byte EFFECT_PERISH_SONG
+    .2byte EFFECT_SANDSTORM
+    .2byte EFFECT_ENDURE
+    .2byte EFFECT_SWAGGER
+    .2byte EFFECT_ATTRACT
+    .2byte EFFECT_SAFEGUARD
+    .2byte EFFECT_RAIN_DANCE
+    .2byte EFFECT_SUNNY_DAY
+    .2byte EFFECT_BELLY_DRUM
+    .2byte EFFECT_PSYCH_UP
+    .2byte EFFECT_FUTURE_SIGHT
+    .2byte EFFECT_FAKE_OUT
+    .2byte EFFECT_STOCKPILE
+    .2byte EFFECT_SPIT_UP
+    .2byte EFFECT_SWALLOW
+    .2byte EFFECT_HAIL
+    .2byte EFFECT_TORMENT
+    .2byte EFFECT_WILL_O_WISP
+    .2byte EFFECT_FOLLOW_ME
+    .2byte EFFECT_CHARGE
+    .2byte EFFECT_TRICK
+    .2byte EFFECT_ROLE_PLAY
+    .2byte EFFECT_INGRAIN
+    .2byte EFFECT_RECYCLE
+    .2byte EFFECT_KNOCK_OFF
+    .2byte EFFECT_SKILL_SWAP
+    .2byte EFFECT_IMPRISON
+    .2byte EFFECT_REFRESH
+    .2byte EFFECT_GRUDGE
+    .2byte EFFECT_TEETER_DANCE
+    .2byte EFFECT_MUD_SPORT
+    .2byte EFFECT_WATER_SPORT
+    .2byte EFFECT_DRAGON_DANCE
+    .2byte EFFECT_CAMOUFLAGE
+	.2byte EFFECT_QUIVER_DANCE
+	.2byte EFFECT_SHELL_SMASH
+   	.2byte EFFECT_COIL
+	.2byte EFFECT_SHIFT_GEAR
+	.2byte EFFECT_TAILWIND
+	.2byte EFFECT_WORRY_SEED
+	.2byte EFFECT_AQUA_RING
+	.2byte EFFECT_MAGNET_RISE
+	.2byte EFFECT_STEALTH_ROCK
+    .2byte 0xFFFF
 
 AI_CV_PainSplit:
 	if_hp_less_than AI_TARGET, 80, AI_CV_PainSplit_ScoreDown1
@@ -2550,7 +2727,7 @@ AI_CV_Curse_End:
 
 AI_CV_Protect:
 	get_protect_count AI_USER
-	if_more_than 1, AI_CV_Protect_ScoreDown2
+	if_more_than 1, AI_CV_Protect_ScoreDown3
 	if_status  AI_USER, STATUS1_PSN_ANY | STATUS1_BURN, AI_CV_ProtectUserStatused
 	if_status2 AI_USER, STATUS2_CURSED | STATUS2_INFATUATION, AI_CV_ProtectUserStatused
 	if_status3 AI_USER, STATUS3_PERISH_SONG | STATUS3_LEECHSEED | STATUS3_YAWN, AI_CV_ProtectUserStatused
@@ -2576,6 +2753,7 @@ AI_CV_Protect4:
 	score -1
 	goto AI_CV_Protect_End
 AI_CV_ProtectUserStatused:
+	if_ability AI_USER, ABILITY_POISON_HEAL, AI_CV_Protect_ScoreUp2
 	score -1
 	if_double_battle AI_CV_Protect4
 	score -1
@@ -2584,8 +2762,8 @@ AI_CV_Protect3:
 	get_last_used_bank_move AI_TARGET
 	get_move_effect_from_result
 	if_not_equal EFFECT_LOCK_ON, AI_CV_Protect_End
-AI_CV_Protect_ScoreDown2:
-	score -2
+AI_CV_Protect_ScoreDown3:
+	score -3
 AI_CV_Protect_End:
 	end
 
@@ -2757,7 +2935,7 @@ AI_CV_SunnyDay:
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_SunnyDay2
 	goto AI_CV_SunnyDay_Rock
 AI_CV_SunnyDay2:
-	score +1
+	score +3
 	goto AI_CV_SunnyDay_Rock
 AI_CV_SunnyDay_ScoreDown1:
 	score -1
@@ -2773,7 +2951,7 @@ AI_CV_SunnyDay_Moves:
 	if_has_move_with_type AI_USER, TYPE_FIRE, AI_CV_SunnyDay_MovesPlus
 	goto AI_CV_SunnyDay_Abilities
 AI_CV_SunnyDay_MovesPlus:
-	score +1
+	score +3
 AI_CV_SunnyDay_Abilities:
 	if_user_faster AI_CV_SunnyDay_Abilities2
 	if_ability AI_USER, ABILITY_CHLOROPHYLL, AI_CV_SunnyDay_AbilitiesPlus
@@ -2972,27 +3150,30 @@ AI_CV_SandstormResistantTypes:
     .byte -1
 	
 AI_SandstormResistantAbilities:
-	.byte ABILITY_SAND_VEIL
-	.byte ABILITY_SAND_FORCE
-	.byte ABILITY_SAND_RUSH
-	.byte ABILITY_OVERCOAT
-	.byte ABILITY_MAGIC_GUARD
-	.byte -1
+	.2byte ABILITY_SAND_VEIL
+	.2byte ABILITY_SAND_FORCE
+	.2byte ABILITY_SAND_RUSH
+	.2byte ABILITY_OVERCOAT
+	.2byte ABILITY_MAGIC_GUARD
+	.2byte 0xFFFF
 	
 AI_HailResistantAbilities:
-	.byte ABILITY_ICE_BODY
-	.byte ABILITY_SNOW_CLOAK
-	.byte ABILITY_OVERCOAT
-	.byte ABILITY_MAGIC_GUARD
-	.byte -1
+	.2byte ABILITY_ICE_BODY
+	.2byte ABILITY_SNOW_CLOAK
+	.2byte ABILITY_OVERCOAT
+	.2byte ABILITY_MAGIC_GUARD
+	.2byte ABILITY_SLUSH_RUSH
+	.2byte 0xFFFF
 
 AI_CV_FakeOut:
 	if_ability AI_TARGET, ABILITY_INNER_FOCUS, AI_CV_FakeOut_End
 	if_double_battle AI_CV_FakeOut_Double
-	score +5
+	is_first_turn_for AI_USER
+	if_not_equal 0, AI_CV_FakeOut_Double
+	score +2
 	end
 AI_CV_FakeOut_Double:
-	score +2
+	score +5
 AI_CV_FakeOut_End:
 	end
 
@@ -3031,6 +3212,7 @@ AI_CV_Hail_AbilityPlus:
 	score +1
 AI_CV_Hail_Move:
 	if_has_move AI_USER, MOVE_BLIZZARD, AI_CV_Hail_MovePlus
+	if_has_move AI_USER, MOVE_AURORA_VEIL, AI_CV_Hail_MovePlus
 	if_has_move AI_USER_PARTNER, MOVE_BLIZZARD, AI_CV_Hail_MovePlus
 	goto AI_CV_Hail_End
 AI_CV_Hail_MovePlus:
@@ -3137,11 +3319,18 @@ AI_CV_Trick_EffectsToEncourage:
     .byte HOLD_EFFECT_CONFUSE_BITTER
     .byte HOLD_EFFECT_CONFUSE_SOUR
     .byte HOLD_EFFECT_MACHO_BRACE
+	.byte HOLD_EFFECT_IRON_BALL
     .byte HOLD_EFFECT_CHOICE_BAND
+	.byte HOLD_EFFECT_CHOICE_SCARF
+	.byte HOLD_EFFECT_CHOICE_SPECS
+	.byte HOLD_EFFECT_FLAME_ORB
+	.byte HOLD_EFFECT_TOXIC_ORB
     .byte -1
 
 AI_CV_Trick_EffectsToEncourage2:
     .byte HOLD_EFFECT_CHOICE_BAND
+	.byte HOLD_EFFECT_CHOICE_SCARF
+	.byte HOLD_EFFECT_CHOICE_SPECS
     .byte -1
 
 AI_CV_ChangeSelfAbility:
@@ -3162,27 +3351,28 @@ AI_CV_ChangeSelfAbility_End:
 	end
 
 AI_CV_ChangeSelfAbility_AbilitiesToEncourage:
-    .byte ABILITY_SPEED_BOOST
-    .byte ABILITY_BATTLE_ARMOR
-    .byte ABILITY_SAND_VEIL
-    .byte ABILITY_STATIC
-    .byte ABILITY_FLASH_FIRE
-    .byte ABILITY_WONDER_GUARD
-    .byte ABILITY_EFFECT_SPORE
-    .byte ABILITY_SWIFT_SWIM
-    .byte ABILITY_HUGE_POWER
-    .byte ABILITY_RAIN_DISH
-    .byte ABILITY_CUTE_CHARM
-    .byte ABILITY_SHED_SKIN
-    .byte ABILITY_MARVEL_SCALE
-    .byte ABILITY_PURE_POWER
-    .byte ABILITY_CHLOROPHYLL
-    .byte ABILITY_SHIELD_DUST
-    .byte -1
+    .2byte ABILITY_SPEED_BOOST
+    .2byte ABILITY_BATTLE_ARMOR
+    .2byte ABILITY_SAND_VEIL
+    .2byte ABILITY_STATIC
+    .2byte ABILITY_FLASH_FIRE
+    .2byte ABILITY_WONDER_GUARD
+    .2byte ABILITY_EFFECT_SPORE
+    .2byte ABILITY_SWIFT_SWIM
+    .2byte ABILITY_HUGE_POWER
+    .2byte ABILITY_RAIN_DISH
+    .2byte ABILITY_CUTE_CHARM
+    .2byte ABILITY_SHED_SKIN
+    .2byte ABILITY_MARVEL_SCALE
+    .2byte ABILITY_PURE_POWER
+    .2byte ABILITY_CHLOROPHYLL
+    .2byte ABILITY_SHIELD_DUST
+    .2byte 0xFFFF
 
 AI_CV_Superpower:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Superpower_ScoreDown1
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Superpower_ScoreDown1
+	if_ability AI_USER, ABILITY_CONTRARY, Score_Plus2
 	if_stat_level_less_than AI_USER, STAT_ATK, DEFAULT_STAT_STAGE, AI_CV_Superpower_ScoreDown1
 	if_target_faster AI_CV_Superpower2
 	if_hp_more_than AI_USER, 40, AI_CV_Superpower_ScoreDown1
@@ -3236,6 +3426,8 @@ AI_CV_Recycle_ItemsToEncourage:
     .byte ITEM_CHESTO_BERRY
     .byte ITEM_LUM_BERRY
     .byte ITEM_STARF_BERRY
+	.byte ITEM_BERRY_JUICE
+	.byte ITEM_FIGY_BERRY
     .byte -1
 
 AI_CV_Revenge:
@@ -3379,6 +3571,7 @@ AI_CV_MudSport_End:
 AI_CV_Overheat:
 	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_Overheat_ScoreDown1
 	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_Overheat_ScoreDown1
+	if_ability AI_USER, ABILITY_CONTRARY, Score_Plus2
 	if_target_faster AI_CV_Overheat2
 	if_hp_more_than AI_USER, 60, AI_CV_Overheat_End
 	goto AI_CV_Overheat_ScoreDown1
@@ -3410,18 +3603,20 @@ AI_CV_WaterSport_ScoreDown1:
 AI_CV_WaterSport_End:
 	end
 
-AI_CV_DragonDance:
-	if_target_faster AI_CV_DragonDance2
-	if_hp_more_than AI_USER, 50, AI_CV_DragonDance_End
-	if_random_less_than 70, AI_CV_DragonDance_End
+AI_CV_BoostSpeedOffense:
+	call AI_SetUpVsSleep
+	call AI_CheckFreeSetup
+	if_target_faster AI_CV_BoostSpeedOffense2
+	if_hp_more_than AI_USER, 60, AI_CV_BoostSpeedOffense2
+	if_random_less_than 70, AI_CV_BoostSpeedOffense_End
 	score -1
-	goto AI_CV_DragonDance_End
+	goto AI_CV_BoostSpeedOffense_End
 
-AI_CV_DragonDance2:
-	if_random_less_than 128, AI_CV_DragonDance_End
-	score +1
+AI_CV_BoostSpeedOffense2:
+	if_random_less_than 128, AI_CV_BoostSpeedOffense_End
+	score +2
 
-AI_CV_DragonDance_End:
+AI_CV_BoostSpeedOffense_End:
 	end
 
 AI_TryToFaint:
@@ -3546,13 +3741,14 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
     .2byte EFFECT_SANDSTORM
     .2byte EFFECT_HAIL
     .2byte EFFECT_GEOMANCY
-    .2byte -1
+	.2byte EFFECT_AURORA_VEIL
+    .2byte 0xFFFF
 
 AI_PreferStrongestMove:
 	if_target_is_ally AI_Ret
 	get_how_powerful_move_is
 	if_not_equal MOVE_POWER_BEST, AI_PreferStrongestMove_End
-	if_random_less_than 100, AI_PreferStrongestMove_End
+	@if_random_less_than 100, AI_PreferStrongestMove_End
 	score +2
 AI_PreferStrongestMove_End:
 	end
@@ -3593,7 +3789,14 @@ AI_Risky_EffectsToEncourage:
 sMovesTable_ProtectMoves:
     .2byte MOVE_PROTECT
     .2byte MOVE_DETECT
-    .2byte -1
+	.2byte MOVE_ENDURE
+	.2byte MOVE_SPIKY_SHIELD
+	.2byte MOVE_KINGS_SHIELD
+	.2byte MOVE_WIDE_GUARD
+	.2byte MOVE_QUICK_GUARD
+	.2byte MOVE_BANEFUL_BUNKER
+	.2byte MOVE_OBSTRUCT
+    .2byte 0xFFFF
 
 .align 1
 sEffectsStatRaise:
@@ -3617,7 +3820,7 @@ sEffectsStatRaise:
 	.2byte EFFECT_GROWTH
 	.2byte EFFECT_COIL
 	.2byte EFFECT_QUIVER_DANCE
-	.2byte -1
+	.2byte 0xFFFF
 
 AI_PreferBatonPass:
 	if_target_is_ally AI_Ret
@@ -3690,7 +3893,10 @@ sEffectsAtkRaise:
     .2byte EFFECT_COIL
     .2byte EFFECT_BELLY_DRUM
     .2byte EFFECT_BULK_UP
-    .2byte -1
+	.2byte EFFECT_SHELL_SMASH
+	.2byte EFFECT_GROWTH
+	.2byte EFFECT_ATTACK_SPATK_UP
+    .2byte 0xFFFF
 	
 AI_PartnerChoseHelpingHand:
 	@ Do not use a status move if you know your move's power will be boosted
@@ -3728,13 +3934,43 @@ AI_DoubleBattle:
 	if_target_is_ally AI_TryOnAlly
 	if_move MOVE_SKILL_SWAP, AI_DoubleBattleSkillSwap
 	get_curr_move_type
-	if_move MOVE_EARTHQUAKE, AI_DoubleBattleAllHittingGroundMove
-	if_move MOVE_MAGNITUDE, AI_DoubleBattleAllHittingGroundMove
 	if_equal TYPE_ELECTRIC, AI_DoubleBattleElectricMove
 	if_equal TYPE_FIRE, AI_DoubleBattleFireMove
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingMove
 	get_ability AI_USER
 	if_not_equal ABILITY_GUTS, AI_DoubleBattleCheckUserStatus
 	if_has_move AI_USER_PARTNER, MOVE_HELPING_HAND, AI_DoubleBattlePartnerHasHelpingHand
+	end
+
+AI_DoubleBattleFireMove:
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingFireMove
+	if_flash_fired AI_USER, AI_DoubleBattleFireMove2
+	end
+
+AI_DoubleBattleFireMove2:
+	goto Score_Plus1
+
+AI_DoubleBattleElectricMove:
+	get_considered_move_target
+	if_equal MOVE_TARGET_FOES_AND_ALLY, AI_DoubleBattleAllHittingElectricMove
+	if_no_ability AI_TARGET_PARTNER, ABILITY_LIGHTNING_ROD, AI_DoubleBattleElectricMoveEnd
+	score -2
+	if_no_type AI_TARGET_PARTNER, TYPE_GROUND, AI_DoubleBattleElectricMoveEnd
+	score -8
+	end
+
+@ Electric and Fire moves have other cases to consider so aren't handled here
+AI_DoubleBattleAllHittingMove:
+	get_curr_move_type
+	if_equal TYPE_WATER, AI_DoubleBattleAllHittingWaterMove
+	if_equal TYPE_GRASS, AI_DoubleBattleAllHittingGrassMove
+	if_equal TYPE_GROUND, AI_DoubleBattleAllHittingGroundMove
+	if_equal TYPE_POISON, AI_DoubleBattleAllHittingPoisonMove
+	end
+
+AI_DoubleBattleElectricMoveEnd:
 	end
 
 AI_DoubleBattlePartnerHasHelpingHand:
@@ -3755,11 +3991,38 @@ AI_DoubleBattleCheckUserStatus2:
 
 AI_DoubleBattleAllHittingGroundMove:
 	if_ability AI_USER_PARTNER, ABILITY_LEVITATE, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_FLYING, Score_Plus2
-	if_type AI_USER_PARTNER, TYPE_FIRE, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ELECTRIC, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_POISON, Score_Minus10
-	if_type AI_USER_PARTNER, TYPE_ROCK, Score_Minus10
+	goto AI_EffectivenessOnAlly
+
+AI_DoubleBattleAllHittingWaterMove:
+	if_ability AI_USER_PARTNER, ABILITY_STORM_DRAIN, Score_Plus5
+	if_ability AI_USER_PARTNER, ABILITY_WATER_ABSORB, Score_Plus2
+	if_ability AI_USER_PARTNER, ABILITY_DRY_SKIN, Score_Plus2
+	if_holds_item AI_USER_PARTNER, ITEM_ABSORB_BULB, Score_Plus5
+	goto AI_EffectivenessOnAlly
+
+AI_DoubleBattleAllHittingElectricMove:
+	if_ability AI_USER_PARTNER, ABILITY_LIGHTNING_ROD, Score_Plus5
+	if_ability AI_USER_PARTNER, ABILITY_VOLT_ABSORB, Score_Plus2
+	if_ability AI_USER_PARTNER, ABILITY_MOTOR_DRIVE, Score_Plus5
+	if_holds_item AI_USER_PARTNER, ITEM_CELL_BATTERY, Score_Plus5
+	goto AI_EffectivenessOnAlly
+
+AI_DoubleBattleAllHittingGrassMove:
+	if_ability AI_USER_PARTNER, ABILITY_SAP_SIPPER, Score_Plus5
+	goto AI_EffectivenessOnAlly
+
+AI_DoubleBattleAllHittingFireMove:
+	if_ability AI_USER_PARTNER, ABILITY_FLASH_FIRE, Score_Plus2
+	goto AI_EffectivenessOnAlly
+
+AI_DoubleBattleAllHittingPoisonMove:
+	goto AI_EffectivenessOnAlly
+
+AI_EffectivenessOnAlly:
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x2,  Score_Minus10
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x4, Score_Minus10
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0_25, Score_Plus2
+	if_type_effectiveness_on_ally AI_EFFECTIVENESS_x0,  Score_Plus2
 	goto Score_Minus3
 
 AI_DoubleBattleSkillSwap:
@@ -3769,22 +4032,6 @@ AI_DoubleBattleSkillSwap:
 	if_equal ABILITY_SHADOW_TAG, Score_Plus2
 	if_equal ABILITY_PURE_POWER, Score_Plus2
 	end
-
-AI_DoubleBattleElectricMove:
-	if_no_ability AI_TARGET_PARTNER, ABILITY_LIGHTNING_ROD, AI_DoubleBattleElectricMoveEnd
-	score -2
-	if_no_type AI_TARGET_PARTNER, TYPE_GROUND, AI_DoubleBattleElectricMoveEnd
-	score -8
-
-AI_DoubleBattleElectricMoveEnd:
-	end
-
-AI_DoubleBattleFireMove:
-	if_flash_fired AI_USER, AI_DoubleBattleFireMove2
-	end
-
-AI_DoubleBattleFireMove2:
-	goto Score_Plus1
 
 AI_TryOnAlly:
 	get_how_powerful_move_is
@@ -3845,6 +4092,11 @@ AI_TrySkillSwapOnAlly2:
 	if_has_move AI_USER_PARTNER, MOVE_DYNAMIC_PUNCH, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_BLIZZARD, AI_TrySkillSwapOnAllyPlus3
 	if_has_move AI_USER_PARTNER, MOVE_MEGAHORN, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_ZAP_CANNON, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_INFERNO, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_HURRICANE, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_FOCUS_BLAST, AI_TrySkillSwapOnAllyPlus3
+	if_has_move AI_USER_PARTNER, MOVE_STONE_EDGE, AI_TrySkillSwapOnAllyPlus3
 	goto Score_Minus30
 
 AI_TrySkillSwapOnAllyPlus3:
@@ -3864,7 +4116,9 @@ AI_TryHelpingHandOnAlly:
 AI_TrySwaggerOnAlly:
 	if_has_no_physical_move AI_USER_PARTNER, Score_Minus30
 	if_holds_item AI_TARGET, ITEM_PERSIM_BERRY, AI_TrySwaggerOnAlly2
+	if_holds_item AI_TARGET, ITEM_LUM_BERRY, AI_TrySwaggerOnAlly2
 	if_ability AI_USER_PARTNER, ABILITY_OWN_TEMPO, AI_TrySwaggerOnAlly2
+	if_ability AI_USER_PARTNER, ABILITY_TANGLED_FEET, AI_TrySwaggerOnAlly2
 	goto Score_Minus30
 
 AI_TrySwaggerOnAlly2:
@@ -3936,209 +4190,225 @@ AI_HPAware_DiscouragedEffectsWhenHighHP: @ 82DE21F
     .2byte EFFECT_ROOST
     .2byte EFFECT_MEMENTO
     .2byte EFFECT_GRUDGE
-    .2byte EFFECT_OVERHEAT
-    .2byte -1
+    @.2byte EFFECT_OVERHEAT
+    .2byte 0xFFFF
 
 AI_HPAware_DiscouragedEffectsWhenMediumHP: @ 82DE22D
-    .byte EFFECT_EXPLOSION
-    .byte EFFECT_ATTACK_UP
-    .byte EFFECT_DEFENSE_UP
-    .byte EFFECT_SPEED_UP
-    .byte EFFECT_SPECIAL_ATTACK_UP
-    .byte EFFECT_SPECIAL_DEFENSE_UP
-    .byte EFFECT_ACCURACY_UP
-    .byte EFFECT_EVASION_UP
-    .byte EFFECT_ATTACK_DOWN
-    .byte EFFECT_DEFENSE_DOWN
-    .byte EFFECT_SPEED_DOWN
-    .byte EFFECT_SPECIAL_ATTACK_DOWN
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN
-    .byte EFFECT_ACCURACY_DOWN
-    .byte EFFECT_EVASION_DOWN
-    .byte EFFECT_BIDE
-    .byte EFFECT_CONVERSION
-    .byte EFFECT_LIGHT_SCREEN
-    .byte EFFECT_MIST
-    .byte EFFECT_FOCUS_ENERGY
-    .byte EFFECT_ATTACK_UP_2
-    .byte EFFECT_DEFENSE_UP_2
-    .byte EFFECT_SPEED_UP_2
-    .byte EFFECT_SPECIAL_ATTACK_UP_2
-    .byte EFFECT_SPECIAL_DEFENSE_UP_2
-    .byte EFFECT_ACCURACY_UP_2
-    .byte EFFECT_EVASION_UP_2
-    .byte EFFECT_ATTACK_DOWN_2
-    .byte EFFECT_DEFENSE_DOWN_2
-    .byte EFFECT_SPEED_DOWN_2
-    .byte EFFECT_SPECIAL_ATTACK_DOWN_2
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN_2
-    .byte EFFECT_ACCURACY_DOWN_2
-    .byte EFFECT_EVASION_DOWN_2
-    .byte EFFECT_CONVERSION_2
-    .byte EFFECT_SAFEGUARD
-    .byte EFFECT_BELLY_DRUM
-    .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
-    .byte EFFECT_BULK_UP
-    .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
-    .byte -1
+    .2byte EFFECT_EXPLOSION
+    .2byte EFFECT_ATTACK_UP
+    .2byte EFFECT_DEFENSE_UP
+    .2byte EFFECT_SPEED_UP
+    .2byte EFFECT_SPECIAL_ATTACK_UP
+    .2byte EFFECT_SPECIAL_DEFENSE_UP
+    .2byte EFFECT_ACCURACY_UP
+    .2byte EFFECT_EVASION_UP
+    .2byte EFFECT_ATTACK_DOWN
+    .2byte EFFECT_DEFENSE_DOWN
+    .2byte EFFECT_SPEED_DOWN
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN
+    .2byte EFFECT_ACCURACY_DOWN
+    .2byte EFFECT_EVASION_DOWN
+    .2byte EFFECT_BIDE
+    .2byte EFFECT_CONVERSION
+    .2byte EFFECT_LIGHT_SCREEN
+    .2byte EFFECT_MIST
+    .2byte EFFECT_FOCUS_ENERGY
+    .2byte EFFECT_ATTACK_UP_2
+    .2byte EFFECT_DEFENSE_UP_2
+    .2byte EFFECT_SPEED_UP_2
+    .2byte EFFECT_SPECIAL_ATTACK_UP_2
+    .2byte EFFECT_SPECIAL_DEFENSE_UP_2
+    .2byte EFFECT_ACCURACY_UP_2
+    .2byte EFFECT_EVASION_UP_2
+    .2byte EFFECT_ATTACK_DOWN_2
+    .2byte EFFECT_DEFENSE_DOWN_2
+    .2byte EFFECT_SPEED_DOWN_2
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN_2
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN_2
+    .2byte EFFECT_ACCURACY_DOWN_2
+    .2byte EFFECT_EVASION_DOWN_2
+    .2byte EFFECT_CONVERSION_2
+    .2byte EFFECT_SAFEGUARD
+    .2byte EFFECT_BELLY_DRUM
+    .2byte EFFECT_TICKLE
+    .2byte EFFECT_COSMIC_POWER
+    .2byte EFFECT_BULK_UP
+    .2byte EFFECT_CALM_MIND
+    .2byte EFFECT_DRAGON_DANCE
+	.2byte EFFECT_QUIVER_DANCE
+	.2byte EFFECT_SHELL_SMASH
+	.2byte EFFECT_COIL
+	.2byte EFFECT_SHIFT_GEAR
+    .2byte 0xFFFF
 
 AI_HPAware_DiscouragedEffectsWhenLowHP: @ 82DE258
-    .byte EFFECT_ATTACK_UP
-    .byte EFFECT_DEFENSE_UP
-    .byte EFFECT_SPEED_UP
-    .byte EFFECT_SPECIAL_ATTACK_UP
-    .byte EFFECT_SPECIAL_DEFENSE_UP
-    .byte EFFECT_ACCURACY_UP
-    .byte EFFECT_EVASION_UP
-    .byte EFFECT_ATTACK_DOWN
-    .byte EFFECT_DEFENSE_DOWN
-    .byte EFFECT_SPEED_DOWN
-    .byte EFFECT_SPECIAL_ATTACK_DOWN
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN
-    .byte EFFECT_ACCURACY_DOWN
-    .byte EFFECT_EVASION_DOWN
-    .byte EFFECT_BIDE
-    .byte EFFECT_CONVERSION
-    .byte EFFECT_LIGHT_SCREEN
-    .byte EFFECT_MIST
-    .byte EFFECT_FOCUS_ENERGY
-    .byte EFFECT_ATTACK_UP_2
-    .byte EFFECT_DEFENSE_UP_2
-    .byte EFFECT_SPEED_UP_2
-    .byte EFFECT_SPECIAL_ATTACK_UP_2
-    .byte EFFECT_SPECIAL_DEFENSE_UP_2
-    .byte EFFECT_ACCURACY_UP_2
-    .byte EFFECT_EVASION_UP_2
-    .byte EFFECT_ATTACK_DOWN_2
-    .byte EFFECT_DEFENSE_DOWN_2
-    .byte EFFECT_SPEED_DOWN_2
-    .byte EFFECT_SPECIAL_ATTACK_DOWN_2
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN_2
-    .byte EFFECT_ACCURACY_DOWN_2
-    .byte EFFECT_EVASION_DOWN_2
-    .byte EFFECT_RAGE
-    .byte EFFECT_CONVERSION_2
-    .byte EFFECT_LOCK_ON
-    .byte EFFECT_SAFEGUARD
-    .byte EFFECT_BELLY_DRUM
-    .byte EFFECT_PSYCH_UP
-    .byte EFFECT_MIRROR_COAT
-    .byte EFFECT_SOLARBEAM
-    .byte EFFECT_ERUPTION
-    .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
-    .byte EFFECT_BULK_UP
-    .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
-    .byte -1
+    .2byte EFFECT_ATTACK_UP
+    .2byte EFFECT_DEFENSE_UP
+    .2byte EFFECT_SPEED_UP
+    .2byte EFFECT_SPECIAL_ATTACK_UP
+    .2byte EFFECT_SPECIAL_DEFENSE_UP
+    .2byte EFFECT_ACCURACY_UP
+    .2byte EFFECT_EVASION_UP
+    .2byte EFFECT_ATTACK_DOWN
+    .2byte EFFECT_DEFENSE_DOWN
+    .2byte EFFECT_SPEED_DOWN
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN
+    .2byte EFFECT_ACCURACY_DOWN
+    .2byte EFFECT_EVASION_DOWN
+    .2byte EFFECT_BIDE
+    .2byte EFFECT_CONVERSION
+    .2byte EFFECT_LIGHT_SCREEN
+    .2byte EFFECT_MIST
+    .2byte EFFECT_FOCUS_ENERGY
+    .2byte EFFECT_ATTACK_UP_2
+    .2byte EFFECT_DEFENSE_UP_2
+    .2byte EFFECT_SPEED_UP_2
+    .2byte EFFECT_SPECIAL_ATTACK_UP_2
+    .2byte EFFECT_SPECIAL_DEFENSE_UP_2
+    .2byte EFFECT_ACCURACY_UP_2
+    .2byte EFFECT_EVASION_UP_2
+    .2byte EFFECT_ATTACK_DOWN_2
+    .2byte EFFECT_DEFENSE_DOWN_2
+    .2byte EFFECT_SPEED_DOWN_2
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN_2
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN_2
+    .2byte EFFECT_ACCURACY_DOWN_2
+    .2byte EFFECT_EVASION_DOWN_2
+    .2byte EFFECT_RAGE
+    .2byte EFFECT_CONVERSION_2
+    .2byte EFFECT_LOCK_ON
+    .2byte EFFECT_SAFEGUARD
+    .2byte EFFECT_BELLY_DRUM
+    .2byte EFFECT_PSYCH_UP
+    .2byte EFFECT_MIRROR_COAT
+    .2byte EFFECT_SOLARBEAM
+    .2byte EFFECT_ERUPTION
+    .2byte EFFECT_TICKLE
+    .2byte EFFECT_COSMIC_POWER
+    .2byte EFFECT_BULK_UP
+    .2byte EFFECT_CALM_MIND
+    .2byte EFFECT_DRAGON_DANCE
+	.2byte EFFECT_QUIVER_DANCE
+	.2byte EFFECT_SHELL_SMASH
+	.2byte EFFECT_COIL
+	.2byte EFFECT_SHIFT_GEAR
+    .2byte 0xFFFF
 
 AI_HPAware_DiscouragedEffectsWhenTargetHighHP: @ 82DE288
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetMediumHP: @ 82DE289
-    .byte EFFECT_ATTACK_UP
-    .byte EFFECT_DEFENSE_UP
-    .byte EFFECT_SPEED_UP
-    .byte EFFECT_SPECIAL_ATTACK_UP
-    .byte EFFECT_SPECIAL_DEFENSE_UP
-    .byte EFFECT_ACCURACY_UP
-    .byte EFFECT_EVASION_UP
-    .byte EFFECT_ATTACK_DOWN
-    .byte EFFECT_DEFENSE_DOWN
-    .byte EFFECT_SPEED_DOWN
-    .byte EFFECT_SPECIAL_ATTACK_DOWN
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN
-    .byte EFFECT_ACCURACY_DOWN
-    .byte EFFECT_EVASION_DOWN
-    .byte EFFECT_MIST
-    .byte EFFECT_FOCUS_ENERGY
-    .byte EFFECT_ATTACK_UP_2
-    .byte EFFECT_DEFENSE_UP_2
-    .byte EFFECT_SPEED_UP_2
-    .byte EFFECT_SPECIAL_ATTACK_UP_2
-    .byte EFFECT_SPECIAL_DEFENSE_UP_2
-    .byte EFFECT_ACCURACY_UP_2
-    .byte EFFECT_EVASION_UP_2
-    .byte EFFECT_ATTACK_DOWN_2
-    .byte EFFECT_DEFENSE_DOWN_2
-    .byte EFFECT_SPEED_DOWN_2
-    .byte EFFECT_SPECIAL_ATTACK_DOWN_2
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN_2
-    .byte EFFECT_ACCURACY_DOWN_2
-    .byte EFFECT_EVASION_DOWN_2
-    .byte EFFECT_POISON
-    .byte EFFECT_PAIN_SPLIT
-    .byte EFFECT_PERISH_SONG
-    .byte EFFECT_SAFEGUARD
-    .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
-    .byte EFFECT_BULK_UP
-    .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
-    .byte -1
+    .2byte EFFECT_ATTACK_UP
+    .2byte EFFECT_DEFENSE_UP
+    .2byte EFFECT_SPEED_UP
+    .2byte EFFECT_SPECIAL_ATTACK_UP
+    .2byte EFFECT_SPECIAL_DEFENSE_UP
+    .2byte EFFECT_ACCURACY_UP
+    .2byte EFFECT_EVASION_UP
+    .2byte EFFECT_ATTACK_DOWN
+    .2byte EFFECT_DEFENSE_DOWN
+    .2byte EFFECT_SPEED_DOWN
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN
+    .2byte EFFECT_ACCURACY_DOWN
+    .2byte EFFECT_EVASION_DOWN
+    .2byte EFFECT_MIST
+    .2byte EFFECT_FOCUS_ENERGY
+    .2byte EFFECT_ATTACK_UP_2
+    .2byte EFFECT_DEFENSE_UP_2
+    .2byte EFFECT_SPEED_UP_2
+    .2byte EFFECT_SPECIAL_ATTACK_UP_2
+    .2byte EFFECT_SPECIAL_DEFENSE_UP_2
+    .2byte EFFECT_ACCURACY_UP_2
+    .2byte EFFECT_EVASION_UP_2
+    .2byte EFFECT_ATTACK_DOWN_2
+    .2byte EFFECT_DEFENSE_DOWN_2
+    .2byte EFFECT_SPEED_DOWN_2
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN_2
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN_2
+    .2byte EFFECT_ACCURACY_DOWN_2
+    .2byte EFFECT_EVASION_DOWN_2
+    .2byte EFFECT_POISON
+    .2byte EFFECT_PAIN_SPLIT
+    .2byte EFFECT_PERISH_SONG
+    .2byte EFFECT_SAFEGUARD
+    .2byte EFFECT_TICKLE
+    .2byte EFFECT_COSMIC_POWER
+    .2byte EFFECT_BULK_UP
+    .2byte EFFECT_CALM_MIND
+    .2byte EFFECT_DRAGON_DANCE
+	.2byte EFFECT_QUIVER_DANCE
+	.2byte EFFECT_SHELL_SMASH
+	.2byte EFFECT_COIL
+	.2byte EFFECT_SHIFT_GEAR
+    .2byte 0xFFFF
 
 AI_HPAware_DiscouragedEffectsWhenTargetLowHP: @ 82DE2B1
-    .byte EFFECT_SLEEP
-    .byte EFFECT_EXPLOSION
-    .byte EFFECT_ATTACK_UP
-    .byte EFFECT_DEFENSE_UP
-    .byte EFFECT_SPEED_UP
-    .byte EFFECT_SPECIAL_ATTACK_UP
-    .byte EFFECT_SPECIAL_DEFENSE_UP
-    .byte EFFECT_ACCURACY_UP
-    .byte EFFECT_EVASION_UP
-    .byte EFFECT_ATTACK_DOWN
-    .byte EFFECT_DEFENSE_DOWN
-    .byte EFFECT_SPEED_DOWN
-    .byte EFFECT_SPECIAL_ATTACK_DOWN
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN
-    .byte EFFECT_ACCURACY_DOWN
-    .byte EFFECT_EVASION_DOWN
-    .byte EFFECT_BIDE
-    .byte EFFECT_CONVERSION
-    .byte EFFECT_TOXIC
-    .byte EFFECT_LIGHT_SCREEN
-    .byte EFFECT_OHKO
-    .byte EFFECT_SUPER_FANG
-    .byte EFFECT_MIST
-    .byte EFFECT_FOCUS_ENERGY
-    .byte EFFECT_CONFUSE
-    .byte EFFECT_ATTACK_UP_2
-    .byte EFFECT_DEFENSE_UP_2
-    .byte EFFECT_SPEED_UP_2
-    .byte EFFECT_SPECIAL_ATTACK_UP_2
-    .byte EFFECT_SPECIAL_DEFENSE_UP_2
-    .byte EFFECT_ACCURACY_UP_2
-    .byte EFFECT_EVASION_UP_2
-    .byte EFFECT_ATTACK_DOWN_2
-    .byte EFFECT_DEFENSE_DOWN_2
-    .byte EFFECT_SPEED_DOWN_2
-    .byte EFFECT_SPECIAL_ATTACK_DOWN_2
-    .byte EFFECT_SPECIAL_DEFENSE_DOWN_2
-    .byte EFFECT_ACCURACY_DOWN_2
-    .byte EFFECT_EVASION_DOWN_2
-    .byte EFFECT_POISON
-    .byte EFFECT_PARALYZE
-    .byte EFFECT_PAIN_SPLIT
-    .byte EFFECT_CONVERSION_2
-    .byte EFFECT_LOCK_ON
-    .byte EFFECT_SPITE
-    .byte EFFECT_PERISH_SONG
-    .byte EFFECT_SWAGGER
-    .byte EFFECT_FURY_CUTTER
-    .byte EFFECT_ATTRACT
-    .byte EFFECT_SAFEGUARD
-    .byte EFFECT_PSYCH_UP
-    .byte EFFECT_MIRROR_COAT
-    .byte EFFECT_WILL_O_WISP
-    .byte EFFECT_TICKLE
-    .byte EFFECT_COSMIC_POWER
-    .byte EFFECT_BULK_UP
-    .byte EFFECT_CALM_MIND
-    .byte EFFECT_DRAGON_DANCE
-    .byte -1
+    .2byte EFFECT_SLEEP
+    .2byte EFFECT_EXPLOSION
+    .2byte EFFECT_ATTACK_UP
+    .2byte EFFECT_DEFENSE_UP
+    .2byte EFFECT_SPEED_UP
+    .2byte EFFECT_SPECIAL_ATTACK_UP
+    .2byte EFFECT_SPECIAL_DEFENSE_UP
+    .2byte EFFECT_ACCURACY_UP
+    .2byte EFFECT_EVASION_UP
+    .2byte EFFECT_ATTACK_DOWN
+    .2byte EFFECT_DEFENSE_DOWN
+    .2byte EFFECT_SPEED_DOWN
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN
+    .2byte EFFECT_ACCURACY_DOWN
+    .2byte EFFECT_EVASION_DOWN
+    .2byte EFFECT_BIDE
+    .2byte EFFECT_CONVERSION
+    .2byte EFFECT_TOXIC
+    .2byte EFFECT_LIGHT_SCREEN
+    .2byte EFFECT_OHKO
+    .2byte EFFECT_SUPER_FANG
+    .2byte EFFECT_MIST
+    .2byte EFFECT_FOCUS_ENERGY
+    .2byte EFFECT_CONFUSE
+    .2byte EFFECT_ATTACK_UP_2
+    .2byte EFFECT_DEFENSE_UP_2
+    .2byte EFFECT_SPEED_UP_2
+    .2byte EFFECT_SPECIAL_ATTACK_UP_2
+    .2byte EFFECT_SPECIAL_DEFENSE_UP_2
+    .2byte EFFECT_ACCURACY_UP_2
+    .2byte EFFECT_EVASION_UP_2
+    .2byte EFFECT_ATTACK_DOWN_2
+    .2byte EFFECT_DEFENSE_DOWN_2
+    .2byte EFFECT_SPEED_DOWN_2
+    .2byte EFFECT_SPECIAL_ATTACK_DOWN_2
+    .2byte EFFECT_SPECIAL_DEFENSE_DOWN_2
+    .2byte EFFECT_ACCURACY_DOWN_2
+    .2byte EFFECT_EVASION_DOWN_2
+    .2byte EFFECT_POISON
+    .2byte EFFECT_PARALYZE
+    .2byte EFFECT_PAIN_SPLIT
+    .2byte EFFECT_CONVERSION_2
+    .2byte EFFECT_LOCK_ON
+    .2byte EFFECT_SPITE
+    .2byte EFFECT_PERISH_SONG
+    .2byte EFFECT_SWAGGER
+    .2byte EFFECT_FURY_CUTTER
+    .2byte EFFECT_ATTRACT
+    .2byte EFFECT_SAFEGUARD
+    .2byte EFFECT_PSYCH_UP
+    .2byte EFFECT_MIRROR_COAT
+    .2byte EFFECT_WILL_O_WISP
+    .2byte EFFECT_TICKLE
+    .2byte EFFECT_COSMIC_POWER
+    .2byte EFFECT_BULK_UP
+    .2byte EFFECT_CALM_MIND
+    .2byte EFFECT_DRAGON_DANCE
+	.2byte EFFECT_QUIVER_DANCE
+	.2byte EFFECT_SHELL_SMASH
+	.2byte EFFECT_COIL
+	.2byte EFFECT_SHIFT_GEAR
+    .2byte 0xFFFF
 
 AI_Unknown:
 	if_target_is_ally AI_TryOnAlly
