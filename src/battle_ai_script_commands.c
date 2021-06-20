@@ -179,6 +179,9 @@ static void Cmd_get_considered_move_target(void);
 static void Cmd_compare_speeds(void);
 static void Cmd_is_wakeup_turn(void);
 static void Cmd_if_has_move_with_accuracy_lt(void);
+static void Cmd_if_type_effectiveness_on_ally(void);
+static void Cmd_if_effect_chance(void);
+static void Cmd_if_move_priority_greater_than(void);
 
 // ewram
 EWRAM_DATA const u8 *gAIScriptPtr = NULL;
@@ -311,20 +314,23 @@ static const BattleAICmdFunc sBattleAICmdTable[] =
     Cmd_compare_speeds,                             // 0x77
     Cmd_is_wakeup_turn,                             // 0x78
     Cmd_if_has_move_with_accuracy_lt,               // 0x79
+    Cmd_if_type_effectiveness_on_ally,              // 0x7A
+    Cmd_if_effect_chance,                           // 0x7B
+    Cmd_if_move_priority_greater_than               // 0x7C
 };
 
 static const u16 sDiscouragedPowerfulMoveEffects[] =
 {
     EFFECT_EXPLOSION,
     EFFECT_DREAM_EATER,
-    EFFECT_RECHARGE,
+    // EFFECT_RECHARGE,
     EFFECT_SKULL_BASH,
-    EFFECT_SOLARBEAM,
+    // EFFECT_SOLARBEAM
     EFFECT_SPIT_UP,
     EFFECT_FOCUS_PUNCH,
-    EFFECT_SUPERPOWER,
-    EFFECT_ERUPTION,
-    EFFECT_OVERHEAT,
+    // EFFECT_SUPERPOWER,
+    // EFFECT_ERUPTION,
+    // EFFECT_OVERHEAT,
     EFFECT_MIND_BLOWN,
     0xFFFF
 };
@@ -918,6 +924,55 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
     dmg = CalculateMoveDamage(move, battlerAtk, battlerDef, moveType, 0, AI_GetIfCrit(move, battlerAtk, battlerDef), FALSE, FALSE);
+
+    // Account for moves with special damage calculations
+    switch (gBattleMoves[move].effect)
+    {
+    case EFFECT_LEVEL_DAMAGE:
+        dmg = gBattleMons[battlerAtk].level;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND) // Parental Bond makes fixed damage moves hit twice at full power
+            dmg *= 2;
+        break;
+    case EFFECT_DRAGON_RAGE:
+        dmg = 40;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+            dmg *= 2;
+        break;
+    case EFFECT_SONICBOOM:
+        dmg = 20;
+        if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+            dmg *= 2;
+        break;
+    case EFFECT_PSYWAVE:
+        {
+            u32 randDamage;
+            if (B_PSYWAVE_DMG >= GEN_6)
+                randDamage = (Random() % 101);
+            else
+                randDamage = (Random() % 11) * 10;
+            dmg = gBattleMons[battlerAtk].level * (randDamage + 50) / 100;
+            if (gBattleMons[battlerAtk].ability == ABILITY_PARENTAL_BOND)
+                dmg *= 2;
+        }
+        break;
+    case EFFECT_SUPER_FANG:
+        dmg = gBattleMons[battlerDef].hp/2;
+        break;
+    case EFFECT_MULTI_HIT:
+        if (gBattleMons[battlerAtk].ability == ABILITY_SKILL_LINK)
+            dmg *= 5;
+        else
+            dmg *= 3; // Average number of hits is three
+        break;
+    case EFFECT_DOUBLE_HIT:
+            dmg *= 2;
+        break;
+    case EFFECT_TRIPLE_KICK: // Triple kick buffed to 20 base power and 20 bonus power, so it's effectively 20 + 40 + 60 = 120
+            dmg *= 6;
+        break;
+    default:
+        break;
+    }
 
     RestoreBattlerData(battlerAtk);
     RestoreBattlerData(battlerDef);
@@ -1689,8 +1744,9 @@ static s32 AI_GetAbility(u32 battlerId, bool32 guess)
         {
             // AI has no knowledge of opponent, so it guesses which ability.
             if (guess)
-                return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 1];
+                return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 2];
         }
+        // Doesn't account for HA
         else
         {
             return gBaseStats[gBattleMons[battlerId].species].abilities[0]; // It's definitely ability 1.
@@ -1772,6 +1828,43 @@ static void Cmd_if_type_effectiveness(void)
     gMoveResultFlags = 0;
     gCurrentMove = AI_THINKING_STRUCT->moveConsidered;
     effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, sBattler_AI, gBattlerTarget);
+    switch (effectivenessMultiplier)
+    {
+    case UQ_4_12(0.0):
+    default:
+        damageVar = AI_EFFECTIVENESS_x0;
+        break;
+    case UQ_4_12(0.25):
+        damageVar = AI_EFFECTIVENESS_x0_25;
+        break;
+    case UQ_4_12(0.5):
+        damageVar = AI_EFFECTIVENESS_x0_5;
+        break;
+    case UQ_4_12(1.0):
+        damageVar = AI_EFFECTIVENESS_x1;
+        break;
+    case UQ_4_12(2.0):
+        damageVar = AI_EFFECTIVENESS_x2;
+        break;
+    case UQ_4_12(4.0):
+        damageVar = AI_EFFECTIVENESS_x4;
+        break;
+    }
+
+    if (damageVar == gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
+    else
+        gAIScriptPtr += 6;
+}
+
+static void Cmd_if_type_effectiveness_on_ally(void)
+{
+    u8 damageVar;
+    u32 effectivenessMultiplier;
+
+    gMoveResultFlags = 0;
+    gCurrentMove = AI_THINKING_STRUCT->moveConsidered;
+    effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, sBattler_AI, AI_USER_PARTNER); // Not sure this works
     switch (effectivenessMultiplier)
     {
     case UQ_4_12(0.0):
@@ -2868,4 +2961,20 @@ static void Cmd_if_has_move_with_accuracy_lt(void)
         gAIScriptPtr += 7;
     else
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 3);
+}
+
+static void Cmd_if_effect_chance(void)
+{
+    if (gBattleMoves[AI_THINKING_STRUCT->moveConsidered].secondaryEffectChance == gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
+    else
+        gAIScriptPtr += 6;
+}
+
+static void Cmd_if_move_priority_greater_than(void)
+{
+    if (GetMovePriority(sBattler_AI, AI_THINKING_STRUCT->moveConsidered) > gAIScriptPtr[1])
+        gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
+    else
+        gAIScriptPtr += 6;
 }
