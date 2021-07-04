@@ -20,6 +20,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent);
 static bool8 ShouldUseItem(void);
 static bool8 IsMonHealthyEnoughToSwitch(void);
 static u32 CalculateHazardDamage(void);
+static bool8 CanAIKOTarget(void);
 
 void GetAIPartyIndexes(u32 battlerId, s32 *firstId, s32 *lastId)
 {
@@ -398,6 +399,28 @@ static bool8 AreAttackingStatsLowered(void)
     *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
     BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
     return TRUE;
+}
+
+static bool8 CanAIKOTarget(void)
+{
+    int i;
+    u16 targetHP;
+
+    for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
+    {
+        if (GET_BATTLER_SIDE2(gActiveBattler) == GET_BATTLER_SIDE2(gBattlerTarget))
+            continue;
+
+        targetHP = gBattleMons[gBattlerTarget].hp;
+
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (targetHP <=  AI_THINKING_STRUCT->simulatedDmg[gActiveBattler][gBattlerTarget][i])
+                return TRUE;
+        }
+    }
+
+    return FALSE;
 }
 
 static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)

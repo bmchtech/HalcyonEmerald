@@ -4427,6 +4427,7 @@ s8 GetMovePriority(u32 battlerId, u16 move)
     return priority;
 }
 
+// Returns 0 if battler1 is faster, 1 if battler2 is faster
 u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 {
     u8 strikesFirst = 0;
