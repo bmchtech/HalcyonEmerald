@@ -1,3 +1,5 @@
+.set LOCALID_OLD_SEA_MAP, 5
+
 AbandonedShip_HiddenFloorRooms_MapScripts:: @ 8238C49
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, AbandonedShip_HiddenFloorRooms_OnFrame
 	.byte 0
@@ -116,6 +118,14 @@ AbandonedShip_HiddenFloorRooms_EventScript_Rm6KeySparkle:: @ 8238DE3
 AbandonedShip_HiddenFloorRooms_EventScript_Trash:: @ 8238DF3
 	lockall
 	msgbox AbandonedShip_HiddenFloorRooms_Text_BrightShinyTrash, MSGBOX_DEFAULT
+	releaseall
+	end
+
+AbandonedShip_HiddenFloorRooms_EventScript_OldSeaMap::
+	lockall
+	giveitem ITEM_OLD_SEA_MAP
+	removeobject LOCALID_OLD_SEA_MAP
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
 	releaseall
 	end
 
