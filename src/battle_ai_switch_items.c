@@ -4,18 +4,22 @@
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_setup.h"
+#include "battle_util.h"
 #include "pokemon.h"
 #include "random.h"
 #include "util.h"
 #include "constants/abilities.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
+#include "constants/hold_effects.h"
 #include "constants/moves.h"
 
 // this file's functions
 static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng);
 static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent);
 static bool8 ShouldUseItem(void);
+static bool8 IsMonHealthyEnoughToSwitch(void);
+static u32 CalculateHazardDamage(void);
 
 void GetAIPartyIndexes(u32 battlerId, s32 *firstId, s32 *lastId)
 {
@@ -253,8 +257,6 @@ static bool8 ShouldSwitchIfNaturalCure(void)
         return FALSE;
     if (gBattleMons[gActiveBattler].ability != ABILITY_NATURAL_CURE)
         return FALSE;
-    if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
-        return FALSE;
 
     if ((gLastLandedMoves[gActiveBattler] == 0 || gLastLandedMoves[gActiveBattler] == 0xFFFF) && Random() & 1)
     {
@@ -268,6 +270,26 @@ static bool8 ShouldSwitchIfNaturalCure(void)
         BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
         return TRUE;
     }
+
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 1))
+        return TRUE;
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 1))
+        return TRUE;
+
+    if (Random() & 1)
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 ShouldSwitchIfEncored(void)
+{
+    if (gDisableStructs[gActiveBattler].encoredMove == MOVE_NONE)
+        return FALSE;
 
     if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 1))
         return TRUE;
@@ -465,6 +487,51 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     return FALSE;
 }
 
+static bool8 IsMonHealthyEnoughToSwitch(void)
+{
+    u32 battlerHp = gBattleMons[gActiveBattler].hp;
+
+    if (gBattleMons[gActiveBattler].ability == ABILITY_REGENERATOR)
+        battlerHp = (battlerHp * 130) / 100; // Account for Regenerator healing
+    
+    if (CalculateHazardDamage() > battlerHp) // Battler will die to hazards
+        return FALSE;
+
+    if (battlerHp < gBattleMons[gActiveBattler].maxHP / 8) // Mon unlikey to be useful, at least for the AI
+        return FALSE;
+    
+    return TRUE;
+}
+
+// Doesn't account for max moves as I don't intend to use those
+static u32 CalculateHazardDamage(void)
+{
+    u32 totalHazardDmg = 0;
+    s32 stealthHazardDmg = 0;
+    u32 spikesDmg = 0;
+    u32 holdEffect = GetBattlerHoldEffect(gActiveBattler, TRUE);
+
+    if (gBattleMons[gActiveBattler].ability == ABILITY_MAGIC_GUARD || holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+        return totalHazardDmg;
+
+    if ((gSideTimers[GetBattlerSide(gActiveBattler)].spikesAmount > 0) 
+       && gBattleMons[gActiveBattler].ability != ABILITY_LEVITATE
+       && holdEffect != HOLD_EFFECT_AIR_BALLOON
+       && !IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_FLYING)
+       )
+    {
+        spikesDmg = (5 - gSideTimers[GetBattlerSide(gActiveBattler)].spikesAmount) * 2;
+        spikesDmg = gBattleMons[gActiveBattler].maxHP / (spikesDmg);
+    }
+
+    if (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_STEALTH_ROCK)
+        stealthHazardDmg = GetStealthHazardDamage(gBattleMoves[MOVE_STEALTH_ROCK].type, gActiveBattler);
+
+    totalHazardDmg = spikesDmg + stealthHazardDmg;
+    
+    return totalHazardDmg;
+}
+
 static bool8 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
@@ -531,9 +598,13 @@ static bool8 ShouldSwitch(void)
         return TRUE;
     if (ShouldSwitchIfPerishSong())
         return TRUE;
-    if (ShouldSwitchIfWonderGuard())
-        return TRUE;
     if (FindMonThatAbsorbsOpponentsMove())
+        return TRUE;
+    if (!IsMonHealthyEnoughToSwitch())
+        return FALSE;
+    if (ShouldSwitchIfEncored())
+        return TRUE;
+    if (ShouldSwitchIfWonderGuard())
         return TRUE;
     if (ShouldSwitchIfNaturalCure())
         return TRUE;
