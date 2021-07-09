@@ -21079,53 +21079,109 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace4[] = { // Legendari
     }
 };
 
+// Post Game
+static const struct TrainerMonItemCustomMoves sParty_Cynthia1[] = {
+    {
+    .lvl = 5,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_FOCUS_SASH,
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_SLEEP_POWDER, MOVE_SLUDGE_BOMB, MOVE_GIGA_DRAIN, MOVE_SPIKES
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_TOGEKISS,
+    .heldItem = ITEM_SHELL_BELL,
+    .ability = 1, // Serene Grace
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_AIR_SLASH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE, MOVE_ROOST
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_SPIRITOMB,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 0, // Pressure
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_DARK_PULSE, MOVE_CALM_MIND, MOVE_SUBSTITUTE, MOVE_RECOVER
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_LUCARIO,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 0, // Steadfast
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_CLOSE_COMBAT, MOVE_METEOR_MASH, MOVE_EXTREME_SPEED, MOVE_SWORDS_DANCE
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 2, // Multiscale
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_TOXIC
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_GARCHOMPITE,
+    .ability = 2, // Rough Skin -> Sand Force
+    .spread = SPREAD_31_IV_ATK_SPEED_NAIVE,
+    .moves = MOVE_EARTHQUAKE, MOVE_DRACO_METEOR, MOVE_STONE_EDGE, MOVE_FIRE_BLAST
+    }
+};
+
+// Post Game
+static const struct TrainerMonItemCustomMoves sParty_Cynthia2[] = {
+    {
+    .lvl = 5,
+    .species = SPECIES_TOGEKISS,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 1, // Serene Grace
+    .spread = SPREAD_31_IV_HP_SPEED_TIMID,
+    .moves = MOVE_AIR_SLASH, MOVE_ROOST, MOVE_THUNDER_WAVE, MOVE_NASTY_PLOT
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_SLEEP_POWDER, MOVE_SLUDGE_BOMB, MOVE_LEAF_STORM, MOVE_DAZZLING_GLEAM
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_SPIRITOMB,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 0, // Pressure
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_DOUBLE_TEAM, MOVE_FOUL_PLAY, MOVE_SUBSTITUTE, MOVE_RECOVER
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_LUCARIO,
+    .heldItem = ITEM_LUCARIONITE,
+    .ability = 0, // Steadfast
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_CLOSE_COMBAT, MOVE_CRUNCH, MOVE_BULLET_PUNCH, MOVE_SWORDS_DANCE
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 2, // Multiscale
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_TOXIC
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_SHELL_BELL,
+    .ability = 2, // Rough Skin
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_EARTHQUAKE, MOVE_SCALE_SHOT, MOVE_STONE_EDGE, MOVE_SWORDS_DANCE
+    }
+};
+
 // Cut rematches
-static const struct TrainerMonItemCustomMoves sParty_Trent5[] = {
-    {
-    .lvl = 33,
-    .species = SPECIES_GRAVELER,
-    },
-    {
-    .lvl = 33,
-    .species = SPECIES_GRAVELER,
-    },
-    {
-    .lvl = 33,
-    .species = SPECIES_GRAVELER,
-    },
-    {
-    .lvl = 33,
-    .species = SPECIES_GOLEM,
-    }
-};
-
-static const struct TrainerMonItemCustomMoves sParty_Lao5[] = {
-    {
-    .lvl = 33,
-    .species = SPECIES_KOFFING,
-    .heldItem = ITEM_NONE,
-    .moves = MOVE_POISON_GAS, MOVE_TACKLE, MOVE_SLUDGE, MOVE_NONE
-    },
-    {
-    .lvl = 33,
-    .species = SPECIES_KOFFING,
-    .heldItem = ITEM_NONE,
-    .moves = MOVE_POISON_GAS, MOVE_TACKLE, MOVE_SLUDGE, MOVE_SELF_DESTRUCT
-    },
-    {
-    .lvl = 33,
-    .species = SPECIES_KOFFING,
-    .heldItem = ITEM_NONE,
-    .moves = MOVE_POISON_GAS, MOVE_TACKLE, MOVE_SLUDGE, MOVE_SELF_DESTRUCT
-    },
-    {
-    .lvl = 35,
-    .species = SPECIES_WEEZING,
-    .heldItem = ITEM_SMOKE_BALL,
-    .moves = MOVE_TACKLE, MOVE_SLUDGE, MOVE_NONE, MOVE_NONE
-    }
-};
-
 static const struct TrainerMonItemCustomMoves sParty_Madeline5[] = {
     {
     .lvl = 37,
