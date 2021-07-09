@@ -42,7 +42,7 @@ EverGrandeCity_PhoebesRoom_EventScript_Phoebe:: @ 82281CB
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_PhoebesRoom_EventScript_PhoebeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_PostBattleSpeech
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_PhoebesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_PHOEBE, EverGrandeCity_PhoebesRoom_Text_Defeat
 	goto EverGrandeCity_PhoebesRoom_EventScript_Defeated

@@ -5,7 +5,8 @@ extern const u8 gCgb3Vol[];
 
 #define BSS_CODE __attribute__((section(".bss.code")))
 
-BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0x800] = {0};
+BSS_CODE ALIGNED(4) char SoundMainRAM_Buffer[0xB40] = {0};
+BSS_CODE ALIGNED(4) u32 hq_buffer_ptr[0xE0] = {0};
 
 struct SoundInfo gSoundInfo;
 struct PokemonCrySong gPokemonCrySongs[MAX_POKEMON_CRIES];
@@ -78,7 +79,7 @@ void m4aSoundInit(void)
     m4aSoundMode(SOUND_MODE_DA_BIT_8
                | SOUND_MODE_FREQ_13379
                | (12 << SOUND_MODE_MASVOL_SHIFT)
-               | (5 << SOUND_MODE_MAXCHN_SHIFT));
+               | (15 << SOUND_MODE_MAXCHN_SHIFT));
 
     for (i = 0; i < NUM_MUSIC_PLAYERS; i++)
     {
@@ -1525,6 +1526,10 @@ void ply_xwave(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *track
 {
     u32 wav;
 
+#ifdef UBFIX
+    wav = 0;
+#endif
+
     READ_XCMD_BYTE(wav, 0) // UB: uninitialized variable
     READ_XCMD_BYTE(wav, 1)
     READ_XCMD_BYTE(wav, 2)
@@ -1592,6 +1597,10 @@ void ply_xcmd_0C(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *tra
 {
     u32 unk;
 
+#ifdef UBFIX
+    unk = 0;
+#endif
+
     READ_XCMD_BYTE(unk, 0) // UB: uninitialized variable
     READ_XCMD_BYTE(unk, 1)
 
@@ -1611,6 +1620,7 @@ void ply_xcmd_0C(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *tra
 void ply_xcmd_0D(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *track)
 {
     u32 unk;
+
 #ifdef UBFIX
     unk = 0;
 #endif
@@ -1703,14 +1713,14 @@ void SetPokemonCryProgress(u32 val)
     gPokemonCrySong.unkCmd0DParam = val;
 }
 
-int IsPokemonCryPlaying(struct MusicPlayerInfo *mplayInfo)
+bool32 IsPokemonCryPlaying(struct MusicPlayerInfo *mplayInfo)
 {
     struct MusicPlayerTrack *track = mplayInfo->tracks;
 
     if (track->chan && track->chan->track == track)
-        return 1;
+        return TRUE;
     else
-        return 0;
+        return FALSE;
 }
 
 void SetPokemonCryChorus(s8 val)

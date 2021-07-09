@@ -1898,10 +1898,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
             if (gTrainers[trainerNum].doubleBattle == TRUE)
                 personalityValue = 0x80;
-            else if (gTrainers[trainerNum].encounterMusic_gender & 0x80)
-                personalityValue = 0x78;
+            else if (gTrainers[trainerNum].encounterMusic_gender & F_TRAINER_FEMALE)
+                personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
             else
-                personalityValue = 0x88;
+                personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
 
             for (j = 0; gTrainers[trainerNum].trainerName[j] != EOS; j++)
                 nameHash += gTrainers[trainerNum].trainerName[j];
@@ -5067,7 +5067,12 @@ static void ReturnFromBattleToOverworld(void)
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
         UpdateRoamerHPStatus(&gEnemyParty[0]);
+
+#ifndef BUGFIX
         if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+#else
+        if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).
+#endif                                                                               // & with B_OUTCOME_WON (1) will return TRUE and deactivates the roamer.
             SetRoamerInactive();
     }
 

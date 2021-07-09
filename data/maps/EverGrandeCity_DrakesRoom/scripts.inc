@@ -43,7 +43,7 @@ EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated

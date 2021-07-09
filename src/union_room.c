@@ -319,8 +319,13 @@ static void StringExpandPlaceholders_AwaitingCommFromAnother(u8 *dst, u8 caseId)
     case ACTIVITY_CONTEST_CUTE:
     case ACTIVITY_CONTEST_SMART:
     case ACTIVITY_CONTEST_TOUGH:
-        // UB: argument *dst isn't used, instead it always prints to gStringVar4
+        // BUG: argument *dst isn't used, instead it always prints to gStringVar4
+        // not an issue in practice since Gamefreak never used any other arguments here besides gStringVar4
+        #ifndef BUGFIX
         StringExpandPlaceholders(gStringVar4, sText_AwaitingCommunication);
+        #else
+        StringExpandPlaceholders(dst, sText_AwaitingCommunication);
+        #endif
         break;
     }
 }
@@ -4415,7 +4420,7 @@ static void HandleCancelActivity(bool32 setData)
 static void UR_EnableScriptContext2AndFreezeObjectEvents(void)
 {
     ScriptContext2_Enable();
-    ScriptFreezeObjectEvents();
+    FreezeObjects_WaitForPlayer();
 }
 
 static u8 GetActivePartnerSpriteGenderParam(struct WirelessLink_URoom *data)

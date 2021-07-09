@@ -33,7 +33,7 @@ Route103_EventScript_RivalMay:: @ 81EC3DA
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_RivalMayRematch
 	msgbox Route103_Text_MayRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_MAY, 1
+	playbgm MUS_ENCOUNTER_MAY, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
@@ -51,7 +51,7 @@ Route103_EventScript_RivalBrendan:: @ 81EC434
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_RivalBrendanRematch
 	msgbox Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
