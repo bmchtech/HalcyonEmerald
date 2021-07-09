@@ -34,8 +34,6 @@
 #include "constants/rgb.h"
 #include "constants/items.h"
 
-extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
-
 struct EvoInfo
 {
     u8 preEvoSpriteId;
