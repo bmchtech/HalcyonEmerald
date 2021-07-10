@@ -1411,17 +1411,6 @@ AI_CV_Sleep1: @ 82DCAAD
 	score +2
 	end
 
-@ Sleep OP, use it if possible
-AI_CV_Sleep1: @ 82DCAAD
-	get_last_used_bank_move AI_USER
-	get_move_effect_from_result
-	if_equal EFFECT_SLEEP, AI_CV_Sleep_End @ If you just missed a sleep move, try something else
-	score +3
-	if_random_less_than 128, AI_CV_Sleep_End
-	score +2
-	end
-
-
 AI_CV_Sleep_End:
 	end
 
