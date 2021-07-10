@@ -7266,7 +7266,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
         case TRAINER_CLASS_PKMN_TRAINER_4:
             return MUS_VS_FRONTIER_BRAIN;
-        case TRAINER_CLASS_PKMN_TRAINER_2: // Cynthia
+        case TRAINER_CLASS_PKMN_TRAINER_1: // Cynthia
             return DP_SEQ_BA_CHANP;
         default:
             return MUS_VS_TRAINER;

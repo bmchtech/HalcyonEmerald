@@ -21107,10 +21107,10 @@ static const struct TrainerMonItemCustomMoves sParty_Cynthia1[] = {
     {
     .lvl = 5,
     .species = SPECIES_LUCARIO,
-    .heldItem = ITEM_LIFE_ORB,
+    .heldItem = ITEM_CHOICE_SCARF,
     .ability = 0, // Steadfast
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
-    .moves = MOVE_CLOSE_COMBAT, MOVE_METEOR_MASH, MOVE_EXTREME_SPEED, MOVE_SWORDS_DANCE
+    .moves = MOVE_CLOSE_COMBAT, MOVE_METEOR_MASH, MOVE_STRENGTH, MOVE_ICE_PUNCH
     },
     {
     .lvl = 5,
@@ -21118,7 +21118,7 @@ static const struct TrainerMonItemCustomMoves sParty_Cynthia1[] = {
     .heldItem = ITEM_LEFTOVERS,
     .ability = 2, // Multiscale
     .spread = SPREAD_31_IV_HP_DEF_BOLD,
-    .moves = MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_TOXIC
+    .moves = MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_MIRROR_COAT
     },
     {
     .lvl = 7,

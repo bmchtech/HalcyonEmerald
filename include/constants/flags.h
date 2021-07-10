@@ -464,7 +464,7 @@
 #define FLAG_MOVE_FORTREE_GYM_ENERGY_ROOT    0x1B3
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
 #define FLAG_LILYCOVE_MET_BALL_SWAPPER       0x1B5
-#define FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK    0x1B6 // Unused
+#define FLAG_HIDE_MOSSDEEP_CYNTHIA           0x1B6
 #define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7 // Unused
 #define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8 // Unused
 #define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9 // Unused
@@ -1589,7 +1589,7 @@
 #define FLAG_DAILY_REMATCH_JUAN                     (DAILY_FLAGS_START + 0x1D)
 #define FLAG_DAILY_REMATCH_RIVAL                    (DAILY_FLAGS_START + 0x1E)
 #define FLAG_DAILY_REMATCH_STEVEN                   (DAILY_FLAGS_START + 0x1F)
-#define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
+#define FLAG_DAILY_REMATCH_CYNTHIA                  (DAILY_FLAGS_START + 0x20)
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
