@@ -5938,7 +5938,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CYNTHIA_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_2,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_CYNTHIA,
         .trainerName = _("Cynthia"),
@@ -8948,7 +8948,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CYNTHIA_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_2,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_CYNTHIA,
         .trainerName = _("Cynthia"),
@@ -11258,7 +11258,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_STEVEN] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_2,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_5,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_STEVEN,
         .trainerName = _("Steven"),

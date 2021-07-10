@@ -7249,10 +7249,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
+        case TRAINER_CLASS_PKMN_TRAINER_5: // Steven
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_PKMN_TRAINER_3:
-            //if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
-                //return MUS_RG_VS_CHAMPION;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
@@ -7267,6 +7266,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
         case TRAINER_CLASS_PKMN_TRAINER_4:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_PKMN_TRAINER_2: // Cynthia
+            return DP_SEQ_BA_CHANP;
         default:
             return MUS_VS_TRAINER;
         }
@@ -7299,6 +7300,11 @@ u16 GetBattleBGM(void)
             return MUS_VS_KYOGRE_GROUDON;
         case SPECIES_DEOXYS:
             return MUS_RG_VS_DEOXYS;
+        case SPECIES_ROTOM:
+        case SPECIES_HEATRAN:
+            return DP_SEQ_BA_SECRET2;
+        case SPECIES_REGIGIGAS:
+            return PL_SEQ_PL_BA_REGI;
         default:
             return MUS_VS_WILD;
         }
