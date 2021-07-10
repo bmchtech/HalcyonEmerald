@@ -276,5 +276,6 @@ EventScript_ResetAllMapFlags:: @ 82715DE
 	setflag FLAG_HIDE_RUSTBORO_ROXANNE
 	setflag FLAG_DEFEATED_HEATRAN
 	setflag FLAG_HIDE_ASHEN_WOODS_POKE_BALL
+	setflag FLAG_HIDE_MOSSDEEP_CYNTHIA
 	call EventScript_ResetAllBerries
 	end

@@ -327,6 +327,7 @@ const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
 // This is a factor in how much money you get for beating a trainer.
 const struct TrainerMoney gTrainerMoneyTable[] =
 {
+    {TRAINER_CLASS_PKMN_TRAINER_1, 50},
     {TRAINER_CLASS_TEAM_AQUA, 5},
     {TRAINER_CLASS_AQUA_ADMIN, 10},
     {TRAINER_CLASS_AQUA_LEADER, 20},
@@ -383,13 +384,15 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_YOUNG_COUPLE, 8},
     {TRAINER_CLASS_WINSTRATE, 10},
     {TRAINER_CLASS_MAGIKARP_GUY, 20},
-    {TRAINER_CLASS_PKMN_TRAINER_4, 25},
+    {TRAINER_CLASS_PKMN_TRAINER_4, 30},
+    {TRAINER_CLASS_PKMN_TRAINER_5, 50},
     {0xFF, 5},
 };
 
 // Determines which Poke Ball type is used by each trainer class
 const struct TrainerBall gTrainerBallTable[] =
 {
+    {TRAINER_CLASS_PKMN_TRAINER_1, ITEM_ULTRA_BALL},
     {TRAINER_CLASS_TEAM_AQUA, ITEM_NET_BALL},
     {TRAINER_CLASS_AQUA_ADMIN, ITEM_NET_BALL},
     {TRAINER_CLASS_AQUA_LEADER, ITEM_MASTER_BALL},
@@ -448,6 +451,7 @@ const struct TrainerBall gTrainerBallTable[] =
     {TRAINER_CLASS_PKMN_TRAINER_2, ITEM_HEAVY_BALL},
     {TRAINER_CLASS_MAGIKARP_GUY, ITEM_LOVE_BALL},
     {TRAINER_CLASS_PKMN_TRAINER_4, ITEM_CHERISH_BALL},
+    {TRAINER_CLASS_PKMN_TRAINER_5, ITEM_HEAVY_BALL},
     {0xFF, ITEM_POKE_BALL},
 };
 
@@ -1898,10 +1902,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
             if (gTrainers[trainerNum].doubleBattle == TRUE)
                 personalityValue = 0x80;
-            else if (gTrainers[trainerNum].encounterMusic_gender & 0x80)
-                personalityValue = 0x78;
+            else if (gTrainers[trainerNum].encounterMusic_gender & F_TRAINER_FEMALE)
+                personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
             else
-                personalityValue = 0x88;
+                personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
 
             for (j = 0; gTrainers[trainerNum].trainerName[j] != EOS; j++)
                 nameHash += gTrainers[trainerNum].trainerName[j];
@@ -4827,6 +4831,9 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_LEADER:
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
+        case TRAINER_CLASS_PKMN_TRAINER_1:
+            PlayBGM(DP_SEQ_WINCHAMP);
+            break;
         default:
             PlayBGM(MUS_VICTORY_TRAINER);
             break;
@@ -5067,7 +5074,12 @@ static void ReturnFromBattleToOverworld(void)
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
         UpdateRoamerHPStatus(&gEnemyParty[0]);
+
+#ifndef BUGFIX
         if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+#else
+        if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).
+#endif                                                                               // & with B_OUTCOME_WON (1) will return TRUE and deactivates the roamer.
             SetRoamerInactive();
     }
 

@@ -33,7 +33,7 @@ Route103_EventScript_RivalMay:: @ 81EC3DA
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_RivalMayRematch
 	msgbox Route103_Text_MayRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_MAY, 1
+	playbgm MUS_ENCOUNTER_MAY, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
@@ -51,7 +51,7 @@ Route103_EventScript_RivalBrendan:: @ 81EC434
 	goto_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_RivalBrendanRematch
 	msgbox Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
@@ -171,12 +171,28 @@ Route103_EventScript_AfterBrendanBattle:: @ 81EC4FC
 Route103_EventScript_AfterMayRematch:: @ 81EC4EE
 	msgbox Route103_Text_MayPostRematch, MSGBOX_DEFAULT
 	setflag FLAG_DAILY_REMATCH_RIVAL
+	goto_if_unset FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, Route103_EventScript_MayGiveEonTicket
 	releaseall
 	end
 
 Route103_EventScript_AfterBrendanRematch:: @ 81EC4FC
 	msgbox Route103_Text_BrendanPostRematch, MSGBOX_DEFAULT
 	setflag FLAG_DAILY_REMATCH_RIVAL
+	goto_if_unset FLAG_ENABLE_SHIP_SOUTHERN_ISLAND, Route103_EventScript_BrendanGiveEonTicket
+	releaseall
+	end
+
+Route103_EventScript_BrendanGiveEonTicket::
+	msgbox Route103_Text_BrendanGiveEonTicket, MSGBOX_DEFAULT
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	giveitem ITEM_EON_TICKET
+	releaseall
+	end
+
+Route103_EventScript_MayGiveEonTicket::
+	msgbox Route103_Text_MayGiveEonTicket, MSGBOX_DEFAULT
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	giveitem ITEM_EON_TICKET
 	releaseall
 	end
 
@@ -451,7 +467,7 @@ Route103_Text_MayRematch:
 	.string "I want to understand everything about\n"
 	.string "you and your Pokémon, {PLAYER}!\p"
 	.string "And then…\p"
-	.string "I want you to understand everything\n"
+	.string "I want you to understand everything\l"
 	.string "about me and mine!$"
 
 Route103_Text_MayRematchDefeated:
@@ -494,3 +510,12 @@ Route103_Text_BrendanPostRematch:
 	.string "And so many different Pokémon…\p"
 	.string "It's like… I don't know…\n"
 	.string "It's been really, really fun!$"
+
+Route103_Text_BrendanGiveEonTicket:
+	.string "Brendan: One more thing, {PLAYER}.\n"
+	.string "Take this as thanks for a great battle!$"
+
+Route103_Text_MayGiveEonTicket:
+	.string "May: Oh, by the way, {PLAYER}.\n"
+	.string "I've got something for you!\p"
+	.string "Please take this Ticket!$"

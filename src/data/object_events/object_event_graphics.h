@@ -397,8 +397,11 @@ const u32 gObjectEventPic_Regigigas[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Carbink[] = INCBIN_U32("graphics/object_events/pics/pokemon/carbink.4bpp");
 const u32 gObjectEventPic_Diancie[] = INCBIN_U32("graphics/object_events/pics/pokemon/diancie.4bpp");
 const u32 gObjectEventPic_Chansey[] = INCBIN_U32("graphics/object_events/pics/pokemon/chansey.4bpp");
+// People
+const u32 gObjectEventPic_Cynthia[] = INCBIN_U32("graphics/object_events/pics/people/cynthia.4bpp");
 // New pals
 const u16 gObjectEventPaletteCelebi[] = INCBIN_U16("graphics/object_events/palettes/celebi.gbapal");
 const u16 gObjectEventPaletteJirachi[] = INCBIN_U16("graphics/object_events/palettes/jirachi.gbapal");
 const u16 gObjectEventPaletteHeatran[] = INCBIN_U16("graphics/object_events/palettes/heatran.gbapal");
 const u16 gObjectEventPaletteRegigigas[] = INCBIN_U16("graphics/object_events/palettes/regigigas.gbapal");
+const u16 gObjectEventPaletteCynthia[] = INCBIN_U16("graphics/object_events/palettes/cynthia.gbapal");

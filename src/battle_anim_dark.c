@@ -952,7 +952,7 @@ void AnimTask_MetallicShine(u8 taskId)
     paletteNum = 16 + gSprites[spriteId].oam.paletteNum;
 
     if (gBattleAnimArgs[1] == 0)
-        SetGreyscaleOrOriginalPalette(paletteNum, FALSE);
+        SetGrayscaleOrOriginalPalette(paletteNum, FALSE);
     else
         BlendPalette(paletteNum * 16, 16, 11, gBattleAnimArgs[2]);
 
@@ -982,7 +982,7 @@ static void AnimTask_MetallicShine_Step(u8 taskId)
             spriteId = GetAnimBattlerSpriteId(ANIM_ATTACKER);
             paletteNum = 16 + gSprites[spriteId].oam.paletteNum;
             if (gTasks[taskId].data[1] == 0)
-                SetGreyscaleOrOriginalPalette(paletteNum, TRUE);
+                SetGrayscaleOrOriginalPalette(paletteNum, TRUE);
 
             DestroySprite(&gSprites[gTasks[taskId].data[0]]);
             GetBattleAnimBg1Data(&animBg);
@@ -1007,10 +1007,10 @@ static void AnimTask_MetallicShine_Step(u8 taskId)
     }
 }
 
-// Changes battler's palette to either greyscale or original.
+// Changes battler's palette to either grayscale or original.
 // arg0: which battler
 // arg1: FALSE grayscale, TRUE original
-void AnimTask_SetGreyscaleOrOriginalPal(u8 taskId)
+void AnimTask_SetGrayscaleOrOriginalPal(u8 taskId)
 {
     u8 spriteId;
     u8 battler;
@@ -1056,7 +1056,7 @@ void AnimTask_SetGreyscaleOrOriginalPal(u8 taskId)
     }
 
     if (spriteId != SPRITE_NONE)
-        SetGreyscaleOrOriginalPalette(gSprites[spriteId].oam.paletteNum + 16, gBattleAnimArgs[1]);
+        SetGrayscaleOrOriginalPalette(gSprites[spriteId].oam.paletteNum + 16, gBattleAnimArgs[1]);
 
     DestroyAnimVisualTask(taskId);
 }

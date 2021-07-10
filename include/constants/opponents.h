@@ -201,7 +201,7 @@
 #define TRAINER_DALTON_2                    197
 #define TRAINER_DALTON_3                    198
 #define TRAINER_DALTON_4                    199
-#define TRAINER_DRAKE_2                    200
+#define TRAINER_DRAKE_2                     200
 #define TRAINER_COLE                        201
 #define TRAINER_JEFF                        202
 #define TRAINER_AXLE                        203
@@ -280,7 +280,7 @@
 #define TRAINER_JERRY_2                     276
 #define TRAINER_JERRY_3                     277
 #define TRAINER_JERRY_4                     278
-#define TRAINER_SIDNEY_2                     279
+#define TRAINER_SIDNEY_2                    279
 #define TRAINER_KAREN_1                     280
 #define TRAINER_GEORGIA                     281
 #define TRAINER_KAREN_2                     282
@@ -292,7 +292,7 @@
 #define TRAINER_ANNA_AND_MEG_2              288
 #define TRAINER_ANNA_AND_MEG_3              289
 #define TRAINER_ANNA_AND_MEG_4              290
-#define TRAINER_WALLACE_2              291
+#define TRAINER_WALLACE_2                   291
 #define TRAINER_VICTOR                      292
 #define TRAINER_MIGUEL_1                    293
 #define TRAINER_COLTON                      294
@@ -358,13 +358,13 @@
 #define TRAINER_BENJAMIN_2                  354
 #define TRAINER_BENJAMIN_3                  355
 #define TRAINER_BENJAMIN_4                  356
-#define TRAINER_GLACIA_4                  357
+#define TRAINER_GLACIA_4                    357
 #define TRAINER_ABIGAIL_1                   358
 #define TRAINER_JASMINE                     359
 #define TRAINER_ABIGAIL_2                   360
 #define TRAINER_ABIGAIL_3                   361
 #define TRAINER_ABIGAIL_4                   362
-#define TRAINER_GLACIA_3                   363
+#define TRAINER_GLACIA_3                    363
 #define TRAINER_DYLAN_1                     364
 #define TRAINER_DYLAN_2                     365
 #define TRAINER_DYLAN_3                     366
@@ -425,7 +425,7 @@
 #define TRAINER_LAO_2                       421
 #define TRAINER_LAO_3                       422
 #define TRAINER_LAO_4                       423
-#define TRAINER_LAO_5                       424
+#define TRAINER_CYNTHIA_2                   424
 #define TRAINER_JOCELYN                     425
 #define TRAINER_LAURA                       426
 #define TRAINER_CYNDY_1                     427
@@ -489,8 +489,8 @@
 #define TRAINER_AMY_AND_LIV_3               485
 #define TRAINER_MAGIKARP_GUY                486
 #define TRAINER_AMY_AND_LIV_4               487
-#define TRAINER_PHOEBE_3               488
-#define TRAINER_PHOEBE_4               489
+#define TRAINER_PHOEBE_3                    488
+#define TRAINER_PHOEBE_4                    489
 #define TRAINER_HUEY                        490
 #define TRAINER_EDMOND                      491
 #define TRAINER_ERNEST_1                    492
@@ -519,7 +519,7 @@
 #define TRAINER_EDWIN_2                     515
 #define TRAINER_EDWIN_3                     516
 #define TRAINER_EDWIN_4                     517
-#define TRAINER_PHOEBE_2                     518
+#define TRAINER_PHOEBE_2                    518
 #define TRAINER_WALLY_VR_1                  519
 #define TRAINER_BRENDAN_ROUTE_103_MUDKIP    520
 #define TRAINER_BRENDAN_ROUTE_110_MUDKIP    521
@@ -545,14 +545,14 @@
 #define TRAINER_ISAAC_2                     541
 #define TRAINER_ISAAC_3                     542
 #define TRAINER_ISAAC_4                     543
-#define TRAINER_WALLACE_3                     544
+#define TRAINER_WALLACE_3                   544
 #define TRAINER_LYDIA_1                     545
 #define TRAINER_HALLE                       546
 #define TRAINER_GARRISON                    547
 #define TRAINER_LYDIA_2                     548
 #define TRAINER_LYDIA_3                     549
 #define TRAINER_LYDIA_4                     550
-#define TRAINER_WALLACE_4                     551
+#define TRAINER_WALLACE_4                   551
 #define TRAINER_JACKSON_1                   552
 #define TRAINER_LORENZO                     553
 #define TRAINER_SEBASTIAN                   554
@@ -640,7 +640,7 @@
 #define TRAINER_TRENT_2                     636
 #define TRAINER_TRENT_3                     637
 #define TRAINER_TRENT_4                     638
-#define TRAINER_TRENT_5                     639
+#define TRAINER_CYNTHIA_1                   639
 #define TRAINER_DEZ_AND_LUKE                640
 #define TRAINER_LEA_AND_JED                 641
 #define TRAINER_KIRA_AND_DAN_1              642

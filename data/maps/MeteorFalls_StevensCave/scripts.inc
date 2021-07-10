@@ -25,13 +25,22 @@ MeteorFalls_StevensCave_EventScript_Defeated:: @ 823B1CD
 	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox MeteorFalls_StevensCave_Text_MyPredictionCameTrue, MSGBOX_DEFAULT
+	goto_if_unset FLAG_RECEIVED_AURORA_TICKET, MeteorFalls_StevensCave_EventScript_GiveAuroraTicket
+	release
+	end
+
+MeteorFalls_StevensCave_EventScript_GiveAuroraTicket:
+	msgbox MeteorFalls_StevensCave_Text_BirthIsland, MSGBOX_DEFAULT
+	giveitem ITEM_AURORA_TICKET
+	setflag FLAG_RECEIVED_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
 	release
 	end
 
 MeteorFalls_StevensCave_Text_ShouldKnowHowGoodIAmExpectWorst: @ 823B1E1
 	.string "Steven: Oh, wow, {PLAYER}{KUN}.\n"
 	.string "I'm amazed you knew where to find me.\p"
-	.string "Do you, uh…maybe think of me as\n"
+	.string "Do you, uh… maybe think of me as\n"
 	.string "just a rock maniac?\p"
 	.string "No, that can't be right.\p"
 	.string "We battled alongside each other at\n"
@@ -57,3 +66,10 @@ MeteorFalls_StevensCave_Text_MyPredictionCameTrue: @ 823B358
 	.string "… … … … … …\p"
 	.string "Fufufu, even I couldn't tell you that.$"
 
+MeteorFalls_StevensCave_Text_BirthIsland:
+	.string "But… maybe you'd like to\n"
+	.string "investigate the strange stone that's\l"
+	.string "appeared on Birth Island?\p"
+	.string "Here, take this ticket to the harbor\n"
+	.string "in Slateport or Lilycove.\p"
+	.string "Perhaps you'll find something useful…$"
