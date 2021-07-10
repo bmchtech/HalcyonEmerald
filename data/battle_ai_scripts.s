@@ -1066,6 +1066,7 @@ AI_CheckIfAlreadyDead:
 AI_CheckIfAlreadyDeadPriorities:
 	if_target_faster Score_Minus1
 	if_random_less_than 126, AI_Ret
+	if_move_priority_greater_than 0, Score_Plus5
 	score +3
 	end
 	
