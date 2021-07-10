@@ -1266,15 +1266,27 @@ AI_CV_Hit:
 	end
 
 AI_CV_Sleep: @ 82DCA92
-	if_has_move_with_effect AI_TARGET, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
-	if_has_move_with_effect AI_TARGET, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
-	goto AI_CV_Sleep_End
+	if_has_move_with_effect AI_USER, EFFECT_DREAM_EATER, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_NIGHTMARE, AI_CV_SleepEncourageSlpDamage
+	if_has_move_with_effect AI_USER, EFFECT_HEX, AI_CV_SleepEncourageSlpDamage
+	goto AI_CV_Sleep1
 
 AI_CV_SleepEncourageSlpDamage: @ 82DCAA5
-	if_random_less_than 128, AI_CV_Sleep_End
+	score +3
+	if_random_less_than 128, AI_CV_Sleep1
 	score +1
+@ fallthrough
+@ Sleep OP, pretty much always good to put foe to sleep
+AI_CV_Sleep1: @ 82DCAAD
+	get_last_used_bank_move AI_USER
+	get_move_effect_from_result
+	if_equal EFFECT_SLEEP, AI_CV_Sleep_End @ If you just used a sleep move, try something else
+	score +3
+	if_random_less_than 128, AI_CV_Sleep_End
+	score +2
+	end
 
-AI_CV_Sleep_End: @ 82DCAAD
+AI_CV_Sleep_End:
 	end
 
 AI_CV_Absorb: @ 82DCAAE
@@ -3440,7 +3452,7 @@ AI_TryToFaint_Can:
 	if_effect EFFECT_EXPLOSION, AI_TryToFaint_CheckIfDanger
 	if_user_faster AI_TryToFaint_ScoreUp4
 	if_move_flag FLAG_HIGH_CRIT, AI_TryToFaint_ScoreUp4
-	score +2
+	score +3
 	goto AI_TryToFaint_CheckIfDanger
 AI_TryToFaint_ScoreUp4:
 	score +4
