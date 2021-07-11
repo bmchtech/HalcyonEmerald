@@ -3228,7 +3228,7 @@ void FaintClearSetData(void)
 
     ClearBattlerMoveHistory(gActiveBattler);
     ClearBattlerAbilityHistory(gActiveBattler);
-    UndoFormChange(gBattlerPartyIndexes[gActiveBattler], GET_BATTLER_SIDE(gActiveBattler), FALSE);
+    UndoFormChange(gBattlerPartyIndexes[gActiveBattler], GET_BATTLER_SIDE(gActiveBattler));
     if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
         UndoMegaEvolution(gBattlerPartyIndexes[gActiveBattler]);
 }
@@ -4980,7 +4980,7 @@ static void HandleEndTurn_FinishBattle(void)
         for (i = 0; i < PARTY_SIZE; i++)
         {
             UndoMegaEvolution(i);
-            UndoFormChange(i, B_SIDE_PLAYER, FALSE);
+            UndoFormChange(i, B_SIDE_PLAYER);
         }
         gBattleMainFunc = FreeResetData_ReturnToOvOrDoEvolutions;
         gCB2_AfterEvolution = BattleMainCB2;
