@@ -17,7 +17,6 @@ Common_EventScript_PkmnCenterNurse::
 
 EventScript_PkmnCenterNurseHasVial::
     setvar VAR_0x8004, 0
-    clearflag FLAG_SYS_INVERSE_BATTLE
     specialvar VAR_RESULT, CountPlayerTrainerStars
     compare VAR_RESULT, 4
     goto_if_eq EventScript_PkmnCenterNurse_GoldCard
