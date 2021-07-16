@@ -792,9 +792,9 @@ const struct MenuAction MultichoiceList_Flavors[] =
 {
     {gText_FlavourRed},
     {gText_FlavourYellow},
-    {gText_FlavourPink},
     {gText_FlavourBlue},
     {gText_FlavourGreen},
+    {gText_FlavourPink},
     {gText_Exit},
 };
 
