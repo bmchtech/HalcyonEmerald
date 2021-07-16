@@ -67,9 +67,9 @@ Nature_Changer_Stat_Up::
 	switch VAR_RESULT
 	case 0, Nature_Up_ATK
 	case 1, Nature_Up_DEF
-	case 2, Nature_Up_SPEED
-	case 3, Nature_Up_SPATK
-	case 4, Nature_Up_SPDEF
+	case 2, Nature_Up_SPATK
+	case 3, Nature_Up_SPDEF
+	case 4, Nature_Up_SPEED
 	case 127, Nature_Changer_No
 
 Nature_Up_ATK::
@@ -99,9 +99,9 @@ Nature_Changer_Stat_Down::
 	switch VAR_RESULT
 	case 0, Nature_Down_ATK
 	case 1, Nature_Down_DEF
-	case 2, Nature_Down_SPEED
-	case 3, Nature_Down_SPATK
-	case 4, Nature_Down_SPDEF
+	case 2, Nature_Down_SPATK
+	case 3, Nature_Down_SPDEF
+	case 4, Nature_Down_SPEED
 	case 127, Nature_Changer_No
 
 Nature_Down_ATK::
@@ -131,7 +131,11 @@ Nature_Changer_Nature_Change::
 	fadescreen 1
 	special ChangePokemonNature
 	special BufferChosenMonNature
+	specialvar VAR_0x8007, GetSelectedMonNicknameAndSpecies
+	waitse
 	msgbox NatureChanger_Text_Pause, MSGBOX_AUTOCLOSE
+	playmoncry VAR_0x8007, 0
+	waitmoncry
 	fadescreen 0
 	playfanfare 0x173
 	waitfanfare
