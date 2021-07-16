@@ -16,6 +16,7 @@
 #include "trainer_hill.h"
 #include "constants/field_poison.h"
 #include "constants/party_menu.h"
+ #include "constants/abilities.h"
 
 static bool32 IsMonValidSpecies(struct Pokemon *pokemon)
 {
@@ -121,26 +122,32 @@ s32 DoPoisonFieldEffect(void)
     u32 hp;
     struct Pokemon *pokemon = gPlayerParty;
     u32 numPoisoned = 0;
-    u32 numFainted = 0;
+    u32 numSurvived = 0;
+    u32 ability;
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
+        ability = GetMonAbility(&gPlayerParty[i]);
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) 
+            && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN
+            && ability != ABILITY_POISON_HEAL
+            && ability != ABILITY_TOXIC_BOOST
+            && ability != ABILITY_MAGIC_GUARD)
         {
             hp = GetMonData(pokemon, MON_DATA_HP);
             if (hp == 1 || --hp == 1)
             {
-                numFainted++;
+                numSurvived++;
             }
             SetMonData(pokemon, MON_DATA_HP, &hp);
             numPoisoned++;
         }
         pokemon++;
     }
-    if (numFainted != 0 || numPoisoned != 0)
+    if (numSurvived != 0 || numPoisoned != 0)
     {
         FldEffPoison_Start();
     }
-    if (numFainted != 0)
+    if (numSurvived != 0)
     {
         return FLDPSN_FNT;
     }
