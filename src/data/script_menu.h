@@ -802,6 +802,7 @@ const struct MenuAction MultichoiceList_SuperTrainingMenu[] =
 {
     {gText_Modify},
     {gText_ResetEVs},
+    {gText_ExplainEVs},
     {gText_Exit},
 };
 
@@ -849,6 +850,7 @@ const struct MenuAction MultichoiceList_HyperTrainingMenu[] =
 {
     {gText_ChangeIV},
     {gText_HiddenPower},
+    {gText_ExplainIVs},
     {gText_Exit},
 };
 

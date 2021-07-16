@@ -1,32 +1,67 @@
-.set LOCALID_MOVE_RELEARNER, 1
+.set LOCALID_EVIE, 1
+.set LOCALID_IVY,  2
 
-FallarborTown_MoveRelearnersHouse_MapScripts:: @ 8201382
+FallarborTown_MoveRelearnersHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, FallarborTown_MoveRelearnersHouse_OnFrame
 	.byte 0
 
+FallarborTown_MoveRelearnersHouse_OnFrame:
+	map_script_2 VAR_IVY_EVIE_HOUSE_STATE, 0, FallarborTown_EventScript_IvyEvieIntro
+	.2byte 0
+
 FallarborTown_EventScript_IvyEvieIntro::
-	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	lockall
+	applymovement LOCALID_EVIE, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_IVY, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_EVIE, Common_Movement_ExclamationMark
+	applymovement LOCALID_IVY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_EVIE, Common_Movement_Delay48
+	applymovement LOCALID_IVY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_EVIE, FallarborTown_Movement_MoveEvieDown
+	applymovement LOCALID_IVY, FallarborTown_Movement_MoveIvyDown
+	waitmovement 0	
 	msgbox FallarborTown_Text_AnnoyingIntroPart1, MSGBOX_DEFAULT
-	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_IVY, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart2, MSGBOX_DEFAULT
-	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_EVIE, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart3, MSGBOX_DEFAULT
-	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_IVY, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart4, MSGBOX_DEFAULT
-	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_EVIE, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart5, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	call_if_eq FallarborTown_Explain_EVs
-	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_IVY, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart6, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	call_if_eq HyperTraining_EventScript_Explain_IVs
-	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_EVIE, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart7, MSGBOX_DEFAULT
-	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	applymovement LOCALID_IVY, Common_Movement_WalkInPlaceFastestDown
 	msgbox FallarborTown_Text_AnnoyingIntroPart8, MSGBOX_DEFAULT
-	setflag FLAG_MET_IVY_AND_EVIE
-	return
+	setvar VAR_IVY_EVIE_HOUSE_STATE, 1
+	releaseall
+	end
 
+FallarborTown_Movement_MoveEvieDown:
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_left
+	walk_in_place_fastest_down
+	step_end
+
+FallarborTown_Movement_MoveIvyDown:
+	walk_fastest_down
+	walk_fastest_down
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_in_place_fastest_down
+	step_end
 
 FallarborTown_Text_AnnoyingIntroPart1:
 	.string "Hey there, Trainer!\p"
@@ -78,7 +113,6 @@ FallarborTown_Text_AnnoyingIntroPart8:
 FallarborTown_SuperTrainer::
 	lock
 	faceplayer
-	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
 	msgbox SuperTraining_Text_ChoosePokemon, MSGBOX_DEFAULT
 	special ChoosePartyMon
 	waitstate
@@ -88,9 +122,6 @@ FallarborTown_SuperTrainer::
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq SuperTraining_Egg
 	bufferpartymonnick 0, VAR_0x8004
-	msgbox SuperTraining_Text_RememberEvs, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	call_if_eq FallarborTown_Explain_EVs
 	msgbox SuperTraining_Text_TakeALookatEVs, MSGBOX_DEFAULT
 	goto FallarborTown_SuperMainMenu
 
@@ -101,10 +132,15 @@ FallarborTown_SuperMainMenu::
 	switch VAR_RESULT
 	case 0, FallarborTown_ChangeEV
 	case 1, FallarborTown_ResetEVs
-	case 2, HyperTraining_EventScript_DoNothing
+	case 2, Call_FallarborTown_Explain_EVs
+	case 3, HyperTraining_EventScript_DoNothing
 	case 127, HyperTraining_EventScript_DoNothing
 	releaseall
 	end
+
+Call_FallarborTown_Explain_EVs::
+	call FallarborTown_Explain_EVs
+	goto FallarborTown_SuperMainMenu
 
 FallarborTown_Explain_EVs::
 	msgbox FallarborTown_Text_ExplainEvs, MSGBOX_DEFAULT
@@ -112,9 +148,9 @@ FallarborTown_Explain_EVs::
 
 FallarborTown_ChangeEV::
 	bufferpartymonnick 0, VAR_0x8004
-	specialvar VAR_RESULT, AreChosenMonEVsMaxedOut
-	compare VAR_RESULT, 1
-	goto_if_eq FallarborTown_EVsMaxedOut
+	@specialvar VAR_RESULT, AreChosenMonEVsMaxedOut
+	@compare VAR_RESULT, 1
+	@goto_if_eq FallarborTown_EVsMaxedOut
 	msgbox SuperTraining_Text_ThisIsMonsCurrentSpread, MSGBOX_DEFAULT
 	special BufferChosenMonAllEVs
 	multichoice 0, 0, MULTI_BASE_STATS, 0
@@ -405,7 +441,6 @@ FallarborTown_CantAfford_String:
 FallarborTown_HyperTrainer::
 	lockall
 	faceplayer
-	call_if_unset FLAG_MET_IVY_AND_EVIE, FallarborTown_EventScript_IvyEvieIntro
 	msgbox HyperTraining_Text_ChoosePokemon, MSGBOX_DEFAULT
 	special ChoosePartyMon
 	waitstate
@@ -415,9 +450,6 @@ FallarborTown_HyperTrainer::
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq SuperTraining_Egg
 	bufferpartymonnick 0, VAR_0x8004
-	msgbox HyperTraining_Text_WantMeExplainIVs, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	call_if_eq HyperTraining_EventScript_Explain_IVs
 	msgbox HyperTraining_Text_LetsTakeALook, MSGBOX_DEFAULT
 	goto FallarborTown_HyperMainMenu
 
@@ -428,10 +460,15 @@ FallarborTown_HyperMainMenu::
 	switch VAR_RESULT
 	case 0, HyperTraining_EventScript_ChangeIV
 	case 1, HyperTraining_EventScript_ChangeHiddenPower
-	case 2, HyperTraining_EventScript_DoNothing
+	case 2, Call_HyperTraining_EventScript_Explain_IVs
+	case 3, HyperTraining_EventScript_DoNothing
 	case 127, HyperTraining_EventScript_DoNothing
 	releaseall
 	end
+
+Call_HyperTraining_EventScript_Explain_IVs::
+	call HyperTraining_EventScript_Explain_IVs
+	goto FallarborTown_HyperMainMenu
 
 HyperTraining_EventScript_Explain_IVs::
 	msgbox HyperTraining_Text_ExplainIVs, MSGBOX_DEFAULT

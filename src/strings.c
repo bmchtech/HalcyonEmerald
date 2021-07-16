@@ -1850,6 +1850,7 @@ const u8 gText_FlavourGreen[] = _("Green");
 const u8 gText_View[] = _("View");
 const u8 gText_Modify[] = _("Add EVs");
 const u8 gText_ResetEVs[] = _("Reset EVs");
+const u8 gText_ExplainEVs[] = _("Explain EVs");
 
 const u8 gText_ChangeIVto0[] = _(" 0");
 const u8 gText_ChangeIVto1[] = _(" 1");
@@ -1867,6 +1868,7 @@ const u8 gText_Add252toEV[] = _("252 EVs");
 
 const u8 gText_HiddenPower[] = _("Change Hidden Power");
 const u8 gText_ChangeIV[] = _("Change IVs");
+const u8 gText_ExplainIVs[] = _("Explain IVs");
 
 const u8 gText_HPFire[] = _("Fire");
 const u8 gText_HPIce[] = _("Ice");
