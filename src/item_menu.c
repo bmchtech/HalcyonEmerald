@@ -877,13 +877,18 @@ void GetItemName(s8 *dest, u16 itemId)
             StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(itemId)]);
             if (itemId >= ITEM_HM01_CUT)
             {
-                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_HM01_CUT + 1, STR_CONV_MODE_LEADING_ZEROS, 1);
+                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_HM01_CUT + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
                 StringExpandPlaceholders(dest, gText_ClearTo11Var1Clear5Var2);
+            }
+            else if (itemId == ITEM_TM100_CURSE)
+            {
+                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01_FOCUS_PUNCH + 1, STR_CONV_MODE_LEADING_ZEROS, 3);
+                StringExpandPlaceholders(dest, gText_NumberVar1Clear7Var2);
             }
             else
             {
                 ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01_FOCUS_PUNCH + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
-                StringExpandPlaceholders(dest, gText_NumberVar1Clear7Var2);
+                StringExpandPlaceholders(dest, gText_NumberVar1Clear8Var2);
             }
             break;
         case BERRIES_POCKET:

@@ -305,6 +305,7 @@ const u8 *const gPocketNamesStringsTable[] =
 };
 
 const u8 gText_NumberVar1Clear7Var2[] = _("{NO}{STR_VAR_1}{CLEAR 0x07}{STR_VAR_2}");
+const u8 gText_NumberVar1Clear8Var2[] = _("{NO}{STR_VAR_1}{CLEAR 0x0C}{STR_VAR_2}");
 const u8 gText_ClearTo11Var1Clear5Var2[] = _("{CLEAR_TO 0x11}{STR_VAR_1}{CLEAR 0x05}{STR_VAR_2}");
 const u8 gText_SizeSlash[] = _("Size /");
 const u8 gText_FirmSlash[] = _("Firm /");
