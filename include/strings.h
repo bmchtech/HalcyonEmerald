@@ -3456,6 +3456,12 @@ extern const u8 gText_KabukiTrim[];
 extern const u8 gText_PharaohTrim[];
 extern const u8 gText_BackToNatural[];
 
+// Move Party Items
+extern const u8 gMenuText_Move[];
+extern const u8 gText_MoveItemWhere[];
+extern const u8 gText_XsYAnd[];
+extern const u8 gText_XsYWereSwapped[];
+
 // Battle Factory Screen
 extern const u8 gText_RentalPkmn2[];
 extern const u8 gText_SelectFirstPkmn[];

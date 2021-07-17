@@ -290,7 +290,7 @@ const u8 gText_BerriesPocket[] = _("Berries");
 const u8 gText_KeyItemsPocket[] = _("Key Items");
 const u8 gText_MedicinePocket[] = _("Medicine");
 const u8 gText_Mega_StonesPocket[] = _("Mega Stones");
-const u8 gText_Battle_ItemsPocket[] = _("Battle Items");
+const u8 gText_Battle_ItemsPocket[] = _("BattleItems");
 
 const u8 *const gPocketNamesStringsTable[] =
 {
@@ -720,7 +720,7 @@ const u8 gText_TMs_Hms[] = _("TMs & HMs");
 const u8 gText_Berries2[] = _("Berries");
 const u8 gText_Medicine[] = _("Medicine");
 const u8 gText_Mega_Stones[] = _("Mega Stones");
-const u8 gText_Battle_Items[] = _("Battle Items");
+const u8 gText_Battle_Items[] = _("BattleItems");
 const u8 gText_SomeonesPC[] = _("Someone's PC");
 const u8 gText_LanettesPC[] = _("Lanette's PC");
 const u8 gText_PlayersPC[] = _("{PLAYER}'s PC");
@@ -1204,7 +1204,7 @@ const u8 gText_PsychUp48BP[] = _("PSYCH UP{CLEAR_TO 0x4E}48BP");
 const u8 gText_IcePunch48BP[] = _("ICE PUNCH{CLEAR_TO 0x4E}48BP");
 const u8 gText_ThunderPunch48BP[] = _("THUNDERPUNCH{CLEAR_TO 0x4E}48BP");
 const u8 gText_FirePunch48BP[] = _("FIRE PUNCH{CLEAR_TO 0x4E}48BP");
-const u8 gText_PkmnFainted3[] = _("{STR_VAR_1} fainted…\p\n");
+const u8 gText_PkmnFainted3[] = _("{STR_VAR_1} survived the poisoning.\nThe poison faded away!\p");
 const u8 gText_Marco[] = _("Marco");
 const u8 gText_TrainerCardName[] = _("Name: ");
 const u8 gText_TrainerCardIDNo[] = _("IDNo.");
@@ -2114,6 +2114,12 @@ const u8 gText_LaReineTrim[] = _("La Reine Trim");
 const u8 gText_KabukiTrim[] = _("Kabuki Trim");
 const u8 gText_PharaohTrim[] = _("Pharaoh Trim");
 const u8 gText_BackToNatural[] = _("Back to natural");
+
+// Move party items
+const u8 gMenuText_Move[] = _("Move");
+const u8 gText_MoveItemWhere[] = _("Move item to where?");
+const u8 gText_XsYAnd[] = _("Swapped {STR_VAR_1}'s {STR_VAR_2}\n");
+const u8 gText_XsYWereSwapped[] = _("and {STR_VAR_1}'s {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
 
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_EV[]          = _("EV: ");
