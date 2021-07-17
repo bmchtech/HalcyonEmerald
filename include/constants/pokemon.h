@@ -366,7 +366,7 @@
 #define EVO_ITEM_HOLD_NIGHT               22     // Pokémon levels up, holds specified item at night
 #define EVO_MOVE                          23     // Pokémon levels up, knows specified move
 #define EVO_MOVE_TYPE                     24     // Pokémon levels up, knows move with specified type
-#define EVO_SPECIFIC_MAPSEC                        25     // Pokémon levels up on specified mapsec
+#define EVO_SPECIFIC_MAPSEC               25     // Pokémon levels up on specified mapsec
 #define EVO_ITEM_MALE                     26     // specified item is used on a male Pokémon
 #define EVO_ITEM_FEMALE                   27     // specified item is used on a female Pokémon
 #define EVO_LEVEL_RAIN                    28     // Pokémon reaches the specified level while it's raining
