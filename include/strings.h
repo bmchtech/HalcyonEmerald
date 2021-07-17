@@ -430,6 +430,7 @@ extern const u8 gText_FirmSlash[];
 extern const u8 gText_CloseBag[];
 extern const u8 gText_ClearTo11Var1Clear5Var2[];
 extern const u8 gText_NumberVar1Clear7Var2[];
+extern const u8 gText_NumberVar1Clear8Var2[];
 extern const u8 gText_xVar1[];
 extern const u8 gText_ReturnToVar1[];
 extern const u8 gText_SelectorArrow2[];

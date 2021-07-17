@@ -64,13 +64,13 @@ LavaridgeTown_PokemonCenter_1F_EventScript_Buy12MoomooMilk::
 	checkmoney 6000, 0
 	compare VAR_RESULT, FALSE
 	goto_if_eq LavaridgeTown_PokemonCenter_1F_EventScript_NotEnoughMoney
-	checkitemspace ITEM_MOOMOO_MILK, 12
+	checkitemspace ITEM_MOOMOO_MILK, 999
 	compare VAR_RESULT, FALSE
 	goto_if_eq LavaridgeTown_PokemonCenter_1F_EventScript_NotEnoughSpace
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_HereYouGo, MSGBOX_DEFAULT
 	removemoney 6000, 0
 	updatemoneybox 0, 0
-	giveitem ITEM_MOOMOO_MILK, 12
+	giveitem ITEM_MOOMOO_MILK, 999
 	hidemoneybox
 	release
 	end
