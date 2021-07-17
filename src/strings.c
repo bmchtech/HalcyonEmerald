@@ -2115,6 +2115,12 @@ const u8 gText_KabukiTrim[] = _("Kabuki Trim");
 const u8 gText_PharaohTrim[] = _("Pharaoh Trim");
 const u8 gText_BackToNatural[] = _("Back to natural");
 
+// Move party items
+const u8 gMenuText_Move[] = _("Move");
+const u8 gText_MoveItemWhere[] = _("Move item to where?");
+const u8 gText_XsYAnd[] = _("Swapped {STR_VAR_1}'s {STR_VAR_2}\n");
+const u8 gText_XsYWereSwapped[] = _("and {STR_VAR_1}'s {STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_EV[]          = _("EV: ");
 const u8 gText_Stats_EV_HP[]       = _("HP {PLUS} ");
