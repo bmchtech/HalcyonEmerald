@@ -6218,7 +6218,7 @@ static void LoadTilesetTilemapHGSS(u8 page)
 }
 
 //PokedexPlus HGSS_Ui Stats Page
-static const u8 sStatsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY};
+static const u8 sStatsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 static void StatsPage_PrintAToggleUpdownMoves(void)
 {
     u8 x = 9;
@@ -7273,7 +7273,7 @@ static void DestroySplitIcon(void)
 #endif
 
 //PokedexPlus HGSS_Ui Evolution Page
-static const u8 sEvoFormsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GREY};
+static const u8 sEvoFormsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 static void EvoFormsPage_PrintAToggleUpdownEvos(void)
 {
     u8 x = 9;
@@ -7727,12 +7727,12 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
                 StringExpandPlaceholders(gStringVar4, gText_EVO_MOVE_TYPE );
                 PrintInfoScreenTextSmall(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i);
                 break;
-            case EVO_MAPSEC:
+            case EVO_SPECIFIC_MAPSEC:
                 StringCopy(gStringVar2, gRegionMapEntries[gEvolutionTable[species][i].param].name);
                 targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 CreateCaughtBallEvolutionScreen(targetSpecies, base_x + depth_x*depth-9, base_y + base_y_offset*base_i, 0);
                 handleTargetSpeciesPrint(taskId, targetSpecies, base_x + depth_x*depth, base_y, base_y_offset, base_i); //evolution mon name
-                StringExpandPlaceholders(gStringVar4, gText_EVO_MAPSEC );
+                StringExpandPlaceholders(gStringVar4, gText_EVO_SPECIFIC_MAPSEC );
                 PrintInfoScreenTextSmall(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i);
                 break;
             case EVO_ITEM_MALE:

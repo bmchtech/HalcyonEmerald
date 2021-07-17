@@ -639,7 +639,7 @@ extern const u8 gText_EVO_ITEM_HOLD_DAY[];
 extern const u8 gText_EVO_ITEM_HOLD_NIGHT[];
 extern const u8 gText_EVO_MOVE[];
 extern const u8 gText_EVO_MOVE_TYPE[];
-extern const u8 gText_EVO_MAPSEC[];
+extern const u8 gText_EVO_SPECIFIC_MAPSEC[];
 extern const u8 gText_EVO_ITEM_MALE[];
 extern const u8 gText_EVO_ITEM_FEMALE[];
 extern const u8 gText_EVO_LEVEL_RAIN[];
