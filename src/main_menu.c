@@ -1788,13 +1788,13 @@ static void Task_NewGameBirchSpeech_ChooseDifficulty(u8 taskId)
     {
         case 0:
             PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->gameDifficulty = difficulty;
+            gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_NORMAL;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_ReadTheDocs;
             break;
         case 1:
             PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->gameDifficulty = difficulty;
+            gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_HARD;
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_ReadTheDocs;
             break;
