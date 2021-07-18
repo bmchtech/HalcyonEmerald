@@ -420,10 +420,9 @@ RustboroCity_Gym_Text_ReceivedStoneBadge: @ 82137EC
 	.string "from Roxanne.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis: @ 8213816
-	.string "The Stone Badge heightens the Attack\n"
-	.string "power of your Pokémon.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "Cut outside of battle.\p"
+	.string "The Stone Badge enables your Pokémon\n"
+	.string "to use the HM move Cut outside\l"
+	.string "of battle.\p"
 	.string "Please take this with you, too.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb: @ 82138B1
