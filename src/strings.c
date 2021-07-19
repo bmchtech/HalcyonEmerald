@@ -1904,6 +1904,9 @@ const u8 gText_OminousWind[] = _("Ominous Wind");
 const u8 gText_SuperFang[] = _("Super Fang");
 const u8 gText_HoneClaws[] = _("Hone Claws");
 const u8 gText_PsychUp[] = _("Psych Up");
+const u8 gText_FocusEnergy[] = _("Focus Energy");
+const u8 gText_Spikes[] = _("Spikes");
+
 // Unlocked after beating Brawly
 const u8 gText_Counter[] = _("Counter");
 const u8 gText_Endeavor[] = _("Endeavor");
@@ -2017,13 +2020,13 @@ const u8 gText_KnockOff[] = _("Knock Off");
 const u8 gText_QuiverDance[] = _("Quiver Dance");
 
 // Multichoice strings when selecting a set of tutor moves to choose from
-const u8 gText_TutorMoveSet1[] = _("Tutor Moves Set 1");
-const u8 gText_TutorMoveSet2[] = _("Tutor Moves Set 2");
-const u8 gText_TutorMoveSet3[] = _("Tutor Moves Set 3");
-const u8 gText_TutorMoveSet4[] = _("Tutor Moves Set 4");
-const u8 gText_TutorMoveSet5[] = _("Tutor Moves Set 5");
-const u8 gText_TutorMoveSet6[] = _("Tutor Moves Set 6");
-const u8 gText_TutorMoveSet7[] = _("Tutor Moves Set 7");
+const u8 gText_TutorMoveSet1[] = _("Stone Badge");
+const u8 gText_TutorMoveSet2[] = _("Knuckle Badge");
+const u8 gText_TutorMoveSet3[] = _("Dynamo Badge");
+const u8 gText_TutorMoveSet4[] = _("Heat Badge");
+const u8 gText_TutorMoveSet5[] = _("Balance Badge");
+const u8 gText_TutorMoveSet6[] = _("Feather Badge");
+const u8 gText_TutorMoveSet7[] = _("Mind Badge");
 
 // Pokemon center move tutor/name rater menu
 const u8 gText_RememberAMove[] = _("Remember a move");

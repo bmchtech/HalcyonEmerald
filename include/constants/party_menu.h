@@ -162,7 +162,7 @@
 #define TUTOR_MOVE_FOCUS_ENERGY     142
 #define TUTOR_MOVE_SPIKES           143
 
-#define TUTOR_MOVE_COUNT            143
+#define TUTOR_MOVE_COUNT            144
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

@@ -560,6 +560,16 @@ PokemonCenterMoveTutor_Text_PsychUpDesc::
 	.string "effect(s) and\n"
 	.string "gives to the user.$"
 
+PokemonCenterMoveTutor_Text_FocusEnergyDesc::
+	.string "Focuses power to\n"
+	.string "raise critical-hit\n"
+	.string "ratio.$"
+
+PokemonCenterMoveTutor_Text_SpikesDesc::
+	.string "Sets spikes that\n"
+	.string "hurt a foe\n"
+	.string "switching in.$"
+
 @ Set 2
 PokemonCenterMoveTutor_Text_CounterDesc::
 	.string "Retaliates any\n"
