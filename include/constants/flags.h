@@ -1293,7 +1293,7 @@
 #define FLAG_RECEIVED_AUDINO                                        0x4E4
 #define FLAG_HIDE_ASHEN_WOODS_CHANSEY                               0x4E5
 #define FLAG_HIDE_ASHEN_WOODS_POKE_BALL                             0x4E6
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
+#define FLAG_EVERGRANDE_MEWTWONITEY                                 0x4E7
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
 #define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
