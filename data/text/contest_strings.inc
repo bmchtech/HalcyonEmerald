@@ -144,63 +144,22 @@ gText_AppealBestMoreCrowdExcited:: @ 827D401
 gText_TemporarilyStopCrowdExcited:: @ 827D436
 	.string "Temporarily stops the\ncrowd from growing excited.$"
 
-@ Unused move names
-
-gText_RainDance:: @ 827D468
-	.string "RAIN DANCE$"
-
-gText_Rage:: @ 827D473
-	.string "RAGE$"
-
-gText_FocusEnergy:: @ 827D478
-	.string "FOCUS ENERGY$"
-
-gText_Hypnosis:: @ 827D485
-	.string "HYPNOSIS$"
-
-gText_Softboiled:: @ 827D48E
-	.string "SOFTBOILED$"
-
-gText_HornAttack:: @ 827D499
-	.string "HORN ATTACK$"
-
-gText_SwordsDance:: @ 827D4A5
-	.string "SWORDS DANCE$"
-
-gText_Conversion:: @ 827D4B2
-	.string "CONVERSION$"
-
-gText_SunnyDay:: @ 827D4BD
-	.string "SUNNY DAY$"
-
-gText_Rest2:: @ 827D4C7
-	.string "REST$"
-
-gText_Vicegrip:: @ 827D4CC
-	.string "VICEGRIP$"
-
-@gText_DefenseCurl:: @ 827D4D5
-@	.string "DEFENSE CURL$"
-
-gText_LockOn:: @ 827D4E2
-	.string "LOCK-ON$"
-
 @ Contest type names
 
 gContestMoveTypeCoolText:: @ 827D4EA
-	.string "COOL$"
+	.string "Cool$"
 
 gContestMoveTypeBeautyText:: @ 827D4EF
-	.string "BEAUTY$"
+	.string "Beauty$"
 
 gContestMoveTypeCuteText:: @ 827D4F6
-	.string "CUTE$"
+	.string "Cute$"
 
 gContestMoveTypeSmartText:: @ 827D4FB
-	.string "SMART$"
+	.string "Smart$"
 
 gContestMoveTypeToughText:: @ 827D501
-	.string "TOUGH$"
+	.string "Tough$"
 
 gText_AppealNumWhichMoveWillBePlayed:: @ 827D507
 	.string "Appeal no. {STR_VAR_1}!\n"

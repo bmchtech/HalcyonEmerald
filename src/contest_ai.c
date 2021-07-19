@@ -1737,6 +1737,8 @@ static void ContestAICmd_if_user_doesnt_have_exciting_move(void)
 //      The fix below aligns the function with how it's used by the script, rather than the apparent
 //      intention of its usage
 
+//      How is this a bug fix if it breaks the contest AI? If it's used to check an effect it should stay that way.
+
 static void ContestAICmd_check_user_has_move(void)
 {
     int hasMove = FALSE;
@@ -1745,11 +1747,7 @@ static void ContestAICmd_check_user_has_move(void)
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        #ifdef BUGFIX
-        u16 move = gContestMoves[gContestMons[eContestAI.contestantId].moves[i]].effect;
-        #else
         u16 move = gContestMons[eContestAI.contestantId].moves[i];
-        #endif
         
         if (move == targetMove)
         {

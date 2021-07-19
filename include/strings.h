@@ -3171,6 +3171,8 @@ extern const u8 gText_OminousWind[];
 extern const u8 gText_SuperFang[];
 extern const u8 gText_HoneClaws[];
 extern const u8 gText_PsychUp[];
+extern const u8 gText_FocusEnergy[];
+extern const u8 gText_Spikes[];
 extern const u8 gText_Counter[];
 extern const u8 gText_Endeavor[];
 extern const u8 gText_WorrySeed[];
@@ -3291,6 +3293,8 @@ extern const u8 PokemonCenterMoveTutor_Text_OminousWindDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_SuperFangDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_HoneClawsDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_PsychUpDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_FocusEnergyDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_SpikesDesc[];
 
 // Set 2
 extern const u8 PokemonCenterMoveTutor_Text_CounterDesc[];

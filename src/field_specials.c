@@ -2424,6 +2424,15 @@ void ShowScrollableMultichoice(void)
             task->tTaskId = taskId;
             break;
         case SCROLL_MULTI_PC_TUTOR_SET_1:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 20;
+            task->tLeft = 17;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_PC_TUTOR_SET_2:
         case SCROLL_MULTI_PC_TUTOR_SET_3:
         case SCROLL_MULTI_PC_TUTOR_SET_4:
@@ -2680,6 +2689,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_SuperFang,
         gText_HoneClaws,
         gText_PsychUp,
+        gText_FocusEnergy,
+        gText_Spikes,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_2] = 
@@ -3465,7 +3476,9 @@ static const u16 sPokemonCenter_TutorMoves1[] =
 	MOVE_OMINOUS_WIND,
 	MOVE_SUPER_FANG,
 	MOVE_HONE_CLAWS,
-	MOVE_PSYCH_UP
+	MOVE_PSYCH_UP,
+    MOVE_FOCUS_ENERGY,
+    MOVE_SPIKES
 };
 
 static const u16 sPokemonCenter_TutorMoves2[] =
@@ -3665,6 +3678,8 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_SuperFangDesc,
         PokemonCenterMoveTutor_Text_HoneClawsDesc,
         PokemonCenterMoveTutor_Text_PsychUpDesc,
+        PokemonCenterMoveTutor_Text_FocusEnergyDesc,
+        PokemonCenterMoveTutor_Text_SpikesDesc,
         gText_Exit,
 	};
 	
