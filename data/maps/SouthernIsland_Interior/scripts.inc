@@ -111,6 +111,24 @@ SouthernIsland_Interior_EventScript_RanFromLati:: @ 8242B8F
 
 SouthernIsland_Interior_EventScript_Sign:: @ 8242B9A
 	msgbox SouthernIsland_Interior_Text_Sign, MSGBOX_DEFAULT
+	goto_if_unset FLAG_RECEIVED_LATI_STONES SouthernIsland_Interior_EventScript_GiveLatiStones
+	releaseall
+	end
+
+SouthernIsland_Interior_EventScript_GiveLatiStones::
+	closemessage
+	delay 20
+	playse SE_M_DETECT
+	dofieldeffectsparkle 13, 11, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	giveitem ITEM_LATIOSITE
+	giveitem ITEM_LATIASITE
+	setflag FLAG_RECEIVED_LATI_STONES
 	releaseall
 	end
 
