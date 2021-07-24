@@ -4731,6 +4731,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
              && TARGET_TURN_DAMAGED
              && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE)
              && GetBattlerAbility(gBattlerAttacker) != ABILITY_WATER_VEIL
+             && GetBattlerAbility(gBattlerAttacker) != ABILITY_WATER_BUBBLE
              && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_ANY)
              && !IsAbilityStatusProtected(gBattlerAttacker)
              && (Random() % 3) == 0)
@@ -4938,6 +4939,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 }
                 break;
             case ABILITY_WATER_VEIL:
+            case ABILITY_WATER_BUBBLE:
                 if (gBattleMons[battler].status1 & STATUS1_BURN)
                 {
                     StringCopy(gBattleTextBuff1, gStatusConditionString_BurnJpn);
