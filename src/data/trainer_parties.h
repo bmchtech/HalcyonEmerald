@@ -18046,7 +18046,7 @@ static const struct TrainerMonItemCustomMoves sParty_StevenMossdeep[] = {
     .heldItem = ITEM_BIG_ROOT,
     .ability = 2, // Storm Drain
     .spread = SPREAD_31_IV_HP_SPDEF_CALM,
-    .moves = MOVE_GIGA_DRAIN, MOVE_POWER_GEM, MOVE_SLUDGE_BOMB, MOVE_RECOVER
+    .moves = MOVE_GIGA_DRAIN, MOVE_POWER_GEM, MOVE_EARTH_POWER, MOVE_RECOVER
     },
     {
     .lvl = 1,
@@ -18058,7 +18058,7 @@ static const struct TrainerMonItemCustomMoves sParty_StevenMossdeep[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_METAGROSS_MEGA, // temporary work around for bug
+    .species = SPECIES_METAGROSS,
     .heldItem = ITEM_METAGROSSITE,
     .ability = 0, // Clear Body -> Tough Claws
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
