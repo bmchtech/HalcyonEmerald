@@ -13,7 +13,7 @@ EmberPath_EventScript_Moltres::
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_MOLTRES, VAR_0x800A, ITEM_OCCA_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartKantoLegendaryBattle
+	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome

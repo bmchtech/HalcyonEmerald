@@ -71,5 +71,5 @@ MeteorFalls_StevensCave_Text_BirthIsland:
 	.string "investigate the strange stone that's\l"
 	.string "appeared on Birth Island?\p"
 	.string "Here, take this ticket to the harbor\n"
-	.string "in Slateport or Lilycove.\p"
+	.string "in Lilycove.\p"
 	.string "Perhaps you'll find something useful…$"

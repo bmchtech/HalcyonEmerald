@@ -4751,8 +4751,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_LUSTER_PURGE] =
     {
+        #ifdef REBALANCED_VERSION
+            .power = 95,
+        #else
+            .power = 70,
+        #endif
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 70,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 5,
@@ -4765,8 +4769,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_MIST_BALL] =
     {
+        #ifdef REBALANCED_VERSION
+            .power = 95,
+        #else
+            .power = 70,
+        #endif
         .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 70,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 5,

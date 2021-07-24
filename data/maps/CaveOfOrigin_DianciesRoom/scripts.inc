@@ -13,7 +13,7 @@ CaveOfOrigin_DianciesRoom_EventScript_Diancie::
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_DIANCIE, VAR_0x800A, ITEM_FAIRY_GEM
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartKantoLegendaryBattle
+	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
