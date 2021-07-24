@@ -465,7 +465,7 @@
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4
 #define FLAG_LILYCOVE_MET_BALL_SWAPPER       0x1B5
 #define FLAG_HIDE_MOSSDEEP_CYNTHIA           0x1B6
-#define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7 // Unused
+#define FLAG_RECEIVED_LATI_STONES            0x1B7
 #define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8 // Unused
 #define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9 // Unused
 #define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA // Unused
@@ -1293,7 +1293,7 @@
 #define FLAG_RECEIVED_AUDINO                                        0x4E4
 #define FLAG_HIDE_ASHEN_WOODS_CHANSEY                               0x4E5
 #define FLAG_HIDE_ASHEN_WOODS_POKE_BALL                             0x4E6
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
+#define FLAG_EVERGRANDE_MEWTWONITEY                                 0x4E7
 #define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
 #define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag

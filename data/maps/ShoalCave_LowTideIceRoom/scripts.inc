@@ -13,7 +13,7 @@ ShoalCave_LowTideIceRoom_EventScript_Articuno::
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_ARTICUNO, VAR_0x800A, ITEM_YACHE_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartKantoLegendaryBattle
+	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome

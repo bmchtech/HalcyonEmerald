@@ -2637,7 +2637,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
             if (IS_BATTLER_OF_TYPE(gEffectBattler, TYPE_FIRE))
                 break;
             if (GetBattlerAbility(gEffectBattler) == ABILITY_WATER_VEIL
-                || GetBattlerAbility(gEffectBattler) == ABILITY_COMATOSE
+                || GetBattlerAbility(gEffectBattler) == ABILITY_WATER_BUBBLE
                 || IsAbilityStatusProtected(gEffectBattler))
                 break;
             if (gBattleMons[gEffectBattler].status1)
@@ -2655,7 +2655,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
             if (noSunCanFreeze == 0)
                 break;
             if (GetBattlerAbility(gEffectBattler) == ABILITY_MAGMA_ARMOR
-                || GetBattlerAbility(gEffectBattler) == ABILITY_COMATOSE
                 || IsAbilityStatusProtected(gEffectBattler))
                 break;
 
@@ -7217,7 +7216,8 @@ u32 IsAbilityStatusProtected(u32 battler)
 {
     return IsFlowerVeilProtected(battler)
         || IsLeafGuardProtected(battler)
-        || IsShieldsDownProtected(battler);
+        || IsShieldsDownProtected(battler
+        || GetBattlerAbility(battler) == ABILITY_COMATOSE);
 }
 
 static void RecalcBattlerStats(u32 battler, struct Pokemon *mon)

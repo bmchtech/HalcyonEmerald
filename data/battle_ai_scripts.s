@@ -919,6 +919,7 @@ AI_CBM_Torment: @ 82DC6A9
 AI_CBM_WillOWisp: @ 82DC6B4
 	get_ability AI_TARGET
 	if_equal ABILITY_WATER_VEIL, Score_Minus10
+	if_equal ABILITY_WATER_BUBBLE, Score_Minus10
 	if_equal ABILITY_FLARE_BOOST, Score_Minus10
 	if_equal ABILITY_FLASH_FIRE, Score_Minus10
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus10

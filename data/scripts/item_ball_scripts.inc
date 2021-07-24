@@ -873,3 +873,7 @@ VerdanturfMeadow_EventScript_TM21::
 MagmaHideout_2F_2R_EventScript_ItemMagmaStone::
 	finditem ITEM_MAGMA_STONE
 	end
+
+EverGrandeCity_EventScript_ItemMewtwoniteY::
+	finditem ITEM_MEWTWONITE_Y
+	end

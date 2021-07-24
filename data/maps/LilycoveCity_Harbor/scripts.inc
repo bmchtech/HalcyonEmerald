@@ -53,7 +53,7 @@ LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect:: @ 821E09F
 	special GetLilycoveSSTidalSelection
 	switch VAR_RESULT
 	case 0, LilycoveCity_Harbor_EventScript_GoToSlateport
-	case 1, LilycoveCity_Harbor_EventScript_GoToBattleFrontier
+	case 1, LilycoveCity_Harbor_EventScript_GoToBattleFrontierTemp
 	case 2, LilycoveCity_Harbor_EventScript_GoToSouthernIsland
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRock
 	case 4, LilycoveCity_Harbor_EventScript_GoToBirthIsland
@@ -98,6 +98,11 @@ LilycoveCity_Harbor_EventScript_GoToSlateport:: @ 821E149
 	call LilycoveCity_Harbor_EventScript_BoardFerry
 	warp MAP_SS_TIDAL_CORRIDOR, 255, 1, 10
 	waitstate
+	release
+	end
+
+LilycoveCity_Harbor_EventScript_GoToBattleFrontierTemp::
+	msgbox LilycoveCity_Harbor_Text_BattleFrontierProjectHasStarted, MSGBOX_DEFAULT
 	release
 	end
 
@@ -625,3 +630,13 @@ LilycoveCity_Harbor_Text_SailorFerryAvailable: @ 821E976
 	.string "The folks at the Shipyard in Slateport\n"
 	.string "must've worked extra hard.\p"
 	.string "Well, it's my turn to get busy now!$"
+
+LilycoveCity_Harbor_Text_BattleFrontierProjectHasStarted:
+	.string "The Battle Frontier Project has\n"
+	.string "started!\p"
+	.string "Seriously though, it's not ready yet.\l"
+	.string "Parts of it are broken and it needs a\n"
+	.string "complete overhaul to include all the\l"
+	.string "new Pokémon and mechanics.\p"
+	.string "Please come back in a later version\n"
+	.string "of the hack.$"

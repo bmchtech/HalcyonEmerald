@@ -103,8 +103,8 @@ MossdeepCity_House1_Text_WhatsThis:
 	.string "Would you care to be my opponent?$"
 
 MossdeepCity_House1_Text_LetMeHealYourPokemon:
-	.string "Oh? I see. Let me heal your Pokémon\n"
-	.string "first.$"
+	.string "Oh? I see. Allow me to me heal your\n"
+	.string "Pokémon first.$"
 
 MossdeepCity_House1_Text_BeforeISendOut:
 	.string "Before I send out my Pokémon, my heart\n"
@@ -127,12 +127,12 @@ MossdeepCity_House1_Text_BeyondExpectation:
 	.string "Go on, take it!$"
 
 MossdeepCity_House1_Text_AfterBattle:
-	.string "You're a great Trainer, and it would\n"
-	.string "make me happy to see you again\l"
-	.string "sometime.$"
+	.string "Cynthia: You're a great Trainer, and\n"
+	.string "it would make me happy to see you\l"
+	.string "again sometime.$"
 
 MossdeepCity_House1_Text_BeforeRematch:
-	.string "How terrific to see you again!\p"
+	.string "Cynthia: How terrific to see you again!\p"
 	.string "I've got to tell you… \n"
 	.string "My Pokémon are excited to battle yours.\p"
 	.string "Would you care to be my opponent?$"

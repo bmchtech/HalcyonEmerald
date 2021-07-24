@@ -17,7 +17,6 @@ Route103_OnLoad: @ 81EC3A4
 Route103_EventScript_OpenAlteringCave:: @ 81EC3AE
 	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, 1
 	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, 0
-	clearflag FLAG_HIDE_ROUTE_103_RIVAL
 	return
 
 Route103_EventScript_Rival:: @ 81EC3C1
@@ -186,6 +185,8 @@ Route103_EventScript_BrendanGiveEonTicket::
 	msgbox Route103_Text_BrendanGiveEonTicket, MSGBOX_DEFAULT
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
 	giveitem ITEM_EON_TICKET
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	releaseall
 	end
 
@@ -193,6 +194,8 @@ Route103_EventScript_MayGiveEonTicket::
 	msgbox Route103_Text_MayGiveEonTicket, MSGBOX_DEFAULT
 	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
 	giveitem ITEM_EON_TICKET
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	releaseall
 	end
 

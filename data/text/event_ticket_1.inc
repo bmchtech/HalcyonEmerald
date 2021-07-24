@@ -8,11 +8,11 @@ EventTicket_Text_ShowOldSeaMap: @ 82A6848
 EventTicket_Text_ThatPass: @ 82A68D2
 	.string "The ferry to Slateport is…\p"
 	.string "Oh?\n"
-	.string "That PASS…$"
+	.string "That Pass…$"
 
 EventTicket_Text_ShowEonTicket: @ 82A68FC
 	.string "Aye, mate, are you the one who brought\n"
-	.string "that mighty odd PASS?\p"
+	.string "that mighty odd Pass?\p"
 	.string "I'll tell you, you're trying to reach a\n"
 	.string "tiny spit of an island far in the south.\p"
 	.string "There's no telling what we'll encounter\n"
