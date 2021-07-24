@@ -146,7 +146,7 @@ MauvilleCity_Gym_EventScript_CompletedNewMauville:: @ 820DFD4
 MauvilleCity_Gym_EventScript_WattsonRematch::
 	message MauvilleCity_Gym_Text_WattsonChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, MauvilleCity_Gym_EventScript_SetSingles
 	case 1, MauvilleCity_Gym_EventScript_SetDoubles

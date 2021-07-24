@@ -199,7 +199,7 @@ DewfordTown_Gym_EventScript_GiveBulkUp2: @ 81FC878
 DewfordTown_Gym_EventScript_BrawlyRematch::
 	message DewfordTown_Gym_Text_BrawlyChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, DewfordTown_Gym_EventScript_SetSingles
 	case 1, DewfordTown_Gym_EventScript_SetDoubles

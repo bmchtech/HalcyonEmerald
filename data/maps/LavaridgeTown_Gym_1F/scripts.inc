@@ -112,7 +112,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat:: @ 81FE841
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
 	message LavaridgeTown_Gym_1F_Text_FlanneryChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, LavaridgeTown_Gym_1F_EventScript_SetSingles
 	case 1, LavaridgeTown_Gym_1F_EventScript_SetDoubles

@@ -151,7 +151,7 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge:: @ 822501B
 SootopolisCity_Gym_1F_EventScript_JuanRematch::
 	message SootopolisCity_Gym_1F_Text_JuanChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, SootopolisCity_Gym_1F_EventScript_SetSingles
 	case 1, SootopolisCity_Gym_1F_EventScript_SetDoubles

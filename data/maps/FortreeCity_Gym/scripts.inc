@@ -67,7 +67,7 @@ FortreeCity_Gym_EventScript_GiveRoost:: @ 821666A
 FortreeCity_Gym_EventScript_WinonaRematch::
 	message FortreeCity_Gym_Text_WinonaChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, FortreeCity_Gym_EventScript_SetSingles
 	case 1, FortreeCity_Gym_EventScript_SetDoubles

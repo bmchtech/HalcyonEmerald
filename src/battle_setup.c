@@ -835,15 +835,31 @@ u8 GetTrainerBattleTransition(void)
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
-        if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
-            return B_TRANSITION_SIDNEY;
-        if (gTrainerBattleOpponent_A == TRAINER_PHOEBE)
-            return B_TRANSITION_PHOEBE;
-        if (gTrainerBattleOpponent_A == TRAINER_GLACIA)
-            return B_TRANSITION_GLACIA;
-        if (gTrainerBattleOpponent_A == TRAINER_DRAKE)
-            return B_TRANSITION_DRAKE;
-        return B_TRANSITION_CHAMPION;
+        switch (gTrainerBattleOpponent_A)
+        {
+            default:
+                return B_TRANSITION_CHAMPION;
+            case TRAINER_SIDNEY:
+            case TRAINER_SIDNEY_2:
+            case TRAINER_SIDNEY_3:
+            case TRAINER_SIDNEY_4:
+                return B_TRANSITION_SIDNEY;
+            case TRAINER_PHOEBE:
+            case TRAINER_PHOEBE_2:
+            case TRAINER_PHOEBE_3:
+            case TRAINER_PHOEBE_4:
+                return B_TRANSITION_PHOEBE;
+            case TRAINER_GLACIA:
+            case TRAINER_GLACIA_2:
+            case TRAINER_GLACIA_3:
+            case TRAINER_GLACIA_4:
+                return B_TRANSITION_SIDNEY;
+            case TRAINER_DRAKE:
+            case TRAINER_DRAKE_2:
+            case TRAINER_DRAKE_3:
+            case TRAINER_DRAKE_4:
+                return B_TRANSITION_DRAKE;
+        }
     }
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)

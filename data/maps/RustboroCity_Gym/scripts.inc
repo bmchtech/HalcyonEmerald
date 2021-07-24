@@ -39,7 +39,7 @@ RustboroCity_Gym_EventScript_GiveRockTomb:: @ 8212FA4
 RustboroCity_Gym_EventScript_RoxanneRematch::
 	message RustboroCity_Gym_Text_RoxanneChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, RustboroCity_Gym_EventScript_SetSingles
 	case 1, RustboroCity_Gym_EventScript_SetDoubles

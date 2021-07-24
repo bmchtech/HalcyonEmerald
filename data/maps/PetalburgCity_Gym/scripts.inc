@@ -374,7 +374,7 @@ PetalburgCity_Gym_EventScript_GiveFacade2:: @ 8204DAC
 PetalburgCity_Gym_EventScript_NormanRematch::
 	message PetalburgCity_Gym_Text_NormanChooseFormat
 	waitmessage
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, PetalburgCity_Gym_EventScript_SetSingles
 	case 1, PetalburgCity_Gym_EventScript_SetDoubles
