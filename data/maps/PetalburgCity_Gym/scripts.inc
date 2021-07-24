@@ -372,7 +372,8 @@ PetalburgCity_Gym_EventScript_GiveFacade2:: @ 8204DAC
 	end
 
 PetalburgCity_Gym_EventScript_NormanRematch::
-	msgbox PetalburgCity_Gym_Text_NormanChooseFormat, MSGBOX_DEFAULT
+	message PetalburgCity_Gym_Text_NormanChooseFormat
+	waitmessage
 	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, PetalburgCity_Gym_EventScript_SetSingles
@@ -384,40 +385,33 @@ PetalburgCity_Gym_EventScript_NormanRematch::
 
 PetalburgCity_Gym_EventScript_SetSingles::
 	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, NO
 	goto_if_eq PetalburgCity_Gym_EventScript_NormanSinglesRematch
-	trainerbattle_single TRAINER_NORMAN_4, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat
-	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_NORMAN
+	trainerbattle_single TRAINER_NORMAN_4, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_SetDoubles::
 	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, NO
 	goto_if_eq PetalburgCity_Gym_EventScript_NormanDoublesRematch
-	trainerbattle_double TRAINER_NORMAN_5, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
-	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_NORMAN
+	trainerbattle_double TRAINER_NORMAN_5, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_NormanSinglesRematch::
-	trainerbattle_single TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat
-	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_NORMAN
+	trainerbattle_single TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_NormanDoublesRematch::
-	trainerbattle_double TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
-	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_NORMAN
+	trainerbattle_double TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_AlreadyRematched::
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
@@ -1789,9 +1783,9 @@ PetalburgCity_Gym_Text_NormanChooseFormat:
 	.string "Inside a Gym, it doesn't matter that\n"
 	.string "we are a parent and child.\p"
 	.string "I'll let you set the rules for our\n"
-	.string "rematch.\p$"
+	.string "rematch.\p"
 	.string "So what'll it be: a single battle,\n"
-	.string "or a double battle?\p$"
+	.string "or a double battle?$"
 
 PetalburgCity_Gym_Text_NormanAllowLegends:
 	.string "Dad: Do you want to try battling my\n"

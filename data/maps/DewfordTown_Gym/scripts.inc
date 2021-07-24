@@ -197,7 +197,8 @@ DewfordTown_Gym_EventScript_GiveBulkUp2: @ 81FC878
 	end
 
 DewfordTown_Gym_EventScript_BrawlyRematch::
-	msgbox DewfordTown_Gym_Text_BrawlyChooseFormat, MSGBOX_DEFAULT
+	message DewfordTown_Gym_Text_BrawlyChooseFormat
+	waitmessage
 	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, DewfordTown_Gym_EventScript_SetSingles
@@ -209,40 +210,33 @@ DewfordTown_Gym_EventScript_BrawlyRematch::
 
 DewfordTown_Gym_EventScript_SetSingles::
 	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, NO
 	goto_if_eq DewfordTown_Gym_EventScript_BrawlySinglesRematch
-	trainerbattle_single TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_BRAWLY
+	trainerbattle_single TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_SetDoubles::
 	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, NO
 	goto_if_eq DewfordTown_Gym_EventScript_BrawlyDoublesRematch
-	trainerbattle_double TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
-	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_BRAWLY
+	trainerbattle_double TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_BrawlySinglesRematch::
-	trainerbattle_single TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_BRAWLY
+	trainerbattle_single TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDoublesRematch::
-	trainerbattle_double TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
-	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_BRAWLY
+	trainerbattle_double TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_AlreadyRematched::
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 

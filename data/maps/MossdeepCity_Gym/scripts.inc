@@ -119,25 +119,20 @@ MossdeepCity_Gym_EventScript_GiveCalmMind:: @ 822095B
 
 MossdeepCity_Gym_EventScript_TateAndLizaRematch::
 	msgbox MossdeepCity_Gym_Text_TateAndLizaAllowLegends, MSGBOX_YESNO
-	compare VAR_RESULT, 0
+	compare VAR_RESULT, NO
 	goto_if_eq MossdeepCity_Gym_EventScript_TateAndLizaDoublesRematch
-	trainerbattle_double TRAINER_TATE_AND_LIZA_5, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
-	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_TATE_AND_LIZA
-	clearflag FLAG_SYS_INVERSE_BATTLE
+	trainerbattle_double TRAINER_TATE_AND_LIZA_3, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons, MossdeepCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 MossdeepCity_Gym_EventScript_TateAndLizaDoublesRematch::
-	trainerbattle_double TRAINER_TATE_AND_LIZA_3, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons
-	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_TATE_AND_LIZA
-	clearflag FLAG_SYS_INVERSE_BATTLE
+	trainerbattle_double TRAINER_TATE_AND_LIZA_2, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons, MossdeepCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 MossdeepCity_Gym_EventScript_AlreadyRematched::
 	msgbox MossdeepCity_Gym_Text_TateAndLizaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_TATE_AND_LIZA
 	clearflag FLAG_SYS_INVERSE_BATTLE
 	releaseall
 	end
@@ -708,4 +703,4 @@ MossdeepCity_Gym_Text_TateAndLizaAllowLegends:
 	.string "Tate: I'll always be with Liza!\n"
 	.string "Liza: I'll always be with Tate!\p"
 	.string "Tate: Tell us - will you battle…\n"
-	.string "Liza: Our Legendary Pokémon?\p"
+	.string "Liza: Our Legendary Pokémon?$"

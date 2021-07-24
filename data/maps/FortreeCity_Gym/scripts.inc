@@ -65,7 +65,8 @@ FortreeCity_Gym_EventScript_GiveRoost:: @ 821666A
 	return
 
 FortreeCity_Gym_EventScript_WinonaRematch::
-	msgbox FortreeCity_Gym_Text_WinonaChooseFormat, MSGBOX_DEFAULT
+	message FortreeCity_Gym_Text_WinonaChooseFormat
+	waitmessage
 	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, FortreeCity_Gym_EventScript_SetSingles
@@ -79,9 +80,7 @@ FortreeCity_Gym_EventScript_SetSingles::
 	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaSinglesRematch
-	trainerbattle_single TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
-	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WINONA
+	trainerbattle_single TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
@@ -89,28 +88,23 @@ FortreeCity_Gym_EventScript_SetDoubles::
 	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaDoublesRematch
-	trainerbattle_double TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
-	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WINONA
+	trainerbattle_double TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaSinglesRematch::
-	trainerbattle_single TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat
-	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WINONA
+	trainerbattle_single TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaDoublesRematch::
-	trainerbattle_double TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
-	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WINONA
+	trainerbattle_double TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_AlreadyRematched::
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
@@ -381,7 +375,7 @@ FortreeCity_Gym_Text_WinonaChooseFormat:
 	.string "the reigning Champion.\p"
 	.string "Please, allow me to see your power\n"
 	.string "at full flight!\p"
-	.string "Now, please tell me - how would you$"
+	.string "Now, please tell me - how would you\n"
 	.string "like to battle?$"
 
 FortreeCity_Gym_Text_WinonaAllowLegends:

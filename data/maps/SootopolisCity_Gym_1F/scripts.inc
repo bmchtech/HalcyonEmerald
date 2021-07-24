@@ -149,7 +149,8 @@ SootopolisCity_Gym_1F_EventScript_GoGetFortreeBadge:: @ 822501B
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanRematch::
-	msgbox SootopolisCity_Gym_1F_Text_JuanChooseFormat, MSGBOX_DEFAULT
+	message SootopolisCity_Gym_1F_Text_JuanChooseFormat
+	waitmessage
 	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, SootopolisCity_Gym_1F_EventScript_SetSingles
@@ -163,9 +164,7 @@ SootopolisCity_Gym_1F_EventScript_SetSingles::
 	msgbox SootopolisCity_Gym_1F_Text_JuanAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanSinglesRematch
-	trainerbattle_single TRAINER_JUAN_4, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_JUAN
+	trainerbattle_single TRAINER_JUAN_4, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
@@ -173,28 +172,23 @@ SootopolisCity_Gym_1F_EventScript_SetDoubles::
 	msgbox SootopolisCity_Gym_1F_Text_JuanAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq SootopolisCity_Gym_1F_EventScript_JuanDoublesRematch
-	trainerbattle_double TRAINER_JUAN_5, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_JUAN
+	trainerbattle_double TRAINER_JUAN_5, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons, SootopolisCity_Gym_1F_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanSinglesRematch::
-	trainerbattle_single TRAINER_JUAN_2, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_JUAN
+	trainerbattle_single TRAINER_JUAN_2, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 SootopolisCity_Gym_1F_EventScript_JuanDoublesRematch::
-	trainerbattle_double TRAINER_JUAN_3, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons
-	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_JUAN
+	trainerbattle_double TRAINER_JUAN_3, SootopolisCity_Gym_1F_Text_JuanPreRematch, SootopolisCity_Gym_1F_Text_JuanRematchDefeat, SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons, SootopolisCity_Gym_1F_EventScript_AlreadyRematched, NO_MUSIC
 	releaseall
 	end
 
 SootopolisCity_Gym_1F_EventScript_AlreadyRematched::
 	msgbox SootopolisCity_Gym_1F_Text_JuanPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_JUAN
 	releaseall
 	end
 
