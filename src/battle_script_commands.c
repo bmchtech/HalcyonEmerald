@@ -7686,6 +7686,15 @@ static void Cmd_various(void)
         BtlController_EmitSetMonData(0, REQUEST_PP_DATA_BATTLE, 0, 5, data);
         MarkBattlerForControllerExec(gActiveBattler);
         break;
+    case VARIOUS_TRY_ACTIVATE_RAMPAGE:
+        if (GetBattlerAbility(gActiveBattler) == ABILITY_RAMPAGE
+          && HasAttackerFaintedTarget()
+          && !NoAliveMonsForEitherParty())
+        {
+            gDisableStructs[gActiveBattler].rechargeTimer = 0;
+            gBattleMons[gActiveBattler].status2 &= ~(STATUS2_RECHARGE);
+        }
+        break;
     case VARIOUS_TRY_ACTIVATE_MOXIE:    // and chilling neigh + as one ice rider
         if ((GetBattlerAbility(gActiveBattler) == ABILITY_MOXIE
          || GetBattlerAbility(gActiveBattler) == ABILITY_CHILLING_NEIGH
