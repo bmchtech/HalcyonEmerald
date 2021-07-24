@@ -5787,6 +5787,7 @@ BattleScript_FaintTarget::
 	tryactivatebeastboost BS_ATTACKER
 	tryactivategrimneigh BS_ATTACKER    @ and as one shadow rider
 	tryactivatebattlebond BS_ATTACKER
+	tryactivaterampage BS_ATTACKER
 	trytrainerslidefirstdownmsg BS_TARGET
 	return
 

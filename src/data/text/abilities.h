@@ -254,6 +254,15 @@ static const u8 sChillingNeighDescription[] = _("KOs boost Attack stat.");
 static const u8 sGrimNeighDescription[] = _("KOs boost Sp. Atk stat.");
 static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
 static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
+static const u8 sChloroplastDescription[] = _("Battles as if in sunlight.");
+static const u8 sWhiteoutDescription[] = _("Boosts Ice moves in Hail.");
+static const u8 sPyromancyDescription[] = _("Fire moves burn more often.");
+static const u8 sKeenEdgeDescription[] = _("Boosts slashing moves.");
+static const u8 sPrismScalesDescription[] = _("Weakens Special Attacks.");
+static const u8 sPowerFistsDescription[] = _("Punches do special damage.");
+static const u8 sSandSongDescription[] = _("Makes sound moves Ground.");
+static const u8 sRampageDescription[] = _("No recharge after a KO.");
+static const u8 sVengeanceDescription[] = _("Ups Ghost moves in a pinch.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -525,6 +534,15 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GRIM_NEIGH] = _("Grim Neigh"),
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
+    [ABILITY_CHLOROPLAST] = _("Chloroplast"),
+    [ABILITY_WHITEOUT] = _("Whiteout"),
+    [ABILITY_PYROMANCY] = _("Pyromancy"),
+    [ABILITY_KEEN_EDGE] = _("Keen Edge"),
+    [ABILITY_PRISM_SCALES] = _("Prism Scales"),
+    [ABILITY_POWER_FISTS] = _("Power Fists"),
+    [ABILITY_SAND_SONG] = _("Sand Song"),
+    [ABILITY_RAMPAGE] = _("Rampage"),
+    [ABILITY_VENGEANCE] = _("Vengeance"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -797,4 +815,13 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GRIM_NEIGH] = sGrimNeighDescription,
     [ABILITY_AS_ONE_ICE_RIDER] = sAsOneIceRiderDescription,
     [ABILITY_AS_ONE_SHADOW_RIDER] = sAsOneShadowRiderDescription,
+    [ABILITY_CHLOROPLAST] = sChloroplastDescription,
+    [ABILITY_WHITEOUT] = sWhiteoutDescription,
+    [ABILITY_PYROMANCY] = sPyromancyDescription,
+    [ABILITY_KEEN_EDGE] = sKeenEdgeDescription,
+    [ABILITY_PRISM_SCALES] = sPrismScalesDescription,
+    [ABILITY_POWER_FISTS] = sPowerFistsDescription,
+    [ABILITY_SAND_SONG] = sSandSongDescription,
+    [ABILITY_RAMPAGE] = sRampageDescription,
+    [ABILITY_VENGEANCE] = sVengeanceDescription,
 };
