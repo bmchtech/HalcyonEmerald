@@ -34,13 +34,13 @@ EverGrandeCity_PokemonLeague_1F_EventScript_Clerk:: @ 822960A
 @ Its assumed the player has the remaining badges
 EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	lockall
-	goto_if_set FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GoForth
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 11
 	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromRight
 	compare VAR_TEMP_0, 8
 	call_if_le EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromLeft
 	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_PokemonLeague_1F_EventScript_Rematches
+	goto_if_set FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GoForth
 	message EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges
 	waitmessage
 	delay 120
@@ -62,8 +62,9 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	end
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Rematches::
-	msgbox EverGrandeCity_PokemonLeague_1F_Text_ChooseFormat, MSGBOX_DEFAULT
-	multichoice 0, 0, MULTI_REMATCH_BATTLE_MODE, 0
+	message EverGrandeCity_PokemonLeague_1F_Text_ChooseFormat
+	waitmessage
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
 	switch VAR_RESULT
 	case 0, EverGrandeCity_PokemonLeague_1F_EventScript_SetSingles
 	case 1, EverGrandeCity_PokemonLeague_1F_EventScript_SetDoubles
@@ -128,11 +129,6 @@ EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges:: @ 82296AE
 EverGrandeCity_PokemonLeague_1F_EventScript_GoForth:: @ 82296BB
 	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	compare VAR_TEMP_0, 11
-	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromRight
-	compare VAR_TEMP_0, 8
-	call_if_le EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromLeft
 	applymovement LOCALID_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
 	applymovement LOCALID_GUARD_2, EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay
 	waitmovement 0

@@ -74,10 +74,9 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle:: @ 820DEE7
 	end
 
 MauvilleCity_Gym_EventScript_Wattson:: @ 820DEEB
+	goto_if_set FLAG_DAILY_REMATCH_WATTSON, MauvilleCity_Gym_EventScript_AlreadyRematched
+	goto_if_set FLAG_SYS_GAME_CLEAR, MauvilleCity_Gym_EventScript_WattsonRematch
 	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_Gym_EventScript_WattsonRematch
 	goto_if_unset FLAG_RECEIVED_TM72, MauvilleCity_Gym_EventScript_GiveVoltSwitch2
 	compare VAR_NEW_MAUVILLE_STATE, 6
 	goto_if_eq MauvilleCity_Gym_EventScript_CompletedNewMauville
@@ -144,9 +143,52 @@ MauvilleCity_Gym_EventScript_CompletedNewMauville:: @ 820DFD4
 	release
 	end
 
-MauvilleCity_Gym_EventScript_WattsonRematch:: @ 820DFDE
-	trainerbattle_rematch_double TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
+MauvilleCity_Gym_EventScript_WattsonRematch::
+	message MauvilleCity_Gym_Text_WattsonChooseFormat
+	waitmessage
+	multichoice 17, 6, MULTI_REMATCH_BATTLE_MODE, 0
+	switch VAR_RESULT
+	case 0, MauvilleCity_Gym_EventScript_SetSingles
+	case 1, MauvilleCity_Gym_EventScript_SetDoubles
+	case 2, MauvilleCity_Gym_EventScript_Exit
+	case 127, MauvilleCity_Gym_EventScript_Exit
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_SetSingles::
+	msgbox MauvilleCity_Gym_Text_WattsonAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_Gym_EventScript_WattsonSinglesRematch
+	trainerbattle_single TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_SetDoubles::
+	msgbox MauvilleCity_Gym_Text_WattsonAllowLegends, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_Gym_EventScript_WattsonDoublesRematch
+	trainerbattle_double TRAINER_WATTSON_5, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_WattsonSinglesRematch::
+	trainerbattle_single TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_WattsonDoublesRematch::
+	trainerbattle_double TRAINER_WATTSON_4, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_AlreadyRematched::
 	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
+	setflag FLAG_DAILY_REMATCH_WATTSON
+	releaseall
+	end
+
+MauvilleCity_Gym_EventScript_Exit::
+	releaseall
 	end
 
 MauvilleCity_Gym_EventScript_Switch1:: @ 820DFF9
@@ -430,10 +472,6 @@ MauvilleCity_Gym_Text_GymStatueCertified: @ 820E96C
 	.string "{PLAYER}$"
 
 MauvilleCity_Gym_Text_WattsonPreRematch: @ 820E9A7
-	.string "Wattson: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my Pokémon!\p"
-	.string "Wahahahaha!\p"
 	.string "I'll make sparks fly from you!\n"
 	.string "Don't say I didn't warn you!$"
 
@@ -450,12 +488,20 @@ MauvilleCity_Gym_Text_WattsonPostRematch: @ 820EA5E
 	.string "won't you?$"
 
 MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons: @ 820EAFD
-	.string "Wattson: Ah-ha! Here at last!\n"
-	.string "I know what you want.\l"
-	.string "You want to battle my Pokémon!\p"
-	.string "Wahahahaha!\p"
-	.string "Oops! Wait!\n"
+	.string "Wattson: Oops! Wait!\n"
 	.string "You've only one Pokémon with you!\p"
 	.string "Come see me with two or more\n"
 	.string "Pokémon, all right?$"
 
+MauvilleCity_Gym_Text_WattsonChooseFormat:
+	.string "Wattson: Ah-ha! Here at last!\n"
+	.string "I know what you want.\l"
+	.string "You want to battle my Pokémon!\p"
+	.string "Wahahahaha!\p"
+	.string "I'll let you decide the rules -\n"
+	.string "Singles or Doubles?$"
+
+MauvilleCity_Gym_Text_WattsonAllowLegends:
+	.string "Think you can handle my Legendary\n"
+	.string "Pokémon?\p"
+	.string "They're shockingly strong!$"

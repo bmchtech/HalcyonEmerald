@@ -130,8 +130,8 @@ EverGrandeCity_SidneysRoom_Text_PostBattleSpeech: @ 82280EC
 	.string "your next battle!$"
 
 EverGrandeCity_SidneysRoom_Text_IntroSpeechRematch:
-	.string "I was waiting for you, Champion.\p"
-	.string "No matter who wins, no hard feelings!\n"
+	.string "I was waiting for you, Champion.\n"
+	.string "No matter who wins, no hard feelings!\p"
 	.string "Let's get our most excellent\n"
 	.string "battle underway!$"
 
@@ -139,5 +139,5 @@ EverGrandeCity_SidneysRoom_Text_PostBattleSpeechRematch:
 	.string "Heh…\n"
 	.string "I knew you really were the strongest…\p"
 	.string "Well, hurry up and get out of here!\n"
-	.string "Everybody else is still waiting\n"
+	.string "Everybody else is still waiting\l"
 	.string "for you!$"
