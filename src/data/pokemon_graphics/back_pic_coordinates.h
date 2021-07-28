@@ -4735,6 +4735,36 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = MON_COORDS_SIZE(64, 56),
         .y_offset = 5,
     },
+    [SPECIES_BUTTERFREE_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 5,
+    },
+    [SPECIES_MACHAMP_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 7,
+    },
+    [SPECIES_KINGLER_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 5,
+    },
+    [SPECIES_LAPRAS_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 3,
+    },
+    [SPECIES_FLYGON_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 3,
+    },
+    [SPECIES_KINGDRA_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 7,
+    },
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA] =
     {

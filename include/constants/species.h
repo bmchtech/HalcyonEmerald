@@ -1341,7 +1341,17 @@
 #define SPECIES_CALYREX_ICE_RIDER            FORMS_START + 307
 #define SPECIES_CALYREX_SHADOW_RIDER         FORMS_START + 308
 
-#define SPECIES_EGG SPECIES_CALYREX_SHADOW_RIDER + 1
+// Custom Megas
+#define SPECIES_MILOTIC_MEGA                FORMS_START + 309
+#define SPECIES_BUTTERFREE_MEGA             FORMS_START + 310
+#define SPECIES_MACHAMP_MEGA                FORMS_START + 311
+#define SPECIES_KINGLER_MEGA                FORMS_START + 312
+#define SPECIES_LAPRAS_MEGA                 FORMS_START + 313
+#define SPECIES_FLYGON_MEGA                 FORMS_START + 314
+#define SPECIES_KINGDRA_MEGA                FORMS_START + 315
+
+#define SPECIES_EGG SPECIES_KINGDRA_MEGA + 1 // should be the last one defined right above
+
 #define NUM_SPECIES SPECIES_EGG
 
 // National Dex Index Defines
