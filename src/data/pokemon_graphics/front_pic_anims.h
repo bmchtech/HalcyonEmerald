@@ -8746,6 +8746,42 @@ static const union AnimCmd sAnim_MILOTIC_MEGA_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_BUTTERFREE_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MACHAMP_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_KINGLER_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_LAPRAS_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FLYGON_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_KINGDRA_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_RATTATA_ALOLAN_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -14125,6 +14161,36 @@ static const union AnimCmd *const sAnims_MILOTIC_MEGA[] ={
     sAnim_MILOTIC_MEGA_1,
 };
 
+static const union AnimCmd *const sAnims_BUTTERFREE_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_BUTTERFREE_MEGA_1,
+};
+
+static const union AnimCmd *const sAnims_MACHAMP_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MACHAMP_MEGA_1,
+};
+
+static const union AnimCmd *const sAnims_KINGLER_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_KINGLER_MEGA_1,
+};
+
+static const union AnimCmd *const sAnims_LAPRAS_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_LAPRAS_MEGA_1,
+};
+
+static const union AnimCmd *const sAnims_FLYGON_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_FLYGON_MEGA_1,
+};
+
+static const union AnimCmd *const sAnims_KINGDRA_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_KINGDRA_MEGA_1,
+};
+
 static const union AnimCmd *const sAnims_RATTATA_ALOLAN[] ={
     sAnim_GeneralFrame0,
     sAnim_RATTATA_ALOLAN_1,
@@ -15380,6 +15446,12 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(AUDINO_MEGA),
     ANIM_CMD(DIANCIE_MEGA),
     ANIM_CMD(MILOTIC_MEGA),
+    ANIM_CMD(BUTTERFREE_MEGA),
+    ANIM_CMD(MACHAMP_MEGA),
+    ANIM_CMD(KINGLER_MEGA),
+    ANIM_CMD(LAPRAS_MEGA),
+    ANIM_CMD(FLYGON_MEGA),
+    ANIM_CMD(KINGDRA_MEGA),
     ANIM_CMD(RAYQUAZA_MEGA),
     ANIM_CMD(KYOGRE_PRIMAL),
     ANIM_CMD(GROUDON_PRIMAL),

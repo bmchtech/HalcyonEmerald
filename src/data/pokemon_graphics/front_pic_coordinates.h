@@ -3023,7 +3023,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_EELEKTROSS] =
     {
         .size = 0x45,
-        .y_offset = 6,
+        .y_offset = 4,
     },
     [SPECIES_ELGYEM] =
     {
@@ -3764,7 +3764,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_ARAQUANID] =
     {
         .size = 0x45,
-        .y_offset = 2,
+        .y_offset = 0,
     },
     [SPECIES_FOMANTIS] =
     {
@@ -4736,6 +4736,36 @@ const struct MonCoords gMonFrontPicCoords[] =
     {
         .size = 0x88,
         .y_offset = 2,
+    },
+    [SPECIES_BUTTERFREE_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 10,
+    },
+    [SPECIES_MACHAMP_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 1,
+    },
+    [SPECIES_KINGLER_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 0,
+    },
+    [SPECIES_LAPRAS_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 2,
+    },
+    [SPECIES_FLYGON_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 1,
+    },
+    [SPECIES_KINGDRA_MEGA] =
+    {
+        .size = 0x88,
+        .y_offset = 1,
     },
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA] =
