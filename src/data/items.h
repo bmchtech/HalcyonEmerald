@@ -7726,6 +7726,78 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
+    [ITEM_BUTTERFRENITE] =
+    {
+        .name = _("Butterfrenite"),
+        .itemId = ITEM_BUTTERFRENITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sButterfreniteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_MACHAMPITE] =
+    {
+        .name = _("Machampite"),
+        .itemId = ITEM_MACHAMPITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMachampiteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_KINGLERITE] =
+    {
+        .name = _("Kinglerite"),
+        .itemId = ITEM_KINGLERITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sKingleriteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_LAPRASITE] =
+    {
+        .name = _("Laprasite"),
+        .itemId = ITEM_LAPRASITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sLaprasiteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_KINGDRANITE] =
+    {
+        .name = _("Kingdranite"),
+        .itemId = ITEM_KINGDRANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sKingdraniteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_FLYGONITE] =
+    {
+        .name = _("Flygonite"),
+        .itemId = ITEM_FLYGONITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sFlygoniteDesc,
+        .pocket = POCKET_MEGA_STONES,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
     [ITEM_CAMERUPTITE] =
     {
         .name = _("Cameruptite"),

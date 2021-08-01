@@ -650,7 +650,7 @@
 #define ITEM_BLUE_ORB    (LAST_KEY_ITEM_INDEX + 50) 
 // Temp items so new ones can be added without breaking the save
 #define ITEM_FLYGONITE          (LAST_KEY_ITEM_INDEX + 51)
-#define ITEM_BUTTERFRITE        (LAST_KEY_ITEM_INDEX + 52) // lol 12 char limit
+#define ITEM_BUTTERFRENITE      (LAST_KEY_ITEM_INDEX + 52)
 #define ITEM_LAPRASITE          (LAST_KEY_ITEM_INDEX + 53)
 #define ITEM_MACHAMPITE         (LAST_KEY_ITEM_INDEX + 54)
 #define ITEM_KINGLERITE         (LAST_KEY_ITEM_INDEX + 55)
