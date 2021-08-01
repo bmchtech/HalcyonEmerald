@@ -7107,6 +7107,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
            MulModifier(&modifier, UQ_4_12(1.2));
         break;
     case ABILITY_IRON_FIST:
+    case ABILITY_POWER_FISTS:
         if (gBattleMoves[move].flags & FLAG_IRON_FIST_BOOST)
            MulModifier(&modifier, UQ_4_12(1.2));
         break;
@@ -7194,6 +7195,11 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
     case ABILITY_DRAGONS_MAW:
         if (moveType == TYPE_DRAGON)
             MulModifier(&modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_LIQUID_VOICE:
+    case ABILITY_SAND_SONG:
+        if (gBattleMoves[move].flags & FLAG_SOUND)
+            MulModifier(&modifier, UQ_4_12(1.2));
         break;
     }
 

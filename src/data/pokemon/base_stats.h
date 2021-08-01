@@ -25599,15 +25599,15 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_FLYGON_MEGA] =
     {
         .baseHP        = 80,
-        .baseDefense   = 90,
-        .baseSpeed     = 100,
-        .baseSpDefense = 90,
+        .baseAttack    = 130,
+        .baseSpAttack  = 120,
+        .baseSpeed     = 110,
         #ifdef REBALANCED_VERSION
-            .baseAttack    = 120,
-            .baseSpAttack  = 160,
+            .baseDefense   = 100,
+            .baseSpDefense = 100,
         #else
-            .baseAttack    = 110,
-            .baseSpAttack  = 150,
+            .baseDefense   = 90,
+            .baseSpDefense = 90,
         #endif
         .type1 = TYPE_GROUND,
         .type2 = TYPE_DRAGON,
