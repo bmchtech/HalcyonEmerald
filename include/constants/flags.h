@@ -72,7 +72,7 @@
 #define FLAG_HIDE_FALLARBOR_RIVAL1          0x3C
 #define FLAG_HIDE_FALLARBOR_RIVAL_ON_BIKE   0x3D
 #define FLAG_MET_NATURE_CHANGER             0x3E
-#define FLAG_MET_IVY_AND_EVIE               0x3F // Now unused
+#define FLAG_ITEM_DEWFORD_MEADOW_BUTTERFRENITE  0x3F
 #define FLAG_SEASPRAY_CAVE_STONE_EDGE       0x40
 #define FLAG_SEASPRAY_CAVE_B1F_FREEZE_DRY   0x41
 #define FLAG_SEASPRAY_CAVE_B1F_KINGS_ROCK   0x42
@@ -466,8 +466,8 @@
 #define FLAG_LILYCOVE_MET_BALL_SWAPPER       0x1B5
 #define FLAG_HIDE_MOSSDEEP_CYNTHIA           0x1B6
 #define FLAG_RECEIVED_LATI_STONES            0x1B7
-#define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8 // Unused
-#define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9 // Unused
+#define FLAG_ITEM_DESERT_UNDERPASS_FLYGONITE 0x1B8
+#define FLAG_ITEM_SEAFLOOR_CAVERN_KINGDRANITE 0x1B9
 #define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA // Unused
 #define FLAG_DEFEATED_REGIROCK               0x1BB
 #define FLAG_DEFEATED_REGICE                 0x1BC
@@ -984,7 +984,7 @@
 #define FLAG_HIDE_ROUTE_128_MAXIE                                   0x3B1
 #define FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS                       0x3B2
 #define FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE                          0x3B3
-#define FLAG_SOOTOPOLIS_MILOTICITE                                  0x3B4
+#define FLAG_ITEM_MOSSDEEP_CITY_MILOTICITE                          0x3B4
 #define FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE              0x3B5
 #define FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY                       0x3B6
 #define FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER                       0x3B7
@@ -1042,7 +1042,7 @@
 #define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
 #define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
 #define FLAG_ITEM_ROUTE_105_ABILITY_PATCH                           0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
+#define FLAG_ITEM_ROUTE_106_KINGLERITE                                 0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_109_RARE_CANDY                              0x3EE
 #define FLAG_ITEM_ROUTE_110_MANECTITE                               0x3EF
@@ -1073,7 +1073,7 @@
 #define FLAG_ITEM_ROUTE_123_WIDE_LENS                               0x408
 #define FLAG_ITEM_RUSTBORO_FLOAT_STONE                              0x409
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
-#define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
+#define FLAG_ITEM_ROUTE_127_LAPRASITE                               0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
 #define FLAG_ITEM_ROUTE_133_PEARL_STRING                            0x40D
 #define FLAG_ITEM_ROUTE_133_COMET_SHARD                             0x40E
@@ -1081,7 +1081,7 @@
 #define FLAG_ITEM_PETALBURG_CITY_VENUSAURITE                        0x410
 #define FLAG_ITEM_RUSTBORO_CITY_ABILITY_CAPSULE                     0x411
 #define FLAG_ITEM_LILYCOVE_CITY_LIGHT_CLAY                          0x412
-#define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
+#define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413 // Unused
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23                          0x414
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_COMET_SHARD                    0x415
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM59_DRAGON_PULSE              0x416
@@ -1188,7 +1188,7 @@
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
 #define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
-#define FLAG_ITEM_ROUTE_121_ZINC                                    0x47E
+#define FLAG_ITEM_ROUTE_121_MACHAMPITE                              0x47E
 #define FLAG_ITEM_MAGMA_HIDEOUT_1F_RARE_CANDY                       0x47F
 #define FLAG_ITEM_ROUTE_123_PP_UP                                   0x480
 #define FLAG_ITEM_ROUTE_123_TM99_DAZZLING_GLEAM                     0x481

@@ -30,8 +30,8 @@ Route105_EventScript_ItemAbilityPatch:: @ 8290D33
 	finditem ITEM_ABILITY_PATCH
 	end
 
-Route106_EventScript_ItemProtein:: @ 8290D40
-	finditem ITEM_PROTEIN
+Route106_EventScript_ItemKinglerite:: @ 8290D40
+	finditem ITEM_KINGLERITE
 	end
 
 Route108_EventScript_ItemStarPiece:: @ 8290D4D
@@ -218,8 +218,8 @@ Route121_EventScript_ItemRevive:: @ 8290F96
 	finditem ITEM_REVIVE
 	end
 
-Route121_EventScript_ItemZinc:: @ 8290FA3
-	finditem ITEM_ZINC
+Route121_EventScript_ItemMachampite:: @ 8290FA3
+	finditem ITEM_MACHAMPITE
 	end
 
 Route123_EventScript_ItemWideLens:: @ 8290FB0
@@ -266,8 +266,8 @@ Route127_EventScript_ItemZinc:: @ 8291032
 	finditem ITEM_ZINC
 	end
 
-Route127_EventScript_ItemCarbos:: @ 829103F
-	finditem ITEM_CARBOS
+Route127_EventScript_ItemLaprasite:: @ 829103F
+	finditem ITEM_LAPRASITE
 	end
 
 Route127_EventScript_ItemRareCandy:: @ 829104C
@@ -322,7 +322,7 @@ LilycoveCity_EventScript_ItemLightClay:: @ 82910E8
 	finditem ITEM_LIGHT_CLAY
 	end
 
-MossdeepCity_EventScript_ItemNetBall:: @ 82910F5
+MossdeepCity_EventScript_ItemMiloticite:: @ 82910F5
 	finditem ITEM_NET_BALL
 	end
 
@@ -876,4 +876,16 @@ MagmaHideout_2F_2R_EventScript_ItemMagmaStone::
 
 EverGrandeCity_EventScript_ItemMewtwoniteY::
 	finditem ITEM_MEWTWONITE_Y
+	end
+
+DewfordMeadow_EventScript_Butterfrenite::
+	finditem ITEM_BUTTERFRENITE
+	end
+
+DesertUnderpass_EventScript_Flygonite::
+	finditem ITEM_FLYGONITE
+	end
+
+SeafloorCavern_Room6_EventScript_Kingdranite::
+	finditem ITEM_KINGDRANITE
 	end
