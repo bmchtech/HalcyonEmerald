@@ -76,7 +76,7 @@ SootopolisCity_OnTransition: @ 81E56EF
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	call_if_eq SootopolisCity_EventScript_SetOutsideGymObjPos
 	compare VAR_SOOTOPOLIS_CITY_STATE, 6
-	call_if_eq SootopolisCity_EventScript_SetExpertBlockCaveEntrance
+	call_if_eq SootopolisCity_EventScript_SetExpertUnblockCaveEntrance
 	end
 
 SootopolisCity_EventScript_HideMapNamePopup:: @ 81E5781
@@ -181,8 +181,8 @@ SootopolisCity_EventScript_SetWallaceLeft:: @ 81E58C7
 	setobjectmovementtype LOCALID_WALLACE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
-SootopolisCity_EventScript_SetExpertBlockCaveEntrance:: @ 81E58D3
-	setobjectxyperm LOCALID_EXPERT, 31, 18
+SootopolisCity_EventScript_SetExpertUnblockCaveEntrance:: @ 81E58D3
+	setobjectxyperm LOCALID_EXPERT, 30, 18
 	return
 
 SootopolisCity_OnWarp: @ 81E58DB

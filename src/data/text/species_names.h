@@ -948,6 +948,12 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_AUDINO_MEGA] = _("Audino"),
     [SPECIES_DIANCIE_MEGA] = _("Diancie"),
     [SPECIES_MILOTIC_MEGA] = _("Milotic"),
+    [SPECIES_BUTTERFREE_MEGA] = _("Butterfree"),
+    [SPECIES_MACHAMP_MEGA] = _("Machamp"),
+    [SPECIES_KINGLER_MEGA] = _("Kingler"),
+    [SPECIES_LAPRAS_MEGA] = _("Lapras"),
+    [SPECIES_FLYGON_MEGA] = _("Flygon"),
+    [SPECIES_KINGDRA_MEGA] = _("Kingdra"),
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA] = _("Rayquaza"),
     [SPECIES_KYOGRE_PRIMAL] = _("Kyogre"),

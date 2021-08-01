@@ -1263,6 +1263,12 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     [SPECIES_AUDINO_MEGA - 1] = NATIONAL_DEX_AUDINO,
     [SPECIES_DIANCIE_MEGA - 1] = NATIONAL_DEX_DIANCIE,
     [SPECIES_MILOTIC_MEGA - 1] = NATIONAL_DEX_MILOTIC,
+    [SPECIES_BUTTERFREE_MEGA - 1] = NATIONAL_DEX_BUTTERFREE,
+    [SPECIES_MACHAMP_MEGA - 1] = NATIONAL_DEX_MACHAMP,
+    [SPECIES_KINGLER_MEGA - 1] = NATIONAL_DEX_KINGLER,
+    [SPECIES_LAPRAS_MEGA - 1] = NATIONAL_DEX_LAPRAS,
+    [SPECIES_FLYGON_MEGA - 1] = NATIONAL_DEX_FLYGON,
+    [SPECIES_KINGDRA_MEGA - 1] = NATIONAL_DEX_KINGDRA,
     // Special Mega + Primals
     [SPECIES_RAYQUAZA_MEGA - 1] = NATIONAL_DEX_RAYQUAZA,
     [SPECIES_KYOGRE_PRIMAL - 1] = NATIONAL_DEX_KYOGRE,
@@ -7284,7 +7290,6 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_MEWTWO;
         case SPECIES_MEW:
         case SPECIES_CELEBI:
-        case SPECIES_JIRACHI:
             return MUS_VS_MEW;
         case SPECIES_LUGIA:
             return HG_SEQ_GS_VS_LUGIA;
@@ -7302,6 +7307,8 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_DEOXYS;
         case SPECIES_ROTOM:
         case SPECIES_HEATRAN:
+        case SPECIES_DIANCIE:
+        case SPECIES_JIRACHI:
             return DP_SEQ_BA_SECRET2;
         case SPECIES_REGIGIGAS:
             return PL_SEQ_PL_BA_REGI;

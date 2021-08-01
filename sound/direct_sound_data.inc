@@ -4175,6 +4175,30 @@ Cry_Milotic_Mega::
 	.incbin "sound/direct_sound_samples/cries/uncomp_mega_milotic.bin"
 
 	.align 2
+Cry_Butterfree_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_butterfree.bin"
+
+	.align 2
+Cry_Machamp_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_machamp.bin"
+
+	.align 2
+Cry_Kingler_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_kingler.bin"
+
+	.align 2
+Cry_Lapras_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_lapras.bin"
+
+	.align 2
+Cry_Flygon_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_flygon.bin"
+
+	.align 2
+Cry_Kingdra_Mega::
+	.incbin "sound/direct_sound_samples/cries/uncomp_mega_kingdra.bin"
+
+	.align 2
 Cry_KyogrePrimal::
 	.incbin "sound/direct_sound_samples/cries/uncomp_primal_kyogre.bin"
 
