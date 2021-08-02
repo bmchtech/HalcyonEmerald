@@ -8267,6 +8267,46 @@ void UndoMegaEvolution(u32 monId)
     }
 }
 
+void DoBurmyFormChange(u32 monId)
+{
+    u16 newSpecies, currSpecies;
+    s32 sentIn;
+    struct Pokemon *party = gPlayerParty;
+
+    sentIn = gSentPokesToOpponent[(gBattlerFainted & 2) >> 1];
+    currSpecies = GetMonData(&party[monId], MON_DATA_SPECIES, NULL);
+
+    if ((gSpeciesToNationalPokedexNum[currSpecies - 1] == SPECIES_BURMY) && (gBitTable[monId] & sentIn))
+    {
+        switch (gBattleTerrain)
+        {  
+            case BATTLE_TERRAIN_GRASS:
+            case BATTLE_TERRAIN_LONG_GRASS:
+            case BATTLE_TERRAIN_POND:
+            case BATTLE_TERRAIN_MOUNTAIN:
+            case BATTLE_TERRAIN_PLAIN:
+                newSpecies = SPECIES_BURMY;
+                break;
+            case BATTLE_TERRAIN_CAVE:
+            case BATTLE_TERRAIN_SAND:
+                newSpecies = SPECIES_BURMY_SANDY_CLOAK;
+                break;
+            case BATTLE_TERRAIN_BUILDING:
+                newSpecies = SPECIES_BURMY_TRASH_CLOAK;
+                break;
+            default: // Don't change form if last battle was water-related
+                newSpecies = SPECIES_NONE;
+                break;
+        }
+
+        if (newSpecies != SPECIES_NONE)
+        {
+            SetMonData(&party[monId], MON_DATA_SPECIES, &newSpecies);
+            CalculateMonStats(&party[monId]);
+        }
+    }
+}
+
 void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut)
 {
     u32 i, currSpecies;
