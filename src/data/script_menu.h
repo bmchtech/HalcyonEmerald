@@ -903,6 +903,15 @@ const struct MenuAction MultichoiceList_FurfrouTrims[] =
     {gText_Exit},
 };
 
+const struct MenuAction MultichoiceList_DeoxysFormes[] =
+{
+    {gText_Normal},
+    {gText_Attack},
+    {gText_Defense},
+    {gText_Speed},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1044,6 +1053,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_ROTOM_APPLIANCES]           = MULTICHOICE(MultichoiceList_RotomAppliances),
     [MULTI_STARTER_MOVES]              = MULTICHOICE(MultichoiceList_StarterMoves),
     [MULTI_REMATCH_BATTLE_MODE]        = MULTICHOICE(MultichoiceList_RematchBattleMode),
+    [MULTI_DEOXYS_FORMES]              = MULTICHOICE(MultichoiceList_DeoxysFormes),
 };
 
 const u8 *const gStdStrings[] =
