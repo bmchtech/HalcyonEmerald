@@ -358,7 +358,7 @@ static void SoundTask_PlayCryMegaEvolution_Step(u8 taskId)
 {
     u16 species = gTasks[taskId].data[1];
 
-    PlayCry3(species, 0, 6);
+    PlayCry2(species, 0, 125, 10);
     DestroyAnimVisualTask(taskId);
 }
 // task end
