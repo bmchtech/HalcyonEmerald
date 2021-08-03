@@ -74,6 +74,8 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "data/pokemon/form_species_tables.h"
+//#include "data/pokemon/form_species_table_pointers.h"
 
 #define PARTY_PAL_SELECTED     (1 << 0)
 #define PARTY_PAL_FAINTED      (1 << 1)
@@ -5344,6 +5346,33 @@ void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task)
     }
 }
 
+void ItemUseCB_Nectar(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u8 secondaryId;
+    u16 newSpecies, currSpecies;
+
+    currSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    secondaryId = ItemId_GetSecondaryId(gSpecialVar_ItemId);
+    newSpecies = sOricorioFormSpeciesIdTable[secondaryId];
+
+    PlaySE(SE_SELECT);
+    if (gSpeciesToNationalPokedexNum[currSpecies - 1] != SPECIES_ORICORIO || (newSpecies == currSpecies))
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
+    else
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        DoItemFormChange(newSpecies);
+        RemoveBagItem(gSpecialVar_ItemId, 1);
+        gTasks[taskId].func = task;
+    }
+}
+
 u8 GetItemEffectType(u16 item)
 {
     const u8 *itemEffect;
@@ -6662,4 +6691,20 @@ void CursorCb_MoveItem(u8 taskId)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
+}
+
+void DoItemFormChange (u16 newSpecies)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
+    PlaySE(SE_USE_ITEM);
+    PlayCry2(newSpecies, 0, 0x7D, 0xA);
+    SetMonData(mon, MON_DATA_SPECIES, &newSpecies);
+    FreeAndDestroyMonIconSprite(&gSprites[sPartyMenuBoxes[gPartyMenu.slotId].monSpriteId]);
+    CreatePartyMonIconSpriteParameterized(newSpecies, GetMonData(mon, MON_DATA_PERSONALITY), &sPartyMenuBoxes[gPartyMenu.slotId], 0);
+    CalculateMonStats(mon);
+    GetMonNickname(mon, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, gTextPokemonTransformed);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
 }

@@ -2119,6 +2119,9 @@ const u8 gText_KabukiTrim[] = _("Kabuki Trim");
 const u8 gText_PharaohTrim[] = _("Pharaoh Trim");
 const u8 gText_BackToNatural[] = _("Back to natural");
 
+// Form Change
+const u8 gTextPokemonTransformed[] = _("{STR_VAR_1} Transformed!{PAUSE_UNTIL_PRESS}");
+
 // Move party items
 const u8 gMenuText_Move[] = _("Move");
 const u8 gText_MoveItemWhere[] = _("Move item to where?");
