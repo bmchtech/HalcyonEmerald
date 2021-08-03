@@ -1247,6 +1247,7 @@ const u8 *const gMonIconTable[] =
 const u8 *const gMonIconTableFemale[] =
 {
     [SPECIES_EEVEE] = gMonIcon_Eevee,
+    [SPECIES_COMBEE] = gMonIcon_Combee,
 };
 
 const u8 gMonIconPaletteIndices[] =
@@ -2435,6 +2436,7 @@ const u8 gMonIconPaletteIndices[] =
 const u8 gMonIconPaletteIndicesFemale[] =
 {
     [SPECIES_EEVEE] = 2,
+    [SPECIES_COMBEE] = 0,
 };
 
 const struct SpritePalette gMonIconPaletteTable[] =

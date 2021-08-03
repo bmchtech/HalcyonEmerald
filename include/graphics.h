@@ -483,6 +483,7 @@ extern const u32 gMonFrontPic_Burmy[];
 extern const u32 gMonFrontPic_Wormadam[];
 extern const u32 gMonFrontPic_Mothim[];
 extern const u32 gMonFrontPic_Combee[];
+extern const u32 gMonFrontPic_CombeeF[];
 extern const u32 gMonFrontPic_Vespiquen[];
 extern const u32 gMonFrontPic_Pachirisu[];
 extern const u32 gMonFrontPic_Buizel[];
