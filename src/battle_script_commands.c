@@ -1128,7 +1128,7 @@ static const u16 sPickupItems[] =
     ITEM_GREAT_BALL,
     ITEM_REPEL,
     ITEM_REVIVE,
-    ITEM_ESCAPE_ROPE,
+    ITEM_QUICK_BALL,
     ITEM_ETHER,
     ITEM_FULL_HEAL,
     ITEM_ULTRA_BALL,

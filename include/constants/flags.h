@@ -1114,7 +1114,7 @@
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_GENGARITE                        0x431
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_48                            0x432
 #define FLAG_ITEM_NEW_MAUVILLE_FAST_BALL                            0x433
-#define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
+#define FLAG_ITEM_NEW_MAUVILLE_DUSK_BALL                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_4_SCANNER        0x436
 #define FLAG_ITEM_SCORCHED_SLAB_TM_11                               0x437
