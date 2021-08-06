@@ -946,6 +946,12 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_Nectar(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_Nectar;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_PokeVial(u8 taskId)
 {
     if (VarGet(VAR_POKE_VIAL_CHARGES) == 0)

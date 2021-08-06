@@ -1056,7 +1056,6 @@ extern const u8 gText_UsedPokeVial[];
 extern const u8 gText_UsedVar2WildLured[];
 extern const u8 gText_UsedVar2WildRepelled[];
 extern const u8 gText_BoxFull[];
-extern const u8 gText_WontHaveEffect[];
 
 extern const u8 gText_LevelSymbol[];
 extern const u8 gText_PkmnInfo[];
@@ -3541,5 +3540,8 @@ extern const u8 gText_Summary2[];
 extern const u8 gText_PkmnForSwap[];
 extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
+
+// Form Change
+extern const u8 gTextPokemonTransformed[];
 
 #endif // GUARD_STRINGS_H

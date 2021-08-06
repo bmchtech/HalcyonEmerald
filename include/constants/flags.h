@@ -248,7 +248,7 @@
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_RECEIVED_TM27                   0xE5
+#define FLAG_SHOWN_DEOXYS_TO_COSMO           0xE5
 #define FLAG_RECEIVED_TM36                   0xE6
 #define FLAG_RECEIVED_TM05                   0xE7
 #define FLAG_RECEIVED_TM19                   0xE8
@@ -1114,7 +1114,7 @@
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_GENGARITE                        0x431
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_48                            0x432
 #define FLAG_ITEM_NEW_MAUVILLE_FAST_BALL                            0x433
-#define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
+#define FLAG_ITEM_NEW_MAUVILLE_DUSK_BALL                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_4_SCANNER        0x436
 #define FLAG_ITEM_SCORCHED_SLAB_TM_11                               0x437
@@ -1134,7 +1134,7 @@
 #define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445 
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_22                      0x446 
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_LOPUNNITE                 0x447 
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448 
+#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_BIG_NUGGET              0x448 
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_LEVEL_BALL             0x449 
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_13                    0x44A 
 #define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B 

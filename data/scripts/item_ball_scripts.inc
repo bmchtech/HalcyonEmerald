@@ -402,8 +402,8 @@ NewMauville_Inside_EventScript_ItemFastBall:: @ 82911EC
 	finditem ITEM_FAST_BALL
 	end
 
-NewMauville_Inside_EventScript_ItemEscapeRope:: @ 82911F9
-	finditem ITEM_ESCAPE_ROPE
+NewMauville_Inside_EventScript_ItemDuskBall:: @ 82911F9
+	finditem ITEM_DUSK_BALL
 	end
 
 NewMauville_Inside_EventScript_ItemAmpharosite:: @ 8291206
@@ -422,8 +422,8 @@ AbandonedShip_Rooms_1F_EventScript_ItemLopunnite:: @ 829122D
 	finditem ITEM_LOPUNNITE
 	end
 
-AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope:: @ 829123A
-	finditem ITEM_ESCAPE_ROPE
+AbandonedShip_Rooms_B1F_EventScript_ItemBigNugget:: @ 829123A
+	finditem ITEM_BIG_NUGGET
 	end
 
 AbandonedShip_Rooms2_B1F_EventScript_ItemLevelBall:: @ 8291247
