@@ -45,8 +45,6 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 
-extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
-
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
 are actually part of battle_main.c. They needed to be moved to this file in order to
@@ -215,6 +213,15 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
 };
+
+bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
+{
+    if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
+      || ability == ABILITY_OVERCOAT
+      || holdEffect == HOLD_EFFECT_SAFETY_GOOGLES)
+        return FALSE;
+    return TRUE;
+}
 
 bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide)
 {
@@ -1526,7 +1533,7 @@ void BattleScriptPop(void)
     gBattlescriptCurrInstr = gBattleResources->battleScriptsStack->ptr[--gBattleResources->battleScriptsStack->size];
 }
 
-static bool32 IsGravityPreventingMove(u32 move)
+bool32 IsGravityPreventingMove(u32 move)
 {
     if (!(gFieldStatuses & STATUS_FIELD_GRAVITY))
         return FALSE;
@@ -1549,7 +1556,7 @@ static bool32 IsGravityPreventingMove(u32 move)
     }
 }
 
-static bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
+bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
 {
     if (!(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
         return FALSE;
