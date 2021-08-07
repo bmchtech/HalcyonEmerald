@@ -191,7 +191,8 @@ struct SideTimer
     u8 safeguardTimer;
     u8 safeguardBattlerId;
     u8 followmeTimer;
-    u8 followmeTarget;
+    u8 followmeTarget:3;
+    u8 followmePowder:1; // Rage powder, does not affect grass type pokemon.
     u8 spikesAmount;
     u8 toxicSpikesAmount;
     u8 stealthRockAmount;
@@ -459,7 +460,7 @@ struct BattleStruct
     u8 switchInAbilitiesCounter;
     u8 faintedActionsState;
     u8 faintedActionsBattlerId;
-    u16 expValue;
+    u32 expValue;
     u8 field_52;
     u8 sentInPokes;
     bool8 selectionScriptFinished[MAX_BATTLERS_COUNT];
