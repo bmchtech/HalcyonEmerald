@@ -7774,17 +7774,31 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         dmg = ApplyModifier(UQ_4_12(0.5), dmg);
 
     // check sunny/rain weather
-    if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_RAIN_ANY)
+    if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_RAIN_PERMANENT)
     {
         if (moveType == TYPE_FIRE)
             dmg = ApplyModifier(UQ_4_12(0.5), dmg);
         else if (moveType == TYPE_WATER)
-            dmg = ApplyModifier(UQ_4_12(1.3), dmg);
+            dmg = ApplyModifier(UQ_4_12(1.2), dmg);
     }
-    else if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY)
+    else if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_RAIN_TEMPORARY)
     {
         if (moveType == TYPE_FIRE)
-            dmg = ApplyModifier(UQ_4_12(1.3), dmg);
+            dmg = ApplyModifier(UQ_4_12(0.5), dmg);
+        else if (moveType == TYPE_WATER)
+            dmg = ApplyModifier(UQ_4_12(1.5), dmg);
+    }
+    else if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_PERMANENT)
+    {
+        if (moveType == TYPE_FIRE)
+            dmg = ApplyModifier(UQ_4_12(1.2), dmg);
+        else if (moveType == TYPE_WATER)
+            dmg = ApplyModifier(UQ_4_12(0.5), dmg);
+    }
+    else if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_TEMPORARY)
+    {
+        if (moveType == TYPE_FIRE)
+            dmg = ApplyModifier(UQ_4_12(1.5), dmg);
         else if (moveType == TYPE_WATER)
             dmg = ApplyModifier(UQ_4_12(0.5), dmg);
     }
