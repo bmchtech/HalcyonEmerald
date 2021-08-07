@@ -19750,6 +19750,11 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_GRUBBIN] =
     {
+        #ifdef REBALANCED_VERSION
+            .growthRate = GROWTH_SLOW,
+        #else
+            .growthRate = GROWTH_MEDIUM_FAST,
+        #endif
         .baseHP        = 47,
         .baseAttack    = 62,
         .baseDefense   = 45,
@@ -19764,7 +19769,6 @@ const struct BaseStats gBaseStats[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
         .abilities = {ABILITY_SWARM, ABILITY_SWARM, ABILITY_SWARM},
@@ -19781,8 +19785,10 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 75,
         #ifdef REBALANCED_VERSION
             .baseAttack    = 102,
+            .growthRate = GROWTH_SLOW,
         #else
             .baseAttack    = 82,
+            .growthRate = GROWTH_MEDIUM_FAST,
         #endif
         .type1 = TYPE_BUG,
         .type2 = TYPE_ELECTRIC,
@@ -19793,7 +19799,6 @@ const struct BaseStats gBaseStats[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
         .abilities = {ABILITY_BATTERY, ABILITY_BATTERY, ABILITY_BATTERY},
@@ -19810,10 +19815,12 @@ const struct BaseStats gBaseStats[] =
             .baseAttack    = 95,
             .baseDefense   = 100,
             .baseSpeed     = 109,
+            .growthRate = GROWTH_SLOW,
         #else
             .baseAttack    = 70,
             .baseDefense   = 90,
             .baseSpeed     = 43,
+            .growthRate = GROWTH_MEDIUM_FAST,
         #endif
         .type1 = TYPE_BUG,
         .type2 = TYPE_ELECTRIC,
@@ -19823,7 +19830,6 @@ const struct BaseStats gBaseStats[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
         .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE},
