@@ -144,7 +144,6 @@ gBattleScriptsForMoveEffects:: @ 82D86A8
 	.4byte BattleScript_EffectPresent
 	.4byte BattleScript_EffectFrustration
 	.4byte BattleScript_EffectSafeguard
-	.4byte BattleScript_EffectThawHit
 	.4byte BattleScript_EffectMagnitude
 	.4byte BattleScript_EffectBatonPass
 	.4byte BattleScript_EffectPursuit
@@ -1243,13 +1242,13 @@ BattleScript_ShellSmashTryDef::
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, STAT_CHANGE_NEGATIVE | STAT_CHANGE_CANT_PREVENT
 	setstatchanger STAT_DEF, 1, TRUE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_ShellSmashTrySpDef
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR | MOVE_EFFECT_CERTAIN, BattleScript_ShellSmashTrySpDef
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ShellSmashTrySpDef
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_ShellSmashTrySpDef:
 	setstatchanger STAT_SPDEF, 1, TRUE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_ShellSmashTryAttack
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR | MOVE_EFFECT_CERTAIN, BattleScript_ShellSmashTryAttack
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ShellSmashTryAttack
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -3816,10 +3815,6 @@ BattleScript_EffectSafeguard::
 	setsafeguard
 	goto BattleScript_PrintReflectLightScreenSafeguardString
 
-BattleScript_EffectThawHit::
-	setmoveeffect MOVE_EFFECT_BURN
-	goto BattleScript_EffectHit
-
 BattleScript_EffectMagnitude::
 	jumpifword CMP_COMMON_BITS, gHitMarker, HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT, BattleScript_EffectMagnitudeTarget 
 	attackcanceler
@@ -6277,6 +6272,8 @@ BattleScript_CottonDownActivates::
 	savetarget
 	setbyte gBattlerTarget, 0
 BattleScript_CottonDownLoop:
+	getbattlerfainted BS_TARGET
+	jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_CottonDownLoopIncrement
 	setstatchanger STAT_SPEED, 1, TRUE
 	jumpifbyteequal gBattlerTarget, gEffectBattler, BattleScript_CottonDownLoopIncrement
 	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_CottonDownTargetSpeedCantGoLower
@@ -7093,13 +7090,6 @@ BattleScript_ObliviousPreventsAttraction::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNPREVENTSROMANCEWITH
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
-
-BattleScript_FlinchPrevention::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_PKMNSXPREVENTSFLINCHING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

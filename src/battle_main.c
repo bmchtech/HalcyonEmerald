@@ -3228,6 +3228,7 @@ void FaintClearSetData(void)
 
     ClearBattlerMoveHistory(gActiveBattler);
     ClearBattlerAbilityHistory(gActiveBattler);
+    ClearBattlerItemEffectHistory(gActiveBattler);
     UndoFormChange(gBattlerPartyIndexes[gActiveBattler], GET_BATTLER_SIDE(gActiveBattler), FALSE);
     if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
         UndoMegaEvolution(gBattlerPartyIndexes[gActiveBattler]);
