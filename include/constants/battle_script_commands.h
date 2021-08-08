@@ -176,6 +176,7 @@
 #define VARIOUS_TRY_ACTIVATE_GRIM_NEIGH         104
 #define VARIOUS_CONSUME_BERRY                   105
 #define VARIOUS_TRY_ACTIVATE_RAMPAGE            106
+#define VARIOUS_TERRAIN_SEED                    107
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
