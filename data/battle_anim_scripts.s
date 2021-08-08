@@ -24342,7 +24342,7 @@ General_MegaEvolution:
 	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, 5, 2, 0, 16, RGB_WHITEALPHA
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, 5, 2, 16, 0, RGB_WHITEALPHA
-	createvisualtask SoundTask_PlayCryMegaEvolution, 5
+	createvisualtask SoundTask_PlayCryMegaEvolution, 5, ANIM_ATTACKER
 	createvisualtask AnimTask_HorizontalShake, 5, 1, 5, 14
 	createsprite gMegaSymbolSpriteTemplate ANIM_ATTACKER, 2
 	waitforvisualfinish

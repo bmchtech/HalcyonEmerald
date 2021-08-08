@@ -356,9 +356,10 @@ void SoundTask_PlayCryMegaEvolution(u8 taskId)
 
 static void SoundTask_PlayCryMegaEvolution_Step(u8 taskId)
 {
+    s8 pan = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
     u16 species = gTasks[taskId].data[1];
 
-    PlayCry2(species, 0, 125, 10);
+    PlayCry3(species, pan, 0);
     DestroyAnimVisualTask(taskId);
 }
 // task end
