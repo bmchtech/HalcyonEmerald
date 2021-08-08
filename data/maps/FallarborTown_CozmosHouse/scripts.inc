@@ -87,6 +87,8 @@ FallarborTown_CozmosHouse_EventScript_ChangeDeoxysForm::
 	goto_if_ge FallarborTown_CozmosHouse_EventScript_Exit
     specialvar VAR_RESULT, ScriptGetPartyMonSpecies
     copyvar VAR_0x8006, VAR_RESULT
+	lockall
+	faceplayer
 FallarborTown_CozmosHouse_EventScript_DeoxysMultichoice::
     bufferpartymonnick 0, VAR_0x8004
     message FallarborTown_CozmosHouse_Text_WhichForm

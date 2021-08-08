@@ -63,6 +63,49 @@ MeteorFalls_1F_2R_EventScript_RematchJay:: @ 822C5ED
 	msgbox MeteorFalls_1F_2R_Text_JayPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+Meteor_Falls1F_2R_EventScript_DragonAscentTutor::
+	lock
+	faceplayer
+	msgbox MoveTutor_Text_DragonAscentTeach, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MoveTutor_EventScript_DragonAscentDeclined
+	call Meteor_Falls1F_2R_EventScript_RayquazaCheck
+	msgbox MoveTutor_Text_DragonAscentWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_DRAGON_ASCENT
+	call MoveTutor_EventScript_OpenPartyMenu
+	compare VAR_RESULT, 0
+	goto_if_eq MoveTutor_EventScript_DragonAscentDeclined
+	goto MoveTutor_EventScript_DragonAscentTaught
+	end
+
+Meteor_Falls1F_2R_EventScript_RayquazaCheck::
+	checkPartyHasSpecies SPECIES_RAYQUAZA
+	compare VAR_RESULT, FALSE
+	goto_if_eq Meteor_Falls1F_2R_EventScript_DragonAscentNoFug
+	return
+
+Meteor_Falls1F_2R_EventScript_DragonAscentNoFug::
+	msgbox MoveTutor_Text_DragonAscentNoFug, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DragonAscentDeclined::
+	msgbox MoveTutor_Text_DragonAscentDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DragonAscentTaught::
+	msgbox MoveTutor_Text_DragonAscentTaught, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_OpenPartyMenu::
+	special ChooseMonForMoveTutor
+	waitstate
+	lock
+	faceplayer
+	return
+
 MeteorFalls_1F_2R_Text_NicolasIntro: @ 822C608
 	.string "This is where we Dragon users do our\n"
 	.string "training.\p"
@@ -184,3 +227,26 @@ MeteorFalls_1F_2R_Text_JayRematchNotEnoughMons: @ 822CDAB
 	.string "If you'd care to battle with us, you'll\n"
 	.string "have to come back with more Pokémon.$"
 
+MoveTutor_Text_DragonAscentTeach:
+	.string "Hmm… Do you want me to teach\n"
+	.string "Dragon Ascent to your Pokémon?$"
+
+MoveTutor_Text_DragonAscentWhichMon:
+	.string "Which Pokémon do you want me to teach\n"
+	.string "the move?$"
+
+MoveTutor_Text_DragonAscentNoFug:
+	.string "Hmm… Only Rayquaza can learn\n"
+	.string "Dragon Ascent.\l"
+	.string "You don't seem to have one.$"
+
+MoveTutor_Text_DragonAscentDeclined:
+	.string "Hmm… I see.\n"
+	.string "Come back anytime you need my help.$"
+
+MoveTutor_Text_DragonAscentTaught:
+	.string "Dragon Ascent is a powerful move that\n"
+	.string "only Rayquaza can use.\p"
+	.string "They say its power is so strong that\n"
+	.string "even a huge meteoroid can be broken\l"
+	.string "into pieces with one attack.$"

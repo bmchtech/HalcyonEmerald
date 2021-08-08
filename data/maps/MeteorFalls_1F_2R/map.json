@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
-      "x": 16,
-      "y": 14,
+      "x": 11,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -65,6 +65,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Meteor_Falls1F_2R_EventScript_Salamencite",
       "flag": "FLAG_METEOR_FALLS_SALAMENCITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 18,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Meteor_Falls1F_2R_EventScript_DragonAscentTutor",
+      "flag": "0"
     }
   ],
   "warp_events": [
