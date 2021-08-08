@@ -1174,7 +1174,10 @@ UTurnVisible:
 Move_CLOSE_COMBAT:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	call SetHighSpeedBg
+	fadetobg BG_HIGH_SPEED
+	waitbgfadeout
+	launchtask AnimTask_StartSlidingBg 0x5 0x4 0x1000 0x0 0x1 0xffff
+	waitbgfadein
 	createsprite gFistFootRandomPosSpriteTemplate, ANIM_TARGET, 3, 1, 10, 0
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 7, 1
 	playsewithpan SE_M_COMET_PUNCH, +63

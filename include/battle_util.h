@@ -31,6 +31,7 @@
 #define ITEMEFFECT_KINGSROCK_SHELLBELL          0x4
 #define ITEMEFFECT_TARGET                       0x5
 #define ITEMEFFECT_ORBS                         0x6
+#define ITEMEFFECT_BATTLER_MOVE_END             0x7 // move end effects for just the battler, not whole field
 
 #define WEATHER_HAS_EFFECT ((!IsAbilityOnField(ABILITY_CLOUD_NINE) && !IsAbilityOnField(ABILITY_AIR_LOCK)))
 
@@ -140,5 +141,6 @@ bool32 CanFling(u8 battlerId);
 bool32 IsTelekinesisBannedSpecies(u16 species);
 bool32 IsHealBlockPreventingMove(u32 battler, u32 move);
 bool32 HasEnoughHpToEatBerry(u32 battlerId, u32 hpFraction, u32 itemId);
+u8 TryHandleSeed(u8 battler, u32 terrainFlag, u8 statId, u16 itemId, bool32 execute);
 
 #endif // GUARD_BATTLE_UTIL_H
