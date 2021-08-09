@@ -7274,6 +7274,8 @@ u16 GetBattleBGM(void)
             return MUS_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_PKMN_TRAINER_1: // Cynthia
             return DP_SEQ_BA_CHANP;
+        case TRAINER_CLASS_BUFFEL:
+            return PL_SEQ_PL_BA_BRAIN;
         default:
             return MUS_VS_TRAINER;
         }

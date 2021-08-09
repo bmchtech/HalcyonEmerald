@@ -6249,7 +6249,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brooke2[] = {
     .lvl = -1,
     .species = SPECIES_HAXORUS,
     .heldItem = ITEM_FOCUS_SASH,
-    .ability = 1, // Technician
+    .ability = 1, // Mold Breaker
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_DRAGON_DANCE
     }
@@ -6282,7 +6282,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brooke3[] = {
     .lvl = -1,
     .species = SPECIES_HAXORUS,
     .heldItem = ITEM_FOCUS_SASH,
-    .ability = 1, // Technician
+    .ability = 1, // Mold Breaker
     .spread = SPREAD_31_IV_80_EV,
     .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_DRAGON_DANCE
     },
@@ -6323,7 +6323,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brooke4[] = {
     .lvl = -1,
     .species = SPECIES_HAXORUS,
     .heldItem = ITEM_FOCUS_SASH,
-    .ability = 1, // Technician
+    .ability = 1, // Mold Breaker
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
     .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_DRAGON_DANCE
     },
@@ -20395,14 +20395,58 @@ static const struct TrainerMonItemCustomMoves sParty_GretaSlateport[] = {
     }
 };
 
-// Unused Trainers
-
-static const struct TrainerMonItemCustomMoves sParty_Terry[] = { // Unused
+static const struct TrainerMonItemCustomMoves sParty_Buffel[] = {
     {
-    .lvl = 37,
-    .species = SPECIES_GIRAFARIG,
+    .lvl = 0,
+    .species = SPECIES_MIENSHAO,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .ability = 1, // Regenerator
+    .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
+    .moves = MOVE_CLOSE_COMBAT, MOVE_STRENGTH, MOVE_KNOCK_OFF, MOVE_U_TURN
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_MILOTIC,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 2, // Multiscale
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_SCALD, MOVE_ICE_BEAM, MOVE_RECOVER, MOVE_TOXIC
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_HAXORUS,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .ability = 1, // Mold Breaker
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_OUTRAGE, MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_EARTHQUAKE
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_SCIZOR,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = 1, // Technician
+    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
+    .moves = MOVE_BULLET_PUNCH, MOVE_U_TURN, MOVE_SUPERPOWER, MOVE_PURSUIT
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_TOGEKISS,
+    .heldItem = ITEM_SHELL_BELL,
+    .ability = 1, // Serene Grace
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_AIR_SLASH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE, MOVE_ROOST
+    },
+    {
+    .lvl = 0,
+    .species = SPECIES_GARDEVOIR,
+    .heldItem = ITEM_GARDEVOIRITE,
+    .ability = 1, // Trace
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_HYPER_VOICE, MOVE_PSYSHOCK, MOVE_MYSTICAL_FIRE, MOVE_SHADOW_BALL
     }
 };
+
+// Unused Trainers
 
 static const struct TrainerMonItemCustomMoves sParty_Kaylee[] = { // Unused
     {
