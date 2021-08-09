@@ -757,6 +757,10 @@ static u32 GetBestMonDefensive(struct Pokemon *party, int firstId, int lastId, u
                     bestDmg = typeDmg;
                     bestMonId = i;
                 }
+                if (typeDmg >= UQ_4_12(2.0))
+                {
+                    bits |= gBitTable[bestMonId];
+                }
             }
         }
 
@@ -788,7 +792,7 @@ static u32 GetBestMonDefensive(struct Pokemon *party, int firstId, int lastId, u
             if (i != MAX_MON_MOVES)
                 return bestMonId; // Has both the typing and at least one super effective move.
 
-            bits |= gBitTable[bestMonId]; // Sorry buddy, we want something better.
+            // bits |= gBitTable[bestMonId]; // Sorry buddy, we want something better.
         }
         else
         {
