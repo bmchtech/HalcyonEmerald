@@ -20415,10 +20415,10 @@ static const struct TrainerMonItemCustomMoves sParty_Buffel[] = {
     {
     .lvl = 0,
     .species = SPECIES_HAXORUS,
-    .heldItem = ITEM_CHOICE_SCARF,
+    .heldItem = ITEM_DRAGON_GEM,
     .ability = 1, // Mold Breaker
     .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_OUTRAGE, MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_EARTHQUAKE
+    .moves = MOVE_OUTRAGE, MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_DRAGON_DANCE
     },
     {
     .lvl = 0,
