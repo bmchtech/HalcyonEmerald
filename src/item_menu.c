@@ -2287,9 +2287,8 @@ void RestoreBagAfterWallyTutorial(void)
 void DoWallyTutorialBagMenu(void)
 {
     PrepareBagForWallyTutorial();
-    AddBagItem(ITEM_POTION, 1);
     AddBagItem(ITEM_POKE_BALL, 1);
-    GoToBagMenu(ITEMMENULOCATION_WALLY, MEDICINE_POCKET, CB2_SetUpReshowBattleScreenAfterMenu2);
+    GoToBagMenu(ITEMMENULOCATION_WALLY, BALLS_POCKET, CB2_SetUpReshowBattleScreenAfterMenu2);
 }
 
 void Task_WallyTutorialBagMenu(u8 taskId)
@@ -2302,17 +2301,12 @@ void Task_WallyTutorialBagMenu(u8 taskId)
         {
             case 0x66:
                 PlaySE(SE_SELECT);
-                SwitchBagPocket(taskId, MENU_CURSOR_DELTA_RIGHT, 0);
-                data[8]++;
-                break;
-            case 0xCC:
-                PlaySE(SE_SELECT);
                 BagMenu_PrintCursor_(data[0], 2);
                 gSpecialVar_ItemId = ITEM_POKE_BALL;
                 OpenContextMenu(taskId);
                 data[8]++;
                 break;
-            case 0x132:
+            case 0xCC:
                 PlaySE(SE_SELECT);
                 BagMenu_RemoveSomeWindow();
                 DestroyListMenuTask(data[0], 0, 0);
