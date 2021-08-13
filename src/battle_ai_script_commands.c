@@ -2685,7 +2685,7 @@ static void Cmd_if_cant_use_last_resort(void)
         gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 2);
 }
 
-static u16 *GetMovesArray(u32 battler)
+u16 *GetMovesArray(u32 battler)
 {
     if (IsBattlerAIControlled(battler) || IsBattlerAIControlled(BATTLE_PARTNER(battler)))
         return gBattleMons[battler].moves;
