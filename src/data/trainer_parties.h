@@ -10128,13 +10128,13 @@ static const struct TrainerMonItemCustomMoves sParty_Foster[] = {
     .ability = 1, // Heat Proof
     .spread = SPREAD_31_IV_60_EV,
     .moves = MOVE_HYPNOSIS, MOVE_CONFUSE_RAY, MOVE_EXTRASENSORY, MOVE_FLASH_CANNON
-    },
+    }/* ,
     {
     .lvl = -2,
     .species = SPECIES_UNOWN,
     .spread = SPREAD_31_IV_60_EV,
     .moves = MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE
-    }
+    } */
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Beverly[] = {
