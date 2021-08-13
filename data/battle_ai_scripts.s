@@ -1102,8 +1102,9 @@ AI_ChoiceLocked:
 
 @ If move doesn't do meaningful damage, switch out
 AI_ChoiceDamage:
+	if_can_faint Score_Plus3
 	get_curr_dmg_hp_percent
-	if_less_than 60, AI_ChoiceUturn
+	if_less_than 50, AI_ChoiceUturn
 	end
 
 AI_ChoiceUturn:
