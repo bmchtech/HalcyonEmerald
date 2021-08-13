@@ -131,8 +131,13 @@ PKMN_Center_Move_Tutor_MoveTutorIntro::
 	setflag FLAG_TALKED_TO_MOVE_TUTOR
 	goto PKMN_Center_Move_Tutor_MoveTutorMenu
 
+PKMN_Center_Move_Tutor_NoBadges::
+	msgbox PKMN_Center_Move_Tutor_Text_NoBadgeNoMoves, MSGBOX_DEFAULT
+	releaseall
+	end
 
 PKMN_Center_Move_Tutor_MoveTutorMenu::
+	goto_if_unset FLAG_BADGE01_GET, PKMN_Center_Move_Tutor_NoBadges
 	msgbox PKMN_Center_Move_Tutor_Text_WhichSetofMoves, MSGBOX_DEFAULT
 	special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
 	waitstate
@@ -332,6 +337,12 @@ PKMN_Center_Move_Tutor_Text_Explanation:
 	.string "As you earn more Gym Badges, I'll\n"
 	.string "be able to teach you more moves,\l"
 	.string "so please check back often!$"
+
+PKMN_Center_Move_Tutor_Text_NoBadgeNoMoves:
+	.string "I'm sorry, but there are no moves I\n"
+	.string "can teach you right now.\p"
+	.string "Come back when you have at least\n"
+	.string "one Gym Badge.$"
 
 PKMN_Center_Move_Tutor_Text_WhichSetofMoves:
 	.string "Which set of moves would you\n"

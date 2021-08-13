@@ -447,7 +447,7 @@ RivalsHouse_1F_Text_MayWhoAreYou: @ 81F8EC6
 	.string "I was supposed to go help Dad catch\n"
 	.string "some wild Pokémon!\p"
 	.string "Oh, hey, that reminds me!\n"
-	.string "You should go see Dad's newest Pokémon!\p"
+	.string "You should go see Dad's new Pokémon!\p"
 	.string "He just got three really rare ones\n"
 	.string "from the, um…\p"
 	.string "Oh, darn. Which region was it again?$"
