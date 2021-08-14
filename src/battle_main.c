@@ -3944,7 +3944,8 @@ static void HandleTurnActionSelectionState(void)
                     if (gBattleTypeFlags & (BATTLE_TYPE_LINK
                                             | BATTLE_TYPE_FRONTIER_NO_PYRAMID
                                             | BATTLE_TYPE_EREADER_TRAINER
-                                            | BATTLE_TYPE_RECORDED_LINK))
+                                            | BATTLE_TYPE_RECORDED_LINK)
+                        || (gSaveBlock2Ptr->gameDifficulty == DIFFICULTY_CHALLENGE && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
                     {
                         RecordedBattle_ClearBattlerAction(gActiveBattler, 1);
                         gSelectionBattleScripts[gActiveBattler] = BattleScript_ActionSelectionItemsCantBeUsed;

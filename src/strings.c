@@ -58,6 +58,7 @@ const u8 gText_BirchBoy[] = _("Boy");
 const u8 gText_BirchGirl[] = _("Girl");
 const u8 gText_BirchNormalMode[] = _("Normal");
 const u8 gText_BirchHardMode[] = _("Hard");
+const u8 gText_BirchChallengeMode[] = _("Challenge");
 const u8 gText_BirchInsanityMode[] = _("Insanity");
 const u8 gText_DefaultNameStu[] = _("Stu");
 const u8 gText_DefaultNameMilton[] = _("Milton");

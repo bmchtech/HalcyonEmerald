@@ -420,6 +420,15 @@ static const struct WindowTemplate gNewGameBirchSpeechTextWindows[] =
         .paletteNum = 15,
         .baseBlock = 0x6D
     },
+    {
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 4,
+        .width = 8,
+        .height = 6,
+        .paletteNum = 15,
+        .baseBlock = 0x6D
+    },
     DUMMY_WIN_TEMPLATE
 };
 
@@ -479,7 +488,8 @@ static const struct MenuAction sMenuActions_Gender[] = {
 
 static const struct MenuAction sMenuActions_Difficulty[] = {
     {gText_BirchNormalMode, NULL},
-    {gText_BirchHardMode, NULL}
+    {gText_BirchHardMode, NULL},
+    {gText_BirchChallengeMode, NULL},
 };
 
 static const u8 *const gMalePresetNames[] = {
@@ -1789,13 +1799,19 @@ static void Task_NewGameBirchSpeech_ChooseDifficulty(u8 taskId)
         case 0:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_NORMAL;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            NewGameBirchSpeech_ClearGenderWindow(4, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_ReadTheDocs;
             break;
         case 1:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_HARD;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            NewGameBirchSpeech_ClearGenderWindow(4, 1);
+            gTasks[taskId].func = Task_NewGameBirchSpeech_ReadTheDocs;
+            break;
+        case 2:
+            PlaySE(SE_SELECT);
+            gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_CHALLENGE;
+            NewGameBirchSpeech_ClearGenderWindow(4, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_ReadTheDocs;
             break;
     }
@@ -2185,12 +2201,12 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
 
 static void NewGameBirchSpeech_ShowDifficultyMenu(void)
 {
-    DrawMainMenuWindowBorder(&gNewGameBirchSpeechTextWindows[1], 0xF3);
-    FillWindowPixelBuffer(1, PIXEL_FILL(1));
-    PrintMenuTable(1, ARRAY_COUNT(sMenuActions_Difficulty), sMenuActions_Difficulty);
-    InitMenuInUpperLeftCornerPlaySoundWhenAPressed(1, 2, 0);
-    PutWindowTilemap(1);
-    CopyWindowToVram(1, 3);
+    DrawMainMenuWindowBorder(&gNewGameBirchSpeechTextWindows[4], 0xF3);
+    FillWindowPixelBuffer(4, PIXEL_FILL(1));
+    PrintMenuTable(4, ARRAY_COUNT(sMenuActions_Difficulty), sMenuActions_Difficulty);
+    InitMenuInUpperLeftCornerPlaySoundWhenAPressed(4, 3, 0);
+    PutWindowTilemap(4);
+    CopyWindowToVram(4, 3);
 }
 
 static s8 NewGameBirchSpeech_ProcessDifficultyMenuInput(void)
