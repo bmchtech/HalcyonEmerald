@@ -386,6 +386,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_MAGIKARP_GUY, 20},
     {TRAINER_CLASS_PKMN_TRAINER_4, 30},
     {TRAINER_CLASS_PKMN_TRAINER_5, 50},
+    {TRAINER_CLASS_BUFFEL, 45},
     {0xFF, 5},
 };
 
@@ -452,6 +453,7 @@ const struct TrainerBall gTrainerBallTable[] =
     {TRAINER_CLASS_MAGIKARP_GUY, ITEM_LOVE_BALL},
     {TRAINER_CLASS_PKMN_TRAINER_4, ITEM_CHERISH_BALL},
     {TRAINER_CLASS_PKMN_TRAINER_5, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_BUFFEL, ITEM_CHERISH_BALL},
     {0xFF, ITEM_POKE_BALL},
 };
 
@@ -3942,7 +3944,8 @@ static void HandleTurnActionSelectionState(void)
                     if (gBattleTypeFlags & (BATTLE_TYPE_LINK
                                             | BATTLE_TYPE_FRONTIER_NO_PYRAMID
                                             | BATTLE_TYPE_EREADER_TRAINER
-                                            | BATTLE_TYPE_RECORDED_LINK))
+                                            | BATTLE_TYPE_RECORDED_LINK)
+                        || (gSaveBlock2Ptr->gameDifficulty == DIFFICULTY_CHALLENGE && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
                     {
                         RecordedBattle_ClearBattlerAction(gActiveBattler, 1);
                         gSelectionBattleScripts[gActiveBattler] = BattleScript_ActionSelectionItemsCantBeUsed;

@@ -360,6 +360,7 @@ extern const u8 gText_BirchBoy[];
 extern const u8 gText_BirchGirl[];
 extern const u8 gText_BirchNormalMode[];
 extern const u8 gText_BirchHardMode[];
+extern const u8 gText_BirchChallengeMode[];
 extern const u8 gText_BirchInsanityMode[];
 extern const u8 gText_DefaultNameStu[];
 extern const u8 gText_DefaultNameMilton[];

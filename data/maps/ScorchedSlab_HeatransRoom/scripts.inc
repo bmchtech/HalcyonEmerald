@@ -40,7 +40,7 @@ ScorchedSlab_HeatransRoom_EventScript_RanFromHeatran::
 	end
 
 ScorchedSlab_HeatransRoom_EventScript_MagmaStone::
-	lockall
+	lock
 	checkitem ITEM_MAGMA_STONE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq ScorchedSlab_HeatransRoom_EventScript_PlaceMagmaStone
@@ -52,12 +52,15 @@ ScorchedSlab_HeatransRoom_EventScript_PlaceMagmaStone::
 	compare VAR_RESULT, NO
 	goto_if_eq ScorchedSlab_HeatransRoom_EventScript_MagmaStoneEnd
 	fadescreen FADE_TO_BLACK
+	closemessage
 	waitse
 	playmoncry SPECIES_HEATRAN, 2
 	delay 40
 	waitmoncry
 	addobject LOCALID_HEATRAN
+	clearflag FLAG_DEFEATED_HEATRAN
 	fadescreen FADE_FROM_BLACK
+	removeitem ITEM_MAGMA_STONE
 ScorchedSlab_HeatransRoom_EventScript_MagmaStoneEnd::
 	releaseall
 	end

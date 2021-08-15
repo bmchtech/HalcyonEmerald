@@ -8133,18 +8133,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Clarence},
     },
 
-    [TRAINER_TERRY] =
+    [TRAINER_BUFFEL] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_PSYCHIC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .trainerName = _("Terry"),
+        .trainerClass = TRAINER_CLASS_BUFFEL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = _("Buffel"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Terry),
-        .party = {.ItemCustomMoves = sParty_Terry},
+        .partySize = ARRAY_COUNT(sParty_Buffel),
+        .party = {.ItemCustomMoves = sParty_Buffel},
     },
 
     [TRAINER_NATE] =

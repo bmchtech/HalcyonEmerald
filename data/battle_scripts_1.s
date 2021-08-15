@@ -368,6 +368,7 @@ gBattleScriptsForMoveEffects:: @ 82D86A8
 	.4byte BattleScript_EffectSleepHit
 	.4byte BattleScript_EffectAttackerDefenseDownHit
 	.4byte BattleScript_EffectBodyPress
+	.4byte BattleScript_EffectDoubleIronBash
 
 BattleScript_EffectAttackerDefenseDownHit:
 	setmoveeffect MOVE_EFFECT_DEF_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
@@ -8085,3 +8086,13 @@ BattleScript_AbilityPreventsPhasingOutRedCard::
 	printstring STRINGID_PKMNANCHORSITSELFWITH
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
+
+BattleScript_EffectDoubleIronBash::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	sethword sMULTIHIT_EFFECT, MOVE_EFFECT_FLINCH
+	attackstring
+	ppreduce
+	setmultihitcounter 2
+	initmultihitstring
+	goto BattleScript_MultiHitLoop

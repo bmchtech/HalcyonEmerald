@@ -23,5 +23,6 @@ void RecordAbilityBattle(u8 battlerId, u16 abilityId);
 void ClearBattlerAbilityHistory(u8 battlerId);
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect);
 void ClearBattlerItemEffectHistory(u8 battlerId);
+u16 *GetMovesArray(u32 battler);
 
 #endif // GUARD_BATTLE_AI_SCRIPT_COMMANDS_H

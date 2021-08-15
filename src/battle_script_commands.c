@@ -1336,6 +1336,18 @@ static bool32 TryAegiFormChange(void)
     return TRUE;
 }
 
+bool8 PartyIsMaxLevel(void)
+{
+    int i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) != 100)
+            return FALSE;
+    }
+    return TRUE;
+}
+
 static void Cmd_attackcanceler(void)
 {
     s32 i, moveType;
@@ -3728,8 +3740,10 @@ static void Cmd_getexp(void)
         }
         else
         {
-            // Print Exp gain message once, only after KO
-            PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
+            // Print Exp gain message once, only after KO, and only if something can gain Exp
+            if (!PartyIsMaxLevel())
+                PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
+            
             gBattleScripting.getexpState++;
             gBattleStruct->givenExpMons |= gBitTable[gBattlerPartyIndexes[gBattlerFainted]];
         }
