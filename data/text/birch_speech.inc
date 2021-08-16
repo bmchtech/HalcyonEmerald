@@ -75,21 +75,49 @@ gText_Pie_Welcome::
 	.string "Before you get started, you'll need\n"
 	.string "to choose a difficulty setting.\p"
 	.string "Currently you can choose between\n"
-	.string "Normal Mode or Hard Mode.\p"
+	.string "Normal, Hard or Challenge Mode.$"
+
+gText_Pie_NormalMode::
 	.string "In Normal Mode, Trainers won't have\n"
-	.string "EVs, so you won't need to worry about\l"
-	.string "your own Pokémon's stats.\p"
-	.string "In Hard Mode, Trainers will eventually\n"
-	.string "have fully EV trained teams, so you\l"
-	.string "might need to EV train your own team.\p"
+	.string "EVs, so you won't need to worry\l"
+	.string "about your own Pokémon's stats.\p"
+	.string "This difficulty is recommended if\n"
+	.string "you're new to difficulty hacks, or\l"
+	.string "if you don't want to deal with EVs.\p"
+	.string "So, would you like to play on\n"
+	.string "Normal Mode?$"
+
+gText_Pie_HardMode::
+	.string "In Hard Mode, Trainers will have EV-\n"
+	.string "trained Pokémon, so you might\l"
+	.string "want to EV train your own team.\p"
 	.string "You can do this passively - no\n"
 	.string "grinding required - so don't let that\l"
-	.string "put you off Hard Mode!\p"
-	.string "$"
-
-gText_Pie_Difficulty::
+	.string "put you off!\p"
+	.string "This difficulty is recommended for\n"
+	.string "experienced players.\p"
 	.string "So, would you like to play on\n"
-	.string "Normal Mode or Hard Mode?$"
+	.string "Hard Mode?$"
+
+gText_Pie_ChallengeMode::
+	.string "Like Hard Mode, Trainers in Challenge\n"
+	.string "Mode have EV trained teams.\p"
+	.string "It also adds two restrictions:\p"
+	.string "You can't access the bag in Trainer\n"
+	.string "Battles, and the Shift battle style is\l"
+	.string "disabled.\p"
+	.string "That means you'll follow the same rules\n"
+	.string "as your opponents, so good strategy\l"
+	.string "and a balanced team are more important\l"
+	.string "in this mode.\p"
+	.string "This difficulty is only recommended if\n"
+	.string "it sounds appealing to you!\p"
+	.string "So, would you like to play on\n"
+	.string "Challenge Mode?$"
+
+gText_Pie_WhichDifficulty::
+	.string "Which difficulty would you like to\n"
+	.string "play on?$"
 
 gText_Pie_Documents::
 	.string "Great! If you want more information,\n"
