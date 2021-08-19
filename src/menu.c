@@ -2134,6 +2134,7 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     s32 flagCount;
     u8 *endOfString;
     u8 *string = dest;
+    u8 difficultySetting;
 
     *(string++) = EXT_CTRL_CODE_BEGIN;
     *(string++) = EXT_CTRL_CODE_COLOR;
@@ -2170,6 +2171,24 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             }
             *string = flagCount + CHAR_0;
             *endOfString = EOS;
+            break;
+        case SAVE_MENU_DIFFICULTY:
+            difficultySetting = gSaveBlock2Ptr->gameDifficulty;
+            switch (difficultySetting)
+            {
+                case DIFFICULTY_NORMAL:
+                    StringCopy(string, gText_SavingNormalMode);
+                    break;
+                case DIFFICULTY_HARD:
+                    StringCopy(string, gText_SavingHardMode);
+                    break;
+                case DIFFICULTY_CHALLENGE:
+                    StringCopy(string, gText_SavingChallengeMode);
+                    break;
+                case DIFFICULTY_INSANITY:
+                    StringCopy(string, gText_SavingInsanityMode);
+                    break;
+            }
             break;
     }
 }
