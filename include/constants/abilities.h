@@ -303,8 +303,9 @@
 #define ABILITY_SAND_SONG       (ABILITIES_COUNT_LATEST_GEN + 6) // Sound moves become Ground type. No damage boost.
 #define ABILITY_RAMPAGE         (ABILITIES_COUNT_LATEST_GEN + 7) // If a recharge move KOs the foe, it doesn't need to recharge.
 #define ABILITY_VENGEANCE       (ABILITIES_COUNT_LATEST_GEN + 8) // Overgrow for Ghost moves.
+#define ABILITY_BLITZ_BOXER     (ABILITIES_COUNT_LATEST_GEN + 9) // Punching moves go first
 
-#define ABILITIES_COUNT_CUSTOM (ABILITY_VENGEANCE + 1)
+#define ABILITIES_COUNT_CUSTOM (ABILITY_BLITZ_BOXER + 1)
 
 #define ABILITIES_COUNT ABILITIES_COUNT_CUSTOM
 
