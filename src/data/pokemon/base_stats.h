@@ -2920,7 +2920,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_KEEN_EYE, ABILITY_IRON_FIST, ABILITY_INNER_FOCUS},
+        .abilities = {ABILITY_KEEN_EYE, ABILITY_IRON_FIST, ABILITY_BLITZ_BOXER},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
