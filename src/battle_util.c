@@ -5835,7 +5835,6 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 BattleScriptPushCursorAndCallback(BattleScript_AirBaloonMsgIn);
                 RecordItemEffectBattle(battlerId, HOLD_EFFECT_AIR_BALLOON);
                 break;
-            }
             case HOLD_EFFECT_SEEDS:
                 switch (GetBattlerHoldEffectParam(battlerId))
                 {
@@ -5853,6 +5852,8 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     break;
                 }
                 break;
+            }
+            
             if (effect)
             {
                 gSpecialStatuses[battlerId].switchInItemDone = 1;
