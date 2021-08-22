@@ -543,7 +543,7 @@
 	.macro check_ability battler:req, ability:req
 	.byte 0x60
 	.byte \battler
-	.byte \ability
+	.2byte \ability
 	.endm
 
 	.macro if_flash_fired battler:req, param1:req
