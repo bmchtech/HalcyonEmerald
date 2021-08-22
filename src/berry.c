@@ -1520,6 +1520,8 @@ void ObjectEventInteractionBerryTreePokemonEncounter(void)
     case BERRY_STAGE_BERRIES:
         tree->EncounterBerryStage = TRUE;
         break;
+    default:
+        break;
     }
 }
 

@@ -6331,7 +6331,7 @@
           "land_mons": {
             "encounter_rate": 4,
             "mons": [
-{
+              {
                 "min_level": 30,
                 "max_level": 30,
                 "species": "SPECIES_GOLBAT"
