@@ -170,6 +170,7 @@ SlateportCity_EventScript_PowerItems::
 
 	.align 2
 SlateportCity_Pokemart_PowerItems::
+	.2byte ITEM_TRAINING_BAND
 	.2byte ITEM_POWER_BRACER
 	.2byte ITEM_POWER_BELT
 	.2byte ITEM_POWER_LENS
