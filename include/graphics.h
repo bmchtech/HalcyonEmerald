@@ -8181,6 +8181,10 @@ extern const u32 gItemIconPalette_TapuniumZ[];
 extern const u32 gItemIcon_UltranecroziumZ[];
 extern const u32 gItemIconPalette_UltranecroziumZ[];
 
+// Custom items
+extern const u32 gItemIcon_TrainingBand[];
+extern const u32 gItemIconPalette_TrainingBand[];
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

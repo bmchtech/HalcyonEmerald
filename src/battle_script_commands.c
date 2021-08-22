@@ -3720,6 +3720,7 @@ static void Cmd_getexp(void)
     s32 sentIn;
     s32 viaExpShare = 0;
     u32 *exp = &gBattleStruct->expValue;
+    u8 highestLevel;
 
     gBattlerFainted = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     sentIn = gSentPokesToOpponent[(gBattlerFainted & 2) >> 1];
@@ -3832,6 +3833,14 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage = gExpShareExp * 2; // Determines how much EXP a Pokemon holding an EXP Share receives
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
+                    if (holdEffect == HOLD_EFFECT_TRAINING_BAND)
+                    {
+                        highestLevel = GetHighestLevelInPlayerParty();
+                        if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) < highestLevel)
+                        {
+                            gBattleMoveDamage = gBattleMoveDamage * 5;
+                        }
+                    }
                     #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
                     {
                         // Note: There is an edge case where if a pokemon receives a large amount of exp, it wouldn't be properly calculated

@@ -8529,4 +8529,16 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 255  //signature z move
     },
+
+    [ITEM_TRAINING_BAND] =
+    {
+        .name = _("Training Band"),
+        .itemId = ITEM_TRAINING_BAND,
+        .price = 5000,
+        .holdEffect = HOLD_EFFECT_TRAINING_BAND,
+        .description = sTrainingBandDesc,
+        .pocket = POCKET_BATTLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };
