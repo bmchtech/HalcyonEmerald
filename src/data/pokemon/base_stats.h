@@ -7099,7 +7099,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_RATTLED},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_MOXIE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },
@@ -15309,7 +15309,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 83,
         .baseSpDefense = 65,
         #ifdef REBALANCED_VERSION
-            .baseAttack    = 28,
+            .baseAttack    = 128,
         #else
             .baseAttack    = 108,
         #endif
@@ -17091,7 +17091,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
         #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_RAMPAGE},
+            .abilities = {ABILITY_HUSTLE, ABILITY_HUSTLE, ABILITY_RAMPAGE},
         #else
             .abilities = {ABILITY_HUSTLE, ABILITY_HUSTLE, ABILITY_HUSTLE},
         #endif
@@ -17119,7 +17119,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
         #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_RAMPAGE},
+            .abilities = {ABILITY_HUSTLE, ABILITY_HUSTLE, ABILITY_RAMPAGE},
         #else
             .abilities = {ABILITY_HUSTLE, ABILITY_HUSTLE, ABILITY_HUSTLE},
         #endif
@@ -18121,7 +18121,7 @@ const struct BaseStats gBaseStats[] =
         #ifdef REBALANCED_VERSION
             .baseSpAttack  = 79,
             .baseSpeed     = 95,
-            .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_GRASS_PELT},
+            .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_GRASSY_SURGE},
         #else
             .baseSpAttack  = 97,
             .baseSpeed     = 68,
@@ -19094,10 +19094,8 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_GOURGEIST] =
     {
         .baseHP        = 65,
-        .baseAttack    = 90,
         .baseDefense   = 122,
         .baseSpeed     = 84,
-        .baseSpAttack  = 58,
         .baseSpDefense = 75,
         .type1 = TYPE_GHOST,
         .type2 = TYPE_GRASS,
@@ -19111,8 +19109,12 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
         #ifdef REBALANCED_VERSION
+            .baseAttack    = 58,
+            .baseSpAttack  = 90,
             .abilities = {ABILITY_PICKUP, ABILITY_FLARE_BOOST, ABILITY_INSOMNIA},
         #else
+            .baseAttack    = 90,
+            .baseSpAttack  = 58,
             .abilities = {ABILITY_PICKUP, ABILITY_FRISK, ABILITY_INSOMNIA},
         #endif
         .bodyColor = BODY_COLOR_BROWN,
