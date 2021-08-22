@@ -5058,8 +5058,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     s16 *arrayPtr = ptr->data;
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
+    bool8 canEvolve;
+    u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE, SPECIES_NONE);
 
-    if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL)
+    if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL || targetSpecies != SPECIES_NONE)
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, *itemPtr, 0);
@@ -5069,7 +5071,9 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     {
         cannotUseEffect = TRUE;
     }
+
     PlaySE(SE_SELECT);
+    
     if (cannotUseEffect)
     {
         gPartyMenuUseExitCallback = FALSE;
@@ -5077,7 +5081,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
     }
-    else
+    else if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL)
     {
         gPartyMenuUseExitCallback = TRUE;
         PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
@@ -5090,6 +5094,14 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = Task_DisplayLevelUpStatsPg1;
     }
+    else
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+        RemoveBagItem(gSpecialVar_ItemId, 1);
+        gTasks[taskId].func = PartyMenuTryEvolution;
+    }
+    
 }
 
 static void UpdateMonDisplayInfoAfterRareCandy(u8 slot, struct Pokemon *mon)
