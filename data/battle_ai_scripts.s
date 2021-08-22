@@ -113,12 +113,20 @@ AI_CBM_CheckIfPriorityCancelled:
 	if_field_status STATUS_FIELD_PSYCHIC_TERRAIN, CheckIfTerrainCancelsPriority2
 	if_ability AI_TARGET, ABILITY_QUEENLY_MAJESTY, TargetBlocksPriority
 	if_ability AI_TARGET, ABILITY_DAZZLING, TargetBlocksPriority
+	if_double_battle CheckIfTargetAllyBlocksPriority
+	end
+
+CheckIfTargetAllyBlocksPriority:
+	get_ability AI_TARGET_PARTNER
+	if_equal ABILITY_QUEENLY_MAJESTY, TargetBlocksPriority
+	if_equal ABILITY_DAZZLING, TargetBlocksPriority
 	end
 
 CheckIfTerrainCancelsPriority2:
 	if_grounded AI_TARGET, TargetBlocksPriority
 	end
 
+@ Damaging flying moves handled in if_move_priority_greater_than
 TargetBlocksPriority:
 	if_ability AI_USER, ABILITY_GALE_WINGS, GaleWingsStatusMoves
 	if_move_priority_greater_than 0, Score_Minus30
@@ -350,6 +358,14 @@ AI_CBM_HealBell_End:
 	
 AI_CBM_Taunt:
 	if_target_taunted Score_Minus10
+	get_ability AI_TARGET
+	if_equal ABILITY_OBLIVIOUS, Score_Minus10
+	if_equal ABILITY_AROMA_VEIL, Score_Minus10
+	if_double_battle CheckIfTargetAllyBlocksTaunt
+	end
+
+CheckIfTargetAllyBlocksTaunt:
+	if_ability AI_TARGET_PARTNER, ABILITY_AROMA_VEIL, Score_Minus10
 	end
 
 AI_CBM_Protect:
@@ -520,6 +536,8 @@ AI_CBM_WorrySeed:
 	
 AI_CBM_HealBlock:
 	if_status3 AI_TARGET, STATUS3_HEAL_BLOCK, Score_Minus10
+	if_ability AI_TARGET, ABILITY_AROMA_VEIL, Score_Minus10
+	if_double_battle CheckIfTargetAllyBlocksEncore
 	end
 	
 AI_CBM_GastroAcid:
@@ -567,11 +585,18 @@ AI_CBM_Sleep: @ 82DC2D4
 	if_equal ABILITY_INSOMNIA, Score_Minus30
 	if_equal ABILITY_VITAL_SPIRIT, Score_Minus30
 	if_equal ABILITY_COMATOSE, Score_Minus30
+	if_equal ABILITY_SWEET_VEIL, Score_Minus30
 	if_has_move_with_effect AI_TARGET, EFFECT_SLEEP_TALK, Score_Minus12
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	if_field_status STATUS_FIELD_ELECTRIC_TERRAIN, Score_Minus30
 	if_field_status STATUS_FIELD_MISTY_TERRAIN, Score_Minus30
+	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
+	if_double_battle CheckIfTargetAllyBlocksSleep
+	end
+
+CheckIfTargetAllyBlocksSleep:
+	if_ability AI_TARGET_PARTNER, ABILITY_SWEET_VEIL, Score_Minus30
 	end
 
 AI_CBM_Explosion: @ 82DC2F7
@@ -677,6 +702,16 @@ CheckIfAbilityBlocksStatChange: @ 82DC3F6
 	if_equal ABILITY_CONTRARY, Score_Minus10
 	if_equal ABILITY_DEFIANT, Score_Minus10
 	if_equal ABILITY_COMPETITIVE, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
+	end
+
+CheckIfFlowerVeilBlocksMove:
+	if_ability AI_TARGET, ABILITY_FLOWER_VEIL, Score_Minus10
+	if_double_battle CheckIfAllyFlowerVeilBlocksMove
+	end
+
+CheckIfAllyFlowerVeilBlocksMove:
+	if_ability AI_TARGET_PARTNER, ABILITY_FLOWER_VEIL, Score_Minus10
 	end
 
 AI_CBM_Haze: @ 82DC405
@@ -707,12 +742,9 @@ AI_CBM_Roar: @ 82DC47B
 	end
 
 AI_CBM_Toxic: @ 82DC48C
-	get_target_type1
-	if_equal TYPE_STEEL, Score_Minus10
-	if_equal TYPE_POISON, Score_Minus10
-	get_target_type2
-	if_equal TYPE_STEEL, Score_Minus10
-	if_equal TYPE_POISON, Score_Minus10
+	if_type AI_TARGET,  TYPE_STEEL, Score_Minus10
+	if_type AI_TARGET,  TYPE_POISON, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
 	get_ability AI_TARGET
 	if_equal ABILITY_IMMUNITY, Score_Minus10
 	if_equal ABILITY_TOXIC_BOOST, Score_Minus10
@@ -776,6 +808,7 @@ AI_CBM_Paralyze: @ 82DC545
 	if_equal ABILITY_LIMBER, Score_Minus30
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
+	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
@@ -792,11 +825,19 @@ AI_CBM_LeechSeed: @ 82DC57A
 AI_CBM_Disable: @ 82DC595
 	if_any_move_disabled AI_TARGET, Score_Minus8
 	if_no_move_used AI_TARGET, Score_Minus8
+	if_ability AI_TARGET, ABILITY_AROMA_VEIL, Score_Minus10
+	if_double_battle CheckIfTargetAllyBlocksEncore
 	end
 
 AI_CBM_Encore: @ 82DC59D
 	if_any_move_encored AI_TARGET, Score_Minus8
 	if_no_move_used AI_TARGET, Score_Minus8
+	if_ability AI_TARGET, ABILITY_AROMA_VEIL, Score_Minus10
+	if_double_battle CheckIfTargetAllyBlocksEncore
+	end
+
+CheckIfTargetAllyBlocksEncore:
+	if_ability AI_TARGET_PARTNER, ABILITY_AROMA_VEIL, Score_Minus10
 	end
 
 AI_CBM_DamageDuringSleep: @ 82DC5A5
@@ -914,6 +955,12 @@ AI_CBM_Hail: @ 82DC6A1
 
 AI_CBM_Torment: @ 82DC6A9
 	if_status2 AI_TARGET, STATUS2_TORMENT, Score_Minus10
+	if_ability AI_TARGET, ABILITY_AROMA_VEIL, Score_Minus10
+	if_double_battle CheckIfTargetAllyBlocksTorment
+	end
+
+CheckIfTargetAllyBlocksTorment:
+	if_ability AI_TARGET_PARTNER, ABILITY_AROMA_VEIL, Score_Minus10
 	end
 
 AI_CBM_WillOWisp: @ 82DC6B4
@@ -924,6 +971,7 @@ AI_CBM_WillOWisp: @ 82DC6B4
 	if_equal ABILITY_FLASH_FIRE, Score_Minus10
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
 	if_type AI_TARGET, TYPE_FIRE, Score_Minus10
+	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
 	end
 

@@ -1775,7 +1775,7 @@ static void Cmd_check_ability(void)
     else
         AI_THINKING_STRUCT->funcResult = 0; // Pokemon doesn't have the ability we wanted to check.
 
-    gAIScriptPtr += 3;
+    gAIScriptPtr += 4;
 }
 
 static void Cmd_get_highest_type_effectiveness(void)
