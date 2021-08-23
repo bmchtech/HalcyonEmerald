@@ -1675,7 +1675,7 @@ bool8 BufferTMHMMoveName(void)
 {
     if (gSpecialVar_0x8004 >= ITEM_TM01_FOCUS_PUNCH && gSpecialVar_0x8004 <= ITEM_HM08_DIVE)
     {
-        StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
+        StringCopy(gStringVar2, gMoveNamesLong[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
         return TRUE;
     }
 
@@ -3610,25 +3610,25 @@ void BufferBattleFrontierTutorMoveName(void)
     switch (gSpecialVar_0x8005)
     {
     case 0:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves1[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves1[gSpecialVar_0x8004]]);
         break;
     case 1:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves2[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves2[gSpecialVar_0x8004]]);
         break;
     case 2:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves3[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves3[gSpecialVar_0x8004]]);
         break;
     case 3:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves4[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves4[gSpecialVar_0x8004]]);
         break;
     case 4:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves5[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves5[gSpecialVar_0x8004]]);
         break;
     case 5:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves6[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves6[gSpecialVar_0x8004]]);
         break;
     case 6:
-        StringCopy(gStringVar1, gMoveNames[sPokemonCenter_TutorMoves7[gSpecialVar_0x8004]]);
+        StringCopy(gStringVar1, gMoveNamesLong[sPokemonCenter_TutorMoves7[gSpecialVar_0x8004]]);
         break;
     }
 }
