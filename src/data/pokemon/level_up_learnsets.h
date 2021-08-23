@@ -15537,6 +15537,7 @@ static const struct LevelUpMove sMorelullLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sShiinoticLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_DAZZLING_GLEAM),
 	LEVEL_UP_MOVE( 1, MOVE_ABSORB),
 	LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
 	LEVEL_UP_MOVE( 1, MOVE_INGRAIN),
