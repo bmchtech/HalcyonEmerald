@@ -150,7 +150,7 @@
       "type": "hidden_item",
       "x": 36,
       "y": 22,
-      "elevation": 3,
+      "elevation": 4,
       "item": "ITEM_DAWN_STONE",
       "flag": "FLAG_SEASPRAY_CAVE_DAWN_STONE"
     },
