@@ -871,7 +871,7 @@ void GetItemName(s8 *dest, u16 itemId)
     switch (gBagPositionStruct.pocket)
     {
         case TMHM_POCKET:
-            StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(itemId)]);
+            StringCopy(gStringVar2, gMoveNamesLong[ItemIdToBattleMoveId(itemId)]);
             if (itemId >= ITEM_HM01_CUT)
             {
                 ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_HM01_CUT + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
