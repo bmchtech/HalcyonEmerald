@@ -323,7 +323,7 @@ LilycoveCity_EventScript_ItemLightClay:: @ 82910E8
 	end
 
 MossdeepCity_EventScript_ItemMiloticite:: @ 82910F5
-	finditem ITEM_NET_BALL
+	finditem ITEM_MILOTICITE
 	end
 
 PetalburgWoods_EventScript_ItemXAttack:: @ 8291102
@@ -840,10 +840,6 @@ Meteor_Falls1F_2R_EventScript_Salamencite::
 
 Mirage_Tower_4F_EventScript_Aerodactylite::
 	finditem ITEM_AERODACTYLITE
-	end
-
-Sootopolis_City_EventScript_Miloticite::
-	finditem ITEM_MILOTICITE
 	end
 
 TrickHouse5_EventScript_TerrainExtender::

@@ -7722,7 +7722,7 @@ const struct Item gItems[] =
     {
         .name = _("Miloticite"),
         .itemId = ITEM_MILOTICITE,
-        .price = 0,
+        .price = 500,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sMiloticiteDesc,
         .pocket = POCKET_MEGA_STONES,

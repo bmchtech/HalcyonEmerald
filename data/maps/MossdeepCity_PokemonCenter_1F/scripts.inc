@@ -40,6 +40,7 @@ PokeMart_PokeCenterMossdeepCity::
 	.2byte ITEM_DIVE_BALL
 	.2byte ITEM_NET_BALL
 	.2byte ITEM_DUSK_BALL
+	.2byte ITEM_MILOTICITE
 	.2byte ITEM_NONE
 	release
 	end
