@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
@@ -41,17 +41,17 @@
       "flag": "FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 6,
       "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Mirage_Tower_4F_EventScript_Aerodactylite",
-      "flag": "FLAG_MIRAGE_TOWER_4F_AERODACTYLITE"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_11"
     }
   ],
   "warp_events": [
@@ -63,10 +63,6 @@
       "dest_warp_id": 1
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

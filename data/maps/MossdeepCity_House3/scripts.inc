@@ -1,7 +1,7 @@
-MossdeepCity_House3_MapScripts:: @ 82225C2
+MossdeepCity_House3_MapScripts::
 	.byte 0
 
-MossdeepCity_House3_EventScript_SuperRodFisherman:: @ 82225C3
+MossdeepCity_House3_EventScript_SuperRodFisherman::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_SUPER_ROD, MossdeepCity_House3_EventScript_ReceivedSuperRod
@@ -15,37 +15,37 @@ MossdeepCity_House3_EventScript_SuperRodFisherman:: @ 82225C3
 	release
 	end
 
-MossdeepCity_House3_EventScript_ReceivedSuperRod:: @ 8222602
+MossdeepCity_House3_EventScript_ReceivedSuperRod::
 	msgbox MossdeepCity_House3_Text_GoAfterSeafloorPokemon, MSGBOX_DEFAULT
 	release
 	end
 
-MossdeepCity_House3_EventScript_DeclineSuperRod:: @ 822260C
+MossdeepCity_House3_EventScript_DeclineSuperRod::
 	msgbox MossdeepCity_House3_Text_DontYouLikeToFish, MSGBOX_DEFAULT
 	release
 	end
 
-MossdeepCity_House3_Text_YouWantSuperRod: @ 8222616
-	.string "Hey there, Trainer!\n"
-	.string "A Super Rod really is super!\p"
+MossdeepCity_House3_Text_YouWantSuperRod:
+	.string "Hey there, TRAINER!\n"
+	.string "A SUPER ROD really is super!\p"
 	.string "Say all you want, but this baby can\n"
-	.string "catch Pokémon off the seafloor!\p"
+	.string "catch POKéMON off the seafloor!\p"
 	.string "What do you think?\n"
 	.string "You want it, don't you?$"
 
-MossdeepCity_House3_Text_SuperRodIsSuper: @ 82226B6
+MossdeepCity_House3_Text_SuperRodIsSuper:
 	.string "You bet, you bet!\n"
-	.string "After all, a Super Rod is really super!$"
+	.string "After all, a SUPER ROD is really super!$"
 
-MossdeepCity_House3_Text_TryDroppingRodInWater: @ 82226F0
+MossdeepCity_House3_Text_TryDroppingRodInWater:
 	.string "If there's any water, try dropping in\n"
-	.string "your Rod and see what bites!$"
+	.string "your ROD and see what bites!$"
 
-MossdeepCity_House3_Text_DontYouLikeToFish: @ 8222733
+MossdeepCity_House3_Text_DontYouLikeToFish:
 	.string "Hunh?\n"
 	.string "Don't you like to fish?$"
 
-MossdeepCity_House3_Text_GoAfterSeafloorPokemon: @ 8222751
-	.string "Go after the seafloor Pokémon with\n"
-	.string "your Super Rod.$"
+MossdeepCity_House3_Text_GoAfterSeafloorPokemon:
+	.string "Go after the seafloor POKéMON with\n"
+	.string "your SUPER ROD.$"
 

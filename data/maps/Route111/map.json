@@ -223,7 +223,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_ROUTE111_LEFT_BREAKABLE_ROCK"
+      "flag": "FLAG_TEMP_11"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -236,7 +236,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_ROUTE111_RIGHT_BREAKABLE_ROCK"
+      "flag": "FLAG_TEMP_12"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -252,7 +252,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 33,
       "y": 104,
       "elevation": 3,
@@ -352,21 +352,34 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route111_EventScript_ItemStarPiece",
-      "flag": "FLAG_ITEM_ROUTE_111_STAR_PIECE"
+      "script": "Route111_EventScript_ItemStardust",
+      "flag": "FLAG_ITEM_ROUTE_111_STARDUST"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 3,
-      "y": 113,
+      "y": 114,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route111_EventScript_ItemTM63RockSlide",
-      "flag": "FLAG_ITEM_ROUTE_111_ROCK_SLIDE"
+      "script": "Route111_EventScript_ItemHPUp",
+      "flag": "FLAG_ITEM_ROUTE_111_HP_UP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 22,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_13"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -603,30 +616,17 @@
       "flag": "FLAG_HIDE_ROUTE_111_PLAYER_DESCENT"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 18,
-      "y": 102,
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 19,
+      "y": 101,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route111_EventScript_VialUpgradeNurse",
-      "flag": "FLAG_HIDE_ROUTE_111_NURSE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
-      "x": 18,
-      "y": 100,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 2,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0",
-      "flag": "FLAG_HIDE_ROUTE111_CHANSEY"
+      "script": "Route111_EventScript_RockSmashTipFatMan",
+      "flag": "FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY"
     }
   ],
   "warp_events": [
@@ -972,24 +972,6 @@
       "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 102,
-      "elevation": 0,
-      "var": "VAR_CHANSEY_NURSE_STATE",
-      "var_value": "0",
-      "script": "Route111_EventScript_ChanseyBlob"
-    },
-    {
-      "type": "trigger",
-      "x": 20,
-      "y": 102,
-      "elevation": 0,
-      "var": "VAR_CHANSEY_NURSE_STATE",
-      "var_value": "0",
-      "script": "Route111_EventScript_ChanseyBlob"
     }
   ],
   "bg_events": [
@@ -1073,8 +1055,8 @@
       "x": 26,
       "y": 70,
       "elevation": 0,
-      "item": "ITEM_EARTH_PLATE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_EARTH_PLATE"
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST"
     },
     {
       "type": "secret_base",

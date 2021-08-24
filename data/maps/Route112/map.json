@@ -174,17 +174,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 14,
       "y": 43,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route112_EventScript_ItemHoundoominite",
-      "flag": "FLAG_ITEM_ROUTE_112_HOUNDOOMINITE"
+      "script": "Route112_EventScript_ItemNugget",
+      "flag": "FLAG_ITEM_ROUTE_112_NUGGET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -211,19 +211,6 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route112_EventScript_Shayla",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
-      "x": 25,
-      "y": 29,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0",
-      "flag": "FLAG_HIDE_ROUTE112_CHANSEY"
     }
   ],
   "warp_events": [
@@ -270,35 +257,7 @@
       "dest_warp_id": 1
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 25,
-      "y": 31,
-      "elevation": 0,
-      "var": "VAR_CHANSEY_NURSE_STATE",
-      "var_value": "1",
-      "script": "Route112_EventScript_ChanseyBlob"
-    },
-    {
-      "type": "trigger",
-      "x": 26,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_CHANSEY_NURSE_STATE",
-      "var_value": "1",
-      "script": "Route112_EventScript_ChanseyBlob"
-    },
-    {
-      "type": "trigger",
-      "x": 27,
-      "y": 30,
-      "elevation": 0,
-      "var": "VAR_CHANSEY_NURSE_STATE",
-      "var_value": "1",
-      "script": "Route112_EventScript_ChanseyBlob"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

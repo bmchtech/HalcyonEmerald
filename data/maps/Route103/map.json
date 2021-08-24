@@ -182,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 50,
       "y": 5,
       "elevation": 3,
@@ -191,8 +191,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_ItemTM40AerialAce",
-      "flag": "FLAG_ITEM_ROUTE_103_TM40_AERIAL_ACE"
+      "script": "Route103_EventScript_ItemGuardSpec",
+      "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -295,9 +295,7 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

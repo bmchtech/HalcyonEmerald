@@ -1,47 +1,46 @@
-EverGrandeCity_DrakesRoom_MapScripts:: @ 822869C
+EverGrandeCity_DrakesRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_DrakesRoom_OnFrame
 	map_script MAP_SCRIPT_ON_LOAD, EverGrandeCity_DrakesRoom_OnLoad
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_SidneysRoom_OnWarp
 	.byte 0
 
 @ Unused, Drake uses Sidneys identical OnWarp for some reason
-EverGrandeCity_DrakesRoom_OnWarp: @ 82286AC
+EverGrandeCity_DrakesRoom_OnWarp:
 	map_script_2 VAR_TEMP_1, 0, EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth
 	.2byte 0
 
-EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth:: @ 82286B6
+EverGrandeCity_DrakesRoom_EventScript_PlayerTurnNorth::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
 
-EverGrandeCity_DrakesRoom_OnFrame: @ 82286BB
+EverGrandeCity_DrakesRoom_OnFrame:
 	map_script_2 VAR_ELITE_4_STATE, 3, EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor
 	.2byte 0
 
-EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor:: @ 82286C5
+EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor::
 	lockall
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
 	setvar VAR_ELITE_4_STATE, 4
 	releaseall
 	end
 
-EverGrandeCity_DrakesRoom_OnLoad: @ 82286D2
+EverGrandeCity_DrakesRoom_OnLoad:
 	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
 	compare VAR_ELITE_4_STATE, 4
 	call_if_eq EverGrandeCity_DrakesRoom_EventScript_CloseDoor
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom:: @ 82286E7
+EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
 	return
 
-EverGrandeCity_DrakesRoom_EventScript_CloseDoor:: @ 82286ED
+EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
 	call PokemonLeague_EliteFour_EventScript_CloseDoor
 	return
 
-EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
+EverGrandeCity_DrakesRoom_EventScript_Drake::
 	lock
 	faceplayer
-	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
@@ -49,48 +48,12 @@ EverGrandeCity_DrakesRoom_EventScript_Drake:: @ 82286F3
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
-	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, 0
-	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT
-	switch VAR_ELITE_4_MODE
-	case 0, EverGrandeCity_DrakesRoom_EventScript_DrakeSingles
-	case 1, EverGrandeCity_DrakesRoom_EventScript_DrakeSinglesLegends
-	case 2, EverGrandeCity_DrakesRoom_EventScript_DrakeDoubles
-	case 3, EverGrandeCity_DrakesRoom_EventScript_DrakeDoublesLegends
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_DrakeSingles::
-	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
-	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_DrakeSinglesLegends::
-	trainerbattle_no_intro TRAINER_DRAKE_3, EverGrandeCity_DrakesRoom_Text_Defeat
-	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_DrakeDoubles::
-	trainerbattle_no_intro TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_Defeat
-	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_DrakeDoublesLegends::
-	trainerbattle_no_intro TRAINER_DRAKE_4, EverGrandeCity_DrakesRoom_Text_Defeat
-	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech:: @ 822871A
+EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
 	release
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch::
-	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
-	release
-	end
-
-EverGrandeCity_DrakesRoom_EventScript_Defeated:: @ 8228724
+EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
 	special Script_TryGainNewFanFromCounter
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
@@ -99,54 +62,32 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated:: @ 8228724
 	release
 	end
 
-EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch::
-	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
-	special Script_TryGainNewFanFromCounter
-	setflag FLAG_DEFEATED_ELITE_4_DRAKE
-	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
-	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
-	release
-	end
-
-EverGrandeCity_DrakesRoom_Text_IntroSpeech: @ 822873E
-	.string "I am the last of the Pokémon League\n"
-	.string "Elite Four, Drake the Dragon master!\p"
-	.string "In their natural state, Pokémon are\n"
+EverGrandeCity_DrakesRoom_Text_IntroSpeech:
+	.string "I am the last of the POKéMON LEAGUE\n"
+	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
+	.string "In their natural state, POKéMON are\n"
 	.string "wild living things. They are free.\p"
 	.string "At times, they hinder us.\n"
 	.string "At times, they help us.\p"
-	.string "For us to battle with Pokémon as\n"
+	.string "For us to battle with POKéMON as\n"
 	.string "partners, do you know what it takes?\p"
 	.string "Do you know what is needed?\p"
 	.string "If you don't, then you will never\n"
 	.string "prevail over me!$"
 
-EverGrandeCity_DrakesRoom_Text_Defeat: @ 8228895
+EverGrandeCity_DrakesRoom_Text_Defeat:
 	.string "Superb, it should be said.$"
 
-EverGrandeCity_DrakesRoom_Text_PostBattleSpeech: @ 82288B0
+EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "You deserve every credit for coming\n"
-	.string "this far as a Trainer of Pokémon.\p"
+	.string "this far as a TRAINER of POKéMON.\p"
 	.string "You do seem to know what is needed.\p"
-	.string "Yes, what a Trainer needs is a\n"
+	.string "Yes, what a TRAINER needs is a\n"
 	.string "virtuous heart.\p"
-	.string "Pokémon touch the good hearts of\n"
-	.string "Trainers and learn good from wrong.\p"
+	.string "POKéMON touch the good hearts of\n"
+	.string "TRAINERS and learn good from wrong.\p"
 	.string "They touch the good hearts of\n"
-	.string "Trainers and grow strong.\p"
+	.string "TRAINERS and grow strong.\p"
 	.string "Go! Go onwards!\n"
-	.string "The Champion is waiting!$"
+	.string "The CHAMPION is waiting!$"
 
-EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch:
-	.string "Oh, I've been waitin' for you!\p"
-	.string "My Pokémon and I are going to\n"
-	.string "show you everything we've got!\p"
-	.string "Well then, you had better\n"
-	.string "get ready to try and stop me!$"
-
-EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch:
-	.string "I got a glimpse inside your heart!\n"
-	.string "There's nothing for me to say to you!\p"
-	.string "Go forth, Trainer!\p"
-	.string "Go on to your next challenge\n"
-	.string "with your head held high!$"

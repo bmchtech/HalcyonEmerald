@@ -27,9 +27,9 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 14,
-      "y": 64,
-      "elevation": 4,
+      "x": 18,
+      "y": 68,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
@@ -156,7 +156,7 @@
       "flag": "FLAG_ITEM_ROUTE_115_SUPER_POTION"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 18,
       "y": 7,
       "elevation": 3,
@@ -170,16 +170,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 14,
+      "x": 23,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route115_EventScript_ItemMoonBall",
-      "flag": "FLAG_ITEM_ROUTE_115_MOON_BALL"
+      "script": "Route115_EventScript_ItemIron",
+      "flag": "FLAG_ITEM_ROUTE_115_IRON"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -312,17 +312,17 @@
       "flag": "FLAG_ITEM_ROUTE_115_PP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
-      "x": 23,
-      "y": 29,
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route115_EventScript_ItemHeracronite",
-      "flag": "FLAG_ITEM_ROUTE_115_HERACRONITE"
+      "script": "Route115_EventScript_ItemHealPowder",
+      "flag": "FLAG_ITEM_ROUTE_115_HEAL_POWDER"
     }
   ],
   "warp_events": [
@@ -346,18 +346,9 @@
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": 0
-    },
-    {
-      "x": 8,
-      "y": 70,
-      "elevation": 0,
-      "dest_map": "MAP_SEASPRAY_CAVE",
-      "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "secret_base",
@@ -375,8 +366,8 @@
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 73,
+      "x": 16,
+      "y": 64,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route115_EventScript_RouteSignRustboro"
@@ -459,14 +450,6 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"
-    },
-    {
-      "type": "hidden_item",
-      "x": 20,
-      "y": 21,
-      "elevation": 3,
-      "item": "ITEM_FIST_PLATE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_FIST_PLATE"
     }
   ]
 }

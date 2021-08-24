@@ -243,21 +243,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemToxicOrb",
-      "flag": "FLAG_ITEM_ROUTE_119_TOXIC_ORB"
+      "script": "Route119_EventScript_ItemSuperRepel",
+      "flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 4,
       "y": 96,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemScizorite",
-      "flag": "FLAG_ITEM_ROUTE_119_SCIZORITE"
+      "script": "Route119_EventScript_ItemZinc",
+      "flag": "FLAG_ITEM_ROUTE_119_ZINC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -273,7 +273,7 @@
       "flag": "FLAG_ITEM_ROUTE_119_ELIXIR_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 25,
       "y": 76,
       "elevation": 3,
@@ -282,8 +282,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemTM84_Poison_Jab",
-      "flag": "FLAG_ITEM_ROUTE_119_TM84_POISON_JAB"
+      "script": "Route119_EventScript_ItemLeafStone",
+      "flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -583,19 +583,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_ROUTE_119_SCOTT"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
-      "x": 13,
-      "y": 82,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemTM62_Acrobatics",
-      "flag": "FLAG_ITEM_ROUTE_119_TM62_ACROBATICS"
     }
   ],
   "warp_events": [
@@ -928,14 +915,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route119_EventScript_TrainerTipsDecoration"
-    },
-    {
-      "type": "hidden_item",
-      "x": 36,
-      "y": 50,
-      "elevation": 3,
-      "item": "ITEM_ZAP_PLATE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_ZAP_PLATE"
     }
   ]
 }

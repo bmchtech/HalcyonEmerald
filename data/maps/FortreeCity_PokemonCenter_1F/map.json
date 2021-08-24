@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 8,
+      "x": 7,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -28,35 +28,9 @@
       "flag": "0"
     },
     {
-			"graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-			"x": 13,
-			"y": 2,
-			"elevation": 3,
-			"movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-			"movement_range_x": 0,
-			"movement_range_y": 0,
-			"trainer_type": "0",
-			"trainer_sight_or_berry_tree_id": "0",
-			"script": "PKMN_Center_Move_Tutor",
-			"flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 2,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "0",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "General_Mart_Script",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 4,
-      "y": 5,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -68,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 11,
-      "y": 6,
+      "x": 8,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -81,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
-      "x": 14,
-      "y": 8,
+      "x": 2,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -95,14 +69,14 @@
   ],
   "warp_events": [
     {
-      "x": 8,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_FORTREE_CITY",
       "dest_warp_id": 0
     },
     {
-      "x": 7,
+      "x": 6,
       "y": 8,
       "elevation": 3,
       "dest_map": "MAP_FORTREE_CITY",

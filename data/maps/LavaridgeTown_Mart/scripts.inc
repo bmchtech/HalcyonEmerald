@@ -1,7 +1,7 @@
-LavaridgeTown_Mart_MapScripts:: @ 81FF9CD
+LavaridgeTown_Mart_MapScripts::
 	.byte 0
 
-LavaridgeTown_Mart_EventScript_Clerk:: @ 81FF9CE
+LavaridgeTown_Mart_EventScript_Clerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
@@ -11,46 +11,37 @@ LavaridgeTown_Mart_EventScript_Clerk:: @ 81FF9CE
 	release
 	end
 
-.align 2
-LavaridgeTown_Mart_Pokemart: @ 81FF9E8
-	.2byte ITEM_GRASS_GEM
-	.2byte ITEM_FIRE_GEM
-	.2byte ITEM_WATER_GEM
-	.2byte ITEM_ELECTRIC_GEM
-	.2byte ITEM_ICE_GEM
-	.2byte ITEM_DRAGON_GEM
-	.2byte ITEM_FAIRY_GEM
-	.2byte ITEM_PSYCHIC_GEM
-	.2byte ITEM_DARK_GEM
-	.2byte ITEM_GHOST_GEM
-	.2byte ITEM_BUG_GEM
-	.2byte ITEM_POISON_GEM
-	.2byte ITEM_FLYING_GEM
-	.2byte ITEM_GROUND_GEM
-	.2byte ITEM_ROCK_GEM
-	.2byte ITEM_STEEL_GEM
-	.2byte ITEM_FIGHTING_GEM
-	.2byte ITEM_NORMAL_GEM
+	.align 2
+LavaridgeTown_Mart_Pokemart:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_REVIVE
+	.2byte ITEM_SUPER_REPEL
+	.2byte ITEM_X_SPEED
 	.2byte ITEM_NONE
 	release
 	end
 
-LavaridgeTown_Mart_EventScript_ExpertM:: @ 81FF9FE
+LavaridgeTown_Mart_EventScript_ExpertM::
 	msgbox LavaridgeTown_Mart_Text_XSpeedFirstStrike, MSGBOX_NPC
 	end
 
-LavaridgeTown_Mart_EventScript_OldWoman:: @ 81FFA07
+LavaridgeTown_Mart_EventScript_OldWoman::
 	msgbox LavaridgeTown_Mart_Text_LocalSpecialtyOnMtChimney, MSGBOX_NPC
 	end
 
-LavaridgeTown_Mart_Text_XSpeedFirstStrike: @ 81FFA10
-	.string "Use X Speed to add to a Pokémon's\n"
-	.string "Speed in battle.\p"
+LavaridgeTown_Mart_Text_XSpeedFirstStrike:
+	.string "Use X SPEED to add to a POKéMON's\n"
+	.string "SPEED in battle.\p"
 	.string "That will help it get in the first\n"
 	.string "strike--a decided advantage!$"
 
-LavaridgeTown_Mart_Text_LocalSpecialtyOnMtChimney: @ 81FFA83
-	.string "On Mt. Chimney's peak, there's a local\n"
+LavaridgeTown_Mart_Text_LocalSpecialtyOnMtChimney:
+	.string "On MT. CHIMNEY's peak, there's a local\n"
 	.string "specialty that you can buy only there.\p"
-	.string "Give it to a Pokémon--it will be elated.$"
+	.string "Give it to a POKéMON--it will be elated.$"
 

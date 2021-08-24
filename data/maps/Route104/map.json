@@ -378,8 +378,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_ItemFriendBall",
-      "flag": "FLAG_ITEM_ROUTE_104_FRIEND_BALL"
+      "script": "Route104_EventScript_ItemPokeBall",
+      "flag": "FLAG_ITEM_ROUTE_104_POKE_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -395,17 +395,17 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 37,
       "y": 22,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_ItemAudinite",
-      "flag": "FLAG_ITEM_ROUTE_104_AUDINITE"
+      "script": "Route104_EventScript_ItemXAccuracy",
+      "flag": "FLAG_ITEM_ROUTE_104_X_ACCURACY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -430,8 +430,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_ItemSootheBell",
-      "flag": "FLAG_ITEM_ROUTE_104_SOOTHE_BELL"
+      "script": "Route104_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_ROUTE_104_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",

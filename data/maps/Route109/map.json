@@ -321,8 +321,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route109_EventScript_ItemZoomLens",
-      "flag": "FLAG_ITEM_ROUTE_109_ZOOM_LENS"
+      "script": "Route109_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_ROUTE_109_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -336,45 +336,6 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route109_EventScript_Elijah",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 13,
-      "y": 19,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "0",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route_109_EventScript_SandMound",
-      "flag": "FLAG_TEMP_12"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 24,
-      "y": 22,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "0",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route_109_EventScript_SandMound1",
-      "flag": "FLAG_TEMP_11"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 31,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "0",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route_109_EventScript_SandMound2",
-      "flag": "FLAG_TEMP_13"
     }
   ],
   "warp_events": [
@@ -386,9 +347,7 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
@@ -453,22 +412,6 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
-    },
-    {
-      "type": "hidden_item",
-      "x": 31,
-      "y": 11,
-      "elevation": 3,
-      "item": "ITEM_BOTTLE_CAP",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP1"
-    },
-    {
-      "type": "hidden_item",
-      "x": 21,
-      "y": 14,
-      "elevation": 3,
-      "item": "ITEM_BOTTLE_CAP",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP2"
     }
   ]
 }

@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
@@ -91,19 +91,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MagmaHideout_2F_2R_EventScript_ItemFullRestore",
       "flag": "FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 26,
-      "y": 4,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "MagmaHideout_2F_2R_EventScript_ItemMagmaStone",
-      "flag": "FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAGMA_STONE"
     }
   ],
   "warp_events": [
@@ -122,10 +109,6 @@
       "dest_warp_id": 2
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }
