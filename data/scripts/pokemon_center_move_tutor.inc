@@ -137,6 +137,7 @@ PKMN_Center_Move_Tutor_NoBadges::
 	end
 
 PKMN_Center_Move_Tutor_MoveTutorMenu::
+	setvar VAR_0x8008, 0
 	goto_if_unset FLAG_BADGE01_GET, PKMN_Center_Move_Tutor_NoBadges
 	msgbox PKMN_Center_Move_Tutor_Text_WhichSetofMoves, MSGBOX_DEFAULT
 	special ScriptMenu_CreatePKMNCenterMoveTutorMultichoice
