@@ -55,6 +55,7 @@ VerdanturfTown_WandasHouse_EventScript_MeetWanda::
 
 VerdanturfTown_WandasHouse_EventScript_WandaDontWorry::
 	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_HM04, VerdanturfTown_WandasHouse_EventScript_WandaGardevoirite
 	release
 	end
 

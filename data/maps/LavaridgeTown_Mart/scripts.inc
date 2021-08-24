@@ -11,6 +11,7 @@ LavaridgeTown_Mart_EventScript_Clerk:: @ 81FF9CE
 	release
 	end
 
+.align 2
 LavaridgeTown_Mart_Pokemart: @ 81FF9E8
 	.2byte ITEM_GRASS_GEM
 	.2byte ITEM_FIRE_GEM

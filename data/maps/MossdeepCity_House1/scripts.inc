@@ -13,8 +13,9 @@ MossdeepCity_House1_MapScripts_OnFrame:
 	.2byte 0
 
 MossdeepCity_House1_EventScript_CynthiaBattle::
+	lockall
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MossdeepCity_House1_EventScript_End
 	goto_if_set FLAG_HIDE_MOSSDEEP_CYNTHIA, MossdeepCity_House1_EventScript_End
-	lock
 	delay 40
 	playse SE_PIN
 	applymovement LOCALID_CYNTHIA, Common_Movement_ExclamationMark
@@ -80,6 +81,7 @@ MossdeepCity_House1_EventScript_CynthiaTeam1::
 	end
 
 MossdeepCity_House1_EventScript_End::
+	releaseall
 	end
 
 MossdeepCity_House1_Text_WhatsThis:

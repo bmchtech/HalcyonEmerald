@@ -306,6 +306,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_LOCK_ON, AI_CBM_LockOn
 	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
 	if_effect EFFECT_SOLARBEAM, AI_CBM_SolarBeam
+	if_effect EFFECT_PLACEHOLDER, AI_CBM_Placeholder
 	end
 	
 AI_CBM_LockOn:
@@ -1051,6 +1052,11 @@ AI_CBM_SolarBeam:
 	get_weather
 	if_equal AI_WEATHER_SUN, AI_Ret
 	score -10
+	end
+
+@ Don't use placeholder moves, ever
+AI_CBM_Placeholder:
+	score -30
 	end
 
 Score_Minus1:
