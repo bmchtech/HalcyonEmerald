@@ -85,6 +85,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated:: @ 82208D1
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN
+	clearflag FLAG_SYS_INVERSE_BATTLE
 	setvar VAR_MOSSDEEP_CITY_STATE, 1
 	setflag FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
@@ -127,6 +128,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaRematch::
 
 MossdeepCity_Gym_EventScript_TateAndLizaDoublesRematch::
 	trainerbattle_double TRAINER_TATE_AND_LIZA_2, MossdeepCity_Gym_Text_TateAndLizaPreRematch, MossdeepCity_Gym_Text_TateAndLizaRematchDefeat, MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons, MossdeepCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	clearflag FLAG_SYS_INVERSE_BATTLE
 	releaseall
 	end
 
