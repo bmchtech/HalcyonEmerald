@@ -65,6 +65,7 @@ Route119_WeatherInstitute_1F_EventScript_InstituteWorker2:: @ 826FB0F
 	goto_if_set FLAG_WEATHER_INSTITUTE_BOTTLE_CAPS, Route119_WeatherInstitute_1F_EventScript_ReceivedCaps
 	msgbox Route119_WeatherInstitute_1F_Text_PleaseTakeThese, MSGBOX_DEFAULT
 	giveitem ITEM_BOTTLE_CAP, 4
+	setflag FLAG_WEATHER_INSTITUTE_BOTTLE_CAPS
 Route119_WeatherInstitute_1F_EventScript_ReceivedCaps::
 	msgbox Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo, MSGBOX_AUTOCLOSE
 	release
