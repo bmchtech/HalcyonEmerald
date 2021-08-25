@@ -3774,11 +3774,9 @@ static void Cmd_getexp(void)
                 calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
             #endif
 
-            calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
-
             // Exp share effect always on. Any Pokemon that was sent in gets 100% of the exp, the rest get 25%
 
-            *exp = calculatedExp * 3 / 4; // Portion of EXP given to Pokemon that appeared in battle
+            *exp = calculatedExp; // * 3 / 4; // Portion of EXP given to Pokemon that appeared in battle
             if (*exp == 0)
                 *exp = 1;
 
@@ -3827,9 +3825,11 @@ static void Cmd_getexp(void)
                     if (gBattleStruct->sentInPokes & 1)
                         gBattleMoveDamage = *exp;
                     else
+                    {
                         gBattleMoveDamage = 0;
-                        gBattleMoveDamage += gExpShareExp;  
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE)
+                        gBattleMoveDamage += gExpShareExp;
+                    }
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
                         gBattleMoveDamage = gExpShareExp * 2; // Determines how much EXP a Pokemon holding an EXP Share receives
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
