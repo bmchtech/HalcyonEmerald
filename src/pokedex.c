@@ -7711,6 +7711,15 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
                 StringExpandPlaceholders(gStringVar4, gText_EVO_ITEM_HOLD_NIGHT );
                 PrintInfoScreenTextSmall(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i);
                 break;
+            case EVO_ITEM_HOLD:
+                item = gEvolutionTable[species][i].param; //item
+                CopyItemName(item, gStringVar2); //item
+                targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                CreateCaughtBallEvolutionScreen(targetSpecies, base_x + depth_x*depth-9, base_y + base_y_offset*base_i, 0);
+                handleTargetSpeciesPrint(taskId, targetSpecies, base_x + depth_x*depth, base_y, base_y_offset, base_i); //evolution mon name
+                StringExpandPlaceholders(gStringVar4, gText_EVO_ITEM_HOLD);
+                PrintInfoScreenTextSmall(gStringVar4, base_x + depth_x*depth+base_x_offset, base_y + base_y_offset*base_i);
+                break;
             case EVO_MOVE:
                 StringCopy(gStringVar2, gMoveNames[gEvolutionTable[species][i].param]);
                 targetSpecies = gEvolutionTable[species][i].targetSpecies;
