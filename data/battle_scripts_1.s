@@ -3051,6 +3051,7 @@ BattleScript_EffectAccuracyDownHit::
 	
 BattleScript_PowerHerbActivation:
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
+	waitanimation
 	printstring STRINGID_POWERHERB
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_ATTACKER

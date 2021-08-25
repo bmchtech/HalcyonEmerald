@@ -638,6 +638,7 @@ Route111_EventScript_UpgradeVialHideNurse::
 Route111_EventScript_NurseLeaves2::
 	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves2
 	waitmovement 0
+	removeobject LOCALID_NURSE
 	releaseall
 	end
 

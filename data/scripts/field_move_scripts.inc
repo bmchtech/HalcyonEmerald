@@ -4,9 +4,7 @@
 @ Interact with cuttable tree
 EventScript_CutTree:: @ 82906BB
 	lockall
-	compare VAR_RUSTBORO_CITY_STATE, 9
-	goto_if_lt EventScript_CheckTreeCantCut
-	@ goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
+	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
 	checkpartymove MOVE_CUT
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_AnorithCut
@@ -24,6 +22,8 @@ EventScript_CutTree:: @ 82906BB
 	end
 
 EventScript_AnorithCut::
+	compare VAR_RUSTBORO_CITY_STATE, 9
+	goto_if_lt EventScript_CheckTreeCantCut
 	setvar VAR_0x8004, SPECIES_ANORITH
 	setvar VAR_0x8008, MOVE_CUT
 	setvar VAR_0x8009, 1
