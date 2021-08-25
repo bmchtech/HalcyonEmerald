@@ -2956,6 +2956,7 @@ static const struct LevelUpMove sSnorlaxLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(48, MOVE_DOUBLE_EDGE),
 	LEVEL_UP_MOVE(52, MOVE_BELCH),
 	LEVEL_UP_MOVE(56, MOVE_GIGA_IMPACT),
+    LEVEL_UP_MOVE(60, MOVE_SLACK_OFF),
     LEVEL_UP_END
 };
 
@@ -6267,6 +6268,7 @@ static const struct LevelUpMove sMiloticLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(44, MOVE_RAIN_DANCE),
 	LEVEL_UP_MOVE(48, MOVE_COIL),
 	LEVEL_UP_MOVE(52, MOVE_HYDRO_PUMP),
+    LEVEL_UP_MOVE(56, MOVE_MOONBLAST),
     LEVEL_UP_END
 };
 
