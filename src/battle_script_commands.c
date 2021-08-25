@@ -58,7 +58,6 @@
 #include "data.h"
 #include "constants/party_menu.h"
 
-extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
 
 extern const u8* const gBattleScriptsForMoveEffects[];

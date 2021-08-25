@@ -958,7 +958,7 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     {
         if (!gTasks[taskId].tUsingRegisteredKeyItem)
         {
-            DisplayItemMessage(taskId, 1, gText_PokeVialEmpty, BagMenu_InitListsMenu);
+            DisplayItemMessage(taskId, 1, gText_PokeVialEmpty, CloseItemMessage);
         }
         else
         {

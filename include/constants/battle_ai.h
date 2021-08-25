@@ -34,6 +34,7 @@
 #define MOVE_POWER_BEST   1
 #define MOVE_POWER_GOOD   2 // Similar dmg range with best.
 #define MOVE_POWER_WEAK   3 // Significantly lower than best and good.
+#define MOVE_POWER_NON_DAMAGING 4
 
 // script's table id to bit
 #define AI_SCRIPT_CHECK_BAD_MOVE (1 << 0)

@@ -25,13 +25,11 @@
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
 
-extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
-
 // this file's functions
 static void ClearDaycareMonMail(struct DaycareMail *mail);
 static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *daycare);
 static u8 GetDaycareCompatibilityScore(struct DayCare *daycare);
-static void DaycarePrintMonInfo(u8 windowId, s32 daycareSlotId, u8 y);
+static void DaycarePrintMonInfo(u8 windowId, u32 daycareSlotId, u8 y);
 static void TransferEggMoves (struct DayCare *daycare);
 static bool8 DoMonsShareEggGroup(struct DayCare *daycare);
 static u8 ModifyBreedingScoreForOvalCharm(u8 score);

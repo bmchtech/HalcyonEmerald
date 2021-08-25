@@ -4487,8 +4487,8 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
     sprite = &gSprites[sPokedexView->typeIconSpriteIds[spriteArrayId]];
     StartSpriteAnim(sprite, typeId);
     sprite->oam.paletteNum = sMoveTypeToOamPaletteNum[typeId];
-    sprite->pos1.x = x + 16;
-    sprite->pos1.y = y + 8;
+    sprite->x = x + 16;
+    sprite->y = y + 8;
     SetSpriteInvisibility(spriteArrayId, FALSE);
 }
 static void PrintCurrentSpeciesTypeInfo(void)
@@ -6579,8 +6579,8 @@ static void PrintStatsScreen_MoveNameAndInfo(u8 taskId)
 
     //Egg/TM/Level/Tutor Item Icon
     gTasks[taskId].data[3] = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
-    gSprites[gTasks[taskId].data[3]].pos2.x = 203;
-    gSprites[gTasks[taskId].data[3]].pos2.y = 39;
+    gSprites[gTasks[taskId].data[3]].x = 203;
+    gSprites[gTasks[taskId].data[3]].y = 39;
     gSprites[gTasks[taskId].data[3]].oam.priority = 0;
 
     //Moves selected from move max

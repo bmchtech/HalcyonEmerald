@@ -560,7 +560,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
     {
         if (sMartInfo.martType == MART_TYPE_NORMAL)
         {
-            if ((ItemId_GetPocket(item) == POCKET_TM_HM) && (CheckBagHasItem(item, 1) == TRUE))
+            if ((ItemId_GetPocket(itemId) == POCKET_TM_HM) && (CheckBagHasItem(itemId, 1) == TRUE))
             {
                 StringCopy(gStringVar1, gText_ShopPurchasedTMPrice);
                 StringExpandPlaceholders(gStringVar4, gText_StrVar1);
