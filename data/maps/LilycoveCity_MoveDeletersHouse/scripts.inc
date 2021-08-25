@@ -20,7 +20,7 @@ LilycoveCity_EventScript_BallSwapper::
 	special ChoosePartyMon
 	waitstate
 	compare VAR_0x8004, PARTY_SIZE
-	goto_if_ge LilycoveCity_EventScript_BallSwapperExit
+	goto_if_ge LilycoveCity_EventScript_BallSwapperExitNoMoneyBox
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq LilycoveCity_EventScript_BallSwapperEgg
@@ -30,7 +30,7 @@ LilycoveCity_EventScript_BallSwapper::
 	waitstate
 	copyvar VAR_0x8005, VAR_ITEM_ID
 	compare VAR_ITEM_ID, 0
-	goto_if_eq LilycoveCity_EventScript_BallSwapperExit
+	goto_if_eq LilycoveCity_EventScript_BallSwapperExitNoMoneyBox
 	showmoneybox 0, 0, 0
 	bufferpartymonnick 0, VAR_0x8004
 	bufferitemname 1, VAR_0x8005
@@ -80,6 +80,11 @@ LilycoveCity_EventScript_BallSwapper_CantAfford::
 
 LilycoveCity_EventScript_BallSwapperExit::
 	hidemoneybox
+	msgbox LilycoveCity_Text_BallSwapperExit, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_EventScript_BallSwapperExitNoMoneyBox::
 	msgbox LilycoveCity_Text_BallSwapperExit, MSGBOX_DEFAULT
 	release
 	end
