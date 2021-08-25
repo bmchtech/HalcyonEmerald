@@ -1753,6 +1753,7 @@ const u8 gText_Draw[] = _("{HIGHLIGHT TRANSPARENT}Draw");
 static const u8 sText_SpaceIs[] = _(" is");
 static const u8 sText_ApostropheS[] = _("'s");
 
+// For displaying names of invalid moves
 static const u8 sATypeMove_Table[][NUMBER_OF_MON_TYPES - 1] =
 {
     [TYPE_NORMAL]   _("a Normal move"),

@@ -1582,7 +1582,7 @@ static void DaycarePrintMonLvl(struct DayCare *daycare, u8 windowId, u32 daycare
     DaycareAddTextPrinter(windowId, lvlText, x, y);
 }
 
-static void DaycarePrintMonInfo(u8 windowId, s32 daycareSlotId, u8 y)
+static void DaycarePrintMonInfo(u8 windowId, u32 daycareSlotId, u8 y)
 {
     if (daycareSlotId < (unsigned) DAYCARE_MON_COUNT)
     {
