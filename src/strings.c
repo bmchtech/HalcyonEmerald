@@ -2229,6 +2229,7 @@ const u8 gText_EVO_LEVEL_DAY[]                      = _("LvlUp to {STR_VAR_2}, d
 const u8 gText_EVO_LEVEL_DUSK[]                     = _("LvlUp to {STR_VAR_2}, dusk (5-6PM)");
 const u8 gText_EVO_ITEM_HOLD_DAY[]                  = _("LvlUp, holds {STR_VAR_2}, day");
 const u8 gText_EVO_ITEM_HOLD_NIGHT[]                = _("LvlUp, holds {STR_VAR_2}, night");
+const u8 gText_EVO_ITEM_HOLD[]                      = _("LvlUp holding a {STR_VAR_2}");
 const u8 gText_EVO_MOVE[]                           = _("LvlUp, knows {STR_VAR_2}");
 const u8 gText_EVO_MOVE_TYPE[]                      = _("LvlUp, knows {STR_VAR_2} move");
 const u8 gText_EVO_SPECIFIC_MAPSEC[]                         = _("LvlUp on {STR_VAR_2}");
