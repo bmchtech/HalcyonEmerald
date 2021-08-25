@@ -89,14 +89,15 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins:: @ 820FC75
 	end
 
 MauvilleCity_GameCorner_EventScript_Buy5000Coins::
+	setvar VAR_0x8005, COINS_PRICE_5000
 	checkcoins VAR_TEMP_1
 	compare VAR_TEMP_1, (MAX_COINS + 1 - 5000)
 	goto_if_ge MauvilleCity_GameCorner_EventScript_NoRoomForCoins
-	checkmoney COINS_PRICE_5000, 0
+	specialvar VAR_RESULT, IsEnoughForCostInVar0x8005
 	compare VAR_RESULT, FALSE
 	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
 	addcoins 5000
-	removemoney COINS_PRICE_5000, 0
+	special SubtractMoneyFromVar0x8005
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
 	playse SE_SHOP
