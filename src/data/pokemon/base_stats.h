@@ -11945,7 +11945,9 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_SPIRITOMB] =
     {
+        .baseAttack    = 108,
         .baseDefense   = 108,
+        .baseSpAttack  = 108,
         .baseSpeed     = 35,
         .baseSpDefense = 108,
         #ifdef REBALANCED_VERSION
