@@ -1,3 +1,5 @@
+.set LOCALID_ODD_KEYSTONE, 20
+
 SandstrewnRuins_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SandstrewnRuins_OnLoad
 	.byte 0
@@ -26,6 +28,7 @@ Sandstrewn_Ruins_EventScript_OddKeystone::
 	waitmessage
 	waitfanfare
 	giveitem ITEM_ODD_KEYSTONE, 1
+	removeobject LOCALID_ODD_KEYSTONE
 	release
 	end
 
