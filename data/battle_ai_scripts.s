@@ -3680,7 +3680,7 @@ AI_TryToFaint:
 	if_target_is_ally AI_Ret
 	if_can_faint AI_TryToFaint_Can
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_DISCOURAGED, Score_Minus1
+	if_equal MOVE_POWER_NON_DAMAGING, Score_Minus1
 AI_TryToFaint2:
 	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_TryToFaint_DoubleSuperEffective
 	goto AI_TryToFaint_CheckIfDanger
@@ -3884,7 +3884,7 @@ AI_PreferBatonPass:
 	count_usable_party_mons AI_USER
 	if_equal 0, AI_PreferBatonPassEnd
 	get_how_powerful_move_is
-	if_not_equal MOVE_POWER_DISCOURAGED, AI_PreferBatonPassEnd
+	if_not_equal MOVE_POWER_NON_DAMAGING, AI_PreferBatonPassEnd
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_BATON_PASS, AI_PreferBatonPassEnd
 	get_considered_move_effect
 	if_in_hwords sEffectsStatRaise, AI_PreferBatonPass2
@@ -4032,7 +4032,7 @@ AI_DoubleBattleElectricMoveEnd:
 
 AI_DoubleBattlePartnerHasHelpingHand:
 	get_how_powerful_move_is
-	if_not_equal MOVE_POWER_DISCOURAGED, Score_Plus1
+	if_not_equal MOVE_POWER_NON_DAMAGING, Score_Plus1
 	end
 
 AI_DoubleBattleCheckUserStatus:
@@ -4041,7 +4041,7 @@ AI_DoubleBattleCheckUserStatus:
 
 AI_DoubleBattleCheckUserStatus2:
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_DISCOURAGED, Score_Minus5
+	if_equal MOVE_POWER_NON_DAMAGING, Score_Minus5
 	score +1
 	if_equal MOVE_POWER_BEST, Score_Plus2
 	end
@@ -4092,7 +4092,7 @@ AI_DoubleBattleSkillSwap:
 
 AI_TryOnAlly:
 	get_how_powerful_move_is
-	if_equal MOVE_POWER_DISCOURAGED, AI_TryStatusMoveOnAlly
+	if_equal MOVE_POWER_NON_DAMAGING, AI_TryStatusMoveOnAlly
 	get_curr_move_type
 	if_equal TYPE_FIRE, AI_TryFireMoveOnAlly
 	if_effect EFFECT_ALWAYS_CRIT, AI_TryCritAngerPointAlly

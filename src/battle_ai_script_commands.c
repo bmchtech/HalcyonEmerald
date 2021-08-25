@@ -1589,7 +1589,7 @@ static void Cmd_get_how_powerful_move_is(void)
     }
     else
     {
-        AI_THINKING_STRUCT->funcResult = MOVE_POWER_DISCOURAGED; // Highly discouraged in terms of power.
+        AI_THINKING_STRUCT->funcResult = MOVE_POWER_NON_DAMAGING; // A status move
     }
 
     gAIScriptPtr++;

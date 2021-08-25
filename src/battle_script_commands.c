@@ -3776,7 +3776,7 @@ static void Cmd_getexp(void)
 
             calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
 
-            // Exp share effect always on. Any Pokemon that was sent in gets 100% of the exp, the rest get 50%
+            // Exp share effect always on. Any Pokemon that was sent in gets 100% of the exp, the rest get 25%
 
             *exp = calculatedExp * 3 / 4; // Portion of EXP given to Pokemon that appeared in battle
             if (*exp == 0)
@@ -6952,9 +6952,9 @@ static void PutMonIconOnLvlUpBox(void)
 
 static void SpriteCB_MonIconOnLvlUpBox(struct Sprite* sprite)
 {
-    sprite->pos2.x = sprite->sSavedLvlUpBoxXPosition - gBattle_BG2_X;
+    sprite->x2 = sprite->sSavedLvlUpBoxXPosition - gBattle_BG2_X;
 
-    if (sprite->pos2.x != 0)
+    if (sprite->x2 != 0)
     {
         sprite->sDestroy = TRUE;
     }
