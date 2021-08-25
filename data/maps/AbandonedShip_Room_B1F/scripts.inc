@@ -23,6 +23,7 @@ AbandonedShip_Room_B1F_EventScript_CheckOddKeystone::
 	compare VAR_RESULT, NO
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_End
 	closemessage
+	removeitem ITEM_ODD_KEYSTONE, 1
 	playmoncry SPECIES_SPIRITOMB, 2
 	delay 40
 	waitmoncry
@@ -30,7 +31,7 @@ AbandonedShip_Room_B1F_EventScript_CheckOddKeystone::
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_SPIRITOMB, VAR_0x800A, ITEM_SMOKE_BALL
 	waitstate
-	removeitem ITEM_ODD_KEYSTONE, 1
+	dowildbattle
 	release
 	end
 
