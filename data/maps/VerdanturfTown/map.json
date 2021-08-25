@@ -22,12 +22,17 @@
       "direction": "right",
       "offset": 0,
       "map": "MAP_ROUTE117"
+    },
+    {
+      "direction": "down",
+      "offset": -2,
+      "map": "MAP_VERDANTURF_MEADOW"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 4,
+      "x": 14,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -129,7 +134,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

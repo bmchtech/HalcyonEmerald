@@ -1,7 +1,7 @@
-PacifidlogTown_House5_MapScripts::
+PacifidlogTown_House5_MapScripts:: @ 8204110
 	.byte 0
 
-PacifidlogTown_House5_EventScript_MirageIslandWatcher::
+PacifidlogTown_House5_EventScript_MirageIslandWatcher:: @ 8204111
 	lock
 	faceplayer
 	specialvar VAR_RESULT, IsMirageIslandPresent
@@ -11,24 +11,24 @@ PacifidlogTown_House5_EventScript_MirageIslandWatcher::
 	release
 	end
 
-PacifidlogTown_House5_EventScript_MirageIslandPresent::
+PacifidlogTown_House5_EventScript_MirageIslandPresent:: @ 820412D
 	msgbox PacifidlogTown_House5_Text_CanSeeMirageIslandToday, MSGBOX_DEFAULT
 	release
 	end
 
-PacifidlogTown_House5_EventScript_Gentleman::
+PacifidlogTown_House5_EventScript_Gentleman:: @ 8204137
 	msgbox PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather, MSGBOX_NPC
 	end
 
-PacifidlogTown_House5_Text_CantSeeMirageIslandToday:
-	.string "I can't see MIRAGE ISLAND today…$"
+PacifidlogTown_House5_Text_CantSeeMirageIslandToday: @ 8204140
+	.string "I can't see Mirage Island today…$"
 
-PacifidlogTown_House5_Text_CanSeeMirageIslandToday:
+PacifidlogTown_House5_Text_CanSeeMirageIslandToday: @ 8204161
 	.string "Oh! Oh my!\n"
-	.string "I can see MIRAGE ISLAND today!$"
+	.string "I can see Mirage Island today!$"
 
-PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather:
-	.string "MIRAGE ISLAND…\p"
+PacifidlogTown_House5_Text_MirageIslandAppearDependingOnWeather: @ 820418B
+	.string "Mirage Island…\p"
 	.string "It must become visible and invisible\n"
 	.string "depending on the weather conditions\l"
 	.string "that make mirages appear.\p"

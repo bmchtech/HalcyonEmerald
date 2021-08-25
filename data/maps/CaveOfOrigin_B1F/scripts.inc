@@ -1,9 +1,9 @@
 .set LOCALID_WALLACE, 1
 
-CaveOfOrigin_B1F_MapScripts::
+CaveOfOrigin_B1F_MapScripts:: @ 82357A8
 	.byte 0
 
-CaveOfOrigin_B1F_EventScript_Wallace::
+CaveOfOrigin_B1F_EventScript_Wallace:: @ 82357A9
 	lock
 	faceplayer
 	msgbox CaveOfOrigin_B1F_Text_WallaceStory, MSGBOX_DEFAULT
@@ -23,7 +23,7 @@ CaveOfOrigin_B1F_EventScript_Wallace::
 	waitmessage
 	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
 
-CaveOfOrigin_B1F_EventScript_WheresRayquaza::
+CaveOfOrigin_B1F_EventScript_WheresRayquaza:: @ 82357F0
 	multichoice 0, 0, MULTI_WHERES_RAYQUAZA, FALSE
 	switch VAR_RESULT
 	case 0, CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin
@@ -33,22 +33,22 @@ CaveOfOrigin_B1F_EventScript_WheresRayquaza::
 	goto CaveOfOrigin_B1F_EventScript_DontRemember
 	end
 
-CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin::
+CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin:: @ 823582C
 	message CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin
 	waitmessage
 	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
 
-CaveOfOrigin_B1F_EventScript_AtMtPyre::
+CaveOfOrigin_B1F_EventScript_AtMtPyre:: @ 8235837
 	message CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat
 	waitmessage
 	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
 
-CaveOfOrigin_B1F_EventScript_DontRemember::
+CaveOfOrigin_B1F_EventScript_DontRemember:: @ 8235842
 	message CaveOfOrigin_B1F_Text_CantYouRememberSomehow
 	waitmessage
 	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
 
-CaveOfOrigin_B1F_EventScript_AtSkyPillar::
+CaveOfOrigin_B1F_EventScript_AtSkyPillar:: @ 823584D
 	msgbox CaveOfOrigin_B1F_Text_WellHeadToSkyPillar, MSGBOX_DEFAULT
 	closemessage
 	playse SE_EXIT
@@ -61,44 +61,44 @@ CaveOfOrigin_B1F_EventScript_AtSkyPillar::
 	release
 	end
 
-CaveOfOrigin_B1F_Text_WallaceStory:
+CaveOfOrigin_B1F_Text_WallaceStory: @ 823586E
 	.string "Ah, so you are {PLAYER}{KUN}?\n"
 	.string "I've heard tales of your exploits.\p"
-	.string "My name is WALLACE.\p"
-	.string "I was once the GYM LEADER of\n"
-	.string "SOOTOPOLIS, but something came up.\p"
-	.string "So now, I've entrusted my mentor JUAN\n"
-	.string "with the GYM's operation.\p"
+	.string "My name is Wallace.\p"
+	.string "I was once the Gym Leader of\n"
+	.string "Sootopolis, but something came up.\p"
+	.string "So now, I've entrusted my mentor Juan\n"
+	.string "with the Gym's operation.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "GROUDON and KYOGRE, the two POKéMON\n"
+	.string "Groudon and Kyogre, the two Pokémon\n"
 	.string "wreaking havoc here, are considered\l"
-	.string "to be super-ancient POKéMON.\p"
+	.string "to be super-ancient Pokémon.\p"
 	.string "But there aren't just two super-\n"
-	.string "ancient POKéMON.\p"
+	.string "ancient Pokémon.\p"
 	.string "There is one more somewhere.\p"
 	.string "Somewhere, there is a super-\n"
-	.string "ancient POKéMON named RAYQUAZA.\p"
-	.string "It's said that it was RAYQUAZA that\n"
+	.string "ancient Pokémon named Rayquaza.\p"
+	.string "It's said that it was Rayquaza that\n"
 	.string "becalmed the two combatants in\l"
 	.string "the distant past.\p"
 	.string "But even I have no clue as to\n"
-	.string "RAYQUAZA's whereabouts…$"
+	.string "Rayquaza's whereabouts…$"
 
-CaveOfOrigin_B1F_Text_WhereIsRayquaza:
-	.string "WALLACE: {PLAYER}{KUN}, do you perhaps\n"
-	.string "know where RAYQUAZA is now?\p"
+CaveOfOrigin_B1F_Text_WhereIsRayquaza: @ 8235ACE
+	.string "Wallace: {PLAYER}{KUN}, do you perhaps\n"
+	.string "know where Rayquaza is now?\p"
 	.string "If you do, please tell me.$"
 
-CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin:
-	.string "WALLACE: The CAVE OF ORIGIN?\p"
+CaveOfOrigin_B1F_Text_ButWereInCaveOfOrigin: @ 8235B23
+	.string "Wallace: The Cave of Origin?\p"
 	.string "But that's right here!\n"
 	.string "I need you to do better than that!\p"
 	.string "Please, I need you to think about\n"
-	.string "where RAYQUAZA might be right now.$"
+	.string "where Rayquaza might be right now.$"
 
-CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat:
-	.string "WALLACE: MT. PYRE?\p"
+CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat: @ 8235BBF
+	.string "Wallace: Mt. Pyre?\p"
 	.string "But when I met the old lady there\n"
 	.string "earlier, she made no mention of it.\p"
 	.string "I very much doubt that the old lady\n"
@@ -106,15 +106,15 @@ CaveOfOrigin_B1F_Text_OldLadyDidntMentionThat:
 	.string "{PLAYER}{KUN}, could you think about this\n"
 	.string "more carefully for me?$"
 
-CaveOfOrigin_B1F_Text_CantYouRememberSomehow:
-	.string "WALLACE: Huh? You don't remember?\n"
+CaveOfOrigin_B1F_Text_CantYouRememberSomehow: @ 8235C99
+	.string "Wallace: Huh? You don't remember?\n"
 	.string "Hmm… That's a problem…\p"
 	.string "Can't you remember somehow?$"
 
-CaveOfOrigin_B1F_Text_WellHeadToSkyPillar:
-	.string "WALLACE: The SKY PILLAR?\p"
+CaveOfOrigin_B1F_Text_WellHeadToSkyPillar: @ 8235CEE
+	.string "Wallace: The Sky Pillar?\p"
 	.string "That's it!\n"
-	.string "It must be the SKY PILLAR!\p"
+	.string "It must be the Sky Pillar!\p"
 	.string "{PLAYER}{KUN}, there's not a moment to lose!\n"
-	.string "We'll head to the SKY PILLAR right away!$"
+	.string "We'll head to the Sky Pillar right away!$"
 

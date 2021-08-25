@@ -1,15 +1,15 @@
-SootopolisCity_House4_MapScripts::
+SootopolisCity_House4_MapScripts:: @ 8226D15
 	.byte 0
 
-SootopolisCity_House4_EventScript_Man::
+SootopolisCity_House4_EventScript_Man:: @ 8226D16
 	msgbox SootopolisCity_House4_Text_AncientTreasuresWaitingInSea, MSGBOX_NPC
 	end
 
-SootopolisCity_House4_EventScript_Woman::
+SootopolisCity_House4_EventScript_Woman:: @ 8226D1F
 	msgbox SootopolisCity_House4_Text_StrollUnderwaterWithPokemon, MSGBOX_NPC
 	end
 
-SootopolisCity_House4_EventScript_Azumarill::
+SootopolisCity_House4_EventScript_Azumarill:: @ 8226D28
 	lock
 	faceplayer
 	waitse
@@ -19,7 +19,7 @@ SootopolisCity_House4_EventScript_Azumarill::
 	release
 	end
 
-SootopolisCity_House4_Text_AncientTreasuresWaitingInSea:
+SootopolisCity_House4_Text_AncientTreasuresWaitingInSea: @ 8226D3B
 	.string "Listen up, and I'll tell you something\n"
 	.string "good.\p"
 	.string "There's supposed to be an ancient\n"
@@ -27,13 +27,13 @@ SootopolisCity_House4_Text_AncientTreasuresWaitingInSea:
 	.string "There could be treasures just waiting\n"
 	.string "to be discovered down there.$"
 
-SootopolisCity_House4_Text_StrollUnderwaterWithPokemon:
+SootopolisCity_House4_Text_StrollUnderwaterWithPokemon: @ 8226DEA
 	.string "Ancient treasures…\p"
 	.string "It would be nice if they existed, but\n"
 	.string "even if they didn't, it would be so\l"
 	.string "beautiful to take an underwater\l"
-	.string "stroll with my POKéMON.$"
+	.string "stroll with my Pokémon.$"
 
-SootopolisCity_House4_Text_Azumarill:
-	.string "AZUMARILL: Marurii.$"
+SootopolisCity_House4_Text_Azumarill: @ 8226E7F
+	.string "Azumarill: Marurii.$"
 

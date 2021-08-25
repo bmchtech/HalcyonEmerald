@@ -1,11 +1,11 @@
 .set LOCALID_RIVAL, 1
 
-LittlerootTown_MaysHouse_2F_MapScripts::
+LittlerootTown_MaysHouse_2F_MapScripts:: @ 81F9296
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_MaysHouse_2F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_MaysHouse_2F_OnWarp
 	.byte 0
 
-LittlerootTown_MaysHouse_2F_OnTransition:
+LittlerootTown_MaysHouse_2F_OnTransition: @ 81F92A1
 	compare VAR_LITTLEROOT_RIVAL_STATE, 2
 	call_if_lt LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay
 	compare VAR_LITTLEROOT_RIVAL_STATE, 3
@@ -16,13 +16,13 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	setvar VAR_SECRET_BASE_INITIALIZED, 0
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
+LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos:: @ 81F92CD
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
 	compare VAR_BIRCH_LAB_STATE, 2
 	goto_if_ge LittlerootTown_MaysHouse_2F_EventScript_Ret
 	goto LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
 
-LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos::
+LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos:: @ 81F92E6
 	checkplayergender
 	compare VAR_RESULT, FEMALE
 	goto_if_eq LittlerootTown_MaysHouse_2F_EventScript_Ret
@@ -32,30 +32,30 @@ LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos::
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_Ret::
+LittlerootTown_MaysHouse_2F_EventScript_Ret:: @ 81F9309
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay::
+LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay:: @ 81F930A
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay::
+LittlerootTown_MaysHouse_2F_EventScript_SetReadyToMeetMay:: @ 81F9317
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
 	return
 
-LittlerootTown_MaysHouse_2F_OnWarp:
+LittlerootTown_MaysHouse_2F_OnWarp: @ 81F931D
 	map_script_2 VAR_SECRET_BASE_INITIALIZED, 0, LittlerootTown_MaysHouse_2F_EventScript_CheckInitDecor
 	.2byte 0
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckInitDecor::
+LittlerootTown_MaysHouse_2F_EventScript_CheckInitDecor:: @ 81F9327
 	checkplayergender
 	compare VAR_RESULT, FEMALE
 	goto_if_eq SecretBase_EventScript_InitDecorations
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_RivalsPokeBall::
+LittlerootTown_MaysHouse_2F_EventScript_RivalsPokeBall:: @ 81F9334
 	lockall
 	compare VAR_LITTLEROOT_RIVAL_STATE, 2
 	goto_if_eq LittlerootTown_MaysHouse_2F_EventScript_MeetMay
@@ -63,7 +63,7 @@ LittlerootTown_MaysHouse_2F_EventScript_RivalsPokeBall::
 	releaseall
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_MeetMay::
+LittlerootTown_MaysHouse_2F_EventScript_MeetMay:: @ 81F934A
 	delay 10
 	addobject LOCALID_RIVAL
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayEnters
@@ -92,60 +92,118 @@ LittlerootTown_MaysHouse_2F_EventScript_MeetMay::
 	releaseall
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_MeetMayNorth::
+LittlerootTown_MaysHouse_2F_EventScript_MeetMayNorth:: @ 81F93BA
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerNorth
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_MayWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_MaysHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_MayCatchYouLater, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayNorth
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCNorth
 	waitmovement 0
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_MeetMaySouth::
+LittlerootTown_MaysHouse_2F_EventScript_MeetMaySouth:: @ 81F93E9
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerSouth
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_MayWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_MaysHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_MayCatchYouLater, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMaySouth
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCSouth
 	waitmovement 0
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_MeetMayWest::
+LittlerootTown_MaysHouse_2F_EventScript_MeetMayWest:: @ 81F9418
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerWest
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_MayWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_MaysHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_MayCatchYouLater, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCWest
 	waitmovement 0
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_MeetMayEast::
+LittlerootTown_MaysHouse_2F_EventScript_MeetMayEast:: @ 81F9440
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerEast
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox RivalsHouse_2F_Text_MayWhoAreYou, MSGBOX_DEFAULT
+	call LittlerootTown_MaysHouse_2F_EventScript_ChooseStarterSet
+	msgbox RivalsHouse_1F_Text_MayCatchYouLater, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast
 	applymovement LOCALID_RIVAL, LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCEast
 	waitmovement 0
 	return
 
-LittlerootTown_MaysHouse_2F_Movement_MayEnters:
+LittlerootTown_MaysHouse_2F_EventScript_ChooseStarterSet::
+	setvar VAR_0x8004, SCROLL_MULTI_REGION_NAMES
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, LittlerootTown_MaysHouse_2F_EventScript_Kanto
+	case 1, LittlerootTown_MaysHouse_2F_EventScript_Johto
+	case 2, LittlerootTown_MaysHouse_2F_EventScript_Hoenn
+	case 3, LittlerootTown_MaysHouse_2F_EventScript_Sinnoh
+	case 4, LittlerootTown_MaysHouse_2F_EventScript_Unova
+	case 5, LittlerootTown_MaysHouse_2F_EventScript_Kalos
+	case 6, LittlerootTown_MaysHouse_2F_EventScript_Alola
+	goto LittlerootTown_MaysHouse_2F_EventScript_Hoenn
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_Kanto::
+	setvar VAR_STARTER_GEN, 1
+	bufferstring 1, StarterRegionStringKanto
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Johto::
+	setvar VAR_STARTER_GEN, 2
+	bufferstring 1, StarterRegionStringJohto
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Hoenn::
+	setvar VAR_STARTER_GEN, 3
+	bufferstring 1, StarterRegionStringHoenn
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Sinnoh::
+	setvar VAR_STARTER_GEN, 4
+	bufferstring 1, StarterRegionStringSinnoh
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Unova::
+	setvar VAR_STARTER_GEN, 5
+	bufferstring 1, StarterRegionStringUnova
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Kalos::
+	setvar VAR_STARTER_GEN, 6
+	bufferstring 1, StarterRegionStringKalos
+	return
+
+LittlerootTown_MaysHouse_2F_EventScript_Alola::
+	setvar VAR_STARTER_GEN, 7
+	bufferstring 1, StarterRegionStringAlola
+	return
+
+LittlerootTown_MaysHouse_2F_Movement_MayEnters: @ 81F946F
 	walk_down
 	walk_down
 	walk_in_place_fastest_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerNorth:
+LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerNorth: @ 81F9473
 	walk_right
 	walk_right
 	walk_down
@@ -153,7 +211,7 @@ LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerNorth:
 	walk_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCNorth:
+LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCNorth: @ 81F9479
 	walk_up
 	walk_up
 	walk_up
@@ -165,7 +223,7 @@ LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCNorth:
 	walk_in_place_fastest_up
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayNorth:
+LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayNorth: @ 81F9483
 	delay_16
 	walk_in_place_fastest_up
 	delay_16
@@ -175,13 +233,13 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayNorth:
 	walk_in_place_fastest_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerSouth:
+LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerSouth: @ 81F948B
 	walk_right
 	walk_right
 	walk_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCSouth:
+LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCSouth: @ 81F948F
 	walk_up
 	walk_in_place_fastest_right
 	walk_right
@@ -191,7 +249,7 @@ LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCSouth:
 	walk_in_place_fastest_up
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMaySouth:
+LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMaySouth: @ 81F9497
 	delay_16
 	walk_in_place_fastest_up
 	delay_16
@@ -199,7 +257,7 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMaySouth:
 	walk_in_place_fastest_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerWest:
+LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerWest: @ 81F949D
 	walk_right
 	walk_right
 	walk_right
@@ -208,7 +266,7 @@ LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerWest:
 	walk_in_place_fastest_down
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCWest:
+LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCWest: @ 81F94A4
 	walk_up
 	walk_right
 	walk_right
@@ -216,20 +274,20 @@ LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCWest:
 	step_end
 
 @ Unused, the player is already facing this direction so its unneeded
-LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayWest:
+LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayWest: @ 81F94A9
 	delay_16
 	delay_16
 	walk_in_place_fastest_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerEast:
+LittlerootTown_MaysHouse_2F_Movement_MayApproachPlayerEast: @ 81F94AD
 	walk_right
 	walk_right
 	walk_down
 	walk_in_place_fastest_right
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCEast:
+LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCEast: @ 81F94B2
 	walk_up
 	walk_up
 	walk_right
@@ -240,7 +298,7 @@ LittlerootTown_MaysHouse_2F_Movement_MayWalkToPCEast:
 	walk_in_place_fastest_up
 	step_end
 
-LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast:
+LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast: @ 81F94BB
 	delay_16
 	walk_in_place_fastest_up
 	delay_16
@@ -248,7 +306,7 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast:
 	walk_in_place_fastest_right
 	step_end
 
-RivalsHouse_2F_EventScript_Rival::
+RivalsHouse_2F_EventScript_Rival:: @ 81F94C1
 	lockall
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
 	checkplayergender
@@ -258,17 +316,17 @@ RivalsHouse_2F_EventScript_Rival::
 	goto_if_eq RivalsHouse_2F_EventScript_Brendan
 	end
 
-RivalsHouse_2F_EventScript_May::
+RivalsHouse_2F_EventScript_May:: @ 81F94E3
 	msgbox RivalsHouse_2F_Text_MayGettingReady, MSGBOX_DEFAULT
 	releaseall
 	end
 
-RivalsHouse_2F_EventScript_Brendan::
+RivalsHouse_2F_EventScript_Brendan:: @ 81F94ED
 	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
 	releaseall
 	end
 
-RivalsHouse_2F_EventScript_RivalPostLilycove::
+RivalsHouse_2F_EventScript_RivalPostLilycove:: @ 81F94F7
 	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
 	checkplayergender
@@ -280,25 +338,25 @@ RivalsHouse_2F_EventScript_RivalPostLilycove::
 	releaseall
 	end
 
-RivalsHouse_2F_EventScript_MayPostLilycove::
+RivalsHouse_2F_EventScript_MayPostLilycove:: @ 81F951D
 	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_MayWhereShouldIGoNext
 	msgbox RivalsHouse_2F_Text_MayJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 
-RivalsHouse_2F_EventScript_BrendanPostLilycove::
+RivalsHouse_2F_EventScript_BrendanPostLilycove:: @ 81F952F
 	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext
 	msgbox RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 
-RivalsHouse_2F_EventScript_MayWhereShouldIGoNext::
+RivalsHouse_2F_EventScript_MayWhereShouldIGoNext:: @ 81F9541
 	msgbox RivalsHouse_2F_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
-RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext::
+RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext:: @ 81F954A
 	msgbox RivalsHouse_2F_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
-LittlerootTown_MaysHouse_2F_EventScript_PC::
+LittlerootTown_MaysHouse_2F_EventScript_PC:: @ 81F9553
 	lockall
 	checkplayergender
 	compare VAR_RESULT, MALE
@@ -307,12 +365,12 @@ LittlerootTown_MaysHouse_2F_EventScript_PC::
 	goto_if_eq LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckRivalsPC::
+LittlerootTown_MaysHouse_2F_EventScript_CheckRivalsPC:: @ 81F956C
 	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
 	releaseall
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC::
+LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC:: @ 81F9576
 	setvar VAR_0x8004, 2
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
@@ -322,27 +380,27 @@ LittlerootTown_MaysHouse_2F_EventScript_CheckPlayersPC::
 	releaseall
 	end
 
-LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
+LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC:: @ 81F958F
 	setvar VAR_0x8004, 2
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
 	releaseall
 	end
 
-RivalsHouse_2F_Text_MayWhoAreYou:
+RivalsHouse_2F_Text_MayWhoAreYou: @ 81F959C
 	.string "Huh?\n"
 	.string "Who… Who are you?\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "Oh, you're {PLAYER}{KUN}.\n"
 	.string "So your move was today.\p"
-	.string "Um… I'm MAY.\n"
+	.string "Um… I'm May.\n"
 	.string "Glad to meet you!\p"
 	.string "I…\n"
 	.string "I have this dream of becoming friends\l"
-	.string "with POKéMON all over the world.\p"
+	.string "with Pokémon all over the world.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
-	.string "my dad, PROF. BIRCH.\p"
+	.string "my dad, Prof. Birch.\p"
 	.string "I was hoping that you would be nice,\n"
 	.string "{PLAYER}{KUN}, and that we could be friends.\p"
 	.string "Oh, this is silly, isn't it?\n"
@@ -350,69 +408,87 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "Eheheh…\p"
 	.string "Oh, no! I forgot!\p"
 	.string "I was supposed to go help Dad catch\n"
-	.string "some wild POKéMON!\p"
+	.string "some wild Pokémon!\p"
+	.string "Oh, hey, that reminds me!\n"
+	.string "You should go see Dad's newest Pokémon!\p"
+	.string "He just got three really rare ones\n"
+	.string "from the, um…\p"
+	.string "Oh, darn. Which region was it again?$"
+
+RivalsHouse_2F_Text_MayCatchYouLater:
+	.string "Huh? The {STR_VAR_2} region?\n"
+	.string "Wow, I think that was it!\p"
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
-RivalsHouse_2F_Text_MayGettingReady:
-	.string "POKéMON fully restored!\n"
+RivalsHouse_2F_Text_MayGettingReady: @ 81F978A
+	.string "Pokémon fully restored!\n"
 	.string "Items ready, and…$"
 
-RivalsHouse_2F_Text_BrendanWhoAreYou:
+RivalsHouse_2F_Text_BrendanWhoAreYou: @ 81F97B4
 	.string "Hey!\n"
 	.string "You…\p"
 	.string "Who are you?\p"
 	.string "Oh, you're {PLAYER}, aren't you?\n"
 	.string "Moved in next door, right?\p"
 	.string "I didn't know that you're a girl.\p"
-	.string "Dad, PROF. BIRCH, said that our new\n"
-	.string "next-door neighbor is a GYM LEADER's\l"
+	.string "Dad, Prof. Birch, said that our new\n"
+	.string "next-door neighbor is a Gym Leader's\l"
 	.string "kid, so I assumed you'd be a guy.\p"
-	.string "My name's BRENDAN.\n"
+	.string "My name's Brendan.\n"
 	.string "So, hi, neighbor!\p"
 	.string "Huh? Hey, {PLAYER}, don't you have\n"
-	.string "a POKéMON?\p"
+	.string "a Pokémon?\p"
 	.string "Do you want me to go catch you one?\p"
 	.string "Aw, darn, I forgot…\p"
 	.string "I'm supposed to go help my dad catch\n"
-	.string "some wild POKéMON.\p"
+	.string "some wild Pokémon.\p"
+	.string "Oh, you should go check out the three\n"
+	.string "new Pokémon my dad just got.\p"
+	.string "They're very rare, and they're all\n"
+	.string "from the, uh…\p"
+	.string "Hmm. Which region was it again?$"
+
+RivalsHouse_2F_Text_BrendanSomeOtherTime:
+	.string "The {STR_VAR_2} region?\n"
+	.string "Huh, I think that was it, actually.\p"
 	.string "Some other time, okay?$"
 
-RivalsHouse_2F_Text_BrendanGettingReady:
-	.string "POKéMON fully restored…\n"
+RivalsHouse_2F_Text_BrendanGettingReady: @ 81F9962
+	.string "Pokémon fully restored…\n"
 	.string "Items all packed, and…$"
 
-RivalsHouse_2F_Text_ItsRivalsPokeBall:
-	.string "It's {RIVAL}'s POKé BALL!\p"
+RivalsHouse_2F_Text_ItsRivalsPokeBall: @ 81F9991
+	.string "It's {RIVAL}'s Poké Ball!\p"
 	.string "Better leave it right where it is.$"
 
-RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
-	.string "MAY: {PLAYER}{KUN}!\p"
-	.string "I was just checking my POKéDEX.\p"
-	.string "There's still a lot of POKéMON that\n"
+RivalsHouse_2F_Text_MayJustCheckingMyPokedex: @ 81F99C9
+	.string "May: {PLAYER}{KUN}!\p"
+	.string "I was just checking my Pokédex.\p"
+	.string "There's still a lot of Pokémon that\n"
 	.string "I've seen but haven't caught.\p"
 	.string "And there are many others that\n"
 	.string "I think will evolve.\p"
 	.string "I wonder where I should go catch\n"
-	.string "some POKéMON next?$"
+	.string "some Pokémon next?$"
 
-RivalsHouse_2F_Text_MayWhereShouldIGoNext:
-	.string "MAY: I wonder where I should go catch\n"
-	.string "some POKéMON next?\p"
+RivalsHouse_2F_Text_MayWhereShouldIGoNext: @ 81F9A9E
+	.string "May: I wonder where I should go catch\n"
+	.string "some Pokémon next?\p"
 	.string "Wouldn't it be funny if we ran into each\n"
 	.string "other, {PLAYER}{KUN}?$"
 
-RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
-	.string "BRENDAN: Hey, it's {PLAYER}.\p"
-	.string "I was just checking out my POKéDEX.\p"
-	.string "There are still many POKéMON that\n"
+RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex: @ 81F9B0D
+	.string "Brendan: Hey, it's {PLAYER}.\p"
+	.string "I was just checking out my Pokédex.\p"
+	.string "There are still many Pokémon that\n"
 	.string "I need to catch, I know, but this\l"
 	.string "is looking pretty good.\p"
-	.string "Checking this POKéDEX out gives me\n"
+	.string "Checking this Pokédex out gives me\n"
 	.string "the urge to hit the road again.$"
 
-RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: I'm having a hard time deciding\n"
-	.string "where I should catch POKéMON next.\p"
+RivalsHouse_2F_Text_BrendanWhereShouldIGoNext: @ 81F9BE7
+	.string "Brendan: I'm having a hard time deciding\n"
+	.string "where I should catch Pokémon next.\p"
 	.string "Hey, {PLAYER}, if I see you while I'm out\n"
-	.string "catching POKéMON, I can pitch you a\l"
+	.string "catching Pokémon, I can pitch you a\l"
 	.string "battle if you'd like.$"

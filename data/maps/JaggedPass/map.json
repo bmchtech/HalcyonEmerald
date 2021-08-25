@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 23,
       "y": 24,
       "elevation": 3,
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JaggedPass_EventScript_ItemBurnHeal",
-      "flag": "FLAG_ITEM_JAGGED_PASS_BURN_HEAL"
+      "script": "JaggedPass_EventScript_ItemTM69RockPolish",
+      "flag": "FLAG_ITEM_JAGGED_PASS_TM69_ROCK_POLISH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -104,6 +104,19 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Julio",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
+      "x": 12,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JaggedPass_EventScript_Chansey",
+      "flag": "FLAG_HIDE_JAGGED_PASS_CHANSEY"
     }
   ],
   "warp_events": [
@@ -140,6 +153,13 @@
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_MAGMA_HIDEOUT_1F",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 7,
+      "y": 28,
+      "elevation": 3,
+      "dest_map": "MAP_EMBER_PATH",
       "dest_warp_id": 0
     }
   ],
@@ -236,11 +256,11 @@
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 29,
+      "x": 22,
+      "y": 32,
       "elevation": 3,
-      "item": "ITEM_GREAT_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL"
+      "item": "ITEM_LEVEL_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_LEVEL_BALL"
     }
   ]
 }

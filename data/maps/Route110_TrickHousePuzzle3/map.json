@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route110_TrickHousePuzzle3_EventScript_ItemWoodMail",
-      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL"
+      "script": "Route110_TrickHousePuzzle3_EventScript_ItemExpertBelt",
+      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_EXPERT_BELT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -76,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route110_TrickHousePuzzle3_EventScript_ItemShadowMail",
-      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL"
+      "script": "Route110_TrickHousePuzzle3_EventScript_ItemBigNugget",
+      "flag": "FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_BIG_NUGGET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",

@@ -165,8 +165,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route134_EventScript_ItemStarPiece",
-      "flag": "FLAG_ITEM_ROUTE_134_STAR_PIECE"
+      "script": "Route134_EventScript_ItemCometShard",
+      "flag": "FLAG_ITEM_ROUTE_134_COMET_SHARD"
     }
   ],
   "warp_events": [],

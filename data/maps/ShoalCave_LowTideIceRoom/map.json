@@ -12,10 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_GOLD_ITEM_BALL",
       "x": 12,
       "y": 8,
       "elevation": 3,
@@ -39,6 +39,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce",
       "flag": "FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "x": 2,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ShoalCave_LowTideIceRoom_EventScript_ItemGlalitite",
+      "flag": "FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_GLALITITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARTICUNO",
+      "x": 8,
+      "y": 8,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ShoalCave_LowTideIceRoom_EventScript_Articuno",
+      "flag": "FLAG_DEFEATED_ARTICUNO"
     }
   ],
   "warp_events": [
@@ -50,6 +76,10 @@
       "dest_warp_id": 3
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }
