@@ -17,7 +17,8 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags:: @ 82717C1
 	setflag FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS
 	clearflag FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION
 	setflag FLAG_HIDE_LILYCOVE_CITY_RIVAL
-	clearflag FLAG_HIDE_MOSSDEEP_CYNTHIA
+	compare VAR_CYNTHIA_STATE, 0
+	call_if_eq EverGrandeCity_HallOfFame_EventScript_ReadyCynthiaEvent
 	special UpdateTrainerFanClubGameClear
 	call_if_unset FLAG_RECEIVED_SS_TICKET, EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent
 	call_if_unset FLAG_RECEIVED_MELTAN, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
@@ -33,6 +34,11 @@ EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries:: @ 8271829
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_DEFEATED_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ReadyCynthiaEvent::
+	clearflag FLAG_HIDE_MOSSDEEP_CYNTHIA
+	setvar VAR_CYNTHIA_STATE, 1
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady:: @ 8271839
