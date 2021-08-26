@@ -135,6 +135,7 @@ LavaridgeTown_PokemonCenter_1F_EventScript_LucyRefuse::
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_VeryWell, MSGBOX_AUTOCLOSE	
 	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyGoWait
 	waitmovement 0
+	clearflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	release
 	end
 
