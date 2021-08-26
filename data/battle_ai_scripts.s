@@ -103,7 +103,7 @@ CheckIfSapSipperCancelsGrass:
 CheckIfWonderGuardCancelsMove: @ 82DBFE4
 	if_type_effectiveness AI_EFFECTIVENESS_x2, AI_CheckBadMove_CheckEffect
 	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_CheckBadMove_CheckEffect
-	goto Score_Minus10
+	goto Score_Minus30
 
 CheckIfLevitateCancelsGroundMove: @ 82DBFEF
 	get_curr_move_type
