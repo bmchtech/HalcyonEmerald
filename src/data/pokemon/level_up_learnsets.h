@@ -4035,6 +4035,7 @@ static const struct LevelUpMove sWooperLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(32, MOVE_AMNESIA),
 	LEVEL_UP_MOVE(36, MOVE_TOXIC),
 	LEVEL_UP_MOVE(40, MOVE_MUDDY_WATER),
+    LEVEL_UP_END
 };
 
 static const struct LevelUpMove sQuagsireLevelUpLearnset[] = {
