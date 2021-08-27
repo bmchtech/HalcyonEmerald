@@ -10003,9 +10003,11 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 97,
         .baseSpDefense = 65,
         #ifdef REBALANCED_VERSION
-            .baseSpAttack  = 40,
-        #else
             .baseSpAttack  = 95,
+            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SOUL_HEART, ABILITY_HYDRATION},
+        #else
+            .baseSpAttack  = 40,
+            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_HYDRATION},
         #endif
         .type1 = TYPE_WATER,
         .type2 = TYPE_WATER,
@@ -10020,11 +10022,6 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_WATER_2,
         .eggGroup2 = EGG_GROUP_WATER_2,
-        #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SOUL_HEART, ABILITY_HYDRATION},
-        #else
-            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_HYDRATION},
-        #endif
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
