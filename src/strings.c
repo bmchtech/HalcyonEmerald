@@ -1848,11 +1848,11 @@ const u8 gText_Berries[] = _("Berries");
 
 // New Strings
 // Nature changer
-const u8 gText_FlavourRed[] = _("Red");
-const u8 gText_FlavourYellow[] = _("Yellow");
-const u8 gText_FlavourPink[] = _("Pink");
-const u8 gText_FlavourBlue[] = _("Blue");
-const u8 gText_FlavourGreen[] = _("Green");
+const u8 gText_FlavourRed[] = _("Red:{CLEAR_TO 0x32}Attack");
+const u8 gText_FlavourYellow[] = _("Yellow:{CLEAR_TO 0x32}Defense");
+const u8 gText_FlavourPink[] = _("Pink:{CLEAR_TO 0x32}Speed");
+const u8 gText_FlavourBlue[] = _("Blue:{CLEAR_TO 0x32}Sp. Atk");
+const u8 gText_FlavourGreen[] = _("Green:{CLEAR_TO 0x32}Sp. Def");
 
 // EV/IV changers
 const u8 gText_View[] = _("View");
