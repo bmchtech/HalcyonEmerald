@@ -518,14 +518,8 @@ Route119_Text_MayPresentForYou: @ 81F4AF3
 	.string "worry about! Keep it up!\p"
 	.string "And, here! I have a present for you.$"
 
-Route119_Text_MayExplainFly: @ 81F4B56
-	.string "May: Use Fly, and your Pokémon will\n"
-	.string "instantly carry you to any town you've\l"
-	.string "already visited.\p"
-	.string "But, to use Fly, you have to get\n"
-	.string "the Gym Badge from Fortree City.\l"
-	.string "That's important, so don't forget.\p"
-	.string "You should Fly home and visit\n"
+Route119_Text_MayExplainFly:
+	.string "May: You should Fly home and visit\n"
 	.string "Littleroot for a change.\p"
 	.string "I bet your mom's worried about you,\n"
 	.string "{PLAYER}{KUN}.\p"
@@ -550,12 +544,7 @@ Route119_Text_BrendanIllGiveYouThis: @ 81F4D4B
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly: @ 81F4DB5
-	.string "Brendan: Use Fly, and your Pokémon\n"
-	.string "instantly carries you to any town\l"
-	.string "you've already visited.\p"
-	.string "But you need the Fortree Gym Badge \n"
-	.string "to do that.\p"
-	.string "Anyway, I have to move along.$"
+	.string "Brendan: Anyway, I have to move along.$"
 
 Route119_Text_ScottWayToGoBeSeeingYou: @ 81F4E60
 	.string "Scott: Hahahah!\n"

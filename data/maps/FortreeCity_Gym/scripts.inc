@@ -314,10 +314,6 @@ FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis: @ 8216F17
 	.string "With the Feather Badge, all Pokémon up\n"
 	.string "to LV 80, even those received through\l"
 	.string "trades, will obey your every command.\p"
-	.string "You will also be able to use\n"
-	.string "the HM move Fly outside of battle.\p"
-	.string "Much like Flash, you don't need to\n"
-	.string "teach a Pokémon Fly to use it.\p"
 	.string "And this…\n"
 	.string "This is a gift from me.$"
 
