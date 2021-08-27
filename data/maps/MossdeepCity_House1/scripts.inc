@@ -9,7 +9,7 @@ MossdeepCity_House1_MapScripts::
 	.byte 0
 
 MossdeepCity_House1_MapScripts_OnFrame:
-	map_script_2 VAR_CYNTHIA_STATE, 0, MossdeepCity_House1_EventScript_CynthiaBattle
+	map_script_2 VAR_CYNTHIA_STATE, 1, MossdeepCity_House1_EventScript_CynthiaBattle
 	.2byte 0
 
 MossdeepCity_House1_EventScript_CynthiaBattle::
@@ -38,8 +38,8 @@ MossdeepCity_House1_EventScript_CynthiaBattle::
 	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
 	setflag FLAG_RECEIVED_MYSTIC_TICKET
 	setflag FLAG_DAILY_REMATCH_CYNTHIA
-	setvar VAR_CYNTHIA_STATE, 1
-	release
+	setvar VAR_CYNTHIA_STATE, 2
+	releaseall
 	end
 
 MossdeepCity_House1_EventScript_CynthiaHeal::

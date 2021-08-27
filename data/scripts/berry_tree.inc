@@ -76,7 +76,10 @@ BerryTree_EventScript_CheckBerryStage2::
 	message BerryTree_Text_BerryEncounterStage2
 	waitmessage
 	waitbuttonpress
+	closemessage
 	special DoBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_End
 	waitstate
 	releaseall
 	end
@@ -97,7 +100,10 @@ BerryTree_EventScript_CheckBerryStage3:: @ 82743D1
 	message BerryTree_Text_BerryEncounterStage3
 	waitmessage
 	waitbuttonpress
+	closemessage
 	special DoBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_End
 	waitstate
 	releaseall
 	end
@@ -119,7 +125,10 @@ BerryTree_EventScript_CheckBerryStage4:: @ 82743E1
 	message BerryTree_Text_BerryEncounterStage4
 	waitmessage
 	waitbuttonpress
+	closemessage
 	special DoBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_End
 	waitstate
 	releaseall
 	end
@@ -132,8 +141,15 @@ BerryTreeBerriesEncounter::
 	message BerryTree_Text_BerryEncounterStage5
 	waitmessage
 	waitbuttonpress
+	closemessage
 	special DoBerryEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq BerryTree_EventScript_End
 	waitstate
+	releaseall
+	end
+
+BerryTree_EventScript_End::
 	releaseall
 	end
 

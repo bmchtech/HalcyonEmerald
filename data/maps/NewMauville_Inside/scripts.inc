@@ -367,7 +367,7 @@ NewMauville_Inside_EventScript_Zapdos::
 	waitmoncry
 	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
-	setwildbattle SPECIES_ZAPDOS, VAR_0x800A, ITEM_OCCA_BERRY
+	setwildbattle SPECIES_ZAPDOS, VAR_0x800A, ITEM_WACAN_BERRY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

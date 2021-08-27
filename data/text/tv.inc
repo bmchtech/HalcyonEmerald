@@ -2084,7 +2084,7 @@ gTVWhatsNo1InHoennTodayText08:: @ 0828858B
 TVSecretBaseSecrets_Text_Intro:: @ 08288608
 	.string "Secret Base SECRETS!\p"
 	.string "What do Trainers do in the secrecy\n"
-	.string "of Secret BaseS?\p"
+	.string "of Secret Bases?\p"
 	.string "Today, we investigate {STR_VAR_1}'s\n"
 	.string "Secret Base.\p"
 	.string "Oh? It looks like {STR_VAR_2} has come\n"

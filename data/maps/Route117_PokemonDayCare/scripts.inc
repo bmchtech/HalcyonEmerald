@@ -21,13 +21,21 @@ Route117_PokemonDayCare_EventScript_TryGiveEgg::
 	goto_if_eq Route117_PokemonDayCare_EventScript_NoRoomForEgg
 	msgbox Route117_PokemonDayCare_Text_ThankYou, MSGBOX_DEFAULT
 	setflag FLAG_DAILY_RECEIVED_DAYCARE_EGG
-	setflag FLAG_RECEIVED_TOGEPI_EGG
 	playfanfare MUS_OBTAIN_ITEM
 	message Route117_PokemonDayCare_Text_ReceivedTheEgg
+	goto_if_unset FLAG_RECEIVED_TOGEPI_EGG, Route117_PokemonDayCare_EventScript_TryGiveTogepiEgg
 	special SetSpeciesAndEggMove
 	waitfanfare
 	giveEgg VAR_0x8004
 	special SetGiftEggMove
+	release
+	end
+
+Route117_PokemonDayCare_EventScript_TryGiveTogepiEgg::
+	waitfanfare
+	giveEgg VAR_0x8004
+	special SetGiftEggMove
+	setflag FLAG_RECEIVED_TOGEPI_EGG
 	release
 	end
 

@@ -8108,9 +8108,13 @@ const struct BaseStats gBaseStats[] =
         #ifdef REBALANCED_VERSION
             .baseHP        = 70,
             .baseDefense   = 95,
+            .growthRate = GROWTH_MEDIUM_FAST,
+            .abilities = {ABILITY_HUGE_POWER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE},
         #else
             .baseHP        = 50,
             .baseDefense   = 85,
+            .growthRate = GROWTH_FAST,
+            .abilities = {ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE},
         #endif
         .type1 = TYPE_STEEL,
         .type2 = TYPE_FAIRY,
@@ -8122,14 +8126,8 @@ const struct BaseStats gBaseStats[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_HUGE_POWER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE},
-        #else
-            .abilities = {ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE},
-        #endif
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
@@ -10005,9 +10003,11 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 97,
         .baseSpDefense = 65,
         #ifdef REBALANCED_VERSION
-            .baseSpAttack  = 40,
-        #else
             .baseSpAttack  = 95,
+            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SOUL_HEART, ABILITY_HYDRATION},
+        #else
+            .baseSpAttack  = 40,
+            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_HYDRATION},
         #endif
         .type1 = TYPE_WATER,
         .type2 = TYPE_WATER,
@@ -10022,11 +10022,6 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_WATER_2,
         .eggGroup2 = EGG_GROUP_WATER_2,
-        #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SOUL_HEART, ABILITY_HYDRATION},
-        #else
-            .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM, ABILITY_HYDRATION},
-        #endif
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
@@ -10116,7 +10111,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 60,
         .type1 = TYPE_STEEL,
         .type2 = TYPE_PSYCHIC,
-        .catchRate = 3,
+        .catchRate = 45,
         .expYield = 60,
         .evYield_Defense   = 1,
         .item2 = ITEM_METAL_COAT,
@@ -10141,7 +10136,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 80,
         .type1 = TYPE_STEEL,
         .type2 = TYPE_PSYCHIC,
-        .catchRate = 3,
+        .catchRate = 45,
         .expYield = 147,
         .evYield_Defense   = 2,
         .item2 = ITEM_METAL_COAT,
@@ -10166,7 +10161,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 90,
         .type1 = TYPE_STEEL,
         .type2 = TYPE_PSYCHIC,
-        .catchRate = 3,
+        .catchRate = 45,
         .expYield = 270,
         .evYield_Defense   = 3,
         .item2 = ITEM_METAL_COAT,
@@ -24415,10 +24410,12 @@ const struct BaseStats gBaseStats[] =
             .baseHP        = 70,
             .baseDefense   = 130,
             .baseSpDefense = 100,
+            .growthRate = GROWTH_MEDIUM_FAST,
         #else
             .baseHP        = 50,
             .baseDefense   = 125,
             .baseSpDefense = 95,
+            .growthRate = GROWTH_FAST,
         #endif
         .type1 = TYPE_STEEL,
         .type2 = TYPE_FAIRY,
@@ -24429,7 +24426,6 @@ const struct BaseStats gBaseStats[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
-        .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FAIRY,
         .abilities = {ABILITY_HUGE_POWER, ABILITY_HUGE_POWER, ABILITY_HUGE_POWER},

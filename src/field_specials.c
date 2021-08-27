@@ -5569,8 +5569,6 @@ bool8 DoesRotomKnowSpecialMove (void)
 // gSpecialVar_0x8005: Move to give the egg
 void SetSpeciesAndEggMove (void)
 {
-    u8 numEggSpecies = 17;
-    u8 randSpecies, randEggMove;
     static const u16 eggMoves[][4] = {
         {SPECIES_BAGON, MOVE_DRAGON_DANCE, MOVE_DRAGON_RUSH, MOVE_THRASH},
         {SPECIES_SHUPPET, MOVE_GUNK_SHOT, MOVE_DESTINY_BOND, MOVE_PHANTOM_FORCE},
@@ -5590,6 +5588,8 @@ void SetSpeciesAndEggMove (void)
         {SPECIES_DRATINI, MOVE_EXTREME_SPEED, MOVE_EXTREME_SPEED, MOVE_EXTREME_SPEED},
         {SPECIES_FEEBAS, MOVE_HAZE, MOVE_HYPNOSIS, MOVE_MIRROR_COAT}
     };
+    u8 numEggSpecies = ARRAY_COUNT(eggMoves);
+    u8 randSpecies, randEggMove;
 
     randSpecies = Random() % numEggSpecies;
     randEggMove = (Random() % 3) + 1; // Random number between 1 and 3

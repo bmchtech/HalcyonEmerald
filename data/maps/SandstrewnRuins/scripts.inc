@@ -27,7 +27,7 @@ Sandstrewn_Ruins_EventScript_OddKeystone::
 	msgbox Sandstrewn_Ruins_Text_OddKeystone, MSGBOX_DEFAULT
 	waitmessage
 	waitfanfare
-	giveitem ITEM_ODD_KEYSTONE, 1
+	additem ITEM_ODD_KEYSTONE, 1
 	removeobject LOCALID_ODD_KEYSTONE
 	release
 	end
@@ -36,9 +36,9 @@ Sandstrewn_Ruins_Text_OddKeystone:
 	.string "{PLAYER} found one Odd Keystone!\p"
 	.string "There's a faint message scratched into\n"
 	.string "the back of it…\p"
-	.string "“Rou… 108\n"
-	.string "Bring Poké… … 108\l"
-	.string "Aband… …ip.\l"
-	.string "Storage … …sh can.”\p"
+	.string "“Rou… 108”\n"
+	.string "“Bring Poké… … 108”\l"
+	.string "“Aband… …ip.”\l"
+	.string "“Storage … …sh can.”\p"
 	.string "{PLAYER} put away the Odd Keystone\n"
 	.string "in the Key Items Pocket.$"

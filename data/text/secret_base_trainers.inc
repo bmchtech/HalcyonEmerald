@@ -171,7 +171,7 @@ SecretBase_Text_Trainer7PreChampion: @ 8275226
     .string "as much.$"
 
 SecretBase_Text_Trainer3Intro: @ 8275287
-    .string "Some people make their Secret BaseS in\n"
+    .string "Some people make their Secret Bases in\n"
     .string "hard-to-find places.\l"
     .string "Do they want to just lie low?\p"
     .string "But since you found me, how about we\n"
@@ -192,7 +192,7 @@ SecretBase_Text_Trainer3PostBattle: @ 8275374
     .string "I should go visit you there.$"
 
 SecretBase_Text_Trainer3PreChampion: @ 82753AB
-    .string "Some people make their Secret BaseS in\n"
+    .string "Some people make their Secret Bases in\n"
     .string "hard-to-find places.\l"
     .string "Do they want to just lie low?$"
 

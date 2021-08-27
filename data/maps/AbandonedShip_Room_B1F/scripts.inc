@@ -24,18 +24,19 @@ AbandonedShip_Room_B1F_EventScript_CheckOddKeystone::
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_End
 	closemessage
 	removeitem ITEM_ODD_KEYSTONE, 1
-	playmoncry SPECIES_SPIRITOMB, 2
-	delay 40
-	waitmoncry
 	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
 	setwildbattle SPECIES_SPIRITOMB, VAR_0x800A, ITEM_SMOKE_BALL
-	waitstate
+	waitse
+	playmoncry SPECIES_SPIRITOMB, 2
+	delay 40
+	waitmoncry
 	dowildbattle
 	release
 	end
 
 AbandonedShip_Room_B1F_EventScript_End::
+	closemessage
 	release
 	end
 

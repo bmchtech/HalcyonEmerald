@@ -348,7 +348,7 @@ SlateportCity_Harbor_EventScript_FerryFinished:: @ 820CD2E
 SlateportCity_Harbor_EventScript_AskToTradeScanner:: @ 820CD38
 	msgbox SlateportCity_Harbor_Text_WouldYouTradeScanner, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto SlateportCity_Harbor_EventScript_DeclineTrade
+	goto_if_eq SlateportCity_Harbor_EventScript_DeclineTrade
 	giveitem ITEM_BOTTLE_CAP, 12
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
