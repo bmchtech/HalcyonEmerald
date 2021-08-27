@@ -772,15 +772,6 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
-static const struct MenuAction MultichoiceList_PKMNCentreMovetutor[] =
-{
-    {gText_RememberAMove},
-    {gText_ForgetAMove},
-    {gText_LearnANewMove},
-    {gText_RateANickname},
-    {gText_Exit},
-};
-
 static const struct MenuAction MultichoiceList_GrassFireWater[] = 
 {
     {gText_GrassType},
@@ -1040,7 +1031,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_PKMN_CENTER_TUTOR_SETS]     = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_PKMN_CENTER_MOVE_TUTOR]     = MULTICHOICE(MultichoiceList_PKMNCentreMovetutor),
+    [MULTI_DEOXYS_FORMES]              = MULTICHOICE(MultichoiceList_DeoxysFormes),
     [MULTI_GRASS_FIRE_WATER]           = MULTICHOICE(MultichoiceList_GrassFireWater),
     [MULTI_FLAVORS]                    = MULTICHOICE(MultichoiceList_Flavors),
     [MULTI_SUPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_SuperTrainingMenu),
@@ -1053,7 +1044,6 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_ROTOM_APPLIANCES]           = MULTICHOICE(MultichoiceList_RotomAppliances),
     [MULTI_STARTER_MOVES]              = MULTICHOICE(MultichoiceList_StarterMoves),
     [MULTI_REMATCH_BATTLE_MODE]        = MULTICHOICE(MultichoiceList_RematchBattleMode),
-    [MULTI_DEOXYS_FORMES]              = MULTICHOICE(MultichoiceList_DeoxysFormes),
 };
 
 const u8 *const gStdStrings[] =

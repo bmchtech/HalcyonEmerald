@@ -123,7 +123,7 @@
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_PKMN_CENTER_TUTOR_SETS       114
-#define MULTI_PKMN_CENTER_MOVE_TUTOR       115 
+#define MULTI_DEOXYS_FORMES                115
 #define MULTI_GRASS_FIRE_WATER             116   
 #define MULTI_FLAVORS                      117
 #define MULTI_SUPER_TRAINING_MENU          118
@@ -136,7 +136,6 @@
 #define MULTI_ROTOM_APPLIANCES             125
 #define MULTI_STARTER_MOVES                126
 #define MULTI_REMATCH_BATTLE_MODE          127
-#define MULTI_DEOXYS_FORMES                128
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

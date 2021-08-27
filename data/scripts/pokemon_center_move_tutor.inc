@@ -2,13 +2,17 @@ PKMN_Center_Move_Tutor::
 	lockall
 	message PKMN_Center_Move_Tutor_Text_HowCanHelp
 	waitmessage
-	multichoice 0, 0, MULTI_PKMN_CENTER_MOVE_TUTOR, 0
+	setvar VAR_0x8004, SCROLL_MULTI_POKE_CENTER_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, PKMN_Center_MoveReminder_EventScript
 	case 1, PKMN_Center_MoveDeleter_EventScript
 	case 2, PKMN_Center_Move_Tutor_MoveTutorIntro
 	case 3, PKMN_Center_NameRater_EventScript
-	case 4, PKMN_Center_Move_Tutor_General_Exit
+	case 4, PKMN_Center_EventScript_Exp_Grind
+	case 5, PKMN_Center_EventScript_Event_Reset
+	case 6, PKMN_Center_Move_Tutor_General_Exit
 	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_General_Exit
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Move Reminder @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -324,7 +328,55 @@ PKMN_Center_Move_Tutor_General_Exit::
 	releaseall
 	end
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EXP Grinding @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+PKMN_Center_EventScript_Exp_Grind::
+	releaseall
+	end
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Event Reset @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+PKMN_Center_EventScript_Event_Reset::
+	compare VAR_EVENT_RESET_STATE, 1
+	goto_if_eq PKMN_Center_EventReset_EventScript_AlreadyReset
+	msgbox PKMN_Center_EventResetText_WhatsBrokenThisTime, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, PKMN_Center_Move_Tutor_General_Exit
+	case YES, PKMN_Center_EventReset_EventScript_ResetVarsFlags
+	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_General_Exit
+	releaseall
+	end
+
+PKMN_Center_EventReset_EventScript_AlreadyReset::
+	msgbox PKMN_Center_EventReset_Text_AlreadyReset, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PKMN_Center_EventReset_EventScript_ResetVarsFlags::
+	setvar VAR_LAVARIDGE_LUCY_STATE, 1
+	clearflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
+	clearflag FLAG_ITEM_MOSSDEEP_CITY_MILOTICITE
+	clearflag FLAG_RECEIVED_TOGEPI_EGG
+	setvar VAR_EVENT_RESET_STATE, 1
+	msgbox PKMN_Center_EventReset_Text_Reset, MSGBOX_DEFAULT
+	releaseall
+	end
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Strings @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+PKMN_Center_EventReset_Text_Reset:
+	.string "Events reset!$"
+
+PKMN_Center_EventReset_Text_AlreadyReset:
+	.string "You've already reset events.$"
+
+PKMN_Center_EventResetText_WhatsBrokenThisTime:
+	.string "If you've updated from an earlier\n"
+	.string "version of Inclement Emerald, you may\l"
+	.string "have encountered some buggy events.\p"
+	.string "If needed, I can reset these events\n"
+	.string "so they can be played again.\p"
+	.string "Would you like to reset these events?$"
+
+PKMN_Center_EventResetText_AlreadyReset:
 
 PKMN_Center_Move_Tutor_Text_HowCanHelp:
 	.string "How can I help you today?$"
