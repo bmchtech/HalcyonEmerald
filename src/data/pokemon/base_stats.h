@@ -19331,8 +19331,8 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 75,
         #ifdef REBALANCED_VERSION
             .baseSpeed     = 110,
-            .baseSpAttack  = 90,
-            .baseSpDefense = 70,
+            .baseSpAttack  = 70,
+            .baseSpDefense = 90,
             .abilities = {ABILITY_OVERGROW, ABILITY_LONG_REACH, ABILITY_TINTED_LENS},
         #else
             .baseSpeed     = 70,
