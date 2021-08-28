@@ -10,9 +10,9 @@ PKMN_Center_Move_Tutor::
 	case 1, PKMN_Center_MoveDeleter_EventScript
 	case 2, PKMN_Center_Move_Tutor_MoveTutorIntro
 	case 3, PKMN_Center_NameRater_EventScript
-	case 4, PKMN_Center_EventScript_Exp_Grind
-	case 5, PKMN_Center_EventScript_Event_Reset
-	case 6, PKMN_Center_Move_Tutor_General_Exit
+	@case 4, PKMN_Center_EventScript_Exp_Grind
+	case 4, PKMN_Center_EventScript_Event_Reset
+	case 5, PKMN_Center_Move_Tutor_General_Exit
 	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_General_Exit
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Move Reminder @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -155,8 +155,8 @@ PKMN_Center_Move_Tutor_MoveTutorMenu::
 	case 4, PKMN_Center_Move_Tutor_MoveList5
 	case 5, PKMN_Center_Move_Tutor_MoveList6
 	case 6, PKMN_Center_Move_Tutor_MoveList7
-	case 7, PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn
-	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn
+	case 7, PKMN_Center_Move_Tutor_ExitReturn
+	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_ExitReturn
 	releaseall
 	end
 	
@@ -280,6 +280,9 @@ PKMN_Center_Move_Tutor_CloseDescriptionWindowReturn::
     special CloseBattleFrontierTutorWindow
     goto PKMN_Center_Move_Tutor
 
+PKMN_Center_Move_Tutor_ExitReturn::
+    goto PKMN_Center_Move_Tutor
+
 PKMN_Center_Move_Tutor_Exit::
 	special CloseBattleFrontierTutorWindow
     msgbox PKMN_Center_Move_Tutor_Text_SeeYou, MSGBOX_DEFAULT
@@ -330,6 +333,7 @@ PKMN_Center_Move_Tutor_General_Exit::
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EXP Grinding @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 PKMN_Center_EventScript_Exp_Grind::
+
 	releaseall
 	end
 
