@@ -1202,7 +1202,6 @@ AI_FaintWithPriority_ScoreUp:
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
-	call_if_move_flag FLAG_HIGH_CRIT, AI_CV_HighCrit
 	call AI_CheckIfAlreadyDead
 	call AI_CV_DmgMove
 	call AI_WeakDmg
@@ -2235,20 +2234,6 @@ AI_CV_TrapItem:
 AI_CV_Trap4:
 	score +2
 AI_CV_TrapEnd:
-	end
-
-AI_CV_HighCrit:
-	if_type_effectiveness AI_EFFECTIVENESS_x0_25, AI_CV_HighCrit_End
-	if_type_effectiveness AI_EFFECTIVENESS_x0_5, AI_CV_HighCrit_End
-	if_type_effectiveness AI_EFFECTIVENESS_x2, AI_CV_HighCrit2
-	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_CV_HighCrit2
-	if_random_less_than 128, AI_CV_HighCrit_End
-
-AI_CV_HighCrit2:
-	if_random_less_than 128, AI_CV_HighCrit_End
-	score +1
-
-AI_CV_HighCrit_End:
 	end
 
 AI_CV_FocusEnergy:
