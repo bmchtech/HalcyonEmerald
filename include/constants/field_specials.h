@@ -54,9 +54,10 @@
 #define SCROLL_MULTI_GAMECORNER_WATER_STARTERS            24
 #define SCROLL_MULTI_REGION_NAMES                         25
 #define SCROLL_MULTI_FURFROU_TRIMS                        26
+#define SCROLL_MULTI_POKE_CENTER_TUTOR                    27
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
-#define MAX_SCROLL_MULTI_LENGTH 32
+#define MAX_SCROLL_MULTI_LENGTH 20
 
 // Dept Store Floor Numbers
 #define DEPT_STORE_FLOORNUM_B4F       0

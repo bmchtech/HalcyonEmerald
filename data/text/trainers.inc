@@ -2949,7 +2949,7 @@ Route120_Text_ColinDefeat: @ 829E665
 	.string "You soared above me!$"
 
 Route120_Text_ColinPostBattle: @ 829E67A
-	.string "The move FLY is convenient,\n"
+	.string "The move Fly is convenient,\n"
 	.string "don't you think?\p"
 	.string "While the Pokémon is flying,\n"
 	.string "almost no moves can strike it.$"

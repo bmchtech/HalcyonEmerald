@@ -8047,3 +8047,23 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
     }
     return targetFormId;
 }
+
+u8 GetLevelCap(void)
+{
+    u8 currentLevelCap;
+
+    if (FlagGet(FLAG_BADGE05_GET))
+        currentLevelCap = 101;
+    else if (FlagGet(FLAG_BADGE04_GET))
+        currentLevelCap = 55;
+    else if (FlagGet(FLAG_BADGE03_GET))
+        currentLevelCap = 48;
+    else if (FlagGet(FLAG_BADGE02_GET))
+        currentLevelCap = 36;
+    else if (FlagGet(FLAG_BADGE01_GET))
+        currentLevelCap = 22;
+    else
+    currentLevelCap = 16;
+
+    return currentLevelCap;
+}
