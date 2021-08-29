@@ -28,7 +28,6 @@ EventScript_EeveeDevolution::
     setvar VAR_0x8005, SPECIES_EEVEE
 	fadescreen 1
     special ChangeMonSpecies
-    special ResetChosenMonEVs
     playfanfare MUS_LEVEL_UP
     waitfanfare
 	fadescreen 0
