@@ -18190,7 +18190,7 @@ static const struct LevelUpMove sCalyrexLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRaichuAlolanLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 0, MOVE_PSYCHIC),
+	LEVEL_UP_MOVE( 0, MOVE_PSYBEAM),
     LEVEL_UP_MOVE( 1, MOVE_SPEED_SWAP),
 	LEVEL_UP_MOVE( 1, MOVE_AGILITY),
 	LEVEL_UP_MOVE( 1, MOVE_CHARM),
@@ -18210,6 +18210,7 @@ static const struct LevelUpMove sRaichuAlolanLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
 	LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
+    LEVEL_UP_MOVE(30, MOVE_PSYCHIC),
 	LEVEL_UP_MOVE(38, MOVE_THUNDERBOLT),
     LEVEL_UP_MOVE(46, MOVE_THUNDER),
     LEVEL_UP_MOVE(54, MOVE_EXTREME_SPEED),
@@ -18556,7 +18557,7 @@ static const struct LevelUpMove sMukAlolanLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sExeggutorAlolanLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 0, MOVE_DRAGON_HAMMER),
+    LEVEL_UP_MOVE( 0, MOVE_DRAGON_BREATH),
     LEVEL_UP_MOVE( 1, MOVE_SEED_BOMB),
     LEVEL_UP_MOVE( 1, MOVE_REFLECT),
     LEVEL_UP_MOVE( 1, MOVE_LEECH_SEED),
@@ -18571,6 +18572,7 @@ static const struct LevelUpMove sExeggutorAlolanLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_UPROAR),
 	LEVEL_UP_MOVE(17, MOVE_PSYSHOCK),
 	LEVEL_UP_MOVE(27, MOVE_EGG_BOMB),
+	LEVEL_UP_MOVE(30, MOVE_DRAGON_HAMMER),
 	LEVEL_UP_MOVE(37, MOVE_WOOD_HAMMER),
 	LEVEL_UP_MOVE(47, MOVE_LEAF_STORM),
 	LEVEL_UP_END
