@@ -3844,7 +3844,7 @@ static void Cmd_getexp(void)
                     if (holdEffect == HOLD_EFFECT_TRAINING_BAND)
                     {
                         highestLevel = GetHighestLevelInPlayerParty();
-                        if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) < highestLevel)
+                        if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) < (highestLevel - 4))
                         {
                             gBattleMoveDamage = gBattleMoveDamage * 5;
                         }
