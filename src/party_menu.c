@@ -5480,7 +5480,7 @@ static void TryTutorSelectedMon(u8 taskId)
         default:
             if (gSpecialVar_0x8008 == TRUE) // Move has a minimum friendship requirement
             {
-                if (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP) < friendship)
+                if (GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_FRIENDSHIP) < friendship)
                 {
                     DisplayLearnMoveMessageAndClose(taskId, gText_PkmnFriendshipNotHighEnough);
                     return;
