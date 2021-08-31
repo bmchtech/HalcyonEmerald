@@ -6,7 +6,7 @@ AbandonedShip_Room_B1F_EventScript_Spiritomb::
 	checkPartyHasSpecies SPECIES_LICKITUNG
 	compare VAR_RESULT, TRUE
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_CheckOddKeystone
-	checkPartyHasSpecies SPECIES_WOBBUFFET
+	checkPartyHasSpecies SPECIES_SLUGMA
 	compare VAR_RESULT, TRUE
 	goto_if_eq AbandonedShip_Room_B1F_EventScript_CheckOddKeystone
 AbandonedShip_Room_B1F_EventScript_ItsEmpty::
