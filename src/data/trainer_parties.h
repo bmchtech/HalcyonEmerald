@@ -295,7 +295,6 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute103Mudkip[] = {
     {
     .lvl = 0,
     .species = SPECIES_TREECKO,
-	.heldItem = ITEM_ORAN_BERRY,
 	.moves = MOVE_POUND, MOVE_LEER, MOVE_NONE, MOVE_NONE
     }
 };
@@ -304,7 +303,6 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute103Treecko[] = 
     {
     .lvl = 0,
     .species = SPECIES_TORCHIC,
-	.heldItem = ITEM_ORAN_BERRY,
 	.moves = MOVE_SCRATCH, MOVE_GROWL, MOVE_NONE, MOVE_NONE
     }
 };
@@ -313,7 +311,6 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanRoute103Torchic[] = 
     {
     .lvl = 0,
     .species = SPECIES_MUDKIP,
-	.heldItem = ITEM_ORAN_BERRY,
 	.moves = MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE
     }
 };
@@ -798,7 +795,6 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute103Mudkip[] = {
     {
     .lvl = 0,
     .species = SPECIES_TREECKO,
-	.heldItem = ITEM_ORAN_BERRY,
 	.moves = MOVE_POUND, MOVE_LEER
     }
 };
@@ -807,7 +803,6 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute103Treecko[] = { //
     {
     .lvl = 0,
     .species = SPECIES_TORCHIC,
-	.heldItem = ITEM_ORAN_BERRY,
 	.moves = MOVE_SCRATCH, MOVE_GROWL
     }
 };
@@ -815,7 +810,6 @@ static const struct TrainerMonItemCustomMoves sParty_MayRoute103Treecko[] = { //
 static const struct TrainerMonItemCustomMoves sParty_MayRoute103Torchic[] = { // May Route 103
     {
     .lvl = 0,
-	.heldItem = ITEM_ORAN_BERRY,
     .species = SPECIES_MUDKIP,
 	.moves = MOVE_TACKLE, MOVE_GROWL
     }

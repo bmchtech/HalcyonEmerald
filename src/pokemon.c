@@ -8052,16 +8052,14 @@ u8 GetLevelCap(void)
 {
     u8 currentLevelCap;
 
-    if (FlagGet(FLAG_BADGE05_GET))
+    if (FlagGet(FLAG_BADGE04_GET))
         currentLevelCap = 101;
-    else if (FlagGet(FLAG_BADGE04_GET))
-        currentLevelCap = 55;
     else if (FlagGet(FLAG_BADGE03_GET))
-        currentLevelCap = 48;
+        currentLevelCap = 50;
     else if (FlagGet(FLAG_BADGE02_GET))
-        currentLevelCap = 36;
+        currentLevelCap = 38;
     else if (FlagGet(FLAG_BADGE01_GET))
-        currentLevelCap = 22;
+        currentLevelCap = 25;
     else
     currentLevelCap = 16;
 

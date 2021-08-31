@@ -97,6 +97,7 @@ LavaridgeTown_PokemonCenter_1F_EventScript_LucyTrigger::
 	lock
 	addobject LOCALID_LUCY
 	setvar VAR_LAVARIDGE_LUCY_STATE, 1
+	clearflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_LucyYouThere, MSGBOX_AUTOCLOSE
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
@@ -135,7 +136,6 @@ LavaridgeTown_PokemonCenter_1F_EventScript_LucyRefuse::
 	msgbox LavaridgeTown_PokemonCenter_1F_Text_VeryWell, MSGBOX_AUTOCLOSE	
 	applymovement LOCALID_LUCY, LavaridgeTown_PokemonCenter_1F_Movement_LucyGoWait
 	waitmovement 0
-	clearflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	release
 	end
 
