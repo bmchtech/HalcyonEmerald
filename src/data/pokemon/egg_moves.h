@@ -1663,6 +1663,8 @@ const u16 gEggMoves[] = {
         MOVE_SOAK,
         MOVE_MUDDY_WATER,
         MOVE_COPYCAT,
+        MOVE_BELLY_DRUM,
+        MOVE_AQUA_JET,
         MOVE_CAMOUFLAGE),
 
     egg_moves(NOSEPASS,
