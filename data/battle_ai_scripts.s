@@ -371,7 +371,7 @@ CheckIfTargetAllyBlocksTaunt:
 
 AI_CBM_Protect:
 	get_protect_count AI_USER
-	if_more_than 2, Score_Minus10
+	if_more_than 1, Score_Minus30 @ stop spamming Protect!
 	if_status AI_TARGET, STATUS1_SLEEP | STATUS1_FREEZE, Score_Minus8
 	end
 	
@@ -1038,6 +1038,7 @@ AI_CBM_DragonDance: @ 82DC778
 
 @ Don't spam sucker punch if player is using a status move
 AI_CBM_SuckerPunch:
+	if_status AI_TARGET, STATUS1_SLEEP | STATUS1_FREEZE, Score_Minus30
 	get_last_used_bank_move AI_TARGET
 	get_move_split_from_result
 	if_not_equal SPLIT_STATUS, AI_Ret
