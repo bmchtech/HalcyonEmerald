@@ -3360,7 +3360,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Bracer"),
         .itemId = ITEM_POWER_BRACER,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerBracerDesc,
@@ -3374,7 +3374,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Belt"),
         .itemId = ITEM_POWER_BELT,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerBeltDesc,
@@ -3388,7 +3388,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Lens"),
         .itemId = ITEM_POWER_LENS,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerLensDesc,
@@ -3402,7 +3402,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Band"),
         .itemId = ITEM_POWER_BAND,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerBandDesc,
@@ -3416,7 +3416,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Anklet"),
         .itemId = ITEM_POWER_ANKLET,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerAnkletDesc,
@@ -3430,7 +3430,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Weight"),
         .itemId = ITEM_POWER_WEIGHT,
-        .price = 10000,
+        .price = 1000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerWeightDesc,
