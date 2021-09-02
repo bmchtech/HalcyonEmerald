@@ -853,7 +853,7 @@ u8 GetTrainerBattleTransition(void)
             case TRAINER_GLACIA_2:
             case TRAINER_GLACIA_3:
             case TRAINER_GLACIA_4:
-                return B_TRANSITION_SIDNEY;
+                return B_TRANSITION_GLACIA;
             case TRAINER_DRAKE:
             case TRAINER_DRAKE_2:
             case TRAINER_DRAKE_3:
