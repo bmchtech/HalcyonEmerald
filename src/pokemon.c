@@ -6801,6 +6801,8 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         powerItemStat = ItemId_GetSecondaryId(heldItem);
     }
 
+    powerItemBonus = ItemId_GetHoldEffectParam(heldItem);
+
     for (i = 0; i < NUM_STATS; i++)
     {
         if (totalEVs >= MAX_TOTAL_EVS)
@@ -6811,35 +6813,37 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         else
             multiplier = 1;
         
-        if ((holdEffect == HOLD_EFFECT_POWER_ITEM) && (powerItemStat == (STAT_HP + i)))
+        // Power items prevent EV gain from Pokemon
+        if (holdEffect == HOLD_EFFECT_POWER_ITEM)
         {
-            powerItemBonus = ItemId_GetHoldEffectParam(heldItem);
+            if (powerItemStat == (STAT_HP + i))
+                evIncrease = powerItemBonus * multiplier;
+            else
+                evIncrease = 0;
         }
         else
         {
-            powerItemBonus = 0;
-        }
-    
-        switch (i)
-        {
-        case STAT_HP:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_HP + powerItemBonus) * multiplier;
-            break;
-        case STAT_ATK:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_Attack + powerItemBonus) * multiplier;
-            break;
-        case STAT_DEF:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_Defense + powerItemBonus) * multiplier;
-            break;
-        case STAT_SPEED:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_Speed + powerItemBonus) * multiplier;
-            break;
-        case STAT_SPATK:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_SpAttack + powerItemBonus) * multiplier;
-            break;
-        case STAT_SPDEF:
-            evIncrease = (gBaseStats[defeatedSpecies].evYield_SpDefense + powerItemBonus) * multiplier;
-            break;
+            switch (i)
+            {
+            case STAT_HP:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_HP * multiplier;
+                break;
+            case STAT_ATK:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_Attack * multiplier;
+                break;
+            case STAT_DEF:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_Defense * multiplier;
+                break;
+            case STAT_SPEED:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_Speed * multiplier;
+                break;
+            case STAT_SPATK:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_SpAttack * multiplier;
+                break;
+            case STAT_SPDEF:
+                evIncrease = gBaseStats[defeatedSpecies].evYield_SpDefense * multiplier;
+                break;
+            }
         }
 
         if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
