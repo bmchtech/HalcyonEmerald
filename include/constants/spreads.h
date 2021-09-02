@@ -52,5 +52,6 @@
 #define SPREAD_HP_FIRE_MODEST_BULKY         48 // Roxanne's Probopass
 #define SPREAD_LYCANROC_MIDDAY              49 // Roxanne's Lycanroc
 #define SPREAD_STAKATAKA                    50 // Roxanne's Stakataka
+#define SPREAD_31_IV_HP_SPATK_MIXED         51 // Max HP, Sp Atk, Quiet. Maxie 1's  Camerupt
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS
