@@ -457,6 +457,8 @@ struct BattleStruct
     u8 focusPunchBattlerId;
     u8 battlerPreventingSwitchout;
     u8 moneyMultiplier;
+    u8 moneyModifierItem:1;
+    u8 moneyModifierMove:1;
     u8 savedTurnActionNumber;
     u8 switchInAbilitiesCounter;
     u8 faintedActionsState;
