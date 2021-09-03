@@ -94,6 +94,24 @@ Route104_PrettyPetalFlowerShop_EventScript_RandomBerryGirl:: @ 822A442
 	giveitem VAR_RESULT
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_POMEG_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_KELPSY_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_QUALOT_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_HONDEW_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_GREPA_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	giveitem ITEM_TAMATO_BERRY
+	compare VAR_RESULT, 0
+	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY
 	msgbox Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
 	release
