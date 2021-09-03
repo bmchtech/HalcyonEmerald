@@ -50,8 +50,8 @@
       "x": 30,
       "y": 17,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BOTTLE_CAP"
     },
     {
       "type": "hidden_item",

@@ -457,8 +457,8 @@
       "x": 15,
       "y": 49,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_115_BOTTLE_CAP"
     },
     {
       "type": "hidden_item",

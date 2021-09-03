@@ -419,8 +419,8 @@
       "x": 33,
       "y": 5,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP_1"
     },
     {
       "type": "hidden_item",
@@ -443,16 +443,16 @@
       "x": 13,
       "y": 16,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP_2"
     },
     {
       "type": "hidden_item",
       "x": 8,
       "y": 42,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP_3"
     },
     {
       "type": "hidden_item",
@@ -460,15 +460,15 @@
       "y": 11,
       "elevation": 3,
       "item": "ITEM_BOTTLE_CAP",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP1"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP_4"
     },
     {
       "type": "hidden_item",
       "x": 21,
       "y": 14,
-      "elevation": 3,
+      "elevation": 4,
       "item": "ITEM_BOTTLE_CAP",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE109_BOTTLE_CAP2"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP_5"
     }
   ]
 }
