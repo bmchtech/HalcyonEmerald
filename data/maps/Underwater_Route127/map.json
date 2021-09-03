@@ -73,8 +73,8 @@
       "x": 34,
       "y": 72,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE"
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_127_BOTTLE_CAP"
     },
     {
       "type": "hidden_item",
