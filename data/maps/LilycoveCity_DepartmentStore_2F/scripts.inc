@@ -34,7 +34,13 @@ LilycoveCity_DepartmentStore_2F_Pokemart1: @ 821FB60
 	.2byte ITEM_REPEAT_BALL
 	.2byte ITEM_NEST_BALL
 	.2byte ITEM_LUXURY_BALL
-	.2byte ITEM_PREMIER_BALL
+    .2byte ITEM_FAST_BALL
+    .2byte ITEM_LEVEL_BALL
+    .2byte ITEM_LURE_BALL
+    .2byte ITEM_HEAVY_BALL
+    .2byte ITEM_LOVE_BALL
+    .2byte ITEM_FRIEND_BALL
+    .2byte ITEM_MOON_BALL
 	.2byte ITEM_FLUFFY_TAIL
 	.2byte ITEM_NONE
 	release
