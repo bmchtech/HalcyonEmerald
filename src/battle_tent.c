@@ -72,16 +72,7 @@ void static (*const sVerdanturfTentFuncs[])(void) =
     [VERDANTURF_TENT_FUNC_GIVE_PRIZE]         = GiveVerdanturfTentPrize
 };
 
-static const u16 sVerdanturfTentRewards[] = 
-{
-    ITEM_FAST_BALL, 
-    ITEM_LEVEL_BALL, 
-    ITEM_LURE_BALL, 
-    ITEM_HEAVY_BALL, 
-    ITEM_LOVE_BALL, 
-    ITEM_FRIEND_BALL, 
-    ITEM_MOON_BALL
-};
+static const u16 sVerdanturfTentRewards[] = {ITEM_BOTTLE_CAP};
 
 void static (*const sFallarborTentFuncs[])(void) =
 {
@@ -94,20 +85,7 @@ void static (*const sFallarborTentFuncs[])(void) =
     [FALLARBOR_TENT_FUNC_GET_OPPONENT_NAME] = BufferFallarborTentTrainerName
 };
 
-static const u16 sFallarborTentRewards[] = 
-{
-    ITEM_DOME_FOSSIL,
-    ITEM_HELIX_FOSSIL,
-    ITEM_OLD_AMBER,
-    ITEM_ROOT_FOSSIL,
-    ITEM_CLAW_FOSSIL,
-    ITEM_ARMOR_FOSSIL,
-    ITEM_SKULL_FOSSIL,
-    ITEM_COVER_FOSSIL,
-    ITEM_PLUME_FOSSIL,
-    ITEM_JAW_FOSSIL,
-    ITEM_SAIL_FOSSIL
-};
+static const u16 sFallarborTentRewards[] = {ITEM_BOTTLE_CAP};
 
 void static (*const sSlateportTentFuncs[])(void) =
 {
@@ -123,7 +101,7 @@ void static (*const sSlateportTentFuncs[])(void) =
     [SLATEPORT_TENT_FUNC_GENERATE_RENTAL_MONS]   = GenerateInitialRentalMons
 };
 
-static const u16 sSlateportTentRewards[] = {ITEM_DREAM_BALL, ITEM_ABILITY_CAPSULE};
+static const u16 sSlateportTentRewards[] = {ITEM_BOTTLE_CAP};
 
 // code
 void CallVerdanturfTentFunction(void)
@@ -176,7 +154,7 @@ static void SetRandomVerdanturfTentPrize(void)
 
 static void GiveVerdanturfTentPrize(void)
 {
-    if (AddBagItem(gSaveBlock2Ptr->frontier.verdanturfTentPrize, 1) == TRUE)
+    if (AddBagItem(gSaveBlock2Ptr->frontier.verdanturfTentPrize, 3) == TRUE)
     {
         CopyItemName(gSaveBlock2Ptr->frontier.verdanturfTentPrize, gStringVar1);
         gSaveBlock2Ptr->frontier.verdanturfTentPrize = ITEM_NONE;
@@ -226,7 +204,7 @@ static void SetRandomFallarborTentPrize(void)
 
 static void GiveFallarborTentPrize(void)
 {
-    if (AddBagItem(gSaveBlock2Ptr->frontier.fallarborTentPrize, 1) == TRUE)
+    if (AddBagItem(gSaveBlock2Ptr->frontier.fallarborTentPrize, 3) == TRUE)
     {
         CopyItemName(gSaveBlock2Ptr->frontier.fallarborTentPrize, gStringVar1);
         gSaveBlock2Ptr->frontier.fallarborTentPrize = ITEM_NONE;
@@ -281,7 +259,7 @@ static void SetRandomSlateportTentPrize(void)
 
 static void GiveSlateportTentPrize(void)
 {
-    if (AddBagItem(gSaveBlock2Ptr->frontier.slateportTentPrize, 1) == TRUE)
+    if (AddBagItem(gSaveBlock2Ptr->frontier.slateportTentPrize, 3) == TRUE)
     {
         CopyItemName(gSaveBlock2Ptr->frontier.slateportTentPrize, gStringVar1);
         gSaveBlock2Ptr->frontier.slateportTentPrize = ITEM_NONE;
