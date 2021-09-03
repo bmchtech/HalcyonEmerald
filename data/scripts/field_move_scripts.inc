@@ -260,7 +260,7 @@ EventScript_RockSmashEncounter::
 	end
 
 EventScript_RockSmashItem::
-	random 11
+	random 12
 	switch VAR_RESULT
 	case 0, EventScript_RockSmashPearl
 	case 1, EventScript_RockSmashBigPearl
@@ -273,6 +273,7 @@ EventScript_RockSmashItem::
 	case 8, EventScript_RockSmashStarPiece
 	case 9, EventScript_RockSmashGem
 	case 10, EventScript_RockSmashFossil
+	case 11, EventScript_RockSmashBottleCap
 	releaseall
 	end
 
@@ -334,6 +335,11 @@ EventScript_RockSmashFossil::
 	goto_if_eq EventScript_RockSmashOldAmber
 	addvar VAR_RESULT, ITEM_ARMOR_FOSSIL
 	finditem VAR_RESULT
+	releaseall
+	end
+
+EventScript_RockSmashBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	releaseall
 	end
 
