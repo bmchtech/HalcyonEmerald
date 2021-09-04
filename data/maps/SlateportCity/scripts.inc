@@ -18,6 +18,7 @@
 .set LOCALID_GRUNT_9, 31
 .set LOCALID_GRUNT_11, 33
 .set LOCALID_SCOTT, 35
+.set LOCALID_BRAWLY, 40
 
 SlateportCity_MapScripts:: @ 81DCC61
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
@@ -325,7 +326,7 @@ SlateportCity_EventScript_Man1SternInterview:: @ 81DCF0D
 SlateportCity_EventScript_Woman1:: @ 81DCF17
 	lock
 	faceplayer
-	goto_if_set FLAG_DOCK_REJECTED_DEVON_GOODS, SlateportCity_EventScript_Woman1AquaGone
+	goto_if_set FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA, SlateportCity_EventScript_Woman1AquaGone
 	msgbox SlateportCity_Text_WhatsLongLineOverThere, MSGBOX_DEFAULT
 	release
 	end
@@ -1013,6 +1014,24 @@ SlateportCity_EventScript_ScottBattleTentScene:: @ 81DD5DC
 	releaseall
 	end
 
+SlateportCity_EventScript_Brawly::
+	lockall
+	msgbox SlateportCity_Text_WhoahLineSoLong, MSGBOX_DEFAULT
+	waitse
+	playse SE_PIN
+	applymovement LOCALID_BRAWLY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_BRAWLY, Common_Movement_Delay48
+	waitmovement 0
+	faceplayer
+	msgbox SlateportCity_Text_LookingForBrawly, MSGBOX_DEFAULT
+	fadescreen FADE_TO_BLACK
+	closemessage
+	removeobject LOCALID_BRAWLY
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
 SlateportCity_Movement_PushPlayerDown: @ 81DD630
 	lock_facing_direction
 	walk_down
@@ -1047,7 +1066,20 @@ SlateportCity_EventScript_BerryCrushRankingsSign:: @ 81DD643
 	releaseall
 	end
 
-SlateportCity_Text_EnergyGuruSellWhatYouNeed: @ 81DD64A
+SlateportCity_Text_WhoahLineSoLong:
+	.string "Whoah! This line's way too long,\n"
+	.string "dude! What's the deal?$"
+
+SlateportCity_Text_LookingForBrawly:
+	.string "Oh, hey there!\p"
+	.string "Hmm? You're looking for the\n"
+	.string "Dewford Gym Leader?\p"
+	.string "That'd be me, Brawly!\n"
+	.string "I guess you want a battle, yeah?\p"
+	.string "Gnarly! I'll head back to the Gym.\n"
+	.string "You better be ready to make a splash!$"
+
+SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the Energy Guru! I'll go for it and\n"
 	.string "sell you what you need!$"
 
