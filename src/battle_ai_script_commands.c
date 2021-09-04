@@ -3034,7 +3034,6 @@ static void Cmd_if_target_can_go_down(void)
         // Move can KO and isn't disabled in some way
         if (gBattleMons[gBattlerTarget].hp <= dmg && !(unusable & gBitTable[i]))
         {
-            gAIScriptPtr = T1_READ_PTR(gAIScriptPtr + 1);
             break;
         }
     }
