@@ -5,6 +5,7 @@
 #include "constants/moves.h"
 #include "constants/battle_move_effects.h"
 #include "constants/hold_effects.h"
+#include "constants/species.h"
 #include "constants/pokemon.h"
 	.include "asm/macros/battle_ai_script.inc"
 
@@ -1201,6 +1202,23 @@ AI_FaintWithPriority_ScoreUp:
 	score +10
 	end
 
+AI_ShouldKingsShield:
+	if_move MOVE_KINGS_SHIELD, AI_ShouldKingsShield2
+	end
+
+@ Discourage King's Shield if user is Shield form
+AI_ShouldKingsShield2:
+	if_species AI_USER, SPECIES_AEGISLASH_BLADE AI_KingsShieldCheckSpeeds
+	score -3
+	end
+
+@ Don't shield if you can outspeed and KO foe
+AI_KingsShieldCheckSpeeds:
+	if_target_faster Score_Plus10
+	if_target_can_go_down Score_Minus5
+	score +10
+	end
+
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
@@ -1210,6 +1228,7 @@ AI_CheckViability:
 	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
 	call AI_FaintWithPriority
+	call AI_ShouldKingsShield
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
 	if_effect EFFECT_ABSORB, AI_CV_Absorb
@@ -1352,6 +1371,7 @@ AI_CheckViability:
 	if_effect EFFECT_QUIVER_DANCE, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_GEOMANCY, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_COIL, AI_CV_DefenseUp
+	if_effect EFFECT_DEFOG, AI_CV_Defog
 	end
 	
 AI_CV_PerishSong:
@@ -3661,6 +3681,10 @@ AI_CV_BoostSpeedOffense2:
 	score +2
 
 AI_CV_BoostSpeedOffense_End:
+	end
+
+AI_CV_Defog:
+	if_side_affecting AI_USER, SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_STICKY_WEB, Score_Plus10
 	end
 
 AI_TryToFaint:

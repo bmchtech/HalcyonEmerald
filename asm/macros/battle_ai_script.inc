@@ -708,6 +708,18 @@
 	.4byte \ptr
 	.endm
 
+	.macro if_species battler:req, species:req, ptr:req
+	.byte 0x7D
+	.byte \battler
+	.2byte \species
+	.4byte \ptr
+	.endm
+
+	.macro if_target_can_go_down ptr:req
+	.byte 0x7E
+	.4byte \ptr
+	.endm
+
 @ useful script macros
 	.macro if_has_physical_move battler:req, ptr:req
 	if_has_move_with_split \battler, SPLIT_PHYSICAL, \ptr
