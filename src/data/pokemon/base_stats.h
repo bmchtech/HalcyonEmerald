@@ -9036,9 +9036,15 @@ const struct BaseStats gBaseStats[] =
         .baseHP        = 73,
         .baseAttack    = 100,
         .baseDefense   = 60,
-        .baseSpeed     = 65,
         .baseSpAttack  = 100,
         .baseSpDefense = 60,
+        #ifdef REBALANCED_VERSION
+            .baseSpeed     = 100,
+            .abilities = {ABILITY_SHED_SKIN, ABILITY_MERCILESS, ABILITY_INFILTRATOR},
+        #else
+            .baseSpeed     = 65,
+            .abilities = {ABILITY_SHED_SKIN, ABILITY_SHED_SKIN, ABILITY_INFILTRATOR},
+        #endif
         .type1 = TYPE_POISON,
         .type2 = TYPE_POISON,
         .catchRate = 90,
@@ -9052,11 +9058,6 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_SHED_SKIN, ABILITY_MERCILESS, ABILITY_INFILTRATOR},
-        #else
-            .abilities = {ABILITY_SHED_SKIN, ABILITY_SHED_SKIN, ABILITY_INFILTRATOR},
-        #endif
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
     },
