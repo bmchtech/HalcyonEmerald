@@ -6720,7 +6720,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .species = SPECIES_ROTOM_MOW,
     .heldItem = ITEM_WHITE_HERB,
     .spread = SPREAD_WATTSON_SPECIAL,
-    .moves = MOVE_VOLT_SWITCH, MOVE_LEAF_STORM, MOVE_WILL_O_WISP, MOVE_HEX
+    .moves = MOVE_VOLT_SWITCH, MOVE_LEAF_STORM, MOVE_TOXIC, MOVE_HEX
     },
     {
     .lvl = 0,

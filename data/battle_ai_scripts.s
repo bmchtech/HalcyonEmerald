@@ -426,8 +426,8 @@ AI_CBM_Defog:
 	goto AI_CBM_EvasionDown
 	
 AI_CBM_PsychicShift:
-	if_not_status AI_USER, STATUS1_ANY, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
+	if_not_status AI_USER, STATUS1_ANY, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_status AI_USER, STATUS1_PARALYSIS, AI_CBM_Paralyze
 	if_status AI_USER, STATUS1_PSN_ANY, AI_CBM_Toxic
 	if_status AI_USER, STATUS1_BURN, AI_CBM_WillOWisp
@@ -806,12 +806,24 @@ AI_CBM_Reflect: @ 82DC53A
 
 AI_CBM_Paralyze: @ 82DC545
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
+	call AI_CBM_ParalyzeCheckTWave
 	get_ability AI_TARGET
 	if_equal ABILITY_LIMBER, Score_Minus30
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
 	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
+	end
+
+AI_CBM_ParalyzeCheckTWave:
+	if_move MOVE_THUNDER_WAVE AI_CBM_ParalyzeCheckTWaveAbsorbed
+	end
+
+AI_CBM_ParalyzeCheckTWaveAbsorbed:
+	get_ability AI_TARGET
+	if_equal ABILITY_VOLT_ABSORB, Score_Minus30
+	if_equal ABILITY_LIGHTNING_ROD, Score_Minus30
+	if_equal ABILITY_MOTOR_DRIVE, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -966,15 +978,16 @@ CheckIfTargetAllyBlocksTorment:
 	end
 
 AI_CBM_WillOWisp: @ 82DC6B4
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_WATER_VEIL, Score_Minus10
-	if_equal ABILITY_WATER_BUBBLE, Score_Minus10
-	if_equal ABILITY_FLARE_BOOST, Score_Minus10
-	if_equal ABILITY_FLASH_FIRE, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_type AI_TARGET, TYPE_FIRE, Score_Minus10
+	if_equal ABILITY_WATER_VEIL, Score_Minus30
+	if_equal ABILITY_WATER_BUBBLE, Score_Minus30
+	if_equal ABILITY_FLARE_BOOST, Score_Minus30
+	if_equal ABILITY_FLASH_FIRE, Score_Minus30
+	if_equal ABILITY_MAGIC_GUARD, Score_Minus5
+	if_type AI_TARGET, TYPE_FIRE, Score_Minus30
 	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_HelpingHand: @ 82DC6E3
@@ -1372,6 +1385,7 @@ AI_CheckViability:
 	if_effect EFFECT_GEOMANCY, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_COIL, AI_CV_DefenseUp
 	if_effect EFFECT_DEFOG, AI_CV_Defog
+	if_effect EFFECT_WILL_O_WISP AI_CV_Burn
 	end
 	
 AI_CV_PerishSong:
@@ -2148,6 +2162,14 @@ AI_CV_Heal6:
 AI_CV_Heal_End:
 	end
 	
+AI_EncourageStatusHex:
+	if_doesnt_have_move_with_effect AI_USER, EFFECT_HEX, AI_EncourageStatusHexEnd
+	score +2
+	if_random_less_than 128, AI_EncourageStatusHexEnd
+	score +1
+AI_EncourageStatusHexEnd:
+	end
+
 EncouragePsnVenoshock:
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_VENOSHOCK, EncouragePsnVenoshockEnd
 	score +2
@@ -2162,6 +2184,7 @@ AI_ToxicTrappedTarget:
 
 AI_CV_Toxic:
 	call EncouragePsnVenoshock
+	call AI_EncourageStatusHex
 	call AI_ToxicTrappedTarget
 AI_CV_LeechSeed:
 	if_user_has_no_attacking_moves AI_CV_Toxic3
@@ -2356,16 +2379,31 @@ AI_CV_Poison_End:
 	end
 
 AI_CV_Paralyze:
+	call AI_EncourageStatusHex
+	call AI_ParalyzeSweeper
 	if_target_faster AI_CV_Paralyze2
-	if_hp_more_than AI_USER, 70, AI_CV_Paralyze_End
-	score -1
 	goto AI_CV_Paralyze_End
 
 AI_CV_Paralyze2:
 	if_random_less_than 20, AI_CV_Paralyze_End
 	score +3
-
 AI_CV_Paralyze_End:
+	end
+
+AI_ParalyzeSweeper:
+	if_stat_level_more_than AI_TARGET, STAT_SPEED, DEFAULT_STAT_STAGE, Score_Plus5
+	end
+
+AI_CV_Burn:
+	call AI_EncourageStatusHex
+	call AI_BurnSweeper
+	if_random_less_than 20, AI_CV_Burn_End
+	score +3
+AI_CV_Burn_End:
+	end
+
+AI_BurnSweeper:
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, Score_Plus5
 	end
 
 AI_CV_VitalThrow:
