@@ -2964,7 +2964,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly1[] = {
     {
     .lvl = -2,
     .species = SPECIES_LUCARIO,
-    .heldItem = ITEM_CHESTO_BERRY,
+    .heldItem = ITEM_LUM_BERRY,
     .ability = 0, // Steadfast
     .spread = SPREAD_BRAWLY_ONE_MON,
     .moves = MOVE_BULLET_PUNCH, MOVE_BULK_UP, MOVE_PAYBACK, MOVE_REVERSAL
