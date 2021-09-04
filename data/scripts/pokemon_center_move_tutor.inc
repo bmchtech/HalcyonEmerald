@@ -339,12 +339,12 @@ PKMN_Center_EventScript_Exp_Grind::
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Event Reset @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 PKMN_Center_EventScript_Event_Reset::
-	compare VAR_EVENT_RESET_STATE, 1
+	compare VAR_EVENT_RESET_STATE, 2
 	goto_if_eq PKMN_Center_EventReset_EventScript_AlreadyReset
 	msgbox PKMN_Center_EventResetText_WhatsBrokenThisTime, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, PKMN_Center_Move_Tutor_General_Exit
-	case YES, PKMN_Center_EventReset_EventScript_ResetVarsFlags
+	case YES, PKMN_Center_EventReset_EventScript_ResetEvents
 	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_General_Exit
 	releaseall
 	end
@@ -354,15 +354,27 @@ PKMN_Center_EventReset_EventScript_AlreadyReset::
 	releaseall
 	end
 
-PKMN_Center_EventReset_EventScript_ResetVarsFlags::
+PKMN_Center_EventReset_EventScript_ResetEvents::
+	compare VAR_EVENT_RESET_STATE, 0
+	call_if_eq PKMN_Center_EventReset_EventScript_ResetEvents1
+	compare VAR_EVENT_RESET_STATE, 1
+	call_if_eq PKMN_Center_EventReset_EventScript_ResetEvents2
+	msgbox PKMN_Center_EventReset_Text_Reset, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PKMN_Center_EventReset_EventScript_ResetEvents1::
 	setvar VAR_LAVARIDGE_LUCY_STATE, 1
 	clearflag FLAG_HIDE_LAVARIDGE_POKECENTER_LUCY
 	clearflag FLAG_ITEM_MOSSDEEP_CITY_MILOTICITE
 	clearflag FLAG_RECEIVED_TOGEPI_EGG
 	setvar VAR_EVENT_RESET_STATE, 1
-	msgbox PKMN_Center_EventReset_Text_Reset, MSGBOX_DEFAULT
-	releaseall
-	end
+	return
+
+PKMN_Center_EventReset_EventScript_ResetEvents2::
+	clearflag FLAG_RECEIVED_AUDINO
+	setvar VAR_EVENT_RESET_STATE, 2
+	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Strings @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -378,6 +390,8 @@ PKMN_Center_EventResetText_WhatsBrokenThisTime:
 	.string "have encountered some buggy events.\p"
 	.string "If needed, I can reset these events\n"
 	.string "so they can be played again.\p"
+	.string "Each event can only be reset\n"
+	.string "once per save.\p"
 	.string "Would you like to reset these events?$"
 
 PKMN_Center_EventResetText_AlreadyReset:

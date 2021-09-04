@@ -9,7 +9,7 @@ VerdanturfMeadow_EventScript_GiftAudino::
 	setvar VAR_TEMP_1, SPECIES_AUDINO
 	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
 	copyvar VAR_0x800A, VAR_RESULT
-	givemon SPECIES_AUDINO, VAR_0x800A, ITEM_METRONOME
+	givemon SPECIES_AUDINO, VAR_0x800A, ITEM_LUCKY_EGG
 	compare VAR_RESULT, 0
 	goto_if_eq VerdanturfMeadow_EventScript_ReceiveAudinoParty
 	compare VAR_RESULT, 1
