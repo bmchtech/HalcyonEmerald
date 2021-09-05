@@ -3842,7 +3842,7 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage += gExpShareExp;
                     }
                     if (holdEffect == HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
-                        gBattleMoveDamage = gExpShareExp * 2; // Determines how much EXP a Pokemon holding an EXP Share receives
+                        gBattleMoveDamage = gExpShareExp * 4; // Determines how much EXP a Pokemon holding an EXP Share receives
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                     if (holdEffect == HOLD_EFFECT_TRAINING_BAND)

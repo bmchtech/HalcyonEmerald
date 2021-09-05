@@ -376,10 +376,10 @@ PetalburgWoods_Text_ThatWasAwfullyClose: @ 822E63D
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
 	.string "A Pokémon holding that Exp. Share\n"
-	.string "will get half of the Exp. points from\l"
+	.string "will get 100% of the Exp. points from\l"
 	.string "battle, even if it didn't participate.\p"
 	.string "Normally they'd only get a quarter of\n"
-	.string "the Exp. points, so It's quite useful\l"
+	.string "the Exp. points, so it's quite useful\l"
 	.string "for raising weak Pokémon!\p"
 	.string "Didn't that Team Aqua thug say\n"
 	.string "they were after something in\l"

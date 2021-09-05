@@ -1137,7 +1137,7 @@ static const u8 sRevengeDescription[] = _(
 
 static const u8 sBrickBreakDescription[] = _(
     "Destroys barriers such as\n"
-    "REFLECT and causes damage.");
+    "Reflect and causes damage.");
 
 static const u8 sYawnDescription[] = _(
     "Lulls the foe into yawning,\n"
@@ -1633,7 +1633,7 @@ static const u8 sAIR_SLASHDescription[] = _(
 
 #ifdef REBALANCED_VERSION
     static const u8 sX_SCISSORDescription[] = _(
-        "Cuts likes scissors.\n"
+        "Cuts like scissors.\n"
         "High critical-hit ratio.");
 #else
     static const u8 sX_SCISSORDescription[] = _(
@@ -2386,7 +2386,7 @@ static const u8 sBABYDOLL_EYESDescription[] = _(
     "before it can move.");
 
 static const u8 sNUZZLEDescription[] = _(
-    "Rubs its cheecks against\n"
+    "Rubs its cheeks against\n"
     "the foe, paralyzing it.");
 
 static const u8 sINFESTATIONDescription[] = _(

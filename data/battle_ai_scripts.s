@@ -5,6 +5,7 @@
 #include "constants/moves.h"
 #include "constants/battle_move_effects.h"
 #include "constants/hold_effects.h"
+#include "constants/species.h"
 #include "constants/pokemon.h"
 	.include "asm/macros/battle_ai_script.inc"
 
@@ -425,8 +426,8 @@ AI_CBM_Defog:
 	goto AI_CBM_EvasionDown
 	
 AI_CBM_PsychicShift:
-	if_not_status AI_USER, STATUS1_ANY, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
+	if_not_status AI_USER, STATUS1_ANY, Score_Minus30
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_status AI_USER, STATUS1_PARALYSIS, AI_CBM_Paralyze
 	if_status AI_USER, STATUS1_PSN_ANY, AI_CBM_Toxic
 	if_status AI_USER, STATUS1_BURN, AI_CBM_WillOWisp
@@ -805,12 +806,24 @@ AI_CBM_Reflect: @ 82DC53A
 
 AI_CBM_Paralyze: @ 82DC545
 	if_type_effectiveness AI_EFFECTIVENESS_x0, Score_Minus30
+	call AI_CBM_ParalyzeCheckTWave
 	get_ability AI_TARGET
 	if_equal ABILITY_LIMBER, Score_Minus30
 	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	if_type AI_TARGET, TYPE_ELECTRIC, Score_Minus30
 	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
 	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
+	end
+
+AI_CBM_ParalyzeCheckTWave:
+	if_move MOVE_THUNDER_WAVE AI_CBM_ParalyzeCheckTWaveAbsorbed
+	end
+
+AI_CBM_ParalyzeCheckTWaveAbsorbed:
+	get_ability AI_TARGET
+	if_equal ABILITY_VOLT_ABSORB, Score_Minus30
+	if_equal ABILITY_LIGHTNING_ROD, Score_Minus30
+	if_equal ABILITY_MOTOR_DRIVE, Score_Minus30
 	end
 
 AI_CBM_Substitute: @ 82DC568
@@ -965,15 +978,16 @@ CheckIfTargetAllyBlocksTorment:
 	end
 
 AI_CBM_WillOWisp: @ 82DC6B4
+	if_status AI_TARGET, STATUS1_ANY, Score_Minus30
 	get_ability AI_TARGET
-	if_equal ABILITY_WATER_VEIL, Score_Minus10
-	if_equal ABILITY_WATER_BUBBLE, Score_Minus10
-	if_equal ABILITY_FLARE_BOOST, Score_Minus10
-	if_equal ABILITY_FLASH_FIRE, Score_Minus10
-	if_status AI_TARGET, STATUS1_ANY, Score_Minus10
-	if_type AI_TARGET, TYPE_FIRE, Score_Minus10
+	if_equal ABILITY_WATER_VEIL, Score_Minus30
+	if_equal ABILITY_WATER_BUBBLE, Score_Minus30
+	if_equal ABILITY_FLARE_BOOST, Score_Minus30
+	if_equal ABILITY_FLASH_FIRE, Score_Minus30
+	if_equal ABILITY_MAGIC_GUARD, Score_Minus5
+	if_type AI_TARGET, TYPE_FIRE, Score_Minus30
 	if_type AI_TARGET, TYPE_GRASS, CheckIfFlowerVeilBlocksMove
-	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus10
+	if_side_affecting AI_TARGET, SIDE_STATUS_SAFEGUARD, Score_Minus30
 	end
 
 AI_CBM_HelpingHand: @ 82DC6E3
@@ -1201,6 +1215,23 @@ AI_FaintWithPriority_ScoreUp:
 	score +10
 	end
 
+AI_ShouldKingsShield:
+	if_move MOVE_KINGS_SHIELD, AI_ShouldKingsShield2
+	end
+
+@ Discourage King's Shield if user is Shield form
+AI_ShouldKingsShield2:
+	if_species AI_USER, SPECIES_AEGISLASH_BLADE AI_KingsShieldCheckSpeeds
+	score -3
+	end
+
+@ Don't shield if you can outspeed and KO foe
+AI_KingsShieldCheckSpeeds:
+	if_target_faster Score_Plus10
+	if_target_can_go_down Score_Minus5
+	score +10
+	end
+
 AI_CheckViability:
 	if_target_is_ally AI_Ret
 	call_if_always_hit AI_CV_AlwaysHit
@@ -1210,6 +1241,7 @@ AI_CheckViability:
 	call AI_ChoiceLocked
 	call AI_DiscourageMagicGuard
 	call AI_FaintWithPriority
+	call AI_ShouldKingsShield
 	if_effect EFFECT_HIT, AI_CV_Hit
 	if_effect EFFECT_SLEEP, AI_CV_Sleep
 	if_effect EFFECT_ABSORB, AI_CV_Absorb
@@ -1352,6 +1384,8 @@ AI_CheckViability:
 	if_effect EFFECT_QUIVER_DANCE, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_GEOMANCY, AI_CV_BoostSpeedOffense
 	if_effect EFFECT_COIL, AI_CV_DefenseUp
+	if_effect EFFECT_DEFOG, AI_CV_Defog
+	if_effect EFFECT_WILL_O_WISP AI_CV_Burn
 	end
 	
 AI_CV_PerishSong:
@@ -2128,6 +2162,14 @@ AI_CV_Heal6:
 AI_CV_Heal_End:
 	end
 	
+AI_EncourageStatusHex:
+	if_doesnt_have_move_with_effect AI_USER, EFFECT_HEX, AI_EncourageStatusHexEnd
+	score +2
+	if_random_less_than 128, AI_EncourageStatusHexEnd
+	score +1
+AI_EncourageStatusHexEnd:
+	end
+
 EncouragePsnVenoshock:
 	if_doesnt_have_move_with_effect AI_USER, EFFECT_VENOSHOCK, EncouragePsnVenoshockEnd
 	score +2
@@ -2142,6 +2184,7 @@ AI_ToxicTrappedTarget:
 
 AI_CV_Toxic:
 	call EncouragePsnVenoshock
+	call AI_EncourageStatusHex
 	call AI_ToxicTrappedTarget
 AI_CV_LeechSeed:
 	if_user_has_no_attacking_moves AI_CV_Toxic3
@@ -2336,16 +2379,31 @@ AI_CV_Poison_End:
 	end
 
 AI_CV_Paralyze:
+	call AI_EncourageStatusHex
+	call AI_ParalyzeSweeper
 	if_target_faster AI_CV_Paralyze2
-	if_hp_more_than AI_USER, 70, AI_CV_Paralyze_End
-	score -1
 	goto AI_CV_Paralyze_End
 
 AI_CV_Paralyze2:
 	if_random_less_than 20, AI_CV_Paralyze_End
 	score +3
-
 AI_CV_Paralyze_End:
+	end
+
+AI_ParalyzeSweeper:
+	if_stat_level_more_than AI_TARGET, STAT_SPEED, DEFAULT_STAT_STAGE, Score_Plus5
+	end
+
+AI_CV_Burn:
+	call AI_EncourageStatusHex
+	call AI_BurnSweeper
+	if_random_less_than 20, AI_CV_Burn_End
+	score +3
+AI_CV_Burn_End:
+	end
+
+AI_BurnSweeper:
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, Score_Plus5
 	end
 
 AI_CV_VitalThrow:
@@ -3661,6 +3719,10 @@ AI_CV_BoostSpeedOffense2:
 	score +2
 
 AI_CV_BoostSpeedOffense_End:
+	end
+
+AI_CV_Defog:
+	if_side_affecting AI_USER, SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_STICKY_WEB, Score_Plus10
 	end
 
 AI_TryToFaint:

@@ -178,6 +178,10 @@ DewfordTown_EventScript_LandedSlateport:: @ 81E9799
 	msgbox DewfordTown_Text_BrineyLandedInSlateport, MSGBOX_DEFAULT
 	return
 
+DewfordTown_EventScript_GymGuide::
+	msgbox DewfordTown_Text_BrawlyInSlateport, MSGBOX_NPC
+	end
+
 DewfordTown_Movement_SailToPetalburg: @ 81E97A2
 	walk_up
 	walk_up
@@ -750,3 +754,10 @@ DewfordTown_Text_ReceivedEviolite:
 	.string "Maybe it'll be more useful in the hands\n"
 	.string "of a Pokémon Trainer?\p"
 	.string "It's no good as bait, that's for sure!$"
+
+DewfordTown_Text_BrawlyInSlateport:
+	.string "Hey, Champ-to-be!\p"
+	.string "Brawly, the Gym Leader here, went\n"
+	.string "to Slateport City and hasn't returned.\p"
+	.string "If you're after a battle, you'll have\n"
+	.string "to go find him.$"

@@ -5,6 +5,7 @@ GraniteCave_B1F_MapScripts:: @ 822DC5E
 	.byte 0
 
 GraniteCave_B1F_SetHoleWarp: @ 822DC6E
+	setflashradius 4
 	setstepcallback STEP_CB_CRACKED_FLOOR
 	setholewarp MAP_GRANITE_CAVE_B2F, 255, 0, 0
 	end
