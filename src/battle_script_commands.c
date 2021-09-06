@@ -12098,7 +12098,7 @@ bool32 DoesDisguiseBlockMove(u8 battlerAtk, u8 battlerDef, u32 move)
         || gBattleMons[battlerDef].species != SPECIES_MIMIKYU
         || gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED
         || gBattleMoves[move].power == 0
-        || gBattleScripting.moveEffect == MOVE_EFFECT_RECOIL)
+        || (gHitMarker & HITMARKER_IGNORE_DISGUISE))
         return FALSE;
     else
         return TRUE;
