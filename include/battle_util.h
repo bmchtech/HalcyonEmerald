@@ -141,6 +141,21 @@ bool32 CanFling(u8 battlerId);
 bool32 IsTelekinesisBannedSpecies(u16 species);
 bool32 IsHealBlockPreventingMove(u32 battler, u32 move);
 bool32 HasEnoughHpToEatBerry(u32 battlerId, u32 hpFraction, u32 itemId);
+void SortBattlersBySpeed(u8 *battlers, bool8 slowToFast);
+bool32 TestSheerForceFlag(u8 battler, u16 move);
+void TryRestoreStolenItems(void);
+bool32 CanStealItem(u8 battlerStealing, u8 battlerItem, u16 item);
+void TrySaveExchangedItem(u8 battlerId, u16 stolenItem);
+bool32 IsPartnerMonFromSameTrainer(u8 battlerId);
 u8 TryHandleSeed(u8 battler, u32 terrainFlag, u8 statId, u16 itemId, bool32 execute);
+
+// ability checks
+bool32 IsRolePlayBannedAbilityAtk(u16 ability);
+bool32 IsRolePlayBannedAbility(u16 ability);
+bool32 IsSkillSwapBannedAbility(u16 ability);
+bool32 IsWorrySeedBannedAbility(u16 ability);
+bool32 IsGastroAcidBannedAbility(u16 ability);
+bool32 IsEntrainmentBannedAbilityAttacker(u16 ability);
+bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability);
 
 #endif // GUARD_BATTLE_UTIL_H

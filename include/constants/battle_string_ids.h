@@ -570,13 +570,15 @@
 #define STRINGID_MICLEBERRYACTIVATES             566
 #define STRINGID_PKMNSHOOKOFFTHETAUNT            567
 #define STRINGID_PKMNGOTOVERITSINFATUATION       568
-#define STRINGID_EJECTBUTTONACTIVATES            569
-#define STRINGID_REDCARDACTIVATES                570
-#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   571
-#define STRINGID_PLAYERPAIDPRIZEMONEY            572
-#define STRINGID_PKMNBURNHEALED                  573
+#define STRINGID_ITEMCANNOTBEREMOVED             569
+#define STRINGID_STICKYBARBTRANSFER              570
+#define STRINGID_EJECTBUTTONACTIVATES            571
+#define STRINGID_REDCARDACTIVATES                572
+#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   573
+#define STRINGID_PLAYERPAIDPRIZEMONEY            574
+#define STRINGID_PKMNBURNHEALED                  575
 
-#define BATTLESTRINGS_COUNT                      574
+#define BATTLESTRINGS_COUNT                      576
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
