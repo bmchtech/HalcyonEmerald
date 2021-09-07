@@ -574,8 +574,9 @@
 #define STRINGID_REDCARDACTIVATES                570
 #define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   571
 #define STRINGID_PLAYERPAIDPRIZEMONEY            572
+#define STRINGID_PKMNBURNHEALED                  573
 
-#define BATTLESTRINGS_COUNT                      573
+#define BATTLESTRINGS_COUNT                      574
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

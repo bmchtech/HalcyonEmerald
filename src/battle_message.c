@@ -701,9 +701,11 @@ static const u8 sText_EjectButtonActivates[] = _("{B_DEF_NAME_WITH_PREFIX} is sw
 static const u8 sText_RedCardActivates[] = _("{B_DEF_NAME_WITH_PREFIX} held up its Red Card\nagainst {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_PkmnShookOffTheTaunt[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} shook off\nthe taunt!");
 static const u8 sText_PkmnGotOverItsInfatuation[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} got over\nits infatuation!");
+static const u8 sText_PkmnBurnHealed[] = _("{B_DEF_NAME_WITH_PREFIX}'s\nburn was healed.");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_PKMNBURNHEALED - 12] = sText_PkmnBurnHealed,
     [STRINGID_REDCARDACTIVATES - 12] = sText_RedCardActivates,
     [STRINGID_EJECTBUTTONACTIVATES - 12] = sText_EjectButtonActivates,
     [STRINGID_PKMNGOTOVERITSINFATUATION - 12] = sText_PkmnGotOverItsInfatuation,
