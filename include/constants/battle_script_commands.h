@@ -174,9 +174,10 @@
 #define VARIOUS_DESTROY_ABILITY_POPUP           102
 #define VARIOUS_TOTEM_BOOST                     103
 #define VARIOUS_TRY_ACTIVATE_GRIM_NEIGH         104
-#define VARIOUS_CONSUME_BERRY                   105
-#define VARIOUS_TRY_ACTIVATE_RAMPAGE            106
-#define VARIOUS_TERRAIN_SEED                    107
+#define VARIOUS_MOVEEND_ITEM_EFFECTS            105
+#define VARIOUS_CONSUME_BERRY                   106
+#define VARIOUS_TRY_ACTIVATE_RAMPAGE            107
+#define VARIOUS_TERRAIN_SEED                    108
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -202,36 +203,6 @@
 #define STAT_CHANGE_MULTIPLE_STATS       (1 << 2)
 #define STAT_CHANGE_CANT_PREVENT         (1 << 3)
 
-// cases for Cmd_moveend
-#define MOVEEND_PROTECT_LIKE_EFFECT 0
-#define MOVEEND_RAGE 1
-#define MOVEEND_DEFROST 2
-#define MOVEEND_SYNCHRONIZE_TARGET 3
-#define MOVEEND_ABILITIES 4
-#define MOVEEND_ABILITIES_ATTACKER 5
-#define MOVEEND_STATUS_IMMUNITY_ABILITIES 6
-#define MOVEEND_SYNCHRONIZE_ATTACKER 7
-#define MOVEEND_CHOICE_MOVE 8
-#define MOVEEND_CHANGED_ITEMS 9
-#define MOVEEND_ATTACKER_INVISIBLE 10
-#define MOVEEND_ATTACKER_VISIBLE 11
-#define MOVEEND_TARGET_VISIBLE 12
-#define MOVEEND_ITEM_EFFECTS_TARGET 13
-#define MOVEEND_MOVE_EFFECTS2 14
-#define MOVEEND_ITEM_EFFECTS_ALL 15
-#define MOVEEND_KINGSROCK_SHELLBELL 16
-#define MOVEEND_SUBSTITUTE 17
-#define MOVEEND_UPDATE_LAST_MOVES 18
-#define MOVEEND_MIRROR_MOVE 19
-#define MOVEEND_NEXT_TARGET 20
-#define MOVEEND_LIFE_ORB 21
-#define MOVEEND_DANCER 22
-#define MOVEEND_EJECT_BUTTON 23
-#define MOVEEND_RED_CARD 24
-#define MOVEEND_EMERGENCY_EXIT 25
-#define MOVEEND_CLEAR_BITS 26
-#define MOVEEND_COUNT 27
-
 // stat flags for Cmd_playstatchangeanimation
 #define BIT_HP                      (1 << 0)
 #define BIT_ATK                     (1 << 1)
@@ -243,5 +214,36 @@
 #define BIT_EVASION                 (1 << 7)
 
 #define PARTY_SCREEN_OPTIONAL (1 << 7) // Flag for first argument to openpartyscreen
+
+// cases for Cmd_moveend
+#define MOVEEND_PROTECT_LIKE_EFFECT               0
+#define MOVEEND_RAGE                              1
+#define MOVEEND_DEFROST                           2
+#define MOVEEND_SYNCHRONIZE_TARGET                3
+#define MOVEEND_ABILITIES                         4
+#define MOVEEND_ABILITIES_ATTACKER                5
+#define MOVEEND_STATUS_IMMUNITY_ABILITIES         6
+#define MOVEEND_SYNCHRONIZE_ATTACKER              7
+#define MOVEEND_CHOICE_MOVE                       8
+#define MOVEEND_CHANGED_ITEMS                     9
+#define MOVEEND_ATTACKER_INVISIBLE                10
+#define MOVEEND_ATTACKER_VISIBLE                  11
+#define MOVEEND_TARGET_VISIBLE                    12
+#define MOVEEND_ITEM_EFFECTS_TARGET               13
+#define MOVEEND_MOVE_EFFECTS2                     14
+#define MOVEEND_ITEM_EFFECTS_ALL                  15
+#define MOVEEND_KINGSROCK_SHELLBELL               16
+#define MOVEEND_SUBSTITUTE                        17
+#define MOVEEND_UPDATE_LAST_MOVES                 18
+#define MOVEEND_MIRROR_MOVE                       19
+#define MOVEEND_NEXT_TARGET                       20
+#define MOVEEND_LIFE_ORB                          21
+#define MOVEEND_PICKPOCKET                        22
+#define MOVEEND_DANCER                            23
+#define MOVEEND_EMERGENCY_EXIT                    24
+#define MOVEEND_CLEAR_BITS                        25
+#define MOVEEND_RED_CARD                          26
+#define MOVEEND_EJECT_BUTTON                      27
+#define MOVEEND_COUNT                             28
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H
