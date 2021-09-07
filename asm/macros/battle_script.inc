@@ -1780,6 +1780,7 @@
 	
 	.macro pickpocketsteal
 	various 0, VARIOUS_PICKPOCKET
+	.endm
 	
 	.macro consumeberry battler:req, restoreItem=FALSE
 	various \battler, VARIOUS_CONSUME_BERRY
