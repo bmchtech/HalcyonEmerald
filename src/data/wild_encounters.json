@@ -2637,12 +2637,12 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_MEOWTH"
+                "species": "SPECIES_MEOWTH_ALOLAN"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_MEOWTH"
+                "species": "SPECIES_MEOWTH_ALOLAN"
               },
               {
                 "min_level": 25,
@@ -2657,32 +2657,32 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PERSIAN"
+                "species": "SPECIES_PERSIAN_ALOLAN"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_RAICHU"
+                "species": "SPECIES_RAICHU_ALOLAN"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PERSIAN"
+                "species": "SPECIES_PERSIAN_ALOLAN"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_RAICHU"
+                "species": "SPECIES_RAICHU_ALOLAN"
               },
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_PERSIAN"
+                "species": "SPECIES_PERSIAN_ALOLAN"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_RAICHU"
+                "species": "SPECIES_RAICHU_ALOLAN"
               }
             ]
           }
@@ -7639,7 +7639,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_MAROWAK"
+                "species": "SPECIES_MAROWAK_ALOLAN"
               },
               {
                 "min_level": 27,
@@ -7659,7 +7659,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUGTRIO"
+                "species": "SPECIES_DUGTRIO_ALOLAN"
               },
               {
                 "min_level": 29,
@@ -7669,7 +7669,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DUGTRIO"
+                "species": "SPECIES_DUGTRIO_ALOLAN"
               },
               {
                 "min_level": 31,
@@ -7679,7 +7679,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DUGTRIO"
+                "species": "SPECIES_DUGTRIO_ALOLAN"
               }
             ]
           },
