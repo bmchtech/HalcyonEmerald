@@ -10613,7 +10613,7 @@ static const struct TrainerMonItemCustomMoves sParty_Jerome[] = {
     .moves = MOVE_RAZOR_SHELL, MOVE_STRENGTH, MOVE_NIGHT_SLASH, MOVE_CROSS_CHOP
     },
     {
-    .lvl = -22,
+    .lvl = -2,
     .species = SPECIES_BEARTIC,
     .spread = SPREAD_31_IV_60_EV,
     .moves = MOVE_ICICLE_CRASH, MOVE_LIQUIDATION, MOVE_THRASH, MOVE_CHARM
