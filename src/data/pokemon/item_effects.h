@@ -45,11 +45,7 @@ const u8 gItemEffect_HyperPotion[7] = {
 
 const u8 gItemEffect_SuperPotion[7] = {
     [4] = ITEM4_HEAL_HP,
-#if I_LEGACY_HEALING_ITEMS >= GEN_7
     [6] = 60, // Amount of HP to recover
-#else
-    [6] = 50, // Amount of HP to recover
-#endif
 };
 
 const u8 gItemEffect_FullHeal[6] = {

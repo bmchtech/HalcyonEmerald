@@ -2348,7 +2348,7 @@ enum
 s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
-        hp = hp * 2; // Buff Big Root's additional healing from 30% to 100%
+        hp = hp * 3 / 4; // Buff Big Root's additional healing from 30% to 50%
     if (hp == 0)
         hp = 1;
 
@@ -7258,12 +7258,12 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
             basePower = 150;
         break;
     case EFFECT_ECHOED_VOICE:
-        if (gFieldTimers.echoVoiceCounter != 0)
+        // gBattleStruct->sameMoveTurns incremented in ppreduce
+        if (gBattleStruct->sameMoveTurns[battlerAtk] != 0)
         {
-            if (gFieldTimers.echoVoiceCounter >= 5)
-                basePower *= 5;
-            else
-                basePower *= gFieldTimers.echoVoiceCounter;
+            basePower += (basePower * gBattleStruct->sameMoveTurns[battlerAtk]);
+            if (basePower > 200)
+                basePower = 200;
         }
         break;
     case EFFECT_PAYBACK:
@@ -7404,7 +7404,6 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
     case ABILITY_LIQUID_VOICE:
-    case ABILITY_SAND_SONG:
         if (gBattleMoves[move].flags & FLAG_SOUND)
             MulModifier(&modifier, UQ_4_12(1.2));
         break;
