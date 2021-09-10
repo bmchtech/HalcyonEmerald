@@ -2229,9 +2229,15 @@ static const u8 sION_DELUGEDescription[] = _(
     "Electrifies Normal-type\n"
     "moves with charged atoms.");
 
-static const u8 sPARABOLIC_CHARGEDescription[] = _(
-    "Damages adjacent Pokémon and\n"
-    "heals up by half of it.");
+#ifdef REBALANCED_VERSION
+    static const u8 sPARABOLIC_CHARGEDescription[] = _(
+        "Damages adjacent Pokémon and\n"
+        "heals up by 1/4 of it.");
+#else
+    static const u8 sPARABOLIC_CHARGEDescription[] = _(
+        "Damages adjacent Pokémon and\n"
+        "heals up by half of it.");
+#endif
 
 static const u8 sFORESTS_CURSEDescription[] = _(
     "Puts a curse on the foe\n"
