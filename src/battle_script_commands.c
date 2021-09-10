@@ -1772,7 +1772,7 @@ static void Cmd_ppreduce(void)
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
         gProtectStructs[gBattlerAttacker].notFirstStrike = 1;
-        // For item Metronome
+        // For item Metronome, echoed voice
         if (gCurrentMove == gLastResultingMoves[gBattlerAttacker]
             && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
             && !WasUnableToUseMove(gBattlerAttacker))
@@ -2385,6 +2385,7 @@ static void Cmd_resultmessage(void)
     if (gSpecialStatuses[gBattlerTarget].berryReduced
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
     {
+        gLastUsedItem = gBattleMons[gBattlerTarget].item;
         gSpecialStatuses[gBattlerTarget].berryReduced = 0;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_PrintBerryReduceString;
@@ -2644,11 +2645,11 @@ void SetMoveEffect(bool32 primary, u32 certain)
             statusChanged = TRUE;
             break;
         case STATUS1_BURN:
-            if (GetBattlerAbility(gEffectBattler) == ABILITY_WATER_VEIL
+            if ((GetBattlerAbility(gEffectBattler) == ABILITY_WATER_VEIL || GetBattlerAbility(gEffectBattler) == ABILITY_WATER_BUBBLE)
                 && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
             {
-                gLastUsedAbility = ABILITY_WATER_VEIL;
-                RecordAbilityBattle(gEffectBattler, ABILITY_WATER_VEIL);
+                gLastUsedAbility = GetBattlerAbility(gEffectBattler);
+                RecordAbilityBattle(gEffectBattler, GetBattlerAbility(gEffectBattler));
 
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_BRNPrevention;
@@ -2676,6 +2677,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
             if (IS_BATTLER_OF_TYPE(gEffectBattler, TYPE_FIRE))
                 break;
             if (GetBattlerAbility(gEffectBattler) == ABILITY_WATER_VEIL
+                || GetBattlerAbility(gEffectBattler) == ABILITY_COMATOSE
                 || GetBattlerAbility(gEffectBattler) == ABILITY_WATER_BUBBLE
                 || IsAbilityStatusProtected(gEffectBattler))
                 break;
@@ -7392,9 +7394,14 @@ static void Cmd_various(void)
         return;
     case VARIOUS_JUMP_IF_NO_HOLD_EFFECT:
         if (GetBattlerHoldEffect(gActiveBattler, TRUE) != gBattlescriptCurrInstr[3])
+        {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 4);
+        }
         else
+        {
+            gLastUsedItem = gBattleMons[gActiveBattler].item;   // For B_LAST_USED_ITEM
             gBattlescriptCurrInstr += 8;
+        }
         return;
     case VARIOUS_JUMP_IF_NO_ALLY:
         if (!IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)))
@@ -8399,7 +8406,8 @@ static void Cmd_various(void)
         }
         else if (gBattleMons[gBattlerAttacker].status1 & STATUS1_BURN)
         {
-            if (GetBattlerAbility(gBattlerTarget) == ABILITY_WATER_VEIL)
+            if (GetBattlerAbility(gBattlerTarget) == ABILITY_WATER_VEIL
+             || GetBattlerAbility(gBattlerTarget) == ABILITY_WATER_BUBBLE)
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptPush(T1_READ_PTR(gBattlescriptCurrInstr + 3));
