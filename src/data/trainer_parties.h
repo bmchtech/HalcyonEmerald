@@ -16070,7 +16070,7 @@ static const struct TrainerMonItemCustomMoves sParty_Athena[] = { // with Aiden
     .lvl = -2,
     .species = SPECIES_INFERNAPE,
     .heldItem = ITEM_EXPERT_BELT,
-    .ability = 2, // Iron Fist
+    .ability = 1, // Iron Fist
     .spread = SPREAD_31_IV_ATK_SPEED_NAIVE,
     .moves = MOVE_CLOSE_COMBAT, MOVE_FIRE_BLAST, MOVE_THUNDER_PUNCH, MOVE_STONE_EDGE
     },
