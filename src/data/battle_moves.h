@@ -8462,14 +8462,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HORN_LEECH] =
     {
-        #ifdef REBALANCED_VERSION
-            .power = 90,
-            .pp = 10,
-            .argument = 30, // Restores 30% HP instead of 50
-        #else
-            .power = 75,
-            .pp = 15,
-        #endif
+        .power = 75,
+        .pp = 15,
         .effect = EFFECT_ABSORB,
         .type = TYPE_GRASS,
         .accuracy = 100,
