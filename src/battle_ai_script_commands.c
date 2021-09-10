@@ -1520,6 +1520,25 @@ static u32 WhichMoveBetter(u32 move1, u32 move2)
     return 2;
 }
 
+// Returns 0 if move 1 is more accurate, 1 if move 2 is more accurate, or 2 if equal
+static u32 WhichMoveMoreAccurate(u32 move1, u32 move2)
+{
+    // Never miss moves have 0 accuracy
+    if (gBattleMoves[move1].accuracy == 0)
+        return 0;
+    if (gBattleMoves[move2].accuracy == 0)
+        return 1;
+    if (gBattleMoves[move1].accuracy > gBattleMoves[move2].accuracy)
+    {
+        return 0;
+    }
+    else if (gBattleMoves[move1].accuracy < gBattleMoves[move2].accuracy)
+    {
+        return 1;
+    }
+    return 2;
+}
+
 static void Cmd_get_how_powerful_move_is(void)
 {
     s32 i, checkedMove, bestId, currId, hp;
@@ -1568,13 +1587,25 @@ static void Cmd_get_how_powerful_move_is(void)
                 bestId = i;
             if (moveDmgs[i] == moveDmgs[bestId])
             {
-                switch (WhichMoveBetter(gBattleMons[sBattler_AI].moves[bestId], gBattleMons[sBattler_AI].moves[i]))
+                switch (WhichMoveMoreAccurate(gBattleMons[sBattler_AI].moves[bestId], gBattleMons[sBattler_AI].moves[i]))
                 {
                 case 2:
-                    if (Random() & 1)
+                    switch (WhichMoveBetter(gBattleMons[sBattler_AI].moves[bestId], gBattleMons[sBattler_AI].moves[i]))
+                    {
+                    case 2:
+                        if (Random() & 1)
+                            break;
+                    case 1:
+                        bestId = i;
                         break;
+                    default:
+                        break;
+                    }
+                    break; // nested switch case end
                 case 1:
                     bestId = i;
+                    break;
+                default:
                     break;
                 }
             }
