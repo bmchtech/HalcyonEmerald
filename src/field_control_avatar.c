@@ -1016,9 +1016,6 @@ extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
 static bool8 EnableAutoRun(void)
 {
-    if (!FlagGet(FLAG_SYS_B_DASH))
-        return FALSE;   //auto run unusable until you get running shoes
-
     PlaySE(SE_SELECT);
     if (gSaveBlock2Ptr->autoRun)
     {
