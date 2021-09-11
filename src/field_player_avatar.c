@@ -639,12 +639,18 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerGoSpeed2(direction);
     }
 
-    // Running enabled from the start of the game, and run by default. Hold B to walk.
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && !(heldKeys & B_BUTTON)
+    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock2Ptr->autoRun)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
-        PlayerRun(direction);
-        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        if (heldKeys & B_BUTTON && gSaveBlock2Ptr->autoRun == TRUE)
+        {
+            PlayerGoSpeed1(direction);
+        }
+        else
+        {
+            PlayerRun(direction);
+            gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        }
         return;
     }
     else

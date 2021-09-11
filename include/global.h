@@ -494,7 +494,8 @@ struct SaveBlock2
              u16 regionMapZoom:1; // whether the map is zoomed in
              u16 gameDifficulty:3; // Which difficulty the player chose (Normal/Hard/Challenge/Insanity, with Normal being 0)
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u8 filler_90[0x8];
+    /*0x90*/ u8 filler_90[0x7];
+             bool8 autoRun;
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokemon Colosseum/XD
