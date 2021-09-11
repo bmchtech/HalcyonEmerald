@@ -6673,7 +6673,7 @@ static const struct LevelUpMove sSnoruntLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGlalieLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_FREEZE_DRY),
+    LEVEL_UP_MOVE( 0, MOVE_ROCK_SLIDE),
     LEVEL_UP_MOVE( 1, MOVE_SHEER_COLD),
     LEVEL_UP_MOVE( 1, MOVE_POWDER_SNOW),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
@@ -6687,8 +6687,9 @@ static const struct LevelUpMove sGlalieLevelUpLearnset[] = {
     LEVEL_UP_MOVE(37, MOVE_FROST_BREATH),
     LEVEL_UP_MOVE(41, MOVE_CRUNCH),
     LEVEL_UP_MOVE(48, MOVE_BLIZZARD),
-    LEVEL_UP_MOVE(54, MOVE_HAIL),
-	LEVEL_UP_MOVE(57, MOVE_HEAD_SMASH),
+	LEVEL_UP_MOVE(54, MOVE_STONE_EDGE),
+    LEVEL_UP_MOVE(48, MOVE_HAIL),
+	LEVEL_UP_MOVE(67, MOVE_HEAD_SMASH),
     LEVEL_UP_END
 };
 
