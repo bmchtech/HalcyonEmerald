@@ -925,6 +925,7 @@ static const u16 sProtectSuccessRates[] = {USHRT_MAX, USHRT_MAX / 2, USHRT_MAX /
 #define FORBIDDEN_ASSIST        0x4
 #define FORBIDDEN_COPYCAT       0x8
 #define FORBIDDEN_SLEEP_TALK    0x10
+#define FORBIDDEN_PARENTAL_BOND 0x20
 
 #define FORBIDDEN_INSTRUCT_END 0xFFFF
 
@@ -971,12 +972,16 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_DRAGON_TAIL] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_DRUM_BEATING] = FORBIDDEN_METRONOME,
     [MOVE_DYNAMAX_CANNON] = FORBIDDEN_METRONOME | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
+    [MOVE_ENDEAVOR] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_ENDURE] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_ETERNABEAM] = FORBIDDEN_METRONOME,
+    [MOVE_EXPLOSION] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FALSE_SURRENDER] = FORBIDDEN_METRONOME,
     [MOVE_FEINT] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_FIERY_WRATH] = FORBIDDEN_METRONOME,
+    [MOVE_FINAL_GAMBIT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FLEUR_CANNON] = FORBIDDEN_METRONOME,
+    [MOVE_FLING] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FLOATY_FALL] = FORBIDDEN_METRONOME,
     [MOVE_FLY] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
     [MOVE_FOCUS_PUNCH] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
@@ -992,6 +997,7 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_HOLD_HANDS] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_HYPERSPACE_FURY] = FORBIDDEN_METRONOME,
     [MOVE_HYPERSPACE_HOLE] = FORBIDDEN_METRONOME,
+    [MOVE_ICE_BALL] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_ICE_BURN] = FORBIDDEN_METRONOME | FORBIDDEN_SLEEP_TALK,
     [MOVE_INSTRUCT] = FORBIDDEN_METRONOME,
     [MOVE_JUNGLE_HEALING] = FORBIDDEN_METRONOME,
@@ -1025,8 +1031,10 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_RAZOR_WIND] = FORBIDDEN_SLEEP_TALK,
     [MOVE_RELIC_SONG] = FORBIDDEN_METRONOME,
     [MOVE_ROAR] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
+    [MOVE_ROLLOUT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SAPPY_SEED] = FORBIDDEN_METRONOME,
     [MOVE_SECRET_SWORD] = FORBIDDEN_METRONOME,
+    [MOVE_SELF_DESTRUCT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SHADOW_FORCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
     [MOVE_SHELL_TRAP] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_SIZZLY_SLIDE] = FORBIDDEN_METRONOME,
@@ -1061,7 +1069,7 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_THUNDEROUS_KICK] = FORBIDDEN_METRONOME,
     [MOVE_TRANSFORM] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_MIMIC,
     [MOVE_TRICK] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
-    [MOVE_UPROAR] = FORBIDDEN_SLEEP_TALK,
+    [MOVE_UPROAR] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_V_CREATE] = FORBIDDEN_METRONOME,
     [MOVE_VEEVEE_VOLLEY] = FORBIDDEN_METRONOME,
     [MOVE_WHIRLWIND] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
@@ -1369,6 +1377,17 @@ static void Cmd_attackcanceler(void)
     #endif
     if (AtkCanceller_UnableToUseMove())
         return;
+    if (!gSpecialStatuses[gBattlerAttacker].parentalBondOn
+    && GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND
+    && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
+    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget])
+    && gMultiHitCounter != 2)
+    {
+        gSpecialStatuses[gBattlerAttacker].parentalBondOn = 2;
+        gMultiHitCounter = 2;
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+        return;
+    }
 
     // Check Protean activation.
     GET_MOVE_TYPE(gCurrentMove, moveType);
@@ -5314,6 +5333,15 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_PARENTAL_BOND:
+            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2)
+            {
+                gSpecialStatuses[gBattlerAttacker].parentalBondOn = 1;
+                gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+                effect = TRUE;
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_CLEAR_BITS: // Clear/Set bits for things like using a move for all targets and all hits.
             if (gSpecialStatuses[gBattlerAttacker].instructedChosenTarget)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
@@ -5324,6 +5352,7 @@ static void Cmd_moveend(void)
             gStatuses3[gBattlerAttacker] &= ~(STATUS3_ME_FIRST);
             gSpecialStatuses[gBattlerAttacker].gemBoost = 0;
             gSpecialStatuses[gBattlerAttacker].damagedMons = 0;
+            //gSpecialStatuses[gBattlerAttacker].parentalBondOn = 0;
             gSpecialStatuses[gBattlerTarget].berryReduced = 0;
             gBattleScripting.moveEffect = 0;
             gBattleScripting.moveendState++;
@@ -13096,4 +13125,35 @@ static bool32 CriticalCapture(u32 odds)
     #else
         return FALSE;
     #endif
+}
+
+bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId)
+{
+    if (gBattleMoves[move].split != SPLIT_STATUS
+	&& !(sForbiddenMoves[move] & FORBIDDEN_PARENTAL_BOND)
+	// && !IsTwoTurnsMove(move)
+	&& gBattleMoves[move].effect != EFFECT_OHKO
+	&& gBattleMoves[move].effect != EFFECT_MULTI_HIT
+	&& gBattleMoves[move].effect != EFFECT_TRIPLE_KICK
+	&& gBattleMoves[move].effect != EFFECT_DOUBLE_HIT) // TODO: Put all of these moves into the ban list instead
+	{
+		if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+		{
+			switch (gBattleMoves[move].target) 
+            {
+				case MOVE_TARGET_BOTH:
+					if (CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE) >= 2) // Check for single target
+						return FALSE;
+					break;
+				case MOVE_TARGET_FOES_AND_ALLY:
+					if (CountAliveMonsInBattle(BATTLE_ALIVE_EXCEPT_ACTIVE) >= 2) // Count mons on both sides; ignore attacker
+						return FALSE;
+					break;
+			}
+		}
+
+		return TRUE;
+	}
+
+	return FALSE;
 }

@@ -8032,6 +8032,15 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
             MulModifier(&finalModifier, UQ_4_12(0.5));
     }
 
+    // Parental Bond Second Strike
+	if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1)
+	{
+		if (B_PARENTAL_BOND_DAMAGE < GEN_7)
+			MulModifier(&finalModifier, UQ_4_12(0.5));
+		else
+			MulModifier(&finalModifier, UQ_4_12(0.25));
+	}
+
     // attacker's abilities
     switch (abilityAtk)
     {
@@ -8979,4 +8988,3 @@ void TrySaveExchangedItem(u8 battlerId, u16 stolenItem)
         gBattleStruct->itemStolen[gBattlerPartyIndexes[battlerId]].stolen = TRUE;
     #endif
 }
-
