@@ -1708,7 +1708,7 @@ static void Cmd_accuracycheck(void)
     if (move == ACC_CURR_MOVE)
         move = gCurrentMove;
 
-    if (move == NO_ACC_CALC_CHECK_LOCK_ON)
+    if (move == NO_ACC_CALC_CHECK_LOCK_ON || gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1)
     {
         if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             gBattlescriptCurrInstr += 7;
@@ -5334,9 +5334,11 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_PARENTAL_BOND:
-            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2)
+            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2 
+            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
             {
                 gSpecialStatuses[gBattlerAttacker].parentalBondOn = 1;
+                gHitMarker |= HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT;
                 gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
                 effect = TRUE;
             }
