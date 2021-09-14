@@ -2031,11 +2031,12 @@ static void Cmd_attackanimation(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if ((gHitMarker & HITMARKER_NO_ANIMATIONS)
+    if (((gHitMarker & HITMARKER_NO_ANIMATIONS)
         && gCurrentMove != MOVE_TRANSFORM
         && gCurrentMove != MOVE_SUBSTITUTE
         // In a wild double battle gotta use the teleport animation if two wild pokemon are alive.
         && !(gCurrentMove == MOVE_TELEPORT && WILD_DOUBLE_BATTLE && GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT && IsBattlerAlive(BATTLE_PARTNER(gBattlerAttacker))))
+        || gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1) // No animation on second hit
     {
         BattleScriptPush(gBattlescriptCurrInstr + 1);
         gBattlescriptCurrInstr = BattleScript_Pausex20;
@@ -5335,13 +5336,22 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_PARENTAL_BOND:
             if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2 
-            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+            && IsBattlerAlive(gBattlerTarget))
             {
-                gSpecialStatuses[gBattlerAttacker].parentalBondOn = 1;
                 gHitMarker |= HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT;
                 gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
                 effect = TRUE;
             }
+            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1
+            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+            && gMultiHitCounter != 0)
+            {
+                gMultiHitCounter = 0;
+                gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
+                effect = TRUE;
+            }
+            gSpecialStatuses[gBattlerAttacker].parentalBondOn --;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_CLEAR_BITS: // Clear/Set bits for things like using a move for all targets and all hits.
