@@ -1380,8 +1380,7 @@ static void Cmd_attackcanceler(void)
     if (!gSpecialStatuses[gBattlerAttacker].parentalBondOn
     && GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND
     && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
-    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget])
-    && gMultiHitCounter != 2)
+    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
     {
         gSpecialStatuses[gBattlerAttacker].parentalBondOn = 2;
         gMultiHitCounter = 2;
@@ -1708,7 +1707,7 @@ static void Cmd_accuracycheck(void)
     if (move == ACC_CURR_MOVE)
         move = gCurrentMove;
 
-    if (move == NO_ACC_CALC_CHECK_LOCK_ON || gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1)
+    if (move == NO_ACC_CALC_CHECK_LOCK_ON)
     {
         if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             gBattlescriptCurrInstr += 7;
@@ -1716,6 +1715,13 @@ static void Cmd_accuracycheck(void)
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
         else if (!JumpIfMoveAffectedByProtect(0))
             gBattlescriptCurrInstr += 7;
+    }
+    else if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1
+		|| (gSpecialStatuses[gBattlerAttacker].multiHitOn && (gBattleMoves[move].effect != EFFECT_TRIPLE_KICK
+		|| GetBattlerAbility(gBattlerAttacker) == ABILITY_SKILL_LINK)))
+    {
+        // No acc checks for second hit of Parental Bond or multi hit moves
+        gBattlescriptCurrInstr += 7;
     }
     else
     {
@@ -2031,12 +2037,11 @@ static void Cmd_attackanimation(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if (((gHitMarker & HITMARKER_NO_ANIMATIONS)
+    if ((gHitMarker & HITMARKER_NO_ANIMATIONS)
         && gCurrentMove != MOVE_TRANSFORM
         && gCurrentMove != MOVE_SUBSTITUTE
         // In a wild double battle gotta use the teleport animation if two wild pokemon are alive.
         && !(gCurrentMove == MOVE_TELEPORT && WILD_DOUBLE_BATTLE && GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT && IsBattlerAlive(BATTLE_PARTNER(gBattlerAttacker))))
-        || gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1) // No animation on second hit
     {
         BattleScriptPush(gBattlescriptCurrInstr + 1);
         gBattlescriptCurrInstr = BattleScript_Pausex20;
@@ -2045,6 +2050,12 @@ static void Cmd_attackanimation(void)
     }
     else
     {
+        if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1) // No animation on second hit
+        {
+			gBattlescriptCurrInstr++;
+			return;
+        }
+
         if ((gBattleMoves[gCurrentMove].target & MOVE_TARGET_BOTH
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_FOES_AND_ALLY
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_DEPENDS)
@@ -5343,7 +5354,7 @@ static void Cmd_moveend(void)
             && gMultiHitCounter)
             {
                 gBattleScripting.multihitString[4]++;
-                if (gMultiHitCounter-- == 0)
+                if (--gMultiHitCounter == 0)
                 {
 					BattleScriptPushCursor();
 					gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
@@ -5369,7 +5380,7 @@ static void Cmd_moveend(void)
                         gBattleScripting.moveendState = 0;
                         gSpecialStatuses[gBattlerAttacker].multiHitOn = TRUE;
                         MoveValuesCleanUp();
-                        BattlescriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+                        BattleScriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
 						gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
 						return;
                     }

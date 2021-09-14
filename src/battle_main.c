@@ -4658,6 +4658,8 @@ static void TurnValuesCleanUp(bool8 var0)
 
         if (gDisableStructs[gActiveBattler].substituteHP == 0)
             gBattleMons[gActiveBattler].status2 &= ~(STATUS2_SUBSTITUTE);
+
+        gSpecialStatuses[gActiveBattler].parentalBondOn = 0;
     }
 
     gSideStatuses[0] &= ~(SIDE_STATUS_QUICK_GUARD | SIDE_STATUS_WIDE_GUARD | SIDE_STATUS_CRAFTY_SHIELD | SIDE_STATUS_MAT_BLOCK);

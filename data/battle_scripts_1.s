@@ -48,7 +48,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectBide                    @ EFFECT_BIDE
 	.4byte BattleScript_EffectRampage                 @ EFFECT_RAMPAGE
 	.4byte BattleScript_EffectRoar                    @ EFFECT_ROAR
-	.4byte BattleScript_EffectMultiHit                @ EFFECT_MULTI_HIT
+	.4byte BattleScript_EffectHit                     @ EFFECT_MULTI_HIT
 	.4byte BattleScript_EffectConversion              @ EFFECT_CONVERSION
 	.4byte BattleScript_EffectFlinchHit               @ EFFECT_FLINCH_HIT
 	.4byte BattleScript_EffectRestoreHp               @ EFFECT_RESTORE_HP
@@ -63,7 +63,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDragonRage              @ EFFECT_DRAGON_RAGE
 	.4byte BattleScript_EffectTrap                    @ EFFECT_TRAP
 	.4byte BattleScript_EffectHealBlock               @ EFFECT_HEAL_BLOCK
-	.4byte BattleScript_EffectDoubleHit               @ EFFECT_DOUBLE_HIT
+	.4byte BattleScript_EffectHit                     @ EFFECT_DOUBLE_HIT
 	.4byte BattleScript_EffectRecoilIfMiss            @ EFFECT_RECOIL_IF_MISS
 	.4byte BattleScript_EffectMist                    @ EFFECT_MIST
 	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_FOCUS_ENERGY
@@ -123,7 +123,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_FALSE_SWIPE
 	.4byte BattleScript_EffectHealBell                @ EFFECT_HEAL_BELL
 	.4byte BattleScript_EffectHit                     @ EFFECT_ALWAYS_CRIT
-	.4byte BattleScript_EffectTripleKick              @ EFFECT_TRIPLE_KICK
+	.4byte BattleScript_EffectHit                     @ EFFECT_TRIPLE_KICK
 	.4byte BattleScript_EffectThief                   @ EFFECT_THIEF
 	.4byte BattleScript_EffectMeanLook                @ EFFECT_MEAN_LOOK
 	.4byte BattleScript_EffectNightmare               @ EFFECT_NIGHTMARE
