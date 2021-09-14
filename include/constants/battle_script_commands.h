@@ -244,7 +244,7 @@
 #define MOVEEND_CLEAR_BITS                        25
 #define MOVEEND_RED_CARD                          26
 #define MOVEEND_EJECT_BUTTON                      27
-#define MOVEEND_PARENTAL_BOND                     28
+#define MOVEEND_MULTIHIT_MOVE                     28
 #define MOVEEND_COUNT                             29
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H

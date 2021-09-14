@@ -5136,9 +5136,12 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_MIRROR_MOVE: // mirror move
-            if (!(gAbsentBattlerFlags & gBitTable[gBattlerAttacker]) && !(gBattleStruct->field_91 & gBitTable[gBattlerAttacker])
-                && gBattleMoves[originallyUsedMove].flags & FLAG_MIRROR_MOVE_AFFECTED && gHitMarker & HITMARKER_OBEYS
-                && gBattlerAttacker != gBattlerTarget && !(gHitMarker & HITMARKER_FAINTED(gBattlerTarget))
+            if (!(gAbsentBattlerFlags & gBitTable[gBattlerAttacker])
+                && !(gBattleStruct->field_91 & gBitTable[gBattlerAttacker])
+                && gBattleMoves[originallyUsedMove].flags & FLAG_MIRROR_MOVE_AFFECTED 
+                && gHitMarker & HITMARKER_OBEYS
+                && gBattlerAttacker != gBattlerTarget 
+                && !(gHitMarker & HITMARKER_FAINTED(gBattlerTarget))
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
             {
                 gBattleStruct->lastTakenMove[gBattlerTarget] = gChosenMove;
@@ -5334,25 +5337,54 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
-        case MOVEEND_PARENTAL_BOND:
-            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2 
-            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-            && IsBattlerAlive(gBattlerTarget))
+        case MOVEEND_MULTIHIT_MOVE:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+            && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+            && gMultiHitCounter)
             {
-                gHitMarker |= HITMARKER_NO_ATTACKSTRING | HITMARKER_NO_PPDEDUCT;
-                gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
-                effect = TRUE;
+                gBattleScripting.multihitString[4]++;
+                if (gMultiHitCounter-- == 0)
+                {
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
+					effect = 1;
+                }
+                else
+                {
+                    if (gCurrentMove == MOVE_DRAGON_DARTS)
+                    {
+                        // TODO
+                    }
+
+                    if (gBattleMons[gBattlerAttacker].hp
+                    && gBattleMons[gBattlerTarget].hp
+                    && (gChosenMove == MOVE_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
+					&& !(gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE))
+                    {
+                        if (gSpecialStatuses[gBattlerAttacker].parentalBondOn)
+                            gSpecialStatuses[gBattlerAttacker].parentalBondOn--;
+
+                        gHitMarker |= (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING);
+                        gBattleScripting.animTargetsHit = 0;
+                        gBattleScripting.moveendState = 0;
+                        gSpecialStatuses[gBattlerAttacker].multiHitOn = TRUE;
+                        MoveValuesCleanUp();
+                        BattlescriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+						gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
+						return;
+                    }
+                    else
+                    {
+                        BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
+						effect = 1;
+                    }
+                }
             }
-            if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1
-            && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-            && gMultiHitCounter != 0)
-            {
-                gMultiHitCounter = 0;
-                gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
-                effect = TRUE;
-            }
-            gSpecialStatuses[gBattlerAttacker].parentalBondOn --;
             gBattleScripting.moveendState++;
+            gMultiHitCounter = 0;
+            gSpecialStatuses[gBattlerAttacker].parentalBondOn = 0;
+            gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             break;
         case MOVEEND_CLEAR_BITS: // Clear/Set bits for things like using a move for all targets and all hits.
             if (gSpecialStatuses[gBattlerAttacker].instructedChosenTarget)
@@ -5364,7 +5396,6 @@ static void Cmd_moveend(void)
             gStatuses3[gBattlerAttacker] &= ~(STATUS3_ME_FIRST);
             gSpecialStatuses[gBattlerAttacker].gemBoost = 0;
             gSpecialStatuses[gBattlerAttacker].damagedMons = 0;
-            //gSpecialStatuses[gBattlerAttacker].parentalBondOn = 0;
             gSpecialStatuses[gBattlerTarget].berryReduced = 0;
             gBattleScripting.moveEffect = 0;
             gBattleScripting.moveendState++;
