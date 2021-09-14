@@ -2340,78 +2340,87 @@ static void Cmd_resultmessage(void)
     else
     {
         gBattleCommunication[MSG_DISPLAY] = 1;
-        switch (gMoveResultFlags & (~MOVE_RESULT_MISSED))
+        if (!gMultiHitCounter)
         {
-        case MOVE_RESULT_SUPER_EFFECTIVE:
-            stringId = STRINGID_SUPEREFFECTIVE;
-            break;
-        case MOVE_RESULT_NOT_VERY_EFFECTIVE:
-            stringId = STRINGID_NOTVERYEFFECTIVE;
-            break;
-        case MOVE_RESULT_ONE_HIT_KO:
-            stringId = STRINGID_ONEHITKO;
-            break;
-        case MOVE_RESULT_FOE_ENDURED:
-            stringId = STRINGID_PKMNENDUREDHIT;
-            break;
-        case MOVE_RESULT_FAILED:
-            stringId = STRINGID_BUTITFAILED;
-            break;
-        case MOVE_RESULT_DOESNT_AFFECT_FOE:
-            stringId = STRINGID_ITDOESNTAFFECT;
-            break;
-        case MOVE_RESULT_FOE_HUNG_ON:
-            gLastUsedItem = gBattleMons[gBattlerTarget].item;
-            gPotentialItemEffectBattler = gBattlerTarget;
-            gMoveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
-            BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_HangedOnMsg;
-            return;
-        default:
-            if (gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE)
+            switch (gMoveResultFlags & (~MOVE_RESULT_MISSED))
             {
+            case MOVE_RESULT_SUPER_EFFECTIVE:
+                stringId = STRINGID_SUPEREFFECTIVE;
+                break;
+            case MOVE_RESULT_NOT_VERY_EFFECTIVE:
+                stringId = STRINGID_NOTVERYEFFECTIVE; // Don't print effectiveness on each hit in a multi hit attack
+                break;
+            case MOVE_RESULT_ONE_HIT_KO:
+                stringId = STRINGID_ONEHITKO; // OHKO moves cannot be multi-hit moves
+                break;
+            }
+        }
+        else
+        {
+            switch (gMoveResultFlags & (~MOVE_RESULT_MISSED))
+            {
+            case MOVE_RESULT_FOE_ENDURED:
+                stringId = STRINGID_PKMNENDUREDHIT;
+                break;
+            case MOVE_RESULT_FAILED:
+                stringId = STRINGID_BUTITFAILED;
+                break;
+            case MOVE_RESULT_DOESNT_AFFECT_FOE:
                 stringId = STRINGID_ITDOESNTAFFECT;
-            }
-            else if (gMoveResultFlags & MOVE_RESULT_ONE_HIT_KO)
-            {
-                gMoveResultFlags &= ~(MOVE_RESULT_ONE_HIT_KO);
-                gMoveResultFlags &= ~(MOVE_RESULT_SUPER_EFFECTIVE);
-                gMoveResultFlags &= ~(MOVE_RESULT_NOT_VERY_EFFECTIVE);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_OneHitKOMsg;
-                return;
-            }
-            else if (gMoveResultFlags & MOVE_RESULT_STURDIED)
-            {
-                gMoveResultFlags &= ~(MOVE_RESULT_STURDIED | MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
-                gSpecialStatuses[gBattlerTarget].sturdied = 0;
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_SturdiedMsg;
-                return;
-            }
-            else if (gMoveResultFlags & MOVE_RESULT_FOE_ENDURED)
-            {
-                gMoveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_EnduredMsg;
-                return;
-            }
-            else if (gMoveResultFlags & MOVE_RESULT_FOE_HUNG_ON)
-            {
+                break;
+            case MOVE_RESULT_FOE_HUNG_ON:
                 gLastUsedItem = gBattleMons[gBattlerTarget].item;
                 gPotentialItemEffectBattler = gBattlerTarget;
                 gMoveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_HangedOnMsg;
                 return;
-            }
-            else if (gMoveResultFlags & MOVE_RESULT_FAILED)
-            {
-                stringId = STRINGID_BUTITFAILED;
-            }
-            else
-            {
-                gBattleCommunication[MSG_DISPLAY] = 0;
+            default:
+                if (gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE)
+                {
+                    stringId = STRINGID_ITDOESNTAFFECT;
+                }
+                else if (gMoveResultFlags & MOVE_RESULT_ONE_HIT_KO)
+                {
+                    gMoveResultFlags &= ~(MOVE_RESULT_ONE_HIT_KO);
+                    gMoveResultFlags &= ~(MOVE_RESULT_SUPER_EFFECTIVE);
+                    gMoveResultFlags &= ~(MOVE_RESULT_NOT_VERY_EFFECTIVE);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_OneHitKOMsg;
+                    return;
+                }
+                else if (gMoveResultFlags & MOVE_RESULT_STURDIED)
+                {
+                    gMoveResultFlags &= ~(MOVE_RESULT_STURDIED | MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
+                    gSpecialStatuses[gBattlerTarget].sturdied = 0;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_SturdiedMsg;
+                    return;
+                }
+                else if (gMoveResultFlags & MOVE_RESULT_FOE_ENDURED)
+                {
+                    gMoveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_EnduredMsg;
+                    return;
+                }
+                else if (gMoveResultFlags & MOVE_RESULT_FOE_HUNG_ON)
+                {
+                    gLastUsedItem = gBattleMons[gBattlerTarget].item;
+                    gPotentialItemEffectBattler = gBattlerTarget;
+                    gMoveResultFlags &= ~(MOVE_RESULT_FOE_ENDURED | MOVE_RESULT_FOE_HUNG_ON);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_HangedOnMsg;
+                    return;
+                }
+                else if (gMoveResultFlags & MOVE_RESULT_FAILED)
+                {
+                    stringId = STRINGID_BUTITFAILED;
+                }
+                else
+                {
+                    gBattleCommunication[MSG_DISPLAY] = 0;
+                }
             }
         }
     }
