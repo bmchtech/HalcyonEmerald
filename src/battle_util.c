@@ -3079,6 +3079,7 @@ enum
     CANCELLER_POWDER_MOVE,
     CANCELLER_POWDER_STATUS,
     CANCELLER_THROAT_CHOP,
+    CANCELLER_MULTIHIT_MOVES,
     CANCELLER_END,
     CANCELLER_PSYCHIC_TERRAIN,
     CANCELLER_END2,
@@ -3403,6 +3404,95 @@ u8 AtkCanceller_UnableToUseMove(void)
                 gBattlescriptCurrInstr = BattleScript_MoveUsedIsThroatChopPrevented;
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break;
+        case CANCELLER_MULTIHIT_MOVES:
+            if (gBattleMoves[gCurrentMove].effect == EFFECT_MULTI_HIT)
+            {
+                u16 ability = gBattleMons[gBattlerAttacker].ability;
+
+                if (gCurrentMove == MOVE_SURGING_STRIKES)
+                {
+                    gMultiHitCounter = 3;
+                }
+                else if (ability == ABILITY_SKILL_LINK)
+                {
+                    gMultiHitCounter = 5;
+                }
+                else if (ability == ABILITY_BATTLE_BOND
+                && gCurrentMove == MOVE_WATER_SHURIKEN
+                && gBattleMons[gBattlerAttacker].species == SPECIES_GRENINJA_ASH)
+                {
+                    gMultiHitCounter = 3;
+                }
+                else
+                {
+                    if (B_MULTI_HIT_CHANCE >= GEN_5)
+                    {
+                        // 2 and 3 hits: 33.3%
+                        // 4 and 5 hits: 16.7%
+                        gMultiHitCounter = Random() % 4;
+                        if (gMultiHitCounter > 2)
+                        {
+                            gMultiHitCounter = (Random() % 3);
+                            if (gMultiHitCounter < 2)
+                                gMultiHitCounter = 2;
+                            else
+                                gMultiHitCounter = 3;
+                        }
+                        else
+                            gMultiHitCounter += 3;
+                    }
+                    else
+                    {
+                        // 2 and 3 hits: 37.5%
+                        // 4 and 5 hits: 12.5%
+                        gMultiHitCounter = Random() % 4;
+                        if (gMultiHitCounter > 1)
+                            gMultiHitCounter = (Random() % 4) + 2;
+                        else
+                            gMultiHitCounter += 2;
+                    }
+                }
+
+                PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+            }
+            else if (gBattleMoves[gCurrentMove].effect == EFFECT_DOUBLE_HIT)
+            {
+                gMultiHitCounter = 2;
+				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+                if (gCurrentMove == MOVE_DRAGON_DARTS)
+                {
+                    // TODO
+                }
+            }
+            else if (gBattleMoves[gCurrentMove].effect == EFFECT_TRIPLE_KICK)
+            {
+                gMultiHitCounter = 3;
+				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+            }
+            else if (gBattleMoves[gCurrentMove].effect == EFFECT_BEAT_UP)
+            {
+                struct Pokemon* party;
+                int i;
+
+                if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+                    party = gPlayerParty;
+                else
+                    party = gEnemyParty;
+                
+                for (i = 0; i < PARTY_SIZE; i++)
+				{
+					if (GetMonData(&party[i], MON_DATA_HP)
+					&& GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
+					&& !GetMonData(&party[i], MON_DATA_IS_EGG)
+					&& !GetMonData(&party[i], MON_DATA_STATUS))
+						gMultiHitCounter++;
+				}
+
+				gBattleCommunication[0] = 0; // For later
+				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
             }
             gBattleStruct->atkCancellerTracker++;
             break;
