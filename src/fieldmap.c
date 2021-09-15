@@ -882,13 +882,13 @@ void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
             gPaletteOverrides[0] = tileset->paletteOverrides;
             LoadPalette(&black, destOffset, 2);
             LoadPaletteDayNight(((u16*)tileset->palettes) + 1, destOffset + 1, size - 2);
-            nullsub_3(destOffset + 1, (size - 2) >> 1);
+            FieldmapPaletteDummy(destOffset + 1, (size - 2) >> 1);
         }
         else if (tileset->isSecondary == TRUE)
         {
             gPaletteOverrides[1] = tileset->paletteOverrides;
             LoadPaletteDayNight(((u16*)tileset->palettes) + (NUM_PALS_IN_PRIMARY * 16), destOffset, size);
-            nullsub_3(destOffset, size >> 1);
+            FieldmapPaletteDummy(destOffset, size >> 1);
         }
         else
         {
