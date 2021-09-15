@@ -4027,6 +4027,7 @@ BattleScript_EffectTeleport:
 	setoutcomeonteleport BS_ATTACKER
 	goto BattleScript_MoveEnd
 
+.if B_BEAT_UP_DMG < GEN_5
 BattleScript_EffectBeatUp::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -4059,6 +4060,13 @@ BattleScript_BeatUpAttack::
 	goto BattleScript_BeatUpLoop
 BattleScript_BeatUpEnd::
 	end
+.else
+BattleScript_EffectBeatUp::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	addbyte gBattleCommunication, 1
+	goto BattleScript_HitFromAtkString
+.endif
 
 BattleScript_EffectSemiInvulnerable::
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_SecondTurnSemiInvulnerable

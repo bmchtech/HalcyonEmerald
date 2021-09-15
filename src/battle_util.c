@@ -228,6 +228,21 @@ static const u16 sTwoStrikeMoves[] =
     0xFFFF
 };
 
+u8 CalcBeatUpPower(void)
+{
+    struct Pokemon *party;
+    u8 basePower;
+
+    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+        party = gPlayerParty;
+    else
+        party = gEnemyParty;
+    // Party slot is set in the battle script for Beat Up
+    basePower = (GetMonData(&party[gBattleCommunication[0] - 1], MON_DATA_ATK) / 10) + 5;
+
+    return basePower;
+}
+
 bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
 {
     if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
@@ -3482,6 +3497,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 gMultiHitCounter = 3;
 				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
             }
+            #if B_BEAT_UP_DMG >= GEN_5
             else if (gBattleMoves[gCurrentMove].effect == EFFECT_BEAT_UP)
             {
                 struct Pokemon* party;
@@ -3504,6 +3520,7 @@ u8 AtkCanceller_UnableToUseMove(void)
 				gBattleCommunication[0] = 0; // For later
 				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
             }
+            #endif
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_END:
@@ -7379,6 +7396,11 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
         if (gBattleMoves[gLastUsedMove].effect == EFFECT_FUSION_COMBO && move != gLastUsedMove)
             basePower *= 2;
         break;
+    #if B_BEAT_UP_DMG >= GEN_5
+    case EFFECT_BEAT_UP:
+        basePower = CalcBeatUpPower();
+        break;
+    #endif
     }
 
     if (basePower == 0)
