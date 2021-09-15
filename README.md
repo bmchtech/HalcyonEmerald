@@ -1,3 +1,4 @@
+
 # Pokémon Emerald
 
 This is a decompilation of Pokémon Emerald.
@@ -8,6 +9,16 @@ It builds the following ROM:
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
+## easy build
+
+```sh
+git submodule update --init --recursive
+cd agbcc
+./build.sh
+./install.sh ..
+cd ..
+make -j$(nproc)
+```
 
 ## See also
 
