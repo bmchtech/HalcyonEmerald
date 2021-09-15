@@ -48,7 +48,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectBide                    @ EFFECT_BIDE
 	.4byte BattleScript_EffectRampage                 @ EFFECT_RAMPAGE
 	.4byte BattleScript_EffectRoar                    @ EFFECT_ROAR
-	.4byte BattleScript_EffectMultiHit                @ EFFECT_MULTI_HIT
+	.4byte BattleScript_EffectHit                     @ EFFECT_MULTI_HIT
 	.4byte BattleScript_EffectConversion              @ EFFECT_CONVERSION
 	.4byte BattleScript_EffectFlinchHit               @ EFFECT_FLINCH_HIT
 	.4byte BattleScript_EffectRestoreHp               @ EFFECT_RESTORE_HP
@@ -63,7 +63,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDragonRage              @ EFFECT_DRAGON_RAGE
 	.4byte BattleScript_EffectTrap                    @ EFFECT_TRAP
 	.4byte BattleScript_EffectHealBlock               @ EFFECT_HEAL_BLOCK
-	.4byte BattleScript_EffectDoubleHit               @ EFFECT_DOUBLE_HIT
+	.4byte BattleScript_EffectHit                     @ EFFECT_DOUBLE_HIT
 	.4byte BattleScript_EffectRecoilIfMiss            @ EFFECT_RECOIL_IF_MISS
 	.4byte BattleScript_EffectMist                    @ EFFECT_MIST
 	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_FOCUS_ENERGY
@@ -369,7 +369,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSleepHit                @ EFFECT_SLEEP_HIT
 	.4byte BattleScript_EffectAttackerDefenseDownHit  @ EFFECT_ATTACKER_DEFENSE_DOWN_HIT
 	.4byte BattleScript_EffectHit                     @ EFFECT_BODY_PRESS
-	.4byte BattleScript_EffectDoubleIronBash	      @ EFFECT_DOUBLE_IRON_BASH
 
 BattleScript_EffectAttackerDefenseDownHit:
 	setmoveeffect MOVE_EFFECT_DEF_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
@@ -2549,6 +2548,7 @@ BattleScript_DoMultiHit::
 	goto BattleScript_MultiHitPrintStrings
 BattleScript_MultiHitNoMoreHits::
 	pause B_WAIT_TIME_SHORT
+
 BattleScript_MultiHitPrintStrings::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
@@ -2556,6 +2556,8 @@ BattleScript_MultiHitPrintStrings::
 	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 6
 	printstring STRINGID_HITXTIMES
 	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_MultiHitEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
@@ -3457,57 +3459,16 @@ BattleScript_PartyHealEnd::
 
 BattleScript_EffectTripleKick::
 	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
 	attackstring
 	ppreduce
-	sethword sTRIPLE_KICK_POWER, 0
-	initmultihitstring
-	setmultihit 3
-BattleScript_TripleKickLoop::
-	jumpifhasnohp BS_ATTACKER, BattleScript_TripleKickEnd
-	jumpifhasnohp BS_TARGET, BattleScript_TripleKickNoMoreHits
-	jumpifhalfword CMP_EQUAL, gChosenMove, MOVE_SLEEP_TALK, BattleScript_DoTripleKickAttack
-	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_TripleKickNoMoreHits
-BattleScript_DoTripleKickAttack::
-	accuracycheck BattleScript_TripleKickNoMoreHits, ACC_CURR_MOVE
-	movevaluescleanup
-	addbyte sTRIPLE_KICK_POWER, 20 @ Buff Triple Kick
-	addbyte sMULTIHIT_STRING + 4, 1
-	critcalc
-	damagecalc
-	adjustdamage
-	jumpifmovehadnoeffect BattleScript_TripleKickNoMoreHits
-	attackanimation
-	waitanimation
-	effectivenesssound
-	hitanimation BS_TARGET
-	waitstate
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
-	critmessage
-	waitmessage B_WAIT_TIME_LONG
-	printstring STRINGID_EMPTYSTRING3
-	waitmessage 1
-	moveendto MOVEEND_NEXT_TARGET
-	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_FOE_ENDURED, BattleScript_TripleKickPrintStrings
-	decrementmultihit BattleScript_TripleKickLoop
-	goto BattleScript_TripleKickPrintStrings
-BattleScript_TripleKickNoMoreHits::
-	pause B_WAIT_TIME_SHORT
-	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0, BattleScript_TripleKickPrintStrings
-	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
-BattleScript_TripleKickPrintStrings::
-	resultmessage
-	waitmessage B_WAIT_TIME_LONG
-	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0, BattleScript_TripleKickEnd
-	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_TripleKickEnd
-	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 6
-	printstring STRINGID_HITXTIMES
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_TripleKickEnd::
-	seteffectwithchance
-	tryfaintmon BS_TARGET, FALSE, NULL
-	moveendfrom MOVEEND_UPDATE_LAST_MOVES
-	end
+	jumpifmove MOVE_TRIPLE_AXEL BS_TripleAxel
+	addbyte sTRIPLE_KICK_POWER 10
+	goto BattleScript_HitFromAtkString
+
+BS_TripleAxel:
+	addbyte sTRIPLE_KICK_POWER 20
+	goto BattleScript_HitFromAtkString
 
 BattleScript_EffectThief::
 	setmoveeffect MOVE_EFFECT_STEAL_ITEM
@@ -4025,6 +3986,7 @@ BattleScript_EffectTeleport:
 	setoutcomeonteleport BS_ATTACKER
 	goto BattleScript_MoveEnd
 
+.if B_BEAT_UP_DMG < GEN_5
 BattleScript_EffectBeatUp::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -4057,6 +4019,13 @@ BattleScript_BeatUpAttack::
 	goto BattleScript_BeatUpLoop
 BattleScript_BeatUpEnd::
 	end
+.else
+BattleScript_EffectBeatUp::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	addbyte gBattleCommunication, 1
+	goto BattleScript_HitFromAtkString
+.endif
 
 BattleScript_EffectSemiInvulnerable::
 	jumpifstatus2 BS_ATTACKER, STATUS2_MULTIPLETURNS, BattleScript_SecondTurnSemiInvulnerable
@@ -8061,15 +8030,6 @@ BattleScript_AbilityPreventsPhasingOutRedCard::
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectDoubleIronBash::
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	sethword sMULTIHIT_EFFECT, MOVE_EFFECT_FLINCH
-	attackstring
-	ppreduce
-	setmultihitcounter 2
-	initmultihitstring
-	goto BattleScript_MultiHitLoop
 BattleScript_Pickpocket::
 	call BattleScript_AbilityPopUp
 	jumpifability BS_ATTACKER, ABILITY_STICKY_HOLD, BattleScript_PickpocketPrevented

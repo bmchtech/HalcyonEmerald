@@ -925,6 +925,7 @@ static const u16 sProtectSuccessRates[] = {USHRT_MAX, USHRT_MAX / 2, USHRT_MAX /
 #define FORBIDDEN_ASSIST        0x4
 #define FORBIDDEN_COPYCAT       0x8
 #define FORBIDDEN_SLEEP_TALK    0x10
+#define FORBIDDEN_PARENTAL_BOND 0x20
 
 #define FORBIDDEN_INSTRUCT_END 0xFFFF
 
@@ -934,27 +935,34 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_STRUGGLE] = 0xFF, // Neither Struggle
     [MOVE_AFTER_YOU] = FORBIDDEN_METRONOME,
     [MOVE_APPLE_ACID] = FORBIDDEN_METRONOME,
+    [MOVE_ARM_THRUST] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_ASSIST] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_ASTRAL_BARRAGE] = FORBIDDEN_METRONOME,
     [MOVE_AURA_WHEEL] = FORBIDDEN_METRONOME,
     [MOVE_BADDY_BAD] = FORBIDDEN_METRONOME,
     [MOVE_BANEFUL_BUNKER] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
+    [MOVE_BARRAGE] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_BEAK_BLAST] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
+    [MOVE_BEAT_UP] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_BEHEMOTH_BASH] = FORBIDDEN_METRONOME | FORBIDDEN_COPYCAT,
     [MOVE_BEHEMOTH_BLADE] = FORBIDDEN_METRONOME | FORBIDDEN_COPYCAT,
     [MOVE_BELCH] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_BESTOW] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_BIDE] = FORBIDDEN_SLEEP_TALK,
     [MOVE_BODY_PRESS] = FORBIDDEN_METRONOME,
-    [MOVE_BOUNCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
+    [MOVE_BONE_RUSH] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_BONEMERANG] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_BOUNCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_BOUNCY_BUBBLE] = FORBIDDEN_METRONOME,
     [MOVE_BRANCH_POKE] = FORBIDDEN_METRONOME,
     [MOVE_BREAKING_SWIPE] = FORBIDDEN_METRONOME,
+    [MOVE_BULLET_SEED] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_BUZZY_BUZZ] = FORBIDDEN_METRONOME,
     [MOVE_CELEBRATE] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_CHATTER] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_MIMIC | FORBIDDEN_SLEEP_TALK,
     [MOVE_CIRCLE_THROW] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_CLANGOROUS_SOUL] = FORBIDDEN_METRONOME,
+    [MOVE_COMET_PUNCH] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_COPYCAT] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_COUNTER] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_COVET] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
@@ -963,36 +971,53 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_DESTINY_BOND] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_DETECT] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_DIAMOND_STORM] = FORBIDDEN_METRONOME,
-    [MOVE_DIG] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
-    [MOVE_DIVE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
-    [MOVE_DOUBLE_IRON_BASH] = FORBIDDEN_METRONOME,
+    [MOVE_DIG] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DIVE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DOUBLE_IRON_BASH] = FORBIDDEN_METRONOME | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DOUBLE_HIT] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DOUBLE_KICK] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DOUBLE_SLAP] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_DRAGON_ASCENT] = FORBIDDEN_METRONOME,
-    [MOVE_DRAGON_ENERGY] = FORBIDDEN_METRONOME,
+    [MOVE_DRAGON_DARTS] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_DRAGON_TAIL] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_DRUM_BEATING] = FORBIDDEN_METRONOME,
+    [MOVE_DUAL_CHOP] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_DUAL_WINGBEAT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_DYNAMAX_CANNON] = FORBIDDEN_METRONOME | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
+    [MOVE_ENDEAVOR] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_ENDURE] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_ETERNABEAM] = FORBIDDEN_METRONOME,
+    [MOVE_EXPLOSION] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FALSE_SURRENDER] = FORBIDDEN_METRONOME,
     [MOVE_FEINT] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_FIERY_WRATH] = FORBIDDEN_METRONOME,
+    [MOVE_FINAL_GAMBIT] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_FISSURE] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FLEUR_CANNON] = FORBIDDEN_METRONOME,
+    [MOVE_FLING] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_FLOATY_FALL] = FORBIDDEN_METRONOME,
-    [MOVE_FLY] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
+    [MOVE_FLY] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_FOCUS_PUNCH] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_FOLLOW_ME] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
-    [MOVE_FREEZE_SHOCK] = FORBIDDEN_METRONOME | FORBIDDEN_SLEEP_TALK,
+    [MOVE_FREEZE_SHOCK] = FORBIDDEN_METRONOME | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_FREEZING_GLARE] = FORBIDDEN_METRONOME,
     [MOVE_FREEZY_FROST] = FORBIDDEN_METRONOME,
-    [MOVE_GEOMANCY] = FORBIDDEN_SLEEP_TALK,
+    [MOVE_FURY_ATTACK] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_FURY_SWIPES] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_GEAR_GRIND] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_GEOMANCY] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_GLACIAL_LANCE] = FORBIDDEN_METRONOME,
     [MOVE_GLITZY_GLOW] = FORBIDDEN_METRONOME,
     [MOVE_GRAV_APPLE] = FORBIDDEN_METRONOME,
+    [MOVE_GUILLOTINE] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_HELPING_HAND] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_HOLD_HANDS] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
+    [MOVE_HORN_DRILL] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_HYPERSPACE_FURY] = FORBIDDEN_METRONOME,
     [MOVE_HYPERSPACE_HOLE] = FORBIDDEN_METRONOME,
-    [MOVE_ICE_BURN] = FORBIDDEN_METRONOME | FORBIDDEN_SLEEP_TALK,
+    [MOVE_ICE_BALL] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_ICE_BURN] = FORBIDDEN_METRONOME | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_ICICLE_SPEAR] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_INSTRUCT] = FORBIDDEN_METRONOME,
     [MOVE_JUNGLE_HEALING] = FORBIDDEN_METRONOME,
     [MOVE_KINGS_SHIELD] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
@@ -1001,6 +1026,7 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_MAT_BLOCK] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_ME_FIRST] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_METEOR_ASSAULT] = FORBIDDEN_METRONOME,
+    [MOVE_METEOR_BEAM] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_METRONOME] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_MIMIC] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_MIMIC | FORBIDDEN_SLEEP_TALK,
     [MOVE_MIND_BLOWN] = FORBIDDEN_METRONOME,
@@ -1012,9 +1038,10 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_OBSTRUCT] = FORBIDDEN_METRONOME | FORBIDDEN_COPYCAT,
     [MOVE_ORIGIN_PULSE] = FORBIDDEN_METRONOME,
     [MOVE_OVERDRIVE] = FORBIDDEN_METRONOME,
-    [MOVE_PHANTOM_FORCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
+    [MOVE_PHANTOM_FORCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_PHOTON_GEYSER] = FORBIDDEN_METRONOME,
     [MOVE_PIKA_PAPOW] = FORBIDDEN_METRONOME,
+    [MOVE_PIN_MISSILE] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_PLASMA_FISTS] = FORBIDDEN_METRONOME,
     [MOVE_PRECIPICE_BLADES] = FORBIDDEN_METRONOME,
     [MOVE_PROTECT] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
@@ -1022,27 +1049,33 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_QUASH] = FORBIDDEN_METRONOME,
     [MOVE_QUICK_GUARD] = FORBIDDEN_METRONOME,
     [MOVE_RAGE_POWDER] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
-    [MOVE_RAZOR_WIND] = FORBIDDEN_SLEEP_TALK,
+    [MOVE_RAZOR_WIND] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_RELIC_SONG] = FORBIDDEN_METRONOME,
     [MOVE_ROAR] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
+    [MOVE_ROCK_BLAST] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_ROLLOUT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SAPPY_SEED] = FORBIDDEN_METRONOME,
+    [MOVE_SCALE_SHOT] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SECRET_SWORD] = FORBIDDEN_METRONOME,
-    [MOVE_SHADOW_FORCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
+    [MOVE_SELF_DESTRUCT] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_SHADOW_FORCE] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_SHEER_COLD] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SHELL_TRAP] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_SIZZLY_SLIDE] = FORBIDDEN_METRONOME,
     [MOVE_SKETCH] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_MIMIC | FORBIDDEN_SLEEP_TALK,
-    [MOVE_SKULL_BASH] = FORBIDDEN_SLEEP_TALK,
-    [MOVE_SKY_ATTACK] = FORBIDDEN_SLEEP_TALK,
-    [MOVE_SKY_DROP] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK,
+    [MOVE_SKULL_BASH] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_SKY_ATTACK] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_SKY_DROP] = FORBIDDEN_ASSIST | FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_SLEEP_TALK] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_SLEEP_TALK,
     [MOVE_SNAP_TRAP] = FORBIDDEN_METRONOME,
     [MOVE_SNARL] = FORBIDDEN_METRONOME,
     [MOVE_SNATCH] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_SNORE] = FORBIDDEN_METRONOME,
-    [MOVE_SOLAR_BEAM] = FORBIDDEN_SLEEP_TALK,
-    [MOVE_SOLAR_BLADE] = FORBIDDEN_SLEEP_TALK,
+    [MOVE_SOLAR_BEAM] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
+    [MOVE_SOLAR_BLADE] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_SPARKLY_SWIRL] = FORBIDDEN_METRONOME,
     [MOVE_SPECTRAL_THIEF] = FORBIDDEN_METRONOME,
+    [MOVE_SPIKE_CANNON] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_SPIKY_SHIELD] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_SPIRIT_BREAK] = FORBIDDEN_METRONOME,
     [MOVE_SPLISHY_SPLASH] = FORBIDDEN_METRONOME,
@@ -1051,8 +1084,9 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_STEEL_BEAM] = FORBIDDEN_METRONOME,
     [MOVE_STRANGE_STEAM] = FORBIDDEN_METRONOME,
     [MOVE_SUNSTEEL_STRIKE] = FORBIDDEN_METRONOME,
-    [MOVE_SURGING_STRIKES] = FORBIDDEN_METRONOME,
+    [MOVE_SURGING_STRIKES] = FORBIDDEN_METRONOME | FORBIDDEN_PARENTAL_BOND,
     [MOVE_SWITCHEROO] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
+    [MOVE_TAIL_SLAP] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_TECHNO_BLAST] = FORBIDDEN_METRONOME,
     [MOVE_THIEF] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_THOUSAND_ARROWS] = FORBIDDEN_METRONOME,
@@ -1061,9 +1095,13 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_THUNDEROUS_KICK] = FORBIDDEN_METRONOME,
     [MOVE_TRANSFORM] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT | FORBIDDEN_MIMIC,
     [MOVE_TRICK] = FORBIDDEN_METRONOME | FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
-    [MOVE_UPROAR] = FORBIDDEN_SLEEP_TALK,
+    [MOVE_TRIPLE_AXEL] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_TRIPLE_KICK] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_TWINEEDLE] = FORBIDDEN_PARENTAL_BOND,
+    [MOVE_UPROAR] = FORBIDDEN_SLEEP_TALK | FORBIDDEN_PARENTAL_BOND,
     [MOVE_V_CREATE] = FORBIDDEN_METRONOME,
     [MOVE_VEEVEE_VOLLEY] = FORBIDDEN_METRONOME,
+    [MOVE_WATER_SHURIKEN] = FORBIDDEN_PARENTAL_BOND,
     [MOVE_WHIRLWIND] = FORBIDDEN_ASSIST | FORBIDDEN_COPYCAT,
     [MOVE_WICKED_BLOW] = FORBIDDEN_METRONOME,
     [MOVE_WIDE_GUARD] = FORBIDDEN_METRONOME,
@@ -1369,6 +1407,16 @@ static void Cmd_attackcanceler(void)
     #endif
     if (AtkCanceller_UnableToUseMove())
         return;
+    if (!gSpecialStatuses[gBattlerAttacker].parentalBondOn
+    && GetBattlerAbility(gBattlerAttacker) == ABILITY_PARENTAL_BOND
+    && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
+    && !(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
+    {
+        gSpecialStatuses[gBattlerAttacker].parentalBondOn = 2;
+        gMultiHitCounter = 2;
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+        return;
+    }
 
     // Check Protean activation.
     GET_MOVE_TYPE(gCurrentMove, moveType);
@@ -1698,6 +1746,13 @@ static void Cmd_accuracycheck(void)
         else if (!JumpIfMoveAffectedByProtect(0))
             gBattlescriptCurrInstr += 7;
     }
+    else if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1
+		|| (gSpecialStatuses[gBattlerAttacker].multiHitOn && (gBattleMoves[move].effect != EFFECT_TRIPLE_KICK
+		|| GetBattlerAbility(gBattlerAttacker) == ABILITY_SKILL_LINK)))
+    {
+        // No acc checks for second hit of Parental Bond or multi hit moves
+        gBattlescriptCurrInstr += 7;
+    }
     else
     {
         GET_MOVE_TYPE(move, type);
@@ -2025,6 +2080,12 @@ static void Cmd_attackanimation(void)
     }
     else
     {
+        if (gSpecialStatuses[gBattlerAttacker].parentalBondOn == 1) // No animation on second hit
+        {
+			gBattlescriptCurrInstr++;
+			return;
+        }
+
         if ((gBattleMoves[gCurrentMove].target & MOVE_TARGET_BOTH
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_FOES_AND_ALLY
              || gBattleMoves[gCurrentMove].target & MOVE_TARGET_DEPENDS)
@@ -2312,22 +2373,24 @@ static void Cmd_resultmessage(void)
         switch (gMoveResultFlags & (~MOVE_RESULT_MISSED))
         {
         case MOVE_RESULT_SUPER_EFFECTIVE:
-            stringId = STRINGID_SUPEREFFECTIVE;
+            if (!gMultiHitCounter)  // Don't print effectiveness on each hit in a multi hit attack
+                stringId = STRINGID_SUPEREFFECTIVE;
             break;
         case MOVE_RESULT_NOT_VERY_EFFECTIVE:
-            stringId = STRINGID_NOTVERYEFFECTIVE;
+            if (!gMultiHitCounter)
+                stringId = STRINGID_NOTVERYEFFECTIVE;
             break;
         case MOVE_RESULT_ONE_HIT_KO:
             stringId = STRINGID_ONEHITKO;
+            break;
+        case MOVE_RESULT_DOESNT_AFFECT_FOE:
+            stringId = STRINGID_ITDOESNTAFFECT;
             break;
         case MOVE_RESULT_FOE_ENDURED:
             stringId = STRINGID_PKMNENDUREDHIT;
             break;
         case MOVE_RESULT_FAILED:
             stringId = STRINGID_BUTITFAILED;
-            break;
-        case MOVE_RESULT_DOESNT_AFFECT_FOE:
-            stringId = STRINGID_ITDOESNTAFFECT;
             break;
         case MOVE_RESULT_FOE_HUNG_ON:
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
@@ -5116,9 +5179,12 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_MIRROR_MOVE: // mirror move
-            if (!(gAbsentBattlerFlags & gBitTable[gBattlerAttacker]) && !(gBattleStruct->field_91 & gBitTable[gBattlerAttacker])
-                && gBattleMoves[originallyUsedMove].flags & FLAG_MIRROR_MOVE_AFFECTED && gHitMarker & HITMARKER_OBEYS
-                && gBattlerAttacker != gBattlerTarget && !(gHitMarker & HITMARKER_FAINTED(gBattlerTarget))
+            if (!(gAbsentBattlerFlags & gBitTable[gBattlerAttacker])
+                && !(gBattleStruct->field_91 & gBitTable[gBattlerAttacker])
+                && gBattleMoves[originallyUsedMove].flags & FLAG_MIRROR_MOVE_AFFECTED 
+                && gHitMarker & HITMARKER_OBEYS
+                && gBattlerAttacker != gBattlerTarget 
+                && !(gHitMarker & HITMARKER_FAINTED(gBattlerTarget))
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
             {
                 gBattleStruct->lastTakenMove[gBattlerTarget] = gChosenMove;
@@ -5312,6 +5378,55 @@ static void Cmd_moveend(void)
                     return;
                 }
             }
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_MULTIHIT_MOVE:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+            && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+            && gMultiHitCounter)
+            {
+                gBattleScripting.multihitString[4]++;
+                if (--gMultiHitCounter == 0)
+                {
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
+					effect = 1;
+                }
+                else
+                {
+                    if (gCurrentMove == MOVE_DRAGON_DARTS)
+                    {
+                        // TODO
+                    }
+
+                    if (gBattleMons[gBattlerAttacker].hp
+                    && gBattleMons[gBattlerTarget].hp
+                    && (gChosenMove == MOVE_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
+					&& !(gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE))
+                    {
+                        if (gSpecialStatuses[gBattlerAttacker].parentalBondOn)
+                            gSpecialStatuses[gBattlerAttacker].parentalBondOn--;
+
+                        gHitMarker |= (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING);
+                        gBattleScripting.animTargetsHit = 0;
+                        gBattleScripting.moveendState = 0;
+                        gSpecialStatuses[gBattlerAttacker].multiHitOn = TRUE;
+                        MoveValuesCleanUp();
+                        BattleScriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+						gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
+						return;
+                    }
+                    else
+                    {
+                        BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_MultiHitPrintStrings;
+						effect = 1;
+                    }
+                }
+            }
+            gMultiHitCounter = 0;
+            gSpecialStatuses[gBattlerAttacker].parentalBondOn = 0;
+            gSpecialStatuses[gBattlerAttacker].multiHitOn = 0;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_CLEAR_BITS: // Clear/Set bits for things like using a move for all targets and all hits.
@@ -13096,4 +13211,33 @@ static bool32 CriticalCapture(u32 odds)
     #else
         return FALSE;
     #endif
+}
+
+bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId)
+{
+    if (gBattleMoves[move].split != SPLIT_STATUS
+	&& !(sForbiddenMoves[move] & FORBIDDEN_PARENTAL_BOND)
+	&& gBattleMoves[move].effect != EFFECT_MULTI_HIT
+	&& gBattleMoves[move].effect != EFFECT_TRIPLE_KICK
+	&& gBattleMoves[move].effect != EFFECT_DOUBLE_HIT) // TODO: Put all of these moves into the ban list instead
+	{
+		if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+		{
+			switch (gBattleMoves[move].target) 
+            {
+				case MOVE_TARGET_BOTH:
+					if (CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE) >= 2) // Check for single target
+						return FALSE;
+					break;
+				case MOVE_TARGET_FOES_AND_ALLY:
+					if (CountAliveMonsInBattle(BATTLE_ALIVE_EXCEPT_ACTIVE) >= 2) // Count mons on both sides; ignore attacker
+						return FALSE;
+					break;
+			}
+		}
+
+		return TRUE;
+	}
+
+	return FALSE;
 }

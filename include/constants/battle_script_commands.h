@@ -237,13 +237,14 @@
 #define MOVEEND_UPDATE_LAST_MOVES                 18
 #define MOVEEND_MIRROR_MOVE                       19
 #define MOVEEND_NEXT_TARGET                       20
-#define MOVEEND_LIFE_ORB                          21
-#define MOVEEND_PICKPOCKET                        22
-#define MOVEEND_DANCER                            23
-#define MOVEEND_EMERGENCY_EXIT                    24
-#define MOVEEND_CLEAR_BITS                        25
-#define MOVEEND_RED_CARD                          26
-#define MOVEEND_EJECT_BUTTON                      27
-#define MOVEEND_COUNT                             28
+#define MOVEEND_MULTIHIT_MOVE                     21
+#define MOVEEND_LIFE_ORB                          22
+#define MOVEEND_PICKPOCKET                        23
+#define MOVEEND_DANCER                            24
+#define MOVEEND_EMERGENCY_EXIT                    25
+#define MOVEEND_CLEAR_BITS                        26
+#define MOVEEND_RED_CARD                          27
+#define MOVEEND_EJECT_BUTTON                      28
+#define MOVEEND_COUNT                             29
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H

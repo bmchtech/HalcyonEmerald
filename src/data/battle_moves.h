@@ -665,7 +665,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
             .power = 25,
             .secondaryEffectChance = 20,
         #endif
-        .effect = EFFECT_TWINEEDLE,
+        .effect = EFFECT_POISON_HIT,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 20,
@@ -10841,7 +10841,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DOUBLE_IRON_BASH] =
     {
-        .effect = EFFECT_DOUBLE_IRON_BASH,
+        .effect = EFFECT_FLINCH_HIT,
         .power = 60,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -10954,7 +10954,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DRAGON_DARTS] =
     {
-        .effect = EFFECT_MULTI_HIT, //TODO
+        .effect = EFFECT_DOUBLE_HIT, //TODO
         .power = 50,
         .type = TYPE_DRAGON,
         .accuracy = 100,
@@ -11570,7 +11570,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_TRIPLE_AXEL] =
     {
-        .effect = EFFECT_TRIPLE_KICK,   //TODO: Increase damage by 20 instead of 10
+        .effect = EFFECT_TRIPLE_KICK,
         .power = 20,
         .type = TYPE_ICE,
         .accuracy = 90,
@@ -11639,7 +11639,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SURGING_STRIKES] =
     {
-        .effect = EFFECT_PLACEHOLDER,   //TODO (Multi hit + Always Crit)
+        .effect = EFFECT_ALWAYS_CRIT,
         .power = 25,
         .type = TYPE_WATER,
         .accuracy = 100,
