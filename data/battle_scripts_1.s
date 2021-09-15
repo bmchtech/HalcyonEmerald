@@ -369,7 +369,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSleepHit                @ EFFECT_SLEEP_HIT
 	.4byte BattleScript_EffectAttackerDefenseDownHit  @ EFFECT_ATTACKER_DEFENSE_DOWN_HIT
 	.4byte BattleScript_EffectHit                     @ EFFECT_BODY_PRESS
-	.4byte BattleScript_EffectDoubleIronBash	      @ EFFECT_DOUBLE_IRON_BASH
 
 BattleScript_EffectAttackerDefenseDownHit:
 	setmoveeffect MOVE_EFFECT_DEF_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
@@ -8064,15 +8063,6 @@ BattleScript_AbilityPreventsPhasingOutRedCard::
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectDoubleIronBash::
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	sethword sMULTIHIT_EFFECT, MOVE_EFFECT_FLINCH
-	attackstring
-	ppreduce
-	setmultihitcounter 2
-	initmultihitstring
-	goto BattleScript_MultiHitLoop
 BattleScript_Pickpocket::
 	call BattleScript_AbilityPopUp
 	jumpifability BS_ATTACKER, ABILITY_STICKY_HOLD, BattleScript_PickpocketPrevented

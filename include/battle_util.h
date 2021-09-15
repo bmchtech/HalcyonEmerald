@@ -159,4 +159,7 @@ bool32 IsGastroAcidBannedAbility(u16 ability);
 bool32 IsEntrainmentBannedAbilityAttacker(u16 ability);
 bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability);
 
+// Move checks
+bool8 IsTwoStrikesMove(u16 move);
+
 #endif // GUARD_BATTLE_UTIL_H
