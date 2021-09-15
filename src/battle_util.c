@@ -232,13 +232,16 @@ u8 CalcBeatUpPower(void)
 {
     struct Pokemon *party;
     u8 basePower;
+    u16 species;
 
     if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
         party = gPlayerParty;
     else
         party = gEnemyParty;
+
     // Party slot is set in the battle script for Beat Up
-    basePower = (GetMonData(&party[gBattleCommunication[0] - 1], MON_DATA_ATK) / 10) + 5;
+    species = GetMonData(&party[gBattleCommunication[0] - 1], MON_DATA_SPECIES);
+    basePower = (gBaseStats[species].baseAttack / 10) + 5;
 
     return basePower;
 }
