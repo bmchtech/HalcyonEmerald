@@ -73,8 +73,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
 
-gFieldEffectScript_ExclamationMarkIcon1::
-	field_eff_callnative FldEff_ExclamationMarkIcon
+gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
+	field_eff_loadfadedpalnotint_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_ExclamationMarkIcon
 	field_eff_end
 
 gFieldEffectScript_UseCutOnTallGrass::
@@ -206,8 +206,8 @@ gFieldEffectScript_FlyIn::
 	field_eff_callnative FldEff_FlyIn
 	field_eff_end
 
-gFieldEffectScript_QuestionMarkIcon::
-	field_eff_callnative FldEff_QuestionMarkIcon
+gFieldEffectScript_QuestionMarkIcon:: @ 82DBBEF
+	field_eff_loadfadedpalnotint_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_QuestionMarkIcon
 	field_eff_end
 
 gFieldEffectScript_FeetInFlowingWater::
@@ -254,8 +254,8 @@ gFieldEffectScript_UseDive::
 	field_eff_callnative FldEff_UseDive
 	field_eff_end
 
-gFieldEffectScript_Pokeball::
-	field_eff_loadpal gSpritePalette_Pokeball
+gFieldEffectScript_Pokeball:: @ 82DBC4B
+	field_eff_loadpalnotint gSpritePalette_Pokeball
 	field_eff_callnative FldEff_Pokeball
 	field_eff_end
 
