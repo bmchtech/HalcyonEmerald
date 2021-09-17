@@ -5382,7 +5382,8 @@ static void Cmd_moveend(void)
         case MOVEEND_MULTIHIT_MOVE:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
-            && gMultiHitCounter)
+            && gMultiHitCounter
+            && !(gCurrentMove == MOVE_PRESENT && gBattleStruct->presentBasePower == 0)) // Silly edge case
             {
                 gBattleScripting.multihitString[4]++;
                 if (--gMultiHitCounter == 0)
@@ -11020,27 +11021,37 @@ static void Cmd_presentdamagecalculation(void)
 {
     u32 rand = Random() & 0xFF;
 
-    if (rand < 102)
+    /* Don't reroll present effect/power for the second hit of Parental Bond.
+     * Not sure if this is the correct behaviour, but bulbapedia states
+     * that if present heals the foe, it doesn't strike twice, and if it deals
+     * damage, the second strike will always deal damage too. This is a simple way
+     * to replicate that effect.
+     */
+    if (gSpecialStatuses[gBattlerAttacker].parentalBondOn != 1)
     {
-        gBattleStruct->presentBasePower = 40;
-    }
-    else if (rand < 178)
-    {
-        gBattleStruct->presentBasePower = 80;
-    }
-    else if (rand < 204)
-    {
-        gBattleStruct->presentBasePower = 120;
-    }
-    else
-    {
-        gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
-        if (gBattleMoveDamage == 0)
-            gBattleMoveDamage = 1;
-        gBattleMoveDamage *= -1;
+        if (rand < 102)
+        {
+            gBattleStruct->presentBasePower = 40;
+        }
+        else if (rand < 178)
+        {
+            gBattleStruct->presentBasePower = 80;
+        }
+        else if (rand < 204)
+        {
+            gBattleStruct->presentBasePower = 120;
+        }
+        else
+        {
+            gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+            gBattleStruct->presentBasePower = 0;
+        }
     }
 
-    if (rand < 204)
+    if (gBattleStruct->presentBasePower)
     {
         gBattlescriptCurrInstr = BattleScript_HitFromCritCalc;
     }
