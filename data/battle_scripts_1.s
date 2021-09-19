@@ -67,7 +67,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectRecoilIfMiss            @ EFFECT_RECOIL_IF_MISS
 	.4byte BattleScript_EffectMist                    @ EFFECT_MIST
 	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_FOCUS_ENERGY
-	.4byte BattleScript_EffectRecoil25                @ EFFECT_RECOIL_25
+	.4byte BattleScript_EffectHit                     @ EFFECT_RECOIL_25
 	.4byte BattleScript_EffectConfuse                 @ EFFECT_CONFUSE
 	.4byte BattleScript_EffectAttackUp2               @ EFFECT_ATTACK_UP_2
 	.4byte BattleScript_EffectDefenseUp2              @ EFFECT_DEFENSE_UP_2
@@ -217,7 +217,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSnatch                  @ EFFECT_SNATCH
 	.4byte BattleScript_EffectHit                     @ EFFECT_LOW_KICK
 	.4byte BattleScript_EffectSecretPower             @ EFFECT_SECRET_POWER
-	.4byte BattleScript_EffectRecoil33                @ EFFECT_RECOIL_33
+	.4byte BattleScript_EffectHit                     @ EFFECT_RECOIL_33
 	.4byte BattleScript_EffectTeeterDance             @ EFFECT_TEETER_DANCE
 	.4byte BattleScript_EffectHitEscape               @ EFFECT_HIT_ESCAPE
 	.4byte BattleScript_EffectMudSport                @ EFFECT_MUD_SPORT
@@ -306,9 +306,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectGrowth                  @ EFFECT_GROWTH
 	.4byte BattleScript_EffectCloseCombat             @ EFFECT_CLOSE_COMBAT
 	.4byte BattleScript_EffectLastResort              @ EFFECT_LAST_RESORT
-	.4byte BattleScript_EffectRecoil33WithStatus      @ EFFECT_RECOIL_33_STATUS
+	.4byte BattleScript_EffectHit                     @ EFFECT_RECOIL_33_STATUS
 	.4byte BattleScript_EffectFlinchWithStatus        @ EFFECT_FLINCH_STATUS
-	.4byte BattleScript_EffectRecoil50                @ EFFECT_RECOIL_50
+	.4byte BattleScript_EffectHit                     @ EFFECT_RECOIL_50
 	.4byte BattleScript_EffectShellSmash              @ EFFECT_SHELL_SMASH
 	.4byte BattleScript_EffectShiftGear               @ EFFECT_SHIFT_GEAR
 	.4byte BattleScript_EffectDefenseUp3              @ EFFECT_DEFENSE_UP_3
@@ -407,9 +407,11 @@ BattleScript_EffectBurnUp:
 	attackstring
 	ppreduce
 	jumpiftype BS_ATTACKER, TYPE_FIRE, BattleScript_BurnUpWorks
-	goto BattleScript_ButItFailed
+	goto BattleScript_ButItFailedPpReduce
 BattleScript_BurnUpWorks:
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	setmoveeffect MOVE_EFFECT_BURN_UP
+	seteffectwithchance
 	critcalc
 	damagecalc
 	adjustdamage
@@ -424,11 +426,14 @@ BattleScript_BurnUpWorks:
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET, FALSE, NULL
+	goto BattleScript_MoveEnd
+
+BattleScript_BurnUpRemoveType::
 	losetype BS_ATTACKER, TYPE_FIRE
 	printstring STRINGID_ATTACKERLOSTFIRETYPE
 	waitmessage B_WAIT_TIME_LONG
-	tryfaintmon BS_TARGET, FALSE, NULL
-	goto BattleScript_MoveEnd
+	return
 	
 BattleScript_EffectPurify:
 	attackcanceler
@@ -4647,24 +4652,6 @@ BattleScript_EffectSecretPower::
 	getsecretpowereffect
 	goto BattleScript_EffectHit
 
-BattleScript_EffectRecoil25:
-	setmoveeffect MOVE_EFFECT_RECOIL_25 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	jumpifnotmove MOVE_STRUGGLE, BattleScript_EffectHit
-	incrementgamestat GAME_STAT_USED_STRUGGLE
-	goto BattleScript_EffectHit
-
-BattleScript_EffectRecoil33::
-	setmoveeffect MOVE_EFFECT_RECOIL_33 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	goto BattleScript_EffectHit
-
-BattleScript_EffectRecoil33WithStatus:
-	setmoveeffect MOVE_EFFECT_RECOIL_33_STATUS | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	goto BattleScript_EffectHit
-
-BattleScript_EffectRecoil50:
-	setmoveeffect MOVE_EFFECT_RECOIL_50 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	goto BattleScript_EffectHit
-
 BattleScript_EffectTeeterDance::
 	attackcanceler
 	attackstring
@@ -6569,7 +6556,6 @@ BattleScript_MoveEffectConfusion::
 
 BattleScript_MoveEffectRecoilWithStatus::
 	argumentstatuseffect
-	copyword gBattleMoveDamage, sSAVED_DMG
 BattleScript_MoveEffectRecoil::
 	jumpifmove MOVE_STRUGGLE, BattleScript_DoRecoil
 	jumpifability BS_ATTACKER, ABILITY_ROCK_HEAD, BattleScript_RecoilEnd
@@ -7510,6 +7496,7 @@ BattleScript_BerryCureSlpRet::
 BattleScript_GemActivates::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_ATTACKER
 	printstring STRINGID_GEMACTIVATES
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_ATTACKER
@@ -7518,6 +7505,7 @@ BattleScript_GemActivates::
 BattleScript_BerryReduceDmg::
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_TARGET
 	printstring STRINGID_TARGETATEITEM
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_TARGET

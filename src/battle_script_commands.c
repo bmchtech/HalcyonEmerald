@@ -879,8 +879,6 @@ static const u8* const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_UPROAR]           = BattleScript_MoveEffectUproar,
     [MOVE_EFFECT_PAYDAY]           = BattleScript_MoveEffectPayDay,
     [MOVE_EFFECT_WRAP]             = BattleScript_MoveEffectWrap,
-    [MOVE_EFFECT_RECOIL_25]        = BattleScript_MoveEffectRecoil,
-    [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate = {0, 1, 3, 7, 0xF, 0x1F, 0x3F};
@@ -1830,7 +1828,8 @@ static void Cmd_ppreduce(void)
         // For item Metronome, echoed voice
         if (gCurrentMove == gLastResultingMoves[gBattlerAttacker]
             && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-            && !WasUnableToUseMove(gBattlerAttacker))
+            && !WasUnableToUseMove(gBattlerAttacker)
+            && gSpecialStatuses[gBattlerAttacker].parentalBondOn != 2) // Don't increment counter on first hit
                 gBattleStruct->sameMoveTurns[gBattlerAttacker]++;
         else
             gBattleStruct->sameMoveTurns[gBattlerAttacker] = 0;
@@ -2457,7 +2456,6 @@ static void Cmd_resultmessage(void)
     if (gSpecialStatuses[gBattlerTarget].berryReduced
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
     {
-        gLastUsedItem = gBattleMons[gBattlerTarget].item;
         gSpecialStatuses[gBattlerTarget].berryReduced = 0;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_PrintBerryReduceString;
@@ -2605,6 +2603,10 @@ void SetMoveEffect(bool32 primary, u32 certain)
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
     case MOVE_EFFECT_KNOCK_OFF:
+    case MOVE_EFFECT_SMACK_DOWN:
+    case MOVE_EFFECT_REMOVE_STATUS:
+    case MOVE_EFFECT_STEAL_ITEM:
+    case MOVE_EFFECT_BURN_UP:
         gBattleStruct->moveEffect2 = gBattleScripting.moveEffect;
         gBattlescriptCurrInstr++;
         return;
@@ -3126,61 +3128,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
                 gBattlescriptCurrInstr++;
                 break;
-            case MOVE_EFFECT_STEAL_ITEM:
-                {
-                    if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item))
-                    {
-                        gBattlescriptCurrInstr++;
-                        break;
-                    }
-
-                    side = GetBattlerSide(gBattlerAttacker);
-                    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
-                        && !(gBattleTypeFlags &
-                             (BATTLE_TYPE_EREADER_TRAINER
-                              | BATTLE_TYPE_FRONTIER
-                              | BATTLE_TYPE_LINK
-                              | BATTLE_TYPE_RECORDED_LINK
-                              | BATTLE_TYPE_SECRET_BASE)))
-                    {
-                        gBattlescriptCurrInstr++;
-                    }
-                    else if (!(gBattleTypeFlags &
-                          (BATTLE_TYPE_EREADER_TRAINER
-                           | BATTLE_TYPE_FRONTIER
-                           | BATTLE_TYPE_LINK
-                           | BATTLE_TYPE_RECORDED_LINK
-                           | BATTLE_TYPE_SECRET_BASE))
-                        && (gWishFutureKnock.knockedOffMons[side] & gBitTable[gBattlerPartyIndexes[gBattlerAttacker]]))
-                    {
-                        gBattlescriptCurrInstr++;
-                    }
-                    else if (gBattleMons[gBattlerTarget].item
-                        && gBattleMons[gBattlerTarget].ability == ABILITY_STICKY_HOLD)
-                    {
-                        BattleScriptPushCursor();
-                        gBattlescriptCurrInstr = BattleScript_NoItemSteal;
-
-                        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
-                        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
-                    }
-                    else if (gBattleMons[gBattlerAttacker].item != 0
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
-                        || gBattleMons[gBattlerTarget].item == 0)
-                    {
-                        gBattlescriptCurrInstr++;
-                    }
-                    else
-                    {
-                        StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
-                        gBattleMons[gBattlerAttacker].item = 0; // Item assigned later on with thief (see MOVEEND_CHANGED_ITEMS)
-                        gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
-                        BattleScriptPush(gBattlescriptCurrInstr + 1);
-                        gBattlescriptCurrInstr = BattleScript_ItemSteal;
-                    }
-
-                }
-                break;
             case MOVE_EFFECT_PREVENT_ESCAPE:
                 gBattleMons[gBattlerTarget].status2 |= STATUS2_ESCAPE_PREVENTION;
                 gDisableStructs[gBattlerTarget].battlerPreventingEscape = gBattlerAttacker;
@@ -3198,34 +3145,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_RapidSpinAway;
                 break;
-            case MOVE_EFFECT_REMOVE_STATUS: // Smelling salts
-                if (!(gBattleMons[gBattlerTarget].status1 & gBattleMoves[gCurrentMove].argument))
-                {
-                    gBattlescriptCurrInstr++;
-                }
-                else
-                {
-                    gBattleMons[gBattlerTarget].status1 &= ~(gBattleMoves[gCurrentMove].argument);
-
-                    gActiveBattler = gBattlerTarget;
-                    BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
-                    MarkBattlerForControllerExec(gActiveBattler);
-
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    switch (gBattleMoves[gCurrentMove].argument)
-                    {
-                    case STATUS1_PARALYSIS:
-                        gBattlescriptCurrInstr = BattleScript_TargetPRLZHeal;
-                        break;
-                    case STATUS1_SLEEP:
-                        gBattlescriptCurrInstr = BattleScript_TargetWokeUp;
-                        break;
-                    case STATUS1_BURN:
-                        gBattlescriptCurrInstr = BattleScript_TargetBurnHeal;
-                        break;
-                    }
-                }
-                break;
             case MOVE_EFFECT_ATK_DEF_DOWN: // SuperPower
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_AtkDefDown;
@@ -3233,38 +3152,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
             case MOVE_EFFECT_DEF_SPDEF_DOWN: // Close Combat
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_DefSpDefDown;
-                break;
-            case MOVE_EFFECT_RECOIL_25: // Take Down, 25% recoil
-                gBattleMoveDamage = (gHpDealt) / 4;
-                if (gBattleMoveDamage == 0)
-                    gBattleMoveDamage = 1;
-
-                BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleScripting.moveEffect];
-                break;
-            case MOVE_EFFECT_RECOIL_33: // Double Edge, 33 % recoil
-                gBattleMoveDamage = gHpDealt / 3;
-                if (gBattleMoveDamage == 0)
-                    gBattleMoveDamage = 1;
-
-                BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = sMoveEffectBS_Ptrs[gBattleScripting.moveEffect];
-                break;
-            case MOVE_EFFECT_RECOIL_50: // Head Smash, 50 % recoil
-                gBattleMoveDamage = gHpDealt / 2;
-                if (gBattleMoveDamage == 0)
-                    gBattleMoveDamage = 1;
-
-                BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
-                break;
-            case MOVE_EFFECT_RECOIL_33_STATUS: // Flare Blitz - can burn, Volt Tackle - can paralyze
-                gBattleScripting.savedDmg = gHpDealt / 3;
-                if (gBattleScripting.savedDmg == 0)
-                    gBattleScripting.savedDmg = 1;
-
-                BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoilWithStatus;
                 break;
             case MOVE_EFFECT_THRASH:
                 if (gBattleMons[gEffectBattler].status2 & STATUS2_LOCK_CONFUSE)
@@ -3294,15 +3181,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         gBattleMons[gEffectBattler].statStages[i] = 6;
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_MoveEffectClearSmog;
-                }
-                break;
-            case MOVE_EFFECT_SMACK_DOWN:
-                if (!IsBattlerGrounded(gBattlerTarget))
-                {
-                    gStatuses3[gBattlerTarget] |= STATUS3_SMACKED_DOWN;
-                    gStatuses3[gBattlerTarget] &= ~(STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS | STATUS3_ON_AIR);
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_MoveEffectSmackDown;
                 }
                 break;
             case MOVE_EFFECT_FLAME_BURST:
@@ -4912,6 +4790,10 @@ static void Cmd_moveend(void)
     {
         switch (gBattleScripting.moveendState)
         {
+        case MOVEEND_SUM_DAMAGE: // Sum and store damage dealt for multi strike recoil
+            gBattleScripting.savedDmg += gHpDealt;
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_PROTECT_LIKE_EFFECT:
             if (gProtectStructs[gBattlerAttacker].touchedProtectLike)
             {
@@ -4979,6 +4861,36 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_RECOIL:
+            switch (gBattleMoves[gCurrentMove].effect)
+            {
+            case EFFECT_RECOIL_25: // Take Down, 25% recoil
+                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 4);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                effect = TRUE;
+                break;
+            case EFFECT_RECOIL_33: // Double Edge, 33 % recoil
+                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                effect = TRUE;
+                break;
+            case EFFECT_RECOIL_50: // Head Smash, 50 % recoil
+                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 2);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                effect = TRUE;
+                break;
+            case EFFECT_RECOIL_33_STATUS: // Flare Blitz - can burn, Volt Tackle - can paralyze
+                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoilWithStatus;
+                effect = TRUE;
+                break;
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_SYNCHRONIZE_TARGET: // target synchronize
             if (AbilityBattleEffects(ABILITYEFFECT_SYNCHRONIZE, gBattlerTarget, 0, 0, 0))
                 effect = TRUE;
@@ -5029,17 +4941,6 @@ static void Cmd_moveend(void)
                 *choicedMoveAtk = 0;
             ++gBattleScripting.moveendState;
             break;
-        case MOVEEND_CHANGED_ITEMS: // changed held items
-            for (i = 0; i < gBattlersCount; i++)
-            {
-                if (gBattleStruct->changedItems[i] != 0)
-                {
-                    gBattleMons[i].item = gBattleStruct->changedItems[i];
-                    gBattleStruct->changedItems[i] = 0;
-                }
-            }
-            gBattleScripting.moveendState++;
-            break;
         case MOVEEND_ITEM_EFFECTS_TARGET:
             if (ItemBattleEffects(ITEMEFFECT_TARGET, gBattlerTarget, FALSE))
                 effect = TRUE;
@@ -5051,8 +4952,85 @@ static void Cmd_moveend(void)
             case MOVE_EFFECT_KNOCK_OFF:
                 effect = TryKnockOffBattleScript(gBattlerTarget);
                 break;
+            case MOVE_EFFECT_SMACK_DOWN:
+                if (!IsBattlerGrounded(gBattlerTarget) && IsBattlerAlive(gBattlerTarget))
+                {
+                    gStatuses3[gBattlerTarget] |= STATUS3_SMACKED_DOWN;
+                    gStatuses3[gBattlerTarget] &= ~(STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS | STATUS3_ON_AIR);
+                    effect = TRUE;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectSmackDown;
+                }
+                break;
+            case MOVE_EFFECT_REMOVE_STATUS: // Smelling salts, Wake-Up Slap, Sparkling Aria
+                if ((gBattleMons[gBattlerTarget].status1 & gBattleMoves[gCurrentMove].argument) && IsBattlerAlive(gBattlerTarget))
+                {
+                    gBattleMons[gBattlerTarget].status1 &= ~(gBattleMoves[gCurrentMove].argument);
+
+                    gActiveBattler = gBattlerTarget;
+                    BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
+                    MarkBattlerForControllerExec(gActiveBattler);
+                    effect = TRUE;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    switch (gBattleMoves[gCurrentMove].argument)
+                    {
+                    case STATUS1_PARALYSIS:
+                        gBattlescriptCurrInstr = BattleScript_TargetPRLZHeal;
+                        break;
+                    case STATUS1_SLEEP:
+                        gBattlescriptCurrInstr = BattleScript_TargetWokeUp;
+                        break;
+                    case STATUS1_BURN:
+                        gBattlescriptCurrInstr = BattleScript_TargetBurnHeal;
+                        break;
+                    }
+                }
+                break; // MOVE_EFFECT_REMOVE_STATUS
+            case MOVE_EFFECT_STEAL_ITEM:
+                if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item)
+                    || gBattleMons[gBattlerAttacker].item != ITEM_NONE
+                    || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
+                    || gBattleMons[gBattlerTarget].item == ITEM_NONE)
+                {
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEnd; // Can't steal item, just do damage
+                }
+                else if (gBattleMons[gBattlerTarget].item
+                    && gBattleMons[gBattlerTarget].ability == ABILITY_STICKY_HOLD) // Can steal item, but ability prevents it
+                {
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_NoItemSteal;
+
+                    gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+                    RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+                }
+                else
+                {
+                    StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
+                    gBattleMons[gBattlerAttacker].item = 0; // Item assigned later on with thief (see MOVEEND_CHANGED_ITEMS)
+                    gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_ItemSteal;
+                }
+                break; // MOVE_EFFECT_STEAL_ITEM
+            case MOVE_EFFECT_BURN_UP:
+                effect = TRUE;
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_BurnUpRemoveType;
+                break;
             }
             gBattleStruct->moveEffect2 = 0;
+            gBattleScripting.moveendState++;
+            break; // MOVEEND_MOVE_EFFECTS2
+        case MOVEEND_CHANGED_ITEMS: // changed held items
+            for (i = 0; i < gBattlersCount; i++)
+            {
+                if (gBattleStruct->changedItems[i] != 0)
+                {
+                    gBattleMons[i].item = gBattleStruct->changedItems[i];
+                    gBattleStruct->changedItems[i] = 0;
+                }
+            }
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ITEM_EFFECTS_ALL: // item effects for all battlers
@@ -5383,7 +5361,8 @@ static void Cmd_moveend(void)
         case MOVEEND_MULTIHIT_MOVE:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
-            && gMultiHitCounter)
+            && gMultiHitCounter
+            && !(gCurrentMove == MOVE_PRESENT && gBattleStruct->presentBasePower == 0)) // Silly edge case
             {
                 gBattleScripting.multihitString[4]++;
                 if (--gMultiHitCounter == 0)
@@ -10995,7 +10974,8 @@ static void Cmd_handlefurycutter(void)
     }
     else
     {
-        if (gDisableStructs[gBattlerAttacker].furyCutterCounter != 5)
+        if (gDisableStructs[gBattlerAttacker].furyCutterCounter != 5
+            && gSpecialStatuses[gBattlerAttacker].parentalBondOn != 2) // Don't increment counter on first hit
             gDisableStructs[gBattlerAttacker].furyCutterCounter++;
 
         gBattlescriptCurrInstr++;
@@ -11020,27 +11000,37 @@ static void Cmd_presentdamagecalculation(void)
 {
     u32 rand = Random() & 0xFF;
 
-    if (rand < 102)
+    /* Don't reroll present effect/power for the second hit of Parental Bond.
+     * Not sure if this is the correct behaviour, but bulbapedia states
+     * that if present heals the foe, it doesn't strike twice, and if it deals
+     * damage, the second strike will always deal damage too. This is a simple way
+     * to replicate that effect.
+     */
+    if (gSpecialStatuses[gBattlerAttacker].parentalBondOn != 1)
     {
-        gBattleStruct->presentBasePower = 40;
-    }
-    else if (rand < 178)
-    {
-        gBattleStruct->presentBasePower = 80;
-    }
-    else if (rand < 204)
-    {
-        gBattleStruct->presentBasePower = 120;
-    }
-    else
-    {
-        gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
-        if (gBattleMoveDamage == 0)
-            gBattleMoveDamage = 1;
-        gBattleMoveDamage *= -1;
+        if (rand < 102)
+        {
+            gBattleStruct->presentBasePower = 40;
+        }
+        else if (rand < 178)
+        {
+            gBattleStruct->presentBasePower = 80;
+        }
+        else if (rand < 204)
+        {
+            gBattleStruct->presentBasePower = 120;
+        }
+        else
+        {
+            gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 4;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+            gBattleStruct->presentBasePower = 0;
+        }
     }
 
-    if (rand < 204)
+    if (gBattleStruct->presentBasePower)
     {
         gBattlescriptCurrInstr = BattleScript_HitFromCritCalc;
     }
@@ -13215,15 +13205,11 @@ static bool32 CriticalCapture(u32 odds)
 
 bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId)
 {
-    if (gBattleMoves[move].split != SPLIT_STATUS
-	&& !(sForbiddenMoves[move] & FORBIDDEN_PARENTAL_BOND)
-	&& gBattleMoves[move].effect != EFFECT_MULTI_HIT
-	&& gBattleMoves[move].effect != EFFECT_TRIPLE_KICK
-	&& gBattleMoves[move].effect != EFFECT_DOUBLE_HIT) // TODO: Put all of these moves into the ban list instead
+    if (gBattleMoves[move].split != SPLIT_STATUS && !(sForbiddenMoves[move] & FORBIDDEN_PARENTAL_BOND))
 	{
 		if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
 		{
-			switch (gBattleMoves[move].target) 
+			switch (gBattleMoves[move].target)
             {
 				case MOVE_TARGET_BOTH:
 					if (CountAliveMonsInBattle(BATTLE_ALIVE_DEF_SIDE) >= 2) // Check for single target
@@ -13235,9 +13221,7 @@ bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId)
 					break;
 			}
 		}
-
 		return TRUE;
 	}
-
 	return FALSE;
 }
