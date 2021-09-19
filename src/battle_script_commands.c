@@ -2606,6 +2606,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
     case MOVE_EFFECT_SMACK_DOWN:
     case MOVE_EFFECT_REMOVE_STATUS:
     case MOVE_EFFECT_STEAL_ITEM:
+    case MOVE_EFFECT_BURN_UP:
         gBattleStruct->moveEffect2 = gBattleScripting.moveEffect;
         gBattlescriptCurrInstr++;
         return;
@@ -5012,6 +5013,11 @@ static void Cmd_moveend(void)
                     gBattlescriptCurrInstr = BattleScript_ItemSteal;
                 }
                 break; // MOVE_EFFECT_STEAL_ITEM
+            case MOVE_EFFECT_BURN_UP:
+                effect = TRUE;
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_BurnUpRemoveType;
+                break;
             }
             gBattleStruct->moveEffect2 = 0;
             gBattleScripting.moveendState++;

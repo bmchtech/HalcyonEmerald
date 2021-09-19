@@ -340,7 +340,8 @@
 #define MOVE_EFFECT_THROAT_CHOP         0x3F
 #define MOVE_EFFECT_INCINERATE          0x40
 #define MOVE_EFFECT_BUG_BITE            0x41
-#define NUM_MOVE_EFFECTS                0x42
+#define MOVE_EFFECT_BURN_UP             0x42
+#define NUM_MOVE_EFFECTS                0x43
 
 #define MOVE_EFFECT_AFFECTS_USER        0x4000
 #define MOVE_EFFECT_CERTAIN             0x8000

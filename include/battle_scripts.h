@@ -377,6 +377,6 @@ extern const u8 BattleScript_BattlerGotOverItsInfatuation[];
 extern const u8 BattleScript_Pickpocket[];
 extern const u8 BattleScript_StickyBarbTransfer[];
 extern const u8 BattleScript_MultiHitPrintStrings[];
-
+extern const u8 BattleScript_BurnUpRemoveType[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H
