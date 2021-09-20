@@ -510,7 +510,8 @@ const u16 gEggMoves[] = {
         MOVE_AGILITY,
         MOVE_CHIP_AWAY,
         MOVE_BIDE,
-        MOVE_ALLY_SWITCH),
+        MOVE_ALLY_SWITCH,
+        MOVE_ICE_HAMMER),
 
     egg_moves(EXEGGCUTE,
         MOVE_MOONLIGHT,
@@ -618,7 +619,6 @@ const u16 gEggMoves[] = {
         MOVE_HAMMER_ARM,
         MOVE_FOCUS_PUNCH,
         MOVE_TRUMP_CARD,
-        MOVE_POWER_UP_PUNCH,
         MOVE_CIRCLE_THROW),
 
     egg_moves(HORSEA,
@@ -2475,7 +2475,8 @@ const u16 gEggMoves[] = {
         MOVE_GRAVITY,
         MOVE_LAST_RESORT,
         MOVE_MUD_BOMB,
-        MOVE_NATURAL_GIFT),
+        MOVE_NATURAL_GIFT,
+        MOVE_WISH),
 
     egg_moves(CHATOT,
         MOVE_ENCORE,
