@@ -6517,7 +6517,7 @@ static void PrintStatsScreen_MoveNameAndInfo(u8 taskId)
     if (selected < numEggMoves)
     {
         move = sStatsMovesEgg[sPokedexView->moveSelected];
-        StringCopy(gStringVar3, gMoveNames[move]);
+        StringCopy(gStringVar3, gMoveNamesLong[move]);
         StringCopy(gStringVar4, gMoveDescriptionPointers[(move - 1)]);
         PrintInfoScreenTextSmall(gText_ThreeDashes, moves_x + 113, moves_y + 9);
         item = ITEM_LUCKY_EGG;
@@ -6525,7 +6525,7 @@ static void PrintStatsScreen_MoveNameAndInfo(u8 taskId)
     else if (selected < (numEggMoves + numLevelUpMoves))
     {
         move = sStatsMovesLevelUp[sPokedexView->moveSelected - numEggMoves];
-        StringCopy(gStringVar3, gMoveNames[move]);
+        StringCopy(gStringVar3, gMoveNamesLong[move]);
         StringCopy(gStringVar4, gMoveDescriptionPointers[(move - 1)]);
         
         #if defined (BATTLE_ENGINE) || defined (POKEMON_EXPANSION)
@@ -6547,7 +6547,7 @@ static void PrintStatsScreen_MoveNameAndInfo(u8 taskId)
     else if (selected < (numEggMoves + numLevelUpMoves + numTMHMMoves))
     {
         move = sStatsMovesTMHM[sPokedexView->moveSelected - numEggMoves - numLevelUpMoves];
-        StringCopy(gStringVar3, gMoveNames[move]);
+        StringCopy(gStringVar3, gMoveNamesLong[move]);
         StringCopy(gStringVar4, gMoveDescriptionPointers[(move - 1)]);
         CopyItemName(sStatsMovesTMHM_ID[(selected-numEggMoves-numLevelUpMoves)], gStringVar1); //TM name
         PrintInfoScreenTextSmall(gStringVar1, moves_x + 113, moves_y + 9);
@@ -6556,7 +6556,7 @@ static void PrintStatsScreen_MoveNameAndInfo(u8 taskId)
     else if (selected < (numEggMoves + numLevelUpMoves + numTMHMMoves + numTutorMoves))
     {
         move = sStatsMovesTutor[sPokedexView->moveSelected - numEggMoves - numLevelUpMoves - numTMHMMoves];
-        StringCopy(gStringVar3, gMoveNames[move]);
+        StringCopy(gStringVar3, gMoveNamesLong[move]);
         StringCopy(gStringVar4, gMoveDescriptionPointers[(move - 1)]);
         PrintInfoScreenTextSmall(gText_ThreeDashes, moves_x + 113, moves_y + 9);
         item = ITEM_TEACHY_TV;
@@ -6773,7 +6773,7 @@ static void PrintStatsScreen_Left(u8 taskId)
     u8 strBase[14];
     u8 abilities_x = 101;
     u8 abilities_y = 99;
-    u8 ability0;
+    u16 ability0;
     u8 differentEVs = 0;
     u8 EVs[6] = {gBaseStats[species].evYield_HP, gBaseStats[species].evYield_Speed, gBaseStats[species].evYield_Attack, gBaseStats[species].evYield_SpAttack, gBaseStats[species].evYield_Defense, gBaseStats[species].evYield_SpDefense};
 
