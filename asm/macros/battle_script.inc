@@ -1799,6 +1799,7 @@
 	various \battler, VARIOUS_JUMP_IF_TERRAIN_AFFECTED
 	.4byte \terrainFlags
 	.4byte \ptr
+	.endm
 
 	.macro consumeberry battler:req, restoreItem=FALSE
 	various \battler, VARIOUS_CONSUME_BERRY
