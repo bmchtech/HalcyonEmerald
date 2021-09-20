@@ -1781,6 +1781,25 @@
 	various 0, VARIOUS_PICKPOCKET
 	.endm
 	
+	.macro doterrainseed battler:req, ptr:req
+	various \battler, VARIOUS_TERRAIN_SEED
+	.4byte \ptr
+	.endm
+	
+	.macro makeinvisible battler:req
+	various \battler, VARIOUS_MAKE_INVISIBLE
+	.endm
+	
+	.macro tryroomservice battler:req, ptr:req
+	various \battler, VARIOUS_ROOM_SERVICE
+	.4byte \ptr
+	.endm
+	
+	.macro jumpifterrainaffected battler:req, terrainFlags:req, ptr:req
+	various \battler, VARIOUS_JUMP_IF_TERRAIN_AFFECTED
+	.4byte \terrainFlags
+	.4byte \ptr
+
 	.macro consumeberry battler:req, restoreItem=FALSE
 	various \battler, VARIOUS_CONSUME_BERRY
 	.byte \restoreItem
