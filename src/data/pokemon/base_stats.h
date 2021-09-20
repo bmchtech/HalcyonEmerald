@@ -2329,8 +2329,8 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 80,
         .baseSpDefense = 95,
         #ifdef REBALANCED_VERSION
-            .baseSpeed     = 95,
-            .baseSpAttack  = 90,
+            .baseSpeed     = 90,
+            .baseSpAttack  = 95,
             .abilities = {ABILITY_FUR_COAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
         #else
             .baseSpeed     = 70,
@@ -15711,11 +15711,17 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_VANILLUXE] =
     {
         .baseHP        = 71,
-        .baseAttack    = 95,
         .baseDefense   = 85,
-        .baseSpeed     = 79,
-        .baseSpAttack  = 110,
         .baseSpDefense = 95,
+        #ifdef REBALANCED_VERSION
+            .baseAttack    = 69,
+            .baseSpeed     = 95,
+            .baseSpAttack  = 120,
+        #else
+            .baseAttack    = 95,
+            .baseSpeed     = 79,
+            .baseSpAttack  = 110,
+        #endif
         .type1 = TYPE_ICE,
         .type2 = TYPE_ICE,
         .catchRate = 45,
