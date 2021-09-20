@@ -1530,7 +1530,7 @@ static void Cmd_attackcanceler(void)
      && ((!IsTwoTurnsMove(gCurrentMove) || (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)))
      && gBattleMoves[gCurrentMove].effect != EFFECT_SUCKER_PUNCH)
     {
-        if (gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+        if (IsMoveMakingContact(gCurrentMove, gBattlerAttacker))
             gProtectStructs[gBattlerAttacker].touchedProtectLike = 1;
         CancelMultiTurnMoves(gBattlerAttacker);
         gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -11342,10 +11342,10 @@ static void Cmd_recoverbasedonsunlight(void)
         }
         else
         {
-            if (!(gBattleWeather & WEATHER_ANY) || !WEATHER_HAS_EFFECT)
-                gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;
-            else if ((gBattleWeather & WEATHER_SUN_ANY) || GetBattlerAbility(gBattlerAttacker) == ABILITY_CHLOROPLAST)
+            if (((gBattleWeather & WEATHER_SUN_ANY) && WEATHER_HAS_EFFECT) || GetBattlerAbility(gBattlerAttacker) == ABILITY_CHLOROPLAST)
                 gBattleMoveDamage = 20 * gBattleMons[gBattlerAttacker].maxHP / 30;
+            else if (!(gBattleWeather & WEATHER_ANY) || !WEATHER_HAS_EFFECT)
+                gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;
             else // not sunny weather
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 4;
         }

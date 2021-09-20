@@ -2329,8 +2329,8 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 80,
         .baseSpDefense = 95,
         #ifdef REBALANCED_VERSION
-            .baseSpeed     = 95,
-            .baseSpAttack  = 90,
+            .baseSpeed     = 90,
+            .baseSpAttack  = 95,
             .abilities = {ABILITY_FUR_COAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
         #else
             .baseSpeed     = 70,
@@ -15711,11 +15711,17 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_VANILLUXE] =
     {
         .baseHP        = 71,
-        .baseAttack    = 95,
         .baseDefense   = 85,
-        .baseSpeed     = 79,
-        .baseSpAttack  = 110,
         .baseSpDefense = 95,
+        #ifdef REBALANCED_VERSION
+            .baseAttack    = 69,
+            .baseSpeed     = 95,
+            .baseSpAttack  = 120,
+        #else
+            .baseAttack    = 95,
+            .baseSpeed     = 79,
+            .baseSpAttack  = 110,
+        #endif
         .type1 = TYPE_ICE,
         .type2 = TYPE_ICE,
         .catchRate = 45,
@@ -25108,7 +25114,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_WATER_3,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_SHEER_FORCE, ABILITY_SHEER_FORCE},
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
     },

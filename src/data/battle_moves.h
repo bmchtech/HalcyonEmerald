@@ -3682,11 +3682,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_RAPID_SPIN] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 50,
-        #else
-            .power = 20,
-        #endif
+        .power = 50,
         .effect = EFFECT_RAPID_SPIN,
         .type = TYPE_NORMAL,
         .accuracy = 100,

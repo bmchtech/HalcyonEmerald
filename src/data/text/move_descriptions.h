@@ -2509,7 +2509,7 @@ static const u8 sPOLLEN_PUFFDescription[] = _(
 
 static const u8 sANCHOR_SHOTDescription[] = _(
     "Strangles the foe with a\n"
-    "chain. The foe can't flinch.");
+    "chain. The foe can't switch.");
 
 static const u8 sPSYCHIC_TERRAINDescription[] = _(
     "The ground turns weird for\n"
