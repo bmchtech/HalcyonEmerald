@@ -37,7 +37,8 @@
 #define sILLUSION_NICK_HACK gBattleScripting + 0x32
 #define sFIXED_ABILITY_POPUP gBattleScripting + 0x33
 #define sABILITY_OVERWRITE gBattleScripting + 0x34
-#define sBERRY_OVERRIDE gBattleScripting + 0x36
+#define sSWITCH_CASE gBattleScripting + 0x36
+#define sBERRY_OVERRIDE gBattleScripting + 0x37
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 #define cMISS_TYPE gBattleCommunication + 6
@@ -175,9 +176,12 @@
 #define VARIOUS_TOTEM_BOOST                     103
 #define VARIOUS_TRY_ACTIVATE_GRIM_NEIGH         104
 #define VARIOUS_MOVEEND_ITEM_EFFECTS            105
-#define VARIOUS_CONSUME_BERRY                   106
-#define VARIOUS_TRY_ACTIVATE_RAMPAGE            107
-#define VARIOUS_TERRAIN_SEED                    108
+#define VARIOUS_TERRAIN_SEED                    106
+#define VARIOUS_MAKE_INVISIBLE                  107
+#define VARIOUS_ROOM_SERVICE                    108
+#define VARIOUS_JUMP_IF_TERRAIN_AFFECTED        109
+#define VARIOUS_CONSUME_BERRY                   110
+#define VARIOUS_TRY_ACTIVATE_RAMPAGE            111
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -230,23 +234,29 @@
 #define MOVEEND_TARGET_VISIBLE                    11
 #define MOVEEND_ITEM_EFFECTS_TARGET               12
 #define MOVEEND_ITEM_EFFECTS_ALL                  13
-#define MOVEEND_KINGSROCK_SHELLBELL               14
+#define MOVEEND_KINGSROCK                         14
 #define MOVEEND_SUBSTITUTE                        15
 #define MOVEEND_UPDATE_LAST_MOVES                 16
 #define MOVEEND_MIRROR_MOVE                       17
-#define MOVEEND_NEXT_TARGET                       18
+#define MOVEEND_NEXT_TARGET                       18    // Everything up until here is handled for each strike of a multi-hit move
 #define MOVEEND_MULTIHIT_MOVE                     19
 #define MOVEEND_MOVE_EFFECTS2                     20
-#define MOVEEND_CHANGED_ITEMS                     21
-#define MOVEEND_DEFROST                           22
-#define MOVEEND_RECOIL                            23
-#define MOVEEND_LIFE_ORB                          24
-#define MOVEEND_PICKPOCKET                        25
-#define MOVEEND_DANCER                            26
-#define MOVEEND_EMERGENCY_EXIT                    27
-#define MOVEEND_CLEAR_BITS                        28
-#define MOVEEND_RED_CARD                          29
-#define MOVEEND_EJECT_BUTTON                      30
-#define MOVEEND_COUNT                             31
+#define MOVEEND_RECOIL                            21
+#define MOVEEND_EJECT_BUTTON                      22
+#define MOVEEND_RED_CARD                          23
+#define MOVEEND_EJECT_PACK                        24
+#define MOVEEND_LIFEORB_SHELLBELL                 25    // Includes shell bell, throat spray, etc
+#define MOVEEND_CHANGED_ITEMS                     26
+#define MOVEEND_DEFROST                           27
+#define MOVEEND_PICKPOCKET                        28
+#define MOVEEND_DANCER                            29
+#define MOVEEND_EMERGENCY_EXIT                    30
+#define MOVEEND_CLEAR_BITS                        31
+#define MOVEEND_COUNT                             32
+
+// switch cases
+#define B_SWITCH_NORMAL     0
+#define B_SWITCH_HIT        1   // dragon tail, circle throw
+#define B_SWITCH_RED_CARD   2
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H
