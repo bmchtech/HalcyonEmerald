@@ -177,7 +177,6 @@
 #define VARIOUS_MOVEEND_ITEM_EFFECTS            105
 #define VARIOUS_CONSUME_BERRY                   106
 #define VARIOUS_TRY_ACTIVATE_RAMPAGE            107
-#define VARIOUS_TERRAIN_SEED                    108
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
