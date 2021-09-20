@@ -7364,7 +7364,7 @@ BattleScript_ImposterActivates::
 	end3
 
 BattleScript_HurtAttacker:
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_x100000 | HITMARKER_IGNORE_DISGUISE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	printstring STRINGID_PKMNHURTSWITH
