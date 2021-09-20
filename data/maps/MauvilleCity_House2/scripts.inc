@@ -50,7 +50,7 @@ MauvilleCity_House2_EventScript_Tutor::
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_House2_EventScript_StarterMoveDeclined
 	setvar VAR_0x8008, TRUE
-	msgbox MauvilleCity_House2_Text_StarterMoveWhichMove, MSGBOX_DEFAULT
+	message MauvilleCity_House2_Text_StarterMoveWhichMove
 	waitmessage
 	multichoice 0, 0, MULTI_STARTER_MOVES, 0
 	switch VAR_RESULT
@@ -60,8 +60,8 @@ MauvilleCity_House2_EventScript_Tutor::
 	case 3, MauvilleCity_House2_EventScript_StarterMoveFrenzyPlant
 	case 4, MauvilleCity_House2_EventScript_StarterMoveBlastBurn
 	case 5, MauvilleCity_House2_EventScript_StarterMoveHydroCannon
-	case MULTI_B_PRESSED, MauvilleCity_House2_Text_StarterMoveDeclined
-	goto MauvilleCity_House2_Text_StarterMoveDeclined
+	case MULTI_B_PRESSED, MauvilleCity_House2_EventScript_StarterMoveDeclined
+	goto MauvilleCity_House2_EventScript_StarterMoveDeclined
 	end
 
 	MauvilleCity_House2_EventScript_StarterMoveGrassPledge::
