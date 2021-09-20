@@ -2380,7 +2380,7 @@ enum
 s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
-        hp = hp * 3 / 4; // Buff Big Root's additional healing from 30% to 50%
+        hp = (hp * 3) / 2; // Buff Big Root's additional healing from 30% to 50%
     if (hp == 0)
         hp = 1;
 
