@@ -775,10 +775,9 @@
 	.byte 0x8e
 	.endm
 
-	.macro forcerandomswitch param0:req, isredcard:req
+	.macro forcerandomswitch param0:req
 	.byte 0x8f
 	.4byte \param0
-	.byte \isredcard
 	.endm
 
 	.macro tryconversiontypechange param0:req

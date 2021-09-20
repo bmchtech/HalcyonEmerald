@@ -5299,38 +5299,6 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
-        case MOVEEND_EJECT_BUTTON: // Switch out target
-            if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_EJECT_BUTTON
-                && IsBattlerAlive(gBattlerTarget)
-                && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
-                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) && TARGET_TURN_DAMAGED
-                && CanBattlerSwitch(gBattlerTarget))
-            {
-                BattleScriptPushCursor();
-                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
-                {
-                    gBattlescriptCurrInstr = BattleScript_EjectButton;
-                }
-                return;
-            }
-            gBattleScripting.moveendState++;
-            break;
-        case MOVEEND_RED_CARD: // Switch out attacker
-            if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_RED_CARD
-                && IsBattlerAlive(gBattlerTarget)
-                && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
-                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) && TARGET_TURN_DAMAGED
-                && CanBattlerSwitch(gBattlerAttacker))
-            {
-                BattleScriptPushCursor();
-                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || GetBattlerSide(i) == B_SIDE_PLAYER)
-                {
-                    gBattlescriptCurrInstr = BattleScript_RedCard;
-                }
-                return;
-            }
-            gBattleScripting.moveendState++;
-            break;
         case MOVEEND_EMERGENCY_EXIT: // Special case, because moves hitting multiple opponents stop after switching out
             for (i = 0; i < gBattlersCount; i++)
             {
@@ -9789,14 +9757,7 @@ static void Cmd_forcerandomswitch(void)
         else
         {
             *(gBattleStruct->field_58 + gBattlerTarget) = gBattlerPartyIndexes[gBattlerTarget];
-            if (gBattlescriptCurrInstr[5] == TRUE) // Don't play another animation for a Red Card activation
-            {
-                gBattlescriptCurrInstr = BattleScript_RedCardSuccessSwitch;
-            }
-            else
-            {
-                gBattlescriptCurrInstr = BattleScript_RoarSuccessSwitch;
-            }
+            gBattlescriptCurrInstr = BattleScript_RoarSuccessSwitch;
 
             do
             {

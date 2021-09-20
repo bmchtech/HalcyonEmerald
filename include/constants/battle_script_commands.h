@@ -245,8 +245,6 @@
 #define MOVEEND_DANCER                            26
 #define MOVEEND_EMERGENCY_EXIT                    27
 #define MOVEEND_CLEAR_BITS                        28
-#define MOVEEND_RED_CARD                          29
-#define MOVEEND_EJECT_BUTTON                      30
-#define MOVEEND_COUNT                             31
+#define MOVEEND_COUNT                             29
 
 #endif // GUARD_CONSTANTS_BATTLE_SCRIPT_COMMANDS_H
