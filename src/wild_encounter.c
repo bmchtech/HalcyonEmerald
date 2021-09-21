@@ -274,7 +274,7 @@ static u8 ChooseWildMonLevel(void)
     return min + rand;
 }
 
-static u16 GetCurrentMapWildMonHeaderId(void)
+u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;
 
