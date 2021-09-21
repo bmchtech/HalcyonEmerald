@@ -711,6 +711,6 @@ MauvilleCity_Text_GiveTM74:
 	.string "if you'd like.$"
 
 MauvilleCity_Text_HaveTM74:
-	.string "TM58 contains Gyro Ball, an attack\n"
+	.string "TM74 contains Gyro Ball, an attack\n"
 	.string "that does more damage the slower the\l"
 	.string "user is compared to the foe.$"

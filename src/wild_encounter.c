@@ -114,12 +114,29 @@ static u8 ChooseWildMonIndex_WaterRock(void)
         return 1;
     else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_2)
         return 2;
-    // else if (rand >= ENCOUNTER_CHANCE_WATER_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WATER_MONS_SLOT_3)
-    //     return 3;
     // Encounter slots for surf and rock smash reduced to 4 (60%, 30%, 5%, 5%)
     else
         return 3;
 }
+
+static u8 ChooseWildMonIndex_Honey(void)
+{
+    u8 rand = Random() % ENCOUNTER_CHANCE_HONEY_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_HONEY_MONS_SLOT_0)
+        return 0;
+    else if (rand >= ENCOUNTER_CHANCE_HONEY_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_HONEY_MONS_SLOT_1)
+        return 1;
+    else if (rand >= ENCOUNTER_CHANCE_HONEY_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_HONEY_MONS_SLOT_2)
+        return 2;
+    else if (rand >= ENCOUNTER_CHANCE_HONEY_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_HONEY_MONS_SLOT_3)
+        return 3;
+    else if (rand >= ENCOUNTER_CHANCE_HONEY_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_HONEY_MONS_SLOT_4)
+        return 4;
+    else
+        return 5;
+}
+
 
 static u8 ChooseWildMonIndex_Fishing(u8 rod)
 {
@@ -257,7 +274,7 @@ static u8 ChooseWildMonLevel(void)
     return min + rand;
 }
 
-static u16 GetCurrentMapWildMonHeaderId(void)
+u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;
 
@@ -374,6 +391,7 @@ enum
     WILD_AREA_WATER,
     WILD_AREA_ROCKS,
     WILD_AREA_FISHING,
+    WILD_AREA_HONEY,
 };
 
 #define WILD_CHECK_REPEL    0x1
@@ -421,6 +439,9 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 area, u8 
         break;
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_WaterRock();
+        break;
+    case WILD_AREA_HONEY:
+        wildMonIndex = ChooseWildMonIndex_Honey();
         break;
     }
 
@@ -712,14 +733,11 @@ void RockSmashWildEncounter(void)
             gSpecialVar_Result = FALSE;
         }
         // Encounter chance now determined in script
-        else if (TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-        {
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
-        }
         else
         {
-            gSpecialVar_Result = FALSE;
+            TryGenerateWildMon(wildPokemonInfo, WILD_AREA_ROCKS, 0);
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
         }
     }
     else
@@ -730,10 +748,11 @@ void RockSmashWildEncounter(void)
 
 void BerryWildEncounter(u8 headerId)
 {
-    if (TryGenerateWildMon(gBerryTreeWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+    if (gBerryTreeWildMonHeaders[headerId].landMonsInfo != NULL)
     {
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
+        TryGenerateWildMon(gBerryTreeWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0);
+        BattleSetup_StartWildBattle();
+        gSpecialVar_Result = TRUE;
     }
     else
     {
@@ -1018,4 +1037,14 @@ bool8 TryDoDoubleWildBattle(void)
         return TRUE;
     #endif
     return FALSE;
+}
+
+void HoneyWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].honeyMonsInfo;
+
+    TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HONEY, 0);
+    BattleSetup_StartWildBattle();
 }

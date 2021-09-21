@@ -575,3 +575,4 @@ gSpecials::
 	def_special CheckSpeciesInParty
 	def_special SetTotemBoost
 	def_special IsSelectedMonEeveelution
+	def_special HoneyWildEncounter

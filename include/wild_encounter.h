@@ -27,6 +27,7 @@ struct WildPokemonHeader
     const struct WildPokemonInfo *waterMonsInfo;
     const struct WildPokemonInfo *rockSmashMonsInfo;
     const struct WildPokemonInfo *fishingMonsInfo;
+    const struct WildPokemonInfo *honeyMonsInfo;
 };
 
 extern bool8 gIsFishingEncounter;
@@ -45,5 +46,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon);
 u16 GetLocalWaterMon(void);
 bool8 UpdateRepelCounter(void);
 bool8 TryDoDoubleWildBattle(void);
+void HoneyWildEncounter(void);
+u16 GetCurrentMapWildMonHeaderId(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

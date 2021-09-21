@@ -7957,8 +7957,8 @@ const struct Item gItems[] =
         .price = 300,
         .description = sHoneyDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Honey,
     },
 
     [ITEM_HEALTH_FEATHER] =

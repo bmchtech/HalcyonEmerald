@@ -328,8 +328,8 @@ static const u8 sPetalDanceDescription[] = _(
     "that confuses the user.");
 
 static const u8 sStringShotDescription[] = _(
-    "Binds the foe with string\n"
-    "to reduce its Speed.");
+    "Binds the foes with string\n"
+    "to harshly reduce Speed.");
 
 static const u8 sDragonRageDescription[] = _(
     "Launches shock waves that\n"
@@ -936,8 +936,8 @@ static const u8 sRapidSpinDescription[] = _(
     "speed to strike the foe.");
 
 static const u8 sSweetScentDescription[] = _(
-    "Allures the foe to reduce\n"
-    "evasiveness.");
+    "Allures the foe to sharply\n"
+    "reduce evasiveness.");
 
 static const u8 sIronTailDescription[] = _(
     "Attacks with a rock-hard\n"
