@@ -38,6 +38,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
+#include "wild_encounter.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/item_effects.h"
@@ -73,6 +74,7 @@ static void ItemUseOnFieldCB_PokeVial(u8 taskId);
 static void Task_CloseCantUseKeyItemMessage(u8 taskId);
 static void SetDistanceOfClosestHiddenItem(u8 taskId, s16 x, s16 y);
 static void CB2_OpenPokeblockFromBag(void);
+static void ItemUseOnFieldCB_Honey(u8 taskId);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -972,13 +974,27 @@ void ItemUseOutOfBattle_PokeVial(u8 taskId)
     }
 }
 
-
 static void ItemUseOnFieldCB_PokeVial(u8 taskId)
 {
     PlaySE(SE_USE_ITEM);
     HealPlayerParty();
     VarSet(VAR_POKE_VIAL_CHARGES, VarGet(VAR_POKE_VIAL_CHARGES) - 1);
     DisplayItemMessageOnField(taskId, gText_UsedPokeVial, Task_CloseCantUseKeyItemMessage);
+}
+
+void ItemUseOutOfBattle_Honey(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_Honey;
+    gFieldCallback = FieldCB_UseItemOnField;
+    gBagMenu->newScreenCallback = CB2_ReturnToField;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
+static void ItemUseOnFieldCB_Honey(u8 taskId)
+{
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(EventScript_HoneyEncounter);
+    DestroyTask(taskId);
 }
 
 void ItemUseInBattle_PokeBall(u8 taskId)

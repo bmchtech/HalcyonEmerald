@@ -1043,23 +1043,8 @@ void HoneyWildEncounter(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
 
-    if (headerId != 0xFFFF)
-    {
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].honeyMonsInfo;
+    const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].honeyMonsInfo;
 
-        if (wildPokemonInfo == NULL)
-        {
-            gSpecialVar_Result = FALSE;
-        }
-        else
-        {
-            TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HONEY, 0);
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
-        }
-    }
-    else
-    {
-        gSpecialVar_Result = FALSE;
-    }
+    TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HONEY, 0);
+    BattleSetup_StartWildBattle();
 }

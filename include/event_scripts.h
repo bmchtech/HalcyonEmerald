@@ -587,6 +587,7 @@ extern const u8 TrainerHill_EventScript_TrainerBattle[];
 extern const u8 BerryTree_EventScript_ItemUsePlantBerry[];
 extern const u8 BerryTree_EventScript_ItemUseWailmerPail[];
 extern const u8 BattleFrontier_OutsideEast_EventScript_WaterSudowoodo[];
+extern const u8 EventScript_HoneyEncounter[];
 
 extern const u8 EventScript_SelectWithoutRegisteredItem[];
 
