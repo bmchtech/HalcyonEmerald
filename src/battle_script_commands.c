@@ -4791,32 +4791,37 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_RECOIL:
-            switch (gBattleMoves[gCurrentMove].effect)
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+                && IsBattlerAlive(gBattlerAttacker))
             {
-            case EFFECT_RECOIL_25: // Take Down, 25% recoil
-                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 4);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
-                effect = TRUE;
-                break;
-            case EFFECT_RECOIL_33: // Double Edge, 33 % recoil
-                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
-                effect = TRUE;
-                break;
-            case EFFECT_RECOIL_50: // Head Smash, 50 % recoil
-                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 2);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
-                effect = TRUE;
-                break;
-            case EFFECT_RECOIL_33_STATUS: // Flare Blitz - can burn, Volt Tackle - can paralyze
-                gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
-                BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoilWithStatus;
-                effect = TRUE;
-                break;
+                switch (gBattleMoves[gCurrentMove].effect)
+                {
+                case EFFECT_RECOIL_25: // Take Down, 25% recoil
+                    gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 4);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                    effect = TRUE;
+                    break;
+                case EFFECT_RECOIL_33: // Double Edge, 33 % recoil
+                    gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                    effect = TRUE;
+                    break;
+                case EFFECT_RECOIL_50: // Head Smash, 50 % recoil
+                    gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 2);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                    effect = TRUE;
+                    break;
+                case EFFECT_RECOIL_33_STATUS: // Flare Blitz - can burn, Volt Tackle - can paralyze
+                    gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 3);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectRecoilWithStatus;
+                    effect = TRUE;
+                    break;
+                }
             }
             gBattleScripting.moveendState++;
             break;
@@ -4936,7 +4941,6 @@ static void Cmd_moveend(void)
                 else
                 {
                     StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
-                    gBattleMons[gBattlerAttacker].item = 0; // Item assigned later on with thief (see MOVEEND_CHANGED_ITEMS)
                     gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_ItemSteal;
