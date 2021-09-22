@@ -12464,12 +12464,14 @@ static void Cmd_removelightscreenreflect(void) // brick break
 {
     u8 opposingSide = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
 
-    if (gSideTimers[opposingSide].reflectTimer || gSideTimers[opposingSide].lightscreenTimer)
+    if (gSideTimers[opposingSide].reflectTimer || gSideTimers[opposingSide].lightscreenTimer || gSideTimers[opposingSide].auroraVeilTimer)
     {
         gSideStatuses[opposingSide] &= ~(SIDE_STATUS_REFLECT);
         gSideStatuses[opposingSide] &= ~(SIDE_STATUS_LIGHTSCREEN);
+        gSideStatuses[opposingSide] &= ~(SIDE_STATUS_AURORA_VEIL);
         gSideTimers[opposingSide].reflectTimer = 0;
         gSideTimers[opposingSide].lightscreenTimer = 0;
+        gSideTimers[opposingSide].auroraVeilTimer = 0;
         gBattleScripting.animTurn = 1;
         gBattleScripting.animTargetsHit = 1;
     }
