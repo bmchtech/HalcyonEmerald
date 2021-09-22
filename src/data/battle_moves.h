@@ -8231,7 +8231,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         #else
             .power = 50,
         #endif
-        .effect = EFFECT_PLEDGE,
+        .effect = EFFECT_HIT, //EFFECT_PLEDGE,
         .type = TYPE_WATER,
         .accuracy = 100,
         .pp = 10,
@@ -8249,7 +8249,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         #else
             .power = 50,
         #endif
-        .effect = EFFECT_PLEDGE,
+        .effect = EFFECT_HIT, //EFFECT_PLEDGE,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 10,
@@ -8267,7 +8267,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         #else
             .power = 50,
         #endif
-        .effect = EFFECT_PLEDGE,
+        .effect = EFFECT_HIT, //EFFECT_PLEDGE,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 10,
