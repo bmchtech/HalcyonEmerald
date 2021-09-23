@@ -797,16 +797,6 @@ const struct MenuAction MultichoiceList_SuperTrainingMenu[] =
     {gText_Exit},
 };
 
-const struct MenuAction MultichoiceList_HiddenPowerTypes[] =
-{
-    {gText_HPFire},
-    {gText_HPIce},
-    {gText_HPGrass},
-    {gText_HPRock},
-    {gText_HPGround},
-    {gText_HPFighting},
-};
-
 const struct MenuAction MultichoiceList_EVMenu[] =
 {
     {gText_Add4toEV},
@@ -1035,7 +1025,6 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_GRASS_FIRE_WATER]           = MULTICHOICE(MultichoiceList_GrassFireWater),
     [MULTI_FLAVORS]                    = MULTICHOICE(MultichoiceList_Flavors),
     [MULTI_SUPER_TRAINING_MENU]        = MULTICHOICE(MultichoiceList_SuperTrainingMenu),
-    [MULTI_HIDDEN_POWER_TYPES]         = MULTICHOICE(MultichoiceList_HiddenPowerTypes),
     [MULTI_IV_MENU]                    = MULTICHOICE(MultichoiceList_IVMenu),
     [MULTI_EV_MENU]                    = MULTICHOICE(MultichoiceList_EVMenu),
     [MULTI_BASE_STATS]                 = MULTICHOICE(MultichoiceList_BaseStats),

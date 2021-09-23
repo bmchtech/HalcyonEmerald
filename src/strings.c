@@ -1878,12 +1878,23 @@ const u8 gText_HiddenPower[] = _("Change Hidden Power");
 const u8 gText_ChangeIV[] = _("Change IVs");
 const u8 gText_ExplainIVs[] = _("Explain IVs");
 
-const u8 gText_HPFire[] = _("Fire");
-const u8 gText_HPIce[] = _("Ice");
-const u8 gText_HPGrass[] = _("Grass");
-const u8 gText_HPRock[] = _("Rock");
-const u8 gText_HPGround[] = _("Ground");
+// Hidden Power Types
 const u8 gText_HPFighting[] = _("Fighting");
+const u8 gText_HPFlying[] = _("Flying");
+const u8 gText_HPPoison[] = _("Poison");
+const u8 gText_HPGround[] = _("Ground");
+const u8 gText_HPRock[] = _("Rock");
+const u8 gText_HPBug[] = _("Bug");
+const u8 gText_HPGhost[] = _("Ghost");
+const u8 gText_HPSteel[] = _("Steel");
+const u8 gText_HPFire[] = _("Fire");
+const u8 gText_HPWater[] = _("Water");
+const u8 gText_HPGrass[] = _("Grass");
+const u8 gText_HPElectric[] = _("Electric");
+const u8 gText_HPPsychic[] = _("Psychic");
+const u8 gText_HPIce[] = _("Ice");
+const u8 gText_HPDragon[] = _("Dragon");
+const u8 gText_HPDark[] = _("Dark");
 
 const u8 gText_HP_Placeholder[] =       _("HP{CLEAR_TO 0x36}{STR_VAR_1}");
 const u8 gText_Attack_Placeholder[] =   _("Attack{CLEAR_TO 0x36}{STR_VAR_2}");

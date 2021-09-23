@@ -2519,6 +2519,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_HIDDEN_POWER:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 17;
+            task->tLeft = 20;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         default:
             gSpecialVar_Result = MULTI_B_PRESSED;
             DestroyTask(taskId);
@@ -2920,6 +2930,26 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_RateANickname,
         // gText_TrainEXP,
         gText_ResetEvents,
+        gText_Exit
+    },
+    [SCROLL_MULTI_HIDDEN_POWER] = 
+    {
+        gText_HPFighting,
+        gText_HPFlying,
+        gText_HPPoison,
+        gText_HPGround,
+        gText_HPRock,
+        gText_HPBug,
+        gText_HPGhost,
+        gText_HPSteel,
+        gText_HPFire,
+        gText_HPWater,
+        gText_HPGrass,
+        gText_HPElectric,
+        gText_HPPsychic,
+        gText_HPIce,
+        gText_HPDragon,
+        gText_HPDark,
         gText_Exit
     }
 };
@@ -5257,74 +5287,44 @@ void ResetChosenMonEVs (void)
     {
         SetMonData(&gPlayerParty[gSpecialVar_0x8004], (MON_DATA_HP_EV + i), &clearEVs);
     }
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
-// Changes a Pokemon's Hidden Power to one of six types:
-// Fire (0), Ice (1), Grass (2), Rock (3), Ground (4) or Fighting (5)
-// gSpecialVar_0x8004 must be set to the party slot of the chosen Pokemon
-// gSpecialVar_0x8007 must be set to the type of Hidden Power to change to (see values above)
+/* Changes a Pokemon's Hidden Power to a specified type.
+ * gSpecialVar_0x800A must be set to the party slot of the chosen Pokemon
+ * gSpecialVar_0x8007 must be set to the type of Hidden Power to change to (see table below,
+ * or search ChangeChosenMonHiddenPower for a usage example)
+ */
 void ChangeChosenMonHiddenPower (void) 
 {
+    int i;
     u8 hiddenPowerType = gSpecialVar_0x8007;
-    // Potato code @ 12:37am because pointers are hard
-    // seriously put these into an array or something
-    u8 thirtyOne = 31;
-    u8 thirty = 30;
-    u8 zero = 0;
-    u8 one = 1;
 
-    switch (hiddenPowerType)
+    static const u8 hiddenPowerSpreads[NUMBER_OF_MON_TYPES - 3][NUM_STATS] = {
+    //   HP  Atk Def Spe SpA SpD
+        {31,  0, 30, 30, 30, 30}, // TYPE_FIGHTING
+        {30,  0, 30, 31, 30, 30}, // TYPE_FLYING
+        {30,  1, 30, 31, 30, 30}, // TYPE_POISON
+        {31,  1, 31, 31, 30, 30}, // TYPE_GROUND
+        {31,  1, 30, 30, 31, 30}, // TYPE_ROCK
+        {31,  0, 30, 31, 31, 30}, // TYPE_BUG
+        {31,  1, 30, 31, 31, 30}, // TYPE_GHOST
+        {31,  1, 31, 31, 31, 30}, // TYPE_STEEL
+        {31,  0, 31, 30, 30, 31}, // TYPE_FIRE
+        {31,  1, 31, 30, 30, 31}, // TYPE_WATER
+        {31,  0, 31, 31, 30, 31}, // TYPE_GRASS
+        {31,  1, 31, 31, 30, 31}, // TYPE_ELECTRIC
+        {31,  0, 31, 30, 31, 31}, // TYPE_PSYCHIC
+        {31,  0, 30, 31, 31, 31}, // TYPE_ICE
+        {31,  0, 31, 31, 31, 31}, // TYPE_DRAGON
+        {31, 31, 31, 31, 31, 31}, // TYPE_DARK
+    };
+  
+    for (i = 0; i < NUM_STATS; i++)
     {
-	case 0: // HP Fire
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
-       break;
-    case 1: // HP Ice
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
-       break;
-    case 2: // HP Grass
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &zero);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirtyOne);
-       break;
-    case 3: // HP Rock
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
-       break;
-    case 4: // HP Ground
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
-       break;
-    case 5: // HP Fighting
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &thirtyOne);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &one);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &thirty);
-        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &thirty);
-       break;
+        SetMonData(&gPlayerParty[gSpecialVar_0x800A], MON_DATA_HP_IV + i, &hiddenPowerSpreads[hiddenPowerType][i]);
     }
-    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x800A]);
 }
 
 // Used for the Super Training NPC; checks that the requested

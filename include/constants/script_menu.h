@@ -127,15 +127,14 @@
 #define MULTI_GRASS_FIRE_WATER             116   
 #define MULTI_FLAVORS                      117
 #define MULTI_SUPER_TRAINING_MENU          118
-#define MULTI_HIDDEN_POWER_TYPES           119
-#define MULTI_IV_MENU                      120
-#define MULTI_EV_MENU                      121
-#define MULTI_BASE_STATS                   122
-#define MULTI_HYPER_TRAINING_MENU          123
-#define MULTI_MOOMOO_MILK                  124
-#define MULTI_ROTOM_APPLIANCES             125
-#define MULTI_STARTER_MOVES                126
-#define MULTI_REMATCH_BATTLE_MODE          127
+#define MULTI_IV_MENU                      119
+#define MULTI_EV_MENU                      120
+#define MULTI_BASE_STATS                   121
+#define MULTI_HYPER_TRAINING_MENU          122
+#define MULTI_MOOMOO_MILK                  123
+#define MULTI_ROTOM_APPLIANCES             124
+#define MULTI_STARTER_MOVES                125
+#define MULTI_REMATCH_BATTLE_MODE          126
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
