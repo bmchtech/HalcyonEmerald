@@ -12692,45 +12692,45 @@ static const struct TrainerMonItemCustomMoves sParty_Darius[] = {
 };
 
 static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
+{
+    .lvl = 1,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_WACAN_BERRY,
+    .ability = 0, // Intimidate
+    .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
+    .moves = MOVE_WATERFALL, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_POWER_WHIP
+    },
     {
     .lvl = 1,
-    .species = SPECIES_SKARMORY,
-    .heldItem = ITEM_RED_CARD,
-    .ability = 1, // Sturdy
-    .spread = SPREAD_31_IV_HP_DEF_IMPISH,
-    .moves = MOVE_STEEL_WING, MOVE_STEALTH_ROCK, MOVE_SPIKES, MOVE_WHIRLWIND
+    .species = SPECIES_HAWLUCHA,
+    .heldItem = ITEM_FLYING_GEM,
+    .ability = 1, // Unburden
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_CLOSE_COMBAT, MOVE_BRAVE_BIRD, MOVE_ROCK_SLIDE, MOVE_ENCORE
     },
     {
     .lvl = 1,
     .species = SPECIES_DRAGONITE,
-    .heldItem = ITEM_DRAGON_GEM,
+    .heldItem = ITEM_YACHE_BERRY,
     .ability = 2, // Multiscale
     .spread = SPREAD_31_IV_ATK_SPEED_ADAMANT,
-    .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH, MOVE_EXTREME_SPEED
+    .moves = MOVE_WING_ATTACK, MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH, MOVE_EXTREME_SPEED
     },
     {
     .lvl = 1,
-    .species = SPECIES_GYARADOS,
-    .heldItem = ITEM_LEFTOVERS,
-    .ability = 0, // Intimidate
-    .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_WATERFALL, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_DRAGON_DANCE
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 0, // Rock Head
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_ROCK_SLIDE, MOVE_BRAVE_BIRD, MOVE_EARTHQUAKE, MOVE_WIDE_GUARD
     },
     {
     .lvl = 1,
-    .species = SPECIES_TOGEKISS,
-    .heldItem = ITEM_LEFTOVERS,
-    .ability = 1, // Serene Grace
-    .spread = SPREAD_31_IV_HP_DEF_BOLD,
-    .moves = MOVE_AIR_SLASH, MOVE_NASTY_PLOT, MOVE_ROOST, MOVE_THUNDER_WAVE
-    },
-    {
-    .lvl = 1,
-    .species = SPECIES_SIGILYPH,
-    .heldItem = ITEM_FLAME_ORB,
-    .ability = 1, // Magic Guard
+    .species = SPECIES_EMOLGA,
+    .heldItem = ITEM_FOCUS_SASH,
+    .ability = 1, // Lightning Rod
     .spread = SPREAD_31_IV_HP_SPEED_TIMID,
-    .moves = MOVE_STORED_POWER, MOVE_COSMIC_POWER, MOVE_ROOST, MOVE_PSYCHO_SHIFT
+    .moves = MOVE_HURRICANE, MOVE_ELECTROWEB, MOVE_TICKLE, MOVE_HELPING_HAND
     },
     {
     .lvl = 3,
