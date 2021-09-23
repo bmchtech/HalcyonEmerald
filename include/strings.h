@@ -3155,12 +3155,22 @@ extern const u8 gText_Add252toEV[];
 extern const u8 gText_HiddenPower[];
 extern const u8 gText_ChangeIV[];
 extern const u8 gText_ExplainIVs[];
-extern const u8 gText_HPFire[];
-extern const u8 gText_HPIce[];
-extern const u8 gText_HPGrass[];
-extern const u8 gText_HPRock[];
-extern const u8 gText_HPGround[];
 extern const u8 gText_HPFighting[];
+extern const u8 gText_HPFlying[];
+extern const u8 gText_HPPoison[];
+extern const u8 gText_HPGround[];
+extern const u8 gText_HPRock[];
+extern const u8 gText_HPBug[];
+extern const u8 gText_HPGhost[];
+extern const u8 gText_HPSteel[];
+extern const u8 gText_HPFire[];
+extern const u8 gText_HPWater[];
+extern const u8 gText_HPGrass[];
+extern const u8 gText_HPElectric[];
+extern const u8 gText_HPPsychic[];
+extern const u8 gText_HPIce[];
+extern const u8 gText_HPDragon[];
+extern const u8 gText_HPDark[];
 
 // Pokemon Center move tutor moves
 extern const u8 gText_FuryCutter[];

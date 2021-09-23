@@ -584,40 +584,93 @@ HyperTraining_EventScript_ChangeOneIV::
 
 HyperTraining_EventScript_ChangeHiddenPower::
 	msgbox HyperTraining_Text_ForFiveCapsChangeAllIVs, MSGBOX_DEFAULT
-	multichoice 0, 0, MULTI_HIDDEN_POWER_TYPES, 0
+	copyvar VAR_0x800A, VAR_0x8004
+	setvar VAR_0x8004, SCROLL_MULTI_HIDDEN_POWER
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
-	case 0, HyperTraining_EventScript_ChangeHPFire
-	case 1, HyperTraining_EventScript_ChangeHPIce
-	case 2, HyperTraining_EventScript_ChangeHPGrass
-	case 3, HyperTraining_EventScript_ChangeHPRock
-	case 4, HyperTraining_EventScript_ChangeHPGround
-	case 5, HyperTraining_EventScript_ChangeHPFighting
+	case 0, HyperTraining_EventScript_ChangeHPFighting
+	case 1, HyperTraining_EventScript_ChangeHPFlying
+	case 2, HyperTraining_EventScript_ChangeHPPoison
+	case 3, HyperTraining_EventScript_ChangeHPGround
+	case 4, HyperTraining_EventScript_ChangeHPRock
+	case 5, HyperTraining_EventScript_ChangeHPBug
+	case 6, HyperTraining_EventScript_ChangeHPGhost
+	case 7, HyperTraining_EventScript_ChangeHPSteel
+	case 8, HyperTraining_EventScript_ChangeHPFire
+	case 9, HyperTraining_EventScript_ChangeHPWater
+	case 10, HyperTraining_EventScript_ChangeHPGrass
+	case 11, HyperTraining_EventScript_ChangeHPElectric
+	case 12, HyperTraining_EventScript_ChangeHPPsychic
+	case 13, HyperTraining_EventScript_ChangeHPIce
+	case 14, HyperTraining_EventScript_ChangeHPDragon
+	case 15, HyperTraining_EventScript_ChangeHPDark
 	case 127, FallarborTown_HyperMainMenu
 	releaseall
 	end
 
-HyperTraining_EventScript_ChangeHPFire::
+HyperTraining_EventScript_ChangeHPFighting::
 	setvar 0x8007, 0
 	goto HyperTraining_EventScript_ChangeAllIVs
 
-HyperTraining_EventScript_ChangeHPIce::
+HyperTraining_EventScript_ChangeHPFlying::
 	setvar 0x8007, 1
 	goto HyperTraining_EventScript_ChangeAllIVs
 
-HyperTraining_EventScript_ChangeHPGrass::
+HyperTraining_EventScript_ChangeHPPoison::
 	setvar 0x8007, 2
 	goto HyperTraining_EventScript_ChangeAllIVs
 
-HyperTraining_EventScript_ChangeHPRock::
+HyperTraining_EventScript_ChangeHPGround::
 	setvar 0x8007, 3
 	goto HyperTraining_EventScript_ChangeAllIVs
 
-HyperTraining_EventScript_ChangeHPGround::
+HyperTraining_EventScript_ChangeHPRock::
 	setvar 0x8007, 4
 	goto HyperTraining_EventScript_ChangeAllIVs
 
-HyperTraining_EventScript_ChangeHPFighting::
+HyperTraining_EventScript_ChangeHPBug::
 	setvar 0x8007, 5
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPGhost::
+	setvar 0x8007, 6
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPSteel::
+	setvar 0x8007, 7
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPFire::
+	setvar 0x8007, 8
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPWater::
+	setvar 0x8007, 9
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPGrass::
+	setvar 0x8007, 10
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPElectric::
+	setvar 0x8007, 11
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPPsychic::
+	setvar 0x8007, 12
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPIce::
+	setvar 0x8007, 13
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPDragon::
+	setvar 0x8007, 14
+	goto HyperTraining_EventScript_ChangeAllIVs
+
+HyperTraining_EventScript_ChangeHPDark::
+	setvar 0x8007, 15
 	goto HyperTraining_EventScript_ChangeAllIVs
 
 HyperTraining_EventScript_ChangeAllIVs::
