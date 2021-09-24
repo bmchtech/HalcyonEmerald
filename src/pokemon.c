@@ -3018,6 +3018,16 @@ static const u8 sGetMonDataEVConstants[] =
     MON_DATA_SPATK_EV
 };
 
+static const u8 sGetMonDataIVConstants[] =
+{
+    MON_DATA_HP_IV,
+    MON_DATA_ATK_IV,
+    MON_DATA_DEF_IV,
+    MON_DATA_SPEED_IV,
+    MON_DATA_SPDEF_IV,
+    MON_DATA_SPATK_IV
+};
+
 // For stat-raising items
 static const u8 sStatsToRaise[] =
 {
@@ -5324,7 +5334,7 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
 bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
 {
     u32 dataUnsigned;
-    s32 dataSigned, evCap;
+    s32 dataSigned, ivMax;
     s32 friendship;
     s32 i;
     bool8 retVal = TRUE;
@@ -5652,38 +5662,29 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     {
                     case 0: // ITEM4_EV_HP
                     case 1: // ITEM4_EV_ATK
-                        evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
-                        dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1], NULL);
+                        dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1], NULL);
                         evChange = temp2;
      
-                        if (evChange > 0) // Increasing EV (HP or Atk)
+                        if (evChange > 0) // Increasing IV (HP or Atk)
                         {
-                            // Has EV increase limit already been reached?
-                            if (evCount >= MAX_TOTAL_EVS)
-                                return TRUE;
+                                ivMax = MAX_IV_MASK;
 
-                            if (itemEffect[10] & ITEM10_IS_VITAMIN)
-                                evCap = EV_ITEM_RAISE_LIMIT;
-                            else
-                                evCap = MAX_PER_STAT_EVS;
-
-                            if (dataSigned >= evCap)
+                            if (dataSigned >= ivMax)
                                 break;
 
                             // Limit the increase
-                            if (dataSigned + evChange > evCap)
-                                temp2 = evCap - (dataSigned + evChange) + evChange;
+                            if (dataSigned + evChange > ivMax)
+                                temp2 = ivMax - (dataSigned + evChange) + evChange;
                             else
                                 temp2 = evChange;
 
-                            if (evCount + temp2 > MAX_TOTAL_EVS)
-                                temp2 += MAX_TOTAL_EVS - (evCount + temp2);
-
                             dataSigned += temp2;
+                            SetMonData(mon, sGetMonDataIVConstants[temp1], &dataSigned);
                         }
                         else // Decreasing EV (HP or Atk)
                         {
+                            dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1], NULL);
                             if (dataSigned == 0)
                             {
                                 // No EVs to lose, but make sure friendship updates anyway
@@ -5694,10 +5695,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             dataSigned += evChange;
                             if (dataSigned < 0)
                                 dataSigned = 0;
+
+                            SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
                         CalculateMonStats(mon);
                         itemEffectParam++;
                         retVal = FALSE;
@@ -5893,37 +5895,29 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     case 1: // ITEM5_EV_SPEED
                     case 2: // ITEM5_EV_SPDEF
                     case 3: // ITEM5_EV_SPATK
-                        evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
-                        dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2], NULL);
+                        dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1 + 2], NULL);
                         evChange = temp2;
-                        if (evChange > 0) // Increasing EV
+     
+                        if (evChange > 0) // Increasing IV
                         {
-                            // Has EV increase limit already been reached?
-                            if (evCount >= MAX_TOTAL_EVS)
-                                return TRUE;
+                            ivMax = MAX_IV_MASK;
 
-                            if (itemEffect[10] & ITEM10_IS_VITAMIN)
-                                evCap = EV_ITEM_RAISE_LIMIT;
-                            else
-                                evCap = MAX_PER_STAT_EVS;
-
-                            if (dataSigned >= evCap)
+                            if (dataSigned >= ivMax)
                                 break;
 
                             // Limit the increase
-                            if (dataSigned + evChange > evCap)
-                                temp2 = evCap - (dataSigned + evChange) + evChange;
+                            if (dataSigned + evChange > ivMax)
+                                temp2 = ivMax - (dataSigned + evChange) + evChange;
                             else
                                 temp2 = evChange;
 
-                            if (evCount + temp2 > MAX_TOTAL_EVS)
-                                temp2 += MAX_TOTAL_EVS - (evCount + temp2);
-
                             dataSigned += temp2;
+                            SetMonData(mon, sGetMonDataIVConstants[temp1], &dataSigned);
                         }
                         else // Decreasing EV
                         {
+                            dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2], NULL);
                             if (dataSigned == 0)
                             {
                                 // No EVs to lose, but make sure friendship updates anyway
@@ -5934,13 +5928,14 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             dataSigned += evChange;
                             if (dataSigned < 0)
                                 dataSigned = 0;
+
+                            SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
                         CalculateMonStats(mon);
-                        retVal = FALSE;
                         itemEffectParam++;
+                        retVal = FALSE;
                         break;
 
                     case 4: // ITEM5_PP_MAX
