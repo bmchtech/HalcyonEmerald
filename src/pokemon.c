@@ -66,6 +66,7 @@ static void DecryptBoxMon(struct BoxPokemon *boxMon);
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
 // static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 static bool8 ShouldSkipFriendshipChange(void);
+static void ShuffleStatArray(u8* statArray);
 
 // EWRAM vars
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
@@ -3148,6 +3149,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u32 value;
     u16 checksum;
     u8 nature;
+    u8 maxIV = MAX_IV_MASK;
+    u8 statIDs[NUM_STATS] = {0, 1, 2, 3, 4, 5};
 
     ZeroBoxMonData(boxMon);
 
@@ -3222,7 +3225,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else
     {
-        u32 iv;
+        u32 iv, i;
         value = Random();
 
         iv = value & MAX_IV_MASK;
@@ -3240,6 +3243,15 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
+
+        // Set three random IVs to 31
+        ShuffleStatArray(statIDs);
+
+        for (i = 0; i < 3; i++)
+        {
+            SetBoxMonData(boxMon, MON_DATA_HP_IV + statIDs[i], &maxIV);
+        }
+
     }
     nature = personality % 25;
     SetBoxMonData(boxMon, MON_DATA_NATURE, &nature);
@@ -8070,4 +8082,18 @@ u8 GetLevelCap(void)
     currentLevelCap = 16;
 
     return currentLevelCap;
+}
+
+static void ShuffleStatArray(u8* statArray)
+{
+    int i;
+
+    // Shuffle the stats array
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        u8 temp;
+        u8 rand1 = Random() % NUM_STATS;
+        u8 rand2 = Random() % NUM_STATS;
+        SWAP(statArray[rand1], statArray[rand2], temp);
+    }
 }
