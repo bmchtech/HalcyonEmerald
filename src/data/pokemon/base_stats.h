@@ -9063,8 +9063,8 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 65,
         .baseSpeed     = 70,
         #ifdef REBALANCED_VERSION
-            .baseSpAttack  = 105,
-            .baseSpDefense = 95,
+            .baseSpAttack  = 125,
+            .baseSpDefense = 115,
         #else
             .baseSpAttack  = 95,
             .baseSpDefense = 85,
@@ -9094,8 +9094,8 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 55,
         .baseSpDefense = 65,
         #ifdef REBALANCED_VERSION
-            .baseAttack    = 105,
-            .baseDefense   = 95,
+            .baseAttack    = 125,
+            .baseDefense   = 115,
         #else
             .baseAttack    = 95,
             .baseDefense   = 85,
