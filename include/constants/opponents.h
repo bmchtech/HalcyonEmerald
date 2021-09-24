@@ -292,7 +292,7 @@
 #define TRAINER_ANNA_AND_MEG_2              288
 #define TRAINER_ANNA_AND_MEG_3              289
 #define TRAINER_ANNA_AND_MEG_4              290
-#define TRAINER_WALLACE_2                   291
+#define TRAINER_WALLACE_DOUBLES             291
 #define TRAINER_VICTOR                      292
 #define TRAINER_MIGUEL_1                    293
 #define TRAINER_COLTON                      294
@@ -545,14 +545,14 @@
 #define TRAINER_ISAAC_2                     541
 #define TRAINER_ISAAC_3                     542
 #define TRAINER_ISAAC_4                     543
-#define TRAINER_WALLACE_3                   544
+#define TRAINER_WALLACE_LEGENDS             544
 #define TRAINER_LYDIA_1                     545
 #define TRAINER_HALLE                       546
 #define TRAINER_GARRISON                    547
 #define TRAINER_LYDIA_2                     548
 #define TRAINER_LYDIA_3                     549
 #define TRAINER_LYDIA_4                     550
-#define TRAINER_WALLACE_4                   551
+#define TRAINER_WALLACE_DOUBLES_LEGENDS     551
 #define TRAINER_JACKSON_1                   552
 #define TRAINER_LORENZO                     553
 #define TRAINER_SEBASTIAN                   554
