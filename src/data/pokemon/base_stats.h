@@ -9151,8 +9151,10 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 71,
         #ifdef REBALANCED_VERSION
             .baseAttack    = 98,
+            .abilities = {ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
         #else
             .baseAttack    = 78,
+            .abilities = {ABILITY_OBLIVIOUS, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
         #endif
         .type1 = TYPE_WATER,
         .type2 = TYPE_GROUND,
@@ -9165,11 +9167,6 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_WATER_2,
         .eggGroup2 = EGG_GROUP_WATER_2,
-        #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
-        #else
-            .abilities = {ABILITY_OBLIVIOUS, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
-        #endif
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -19749,7 +19746,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpDefense = 75,
         #ifdef REBALANCED_VERSION
             .baseAttack    = 95,
-            .baseDefense   = 100,
+            .baseDefense   = 99,
             .baseSpeed     = 109,
             .growthRate = GROWTH_SLOW,
         #else

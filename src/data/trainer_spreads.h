@@ -113,9 +113,9 @@ const struct TrainerMonSpread gSets[] = {
 			252,	// HP
 			252,	// Attack
 			  0,	// Defense
-			  4,	// Speed
+			  0,	// Speed
 			  0,	// Special Attack
-			  0		// Special Defense
+			  4		// Special Defense
 		},
 		.IVs = {
 			31,		// HP
