@@ -20042,7 +20042,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .heldItem = ITEM_LIFE_ORB,
     .ability = 2, // Slush Rush
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_THUNDERBOLT, MOVE_WATER_PULSE
+    .moves = MOVE_BLIZZARD, MOVE_FIRE_BLAST, MOVE_THUNDERBOLT, MOVE_SURF
     },
     {
     .lvl = 2,
@@ -20080,11 +20080,11 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     },
     {
     .lvl = 1,
-    .species = SPECIES_HAXORUS,
-    .heldItem = ITEM_CHOICE_BAND,
-    .ability = 1, // Mold Breaker
+    .species = SPECIES_GARCHOMP,
+    .heldItem = ITEM_YACHE_BERRY,
+    .ability = 2, // Rough Skin
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
-    .moves = MOVE_OUTRAGE, MOVE_CLOSE_COMBAT, MOVE_IRON_TAIL, MOVE_FIRST_IMPRESSION
+    .moves = MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_STRENGTH, MOVE_SWORDS_DANCE
     },
     {
     .lvl = 1,
@@ -20122,17 +20122,17 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_FERROTHORN,
-    .heldItem = ITEM_ROCKY_HELMET,
-    .ability = 0, // Iron Barbs
-    .spread = SPREAD_31_IV_HP_DEF_IMPISH,
-    .moves = MOVE_POWER_WHIP, MOVE_KNOCK_OFF, MOVE_LEECH_SEED, MOVE_THUNDER_WAVE
+    .species = SPECIES_OMASTAR,
+    .heldItem = ITEM_FOCUS_SASH,
+    .ability = 0, // Swift Swim
+    .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
+    .moves = MOVE_SURF, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_SHELL_SMASH
     },
     {
     .lvl = 2,
     .species = SPECIES_WHISCASH,
     .heldItem = ITEM_SALAC_BERRY,
-    .ability = 1, // Adaptability
+    .ability = 0, // Adaptability
     .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
     .moves = MOVE_LIQUIDATION, MOVE_EARTHQUAKE, MOVE_SUBSTITUTE, MOVE_DRAGON_DANCE
     },
@@ -21023,7 +21023,7 @@ static const struct TrainerMonItemCustomMoves sParty_Drake4[] = { // Legendaries
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Wallace2[] = { // Doubles
+static const struct TrainerMonItemCustomMoves sParty_WallaceDoubles[] = { // Doubles
     {
     .lvl = 2,
     .species = SPECIES_WAILORD,
@@ -21073,11 +21073,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace2[] = { // Doubles
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Wallace3[] = { // Legendaries
+static const struct TrainerMonItemCustomMoves sParty_WallaceLegends[] = { // Legendaries
     {
     .lvl = 2,
     .species = SPECIES_KYOGRE,
-    .heldItem = ITEM_MYSTIC_WATER,
+    .heldItem = ITEM_ASSAULT_VEST,
     .spread = SPREAD_HP_FIRE_TIMID,
     .moves = MOVE_ORIGIN_PULSE, MOVE_ICE_BEAM, MOVE_THUNDER, MOVE_HIDDEN_POWER
     },
@@ -21121,11 +21121,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace3[] = { // Legendari
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Wallace4[] = { // Legendaries doubles
+static const struct TrainerMonItemCustomMoves sParty_WallaceDoublesLegends[] = { // Legendaries doubles
     {
     .lvl = 2,
     .species = SPECIES_KYOGRE,
-    .heldItem = ITEM_MYSTIC_WATER,
+    .heldItem = ITEM_ASSAULT_VEST,
     .spread = SPREAD_HP_FIRE_TIMID,
     .moves = MOVE_ORIGIN_PULSE, MOVE_ICE_BEAM, MOVE_THUNDER, MOVE_HIDDEN_POWER
     },
@@ -21139,7 +21139,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace4[] = { // Legendari
     {
     .lvl = 2,
     .species = SPECIES_TORNADUS_THERIAN,
-    .heldItem = ITEM_ASSAULT_VEST,
+    .heldItem = ITEM_LIFE_ORB,
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_HURRICANE, MOVE_FOCUS_BLAST, MOVE_GRASS_KNOT, MOVE_U_TURN
     },
@@ -21152,11 +21152,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace4[] = { // Legendari
     },
     {
     .lvl = 2,
-    .species = SPECIES_FERROTHORN,
-    .heldItem = ITEM_ROCKY_HELMET,
+    .species = SPECIES_OMASTAR,
+    .heldItem = ITEM_WATER_GEM,
     .ability = 0, // Iron Barbs
-    .spread = SPREAD_31_IV_HP_DEF_IMPISH,
-    .moves = MOVE_POWER_WHIP, MOVE_KNOCK_OFF, MOVE_LEECH_SEED, MOVE_THUNDER_WAVE
+    .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
+    .moves = MOVE_MUDDY_WATER, MOVE_ICE_BEAM, MOVE_EARTH_POWER, MOVE_PROTECT
     },
     {
     .lvl = 3,
