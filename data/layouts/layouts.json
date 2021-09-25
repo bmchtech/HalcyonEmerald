@@ -4224,8 +4224,8 @@
     {
       "id": "LAYOUT_ALTERING_CAVE",
       "name": "AlteringCave_Layout",
-      "width": 32,
-      "height": 24,
+      "width": 40,
+      "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/AlteringCave/border.bin",
