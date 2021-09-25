@@ -5913,7 +5913,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 temp2 = evChange;
 
                             dataSigned += temp2;
-                            SetMonData(mon, sGetMonDataIVConstants[temp1], &dataSigned);
+                            SetMonData(mon, sGetMonDataIVConstants[temp1 + 2], &dataSigned);
                         }
                         else // Decreasing EV
                         {
