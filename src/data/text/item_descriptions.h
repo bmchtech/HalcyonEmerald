@@ -343,7 +343,7 @@ static const u8 sGreenShardDesc[] = _(
 static const u8 sHPUpDesc[] = _(
     "Raises the HP IV\n"
     "of one Pokémon\n"
-    "Pokémon by 8.");
+    "by 8.");
 
 static const u8 sProteinDesc[] = _(
     "Raises the\n"
