@@ -4610,6 +4610,26 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/VerdanturfMeadow/border.bin",
       "blockdata_filepath": "data/layouts/VerdanturfMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_1F",
+      "name": "AlteringCave_1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ALTERING_CAVE_B1F",
+      "name": "AlteringCave_B1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/AlteringCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/AlteringCave_B1F/map.bin"
     }
   ]
 }
