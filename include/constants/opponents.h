@@ -441,7 +441,7 @@
 #define TRAINER_MADELINE_2                  437
 #define TRAINER_MADELINE_3                  438
 #define TRAINER_MADELINE_4                  439
-#define TRAINER_MADELINE_5                  440
+#define TRAINER_LEAF_ALTERING_CAVE          440
 #define TRAINER_BEVERLY                     441
 #define TRAINER_IMANI                       442
 #define TRAINER_KYLA                        443

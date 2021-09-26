@@ -354,9 +354,10 @@
 #define TRAINER_CLASS_PYRAMID_KING   0x40
 #define TRAINER_CLASS_RS_PROTAG      0x41
 #define TRAINER_CLASS_MAGIKARP_GUY   0x42
-#define TRAINER_CLASS_PKMN_TRAINER_4  0x43
-#define TRAINER_CLASS_PKMN_TRAINER_5  0x44 // Steven
-#define TRAINER_CLASS_BUFFEL          0x45 // Shameless self-insert
+#define TRAINER_CLASS_PKMN_TRAINER_4 0x43
+#define TRAINER_CLASS_PKMN_TRAINER_5 0x44 // Steven
+#define TRAINER_CLASS_BUFFEL         0x45 // Shameless self-insert
+#define TRAINER_CLASS_JOHTO_CHAMP    0x46 // Still called "PKMN Trainer"
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

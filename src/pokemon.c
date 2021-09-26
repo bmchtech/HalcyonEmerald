@@ -7289,6 +7289,8 @@ u16 GetBattleBGM(void)
             return DP_SEQ_BA_CHANP;
         case TRAINER_CLASS_BUFFEL:
             return PL_SEQ_PL_BA_BRAIN;
+        case TRAINER_CLASS_JOHTO_CHAMP:
+            return HG_SEQ_GS_VS_CHAMP; // Leaf/Red/Lance
         default:
             return MUS_VS_TRAINER;
         }
