@@ -5,7 +5,7 @@
   "music": "HG_SEQ_GS_D_IWAYAMA",
   "region_map_section": "MAPSEC_ALTERING_CAVE",
   "requires_flash": false,
-  "weather": "WEATHER_SHADE",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,

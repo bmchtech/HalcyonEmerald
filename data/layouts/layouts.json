@@ -4227,7 +4227,7 @@
       "width": 40,
       "height": 23,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/AlteringCave/border.bin",
       "blockdata_filepath": "data/layouts/AlteringCave/map.bin"
     },
@@ -4617,7 +4617,7 @@
       "width": 40,
       "height": 23,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/AlteringCave_1F/border.bin",
       "blockdata_filepath": "data/layouts/AlteringCave_1F/map.bin"
     },
@@ -4627,7 +4627,7 @@
       "width": 40,
       "height": 23,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/AlteringCave_B1F/border.bin",
       "blockdata_filepath": "data/layouts/AlteringCave_B1F/map.bin"
     }
