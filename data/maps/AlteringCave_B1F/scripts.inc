@@ -71,7 +71,7 @@ AlteringCave_Text_LeafPreBattle:
 	.string "Maybe a certain Legendary Pokémon?\p"
 	.string "Well, you're in the right place.\n"
 	.string "Mewtwo's just ahead!\p"
-	.string "Oh, I'm Leaf, by the way!\n"
+	.string "Oh, I'm Green, by the way!\n"
 	.string "Nice to meet you!\p"
 	.string "But if you want to meet Mewtwo,\n"
 	.string "you'll have to get past me first!$"
@@ -80,7 +80,7 @@ AlteringCave_Text_LeafDefeated:
 	.string "Wow, you're strong!$"
 
 AlteringCave_Text_LeafGift:
-	.string "Leaf: Well, I guess that's that!\p"
+	.string "Green: Well, I guess that's that!\p"
 	.string "Here, take these.$"
 
 AlteringCave_Text_LeafExit:
