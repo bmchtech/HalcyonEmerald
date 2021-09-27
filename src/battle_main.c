@@ -1969,14 +1969,18 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
 
-                level = GetHighestLevelInPlayerParty() + partyData[i].lvl;
-                if (level > 100)
+                level = GetHighestLevelInPlayerParty();
+                if (level + partyData[i].lvl > 100)
                 {
                     level = 100;
                 }
-                if (level < 1)
+                else if (level + partyData[i].lvl < 1)
                 {
                     level = 1;
+                }
+                else
+                {
+                    level = level + partyData[i].lvl;
                 }
 
                 CreateMon(&party[i], partyData[i].species, level, 31, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
