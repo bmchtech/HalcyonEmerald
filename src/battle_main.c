@@ -3186,6 +3186,7 @@ void FaintClearSetData(void)
     gProtectStructs[gActiveBattler].spikyShielded = 0;
     gProtectStructs[gActiveBattler].kingsShielded = 0;
     gProtectStructs[gActiveBattler].banefulBunkered = 0;
+    gProtectStructs[gActiveBattler].obstructed = 0;
     gProtectStructs[gActiveBattler].endured = 0;
     gProtectStructs[gActiveBattler].noValidMoves = 0;
     gProtectStructs[gActiveBattler].helpingHand = 0;
@@ -3207,6 +3208,8 @@ void FaintClearSetData(void)
     gProtectStructs[gActiveBattler].usesBouncedMove = 0;
     gProtectStructs[gActiveBattler].usedGravityPreventedMove = 0;
     gProtectStructs[gActiveBattler].usedThroatChopPreventedMove = 0;
+    gProtectStructs[gActiveBattler].statRaised = 0;
+    gProtectStructs[gActiveBattler].statFell = 0;
 
     gDisableStructs[gActiveBattler].isFirstTurn = 2;
 
@@ -3575,6 +3578,13 @@ static void TryDoEventsBeforeFirstTurn(void)
 
     if (gBattleControllerExecFlags)
         return;
+
+    // Set invalid mons as absent(for example when starting a double battle with only one pokemon).
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (gBattleMons[i].hp == 0 || gBattleMons[i].species == SPECIES_NONE)
+            gAbsentBattlerFlags |= gBitTable[i];
+    }
 
     if (gBattleStruct->switchInAbilitiesCounter == 0)
     {
@@ -4203,10 +4213,10 @@ static void HandleTurnActionSelectionState(void)
             }
             break;
         case STATE_WAIT_ACTION_CONFIRMED_STANDBY:
-            if (!(gBattleControllerExecFlags & ((gBitTable[gActiveBattler]) 
+            if (!(gBattleControllerExecFlags & ((gBitTable[gActiveBattler])
                                                 | (0xF << 28)
-                                                | (gBitTable[gActiveBattler] << 4) 
-                                                | (gBitTable[gActiveBattler] << 8) 
+                                                | (gBitTable[gActiveBattler] << 4)
+                                                | (gBitTable[gActiveBattler] << 8)
                                                 | (gBitTable[gActiveBattler] << 12))))
             {
                 if (AllAtActionConfirmed())
@@ -4401,6 +4411,7 @@ s8 GetChosenMovePriority(u32 battlerId)
 {
     u16 move;
 
+    gProtectStructs[battlerId].pranksterElevated = 0;
     if (gProtectStructs[battlerId].noValidMoves)
         move = MOVE_STRUGGLE;
     else
@@ -4421,6 +4432,11 @@ s8 GetMovePriority(u32 battlerId, u16 move)
         priority++;
     }
     else if (GetBattlerAbility(battlerId) == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
+    {
+        gProtectStructs[battlerId].pranksterElevated = 1;
+        priority++;
+    }
+    else if (gBattleMoves[move].effect == EFFECT_GRASSY_GLIDE && gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && IsBattlerGrounded(battlerId))
     {
         priority++;
     }
@@ -4767,7 +4783,7 @@ static void CheckQuickClaw_CustapBerryActivation(void)
             }
         }
     }
-    
+
     // setup stuff before turns/actions
     TryClearRageAndFuryCutter();
     gCurrentTurnActionNumber = 0;

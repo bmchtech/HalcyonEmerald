@@ -969,7 +969,6 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
             dmg *= 3; // Average number of hits is three
         break;
     case EFFECT_DOUBLE_HIT:
-    case EFFECT_DOUBLE_IRON_BASH:
     case EFFECT_TWINEEDLE:
             dmg *= 2;
         break;
