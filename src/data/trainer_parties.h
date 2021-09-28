@@ -20122,11 +20122,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_OMASTAR,
-    .heldItem = ITEM_FOCUS_SASH,
+    .species = SPECIES_LUDICOLO,
+    .heldItem = ITEM_SHELL_BELL,
     .ability = 0, // Swift Swim
     .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
-    .moves = MOVE_SURF, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_SHELL_SMASH
+    .moves = MOVE_SCALD, MOVE_GIGA_DRAIN, MOVE_ICE_BEAM, MOVE_QUIVER_DANCE
     },
     {
     .lvl = 2,
@@ -20138,11 +20138,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_ZAPDOS,
+    .species = SPECIES_VIKAVOLT,
     .heldItem = ITEM_LIFE_ORB,
-    .ability = 2, // Static
+    .ability = 0, // Levitate
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_THUNDER, MOVE_HURRICANE, MOVE_WEATHER_BALL, MOVE_ROOST
+    .moves = MOVE_THUNDER, MOVE_HURRICANE, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL
     },
     {
     .lvl = 3,
@@ -21270,40 +21270,57 @@ static const struct TrainerMonItemCustomMoves sParty_Cynthia2[] = {
     }
 };
 
-// Cut rematches
-static const struct TrainerMonItemCustomMoves sParty_Madeline5[] = { // Unused
+static const struct TrainerMonItemCustomMoves sParty_LeafAlteringCave[] = {
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 5,
+    .species = SPECIES_NINETALES,
+    .heldItem = ITEM_LEFTOVERS,
+    .ability = 1, // Pyromancy
+    .spread = SPREAD_31_IV_HP_SPEED_TIMID,
+    .moves = MOVE_FLAMETHROWER, MOVE_FOUL_PLAY, MOVE_CALM_MIND, MOVE_DRAINING_KISS
     },
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 5,
+    .species = SPECIES_KANGASKHAN,
+    .heldItem = ITEM_KANGASKHANITE,
+    .spread = SPREAD_31_IV_ATK_SPEED_JOLLY,
+    .moves = MOVE_POWER_UP_PUNCH, MOVE_BODY_SLAM, MOVE_EARTHQUAKE, MOVE_SUCKER_PUNCH
     },
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 5,
+    .species = SPECIES_GENGAR,
+    .heldItem = ITEM_LIFE_ORB,
+    .ability = 0, // Levitate
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_SHADOW_BALL, MOVE_SLUDGE_BOMB, MOVE_FOCUS_BLAST, MOVE_DESTINY_BOND
     },
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 5,
+    .species = SPECIES_TANGROWTH,
+    .heldItem = ITEM_ASSAULT_VEST,
+    .ability = 2, // Regenerator
+    .spread = SPREAD_31_IV_HP_SPDEF_CALM,
+    .moves = MOVE_GIGA_DRAIN, MOVE_KNOCK_OFF, MOVE_EARTHQUAKE, MOVE_POISON_JAB
     },
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 5,
+    .species = SPECIES_MEWTWO,
+    .heldItem = ITEM_SHELL_BELL,
+    .ability = 2, // Unnerve
+    .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
+    .moves = MOVE_PSYSTRIKE, MOVE_ICE_BEAM, MOVE_FLAMETHROWER, MOVE_NASTY_PLOT
     },
     {
-    .lvl = -2,
-    .species = SPECIES_HAPPINY,
-    .moves = MOVE_MEMENTO
+    .lvl = 7,
+    .species = SPECIES_BLASTOISE,
+    .heldItem = ITEM_WHITE_HERB,
+    .ability = 1, // Mega Launcher
+    .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
+    .moves = MOVE_WATER_PULSE, MOVE_DARK_PULSE, MOVE_ICE_BEAM, MOVE_SHELL_SMASH,
     }
 };
 
+// Cut rematches
 static const struct TrainerMonItemCustomMoves sParty_Bernie5[] = {
     {
     .lvl = 0,

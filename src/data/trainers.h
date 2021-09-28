@@ -6159,18 +6159,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Madeline4},
     },
 
-    [TRAINER_MADELINE_5] =
+    [TRAINER_LEAF_ALTERING_CAVE] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_PARASOL_LADY,
+        .trainerClass = TRAINER_CLASS_JOHTO_CHAMP,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_PARASOL_LADY,
-        .trainerName = _("Madeline"),
+        .trainerPic = TRAINER_PIC_LEAF,
+        .trainerName = _("Green"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Madeline5),
-        .party = {.ItemCustomMoves = sParty_Madeline5},
+        .partySize = ARRAY_COUNT(sParty_LeafAlteringCave),
+        .party = {.ItemCustomMoves = sParty_LeafAlteringCave},
     },
 
     [TRAINER_BEVERLY] =

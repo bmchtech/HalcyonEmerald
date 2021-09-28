@@ -7289,6 +7289,8 @@ u16 GetBattleBGM(void)
             return DP_SEQ_BA_CHANP;
         case TRAINER_CLASS_BUFFEL:
             return PL_SEQ_PL_BA_BRAIN;
+        case TRAINER_CLASS_JOHTO_CHAMP:
+            return HG_SEQ_GS_VS_CHAMP; // Leaf/Red/Lance
         default:
             return MUS_VS_TRAINER;
         }
@@ -8083,12 +8085,11 @@ static void ShuffleStatArray(u8* statArray)
 {
     int i;
 
-    // Shuffle the stats array
-    for (i = 0; i < NUM_STATS; i++)
+    // Shuffle the stats array using Fisher-Yates shuffle
+    for (i = NUM_STATS - 1; i > 0; i--)
     {
         u8 temp;
-        u8 rand1 = Random() % NUM_STATS;
-        u8 rand2 = Random() % NUM_STATS;
-        SWAP(statArray[rand1], statArray[rand2], temp);
+        int j = Random() % (i + 1);
+        SWAP(statArray[i], statArray[j], temp);
     }
 }

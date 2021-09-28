@@ -885,3 +885,15 @@ DesertUnderpass_EventScript_Flygonite::
 SeafloorCavern_Room6_EventScript_Kingdranite::
 	finditem ITEM_KINGDRANITE
 	end
+
+Altering_Cave_EventScript_MasterBall1::
+	finditem ITEM_MASTER_BALL
+	end
+
+Altering_Cave_EventScript_MasterBall2::
+	finditem ITEM_MASTER_BALL
+	end
+
+Altering_Cave_EventScript_CometShard::
+	finditem ITEM_COMET_SHARD
+	end

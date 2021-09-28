@@ -1098,3 +1098,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/scripts/eevee.inc"
 	.include "data/scripts/furfrou.inc"
 	.include "data/scripts/honey.inc"
+
+	.include "data/maps/AlteringCave_1F/scripts.inc"
+
+	.include "data/maps/AlteringCave_B1F/scripts.inc"

@@ -689,10 +689,10 @@
 #define FLAG_HIDDEN_ITEM_SANDSTREWN_RUINS_GREEN_SHARD        (FLAG_HIDDEN_ITEMS_START + 0x96)
 #define FLAG_HIDDEN_ITEM_SANDSTREWN_RUINS_BLUE_SHARD         (FLAG_HIDDEN_ITEMS_START + 0x97)
 #define FLAG_HIDDEN_ITEM_SANDSTREWN_RUINS_YELLOW_SHARD       (FLAG_HIDDEN_ITEMS_START + 0x98)
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ALTERING_CAVE_GOLD_BOTTLE_CAP       (FLAG_HIDDEN_ITEMS_START + 0x99)
+#define FLAG_HIDDEN_ITEM_ALTERING_CAVE_CALCIUM               (FLAG_HIDDEN_ITEMS_START + 0x9A)
+#define FLAG_HIDDEN_ITEM_ALTERING_CAVE_CARBOS                (FLAG_HIDDEN_ITEMS_START + 0x9B)
+#define FLAG_HIDDEN_ITEM_ALTERING_CAVE_MAX_REVIVE            (FLAG_HIDDEN_ITEMS_START + 0x9C)
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
@@ -1294,10 +1294,10 @@
 #define FLAG_HIDE_ASHEN_WOODS_CHANSEY                               0x4E5
 #define FLAG_HIDE_ASHEN_WOODS_POKE_BALL                             0x4E6
 #define FLAG_EVERGRANDE_MEWTWONITEY                                 0x4E7
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
+#define FLAG_ALTERING_CAVE_MASTER_BALL_1                            0x4E8
+#define FLAG_ALTERING_CAVE_COMET_SHARD                              0x4E9
+#define FLAG_ALTERING_CAVE_MASTER_BALL_2                            0x4EA
+#define FLAG_DEFEATED_LEAF                                          0x4EB
 #define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag

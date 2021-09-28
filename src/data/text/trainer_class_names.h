@@ -69,4 +69,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_PKMN_TRAINER_4] = _("{PKMN} Trainer"),
     [TRAINER_CLASS_PKMN_TRAINER_5] = _("{PKMN} Trainer"),
     [TRAINER_CLASS_BUFFEL] = _("{PKMN} Trainer"),
+    [TRAINER_CLASS_JOHTO_CHAMP] = _("{PKMN} Trainer"),
 };

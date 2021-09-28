@@ -605,7 +605,8 @@ HyperTraining_EventScript_ChangeHiddenPower::
 	case 13, HyperTraining_EventScript_ChangeHPIce
 	case 14, HyperTraining_EventScript_ChangeHPDragon
 	case 15, HyperTraining_EventScript_ChangeHPDark
-	case 127, FallarborTown_HyperMainMenu
+	case 16, HyperTraining_EventScript_RebufferChosenMon
+	case 127, HyperTraining_EventScript_RebufferChosenMon
 	releaseall
 	end
 
@@ -698,6 +699,10 @@ HyperTraining_EventScript_NotEnoughCaps::
 	msgbox HyperTraining_Text_NotEnoughCaps, MSGBOX_DEFAULT
 	releaseall
 	end
+
+HyperTraining_EventScript_RebufferChosenMon::
+	copyvar VAR_0x8004, VAR_0x800A
+	goto FallarborTown_HyperMainMenu
 
 HyperTraining_Text_ChoosePokemon:
 	.string "Ivy: Which Pokémon needs some\n"

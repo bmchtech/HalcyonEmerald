@@ -450,7 +450,9 @@
     "ScorchedSlab_B2F",
     "ScorchedSlab_HeatransRoom",
     "CaveOfOrigin_DianciesRoom",
-    "MeteorFalls_JirachisRoom"
+    "MeteorFalls_JirachisRoom",
+    "AlteringCave_1F",
+    "AlteringCave_B1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

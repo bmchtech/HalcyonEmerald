@@ -420,6 +420,8 @@
 #define MAP_SCORCHED_SLAB_HEATRANS_ROOM              (122 | (24 << 8))
 #define MAP_CAVE_OF_ORIGIN_DIANCIES_ROOM             (123 | (24 << 8))
 #define MAP_METEOR_FALLS_JIRACHIS_ROOM               (124 | (24 << 8))
+#define MAP_ALTERING_CAVE_1F                         (125 | (24 << 8))
+#define MAP_ALTERING_CAVE_B1F                        (126 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

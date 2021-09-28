@@ -387,6 +387,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_PKMN_TRAINER_4, 30},
     {TRAINER_CLASS_PKMN_TRAINER_5, 50},
     {TRAINER_CLASS_BUFFEL, 45},
+    {TRAINER_CLASS_JOHTO_CHAMP, 50},
     {0xFF, 5},
 };
 
@@ -454,6 +455,7 @@ const struct TrainerBall gTrainerBallTable[] =
     {TRAINER_CLASS_PKMN_TRAINER_4, ITEM_CHERISH_BALL},
     {TRAINER_CLASS_PKMN_TRAINER_5, ITEM_HEAVY_BALL},
     {TRAINER_CLASS_BUFFEL, ITEM_CHERISH_BALL},
+    {TRAINER_CLASS_JOHTO_CHAMP, ITEM_ULTRA_BALL},
     {0xFF, ITEM_POKE_BALL},
 };
 
@@ -1967,14 +1969,18 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
 
-                level = GetHighestLevelInPlayerParty() + partyData[i].lvl;
-                if (level > 100)
+                level = GetHighestLevelInPlayerParty();
+                if (level + partyData[i].lvl > 100)
                 {
                     level = 100;
                 }
-                if (level < 1)
+                else if (level + partyData[i].lvl < 1)
                 {
                     level = 1;
+                }
+                else
+                {
+                    level = level + partyData[i].lvl;
                 }
 
                 CreateMon(&party[i], partyData[i].species, level, 31, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
