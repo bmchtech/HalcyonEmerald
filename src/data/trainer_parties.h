@@ -20495,8 +20495,8 @@ static const struct TrainerMonItemCustomMoves sParty_Sidney3[] = { // legendarie
     .lvl = 1,
     .species = SPECIES_YVELTAL,
     .heldItem = ITEM_BIG_ROOT,
-    .spread = SPREAD_31_IV_HP_DEF_BOLD,
-    .moves = MOVE_DARK_PULSE, MOVE_OBLIVION_WING, MOVE_ROOST, MOVE_U_TURN
+    .spread = SPREAD_31_IV_SPATK_SPEED_HASTY,
+    .moves = MOVE_DARK_PULSE, MOVE_OBLIVION_WING, MOVE_SUCKER_PUNCH, MOVE_U_TURN
     },
     {
     .lvl = 1,
@@ -20540,17 +20540,17 @@ static const struct TrainerMonItemCustomMoves sParty_Sidney3[] = { // legendarie
 static const struct TrainerMonItemCustomMoves sParty_Sidney4[] = { // doubles legendaries
     {
     .lvl = 1,
-    .species = SPECIES_YVELTAL,
-    .heldItem = ITEM_BIG_ROOT,
-    .spread = SPREAD_31_IV_HP_DEF_BOLD,
-    .moves = MOVE_DARK_PULSE, MOVE_OBLIVION_WING, MOVE_ROOST, MOVE_TAUNT
-    },
-    {
-    .lvl = 1,
     .species = SPECIES_DARKRAI,
     .heldItem = ITEM_WIDE_LENS,
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
     .moves = MOVE_DARK_VOID, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB, MOVE_FOCUS_BLAST
+    },
+    {
+    .lvl = 1,
+    .species = SPECIES_YVELTAL,
+    .heldItem = ITEM_BIG_ROOT,
+    .spread = SPREAD_31_IV_SPATK_SPEED_HASTY,
+    .moves = MOVE_DARK_PULSE, MOVE_OBLIVION_WING, MOVE_SUCKER_PUNCH, MOVE_TAUNT
     },
     {
     .lvl = 1,
