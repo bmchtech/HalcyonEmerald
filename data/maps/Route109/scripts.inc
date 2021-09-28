@@ -511,11 +511,11 @@ DewfordTown_Text_BrineyLandedInSlateportDeliverGoods: @ 81EEC1D
 	.string "Mr. Briney: Ahoy!\n"
 	.string "We've made land in Slateport!\p"
 	.string "I suppose you're going to visit Capt.\n"
-	.string "Stern and deliver the Devon Goods?$"
+	.string "Stern and deliver the Devon Parts?$"
 
 Route109_Text_BrineySailToDewfordQuestion: @ 81EEC96
 	.string "Mr. Briney: I thought you're supposed\n"
-	.string "to deliver the Devon Goods.\p"
+	.string "to deliver the Devon Parts.\p"
 	.string "Would you like to sail back to\n"
 	.string "Dewford, then?$"
 
@@ -526,7 +526,7 @@ Route109_Text_BrineyDewfordItIs: @ 81EED06
 
 Route109_Text_BrineyDeliverDevonGoods: @ 81EED5E
 	.string "Mr. Briney: Then you go on and deliver\n"
-	.string "the Devon Goods. I'll be waiting.$"
+	.string "the Devon Parts. I'll be waiting.$"
 
 DewfordTown_Text_BrineyLandedInSlateport: @ 81EEDA7
 	.string "Mr. Briney: Ahoy! We've made land in\n"

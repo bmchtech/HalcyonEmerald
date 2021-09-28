@@ -576,3 +576,4 @@ gSpecials::
 	def_special SetTotemBoost
 	def_special IsSelectedMonEeveelution
 	def_special HoneyWildEncounter
+	def_special GetStaticEncounterLevel

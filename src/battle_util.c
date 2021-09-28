@@ -6677,9 +6677,8 @@ case ITEMEFFECT_KINGSROCK:
         switch (atkHoldEffect)
         {
         case HOLD_EFFECT_SHELL_BELL:
-            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-                && gSpecialStatuses[gBattlerTarget].dmg != 0
-                && gSpecialStatuses[gBattlerTarget].dmg != 0xFFFF
+            if (gSpecialStatuses[gBattlerAttacker].damagedMons
+                && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
                 && gBattlerAttacker != gBattlerTarget
                 && gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP
                 && gBattleMons[gBattlerAttacker].hp != 0)
@@ -6697,10 +6696,11 @@ case ITEMEFFECT_KINGSROCK:
             }
             break;
         case HOLD_EFFECT_LIFE_ORB:
-            if (IsBattlerAlive(gBattlerAttacker)
+            if (gSpecialStatuses[gBattlerAttacker].damagedMons
                 && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
-                && gSpecialStatuses[gBattlerTarget].damagedMons)
+                && gBattlerAttacker != gBattlerTarget
+                && gBattleMons[gBattlerAttacker].hp != 0)
             {
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 10;
                 if (gBattleMoveDamage == 0)
@@ -8888,6 +8888,7 @@ void DoBurmyFormChange(u32 monId)
 }
 
 void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut)
+// || gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED check for transformed mon before reverting
 {
     u32 i, currSpecies;
     struct Pokemon *party = (side == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;

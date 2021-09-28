@@ -183,8 +183,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchGiveCosmogs
 	waitmovement 0
 	setvar VAR_TEMP_1, SPECIES_COSMOG
-	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
-	copyvar VAR_0x800A, VAR_RESULT
+	special GetStaticEncounterLevel
 	givemon SPECIES_COSMOG, VAR_0x800A, ITEM_LUCKY_EGG
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveCosmogParty

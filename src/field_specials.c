@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_tower.h"
+#include "battle_main.h"
 #include "cable_club.h"
 #include "data.h"
 #include "decoration.h"
@@ -1449,7 +1450,7 @@ void SetShoalItemFlag(u16 unused)
 void PutZigzagoonInPlayerParty(void)
 {
     u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, 31, FALSE, 0, OT_ID_PLAYER_ID, 0);
     monData = TRUE;
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
     monData = MOVE_TACKLE;
@@ -5756,4 +5757,20 @@ bool8 IsSelectedMonEeveelution (void)
         return TRUE;
     }
     return FALSE;
+}
+
+// Calculates level for gift mons and static encounters that can still evolve.
+// Sets that level to highest level - 3 and stores it in gSpecialVar_0x800A.
+void GetStaticEncounterLevel (void)
+{
+    gSpecialVar_0x800A = GetHighestLevelInPlayerParty();
+
+    if (gSpecialVar_0x800A - 3 < 1)
+    {
+        gSpecialVar_0x800A = 1;
+    }
+    else
+    {
+        gSpecialVar_0x800A -= 3;
+    }
 }
