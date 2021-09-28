@@ -887,7 +887,6 @@ static const struct LevelUpMove sVileplumeLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(49, MOVE_NATURAL_GIFT),
 	LEVEL_UP_MOVE(52, MOVE_SOLAR_BEAM),
 	LEVEL_UP_MOVE(57, MOVE_EARTH_POWER),
-    LEVEL_UP_MOVE(60, MOVE_SOLAR_BEAM),
     LEVEL_UP_END
 };
 

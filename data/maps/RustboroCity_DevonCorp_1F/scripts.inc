@@ -105,7 +105,7 @@ RustboroCity_DevonCorp_1F_Text_RobberWasntVeryBright: @ 8211446
 
 RustboroCity_DevonCorp_1F_Text_SoundsLikeStolenGoodsRecovered: @ 82114DE
 	.string "It sounds like they've recovered\n"
-	.string "the ripped-off Devon Goods.$"
+	.string "the ripped-off Devon Parts.$"
 
 RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter: @ 821151B
 	.string "I'm sorry, only authorized people\n"
@@ -130,7 +130,7 @@ RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay: @ 82115AC
 	.string "filings in the sand.\p"
 	.string "“From that humble start as a producer\n"
 	.string "of raw materials, Devon developed.\p"
-	.string "“DEVON is now a manufacturer of a wide\n"
+	.string "Devon is now a manufacturer of a wide\n"
 	.string "range of industrial products.”$"
 
 RustboroCity_DevonCorp_1F_Text_ProductDisplay: @ 8211722

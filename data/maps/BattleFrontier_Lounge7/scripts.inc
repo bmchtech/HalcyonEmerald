@@ -862,7 +862,7 @@ PokemonCenterMoveTutor_Text_SuperpowerDesc::
 PokemonCenterMoveTutor_Text_CrunchDesc::
 	.string "Crunches with\n"
 	.string "sharp fangs. May\n"
-	.string "lower Sp. Def.$"
+	.string "lower Defense.$"
 
 PokemonCenterMoveTutor_Text_MysticalFireDesc::
 	.string "Breathes special,\n"

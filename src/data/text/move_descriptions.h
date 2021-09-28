@@ -300,8 +300,8 @@ static const u8 sLeechSeedDescription[] = _(
     "steal HP on every turn.");
 
 static const u8 sGrowthDescription[] = _(
-    "Forces the body to grow\n"
-    "and heightens Sp. Atk.");
+    "Forces the body to grow.\n"
+    "Ups Attack and Sp. Atk.");
 
 static const u8 sRazorLeafDescription[] = _(
     "Cuts the enemy with leaves.\n"
@@ -936,7 +936,7 @@ static const u8 sRapidSpinDescription[] = _(
     "speed to strike the foe.");
 
 static const u8 sSweetScentDescription[] = _(
-    "Allures the foe to sharply\n"
+    "Allures the foe to harshly\n"
     "reduce evasiveness.");
 
 static const u8 sIronTailDescription[] = _(
@@ -1011,9 +1011,15 @@ static const u8 sFutureSightDescription[] = _(
     "Heightens inner power to\n"
     "strike 2 turns later.");
 
-static const u8 sRockSmashDescription[] = _(
-    "A rock-crushing attack\n"
-    "that may lower Defense.");
+#ifdef REBALANCED_VERSION
+    static const u8 sRockSmashDescription[] = _(
+        "A rock-crushing attack that\n"
+        "lowers the foe's Defense.");
+#else
+    static const u8 sRockSmashDescription[] = _(
+        "A rock-crushing attack\n"
+        "that may lower Defense.");
+#endif
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
