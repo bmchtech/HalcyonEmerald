@@ -20122,11 +20122,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_OMASTAR,
-    .heldItem = ITEM_FOCUS_SASH,
+    .species = SPECIES_LUDICOLO,
+    .heldItem = ITEM_SHELL_BELL,
     .ability = 0, // Swift Swim
     .spread = SPREAD_31_IV_SPATK_SPEED_MODEST,
-    .moves = MOVE_SURF, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_SHELL_SMASH
+    .moves = MOVE_SCALD, MOVE_GIGA_DRAIN, MOVE_ICE_BEAM, MOVE_QUIVER_DANCE
     },
     {
     .lvl = 2,
@@ -20138,11 +20138,11 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace[] = {
     },
     {
     .lvl = 2,
-    .species = SPECIES_ZAPDOS,
+    .species = SPECIES_VIKAVOLT,
     .heldItem = ITEM_LIFE_ORB,
-    .ability = 2, // Static
+    .ability = 0, // Levitate
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_THUNDER, MOVE_HURRICANE, MOVE_WEATHER_BALL, MOVE_ROOST
+    .moves = MOVE_THUNDER, MOVE_HURRICANE, MOVE_BUG_BUZZ, MOVE_ENERGY_BALL
     },
     {
     .lvl = 3,
