@@ -246,21 +246,13 @@ u8 CalcBeatUpPower(void)
     return basePower;
 }
 
-bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
-{
-    if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
-      || ability == ABILITY_OVERCOAT
-      || holdEffect == HOLD_EFFECT_SAFETY_GOOGLES)
-        return FALSE;
-    return TRUE;
-}
-
-bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide)
+bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
 {
     u32 ability = GetBattlerAbility(battlerAtk);
 
     if (gSideTimers[defSide].followmeTimer == 0
         || gBattleMons[gSideTimers[defSide].followmeTarget].hp == 0
+        || gBattleMoves[move].effect == EFFECT_SNIPE_SHOT
         || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
         return FALSE;
 
@@ -346,7 +338,7 @@ void HandleAction_UseMove(void)
 
     // choose target
     side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
-    if (IsAffectedByFollowMe(gBattlerAttacker, side)
+    if (IsAffectedByFollowMe(gBattlerAttacker, side, gCurrentMove)
         && gBattleMoves[gCurrentMove].target == MOVE_TARGET_SELECTED
         && GetBattlerSide(gBattlerAttacker) != GetBattlerSide(gSideTimers[side].followmeTarget))
     {
@@ -366,6 +358,7 @@ void HandleAction_UseMove(void)
                 && ((GetBattlerAbility(gActiveBattler) == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
                  || (GetBattlerAbility(gActiveBattler) == ABILITY_STORM_DRAIN && moveType == TYPE_WATER))
                 && GetBattlerTurnOrderNum(gActiveBattler) < var
+                && gBattleMoves[gCurrentMove].effect != EFFECT_SNIPE_SHOT
                 && (GetBattlerAbility(gBattlerAttacker) != ABILITY_PROPELLER_TAIL
                  || GetBattlerAbility(gBattlerAttacker) != ABILITY_STALWART))
             {
@@ -3124,6 +3117,7 @@ enum
     CANCELLER_POWDER_MOVE,
     CANCELLER_POWDER_STATUS,
     CANCELLER_THROAT_CHOP,
+    CANCELLER_PRANKSTER,
     CANCELLER_MULTIHIT_MOVES,
     CANCELLER_END,
     CANCELLER_PSYCHIC_TERRAIN,
@@ -3453,6 +3447,18 @@ u8 AtkCanceller_UnableToUseMove(void)
             }
             gBattleStruct->atkCancellerTracker++;
             break;
+        case CANCELLER_PRANKSTER:
+            if (BlocksPrankster(gCurrentMove, gBattlerAttacker, gBattlerTarget)
+              && !(IS_MOVE_STATUS(gCurrentMove) && GetBattlerAbility(gBattlerTarget) == ABILITY_MAGIC_BOUNCE))
+            {
+                if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE) || !(gBattleMoves[gCurrentMove].target & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
+                    CancelMultiTurnMoves(gBattlerAttacker); // Don't cancel moves that can hit two targets bc one target might not be protected
+                gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
+                gBattlescriptCurrInstr = BattleScript_DarkTypePreventsPrankster;
+                effect = 1;
+            }
+            gBattleStruct->atkCancellerTracker++;
+            break; 
         case CANCELLER_MULTIHIT_MOVES:
             if (gBattleMoves[gCurrentMove].effect == EFFECT_MULTI_HIT)
             {
@@ -3540,6 +3546,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             #endif
             gBattleStruct->atkCancellerTracker++;
             break;
+
         case CANCELLER_END:
             break;
         }
@@ -3964,11 +3971,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         switch (gLastUsedAbility)
         {
         case ABILITYEFFECT_SWITCH_IN_TERRAIN:
-            if (VarGet(VAR_TERRAIN) & STATUS_TERRAIN_ANY)
+            if (VarGet(VAR_TERRAIN) & STATUS_FIELD_TERRAIN_ANY)
             {
-                u16 terrainFlags = VarGet(VAR_TERRAIN) & STATUS_TERRAIN_ANY;    // only works for status flag (1 << 15)
+                u16 terrainFlags = VarGet(VAR_TERRAIN) & STATUS_FIELD_TERRAIN_ANY;    // only works for status flag (1 << 15)
                 gFieldStatuses = terrainFlags | STATUS_FIELD_TERRAIN_PERMANENT; // terrain is permanent
-                switch (VarGet(VAR_TERRAIN) & STATUS_TERRAIN_ANY)
+                switch (VarGet(VAR_TERRAIN) & STATUS_FIELD_TERRAIN_ANY)
                 {
                 case STATUS_FIELD_ELECTRIC_TERRAIN:
                     gBattleCommunication[MULTISTRING_CHOOSER] = 2;
@@ -6126,10 +6133,11 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 }
                 break;
             case HOLD_EFFECT_EJECT_PACK:
-                if (gSpecialStatuses[battlerId].statFell
+                if (gProtectStructs[battlerId].statFell
+                 && gProtectStructs[battlerId].disableEjectPack == 0
                  && !(gCurrentMove == MOVE_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker))) // Does not activate if attacker used Parting Shot and can switch out
                 {
-                    gSpecialStatuses[battlerId].statFell = FALSE;
+                    gProtectStructs[battlerId].statFell = FALSE;
                     gActiveBattler = gBattleScripting.battler = battlerId;
                     effect = ITEM_STATS_CHANGE;
                     if (moveTurn)
@@ -6238,8 +6246,10 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 break;
             case HOLD_EFFECT_BLACK_SLUDGE:
                 if (IS_BATTLER_OF_TYPE(battlerId, TYPE_POISON))
+                {
                     goto LEFTOVERS;
-                else if (!moveTurn && GetBattlerAbility(battlerId) != ABILITY_MAGIC_GUARD)
+                }
+                else if (GetBattlerAbility(battlerId) != ABILITY_MAGIC_GUARD && !moveTurn)
                 {
                     gBattleMoveDamage = gBattleMons[battlerId].maxHP / 8;
                     if (gBattleMoveDamage == 0)
@@ -6247,6 +6257,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     BattleScriptExecute(BattleScript_ItemHurtEnd2);
                     effect = ITEM_HP_CHANGE;
                     RecordItemEffectBattle(battlerId, battlerHoldEffect);
+                    PREPARE_ITEM_BUFFER(gBattleTextBuff1, gLastUsedItem);
                 }
                 break;
             case HOLD_EFFECT_LEFTOVERS:
@@ -6983,12 +6994,16 @@ u8 GetMoveTarget(u16 move, u8 setTarget)
         moveTarget = setTarget - 1;
     else
         moveTarget = gBattleMoves[move].target;
-
+    
+    // Special cases
+    if (move == MOVE_CURSE && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+        moveTarget = MOVE_TARGET_USER;
+    
     switch (moveTarget)
     {
     case MOVE_TARGET_SELECTED:
         side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
-        if (IsAffectedByFollowMe(gBattlerAttacker, side))
+        if (IsAffectedByFollowMe(gBattlerAttacker, side, move))
         {
             targetBattler = gSideTimers[side].followmeTarget;
         }
@@ -7023,7 +7038,7 @@ u8 GetMoveTarget(u16 move, u8 setTarget)
         break;
     case MOVE_TARGET_RANDOM:
         side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
-        if (IsAffectedByFollowMe(gBattlerAttacker, side))
+        if (IsAffectedByFollowMe(gBattlerAttacker, side, move))
             targetBattler = gSideTimers[side].followmeTarget;
         else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && moveTarget & MOVE_TARGET_RANDOM)
             targetBattler = SetRandomTarget(gBattlerAttacker);
@@ -7621,6 +7636,20 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
         if (gBattleMoves[gLastUsedMove].effect == EFFECT_FUSION_COMBO && move != gLastUsedMove)
             basePower *= 2;
         break;
+    case EFFECT_LASH_OUT:
+        if (gProtectStructs[battlerAtk].statFell)
+            basePower *= 2;
+        break;
+    case EFFECT_EXPLOSION:
+        if (move == MOVE_MISTY_EXPLOSION && gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN && IsBattlerGrounded(battlerAtk))
+            MulModifier(&basePower, UQ_4_12(1.5));
+        break;
+    case EFFECT_DYNAMAX_DOUBLE_DMG:
+        #ifdef B_DYNAMAX
+        if (IsDynamaxed(battlerDef))
+            basePower *= 2;
+        #endif
+        break;
     #if B_BEAT_UP_DMG >= GEN_5
     case EFFECT_BEAT_UP:
         basePower = CalcBeatUpPower();
@@ -7901,7 +7930,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         if (gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY)
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
-    case EFFECT_RETALITATE:
+    case EFFECT_RETALIATE:
         // todo
         break;
     case EFFECT_SOLARBEAM:
@@ -9021,6 +9050,7 @@ bool32 SetIllusionMon(struct Pokemon *mon, u32 battlerId)
         id = i;
         if (GetMonData(&party[id], MON_DATA_SANITY_HAS_SPECIES)
             && GetMonData(&party[id], MON_DATA_HP)
+            && !GetMonData(&party[id], MON_DATA_IS_EGG)
             && &party[id] != mon
             && &party[id] != partnerMon)
         {

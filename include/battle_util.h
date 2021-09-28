@@ -48,9 +48,7 @@ struct TypePower
 
 extern const struct TypePower gNaturalGiftTable[];
 
-bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide);
-bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect);
-s32 CountUsablePartyMons(u8 battlerId);
+bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move);
 void HandleAction_UseMove(void);
 void HandleAction_Switch(void);
 void HandleAction_UseItem(void);
@@ -129,7 +127,6 @@ u16 GetWishMegaEvolutionSpecies(u16 preEvoSpecies, u16 moveId1, u16 moveId2, u16
 bool32 CanMegaEvolve(u8 battlerId);
 void UndoMegaEvolution(u32 monId);
 void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut);
-void DoBurmyFormChange(u32 monId);
 bool32 DoBattlersShareType(u32 battler1, u32 battler2);
 bool32 CanBattlerGetOrLoseItem(u8 battlerId, u16 itemId);
 struct Pokemon *GetIllusionMonPtr(u32 battlerId);
@@ -154,6 +151,8 @@ void SortBattlersBySpeed(u8 *battlers, bool8 slowToFast);
 bool32 CompareStat(u8 battlerId, u8 statId, u8 cmpTo, u8 cmpKind);
 bool32 TryRoomService(u8 battlerId);
 void BufferStatChange(u8 battlerId, u8 statId, u8 stringId);
+void DoBurmyFormChange(u32 monId);
+bool32 BlocksPrankster(u16 move, u8 battlerPrankster, u8 battlerDef);
 bool8 IsMoveAffectedByParentalBond(u16 move, u8 battlerId);
 
 // ability checks

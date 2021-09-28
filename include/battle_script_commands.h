@@ -7,6 +7,7 @@
 #define WINDOW_x80              0x80
 
 s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move, bool32 recordAbility);
+s8 GetInverseCritChance(u8 battlerAtk, u8 battlerDef, u32 move);
 u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move);
 u8 GetBattlerTurnOrderNum(u8 battlerId);
 bool32 NoAliveMonsForEitherParty(void);
