@@ -246,6 +246,15 @@ u8 CalcBeatUpPower(void)
     return basePower;
 }
 
+bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
+{
+    if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
+      || ability == ABILITY_OVERCOAT
+      || holdEffect == HOLD_EFFECT_SAFETY_GOOGLES)
+        return FALSE;
+    return TRUE;
+}
+
 bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
 {
     u32 ability = GetBattlerAbility(battlerAtk);
@@ -9489,4 +9498,18 @@ bool8 IsTwoStrikesMove(u16 move)
             return TRUE;
     }
     return FALSE;
+}
+
+bool32 BlocksPrankster(u16 move, u8 battlerPrankster, u8 battlerDef)
+{
+    #if B_PRANKSTER_DARK_TYPES >= GEN_7
+    if (gProtectStructs[battlerPrankster].pranksterElevated
+      && GetBattlerSide(battlerPrankster) != GetBattlerSide(battlerDef)
+      && !(gBattleMoves[gCurrentMove].target & (MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_DEPENDS)) // Don't block hazards, assist-type moves
+      && IS_BATTLER_OF_TYPE(battlerDef, TYPE_DARK)  // Only Dark-types can block Prankster'd
+      && !(gStatuses3[battlerDef] & STATUS3_SEMI_INVULNERABLE))
+        return TRUE;
+    else
+    #endif
+        return FALSE;
 }
