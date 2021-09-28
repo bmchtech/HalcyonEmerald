@@ -124,8 +124,7 @@ RustboroCity_DevonCorp_2F_EventScript_FossilMonReady::
 	bufferspeciesname 1, VAR_0x8006
 	msgbox RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
 	copyvar VAR_TEMP_1, VAR_0x8006
-	specialvar VAR_RESULT, GetHighestLevelInPlayerParty
-	copyvar VAR_0x800A, VAR_RESULT
+	special GetStaticEncounterLevel
 	givemon VAR_0x8006, VAR_0x800A, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveFossilParty
