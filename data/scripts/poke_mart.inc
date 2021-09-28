@@ -15,6 +15,7 @@ General_Pokemart_Script::
 	release
 	end
 
+	.align 2
 PokeMart_No_Badges::
 	.2byte ITEM_MENTAL_HERB
 	.2byte ITEM_RED_CARD
@@ -181,4 +182,3 @@ PokeMart_Mind_Badge::
 	.2byte ITEM_NONE
 	release
 	end
-
