@@ -8888,6 +8888,7 @@ void DoBurmyFormChange(u32 monId)
 }
 
 void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut)
+// || gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED check for transformed mon before reverting
 {
     u32 i, currSpecies;
     struct Pokemon *party = (side == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;
