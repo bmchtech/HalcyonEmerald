@@ -308,6 +308,7 @@ AI_CheckBadMove_CheckEffect: @ 82DC045
 	if_effect EFFECT_SUCKER_PUNCH, AI_CBM_SuckerPunch
 	if_effect EFFECT_SOLARBEAM, AI_CBM_SolarBeam
 	if_effect EFFECT_PLACEHOLDER, AI_CBM_Placeholder
+	if_effect EFFECT_STRENGTH_SAP, AI_CBM_StrengthSap
 	end
 	
 AI_CBM_LockOn:
@@ -881,6 +882,8 @@ AI_CBM_Foresight: @ 82DC5D7
 
 AI_CBM_PerishSong: @ 82DC5E2
 	if_status3 AI_TARGET, STATUS3_PERISH_SONG, Score_Minus10
+	count_usable_party_mons AI_USER
+	if_equal 0, Score_Minus30
 	end
 
 AI_CBM_Sandstorm: @ 82DC5ED
@@ -1072,6 +1075,12 @@ AI_CBM_SolarBeam:
 @ Don't use placeholder moves, ever
 AI_CBM_Placeholder:
 	score -30
+	end
+
+AI_CBM_StrengthSap:
+	if_hp_equal AI_USER, 100, Score_Minus10
+	call AI_CBM_AttackDown
+	if_hp_more_than AI_USER, 70, Score_Minus5
 	end
 
 Score_Minus1:
@@ -1386,6 +1395,8 @@ AI_CheckViability:
 	if_effect EFFECT_COIL, AI_CV_DefenseUp
 	if_effect EFFECT_DEFOG, AI_CV_Defog
 	if_effect EFFECT_WILL_O_WISP AI_CV_Burn
+	if_effect EFFECT_STRENGTH_SAP AI_CV_StrengthSap
+	if_effect EFFECT_CLEAR_SMOG AI_CV_Haze
 	end
 	
 AI_CV_PerishSong:
@@ -2083,6 +2094,33 @@ AI_CV_Haze4:
 	score +3
 
 AI_CV_Haze_End:
+	end
+
+AI_CV_ClearSmog:
+	if_stat_level_less_than AI_TARGET, STAT_ATK, 4, AI_CV_ClearSmog2
+	if_stat_level_less_than AI_TARGET, STAT_SPATK, 4, AI_CV_ClearSmog2
+	if_stat_level_less_than AI_TARGET, STAT_SPEED, 4, AI_CV_ClearSmog2
+	if_stat_level_less_than AI_TARGET, STAT_DEF, 4, AI_CV_ClearSmog2
+	if_stat_level_less_than AI_TARGET, STAT_SPDEF, 4, AI_CV_ClearSmog2
+	if_stat_level_less_than AI_TARGET, STAT_ACC, 4, AI_CV_ClearSmog2
+	goto AI_CV_ClearSmog3
+
+AI_CV_ClearSmog2:
+	if_random_less_than 50, AI_CV_ClearSmog3
+	score -3
+AI_CV_ClearSmog3:
+	if_stat_level_more_than AI_TARGET, STAT_ATK, 7, AI_CV_ClearSmog4
+	if_stat_level_more_than AI_TARGET, STAT_DEF, 7, AI_CV_ClearSmog4
+	if_stat_level_more_than AI_TARGET, STAT_SPEED, 7, AI_CV_ClearSmog4
+	if_stat_level_more_than AI_TARGET, STAT_SPATK, 7, AI_CV_ClearSmog4
+	if_stat_level_more_than AI_TARGET, STAT_SPDEF, 7, AI_CV_ClearSmog4
+	if_stat_level_more_than AI_TARGET, STAT_EVASION, 7, AI_CV_ClearSmog4
+	goto AI_CV_ClearSmog_End
+
+AI_CV_ClearSmog4:
+	if_random_less_than 50, AI_CV_ClearSmog_End
+	score +3
+AI_CV_ClearSmog_End:
 	end
 
 AI_CV_Bide:
@@ -3764,6 +3802,11 @@ AI_SetupFirstTurn:
 	if_not_in_hwords AI_SetupFirstTurn_SetupEffectsToEncourage, AI_SetupFirstTurn_End
 	score +2
 AI_SetupFirstTurn_End:
+	end
+
+AI_CV_StrengthSap:
+	if_stat_level_more_than AI_TARGET, STAT_ATK, DEFAULT_STAT_STAGE, Score_Plus5
+	goto AI_CV_Heal
 	end
 
 .align 1

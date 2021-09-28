@@ -9327,7 +9327,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery1[] = {
     .heldItem = ITEM_WHITE_HERB,
     .ability = 1, // Drought
     .spread = SPREAD_31_IV_HP_SPATK_MODEST,
-    .moves = MOVE_OVERHEAT, MOVE_STEALTH_ROCK, MOVE_YAWN, MOVE_ATTRACT
+    .moves = MOVE_OVERHEAT, MOVE_STEALTH_ROCK, MOVE_CLEAR_SMOG, MOVE_RAPID_SPIN
     },
     {
     .lvl = 0,
@@ -20341,10 +20341,10 @@ static const struct TrainerMonItemCustomMoves sParty_GretaSlateport[] = {
     {
     .lvl = 0,
     .species = SPECIES_LANDORUS_THERIAN,
-    .heldItem = ITEM_GRASS_GEM,
+    .heldItem = ITEM_YACHE_BERRY,
     .ability = 0, // Intimidate
     .spread = SPREAD_31_IV_HP_ATK_ADAMANT,
-    .moves = MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_STEALTH_ROCK, MOVE_U_TURN
+    .moves = MOVE_EARTHQUAKE, MOVE_STRENGTH, MOVE_STEALTH_ROCK, MOVE_U_TURN
     },
     {
     .lvl = 0,
@@ -20367,8 +20367,8 @@ static const struct TrainerMonItemCustomMoves sParty_GretaSlateport[] = {
     .species = SPECIES_UMBREON,
     .heldItem = ITEM_LEFTOVERS,
     .ability = 1, // Magic Guard
-    .spread = SPREAD_31_IV_HP_SPDEF_CAREFUL,
-    .moves = MOVE_PAYBACK, MOVE_CURSE, MOVE_MOONLIGHT, MOVE_TOXIC
+    .spread = SPREAD_31_IV_HP_DEF_BOLD,
+    .moves = MOVE_DARK_PULSE, MOVE_CALM_MIND, MOVE_STRENGTH_SAP, MOVE_TOXIC
     },
     {
     .lvl = 0,
