@@ -60,6 +60,8 @@ EventScript_CutTreeDown:: @ 8290710
 	end
 
 EventScript_CutTreeEncounter::
+	compare VAR_REPEL_STEP_COUNT, 0
+	goto_if_gt EventScript_CancelCut
 	special RockSmashWildEncounter
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_CancelCut
@@ -252,6 +254,8 @@ EventScript_SmashRock::
 	end
 
 EventScript_RockSmashEncounter::
+	compare VAR_REPEL_STEP_COUNT, 0
+	goto_if_gt EventScript_EndSmash
 	special RockSmashWildEncounter
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_EndSmash
