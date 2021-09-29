@@ -675,12 +675,12 @@ HyperTraining_EventScript_ChangeHPDark::
 	goto HyperTraining_EventScript_ChangeAllIVs
 
 HyperTraining_EventScript_ChangeAllIVs::
-	checkitem ITEM_BOTTLE_CAP, 5
+	checkitem ITEM_BOTTLE_CAP, 3
 	compare VAR_RESULT, FALSE
 	goto_if_eq HyperTraining_EventScript_NotEnoughCaps
 	special ChangeChosenMonHiddenPower
 	msgbox HyperTraining_Text_PayFiveCaps, MSGBOX_DEFAULT
-	removeitem ITEM_BOTTLE_CAP, 5
+	removeitem ITEM_BOTTLE_CAP, 3
 	goto HyperTraining_EventScript_DoHyperTraining
 
 HyperTraining_EventScript_DoHyperTraining::
@@ -762,7 +762,7 @@ HyperTraining_Text_HyperTrainingMadeMonStronger:
 	.string "Would you like to train some more?$"
 
 HyperTraining_Text_ForFiveCapsChangeAllIVs:
-	.string "For five Bottle Caps, I can change all\n"
+	.string "For three Bottle Caps, I can change all\n"
 	.string "of a Pokémon's IVs at once to give them\l"
 	.string "a new Hidden Power type.\p"
 	.string "Would you like to change {STR_VAR_1}'s\n"
