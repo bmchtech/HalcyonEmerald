@@ -1555,7 +1555,7 @@ void GetBerryEncounter(void)
 {
     struct BerryTree *tree = GetBerryTreeInfo(GetObjectEventBerryTreeId(gSelectedObjectEvent));
 
-    if (!VarGet(VAR_REPEL_STEP_COUNT))
+    if (VarGet(VAR_REPEL_STEP_COUNT) == 0)
     {
         if (tree->EncounterSproutStage && tree->stage == BERRY_STAGE_SPROUTED)
         {
