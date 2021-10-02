@@ -822,6 +822,7 @@ gBattleAnims_General::
 	.4byte General_SlideOffScreen           @ B_ANIM_SLIDE_OFFSCREEN
 	.4byte General_RestoreBg                @ B_ANIM_RESTORE_BG
 	.4byte General_TotemFlare               @ B_ANIM_TOTEM_FLARE
+	.4byte General_GulpMissile              @ B_ANIM_GULP_MISSILE
 	.4byte General_ItemHealsHP              @ B_ANIM_ITEM_HEAL
 
 	.align 2
@@ -24410,6 +24411,20 @@ General_ItemHealsHP::
 	delay 1
 	call HealingEffect
 	waitforvisualfinish
+	end
+
+General_GulpMissile: @ Tackle anim (placeholder)
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_ATTACKER
+	setalpha 12, 8
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 4
+	delay 6
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_ATTACKER, 2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 3, 0, 6, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	blendoff
 	end
 
 RainbowEndureEffect:
