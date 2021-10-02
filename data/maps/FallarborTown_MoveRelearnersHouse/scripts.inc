@@ -104,7 +104,7 @@ FallarborTown_Text_AnnoyingIntroPart8:
 	.string "Ivy: And for one Bottle Cap, I'll change\n"
 	.string "one of a Pokémon's IVs to whatever\l"
 	.string "you want.\p"
-	.string "Also, for five Caps, I'll change all\n"
+	.string "Also, for three Caps, I'll change all\n"
 	.string "of a Pokémon's IVs to give them a new\l"
 	.string "Hidden Power type.$"
 
@@ -583,7 +583,7 @@ HyperTraining_EventScript_ChangeOneIV::
 	goto HyperTraining_EventScript_DoHyperTraining
 
 HyperTraining_EventScript_ChangeHiddenPower::
-	msgbox HyperTraining_Text_ForFiveCapsChangeAllIVs, MSGBOX_DEFAULT
+	msgbox HyperTraining_Text_ForThreeCapsChangeAllIVs, MSGBOX_DEFAULT
 	copyvar VAR_0x800A, VAR_0x8004
 	setvar VAR_0x8004, SCROLL_MULTI_HIDDEN_POWER
 	special ShowScrollableMultichoice
@@ -679,7 +679,7 @@ HyperTraining_EventScript_ChangeAllIVs::
 	compare VAR_RESULT, FALSE
 	goto_if_eq HyperTraining_EventScript_NotEnoughCaps
 	special ChangeChosenMonHiddenPower
-	msgbox HyperTraining_Text_PayFiveCaps, MSGBOX_DEFAULT
+	msgbox HyperTraining_Text_PayThreeCaps, MSGBOX_DEFAULT
 	removeitem ITEM_BOTTLE_CAP, 3
 	goto HyperTraining_EventScript_DoHyperTraining
 
@@ -714,15 +714,17 @@ HyperTraining_Text_WantMeExplainIVs:
 HyperTraining_Text_ExplainIVs:
 	.string "Ivy: IVs are a hidden part of your\n"
 	.string "Pokémon's stats that can only be\l"
-	.string "changed with special training.\p"
+	.string "changed with special training,\l"
+	.string "or raised by giving them Vitamins.\p"
 	.string "They can be any value between\n"
 	.string "0 and 31, and affect things like\l"
 	.string "the type of the move Hidden Power.\p"
 	.string "Higher IVs means higher stats, but\n"
 	.string "higher stats aren't always better!\p"
 	.string "Example: If your Pokémon relies on\n"
-	.string "Special Attacks, a low Attack IV may\l"
-	.string "help when it's confused in battle.$"
+	.string "Special Attacks, a low Attack IV will\l"
+	.string "reduce the damage it takes if it hits\l"
+	.string "itself in confusion.$"
 
 HyperTraining_Text_LetsTakeALook:
 	.string "OK! Let's take a look at your\n"
@@ -761,7 +763,7 @@ HyperTraining_Text_HyperTrainingMadeMonStronger:
 	.string "stronger!\p"
 	.string "Would you like to train some more?$"
 
-HyperTraining_Text_ForFiveCapsChangeAllIVs:
+HyperTraining_Text_ForThreeCapsChangeAllIVs:
 	.string "For three Bottle Caps, I can change all\n"
 	.string "of a Pokémon's IVs at once to give them\l"
 	.string "a new Hidden Power type.\p"
@@ -786,5 +788,5 @@ HyperTraining_Text_NotEnoughCaps:
 HyperTraining_Text_PayOneCap:
 	.string "{PLAYER} handed over one Bottle Cap.$"
 
-HyperTraining_Text_PayFiveCaps:
-	.string "{PLAYER} handed over five Bottle Caps.$"
+HyperTraining_Text_PayThreeCaps:
+	.string "{PLAYER} handed over three Bottle Caps.$"
