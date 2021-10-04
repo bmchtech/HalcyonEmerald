@@ -721,13 +721,13 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         #endif
         
         // terrain & effect checks
-        if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         {
             if (moveEffect == EFFECT_SLEEP || moveEffect == EFFECT_YAWN)
                 RETURN_SCORE_MINUS(20);
         }
         
-        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
         {
             if (IsNonVolatileStatusMoveEffect(moveEffect) || IsConfusionMoveEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);
@@ -735,7 +735,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         
         if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         {
-            if (atkPriority > 0)
+            if (atkPriority > 0 && gBattleMoves[move].target != MOVE_TARGET_USER)
                 RETURN_SCORE_MINUS(20);
         }
     } // end check MOVE_TARGET_USER
@@ -2440,6 +2440,9 @@ static s16 AI_TryToFaint(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         
         if (GetMoveDamageResult(move) == MOVE_POWER_WEAK)
             score--;
+
+        if (GetMoveDamageResult(move) == MOVE_POWER_BEST)
+            score++; // Prefer strongest move in scenarios like STAB Scald vs Ice Beam on a neutral target
         
         switch (AI_GetMoveEffectiveness(move, battlerAtk, battlerDef))
         {
@@ -4719,7 +4722,7 @@ static s16 AI_PreferStrongestMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 sc
         return score;
     
     if (GetMoveDamageResult(move) == MOVE_POWER_BEST)
-        score += 2;
+        score += 1;
     
     return score;
 }
