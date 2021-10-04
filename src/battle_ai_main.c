@@ -2898,13 +2898,16 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
     }
 
-/*     if (HOLD_EFFECT_CHOICE(AI_DATA->atkHoldEffect))
+    if (HOLD_EFFECT_CHOICE(AI_DATA->atkHoldEffect))
     {
-        if (!CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
+        // If AI can't 2HKO foe OR foe can KO AI and is faster, force it to switch
+        if (!CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 2)
+            || (!CanAttackerFaintTarget(battlerDef, battlerAtk, AI_THINKING_STRUCT->movesetIndex, 0)
+                && GetWhoStrikesFirst(battlerDef, battlerAtk, TRUE) == 0))
         {
-            score -= 20; // Force switch if choice locked move does poor damage
+            score -= 20;
         }
-    } */
+    }
     
     // Attacker ability checks
     switch (AI_DATA->atkAbility)
