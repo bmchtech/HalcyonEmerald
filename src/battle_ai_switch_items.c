@@ -591,7 +591,7 @@ static u8 PredictFoesMoveType(u32 opposingBattler)
     return predictedType;
 }
 
-bool8 ShouldSwitch(void)
+bool32 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
     s32 firstId;
