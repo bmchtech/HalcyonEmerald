@@ -621,13 +621,13 @@ u32 GetTotalBaseStat(u32 species)
 bool32 IsTruantMonVulnerable(u32 battlerAI, u32 opposingBattler)
 {
     int i;
+    u16 *moves = GetMovesArray(opposingBattler);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        u32 move = gBattleResources->battleHistory->usedMoves[opposingBattler][i];
-        if (gBattleMoves[move].effect == EFFECT_PROTECT && move != MOVE_ENDURE)
+        if (gBattleMoves[moves[i]].effect == EFFECT_PROTECT && moves[i] != MOVE_ENDURE)
             return TRUE;
-        if (gBattleMoves[move].effect == EFFECT_SEMI_INVULNERABLE && GetWhoStrikesFirst(battlerAI, opposingBattler, TRUE) == 1)
+        if (gBattleMoves[moves[i]].effect == EFFECT_SEMI_INVULNERABLE && GetWhoStrikesFirst(battlerAI, opposingBattler, TRUE) == 1)
             return TRUE;
     }
     return FALSE;
@@ -1060,8 +1060,8 @@ bool32 CanTargetFaintAi(u8 battlerDef, u8 battlerAtk)
 {
     s32 i, dmg;
     u32 unusable = CheckMoveLimitations(battlerDef, 0, 0xFF & ~MOVE_LIMITATION_PP);
-    u16 *moves = gBattleResources->battleHistory->usedMoves[battlerDef];
-
+    u16 *moves = GetMovesArray(battlerDef);
+    
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves[i] != MOVE_NONE && moves[i] != 0xFFFF && !(unusable & gBitTable[i])
@@ -1090,7 +1090,7 @@ bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgM
 {
     u32 i;
     u32 unusable = CheckMoveLimitations(battlerDef, 0, 0xFF & ~MOVE_LIMITATION_PP);
-    u16 *moves = gBattleResources->battleHistory->usedMoves[battlerDef];
+    u16 *moves = GetMovesArray(battlerDef);
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -1111,8 +1111,9 @@ bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgM
 // does NOT include ability suppression checks
 s32 AI_GetAbility(u32 battlerId)
 {
-    // The AI knows its own ability.
-    if (IsBattlerAIControlled(battlerId))
+    // The AI knows its own ability, and "Smart" AI knows the player's ability too. This prevents it from
+    // getting cheesed due to the fact that it forgets the player's ability on switching out.
+    if (IsBattlerAIControlled(battlerId) || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_KNOWLEDGABLE))
         return gBattleMons[battlerId].ability;
 
     if (BATTLE_HISTORY->abilities[battlerId] != ABILITY_NONE)
@@ -1129,11 +1130,11 @@ s32 AI_GetAbility(u32 battlerId)
         if (gBaseStats[gBattleMons[battlerId].species].abilities[1] != ABILITY_NONE)
         {
             // AI has no knowledge of opponent, so it guesses which ability.
-            return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 1];
+            return gBaseStats[gBattleMons[battlerId].species].abilities[Random() & 2];
         }
         else
         {
-            return gBaseStats[gBattleMons[battlerId].species].abilities[0]; // It's definitely ability 1.
+            return gBaseStats[gBattleMons[battlerId].species].abilities[0]; // It's probably ability 1.
         }
     }
     return ABILITY_NONE; // Unknown.
@@ -1798,7 +1799,11 @@ bool32 CanAttackerFaintTarget(u8 battlerAtk, u8 battlerDef, u8 index, u8 numHits
 
 u16 *GetMovesArray(u32 battler)
 {
-    if (IsBattlerAIControlled(battler) || IsBattlerAIControlled(BATTLE_PARTNER(battler)))
+    // "Smart" AI reads player's moves to simulate knowledge of Pokemon learnsets.
+    // As a human player you know that Salamence learns Flamethrower and that leaving your Scizor
+    // in on it is a bad idea. The AI doesn't have this knowledge, and this is the simplest way to fix that.
+    if (IsBattlerAIControlled(battler) || IsBattlerAIControlled(BATTLE_PARTNER(battler)) 
+        || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_KNOWLEDGABLE))
         return gBattleMons[battler].moves;
     else
         return gBattleResources->battleHistory->usedMoves[battler];
@@ -3352,6 +3357,9 @@ bool32 IsRecycleEncouragedItem(u16 item)
 #define STAT_UP_STAGE       10    
 void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score)
 {
+    if (CanTargetFaintAi(battlerDef, battlerAtk))
+        return;
+
     if (AI_DATA->atkAbility == ABILITY_CONTRARY)
         return;
     
