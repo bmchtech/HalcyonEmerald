@@ -706,7 +706,8 @@ static bool32 AI_GetIfCrit(u32 move, u8 battlerAtk, u8 battlerDef)
 
 s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
 {
-    s32 dmg, moveType;
+    s32 dmg, moveType, critDmg, normalDmg;
+    s8 critChance;
 
     SaveBattlerData(battlerAtk);
     SaveBattlerData(battlerDef);
@@ -717,56 +718,87 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     gBattleStruct->dynamicMoveType = 0;
     SetTypeBeforeUsingMove(move, battlerAtk);
     GET_MOVE_TYPE(move, moveType);
-    dmg = CalculateMoveDamage(move, battlerAtk, battlerDef, moveType, 0, AI_GetIfCrit(move, battlerAtk, battlerDef), FALSE, FALSE);
+
+    critChance = GetInverseCritChance(battlerAtk, battlerDef, move);
+    normalDmg = CalculateMoveDamage(move, battlerAtk, battlerDef, moveType, 0, FALSE, FALSE, FALSE);
+    critDmg = CalculateMoveDamage(move, battlerAtk, battlerDef, moveType, 0, TRUE, FALSE, FALSE);
+
+    if(critChance == -1)
+        dmg = normalDmg;
+    else
+        dmg = (critDmg + normalDmg * (critChance - 1)) / critChance;
 
     // handle dynamic move damage
     switch (gBattleMoves[move].effect)
     {
     case EFFECT_LEVEL_DAMAGE:
+    case EFFECT_PSYWAVE:
         if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+        {
             dmg = 2 * gBattleMons[battlerAtk].level;
+        }
         else
+        {
             dmg = gBattleMons[battlerAtk].level;
+        }
         break;
     case EFFECT_DRAGON_RAGE:
         if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+        {
             dmg = 80;
+        }
         else
+        {
             dmg = 40;
+        }
         break;
     case EFFECT_SONICBOOM:
         if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND)
+        {
             dmg = 40;
+        }
         else
+        {
             dmg = 20;
+        }
         break;
     case EFFECT_MULTI_HIT:
         if (AI_DATA->atkAbility == ABILITY_SKILL_LINK)
+        {
             dmg *= 5;
+        }
         else
-            dmg *= 3; // Average number of hits is 3
-        break;
-    case EFFECT_DOUBLE_HIT:
-            dmg *= 2;
+        {
+            dmg *= 3; // Average number of hits is three
+        }
         break;
     case EFFECT_TRIPLE_KICK:
-            dmg *= 6; // Buffed Triple Kick and Triple Axel do 6x their base damage if they don't miss
-        break;
-    case EFFECT_PSYWAVE:
-        {
-            u32 randDamage;
-            if (B_PSYWAVE_DMG >= GEN_6)
-                randDamage = (Random() % 101);
-            else
-                randDamage = (Random() % 11) * 10;
-            dmg = gBattleMons[battlerAtk].level * (randDamage + 50) / 100;
-        }
+        dmg *= 6; // Triple Kick buffed to match Triple Axel, effectively 6x base power if all hits connect
         break;
     //case EFFECT_METAL_BURST:
     //case EFFECT_COUNTER:
     default:
-        dmg *= (100 - (Random() % 10)) / 100;   // add random factor
         break;
+    }
+
+    // Handle other multi-strike moves
+    if (IsTwoStrikesMove(move))
+    {
+        dmg *= 2;
+    }
+    else if (AI_DATA->atkAbility == ABILITY_PARENTAL_BOND 
+             && gBattleMoves[move].effect != EFFECT_LEVEL_DAMAGE
+             && gBattleMoves[move].effect != EFFECT_PSYWAVE
+             && gBattleMoves[move].effect != EFFECT_DRAGON_RAGE
+             && gBattleMoves[move].effect != EFFECT_SONICBOOM
+             && IsMoveAffectedByParentalBond)
+    {
+        dmg = dmg + (dmg / 4);
+    }
+    else if (move == MOVE_SURGING_STRIKES 
+             || (move == MOVE_WATER_SHURIKEN && gBattleMons[battlerAtk].species == SPECIES_GRENINJA_ASH))
+    {
+        dmg *= 3;
     }
 
     RestoreBattlerData(battlerAtk);
