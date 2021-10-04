@@ -6,6 +6,12 @@
 #define WINDOW_CLEAR            0x1
 #define WINDOW_x80              0x80
 
+struct StatFractions
+{
+    u8 dividend;
+    u8 divisor;
+};
+
 s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move, bool32 recordAbility);
 s8 GetInverseCritChance(u8 battlerAtk, u8 battlerDef, u32 move);
 u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move);
@@ -34,5 +40,6 @@ void StealTargetItem(u8 battlerStealer, u8 battlerItem);
 
 extern void (* const gBattleScriptingCommandsTable[])(void);
 extern const u8 gBattlePalaceNatureToMoveGroupLikelihood[NUM_NATURES][4];
+extern const struct StatFractions gAccuracyStageRatios[];
 
 #endif // GUARD_BATTLE_SCRIPT_COMMANDS_H

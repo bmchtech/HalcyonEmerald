@@ -23,7 +23,8 @@
 #include "trig.h"
 #include "window.h"
 #include "battle_message.h"
-#include "battle_ai_script_commands.h"
+#include "battle_ai_main.h"
+#include "battle_ai_util.h"
 #include "event_data.h"
 #include "link.h"
 #include "malloc.h"
@@ -1594,7 +1595,7 @@ bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
 {
     if (!(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
         return FALSE;
-
+    
     switch (gBattleMoves[move].effect)
     {
     case EFFECT_ABSORB:
@@ -6247,10 +6248,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     u8 ppBonuses;
                     u16 move;
 
-                    if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-                        mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
-                    else
-                        mon = &gEnemyParty[gBattlerPartyIndexes[battlerId]];
+                    mon = GetBattlerPartyData(battlerId);
                     for (i = 0; i < MAX_MON_MOVES; i++)
                     {
                         move = GetMonData(mon, MON_DATA_MOVE1 + i);
@@ -9202,7 +9200,6 @@ struct Pokemon *GetBattlerPartyData(u8 battlerId)
         mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
     else
         mon = &gEnemyParty[gBattlerPartyIndexes[battlerId]];
-
     return mon;
 }
 
