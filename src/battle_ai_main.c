@@ -1423,7 +1423,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_FAKE_OUT:
             if (!gDisableStructs[battlerAtk].isFirstTurn)
             {
-                score -= 10;
+                score -= 30;
             }
             else if (move == MOVE_FAKE_OUT) // filter out first impression
             {
@@ -2897,6 +2897,14 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         }
     }
+
+/*     if (HOLD_EFFECT_CHOICE(AI_DATA->atkHoldEffect))
+    {
+        if (!CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
+        {
+            score -= 20; // Force switch if choice locked move does poor damage
+        }
+    } */
     
     // Attacker ability checks
     switch (AI_DATA->atkAbility)
