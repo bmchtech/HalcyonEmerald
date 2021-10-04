@@ -578,10 +578,12 @@
 #define STRINGID_ATKGOTOVERINFATUATION           574
 #define STRINGID_TORMENTEDNOMORE                 575
 #define STRINGID_HEALBLOCKEDNOMORE               576
-#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   577
-#define STRINGID_PLAYERPAIDPRIZEMONEY            578
+#define STRINGID_ATTACKERBECAMEFULLYCHARGED      577
+#define STRINGID_ATTACKERBECAMEASHSPECIES        578
+#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   579
+#define STRINGID_PLAYERPAIDPRIZEMONEY            580
 
-#define BATTLESTRINGS_COUNT                      579
+#define BATTLESTRINGS_COUNT                      581
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

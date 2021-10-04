@@ -3164,7 +3164,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                         gBattleMons[gBattlerAttacker].status1 -= toSub;
                     if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP)
                     {
-                        if (gCurrentMove != MOVE_SNORE && gCurrentMove != MOVE_SLEEP_TALK)
+                        if (gChosenMove != MOVE_SNORE && gChosenMove != MOVE_SLEEP_TALK)
                         {
                             gBattlescriptCurrInstr = BattleScript_MoveUsedIsAsleep;
                             gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
@@ -5185,6 +5185,18 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AttackerFormChange;
                 effect++;
+            }
+            break;
+        case ABILITY_BATTLE_BOND:
+            if (gBattleMons[gBattlerAttacker].species == SPECIES_GRENINJA_BATTLE_BOND
+             && gBattleResults.opponentFaintCounter != 0
+             && CalculateEnemyPartyCount() > 1)
+            {
+                PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerAttacker].species);
+                gBattleStruct->changedSpecies[gBattlerPartyIndexes[gBattlerAttacker]] = gBattleMons[gBattlerAttacker].species;
+                gBattleMons[gBattlerAttacker].species = SPECIES_GRENINJA_ASH;
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_BattleBondActivatesOnMoveEndAttacker;
             }
             break;
         }
@@ -7702,6 +7714,15 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
     #endif
     }
 
+    // move-specific base power changes
+    switch (move)
+    {
+    case MOVE_WATER_SHURIKEN:
+        if (gBattleMons[battlerAtk].species == SPECIES_GRENINJA_ASH)
+            basePower = 20;
+        break;
+    }
+
     if (basePower == 0)
         basePower = 1;
     return basePower;
@@ -8981,6 +9002,7 @@ void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut)
         {SPECIES_WISHIWASHI_SCHOOL, SPECIES_WISHIWASHI},
         {SPECIES_CRAMORANT_GORGING, SPECIES_CRAMORANT},
         {SPECIES_CRAMORANT_GULPING, SPECIES_CRAMORANT},
+        {SPECIES_GRENINJA_ASH, SPECIES_GRENINJA_BATTLE_BOND},
     };
 
     if (isSwitchingOut) // Don't revert Mimikyu Busted when switching out

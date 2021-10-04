@@ -389,6 +389,7 @@ extern const u8 BattleScript_ElectricTerrainPrevents[];
 extern const u8 BattleScript_DarkTypePreventsPrankster[];
 extern const u8 BattleScript_GulpMissileGorging[];
 extern const u8 BattleScript_GulpMissileGulping[];
+extern const u8 BattleScript_BattleBondActivatesOnMoveEndAttacker[];
 extern const u8 BattleScript_MultiHitPrintStrings[];
 extern const u8 BattleScript_BurnUpRemoveType[];
 
