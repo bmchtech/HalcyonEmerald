@@ -13,7 +13,7 @@
 #endif
 
 // Calculation settings
-#define B_CRIT_CHANCE               GEN_6 // Chances of a critical hit landing. See CalcCritChanceStage.
+#define B_CRIT_CHANCE               GEN_7 // Chances of a critical hit landing. See CalcCritChanceStage.
 #define B_CRIT_MULTIPLIER           GEN_6 // In Gen6+, critical hits multiply damage by 1.5 instead of 2.
 #define B_EXP_CATCH                 GEN_6 // In Gen6+, Pokémon get experience from catching.
 #define B_TRAINER_EXP_MULTIPLIER    GEN_7 // In Gen7+, trainer battles no longer give a 1.5 multiplier to exp gain.
@@ -121,6 +121,6 @@
 
 #define B_HIDE_HEALTHBOXES_DURING_ANIMS TRUE     // If set to TRUE, hides healthboxes during move animations.
 #define B_TERRAIN_BG_CHANGE             TRUE     // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
-#define B_ENABLE_DEBUG                  FALSE    // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
+#define B_ENABLE_DEBUG                  TRUE    // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
 
 #endif // GUARD_CONSTANTS_BATTLE_CONFIG_H
