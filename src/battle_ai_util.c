@@ -1113,7 +1113,7 @@ s32 AI_GetAbility(u32 battlerId)
 {
     // The AI knows its own ability, and "Smart" AI knows the player's ability too. This prevents it from
     // getting cheesed due to the fact that it forgets the player's ability on switching out.
-    if (IsBattlerAIControlled(battlerId) || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_KNOWLEDGABLE))
+    if (IsBattlerAIControlled(battlerId) || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_CHECK_FOE))
         return gBattleMons[battlerId].ability;
 
     if (BATTLE_HISTORY->abilities[battlerId] != ABILITY_NONE)
@@ -1803,7 +1803,7 @@ u16 *GetMovesArray(u32 battler)
     // As a human player you know that Salamence learns Flamethrower and that leaving your Scizor
     // in on it is a bad idea. The AI doesn't have this knowledge, and this is the simplest way to fix that.
     if (IsBattlerAIControlled(battler) || IsBattlerAIControlled(BATTLE_PARTNER(battler)) 
-        || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_KNOWLEDGABLE))
+        || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_CHECK_FOE))
         return gBattleMons[battler].moves;
     else
         return gBattleResources->battleHistory->usedMoves[battler];

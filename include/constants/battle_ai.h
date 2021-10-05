@@ -55,7 +55,7 @@
 #define AI_FLAG_STALL                   (1 << 13)  // AI stalls battle and prefers secondary damage/trapping/etc. TODO not finished
 #define AI_FLAG_SCREENER                (1 << 14)  // AI prefers screening effects like reflect, mist, etc. TODO unfinished
 #define AI_FLAG_SMART_SWITCHING         (1 << 15)  // AI includes a lot more switching checks
-#define AI_FLAG_KNOWLEDGABLE            (1 << 16)  // AI is aware of abilities and moves that a Pokemon may have
+#define AI_FLAG_CHECK_FOE               (1 << 16)  // AI is aware of abilities and moves that a Pokemon has
 
 // 'other' ai logic flags
 #define AI_FLAG_ROAMING                 (1 << 29)
