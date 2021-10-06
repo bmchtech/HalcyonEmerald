@@ -76,8 +76,8 @@ static s16 (*const sBattleAiFuncTable[])(u8, u8, u16, s16) =
     [12] = NULL,                     // Unused
     [13] = NULL,                     // Unused
     [14] = NULL,                     // Unused
-    [15] = NULL,                     // Unused
-    [16] = NULL,                     // Unused
+    [15] = NULL,                     // AI_FLAG_SMART_SWITCHING
+    [16] = NULL,                     // AI_FLAG_CHECK_FOE
     [17] = NULL,                     // Unused
     [18] = NULL,                     // Unused
     [19] = NULL,                     // Unused
@@ -2905,7 +2905,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     {
         // If AI can't 2HKO foe OR foe can KO AI and is faster, force it to switch
         if (!CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 2)
-            || (!CanAttackerFaintTarget(battlerDef, battlerAtk, AI_THINKING_STRUCT->movesetIndex, 0)
+            || (CanAttackerFaintTarget(battlerDef, battlerAtk, AI_THINKING_STRUCT->movesetIndex, 0)
                 && GetWhoStrikesFirst(battlerDef, battlerAtk, TRUE) == 0))
         {
             score -= 20;
@@ -4481,8 +4481,11 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_TWO_TURNS_ATTACK:
     case EFFECT_SKULL_BASH:
-    case EFFECT_SOLARBEAM:
         if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB)
+            score += 2;
+        break;
+    case EFFECT_SOLARBEAM:
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB || AI_DATA->atkAbility == ABILITY_CHLOROPLAST)
             score += 2;
         break;
     case EFFECT_COUNTER:
