@@ -4559,6 +4559,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score++;
         }
         break;
+    case EFFECT_RECHARGE:
+        if (AI_DATA->atkAbility == ABILITY_RAMPAGE && CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
+            score += 4; // No recharge if Rampage attacker KOs the target
+        break;
     //case EFFECT_EXTREME_EVOBOOST: // TODO
         //break;
     //case EFFECT_CLANGOROUS_SOUL:  // TODO
