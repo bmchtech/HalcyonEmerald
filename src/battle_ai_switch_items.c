@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
-#include "battle_ai_script_commands.h"
+#include "battle_ai_main.h"
+#include "battle_ai_util.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_setup.h"
@@ -590,7 +591,7 @@ static u8 PredictFoesMoveType(u32 opposingBattler)
     return predictedType;
 }
 
-static bool8 ShouldSwitch(void)
+bool32 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
     s32 firstId;
