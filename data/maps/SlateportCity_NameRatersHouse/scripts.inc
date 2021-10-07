@@ -1,6 +1,6 @@
 .set NATURE_CHANGER_COST, 5
 
-SlateportCity_NameRatersHouse_MapScripts: @ 8209AA4
+SlateportCity_NameRatersHouse_MapScripts::
 	.byte 0
 
 SlateportCity_NameRatersHouse_NatureChanger::
