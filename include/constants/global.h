@@ -124,9 +124,14 @@
 #define DIR_NORTHWEST   7
 #define DIR_NORTHEAST   8
 
-#define DIFFICULTY_NORMAL     0
-#define DIFFICULTY_HARD       1
-#define DIFFICULTY_CHALLENGE  2
-#define DIFFICULTY_INSANITY   3
+#define DIFFICULTY_NORMAL      0
+#define DIFFICULTY_HARD        1
+#define DIFFICULTY_CHALLENGE   2
+#define DIFFICULTY_INSANITY    3
+
+#define LEVEL_CAPS_DEFAULT     0
+#define LEVEL_CAPS_MORE        1
+#define LEVEL_CAPS_STRICT      2
+#define LEVEL_CAPS_OFF         3
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

@@ -8063,21 +8063,55 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
     return targetFormId;
 }
 
+// Get the latest badge the player has earned (unless they skipped Winona)
+// League is counted as badge 9 for simplicity
+static u16 getHighestBadge(void)
+{
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        return 9;
+    if (FlagGet(FLAG_BADGE08_GET))
+        return 8;
+    if (FlagGet(FLAG_BADGE07_GET))
+        return 7;
+    if (FlagGet(FLAG_BADGE06_GET))
+        return 6;
+    if (FlagGet(FLAG_BADGE05_GET))
+        return 5;
+    if (FlagGet(FLAG_BADGE04_GET))
+        return 4;
+    if (FlagGet(FLAG_BADGE03_GET))
+        return 3;
+    if (FlagGet(FLAG_BADGE02_GET))
+        return 2;
+    if (FlagGet(FLAG_BADGE01_GET))
+        return 1;
+
+    return 0;
+}
+
 u8 GetLevelCap(void)
 {
     u8 currentLevelCap;
+    u8 levelCapSetting = gSaveBlock2Ptr->levelCaps;
+    u16 currentBadge = getHighestBadge();
 
-    if (FlagGet(FLAG_BADGE04_GET))
-        currentLevelCap = 101;
-    else if (FlagGet(FLAG_BADGE03_GET))
-        currentLevelCap = 50;
-    else if (FlagGet(FLAG_BADGE02_GET))
-        currentLevelCap = 38;
-    else if (FlagGet(FLAG_BADGE01_GET))
-        currentLevelCap = 25;
-    else
-    currentLevelCap = 16;
+    static const u8 levelCapsStandard[] = {16, 25, 38, 50, 101};
+    static const u8 levelCapsMore[] =     {16, 25, 38, 50, 54, 70, 85, 92, 95, 101};
+    static const u8 levelCapsStrict[] =   {14, 20, 30, 40, 45, 55, 60, 70, 80, 101};
 
+    switch (levelCapSetting)
+    {
+    default:
+    case LEVEL_CAPS_DEFAULT:
+        currentLevelCap = levelCapsStandard[currentBadge];
+        break;
+    case LEVEL_CAPS_MORE:
+        currentLevelCap = levelCapsMore[currentBadge];
+        break;
+    case LEVEL_CAPS_STRICT:
+        currentLevelCap = levelCapsStrict[currentBadge];
+        break;
+    }
     return currentLevelCap;
 }
 
