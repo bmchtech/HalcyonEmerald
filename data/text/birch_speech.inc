@@ -75,7 +75,9 @@ gText_Pie_Welcome::
 	.string "Before you get started, you'll need\n"
 	.string "to choose a difficulty setting.\p"
 	.string "Currently you can choose between\n"
-	.string "Normal, Hard or Challenge Mode.$"
+	.string "Normal, Hard or Challenge Mode.\p"
+	.string "Please select a mode to learn more\n"
+	.string "about it.$"
 
 gText_Pie_NormalMode::
 	.string "In Normal Mode, Trainers won't have\n"
@@ -118,6 +120,62 @@ gText_Pie_ChallengeMode::
 gText_Pie_WhichDifficulty::
 	.string "Which difficulty would you like to\n"
 	.string "play on?$"
+
+gText_Pie_LevelCaps::
+    .string "Great! Now, there's one last thing\n"
+    .string "to decide.\p"
+    .string "This hack has built-in level caps\n"
+    .string "based on which badges you have.\p"
+    .string "If a Pokémon reaches the level cap,\n"
+    .string "it'll only get 1 exp per KO until\l"
+	.string "you earn the next badge.\p"
+    .string "There are currently three different\n"
+	.string "settings for level caps.\p"
+    .string "Please choose a level cap setting to\n"
+    .string "learn more about it.$"
+
+gText_Pie_StandardCaps::
+	.string "The Default Caps setting is what\n"
+	.string "the game is designed around.\p"
+	.string "With this option, level caps are only\n"
+	.string "present for the first four badges.\p"
+	.string "After that, there is no cap, and you\n"
+	.string "can train all the way to level 100.\p"
+	.string "So, would you like to play with\n"
+	.string "default level caps?$"
+
+gText_Pie_MoreCaps::
+	.string "The More Caps setting simply adds\n"
+	.string "more level caps to the game.\p"
+	.string "With this option, there will be a\n"
+	.string "level cap tied to each badge, and you\l"
+	.string "won't be able to reach level 100\l"
+	.string "before becoming Champion.\p"
+	.string "So, would you like to play with\n"
+	.string "more level caps?$"
+
+gText_Pie_StrictCaps::
+	.string "The Strict Caps setting throws game\n"
+	.string "balance out the window and gives you\l"
+	.string "much lower level caps.\p"
+	.string "With this option, there will be a\n"
+	.string "level cap tied to each badge, and you\l"
+	.string "won't be able to reach level 100\l"
+	.string "before becoming Champion.\p"
+	.string "However, the caps are not designed\n"
+	.string "around the hack's steep level curve,\l"
+	.string "which limits your options for the\l"
+	.string "first half of the game.\p"
+	.string "Also, your opponents will still use\n"
+	.string "teams designed for the default caps,\l"
+	.string "so please be sure you're OK with that\l"
+	.string "before choosing this setting!\p"
+	.string "So, would you like to play with\n"
+	.string "strict level caps?$"
+
+gText_Pie_WhichLevelCapSetting::
+	.string "Which level cap setting would you\n"
+	.string "like play on?$"
 
 gText_Pie_Documents::
 	.string "Great! If you want more information,\n"
