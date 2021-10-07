@@ -1,4 +1,6 @@
-SlateportCity_NameRatersHouse_MapScripts:: @ 8209AA4
+.set NATURE_CHANGER_COST, 5
+
+SlateportCity_NameRatersHouse_MapScripts: @ 8209AA4
 	.byte 0
 
 SlateportCity_NameRatersHouse_NatureChanger::
@@ -39,7 +41,7 @@ NatureChanger_2::
 	goto_if_eq Nature_Changer_No
 
 Nature_Changer_Yes::
-	checkitem ITEM_ORAN_BERRY, 10
+	checkitem ITEM_ORAN_BERRY, NATURE_CHANGER_COST
 	compare VAR_RESULT, 1
 	goto_if_eq Nature_Changer_Stat_Up
 	compare VAR_RESULT, 0
@@ -125,7 +127,7 @@ Nature_Down_SPDEF::
 	goto Nature_Changer_Nature_Change
 
 Nature_Changer_Nature_Change::
-	removeitem ITEM_ORAN_BERRY, 10
+	removeitem ITEM_ORAN_BERRY, NATURE_CHANGER_COST
 	bufferpartymonnick 0, VAR_0x8004
 	msgbox NatureChanger_Text_SpecialPokeblock, MSGBOX_DEFAULT
 	fadescreen 1
@@ -175,7 +177,7 @@ NatureChanger_Text_MonHasNature:
 NatureChanger_Text_BadTaste:
 	.string "That means it likes {STR_VAR_1}s.\n"
 	.string "This simply will not do!\p"
-	.string "You will bring me ten Oran Berries,\n"
+	.string "You will bring me five Oran Berries,\n"
 	.string "and I shall create a {POKEBLOCK} that\l"
 	.string "will fix this travesty!$"
 
@@ -193,12 +195,12 @@ NatureChanger_Text_ThisIsEgg:
 
 NatureChanger_Text_NeedMoreBerries:
 	.string "I need more Oran Berries than that.\n"
-	.string "Bring me ten!$"
+	.string "Bring me five!$"
 
 NatureChanger_Text_BoringTaste:
 	.string "That means it will eat any {POKEBLOCK}!\n"
 	.string "This simply will not do!\p"
-	.string "You will bring me ten Oran Berries,\n"
+	.string "You will bring me five Oran Berries,\n"
 	.string "and I shall create a {POKEBLOCK} that\l"
 	.string "will fix this travesty!$"
 
