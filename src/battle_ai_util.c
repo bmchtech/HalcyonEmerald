@@ -980,6 +980,10 @@ u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
     gMoveResultFlags = 0;
     gCurrentMove = move;
     effectivenessMultiplier = AI_GetTypeEffectiveness(gCurrentMove, battlerAtk, battlerDef);
+
+    // Do not calculate effectiveness for status moves
+    if (gBattleMoves[move].split == SPLIT_STATUS)
+        return UQ_4_12(1.0);
     
     switch (effectivenessMultiplier)
     {
