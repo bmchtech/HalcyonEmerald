@@ -983,7 +983,7 @@ u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
 
     // Do not calculate effectiveness for status moves
     if (gBattleMoves[move].split == SPLIT_STATUS)
-        return UQ_4_12(1.0);
+        return AI_EFFECTIVENESS_x1;
     
     switch (effectivenessMultiplier)
     {
