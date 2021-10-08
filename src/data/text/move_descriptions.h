@@ -2269,9 +2269,15 @@ static const u8 sTOPSY_TURVYDescription[] = _(
     "Swaps all stat changes that\n"
     "affect the target.");
 
-static const u8 sDRAINING_KISSDescription[] = _(
-    "An attack that absorbs over\n"
-    "half the damage inflicted.");
+#ifdef REBALANCED_VERSION
+    static const u8 sDRAINING_KISSDescription[] = _(
+        "An attack that absorbs half\n"
+        "the damage inflicted.");
+#else
+    static const u8 sDRAINING_KISSDescription[] = _(
+        "An attack that absorbs over\n"
+        "half the damage inflicted.");
+#endif
 
 static const u8 sCRAFTY_SHIELDDescription[] = _(
     "Evades status moves for\n"

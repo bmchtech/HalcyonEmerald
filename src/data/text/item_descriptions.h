@@ -1336,40 +1336,47 @@ static const u8 sUpGradeDesc[] = _(
     "A peculiar box made\n"
     "by Silph Co.");
 
-static const u8 sShellBellDesc[] = _(
-    "A hold item that\n"
-    "restores HP upon\n"
-    "striking the foe.");
+#ifdef REBALANCED_VERSION
+    static const u8 sShellBellDesc[] = _(
+        "Hold item. Striking\n"
+        "the foe restores\n"
+        "1/3 of lost HP.");
+#else
+    static const u8 sShellBellDesc[] = _(
+        "A hold item that\n"
+        "restores HP upon\n"
+        "striking the foe.");
+#endif
 
 static const u8 sPowerBracerDesc[] = _(
-    "A hold item that\n"
-    "promotes Atk gain,\n"
+    "Hold item. Allows\n"
+    "only Attack gain,\n"
     "but reduces Speed.");
 
 static const u8 sPowerBeltDesc[] = _(
-    "A hold item that\n"
-    "promotes Def gain,\n"
+    "Hold item. Allows\n"
+    "only Defense gain,\n"
     "but reduces Speed.");
 
 static const u8 sPowerLensDesc[] = _(
-    "Hold item that pro-\n"
-    "motes Sp. Atk gain,\n"
+    "Hold item. Allows\n"
+    "only Sp. Atk gain,\n"
     "but reduces Speed.");
 
 static const u8 sPowerBandDesc[] = _(
-    "Hold item that pro-\n"
-    "motes Sp. Def gain,\n"
+    "Hold item. Allows\n"
+    "only Sp. Def gain,\n"
     "but reduces Speed.");
 
 static const u8 sPowerAnkletDesc[] = _(
-    "Hold item that pro-\n"
-    "motes Speed gain,\n"
+    "Hold item. Allows\n"
+    "only Speed gain,\n"
     "but reduces Speed.");
 
 static const u8 sPowerWeightDesc[] = _(
-    "A hold item that\n"
-    "promotes HP gain,\n"
-    "but reduces Speed.");
+    "Hold item. Allows\n"
+    "only HP gain, but\n"
+    "reduces Speed.");
 
 static const u8 sSeaIncenseDesc[] = _(
     "A hold item that\n"
