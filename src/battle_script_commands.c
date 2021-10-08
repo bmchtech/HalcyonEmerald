@@ -6650,7 +6650,7 @@ static void Cmd_getmoneyreward(void)
         RemoveMoney(&gSaveBlock1Ptr->money, money);
     }
 
-    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
+    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 6, money);
     gBattlescriptCurrInstr++;
 }
 

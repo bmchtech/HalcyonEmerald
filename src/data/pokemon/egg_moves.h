@@ -344,7 +344,6 @@ const u16 gEggMoves[] = {
         MOVE_KNOCK_OFF,
         MOVE_ACUPRESSURE,
         MOVE_MUDDY_WATER,
-        MOVE_BUBBLE,
         MOVE_AQUA_RING,
         MOVE_TICKLE),
 

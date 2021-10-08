@@ -304,8 +304,8 @@ static const u8 sContextMenuItems_TmHmPocket[] = {
 };
 
 static const u8 sContextMenuItems_BerriesPocket[] = {
-    ACTION_CHECK_TAG,   ACTION_DUMMY,
-    ACTION_USE,         ACTION_GIVE,
+    ACTION_USE,         ACTION_DUMMY,
+    ACTION_GIVE,        ACTION_CHECK_TAG,
     ACTION_TOSS,        ACTION_CANCEL
 };
 
@@ -1221,7 +1221,7 @@ static void PrintItemSoldAmount(int windowId, int numSold, int moneyEarned)
     ConvertIntToDecimalStringN(gStringVar1, numSold, STR_CONV_MODE_LEADING_ZEROS, numDigits);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 0, 1, TEXT_SPEED_FF, 0);
-    PrintMoneyAmount(windowId, 34, 1, moneyEarned, 0);
+    PrintMoneyAmount(windowId, 32, 1, moneyEarned, 0);
 }
 
 static void Task_BagMenu_HandleInput(u8 taskId)
