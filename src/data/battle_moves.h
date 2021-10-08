@@ -2631,11 +2631,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         #if B_UPDATED_MOVE_DATA >= GEN_4
             .accuracy = 0,
             .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+            .effect = EFFECT_RECOIL_HP_25,
         #else
             .accuracy = 100,
             .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+            .effect = EFFECT_RECOIL_25,
         #endif
-        .effect = EFFECT_RECOIL_25,
         .power = 50,
         .type = TYPE_NORMAL,
         .pp = 1,
@@ -3470,6 +3471,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HEAL_BELL] =
     {
+        #if B_UPDATED_MOVE_DATA != GEN_5
+            .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
+        #else
+            .flags = FLAG_SNATCH_AFFECTED,
+        #endif
         .effect = EFFECT_HEAL_BELL,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -3478,7 +3484,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
         .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
         .split = SPLIT_STATUS,
     },
 
@@ -5393,6 +5398,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HOWL] =
     {
+        #if B_UPDATED_MOVE_DATA >= GEN_8
+            .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
+        #else
+            .flags = FLAG_SNATCH_AFFECTED,
+        #endif
         .effect = EFFECT_ATTACK_UP,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -5401,7 +5411,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
         .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
         .split = SPLIT_STATUS,
     },
 

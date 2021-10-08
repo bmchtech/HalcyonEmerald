@@ -3151,6 +3151,14 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_DefSpDefDown;
                 break;
+            case MOVE_EFFECT_RECOIL_HP_25: // Struggle
+                gBattleMoveDamage = (gBattleMons[gEffectBattler].maxHP) / 4;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
+                break;
             case MOVE_EFFECT_THRASH:
                 if (gBattleMons[gEffectBattler].status2 & STATUS2_LOCK_CONFUSE)
                 {
@@ -4963,29 +4971,58 @@ static void Cmd_moveend(void)
                 }
                 break; // MOVE_EFFECT_REMOVE_STATUS
             case MOVE_EFFECT_STEAL_ITEM:
-                if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item)
-                    || gBattleMons[gBattlerAttacker].item != ITEM_NONE
-                    || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
-                    || gBattleMons[gBattlerTarget].item == ITEM_NONE)
                 {
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_MoveEnd; // Can't steal item, just do damage
-                }
-                else if (gBattleMons[gBattlerTarget].item
-                    && gBattleMons[gBattlerTarget].ability == ABILITY_STICKY_HOLD) // Can steal item, but ability prevents it
-                {
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_NoItemSteal;
+                    if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item))
+                    {
+                        gBattlescriptCurrInstr++;
+                        break;
+                    }
 
-                    gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
-                    RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
-                }
-                else
-                {
-                    StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
-                    gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_ItemSteal;
+                    side = GetBattlerSide(gBattlerAttacker);
+                    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
+                        && !(gBattleTypeFlags &
+                             (BATTLE_TYPE_EREADER_TRAINER
+                              | BATTLE_TYPE_FRONTIER
+                              | BATTLE_TYPE_LINK
+                              | BATTLE_TYPE_RECORDED_LINK
+                              | BATTLE_TYPE_SECRET_BASE)))
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else if (!(gBattleTypeFlags &
+                          (BATTLE_TYPE_EREADER_TRAINER
+                           | BATTLE_TYPE_FRONTIER
+                           | BATTLE_TYPE_LINK
+                           | BATTLE_TYPE_RECORDED_LINK
+                           | BATTLE_TYPE_SECRET_BASE))
+                        && (gWishFutureKnock.knockedOffMons[side] & gBitTable[gBattlerPartyIndexes[gBattlerAttacker]]))
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else if (gBattleMons[gBattlerTarget].item
+                        && GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+                    {
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_NoItemSteal;
+
+                        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+                        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+                    }
+                    else if (gBattleMons[gBattlerAttacker].item != 0
+                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
+                        || gBattleMons[gBattlerTarget].item == 0)
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else
+                    {
+                        StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
+                        gBattleMons[gBattlerAttacker].item = 0; // Item assigned later on with thief (see MOVEEND_CHANGED_ITEMS)
+                        gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_ItemSteal;
+                    }
+
                 }
                 break; // MOVE_EFFECT_STEAL_ITEM
             case MOVE_EFFECT_BURN_UP:
@@ -8092,15 +8129,15 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         return;
     case VARIOUS_SET_SIMPLE_BEAM:
-        if (IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gActiveBattler].ability))
+        if (IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].ability)
+            || gBattleMons[gBattlerTarget].ability == ABILITY_SIMPLE)
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
         }
         else
         {
-            gBattleMons[gActiveBattler].ability = ABILITY_SIMPLE;
+            gBattleMons[gBattlerTarget].ability = ABILITY_SIMPLE;
             gBattlescriptCurrInstr += 7;
-            break;
         }
         return;
     case VARIOUS_TRY_ENTRAINMENT:
@@ -9325,7 +9362,7 @@ bool8 UproarWakeUpCheck(u8 battlerId)
 
     for (i = 0; i < gBattlersCount; i++)
     {
-        if (!(gBattleMons[i].status2 & STATUS2_UPROAR) || gBattleMons[battlerId].ability == ABILITY_SOUNDPROOF)
+        if (!(gBattleMons[i].status2 & STATUS2_UPROAR) || GetBattlerAbility(battlerId) == ABILITY_SOUNDPROOF)
             continue;
 
         gBattleScripting.battler = i;
@@ -10983,7 +11020,7 @@ static void Cmd_healpartystatus(void)
         else
             party = gEnemyParty;
 
-        if (gBattleMons[gBattlerAttacker].ability != ABILITY_SOUNDPROOF)
+        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_SOUNDPROOF)
         {
             gBattleMons[gBattlerAttacker].status1 = 0;
             gBattleMons[gBattlerAttacker].status2 &= ~(STATUS2_NIGHTMARE);
@@ -10999,7 +11036,7 @@ static void Cmd_healpartystatus(void)
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
             && !(gAbsentBattlerFlags & gBitTable[gActiveBattler]))
         {
-            if (gBattleMons[gActiveBattler].ability != ABILITY_SOUNDPROOF)
+            if (GetBattlerAbility(gActiveBattler) != ABILITY_SOUNDPROOF)
             {
                 gBattleMons[gActiveBattler].status1 = 0;
                 gBattleMons[gActiveBattler].status2 &= ~(STATUS2_NIGHTMARE);
@@ -11112,7 +11149,7 @@ static void Cmd_trysetperishsong(void)
     for (i = 0; i < gBattlersCount; i++)
     {
         if (gStatuses3[i] & STATUS3_PERISH_SONG
-            || gBattleMons[i].ability == ABILITY_SOUNDPROOF
+            || GetBattlerAbility(i) == ABILITY_SOUNDPROOF
             || BlocksPrankster(gCurrentMove, gBattlerAttacker, i))
         {
             notAffectedCount++;
@@ -11839,7 +11876,7 @@ static void Cmd_tryswapitems(void) // trick
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
         }
         // check if ability prevents swapping
-        else if (gBattleMons[gBattlerTarget].ability == ABILITY_STICKY_HOLD)
+        else if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
         {
             gBattlescriptCurrInstr = BattleScript_StickyHoldActivates;
             gLastUsedAbility = gBattleMons[gBattlerTarget].ability;

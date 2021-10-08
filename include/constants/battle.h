@@ -345,7 +345,8 @@
 #define MOVE_EFFECT_INCINERATE          0x41
 #define MOVE_EFFECT_BUG_BITE            0x42
 #define MOVE_EFFECT_BURN_UP             0x43
-#define NUM_MOVE_EFFECTS                0x43
+#define MOVE_EFFECT_RECOIL_HP_25        0x44
+#define NUM_MOVE_EFFECTS                0x45
                                         
 #define MOVE_EFFECT_AFFECTS_USER        0x4000
 #define MOVE_EFFECT_CERTAIN             0x8000
