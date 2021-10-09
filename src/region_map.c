@@ -166,6 +166,9 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_EMBER_PATH,                 MAPSEC_JAGGED_PASS},
     {MAPSEC_ASHEN_WOODS,                MAPSEC_MT_CHIMNEY},
     {MAPSEC_SANDSTREWN_RUINS,           MAPSEC_ROUTE_111},
+    {MAPSEC_DEWFORD_MEADOW,             MAPSEC_DEWFORD_TOWN},
+    {MAPSEC_DEWFORD_MANOR,              MAPSEC_DEWFORD_TOWN},
+    {MAPSEC_VERDANTURF_MEADOW,          MAPSEC_VERDANTURF_TOWN},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 
