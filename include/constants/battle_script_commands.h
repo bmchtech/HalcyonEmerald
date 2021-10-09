@@ -185,8 +185,9 @@
 #define VARIOUS_TRY_HEAL_QUARTER_HP             112
 #define VARIOUS_REMOVE_TERRAIN                  113
 #define VARIOUS_JUMP_IF_PRANKSTER_BLOCKED       114
-#define VARIOUS_CONSUME_BERRY                   115
-#define VARIOUS_TRY_ACTIVATE_RAMPAGE            116
+#define VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER     115
+#define VARIOUS_CONSUME_BERRY                   116
+#define VARIOUS_TRY_ACTIVATE_RAMPAGE            117
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
