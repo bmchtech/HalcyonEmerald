@@ -638,7 +638,7 @@ bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
 {
     if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
       || ability == ABILITY_OVERCOAT
-      || GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_SAFETY_GOOGLES)
+      || GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
     return TRUE;
 }
@@ -1485,7 +1485,7 @@ bool32 ShouldSetSandstorm(u8 battler, u16 ability, u16 holdEffect)
       || ability == ABILITY_SAND_FORCE
       || ability == ABILITY_OVERCOAT
       || ability == ABILITY_MAGIC_GUARD
-      || holdEffect == HOLD_EFFECT_SAFETY_GOOGLES
+      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK)
       || IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
       || IS_BATTLER_OF_TYPE(battler, TYPE_GROUND)
@@ -1510,7 +1510,7 @@ bool32 ShouldSetHail(u8 battler, u16 ability, u16 holdEffect)
       || ability == ABILITY_SLUSH_RUSH
       || ability == ABILITY_MAGIC_GUARD
       || ability == ABILITY_OVERCOAT
-      || holdEffect == HOLD_EFFECT_SAFETY_GOOGLES
+      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || HasMove(battler, MOVE_BLIZZARD)
       || HasMoveEffect(battler, EFFECT_AURORA_VEIL)
@@ -2314,7 +2314,7 @@ static u32 GetWeatherDamage(u8 battlerId)
     {
         if (BattlerAffectedBySandstorm(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOOGLES)
+          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
         {
             damage = gBattleMons[battlerId].maxHP / 16;
             if (damage == 0)
@@ -2325,7 +2325,7 @@ static u32 GetWeatherDamage(u8 battlerId)
     {
         if (BattlerAffectedByHail(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOOGLES)
+          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
         {
             damage = gBattleMons[battlerId].maxHP / 16;
             if (damage == 0)
