@@ -361,7 +361,6 @@ static const struct Landmark *const Landmarks_MtChimney_2[]  =
 
 static const struct Landmark *const Landmarks_DewfordMeadow[]  =
 {
-    &Landmark_DewfordMeadow,
     &Landmark_DewfordManor,
     NULL,
 };
@@ -415,7 +414,7 @@ static const struct LandmarkList gLandmarkLists[] =
     {MAPSEC_ROUTE_134, 1, Landmarks_OceanCurrent},
     {MAPSEC_ROUTE_134, 2, Landmarks_Route134_2},
     {MAPSEC_MT_CHIMNEY, 2, Landmarks_MtChimney_2},
-    {MAPSEC_DEWFORD_MEADOW, 2, Landmarks_DewfordMeadow},
+    {MAPSEC_DEWFORD_MEADOW, 0, Landmarks_DewfordMeadow},
     {MAPSEC_NONE, 0, NULL},
 };
 
