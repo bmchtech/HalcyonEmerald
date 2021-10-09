@@ -1764,7 +1764,7 @@ SootopolisCity_Text_HaventYouScaledSkyPillar: @ 81E79C8
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm: @ 81E7A3E
 	.string "Wallace: {PLAYER}{KUN}…\p"
-	.string "The leaders of Team Magma and AQUA,\n"
+	.string "The leaders of Team Magma and Aqua,\n"
 	.string "I don't think they meant harm.\p"
 	.string "It wouldn't hurt to hear what they\n"
 	.string "have to say for themselves.$"
