@@ -11,6 +11,7 @@ AshenWoods_OnResume::
 	end
 
 AshenWoods_OnTransition::
+	setflag FLAG_LANDMARK_ASHEN_WOODS
 	compare VAR_JAGGED_PASS_ASH_WEATHER, 1
 	call_if_eq AshenWoods_EventScript_SetWeatherAsh
 	switch VAR_CHANSEY_NURSE_STATE
