@@ -886,4 +886,23 @@ const struct TrainerMonSpread gSets[] = {
 		},
 		.nature = NATURE_QUIET
 	},
+	[SPREAD_ROCK_POLISH_GROUDON]  = {
+		.EVs = {
+			100,	// HP
+			252,	// Attack
+			  0,	// Defense
+			156,	// Speed
+			  0,	// Special Attack
+			  0		// Special Defense
+		},
+		.IVs = {
+			31,		// HP
+		  	31,		// Attack
+			31,		// Defense
+			31,		// Speed
+			31,		// Special Attack
+			31		// Special Defense
+		},
+		.nature = NATURE_ADAMANT
+	},
 };
