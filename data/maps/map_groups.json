@@ -115,9 +115,7 @@
     "DewfordTown_PokemonCenter_2F",
     "DewfordTown_Gym",
     "DewfordTown_Hall",
-    "DewfordTown_House2",
-    "DewfordMeadow",
-    "DewfordManor_1F"
+    "DewfordTown_House2"
   ],
   "gMapGroup_IndoorLavaridge": [
     "LavaridgeTown_HerbShop",
@@ -147,8 +145,7 @@
     "VerdanturfTown_PokemonCenter_2F",
     "VerdanturfTown_WandasHouse",
     "VerdanturfTown_FriendshipRatersHouse",
-    "VerdanturfTown_House",
-    "VerdanturfMeadow"
+    "VerdanturfTown_House"
   ],
   "gMapGroup_IndoorPacifidlog": [
     "PacifidlogTown_PokemonCenter_1F",
@@ -452,7 +449,10 @@
     "CaveOfOrigin_DianciesRoom",
     "MeteorFalls_JirachisRoom",
     "AlteringCave_1F",
-    "AlteringCave_B1F"
+    "AlteringCave_B1F",
+    "DewfordMeadow",
+    "DewfordManor_1F",
+    "VerdanturfMeadow"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -85,8 +85,6 @@
 #define MAP_DEWFORD_TOWN_GYM               (3 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HALL              (4 | (3 << 8))
 #define MAP_DEWFORD_TOWN_HOUSE2            (5 | (3 << 8))
-#define MAP_DEWFORD_MEADOW                 (6 | (3 << 8))
-#define MAP_DEWFORD_MANOR_1F               (7 | (3 << 8))
 
 // gMapGroup_IndoorLavaridge
 #define MAP_LAVARIDGE_TOWN_HERB_SHOP         (0 | (4 << 8))
@@ -117,7 +115,6 @@
 #define MAP_VERDANTURF_TOWN_WANDAS_HOUSE            (6 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE (7 | (6 << 8))
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
-#define MAP_VERDANTURF_MEADOW                       (9 | (6 << 8))
 
 // gMapGroup_IndoorPacifidlog
 #define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))
@@ -422,6 +419,9 @@
 #define MAP_METEOR_FALLS_JIRACHIS_ROOM               (124 | (24 << 8))
 #define MAP_ALTERING_CAVE_1F                         (125 | (24 << 8))
 #define MAP_ALTERING_CAVE_B1F                        (126 | (24 << 8))
+#define MAP_DEWFORD_MEADOW                           (127 | (24 << 8))
+#define MAP_DEWFORD_MANOR_1F                         (128 | (24 << 8))
+#define MAP_VERDANTURF_MEADOW                        (129 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))
