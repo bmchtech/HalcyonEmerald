@@ -426,7 +426,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_SANDSTREWN_RUINS]           = { 8,  2, 1, 1, sMapName_SandstrewnRuins},
     [MAPSEC_DEWFORD_MEADOW]             = { 1, 14, 1, 1, sMapName_DewfordMeadow},
     [MAPSEC_DEWFORD_MANOR]              = { 1, 14, 1, 1, sMapName_DewfordManor},
-    [MAPSEC_VERDANTURF_MEADOW]          = { 4,  6, 1, 1, sMapName_VerdanturfMeadow},
+    [MAPSEC_VERDANTURF_MEADOW]          = { 4,  7, 1, 1, sMapName_VerdanturfMeadow},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
