@@ -95,6 +95,10 @@
 // Item Theft Settings
 #define B_TRAINERS_KNOCK_OFF_ITEMS  TRUE  // If TRUE, trainers can steal/swap your items (non-berries are restored after battle). In vanilla games trainers cannot steal items.
 
+// Last Used Ball
+#define B_LAST_USED_BALL            TRUE        // If TRUE, the "last used ball" feature from Gen 7 will be implemented
+#define B_LAST_USED_BALL_BUTTON     R_BUTTON    // If last used ball is implemented, this button (or button combo) will trigger throwing the last used ball.
+
 // Other
 #define B_DOUBLE_WILD_CHANCE        0     // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_SLEEP_TURNS               GEN_7 // In Gen5+, sleep lasts for 1-3 turns instead of 2-5 turns.
@@ -122,6 +126,6 @@
 
 #define B_HIDE_HEALTHBOXES_DURING_ANIMS TRUE     // If set to TRUE, hides healthboxes during move animations.
 #define B_TERRAIN_BG_CHANGE             TRUE     // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
-#define B_ENABLE_DEBUG                  TRUE    // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
+#define B_ENABLE_DEBUG                  FALSE    // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
 
 #endif // GUARD_CONSTANTS_BATTLE_CONFIG_H

@@ -2,7 +2,12 @@
 
 SandstrewnRuins_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SandstrewnRuins_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, SandstrewnRuins_OnTransition
 	.byte 0
+
+SandstrewnRuins_OnTransition:
+	setflag FLAG_LANDMARK_SANDSTREWN_RUINS
+	end
 
 SandstrewnRuins_OnLoad::
 	goto_if_set FLAG_CHOSE_ROOT_FOSSIL, SandstrewnRuins_BlockMirageTower

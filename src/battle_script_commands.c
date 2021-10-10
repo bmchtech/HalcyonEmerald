@@ -1394,6 +1394,28 @@ static void Cmd_attackcanceler(void)
 {
     s32 i, moveType;
 
+    GET_MOVE_TYPE(gCurrentMove, moveType);
+
+    if (moveType == TYPE_FIRE
+     && (gBattleWeather & WEATHER_RAIN_PRIMAL)
+     && WEATHER_HAS_EFFECT
+     && gBattleMoves[gCurrentMove].power)
+    {
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_PrimordialSeaFizzlesOutFireTypeMoves;
+        return;
+    }
+
+    if (moveType == TYPE_WATER
+     && (gBattleWeather & WEATHER_SUN_PRIMAL)
+     && WEATHER_HAS_EFFECT
+     && gBattleMoves[gCurrentMove].power)
+    {
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_DesolateLandEvaporatesWaterTypeMoves;
+        return;
+    }
+
     if (gBattleOutcome != 0)
     {
         gCurrentActionFuncId = B_ACTION_FINISHED;
@@ -1423,7 +1445,6 @@ static void Cmd_attackcanceler(void)
     }
 
     // Check Protean activation.
-    GET_MOVE_TYPE(gCurrentMove, moveType);
     if ((GetBattlerAbility(gBattlerAttacker) == ABILITY_PROTEAN || GetBattlerAbility(gBattlerAttacker) == ABILITY_LIBERO)
         && (gBattleMons[gBattlerAttacker].type1 != moveType || gBattleMons[gBattlerAttacker].type2 != moveType ||
             (gBattleMons[gBattlerAttacker].type3 != moveType && gBattleMons[gBattlerAttacker].type3 != TYPE_MYSTERY))
@@ -1971,6 +1992,9 @@ static void Cmd_typecalc(void)
 static void Cmd_adjustdamage(void)
 {
     u8 holdEffect, param;
+    u32 moveType;
+
+    GET_MOVE_TYPE(gCurrentMove, moveType);
 
     if (DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove))
         goto END;
@@ -2047,6 +2071,23 @@ END:
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_GemActivates;
         gLastUsedItem = gBattleMons[gBattlerAttacker].item;
+    }
+
+    // WEATHER_STRONG_WINDS prints a string when it's about to reduce the power
+    // of a move that is Super Effective against a Flying-type Pokémon.
+    if (gBattleWeather & WEATHER_STRONG_WINDS)
+    {
+        if ((gBattleMons[gBattlerTarget].type1 == TYPE_FLYING
+         && GetTypeModifier(moveType, gBattleMons[gBattlerTarget].type1) >= UQ_4_12(2.0))
+         || (gBattleMons[gBattlerTarget].type2 == TYPE_FLYING
+         && GetTypeModifier(moveType, gBattleMons[gBattlerTarget].type2) >= UQ_4_12(2.0))
+         || (gBattleMons[gBattlerTarget].type3 == TYPE_FLYING
+         && GetTypeModifier(moveType, gBattleMons[gBattlerTarget].type3) >= UQ_4_12(2.0)))
+        {
+            gBattlerAbility = gBattlerTarget;
+            BattleScriptPushCursor();
+            gBattlescriptCurrInstr = BattleScript_AttackWeakenedByStrongWinds;
+        }
     }
 }
 
@@ -4842,6 +4883,7 @@ static void Cmd_moveend(void)
         case MOVEEND_RECOIL:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+                && gBattleMoveDamage != 0
                 && IsBattlerAlive(gBattlerAttacker)
                 && gBattleScripting.savedDmg != 0) // Some checks may be redundant alongside this one
             {
@@ -8943,12 +8985,45 @@ static void Cmd_various(void)
         }
         gFieldStatuses &= ~STATUS_FIELD_TERRAIN_ANY;    // remove the terrain
         break;
-    case  VARIOUS_JUMP_IF_PRANKSTER_BLOCKED:
+    case VARIOUS_JUMP_IF_PRANKSTER_BLOCKED:
         if (BlocksPrankster(gCurrentMove, gBattlerAttacker, gActiveBattler))
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
         else
             gBattlescriptCurrInstr += 7;
         return;
+    case VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER:
+    {
+        bool8 shouldNotClear = FALSE;
+
+        for (i = 0; i < gBattlersCount; i++)
+        {
+            if (((GetBattlerAbility(i) == ABILITY_DESOLATE_LAND && gBattleWeather & WEATHER_SUN_PRIMAL)
+             || (GetBattlerAbility(i) == ABILITY_PRIMORDIAL_SEA && gBattleWeather & WEATHER_RAIN_PRIMAL)
+             || (GetBattlerAbility(i) == ABILITY_DELTA_STREAM && gBattleWeather & WEATHER_STRONG_WINDS))
+             && IsBattlerAlive(i)
+             && !(gStatuses3[i] & STATUS3_GASTRO_ACID))
+                shouldNotClear = TRUE;
+        }
+        if (gBattleWeather & WEATHER_SUN_PRIMAL && !shouldNotClear)
+        {
+            gBattleWeather &= ~WEATHER_SUN_PRIMAL;
+            PrepareStringBattle(STRINGID_EXTREMESUNLIGHTFADED, gActiveBattler);
+            gBattleCommunication[MSG_DISPLAY] = 1;
+        }
+        else if (gBattleWeather & WEATHER_RAIN_PRIMAL && !shouldNotClear)
+        {
+            gBattleWeather &= ~WEATHER_RAIN_PRIMAL;
+            PrepareStringBattle(STRINGID_HEAVYRAINLIFTED, gActiveBattler);
+            gBattleCommunication[MSG_DISPLAY] = 1;
+        }
+        else if (gBattleWeather & WEATHER_STRONG_WINDS && !shouldNotClear)
+        {
+            gBattleWeather &= ~WEATHER_STRONG_WINDS;
+            PrepareStringBattle(STRINGID_STRONGWINDSDISSIPATED, gActiveBattler);
+            gBattleCommunication[MSG_DISPLAY] = 1;
+        }
+        break;
+    }
     }
 
     gBattlescriptCurrInstr += 3;
@@ -12662,7 +12737,8 @@ static void Cmd_handleballthrow(void)
     {
         u32 odds, i;
         u8 catchRate;
-
+    
+        gLastThrownBall = gLastUsedItem;
         if (gLastUsedItem == ITEM_SAFARI_BALL)
             catchRate = gBattleStruct->safariCatchFactor * 1275 / 100;
         else

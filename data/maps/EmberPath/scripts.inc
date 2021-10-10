@@ -1,6 +1,11 @@
 EmberPath_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Common_EventScript_RemoveOverworldAfterBattle
+	map_script MAP_SCRIPT_ON_TRANSITION, EmberPath_OnTransition
 	.byte 0
+
+EmberPath_OnTransition:
+	setflag FLAG_LANDMARK_EMBER_PATH
+	end
 
 EmberPath_EventScript_Moltres::
 	lock

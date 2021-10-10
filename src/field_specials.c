@@ -2512,7 +2512,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_POKE_CENTER_TUTOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 6;
+            task->tNumItems = 7;
             task->tLeft = 20;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2929,7 +2929,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ForgetAMove,
         gText_LearnANewMove,
         gText_RateANickname,
-        // gText_TrainEXP,
+        gText_MysteryGift,
         gText_ResetEvents,
         gText_Exit
     },
@@ -5774,3 +5774,40 @@ void GetStaticEncounterLevel (void)
         gSpecialVar_0x800A -= 3;
     }
 }
+
+#define MYSTERY_GIFT_SPECIES       0
+#define MYSTERY_GIFT_ITEM          1
+#define MYSTERY_GIFT_RECEIVED_FLAG 2
+#define MYSTERY_GIFT_REQ_FLAG      3
+
+// Loops through array of mystery gift mons and checks requirements for the player to receive them.
+// If the requirements for a gift species are met, the gift's item is stored in gSpecialVar_0x8009 and that species is returned.
+// If no valid species is found, returns FALSE.
+u16 GetMysteryGiftSpecies (void)
+{
+    static const u16 mysteryGiftData[][4] =
+    {
+        // Species, held item, flag set when received, flag needed to receive
+        {SPECIES_GRENINJA_BATTLE_BOND, ITEM_COMET_SHARD, FLAG_RECEIVED_ASH_GRENINJA, FLAG_BADGE04_GET},
+        {SPECIES_MAGEARNA, ITEM_MASTER_BALL, FLAG_RECEIVED_MAGEARNA, FLAG_SYS_GAME_CLEAR}
+    };
+
+    int i;
+    u8 numMysteryGifts = ARRAY_COUNT(mysteryGiftData);
+
+    for (i = 0; i < numMysteryGifts; i++)
+    {
+        if (!FlagGet(mysteryGiftData[i][MYSTERY_GIFT_RECEIVED_FLAG]) && FlagGet(mysteryGiftData[i][MYSTERY_GIFT_REQ_FLAG]))
+        {
+            gSpecialVar_0x8009 =  mysteryGiftData[i][MYSTERY_GIFT_ITEM];
+            return mysteryGiftData[i][MYSTERY_GIFT_SPECIES];
+        }
+    }
+
+    return FALSE;
+}
+
+#undef MYSTERY_GIFT_SPECIES
+#undef MYSTERY_GIFT_RECEIVED_FLAG
+#undef MYSTERY_GIFT_REQ_FLAG
+#undef MYSTERY_GIFT_ITEM

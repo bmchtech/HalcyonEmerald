@@ -7397,6 +7397,7 @@ static const struct LevelUpMove sBanetteLevelUpLearnset[] = {
     LEVEL_UP_MOVE(58, MOVE_TRICK),
 	LEVEL_UP_MOVE(61, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(64, MOVE_PHANTOM_FORCE),
+    LEVEL_UP_MOVE(70, MOVE_COTTON_GUARD),
     LEVEL_UP_END
 };
 

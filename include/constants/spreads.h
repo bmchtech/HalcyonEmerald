@@ -53,5 +53,6 @@
 #define SPREAD_LYCANROC_MIDDAY              49 // Roxanne's Lycanroc
 #define SPREAD_STAKATAKA                    50 // Roxanne's Stakataka
 #define SPREAD_31_IV_HP_SPATK_MIXED         51 // Max HP, Sp Atk, Quiet. Maxie 1's  Camerupt
+#define SPREAD_ROCK_POLISH_GROUDON          52 // Maxie's Groudon
 
 #endif  // GUARD_CONSTANTS_TRAINER_SPREADS
