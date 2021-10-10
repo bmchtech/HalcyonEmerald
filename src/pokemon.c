@@ -8126,6 +8126,8 @@ static void ShuffleStatArray(u8* statArray)
         int j = Random() % (i + 1);
         SWAP(statArray[i], statArray[j], temp);
     }
+}
+
 // returns SPECIES_NONE if no form change is possible
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg) 
 {
