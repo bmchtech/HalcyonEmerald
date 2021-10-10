@@ -1,8 +1,13 @@
 @ NOTE: Route 109's sail to Dewford script references local IDs from Dewford's map. 
 @  These are labeled in DewfordTown/scripts.inc
 
-Route109_MapScripts:: @ 81EE75F
+Route109_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route109_OnTransition
 	.byte 0
+
+Route109_OnTransition:
+	setflag FLAG_VISITED_SLATEPORT_CITY
+	end
 
 Route109_EventScript_StartDepartForDewford:: @ 81EE760
 	call EventScript_BackupMrBrineyLocation
