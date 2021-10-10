@@ -577,3 +577,4 @@ gSpecials::
 	def_special IsSelectedMonEeveelution
 	def_special HoneyWildEncounter
 	def_special GetStaticEncounterLevel
+	def_special GetMysteryGiftSpecies

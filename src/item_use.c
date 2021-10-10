@@ -1036,7 +1036,8 @@ u32 CanThrowBall(void)
     return 0;   // usable 
 }
 
-static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two pokemon out there!\p");
+static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
+
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     switch (CanThrowBall())

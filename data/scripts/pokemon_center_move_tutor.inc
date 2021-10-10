@@ -10,9 +10,9 @@ PKMN_Center_Move_Tutor::
 	case 1, PKMN_Center_MoveDeleter_EventScript
 	case 2, PKMN_Center_Move_Tutor_MoveTutorIntro
 	case 3, PKMN_Center_NameRater_EventScript
-	@case 4, PKMN_Center_EventScript_Exp_Grind
-	case 4, PKMN_Center_EventScript_Event_Reset
-	case 5, PKMN_Center_Move_Tutor_General_Exit
+	case 4, PKMN_Center_EventScript_Mystery_Gift
+	case 5, PKMN_Center_EventScript_Event_Reset
+	case 6, PKMN_Center_Move_Tutor_General_Exit
 	case MULTI_B_PRESSED, PKMN_Center_Move_Tutor_General_Exit
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Move Reminder @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -376,6 +376,76 @@ PKMN_Center_EventReset_EventScript_ResetEvents2::
 	setvar VAR_EVENT_RESET_STATE, 2
 	return
 
+PKMN_Center_EventScript_Mystery_Gift::
+	specialvar VAR_TEMP_1, GetMysteryGiftSpecies
+	compare VAR_TEMP_1, SPECIES_NONE
+	goto_if_eq PKMN_Center_EventScript_Mystery_Gift_NoGiftAvailable
+	bufferspeciesname 0, VAR_TEMP_1
+	msgbox PKMN_Center_Text_Mystery_Gift_WouldYouLikeGift, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PKMN_Center_Move_Tutor_General_Exit
+	special GetStaticEncounterLevel
+	givemon VAR_TEMP_1, VAR_0x800A, VAR_0x8009
+	compare VAR_RESULT, 0
+	goto_if_eq PKMN_Center_Mystery_Gift_EventScript_ReceiveGiftParty
+	compare VAR_RESULT, 1
+	goto_if_eq PKMN_Center_Mystery_Gift_EventScript_ReceiveGiftPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+PKMN_Center_Mystery_Gift_EventScript_TakeCare::
+	switch VAR_TEMP_1
+	case SPECIES_GRENINJA_BATTLE_BOND, PKMN_Center_EventScript_SetflagGreninja
+	case SPECIES_MAGEARNA, PKMN_Center_EventScript_SetflagMagearna
+	releaseall
+	end
+
+PKMN_Center_EventScript_SetflagGreninja::
+	setflag FLAG_RECEIVED_ASH_GRENINJA
+	releaseall
+	end
+
+PKMN_Center_EventScript_SetflagMagearna::
+	setflag FLAG_RECEIVED_MAGEARNA
+	releaseall
+	end
+
+PKMN_Center_EventScript_Mystery_Gift_NoGiftAvailable::
+	msgbox PKMN_Center_Text_Mystery_Gift_NoGiftAvailable, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PKMN_Center_Mystery_Gift_EventScript_ReceiveGiftParty::
+	call PKMN_Center_Mystery_Gift_EventScript_ReceivedGiftFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PKMN_Center_Mystery_Gift_EventScript_TakeCare
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto PKMN_Center_Mystery_Gift_EventScript_TakeCare
+	end
+
+PKMN_Center_Mystery_Gift_EventScript_ReceiveGiftPC::
+	call PKMN_Center_Mystery_Gift_EventScript_ReceivedGiftFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PKMN_Center_Mystery_Gift_EventScript_SendGiftToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto PKMN_Center_Mystery_Gift_EventScript_SendGiftToPC
+	end
+
+PKMN_Center_Mystery_Gift_EventScript_SendGiftToPC::
+	call Common_EventScript_TransferredToPC
+	goto PKMN_Center_Mystery_Gift_EventScript_TakeCare
+	end
+
+PKMN_Center_Mystery_Gift_EventScript_ReceivedGiftFanfare::
+	bufferspeciesname 1, VAR_TEMP_1
+	playfanfare MUS_OBTAIN_ITEM
+	message PKMN_Center_Mystery_Gift_Text_ReceivedGift
+	waitmessage
+	waitfanfare
+	bufferspeciesname 0, VAR_TEMP_1
+	return
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Strings @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 PKMN_Center_EventReset_Text_Reset:
@@ -511,3 +581,19 @@ PKMN_Center_NameRater_Text_NameNoDifferentYetSuperior:
 PKMN_Center_NameRater_Text_ThatIsMerelyAnEgg:
 	.string "Now, now.\n"
 	.string "That is merely an Egg!$"
+
+PKMN_Center_Text_Mystery_Gift_NoGiftAvailable:
+	.string "I'm sorry, there are no Mystery Gifts\n"
+	.string "available at this time.$"
+
+PKMN_Center_Mystery_Gift_Text_ReceivedGift::
+	.string "{PLAYER} received {STR_VAR_1}!\p"
+	.string "Take good care of {STR_VAR_1}!$"
+
+PKMN_Center_Text_Mystery_Gift_WouldYouLikeGift::
+	.string "Thank you for playing\n"
+	.string "Inclement Emerald!\p"
+	.string "You have a Mystery Gift available:\n"
+	.string "a special {STR_VAR_1}!\p"
+	.string "Would you like to receive\n"
+	.string "{STR_VAR_1}?$"
