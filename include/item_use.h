@@ -26,6 +26,8 @@ void ItemUseOutOfBattle_Nectar(u8 taskId);
 void ItemUseOutOfBattle_PokeVial(u8);
 void ItemUseOutOfBattle_Berry(u8);
 void ItemUseOutOfBattle_EnigmaBerry(u8);
+void ItemUseOutOfBattle_FormChange(u8);
+void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8);
 void ItemUseOutOfBattle_Honey(u8);
 void ItemUseOutOfBattle_CannotUse(u8);
 void ItemUseInBattle_PokeBall(u8);
