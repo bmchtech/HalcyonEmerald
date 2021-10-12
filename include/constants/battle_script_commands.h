@@ -188,6 +188,7 @@
 #define VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER     115
 #define VARIOUS_CONSUME_BERRY                   116
 #define VARIOUS_TRY_ACTIVATE_RAMPAGE            117
+#define VARIOUS_TRY_ACTIVATE_BATTLE_BOND        118
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

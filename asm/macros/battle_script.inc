@@ -1443,6 +1443,10 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_RAMPAGE
 	.endm
 
+	.macro tryactivatebattlebond battler:req
+	various \battler, VARIOUS_TRY_ACTIVATE_BATTLE_BOND
+	.endm
+
 	.macro tryactivatebeastboost battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_BEAST_BOOST
 	.endm

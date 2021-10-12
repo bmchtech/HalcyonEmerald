@@ -275,7 +275,6 @@ void EvolutionScene(struct Pokemon* mon, u16 postEvoSpecies, bool8 canStopEvo, u
     DecompressPicFromTableGender(gMonSpritesGfxPtr->sprites.ptr[3],
                                 postEvoSpecies,
                                 personality);
-
     pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
     LoadCompressedPalette(pokePal->data, 0x120, 0x20);
 
@@ -425,7 +424,6 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
             DecompressPicFromTableGender(gMonSpritesGfxPtr->sprites.ptr[3],
                                         postEvoSpecies,
                                         personality);
-
             pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
             LoadCompressedPalette(pokePal->data, 0x120, 0x20);
             gMain.state++;
