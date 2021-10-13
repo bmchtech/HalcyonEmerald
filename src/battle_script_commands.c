@@ -2673,7 +2673,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
     case MOVE_EFFECT_KNOCK_OFF:
     case MOVE_EFFECT_SMACK_DOWN:
     case MOVE_EFFECT_REMOVE_STATUS:
-    case MOVE_EFFECT_STEAL_ITEM:
     case MOVE_EFFECT_BURN_UP:
         gBattleStruct->moveEffect2 = gBattleScripting.moveEffect;
         gBattlescriptCurrInstr++;
@@ -3166,6 +3165,63 @@ void SetMoveEffect(bool32 primary, u32 certain)
             case MOVE_EFFECT_RAGE:
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
                 gBattlescriptCurrInstr++;
+                break;
+            case MOVE_EFFECT_STEAL_ITEM:
+                // Don't steal on first strike of Parental Bond, unless it KO'ed the target
+                if (!(gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2 && gBattleMons[gBattlerTarget].hp != 0))
+                { 
+                    if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item))
+                    {
+                        gBattlescriptCurrInstr++;
+                        break;
+                    }
+
+                    side = GetBattlerSide(gBattlerAttacker);
+                    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
+                        && !(gBattleTypeFlags &
+                             (BATTLE_TYPE_EREADER_TRAINER
+                              | BATTLE_TYPE_FRONTIER
+                              | BATTLE_TYPE_LINK
+                              | BATTLE_TYPE_RECORDED_LINK
+                              | BATTLE_TYPE_SECRET_BASE)))
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else if (!(gBattleTypeFlags &
+                          (BATTLE_TYPE_EREADER_TRAINER
+                           | BATTLE_TYPE_FRONTIER
+                           | BATTLE_TYPE_LINK
+                           | BATTLE_TYPE_RECORDED_LINK
+                           | BATTLE_TYPE_SECRET_BASE))
+                        && (gWishFutureKnock.knockedOffMons[side] & gBitTable[gBattlerPartyIndexes[gBattlerAttacker]]))
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else if (gBattleMons[gBattlerTarget].item
+                        && GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+                    {
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_NoItemSteal;
+
+                        gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
+                        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+                    }
+                    else if (gBattleMons[gBattlerAttacker].item != 0
+                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
+                        || gBattleMons[gBattlerTarget].item == 0)
+                    {
+                        gBattlescriptCurrInstr++;
+                    }
+                    else
+                    {
+                        StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
+                        gBattleMons[gBattlerAttacker].item = 0; // Item assigned later on with thief (see MOVEEND_CHANGED_ITEMS)
+                        gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_ItemSteal;
+                    }
+
+                }
                 break;
             case MOVE_EFFECT_PREVENT_ESCAPE:
                 gBattleMons[gBattlerTarget].status2 |= STATUS2_ESCAPE_PREVENTION;
@@ -5012,27 +5068,6 @@ static void Cmd_moveend(void)
                     }
                 }
                 break; // MOVE_EFFECT_REMOVE_STATUS
-            case MOVE_EFFECT_STEAL_ITEM:
-                if (gBattleMons[gBattlerTarget].item
-                    && GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD // Can steal item, but ability prevents it
-                    && IsBattlerAlive(gBattlerTarget)) // If Sticky Hold mon faints, its item can be stolen
-                {
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_NoItemSteal;
-                    gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
-                    RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
-                }
-                if (CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item)
-                    && gBattleMons[gBattlerTarget].item!= ITEM_ENIGMA_BERRY
-                    && gBattleMons[gBattlerTarget].item != ITEM_NONE
-                    && gBattleMons[gBattlerAttacker].item == ITEM_NONE)
-                {
-                    StealTargetItem(gBattlerAttacker, gBattlerTarget);  // Attacker steals target item
-                    gBattleStruct->changedItems[gBattlerAttacker] = gLastUsedItem; // Stolen item to be assigned later
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_ItemSteal;
-                }
-                break; // MOVE_EFFECT_STEAL_ITEM
             case MOVE_EFFECT_BURN_UP:
                 effect = TRUE;
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
