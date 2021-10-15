@@ -62,7 +62,7 @@ Route117_PokemonDayCare_Text_HaveEggWillYouTakeIt:
 	.string "Ooh, you're a Pokémon Trainer,\n"
 	.string "aren't you?\p "
 	.string "See, I found an Egg at the Day Care,\n"
-	.string "and I've been tring to find a good\l"
+	.string "and I've been trying to find a good\l"
 	.string "home for it.\p"
 	.string "Would you be interested in taking it?$"
 

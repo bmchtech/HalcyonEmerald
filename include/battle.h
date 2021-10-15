@@ -175,6 +175,7 @@ struct SpecialStatus
     u8 instructedChosenTarget:3; //8
     u8 berryReduced:1;
     u8 gemBoost:1;
+    u8 rototillerAffected:1;  // to be affected by rototiller
     u8 parentalBondOn:2;
     u8 multiHitOn:1;
     u8 gemParam;

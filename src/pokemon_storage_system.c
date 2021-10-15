@@ -5145,10 +5145,20 @@ static u16 TryLoadMonIconTiles(u16 species, u32 personality)
 static void RemoveSpeciesFromIconList(u16 species)
 {
     u16 i;
+    bool8 hasFemale = FALSE;
 
     for (i = 0; i < MAX_MON_ICONS; i++)
     {
-        if (sStorage->iconSpeciesList[i] == species || sStorage->iconSpeciesList[i] == (species | 0x8000))
+        if (sStorage->iconSpeciesList[i] == (species | 0x8000))
+        {
+            hasFemale = TRUE;
+            break;
+        }
+    }
+
+    for (i = 0; i < MAX_MON_ICONS; i++)
+    {
+        if (sStorage->iconSpeciesList[i] == species && !hasFemale)
         {
             if (--sStorage->numIconsPerSpecies[i] == 0)
                 sStorage->iconSpeciesList[i] = SPECIES_NONE;
