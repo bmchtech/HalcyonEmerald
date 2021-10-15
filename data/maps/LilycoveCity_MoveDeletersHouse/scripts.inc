@@ -73,7 +73,6 @@ LilycoveCity_EventScript_BallSwapperIntro::
 	return
 
 LilycoveCity_EventScript_BallSwapper_CantAfford::
-	hidemoneybox
 	msgbox LilycoveCity_Text_BallSwapperCantAfford, MSGBOX_DEFAULT
 	release
 	end
@@ -90,7 +89,6 @@ LilycoveCity_EventScript_BallSwapperExitNoMoneyBox::
 	end
 
 LilycoveCity_EventScript_BallSwapperEgg::
-	hidemoneybox
 	msgbox LilycoveCity_Text_BallSwapperEgg, MSGBOX_DEFAULT
 	release
 	end
