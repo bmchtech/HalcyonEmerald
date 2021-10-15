@@ -191,7 +191,6 @@
 #define VARIOUS_TRY_ACTIVATE_BATTLE_BOND        118
 #define VARIOUS_CONSUME_BERRY                   119
 #define VARIOUS_TRY_ACTIVATE_RAMPAGE            120
-#define VARIOUS_TRY_ACTIVATE_BATTLE_BOND        121
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

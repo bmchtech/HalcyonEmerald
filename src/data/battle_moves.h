@@ -5870,7 +5870,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_PLUCK] =
     {
-        .effect = EFFECT_HIT, //EFFECT_BUG_BITE,
+        .effect = EFFECT_BUG_BITE,
         .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 100,
@@ -7216,7 +7216,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_BUG_BITE] =
     {
-        .effect = EFFECT_HIT, //EFFECT_BUG_BITE,
+        .effect = EFFECT_BUG_BITE,
         .power = 60,
         .type = TYPE_BUG,
         .accuracy = 100,

@@ -3395,7 +3395,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 break;
             case MOVE_EFFECT_BUG_BITE:
                 if (ItemId_GetPocket(gBattleMons[gEffectBattler].item) == POCKET_BERRIES
-                    && GetBattlerAbility(gEffectBattler) != ABILITY_STICKY_HOLD)
+                    && GetBattlerAbility(gEffectBattler) != ABILITY_STICKY_HOLD
+                    && !(gSpecialStatuses[gBattlerAttacker].parentalBondOn == 2 && gBattleMons[gBattlerTarget].hp != 0)) // Steal berry on final hit
                 {
                     // target loses their berry
                     gLastUsedItem = gBattleMons[gEffectBattler].item;
@@ -8047,19 +8048,6 @@ static void Cmd_various(void)
             gBattleMons[gActiveBattler].status2 &= ~(STATUS2_RECHARGE);
         }
         break;
-    case VARIOUS_TRY_ACTIVATE_BATTLE_BOND:
-        if (gBattleMons[gBattlerAttacker].species == SPECIES_GRENINJA_BATTLE_BOND
-            && HasAttackerFaintedTarget()
-            && CalculateEnemyPartyCount() > 1)
-        {
-            PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerAttacker].species);
-            gBattleStruct->changedSpecies[gBattlerPartyIndexes[gBattlerAttacker]] = gBattleMons[gBattlerAttacker].species;
-            gBattleMons[gBattlerAttacker].species = SPECIES_GRENINJA_ASH;
-            BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_BattleBondActivatesOnMoveEndAttacker;
-            return;
-        }
-        break;
     case VARIOUS_TRY_ACTIVATE_MOXIE:    // and chilling neigh + as one ice rider
         if ((GetBattlerAbility(gActiveBattler) == ABILITY_MOXIE
          || GetBattlerAbility(gActiveBattler) == ABILITY_CHILLING_NEIGH
@@ -8872,27 +8860,6 @@ static void Cmd_various(void)
             }
             gBattlescriptCurrInstr += 7;    // exit if loop failed (failsafe)
         }
-        return;
-    case VARIOUS_CONSUME_BERRY:
-        if (ItemId_GetHoldEffect(gBattleMons[gActiveBattler].item) == HOLD_EFFECT_NONE)
-        {
-            gBattlescriptCurrInstr += 4;
-            return;
-        }
-
-        gBattleScripting.battler = gEffectBattler = gBattlerTarget = gActiveBattler;    // cover all berry effect battlerId cases. e.g. ChangeStatBuffs uses target ID
-        // do move end berry effects for just a single battler, instead of looping through all battlers
-        if (ItemBattleEffects(ITEMEFFECT_BATTLER_MOVE_END, gActiveBattler, FALSE))
-            return;
-
-        if (gBattlescriptCurrInstr[3])
-        {
-            gBattleMons[gActiveBattler].item = gBattleStruct->changedItems[gActiveBattler];
-            gBattleStruct->changedItems[gActiveBattler] = ITEM_NONE;
-            gBattleResources->flags->flags[gActiveBattler] &= ~(RESOURCE_FLAG_UNBURDEN);
-        }
-
-        gBattlescriptCurrInstr += 4;
         return;
     case VARIOUS_MOVEEND_ITEM_EFFECTS:
         if (ItemBattleEffects(1, gActiveBattler, FALSE))

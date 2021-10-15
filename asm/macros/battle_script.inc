@@ -1443,10 +1443,6 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_RAMPAGE
 	.endm
 
-	.macro tryactivatebattlebond battler:req
-	various \battler, VARIOUS_TRY_ACTIVATE_BATTLE_BOND
-	.endm
-
 	.macro tryactivatebeastboost battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_BEAST_BOOST
 	.endm
@@ -1775,11 +1771,6 @@
 	
 	.macro tryactivategrimneigh, battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_GRIM_NEIGH
-	.endm
-	
-	.macro consumeberry battler:req, restoreItem=FALSE
-	various \battler, VARIOUS_CONSUME_BERRY
-	.byte \restoreItem
 	.endm
 
 	.macro activateitemeffects battler:req
