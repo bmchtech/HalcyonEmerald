@@ -509,8 +509,12 @@ const u16 gEggMoves[] = {
         MOVE_AGILITY,
         MOVE_CHIP_AWAY,
         MOVE_BIDE,
-        MOVE_ALLY_SWITCH,
-        MOVE_ICE_HAMMER),
+        #ifdef REBALANCED_VERSION
+            MOVE_ALLY_SWITCH,
+            MOVE_ICE_HAMMER),
+        #else
+            MOVE_ALLY_SWITCH),
+        #endif
 
     egg_moves(EXEGGCUTE,
         MOVE_MOONLIGHT,

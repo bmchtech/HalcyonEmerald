@@ -197,7 +197,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
         #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_TORRENT, ABILITY_OVERCOAT, ABILITY_RAIN_DISH},
+            .abilities = {ABILITY_TORRENT, ABILITY_RAIN_DISH, ABILITY_OVERCOAT},
         #else
             .abilities = {ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_RAIN_DISH},
         #endif
@@ -226,7 +226,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
         #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_TORRENT, ABILITY_OVERCOAT, ABILITY_RAIN_DISH},
+            .abilities = {ABILITY_TORRENT, ABILITY_RAIN_DISH, ABILITY_OVERCOAT},
         #else
             .abilities = {ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_RAIN_DISH},
         #endif
@@ -254,7 +254,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
         #ifdef REBALANCED_VERSION
-            .abilities = {ABILITY_TORRENT, ABILITY_MEGA_LAUNCHER, ABILITY_RAIN_DISH},
+            .abilities = {ABILITY_TORRENT, ABILITY_RAIN_DISH, ABILITY_MEGA_LAUNCHER},
         #else
             .abilities = {ABILITY_TORRENT, ABILITY_TORRENT, ABILITY_RAIN_DISH},
         #endif        
@@ -18665,7 +18665,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_STRONG_JAW, ABILITY_STRONG_JAW, ABILITY_STURDY},
+        .abilities = {ABILITY_STRONG_JAW, ABILITY_STRONG_JAW, ABILITY_ROCK_HEAD},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
