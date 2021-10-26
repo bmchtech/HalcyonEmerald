@@ -333,6 +333,7 @@
 // Evolution types
 #define EVO_MEGA_EVOLUTION                0xffff // Not an actual evolution, used to temporarily mega evolve in battle.
 #define EVO_MOVE_MEGA_EVOLUTION           0xfffe // Mega Evolution that checks for a move instead of held item.
+#define EVO_PRIMAL_REVERSION              0xfffd // Not an actual evolution, used to undergo primal reversion in battle.
 #define EVO_FRIENDSHIP                    1      // Pokémon levels up with friendship ≥ 220
 #define EVO_FRIENDSHIP_DAY                2      // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT              3      // Pokémon levels up at night with friendship ≥ 220
@@ -364,8 +365,8 @@
 #define EVO_SPECIFIC_MON_IN_PARTY         29     // Pokémon levels up with a specified Pokémon in party
 #define EVO_LEVEL_DARK_TYPE_MON_IN_PARTY  30     // Pokémon reaches the specified level with a Dark Type Pokémon in party
 #define EVO_TRADE_SPECIFIC_MON            31     // Pokémon is traded for a specified Pokémon
-#define EVO_ITEM_HOLD                     32     // Pokémon levels up, holds specified item
-#define EVO_SPECIFIC_MAP                  33     // Pokémon levels up on specified map
+#define EVO_SPECIFIC_MAP                  32     // Pokémon levels up on specified map
+#define EVO_ITEM_HOLD                     33     // Pokémon levels up, holds specified item
 
 #define EVOS_PER_MON 10
 

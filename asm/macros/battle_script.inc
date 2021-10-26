@@ -1547,6 +1547,11 @@
 	.byte \case
 	.endm
 
+	.macro handleprimalreversion battler:req, case:req
+	various \battler, VARIOUS_HANDLE_PRIMAL_REVERSION
+	.byte \case
+	.endm
+
 	.macro handleformchange battler:req, case:req
 	various \battler, VARIOUS_HANDLE_FORM_CHANGE
 	.byte \case
@@ -1846,6 +1851,15 @@
 
 	.macro tryactivatebattlebond battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_BATTLE_BOND
+	.endm
+
+	.macro jumpifcantreverttoprimal ptr:req
+	various BS_ATTACKER, VARIOUS_JUMP_IF_CANT_REVERT_TO_PRIMAL
+	.4byte \ptr
+	.endm
+  
+	.macro applyplasmafists
+	various BS_ATTACKER, VARIOUS_APPLY_PLASMA_FISTS
 	.endm
 
 @ helpful macros
