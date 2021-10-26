@@ -1384,7 +1384,8 @@ bool8 PartyIsMaxLevel(void)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) != 100)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) != 100
+            && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
             return FALSE;
     }
     return TRUE;
@@ -3763,7 +3764,6 @@ static void Cmd_getexp(void)
     s32 i; // also used as stringId
     u8 holdEffect;
     s32 sentIn;
-    s32 viaExpShare = 0;
     u32 *exp = &gBattleStruct->expValue;
     u8 highestLevel;
 
@@ -3801,7 +3801,8 @@ static void Cmd_getexp(void)
 
             for (viaSentIn = 0, i = 0; i < PARTY_SIZE; i++)
             {
-                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
+                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE 
+                    || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
                     continue;
                 if (gBitTable[i] & sentIn)
                     viaSentIn++;
@@ -3825,7 +3826,6 @@ static void Cmd_getexp(void)
             if (*exp == 0)
                 *exp = 1;
 
-            viaExpShare = gSaveBlock1Ptr->playerPartyCount;
             gExpShareExp = calculatedExp / 4; // Portion of EXP given to all Pokemon, whether they battled or not
             if (gExpShareExp == 0)
                 gExpShareExp = 1;
@@ -3879,8 +3879,7 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage = *exp;
                     else
                     {
-                        gBattleMoveDamage = 0;
-                        gBattleMoveDamage += gExpShareExp;
+                        gBattleMoveDamage = gExpShareExp;
                     }
                     if (holdEffect == HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
                         gBattleMoveDamage = gExpShareExp * 4; // Determines how much EXP a Pokemon holding an EXP Share receives
@@ -3959,7 +3958,9 @@ static void Cmd_getexp(void)
         if (gBattleControllerExecFlags == 0)
         {
             gBattleResources->bufferB[gBattleStruct->expGetterBattlerId][0] = 0;
-            if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HP) && GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) != MAX_LEVEL)
+            if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HP) 
+                && GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) != MAX_LEVEL
+                && !GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_IS_EGG))
             {
                 gBattleResources->beforeLvlUp->stats[STAT_HP]    = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_MAX_HP);
                 gBattleResources->beforeLvlUp->stats[STAT_ATK]   = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_ATK);
