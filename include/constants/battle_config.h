@@ -19,6 +19,7 @@
 #define B_TERRAIN_TYPE_BOOST        GEN_8 // In Gen8, damage is boosted by 30% instead of 50%.
 #define B_CONFUSION_SELF_DMG_CHANCE GEN_7 // In Gen7+, confusion has a 33.3% of self-damage, instead of 50%.
 #define B_MULTI_HIT_CHANCE          GEN_7 // In Gen5+, multi-hit moves have different %. See Cmd_setmultihitcounter for values.
+#define B_BEAT_UP_DMG               GEN_8 // In Gen5+, Beat Up uses a different formula to calculate the damage of each hit, and deals Dark-type damage.
 
 // Exp and stat settings
 #define B_EXP_CATCH                 GEN_7 // In Gen6+, Pokémon get experience from catching.
@@ -109,7 +110,7 @@
 #define B_SHOW_TARGETS              TRUE  // If set to TRUE, all available targets, for moves hitting 2 or 3 Pokémon, will be shown before selecting a move.
 #define B_SHOW_SPLIT_ICON           TRUE  // If set to TRUE, it will show an icon in the summary showing the move's category split.
 #define B_HIDE_HEALTHBOX_IN_ANIMS   TRUE  // If set to TRUE, hides healthboxes during move animations.
-#define B_TERRAIN_BG_CHANGE         TRUE  // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
+#define B_TERRAIN_BG_CHANGE         FALSE  // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
 
 // Critical Capture
 #define B_CRITICAL_CAPTURE          TRUE  // If set to TRUE, Critical Capture will be enabled.
