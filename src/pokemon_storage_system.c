@@ -5174,7 +5174,6 @@ static struct Sprite *CreateMonIconSprite(u16 species, u32 personality, s16 x, s
     struct SpriteTemplate template = sSpriteTemplate_MonIcon;
 
     species = GetIconSpecies(species, personality);
-
     if (SpeciesHasGenderDifference[species] && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
     {
         template.paletteTag = PALTAG_MON_ICON_0 + gMonIconPaletteIndicesFemale[species];
@@ -5183,7 +5182,6 @@ static struct Sprite *CreateMonIconSprite(u16 species, u32 personality, s16 x, s
     {
         template.paletteTag = PALTAG_MON_ICON_0 + gMonIconPaletteIndices[species];
     }
-    
     tileNum = TryLoadMonIconTiles(species, personality);
     if (tileNum == 0xFFFF)
         return NULL;

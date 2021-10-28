@@ -7,10 +7,16 @@ EverGrandeCity_PokemonLeague_1F_MapScripts:: @ 82295D2
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
-EverGrandeCity_PokemonLeague_1F_OnTransition: @ 82295DD
+EverGrandeCity_PokemonLeague_1F_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
 	setflag FLAG_LANDMARK_POKEMON_LEAGUE
+	call_if_unset FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor
 	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor::
+	setobjectxyperm LOCALID_GUARD_1, 9, 2
+	setobjectxyperm LOCALID_GUARD_2, 10, 2
+	return
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Nurse:: @ 82295FC
 	setvar VAR_0x800B, LOCALID_NURSE
@@ -34,6 +40,8 @@ EverGrandeCity_PokemonLeague_1F_EventScript_Clerk:: @ 822960A
 @ Its assumed the player has the remaining badges
 EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	lockall
+	compare VAR_TEMP_2, 1
+	goto_if_eq EverGrandeCity_PokemonLeague_1F_EventScriptSwitchTrainerMsg
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_0, 11
 	call_if_ge EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromRight
@@ -46,6 +54,7 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	delay 120
 	goto_if_unset FLAG_BADGE06_GET, EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges
 	closemessage
+	setvar VAR_TEMP_2, 1
 	applymovement LOCALID_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
 	applymovement LOCALID_GUARD_2, EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay
 	waitmovement 0
@@ -60,6 +69,10 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard:: @ 8229636
 	setflag FLAG_ENTERED_ELITE_FOUR
 	releaseall
 	end
+
+EverGrandeCity_PokemonLeague_1F_EventScriptSwitchTrainerMsg:
+	goto_if_set FLAG_SYS_GAME_CLEAR, EverGrandeCity_PokemonLeague_1F_EventScriptGoForthChampion
+	goto EverGrandeCity_PokemonLeague_1F_EventScript_GoForthFacePlayer
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Rematches::
 	message EverGrandeCity_PokemonLeague_1F_Text_ChooseFormat
@@ -94,21 +107,29 @@ EverGrandeCity_PokemonLeague_1F_EventScript_SetDoublesLegendaries::
 	goto EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards
 
 EverGrandeCity_PokemonLeague_1F_EventScriptMoveGuards::
+	setvar VAR_TEMP_2, 1
 	closemessage
 	applymovement LOCALID_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
 	applymovement LOCALID_GUARD_2, EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay
 	waitmovement 0
 	delay 10
 	playfanfare MUS_OBTAIN_BADGE
+EverGrandeCity_PokemonLeague_1F_EventScriptGoForthChampion2::
 	message EverGrandeCity_PokemonLeague_1F_Text_GoForthChampion
 	waitmessage
 	waitfanfare
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	copyobjectxytoperm LOCALID_GUARD_1
 	copyobjectxytoperm LOCALID_GUARD_2
-	setflag FLAG_ENTERED_ELITE_FOUR
 	releaseall
 	end
+
+EverGrandeCity_PokemonLeague_1F_EventScriptGoForthChampion::
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	goto EverGrandeCity_PokemonLeague_1F_EventScriptGoForthChampion2
 
 EverGrandeCity_PokemonLeague_1F_EventScript_PlayerMoveToFrontFromRight:: @ 8229698
 	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_PokemonLeague_1F_Movement_MoveToFrontFromRight
@@ -127,6 +148,8 @@ EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges:: @ 82296AE
 	end
 
 EverGrandeCity_PokemonLeague_1F_EventScript_GoForth:: @ 82296BB
+	compare VAR_TEMP_2, 1
+	goto_if_eq EverGrandeCity_PokemonLeague_1F_EventScript_GoForthFacePlayer
 	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
@@ -134,12 +157,19 @@ EverGrandeCity_PokemonLeague_1F_EventScript_GoForth:: @ 82296BB
 	waitmovement 0
 	delay 10
 	playfanfare MUS_OBTAIN_BADGE
+	setvar VAR_TEMP_2, 1
+EverGrandeCity_PokemonLeague_1F_EventScript_GoForth2::
 	msgbox EverGrandeCity_PokemonLeague_1F_Text_GoForth, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	releaseall
 	end
+
+EverGrandeCity_PokemonLeague_1F_EventScript_GoForthFacePlayer::
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	goto EverGrandeCity_PokemonLeague_1F_EventScript_GoForth2
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Exit::
 	releaseall

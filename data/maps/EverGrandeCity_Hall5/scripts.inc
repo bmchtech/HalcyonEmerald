@@ -9,4 +9,3 @@ EverGrandeCity_Hall5_OnWarp: @ 82295C3
 EverGrandeCity_Hall5_EventScript_TurnPlayerNorth:: @ 82295CD
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
-

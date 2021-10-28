@@ -2426,7 +2426,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_PC_TUTOR_SET_1:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 20;
+            task->tNumItems = 21;
             task->tLeft = 17;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2440,7 +2440,7 @@ void ShowScrollableMultichoice(void)
         case SCROLL_MULTI_PC_TUTOR_SET_5:
         case SCROLL_MULTI_PC_TUTOR_SET_6:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 18;
+            task->tNumItems = 19;
             task->tLeft = 17;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2712,6 +2712,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_PsychUp,
         gText_FocusEnergy,
         gText_Spikes,
+        gText_Infestation,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_2] = 
@@ -2733,6 +2734,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Swagger,
         gText_PinMissile,
         gText_MudShot,
+        gText_Agility,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_3] = 
@@ -2754,6 +2756,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_RockBlast,
         gText_SoftBoiled,
         gText_AuroraBeam,
+        gText_Teleport,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_4] = 
@@ -2775,6 +2778,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_CrossPoison,
         gText_WeatherBall,
         gText_AirSlash,
+        gText_StompingTantrum,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_5] = 
@@ -2796,6 +2800,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_DynamicPunch,
         gText_HelpingHand,
         gText_ToxicSpikes,
+        gText_HighHorsepower,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_6] = 
@@ -2817,6 +2822,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ElectricTerrain,
         gText_MistyTerrain,
         gText_PsychicTerrain,
+        gText_PowerUpPunch,
         gText_Exit
     },
     [SCROLL_MULTI_PC_TUTOR_SET_7] = 
@@ -3529,7 +3535,8 @@ static const u16 sPokemonCenter_TutorMoves1[] =
 	MOVE_HONE_CLAWS,
 	MOVE_PSYCH_UP,
     MOVE_FOCUS_ENERGY,
-    MOVE_SPIKES
+    MOVE_SPIKES,
+    MOVE_INFESTATION
 };
 
 static const u16 sPokemonCenter_TutorMoves2[] =
@@ -3550,7 +3557,8 @@ static const u16 sPokemonCenter_TutorMoves2[] =
 	MOVE_MAGNET_RISE,
 	MOVE_SWAGGER,
 	MOVE_PIN_MISSILE,
-	MOVE_MUD_SHOT
+	MOVE_MUD_SHOT,
+    MOVE_AGILITY
 };
 
 static const u16 sPokemonCenter_TutorMoves3[] =
@@ -3571,7 +3579,8 @@ static const u16 sPokemonCenter_TutorMoves3[] =
 	MOVE_LEAF_BLADE,
 	MOVE_ROCK_BLAST,
 	MOVE_SOFT_BOILED,
-	MOVE_AURORA_BEAM
+	MOVE_AURORA_BEAM,
+    MOVE_TELEPORT
 };
 
 static const u16 sPokemonCenter_TutorMoves4[] =
@@ -3592,7 +3601,8 @@ static const u16 sPokemonCenter_TutorMoves4[] =
 	MOVE_BLAZE_KICK,
 	MOVE_CROSS_POISON,
 	MOVE_WEATHER_BALL,
-	MOVE_AIR_SLASH
+	MOVE_AIR_SLASH,
+    MOVE_STOMPING_TANTRUM
 };
 
 static const u16 sPokemonCenter_TutorMoves5[] =
@@ -3613,7 +3623,8 @@ static const u16 sPokemonCenter_TutorMoves5[] =
 	MOVE_TRICK,
 	MOVE_DYNAMIC_PUNCH,
 	MOVE_HELPING_HAND,
-	MOVE_TOXIC_SPIKES
+	MOVE_TOXIC_SPIKES,
+    MOVE_HIGH_HORSEPOWER
 };
 
 static const u16 sPokemonCenter_TutorMoves6[] =
@@ -3634,7 +3645,8 @@ static const u16 sPokemonCenter_TutorMoves6[] =
 	MOVE_GRASSY_TERRAIN,
 	MOVE_ELECTRIC_TERRAIN,
 	MOVE_MISTY_TERRAIN,
-	MOVE_PSYCHIC_TERRAIN
+	MOVE_PSYCHIC_TERRAIN,
+    MOVE_POWER_UP_PUNCH
 };
 
 static const u16 sPokemonCenter_TutorMoves7[] =
@@ -3731,6 +3743,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_PsychUpDesc,
         PokemonCenterMoveTutor_Text_FocusEnergyDesc,
         PokemonCenterMoveTutor_Text_SpikesDesc,
+        PokemonCenterMoveTutor_Text_InfestationDesc,
         gText_Exit,
 	};
 	
@@ -3753,6 +3766,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_SwaggerDesc,
         PokemonCenterMoveTutor_Text_PinMissileDesc,
         PokemonCenterMoveTutor_Text_MudShotDesc,
+        PokemonCenterMoveTutor_Text_AgilityDesc,
         gText_Exit,
 	};
 	
@@ -3775,6 +3789,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_RockBlastDesc,
         PokemonCenterMoveTutor_Text_SoftBoiledDesc,
         PokemonCenterMoveTutor_Text_AuroraBeamDesc,
+        PokemonCenterMoveTutor_Text_TeleportDesc,
         gText_Exit,
 	};
 	
@@ -3797,6 +3812,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_CrossPoisonDesc,
         PokemonCenterMoveTutor_Text_WeatherBallDesc,
         PokemonCenterMoveTutor_Text_AirSlashDesc,
+        PokemonCenterMoveTutor_Text_StompingTantrumDesc,
         gText_Exit,
 	};
 	
@@ -3819,6 +3835,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_DynamicPunchDesc,
         PokemonCenterMoveTutor_Text_HelpingHandDesc,
         PokemonCenterMoveTutor_Text_ToxicSpikesDesc,
+        PokemonCenterMoveTutor_Text_HighHorsepowerDesc,
         gText_Exit,
 	};
 	
@@ -3841,6 +3858,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         PokemonCenterMoveTutor_Text_ElectricTerrainDesc,
         PokemonCenterMoveTutor_Text_MistyTerrainDesc,
         PokemonCenterMoveTutor_Text_PsychicTerrainDesc,
+        PokemonCenterMoveTutor_Text_PowerUpPunchDesc,
         gText_Exit,
 	};
 	

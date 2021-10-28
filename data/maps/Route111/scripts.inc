@@ -586,6 +586,9 @@ Route111_EventScript_TrainerHillSign:: @ 81F146C
 
 Route111_EventScript_ChanseyBlob::
 	lockall
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_NORTH
+	call_if_ne Route111_EventScript_PlayerFaceUp
 	applymovement LOCALID_NURSE, Common_Movement_WalkInPlaceFastestUp
 	applymovement LOCALID_CHANSEY, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
@@ -628,7 +631,7 @@ Route111_EventScript_UpgradeVialHideNurse::
 	setvar VAR_POKE_VIAL_MAX_CHARGES, 2
 	setvar VAR_POKE_VIAL_CHARGES, 2
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-	compare VAR_RESULT, DIR_SOUTH
+	compare VAR_RESULT, DIR_NORTH
 	goto_if_eq Route111_EventScript_NurseLeaves2
 	applymovement LOCALID_NURSE, Route111_Movement_NurseLeaves1
 	waitmovement 0
@@ -642,6 +645,11 @@ Route111_EventScript_NurseLeaves2::
 	removeobject LOCALID_NURSE
 	releaseall
 	end
+
+Route111_EventScript_PlayerFaceUp::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	return
 
 Route111_Movement_ChanseyJump:
 	jump_in_place_down
@@ -658,10 +666,6 @@ Route111_Movement_ChanseyEscape:
 	step_end
 
 Route111_Movement_NurseLeaves1:
-	walk_up
-	walk_right
-	walk_right
-	walk_down
 	walk_down
 	walk_down
 	walk_down

@@ -990,6 +990,15 @@
       "var": "VAR_CHANSEY_NURSE_STATE",
       "var_value": "0",
       "script": "Route111_EventScript_ChanseyBlob"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 103,
+      "elevation": 0,
+      "var": "VAR_CHANSEY_NURSE_STATE",
+      "var_value": "0",
+      "script": "Route111_EventScript_ChanseyBlob"
     }
   ],
   "bg_events": [

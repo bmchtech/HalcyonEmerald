@@ -163,13 +163,15 @@ PKMN_Center_Move_Tutor_MoveTutorMenu::
 PKMN_Center_Move_Tutor_MoveList1::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_1
 	setvar VAR_TEMP_E, 0
+	setvar VAR_TEMP_F, 20
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_1
 	setvar VAR_0x8006, 0
-	goto PKMN_Center_Move_Tutor_ChooseMoveSet1
+	goto PKMN_Center_Move_Tutor_ChooseMove
 	
 PKMN_Center_Move_Tutor_MoveList2::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_2
 	setvar VAR_TEMP_E, 1
+	setvar VAR_TEMP_F, 18
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_2
 	setvar VAR_0x8006, 0
 	goto PKMN_Center_Move_Tutor_ChooseMove
@@ -177,6 +179,7 @@ PKMN_Center_Move_Tutor_MoveList2::
 PKMN_Center_Move_Tutor_MoveList3::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_3
 	setvar VAR_TEMP_E, 2
+	setvar VAR_TEMP_F, 18
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_3
 	setvar VAR_0x8006, 0
 	goto PKMN_Center_Move_Tutor_ChooseMove
@@ -184,6 +187,7 @@ PKMN_Center_Move_Tutor_MoveList3::
 PKMN_Center_Move_Tutor_MoveList4::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_4
 	setvar VAR_TEMP_E, 3
+	setvar VAR_TEMP_F, 18
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_4
 	setvar VAR_0x8006, 0
 	goto PKMN_Center_Move_Tutor_ChooseMove
@@ -191,6 +195,7 @@ PKMN_Center_Move_Tutor_MoveList4::
 PKMN_Center_Move_Tutor_MoveList5::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_5
 	setvar VAR_TEMP_E, 4
+	setvar VAR_TEMP_F, 18
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_5
 	setvar VAR_0x8006, 0
 	goto PKMN_Center_Move_Tutor_ChooseMove
@@ -198,6 +203,7 @@ PKMN_Center_Move_Tutor_MoveList5::
 PKMN_Center_Move_Tutor_MoveList6::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_6
 	setvar VAR_TEMP_E, 5
+	setvar VAR_TEMP_F, 18
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_6
 	setvar VAR_0x8006, 0
 	goto PKMN_Center_Move_Tutor_ChooseMove
@@ -205,40 +211,17 @@ PKMN_Center_Move_Tutor_MoveList6::
 PKMN_Center_Move_Tutor_MoveList7::
 	setvar VAR_TEMP_C, SCROLL_MULTI_PC_TUTOR_SET_7
 	setvar VAR_TEMP_E, 6
+	setvar VAR_TEMP_F, 15
 	setvar VAR_0x8004, SCROLL_MULTI_PC_TUTOR_SET_7
 	setvar VAR_0x8006, 0
-	goto PKMN_Center_Move_Tutor_ChooseMoveSet7
+	goto PKMN_Center_Move_Tutor_ChooseMove
 
 PKMN_Center_Move_Tutor_ChooseMove::
     msgbox PKMN_Center_Move_Tutor_Text_WhichMove, MSGBOX_DEFAULT
 	special ShowScrollableMultichoice
 	waitstate
 	copyvar VAR_TEMP_D, VAR_RESULT
-	compare VAR_RESULT 17
-	goto_if_eq PKMN_Center_Move_Tutor_Exit
-	compare VAR_RESULT MULTI_B_PRESSED
-	goto_if_eq PKMN_Center_Move_Tutor_CloseDescriptionWindow
-	goto PKMN_Center_Move_Tutor_ConfirmMoveSelection
-	end
-
-PKMN_Center_Move_Tutor_ChooseMoveSet1::
-    msgbox PKMN_Center_Move_Tutor_Text_WhichMove, MSGBOX_DEFAULT
-	special ShowScrollableMultichoice
-	waitstate
-	copyvar VAR_TEMP_D, VAR_RESULT
-	compare VAR_RESULT 19
-	goto_if_eq PKMN_Center_Move_Tutor_Exit
-	compare VAR_RESULT MULTI_B_PRESSED
-	goto_if_eq PKMN_Center_Move_Tutor_CloseDescriptionWindow
-	goto PKMN_Center_Move_Tutor_ConfirmMoveSelection
-	end
-
-PKMN_Center_Move_Tutor_ChooseMoveSet7::
-    msgbox PKMN_Center_Move_Tutor_Text_WhichMove, MSGBOX_DEFAULT
-	special ShowScrollableMultichoice
-	waitstate
-	copyvar VAR_TEMP_D, VAR_RESULT
-	compare VAR_RESULT 16
+	compare VAR_RESULT, VAR_TEMP_F @ VAR_TEMP_F is set to the ID of the "Exit" option
 	goto_if_eq PKMN_Center_Move_Tutor_Exit
 	compare VAR_RESULT MULTI_B_PRESSED
 	goto_if_eq PKMN_Center_Move_Tutor_CloseDescriptionWindow

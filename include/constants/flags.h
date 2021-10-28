@@ -1298,7 +1298,7 @@
 #define FLAG_ALTERING_CAVE_COMET_SHARD                              0x4E9
 #define FLAG_ALTERING_CAVE_MASTER_BALL_2                            0x4EA
 #define FLAG_DEFEATED_LEAF                                          0x4EB
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
+#define FLAG_LENT_NURSE_SURF                                       0x4EC
 #define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag

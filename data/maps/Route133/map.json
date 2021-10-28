@@ -154,9 +154,41 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route133_EventScript_ItemMaxRevive",
       "flag": "FLAG_ITEM_ROUTE_133_MAX_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "x": 69,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route133_EventScript_Nurse",
+      "flag": "FLAG_LENT_NURSE_SURF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CHANSEY",
+      "x": 70,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route133_EventScript_Blob",
+      "flag": "FLAG_LENT_NURSE_SURF"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

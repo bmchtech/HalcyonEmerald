@@ -3201,6 +3201,7 @@ extern const u8 gText_HoneClaws[];
 extern const u8 gText_PsychUp[];
 extern const u8 gText_FocusEnergy[];
 extern const u8 gText_Spikes[];
+extern const u8 gText_Infestation[];
 extern const u8 gText_Counter[];
 extern const u8 gText_Endeavor[];
 extern const u8 gText_WorrySeed[];
@@ -3218,6 +3219,7 @@ extern const u8 gText_MagnetRise[];
 extern const u8 gText_Swagger[];
 extern const u8 gText_PinMissile[];
 extern const u8 gText_MudShot[];
+extern const u8 gText_Agility[];
 extern const u8 gText_SignalBeam[];
 extern const u8 gText_Gravity[];
 extern const u8 gText_SeedBomb[];
@@ -3235,6 +3237,7 @@ extern const u8 gText_LeafBlade[];
 extern const u8 gText_RockBlast[];
 extern const u8 gText_SoftBoiled[];
 extern const u8 gText_AuroraBeam[];
+extern const u8 gText_Teleport[];
 extern const u8 gText_ThunderPunch[];
 extern const u8 gText_FirePunch[];
 extern const u8 gText_IcePunch[];
@@ -3252,6 +3255,7 @@ extern const u8 gText_BlazeKick[];
 extern const u8 gText_CrossPoison[];
 extern const u8 gText_WeatherBall[];
 extern const u8 gText_AirSlash[];
+extern const u8 gText_StompingTantrum[];
 extern const u8 gText_IronHead[];
 extern const u8 gText_AquaTail[];
 extern const u8 gText_PowerGem[];
@@ -3269,6 +3273,7 @@ extern const u8 gText_Trick[];
 extern const u8 gText_DynamicPunch[];
 extern const u8 gText_HelpingHand[];
 extern const u8 gText_ToxicSpikes[];
+extern const u8 gText_HighHorsepower[];
 extern const u8 gText_Megahorn[];
 extern const u8 gText_AuraSphere[];
 extern const u8 gText_ThroatChop[];
@@ -3286,6 +3291,7 @@ extern const u8 gText_GrassyTerrain[];
 extern const u8 gText_ElectricTerrain[];
 extern const u8 gText_MistyTerrain[];
 extern const u8 gText_PsychicTerrain[];
+extern const u8 gText_PowerUpPunch[];
 extern const u8 gText_DoubleEdge[];
 extern const u8 gText_PlayRough[];
 extern const u8 gText_NastyPlot[];
@@ -3323,6 +3329,7 @@ extern const u8 PokemonCenterMoveTutor_Text_HoneClawsDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_PsychUpDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_FocusEnergyDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_SpikesDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_InfestationDesc[];
 
 // Set 2
 extern const u8 PokemonCenterMoveTutor_Text_CounterDesc[];
@@ -3342,6 +3349,7 @@ extern const u8 PokemonCenterMoveTutor_Text_MagnetRiseDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_SwaggerDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_PinMissileDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_MudShotDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_AgilityDesc[];
 
 // Set 3
 extern const u8 PokemonCenterMoveTutor_Text_SignalBeamDesc[];
@@ -3361,6 +3369,7 @@ extern const u8 PokemonCenterMoveTutor_Text_LeafBladeDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_RockBlastDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_SoftBoiledDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_AuroraBeamDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_TeleportDesc[];
 
 // Set 4
 extern const u8 PokemonCenterMoveTutor_Text_ThunderPunchDesc[];
@@ -3380,6 +3389,7 @@ extern const u8 PokemonCenterMoveTutor_Text_BlazeKickDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_CrossPoisonDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_WeatherBallDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_AirSlashDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_StompingTantrumDesc[];
 
 // Set 5
 extern const u8 PokemonCenterMoveTutor_Text_IronHeadDesc[];
@@ -3399,6 +3409,7 @@ extern const u8 PokemonCenterMoveTutor_Text_TrickDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_DynamicPunchDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_HelpingHandDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_ToxicSpikesDesc[];
+ extern const u8 PokemonCenterMoveTutor_Text_HighHorsepowerDesc[];
 
 // Set 6
 extern const u8 PokemonCenterMoveTutor_Text_MegahornDesc[];
@@ -3418,6 +3429,7 @@ extern const u8 PokemonCenterMoveTutor_Text_GrassyTerrainDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_ElectricTerrainDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_MistyTerrainDesc[];
 extern const u8 PokemonCenterMoveTutor_Text_PsychicTerrainDesc[];
+extern const u8 PokemonCenterMoveTutor_Text_PowerUpPunchDesc[];
 
 // Set 7
 extern const u8 PokemonCenterMoveTutor_Text_DoubleEdgeDesc[];
