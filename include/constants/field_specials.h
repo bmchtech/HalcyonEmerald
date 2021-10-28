@@ -58,7 +58,7 @@
 #define SCROLL_MULTI_HIDDEN_POWER                         28
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
-#define MAX_SCROLL_MULTI_LENGTH 20
+#define MAX_SCROLL_MULTI_LENGTH 21
 
 // Dept Store Floor Numbers
 #define DEPT_STORE_FLOORNUM_B4F       0

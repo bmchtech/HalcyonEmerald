@@ -1928,6 +1928,7 @@ const u8 gText_HoneClaws[] = _("Hone Claws");
 const u8 gText_PsychUp[] = _("Psych Up");
 const u8 gText_FocusEnergy[] = _("Focus Energy");
 const u8 gText_Spikes[] = _("Spikes");
+const u8 gText_Infestation[] = _("Infestation");
 
 // Unlocked after beating Brawly
 const u8 gText_Counter[] = _("Counter");
@@ -1947,6 +1948,7 @@ const u8 gText_MagnetRise[] = _("Magnet Rise");
 const u8 gText_Swagger[] = _("Swagger");
 const u8 gText_PinMissile[] = _("Pin Missile");
 const u8 gText_MudShot[] = _("Mud Shot");
+const u8 gText_Agility[] = _("Agility");
 
 // Unlocked after beating Wattson
 const u8 gText_SignalBeam[] = _("Signal Beam");
@@ -1966,6 +1968,7 @@ const u8 gText_LeafBlade[] = _("Leaf Blade");
 const u8 gText_RockBlast[] = _("Rock Blast");
 const u8 gText_SoftBoiled[] = _("Soft-Boiled");
 const u8 gText_AuroraBeam[] = _("Aurora Beam");
+const u8 gText_Teleport[] = _("Teleport");
 
 // Unlocked after beating Flannery
 const u8 gText_FirePunch[] = _("Fire Punch");
@@ -1985,6 +1988,7 @@ const u8 gText_BlazeKick[] = _("Blaze Kick");
 const u8 gText_CrossPoison[] = _("Cross Poison");
 const u8 gText_WeatherBall[] = _("Weather Ball");
 const u8 gText_AirSlash[] = _("Air Slash");
+const u8 gText_StompingTantrum[] = _("Stomping Tantrum");
 
 // Unlocked after beating Norman
 const u8 gText_IronHead[] = _("Iron Head");
@@ -2004,6 +2008,7 @@ const u8 gText_Trick[] = _("Trick");
 const u8 gText_DynamicPunch[] = _("Dynamic Punch");
 const u8 gText_HelpingHand[] = _("Helping Hand");
 const u8 gText_ToxicSpikes[] = _("Toxic Spikes");
+const u8 gText_HighHorsepower[] = _("High Horsepower");
 
 // Unlocked after beating Winona
 const u8 gText_Megahorn[] = _("Megahorn");
@@ -2023,6 +2028,7 @@ const u8 gText_GrassyTerrain[] = _("Grassy Terrain");
 const u8 gText_ElectricTerrain[] = _("Electric Terrain");
 const u8 gText_MistyTerrain[] = _("Misty Terrain");
 const u8 gText_PsychicTerrain[] = _("Psychic Terrain");
+const u8 gText_PowerUpPunch[] = _("Power-Up Punch");
 
 // Unlocked after beating Tate & Liza
 const u8 gText_DoubleEdge[] = _("Double-Edge");

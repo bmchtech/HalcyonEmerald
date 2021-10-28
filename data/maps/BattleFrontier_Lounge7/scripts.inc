@@ -570,6 +570,11 @@ PokemonCenterMoveTutor_Text_SpikesDesc::
 	.string "hurt a foe\n"
 	.string "switching in.$"
 
+PokemonCenterMoveTutor_Text_InfestationDesc::
+	.string "Infests and\n"
+	.string "attacks the foe\n"
+	.string "for 2 to 5 turns.$"
+
 @ Set 2
 PokemonCenterMoveTutor_Text_CounterDesc::
 	.string "Retaliates any\n"
@@ -655,6 +660,11 @@ PokemonCenterMoveTutor_Text_MudShotDesc::
 	.string "Hurls mud at the\n"
 	.string "target, reducing\n"
 	.string "its Speed stat.$"
+
+PokemonCenterMoveTutor_Text_AgilityDesc::
+	.string "Relaxes the body\n"
+	.string "to sharply boost\n"
+	.string "Speed.$"
 
 @ Set 3
 PokemonCenterMoveTutor_Text_SignalBeamDesc::
@@ -742,6 +752,11 @@ PokemonCenterMoveTutor_Text_AuroraBeamDesc::
 	.string "colored beam that\n"
 	.string "may lower Attack.$"
 
+PokemonCenterMoveTutor_Text_TeleportDesc::
+	.string "A psychic move\n"
+	.string "for fleeing from\n"
+	.string "battle instantly.$"
+
 @ Set 4
 PokemonCenterMoveTutor_Text_ThunderPunchDesc::
 	.string "An electrified\n"
@@ -827,6 +842,11 @@ PokemonCenterMoveTutor_Text_AirSlashDesc::
 	.string "Cuts with a blade\n"
 	.string "of air. May also\n"
 	.string "cause flinching.$"
+
+PokemonCenterMoveTutor_Text_StompingTantrumDesc::
+	.string "Stomps around\n"
+	.string "angrily. Stronger\n"
+	.string "after a failure.$"
 
 @ Set 5
 PokemonCenterMoveTutor_Text_IronHeadDesc::
@@ -914,6 +934,11 @@ PokemonCenterMoveTutor_Text_ToxicSpikesDesc::
 	.string "poison a foe\n"
 	.string "switching in.$"
 
+PokemonCenterMoveTutor_Text_HighHorsepowerDesc::
+	.string "Slams hard into\n"
+	.string "the foe with its\n"
+	.string "entire body.$"
+
 @ Set 6
 PokemonCenterMoveTutor_Text_MegahornDesc::
 	.string "A brutal ramming\n"
@@ -999,6 +1024,11 @@ PokemonCenterMoveTutor_Text_PsychicTerrainDesc::
 	.string "Protects Pokémon\n"
 	.string "on the ground from\n"
 	.string "priority moves.$"
+
+PokemonCenterMoveTutor_Text_PowerUpPunchDesc::
+	.string "A hard punch that\n"
+	.string "raises the user's\n"
+	.string "Attack.$"
 
 @ Set 7
 PokemonCenterMoveTutor_Text_DoubleEdgeDesc::
