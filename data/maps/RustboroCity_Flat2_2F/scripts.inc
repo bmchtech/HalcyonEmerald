@@ -2,17 +2,7 @@
 .set LOCALID_HIKER, 4
 
 RustboroCity_Flat2_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, RustboroCity_Flat2_2F_OnLoad
 	.byte 0
-
-RustboroCity_Flat2_2F_OnLoad::
-	call_if_set FLAG_ITEM_RUSTBORO_FLOAT_STONE, RustboroCity_Flat2_2F_HideAceShowHiker
-	end
-
-RustboroCity_Flat2_2F_HideAceShowHiker::
-	removeobject LOCALID_ACE
-	addobject LOCALID_HIKER
-	end
 
 RustboroCity_Flat2_2F_EventScript_OldMan:: @ 8215FD8
 	msgbox RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays, MSGBOX_NPC
@@ -43,6 +33,7 @@ RustboroCity_Flat2_2F_EventScript_GiveFloatStone::
 	giveitem ITEM_FLOAT_STONE
 	msgbox RustboroCity_Flat2_2F_Text_PokemonHoldFloatStone, MSGBOX_DEFAULT
 	setflag FLAG_ITEM_RUSTBORO_FLOAT_STONE
+	clearflag FLAG_HIDE_RUSTBORO_HIKER
 	release
 	end
 
