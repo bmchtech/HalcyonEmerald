@@ -8727,6 +8727,7 @@ static const struct LevelUpMove sWormadamPlantLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(41, MOVE_ATTRACT),
 	LEVEL_UP_MOVE(44, MOVE_PSYCHIC),
 	LEVEL_UP_MOVE(47, MOVE_BUG_BUZZ),
+    LEVEL_UP_MOVE(50, MOVE_RECOVER),
 	LEVEL_UP_END
 };
 
@@ -19551,6 +19552,7 @@ static const struct LevelUpMove sWormadamSandyCloakLevelUpLearnset[] = {
     #endif
     LEVEL_UP_MOVE(47, MOVE_FISSURE),
     LEVEL_UP_MOVE(47, MOVE_BUG_BUZZ),
+    LEVEL_UP_MOVE(50, MOVE_RECOVER),
     LEVEL_UP_END
 };
 
@@ -19575,6 +19577,7 @@ static const struct LevelUpMove sWormadamTrashCloakLevelUpLearnset[] = {
     LEVEL_UP_MOVE(44, MOVE_PSYCHIC),
     LEVEL_UP_MOVE(47, MOVE_IRON_HEAD),
     LEVEL_UP_MOVE(47, MOVE_BUG_BUZZ),
+    LEVEL_UP_MOVE(50, MOVE_RECOVER),
     LEVEL_UP_END
 };
 
