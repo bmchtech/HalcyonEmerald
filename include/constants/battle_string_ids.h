@@ -594,10 +594,13 @@
 #define STRINGID_ATTACKWEAKENEDBSTRONGWINDS           590
 #define STRINGID_STUFFCHEEKSCANTSELECT                591
 #define STRINGID_PKMNREVERTEDTOPRIMAL                 592
-#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER        593
-#define STRINGID_PLAYERPAIDPRIZEMONEY                 594
+#define STRINGID_BUTPOKEMONCANTUSETHEMOVE             593
+#define STRINGID_BUTHOOPACANTUSEIT                    594
+#define STRINGID_BROKETHROUGHPROTECTION               595
+#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER        596
+#define STRINGID_PLAYERPAIDPRIZEMONEY                 597
 
-#define BATTLESTRINGS_COUNT                           594
+#define BATTLESTRINGS_COUNT                           598
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
