@@ -78,7 +78,7 @@ void SetSaveBlocksPointers(u16 offset)
 {
     struct SaveBlock1** sav1_LocalVar = &gSaveBlock1Ptr;
 
-    offset = (offset + Random()) & (SAVEBLOCK_MOVE_RANGE - 4);
+    offset = 0;
 
     gSaveBlock2Ptr = (void*)(&gSaveblock2) + offset;
     *sav1_LocalVar = (void*)(&gSaveblock1) + offset;
@@ -107,11 +107,6 @@ void MoveSaveBlocks_ResetHeap(void)
     saveBlock1Copy = (struct SaveBlock1 *)(gHeap + sizeof(struct SaveBlock2));
     pokemonStorageCopy = (struct PokemonStorage *)(gHeap + sizeof(struct SaveBlock2) + sizeof(struct SaveBlock1));
 
-    // backup the saves.
-    *saveBlock2Copy = *gSaveBlock2Ptr;
-    *saveBlock1Copy = *gSaveBlock1Ptr;
-    *pokemonStorageCopy = *gPokemonStoragePtr;
-
     // change saveblocks' pointers
     // argument is a sum of the individual trainerId bytes
     SetSaveBlocksPointers(
@@ -119,11 +114,6 @@ void MoveSaveBlocks_ResetHeap(void)
       saveBlock2Copy->playerTrainerId[1] +
       saveBlock2Copy->playerTrainerId[2] +
       saveBlock2Copy->playerTrainerId[3]);
-
-    // restore saveblock data since the pointers changed
-    *gSaveBlock2Ptr = *saveBlock2Copy;
-    *gSaveBlock1Ptr = *saveBlock1Copy;
-    *gPokemonStoragePtr = *pokemonStorageCopy;
 
     // heap was destroyed in the copying process, so reset it
     InitHeap(gHeap, HEAP_SIZE);
@@ -133,7 +123,7 @@ void MoveSaveBlocks_ResetHeap(void)
     gMain.vblankCallback = vblankCB;
 
     // create a new encryption key
-    encryptionKey = (Random() << 16) + (Random());
+    encryptionKey = 0;
     ApplyNewEncryptionKeyToAllEncryptedData(encryptionKey);
     gSaveBlock2Ptr->encryptionKey = encryptionKey;
 }
