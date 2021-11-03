@@ -4718,10 +4718,12 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
          retVal = ((gSaveBlock1Ptr->dexCaught[index] & mask) != 0);
         break;
     case FLAG_SET_SEEN:
-        gSaveBlock1Ptr->dexSeen[index] |= mask;
+        if (nationalDexNo < DEX_FLAGS_NO - 1)
+            gSaveBlock1Ptr->dexSeen[index] |= mask;
         break;
     case FLAG_SET_CAUGHT:
-        gSaveBlock1Ptr->dexCaught[index] |= mask;
+        if (nationalDexNo < DEX_FLAGS_NO - 1)
+            gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     }
 
