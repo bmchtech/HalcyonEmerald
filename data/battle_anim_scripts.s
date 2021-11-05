@@ -1178,7 +1178,7 @@ UTurnVisible:
 Move_CLOSE_COMBAT:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	fadetobg BG_HIGH_SPEED
+	fadetobg BG_HURRICANE
 	waitbgfadeout
 	launchtask AnimTask_StartSlidingBg 0x5 0x4 0x1000 0x0 0x1 0xffff
 	waitbgfadein
