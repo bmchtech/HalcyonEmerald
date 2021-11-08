@@ -3766,7 +3766,7 @@ Route124_Text_DeclanDefeat: @ 82A142C
 	.string "Blue as the sky…$"
 
 Route124_Text_DeclanPostBattle: @ 82A144F
-	.string "I should chat up lady SwimmerS\n"
+	.string "I should chat up lady Swimmers\n"
 	.string "and invite them on a long swim.$"
 
 Route124_Text_IsabellaIntro: @ 82A148E
