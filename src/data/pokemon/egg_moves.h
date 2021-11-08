@@ -170,7 +170,8 @@ const u16 gEggMoves[] = {
         MOVE_SECRET_POWER,
         MOVE_NATURE_POWER,
         MOVE_AFTER_YOU,
-        MOVE_STRENGTH_SAP),
+        MOVE_STRENGTH_SAP,
+        MOVE_LEECH_SEED),
 
     egg_moves(PARAS,
         MOVE_SCREECH,
@@ -3456,8 +3457,7 @@ const u16 gEggMoves[] = {
     egg_moves(GOOMY,
         MOVE_ACID_ARMOR,
         MOVE_IRON_TAIL,
-        MOVE_POISON_TAIL,
-        MOVE_INFESTATION), // New
+        MOVE_POISON_TAIL),
 
     egg_moves(KLEFKI,
         MOVE_SWITCHEROO,
@@ -3501,7 +3501,8 @@ const u16 gEggMoves[] = {
         MOVE_FAKE_OUT,
         MOVE_REVENGE,
         MOVE_HEAT_WAVE,
-        MOVE_POWER_TRIP),
+        MOVE_POWER_TRIP,
+        MOVE_PARTING_SHOT),
 
     egg_moves(POPPLIO,
         MOVE_CHARM,
