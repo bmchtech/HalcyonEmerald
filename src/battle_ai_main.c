@@ -2981,8 +2981,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     if (HOLD_EFFECT_CHOICE(AI_DATA->atkHoldEffect))
     {
         // If AI can't 2HKO foe OR foe can KO AI and is faster, force it to switch
-        if (!CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 2)
-            || (CanAttackerFaintTarget(battlerDef, battlerAtk, AI_THINKING_STRUCT->movesetIndex, 0)
+        if (!CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 2)
+            || (CanTargetFaintAi(battlerDef, battlerAtk)
                 && GetWhoStrikesFirst(battlerDef, battlerAtk, TRUE) == 0))
         {
             score -= 20;
@@ -4620,7 +4620,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_RECHARGE:
-        if (AI_DATA->atkAbility == ABILITY_RAMPAGE && CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
+        if (AI_DATA->atkAbility == ABILITY_RAMPAGE && CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
             score += 4; // No recharge if Rampage attacker KOs the target
         break;
     //case EFFECT_EXTREME_EVOBOOST: // TODO
