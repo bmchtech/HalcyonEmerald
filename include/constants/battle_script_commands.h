@@ -199,7 +199,9 @@
 #define VARIOUS_JUMP_IF_LEAF_GUARD_PROTECTED    126
 #define VARIOUS_SET_ATTACKER_STICKY_WEB_USER    127
 #define VARIOUS_TRY_TO_APPLY_MIMICRY            128
-#define VARIOUS_TRY_ACTIVATE_RAMPAGE            129
+#define VARIOUS_PHOTON_GEYSER_CHECK             129
+#define VARIOUS_SHELL_SIDE_ARM_CHECK            130
+#define VARIOUS_TRY_ACTIVATE_RAMPAGE            131
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
