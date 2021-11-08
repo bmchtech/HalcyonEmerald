@@ -1240,11 +1240,11 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_SWAGGER:
         case EFFECT_FLATTER:
             if (!AI_CanConfuse(battlerAtk, battlerDef, AI_DATA->defAbility, AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove))
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_PARALYZE:
             if (!AI_CanParalyze(battlerAtk, battlerDef, AI_DATA->defAbility, move, AI_DATA->partnerMove))
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_SUBSTITUTE:
             if (gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE || AI_DATA->defAbility == ABILITY_INFILTRATOR)
@@ -1258,7 +1258,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (gStatuses3[battlerDef] & STATUS3_LEECHSEED
              || IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)
              || DoesPartnerHaveSameMoveEffect(AI_DATA->battlerAtkPartner, battlerDef, move, AI_DATA->partnerMove))
-                score -= 10;
+                score -= 20;
             else if (AI_DATA->defAbility == ABILITY_LIQUID_OOZE)
                 score -= 3;
             break;
@@ -1522,13 +1522,14 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 6;
             break;
         case EFFECT_WILL_O_WISP:
-            if (!AI_CanBurn(battlerAtk, battlerDef, AI_DATA->defAbility, AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove))
+            if (!AI_CanBurn(battlerAtk, battlerDef, AI_DATA->defAbility, AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove)
+                 || (AI_DATA->defAbility == ABILITY_FLASH_FIRE))
                 score -= 10;
             break;
         case EFFECT_MEMENTO:
             if (CountUsablePartyMons(battlerAtk) == 0 || DoesPartnerHaveSameMoveEffect(AI_DATA->battlerAtkPartner, battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
-            else if (gBattleMons[battlerDef].statStages[STAT_ATK] == MIN_STAT_STAGE && gBattleMons[battlerDef].statStages[STAT_SPATK] == MIN_STAT_STAGE)
+            else if (!ShouldLowerStat(battlerDef, AI_DATA->defAbility, STAT_ATK) || !ShouldLowerStat(battlerDef, AI_DATA->defAbility, STAT_SPATK))
                 score -= 10;
             break;
         case EFFECT_FOLLOW_ME:
@@ -2124,19 +2125,19 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_GRASSY_TERRAIN:
             if (PartnerMoveEffectIsTerrain(AI_DATA->battlerAtkPartner, AI_DATA->partnerMove) || gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_ELECTRIC_TERRAIN:
             if (PartnerMoveEffectIsTerrain(AI_DATA->battlerAtkPartner, AI_DATA->partnerMove) || gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_PSYCHIC_TERRAIN:
             if (PartnerMoveEffectIsTerrain(AI_DATA->battlerAtkPartner, AI_DATA->partnerMove) || gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_MISTY_TERRAIN:
             if (PartnerMoveEffectIsTerrain(AI_DATA->battlerAtkPartner, AI_DATA->partnerMove) || gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
-                score -= 10;
+                score -= 20;
             break;
         case EFFECT_PLEDGE:
             if (isDoubleBattle && gBattleMons[AI_DATA->battlerAtkPartner].hp > 0)
@@ -2701,7 +2702,8 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 case ABILITY_FLASH_FIRE:
                     if (moveType == TYPE_FIRE
                       && HasMoveWithType(battlerAtkPartner, TYPE_FIRE)
-                      && !(gBattleResources->flags->flags[battlerAtkPartner] & RESOURCE_FLAG_FLASH_FIRE))
+                      && !(gBattleResources->flags->flags[battlerAtkPartner] & RESOURCE_FLAG_FLASH_FIRE)
+                      && atkPartnerHoldEffect != HOLD_EFFECT_MEGA_STONE) // Don't use fire move on ally's pre-mega Houndoom
                     {
                         RETURN_SCORE_PLUS(1);
                     }

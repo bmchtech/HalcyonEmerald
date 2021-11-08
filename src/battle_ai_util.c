@@ -1608,6 +1608,15 @@ bool32 ShouldLowerStat(u8 battler, u16 battlerAbility, u8 stat)
          || battlerAbility == ABILITY_WHITE_SMOKE
          || battlerAbility == ABILITY_FULL_METAL_BODY)
             return FALSE;
+
+        if (stat == STAT_ATK && (battlerAbility == ABILITY_HYPER_CUTTER || battlerAbility == ABILITY_DEFIANT))
+            return FALSE;
+
+        if (stat == STAT_DEF && battlerAbility == ABILITY_BIG_PECKS)
+            return FALSE;
+
+        if (stat == STAT_SPATK && battlerAbility == ABILITY_COMPETITIVE)
+            return FALSE;
             
         return TRUE;
     }
@@ -1680,7 +1689,7 @@ bool32 ShouldLowerAttack(u8 battlerAtk, u8 battlerDef, u16 defAbility)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_WHITE_SMOKE
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_HYPER_CUTTER)
         return TRUE;
     return FALSE;
@@ -1696,7 +1705,7 @@ bool32 ShouldLowerDefense(u8 battlerAtk, u8 battlerDef, u16 defAbility)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_WHITE_SMOKE
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_BIG_PECKS)
         return TRUE;
     return FALSE;
@@ -1710,7 +1719,7 @@ bool32 ShouldLowerSpeed(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (IsAiFaster(AI_CHECK_SLOWER)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_WHITE_SMOKE)
         return TRUE;
     return FALSE;
@@ -1725,7 +1734,7 @@ bool32 ShouldLowerSpAtk(u8 battlerAtk, u8 battlerDef, u16 defAbility)
       && HasMoveWithSplit(battlerDef, SPLIT_SPECIAL)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_WHITE_SMOKE)
         return TRUE;
     return FALSE;
@@ -1740,7 +1749,7 @@ bool32 ShouldLowerSpDef(u8 battlerAtk, u8 battlerDef, u16 defAbility)
       && HasMoveWithSplit(battlerAtk, SPLIT_SPECIAL)
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_WHITE_SMOKE)
         return TRUE;
     return FALSE;
@@ -1754,7 +1763,7 @@ bool32 ShouldLowerAccuracy(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_WHITE_SMOKE
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_KEEN_EYE)
         return TRUE;
     return FALSE;
@@ -1768,7 +1777,7 @@ bool32 ShouldLowerEvasion(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
-      //&& defAbility != ABILITY_FULL_METAL_BODY
+      && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_WHITE_SMOKE)
         return TRUE;
     return FALSE;
@@ -2703,7 +2712,8 @@ static bool32 AI_CanBeParalyzed(u8 battler, u16 ability)
 bool32 AI_CanParalyze(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, u16 partnerMove)
 {
     if (!AI_CanBeParalyzed(battlerDef, defAbility)
-      || AI_GetMoveEffectiveness(move, battlerAtk, battlerDef) == AI_EFFECTIVENESS_x0
+      || (move == MOVE_THUNDER_WAVE && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GROUND) 
+          || defAbility == ABILITY_VOLT_ABSORB || defAbility == ABILITY_MOTOR_DRIVE || AI_IsAbilityOnSide(battlerDef, ABILITY_LIGHTNING_ROD)))
       || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))
@@ -2763,7 +2773,6 @@ bool32 ShouldBurnSelf(u8 battler, u16 ability)
 bool32 AI_CanBurn(u8 battlerAtk, u8 battlerDef, u16 defAbility, u8 battlerAtkPartner, u16 move, u16 partnerMove)
 {
     if (!AI_CanBeBurned(battlerDef, defAbility)
-      || AI_GetMoveEffectiveness(move, battlerAtk, battlerDef) == AI_EFFECTIVENESS_x0
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
     {
@@ -3334,6 +3343,7 @@ static const u16 sRecycleEncouragedItems[] =
     ITEM_MICLE_BERRY,
     ITEM_CUSTAP_BERRY,
     ITEM_MENTAL_HERB,
+    ITEM_BERRY_JUICE,
     #ifdef ITEM_EXPANSION
     ITEM_FOCUS_SASH,
     #endif
@@ -3365,9 +3375,10 @@ void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score)
     if (GetHealthPercentage(battlerAtk) < 80 && AI_RandLessThan(128))
         return;
 
-    if(gBattleMons[battlerDef].status1 & STATUS1_SLEEP)
-            *score += 5;
-    
+    // Set up on sleeping foe, but don't go too far
+    if((gBattleMons[battlerDef].status1 & STATUS1_SLEEP) && gBattleMons[battlerAtk].statStages[statId] < STAT_UP_2_STAGE)
+        *score += 5;
+
     switch (statId)
     {
     case STAT_ATK:
