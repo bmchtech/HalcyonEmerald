@@ -387,7 +387,8 @@ PetalburgCity_Gym_EventScript_SetSingles::
 	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq PetalburgCity_Gym_EventScript_NormanSinglesRematch
-	trainerbattle_single TRAINER_NORMAN_4, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_NORMAN_4, PetalburgCity_Gym_Text_NormanRematchDefeat
+	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
@@ -395,23 +396,25 @@ PetalburgCity_Gym_EventScript_SetDoubles::
 	msgbox PetalburgCity_Gym_Text_NormanAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq PetalburgCity_Gym_EventScript_NormanDoublesRematch
-	trainerbattle_double TRAINER_NORMAN_5, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_NORMAN_5, PetalburgCity_Gym_Text_NormanRematchDefeat
+	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_NormanSinglesRematch::
-	trainerbattle_single TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_NORMAN_2, PetalburgCity_Gym_Text_NormanRematchDefeat
+	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_NormanDoublesRematch::
-	trainerbattle_double TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons, PetalburgCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_NORMAN_3, PetalburgCity_Gym_Text_NormanRematchDefeat
+	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
 PetalburgCity_Gym_EventScript_AlreadyRematched::
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_NORMAN
 	releaseall
 	end
 
