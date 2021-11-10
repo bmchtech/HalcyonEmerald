@@ -6969,6 +6969,8 @@ case ITEMEFFECT_KINGSROCK:
         switch (atkHoldEffect)
         {
         case HOLD_EFFECT_FLINCH:
+            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_SERENE_GRACE)
+		atkHoldEffectParam *= 2};
             if (gBattleMoveDamage != 0  // Need to have done damage
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && TARGET_TURN_DAMAGED
