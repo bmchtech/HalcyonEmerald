@@ -1255,7 +1255,7 @@
 #define FLAG_DEFEATED_LANDORUS                                      0x4BE
 #define FLAG_DEFEATED_KYUREM                                        0x4BF
 #define FLAG_DEFEATED_KELDEO                                        0x4C0
-#define FLAG_DEFEATED_MELOETTA                                      0x4C1
+#define FLAG_RECEIVED_MELOETTA                                      0x4C1
 #define FLAG_DEFEATED_GENESECT                                      0x4C2
 #define FLAG_DEFEATED_XERNEAS                                       0x4C3
 #define FLAG_DEFEATED_YVELTAL                                       0x4C4

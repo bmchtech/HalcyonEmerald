@@ -378,6 +378,7 @@ PKMN_Center_Mystery_Gift_EventScript_TakeCare::
 	switch VAR_TEMP_1
 	case SPECIES_GRENINJA_BATTLE_BOND, PKMN_Center_EventScript_SetflagGreninja
 	case SPECIES_MAGEARNA, PKMN_Center_EventScript_SetflagMagearna
+	case SPECIES_MELOETTA, PKMN_Center_EventScript_SetflagMeloetta
 	releaseall
 	end
 
@@ -388,6 +389,11 @@ PKMN_Center_EventScript_SetflagGreninja::
 
 PKMN_Center_EventScript_SetflagMagearna::
 	setflag FLAG_RECEIVED_MAGEARNA
+	releaseall
+	end
+
+PKMN_Center_EventScript_SetflagMeloetta::
+	setflag FLAG_RECEIVED_MELOETTA
 	releaseall
 	end
 
