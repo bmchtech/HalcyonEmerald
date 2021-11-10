@@ -213,7 +213,8 @@ DewfordTown_Gym_EventScript_SetSingles::
 	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq DewfordTown_Gym_EventScript_BrawlySinglesRematch
-	trainerbattle_single TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyRematchDefeat
+	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 
@@ -221,23 +222,25 @@ DewfordTown_Gym_EventScript_SetDoubles::
 	msgbox DewfordTown_Gym_Text_BrawlyAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq DewfordTown_Gym_EventScript_BrawlyDoublesRematch
-	trainerbattle_double TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyRematchDefeat
+	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_BrawlySinglesRematch::
-	trainerbattle_single TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyRematchDefeat
+	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDoublesRematch::
-	trainerbattle_double TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons, DewfordTown_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyRematchDefeat
+	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 
 DewfordTown_Gym_EventScript_AlreadyRematched::
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_BRAWLY
 	releaseall
 	end
 

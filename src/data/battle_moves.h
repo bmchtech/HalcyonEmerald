@@ -8692,7 +8692,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_RELIC_SONG] =
     {
         .effect = EFFECT_RELIC_SONG,
-        .power = 75,
+        .power = 85,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 10,

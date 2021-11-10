@@ -80,7 +80,8 @@ FortreeCity_Gym_EventScript_SetSingles::
 	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaSinglesRematch
-	trainerbattle_single TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
@@ -88,23 +89,25 @@ FortreeCity_Gym_EventScript_SetDoubles::
 	msgbox FortreeCity_Gym_Text_WinonaAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq FortreeCity_Gym_EventScript_WinonaDoublesRematch
-	trainerbattle_double TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaSinglesRematch::
-	trainerbattle_single TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_WinonaDoublesRematch::
-	trainerbattle_double TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaPreRematch, FortreeCity_Gym_Text_WinonaRematchDefeat, FortreeCity_Gym_Text_WinonaRematchNeedTwoMons, FortreeCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 
 FortreeCity_Gym_EventScript_AlreadyRematched::
 	msgbox FortreeCity_Gym_Text_WinonaPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WINONA
 	releaseall
 	end
 

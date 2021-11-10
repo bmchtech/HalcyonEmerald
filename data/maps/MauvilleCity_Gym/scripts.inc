@@ -159,7 +159,8 @@ MauvilleCity_Gym_EventScript_SetSingles::
 	msgbox MauvilleCity_Gym_Text_WattsonAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_Gym_EventScript_WattsonSinglesRematch
-	trainerbattle_single TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WATTSON
 	releaseall
 	end
 
@@ -167,23 +168,25 @@ MauvilleCity_Gym_EventScript_SetDoubles::
 	msgbox MauvilleCity_Gym_Text_WattsonAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_Gym_EventScript_WattsonDoublesRematch
-	trainerbattle_double TRAINER_WATTSON_5, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WATTSON_5, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WATTSON
 	releaseall
 	end
 
 MauvilleCity_Gym_EventScript_WattsonSinglesRematch::
-	trainerbattle_single TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WATTSON
 	releaseall
 	end
 
 MauvilleCity_Gym_EventScript_WattsonDoublesRematch::
-	trainerbattle_double TRAINER_WATTSON_4, MauvilleCity_Gym_Text_WattsonPreRematch, MauvilleCity_Gym_Text_WattsonRematchDefeat, MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons, MauvilleCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_WATTSON_4, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	setflag FLAG_DAILY_REMATCH_WATTSON
 	releaseall
 	end
 
 MauvilleCity_Gym_EventScript_AlreadyRematched::
 	msgbox MauvilleCity_Gym_Text_WattsonPostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_WATTSON
 	releaseall
 	end
 

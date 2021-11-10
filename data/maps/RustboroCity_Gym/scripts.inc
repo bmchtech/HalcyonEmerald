@@ -52,7 +52,8 @@ RustboroCity_Gym_EventScript_SetSingles::
 	msgbox RustboroCity_Gym_Text_RoxanneAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneSinglesRematch
-	trainerbattle_single TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
@@ -60,23 +61,25 @@ RustboroCity_Gym_EventScript_SetDoubles::
 	msgbox RustboroCity_Gym_Text_RoxanneAllowLegends, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_Gym_EventScript_RoxanneDoublesRematch
-	trainerbattle_double TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons, RustboroCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_RoxanneSinglesRematch::
-	trainerbattle_single TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_RoxanneDoublesRematch::
-	trainerbattle_double TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons, RustboroCity_Gym_EventScript_AlreadyRematched, NO_MUSIC
+	trainerbattle_no_intro TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxanneRematchDefeat
+	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
 RustboroCity_Gym_EventScript_AlreadyRematched::
 	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
-	setflag FLAG_DAILY_REMATCH_ROXANNE
 	releaseall
 	end
 
