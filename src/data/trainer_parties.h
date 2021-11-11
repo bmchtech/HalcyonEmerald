@@ -10012,7 +10012,7 @@ static const struct TrainerMonItemCustomMoves sParty_Norman4[] = { // Singles wi
     .species = SPECIES_MELOETTA,
     .heldItem = ITEM_SHELL_BELL,
     .spread = SPREAD_31_IV_SPATK_SPEED_TIMID,
-    .moves = MOVE_RELIC_SONG, MOVE_PSYSHOCK, MOVE_SHADOW_BALL, MOVE_QUIVER_DANCE
+    .moves = MOVE_HYPER_VOICE, MOVE_PSYSHOCK, MOVE_SHADOW_BALL, MOVE_QUIVER_DANCE
     },
     {
     .lvl = 2,
