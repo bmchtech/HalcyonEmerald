@@ -613,6 +613,7 @@ static u32 GetOpponentMonData(u8 monId, u8 *dst)
         battleMon.spDefense = GetMonData(&gEnemyParty[monId], MON_DATA_SPDEF);
         battleMon.abilityNum = GetMonData(&gEnemyParty[monId], MON_DATA_ABILITY_NUM);
         battleMon.otId = GetMonData(&gEnemyParty[monId], MON_DATA_OT_ID);
+        battleMon.nature = GetMonData(&gEnemyParty[monId], MON_DATA_NATURE);
         GetMonData(&gEnemyParty[monId], MON_DATA_NICKNAME, nickname);
         StringCopy10(battleMon.nickname, nickname);
         GetMonData(&gEnemyParty[monId], MON_DATA_OT_NAME, battleMon.otName);
@@ -872,6 +873,10 @@ static u32 GetOpponentMonData(u8 monId, u8 *dst)
         dst[0] = GetMonData(&gEnemyParty[monId], MON_DATA_TOUGH_RIBBON);
         size = 1;
         break;
+    case REQUEST_NATURE_BATTLE:
+        dst[0] = GetMonData(&gEnemyParty[monId], MON_DATA_NATURE);
+        size = 1;
+        break;
     }
 
     return size;
@@ -957,6 +962,7 @@ static void SetOpponentMonData(u8 monId)
             SetMonData(&gEnemyParty[monId], MON_DATA_SPEED, &battlePokemon->speed);
             SetMonData(&gEnemyParty[monId], MON_DATA_SPATK, &battlePokemon->spAttack);
             SetMonData(&gEnemyParty[monId], MON_DATA_SPDEF, &battlePokemon->spDefense);
+            SetMonData(&gEnemyParty[monId], MON_DATA_NATURE, &battlePokemon->nature);
         }
         break;
     case REQUEST_SPECIES_BATTLE:
@@ -1125,6 +1131,9 @@ static void SetOpponentMonData(u8 monId)
         break;
     case REQUEST_TOUGH_RIBBON_BATTLE:
         SetMonData(&gEnemyParty[monId], MON_DATA_TOUGH_RIBBON, &gBattleResources->bufferA[gActiveBattler][3]);
+        break;
+    case REQUEST_NATURE_BATTLE:
+        SetMonData(&gEnemyParty[monId], MON_DATA_NATURE, &gBattleResources->bufferA[gActiveBattler][3]);
         break;
     }
 }

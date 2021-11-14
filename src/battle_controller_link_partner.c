@@ -490,6 +490,7 @@ static u32 CopyLinkPartnerMonData(u8 monId, u8 *dst)
         battleMon.spDefense = GetMonData(&gPlayerParty[monId], MON_DATA_SPDEF);
         battleMon.abilityNum = GetMonData(&gPlayerParty[monId], MON_DATA_ABILITY_NUM);
         battleMon.otId = GetMonData(&gPlayerParty[monId], MON_DATA_OT_ID);
+        battleMon.nature = GetMonData(&gPlayerParty[monId], MON_DATA_NATURE);
         GetMonData(&gPlayerParty[monId], MON_DATA_NICKNAME, nickname);
         StringCopy10(battleMon.nickname, nickname);
         GetMonData(&gPlayerParty[monId], MON_DATA_OT_NAME, battleMon.otName);
@@ -749,6 +750,10 @@ static u32 CopyLinkPartnerMonData(u8 monId, u8 *dst)
         dst[0] = GetMonData(&gPlayerParty[monId], MON_DATA_TOUGH_RIBBON);
         size = 1;
         break;
+    case REQUEST_NATURE_BATTLE:
+        dst[0] = GetMonData(&gPlayerParty[monId], MON_DATA_NATURE);
+        size = 1;
+        break;
     }
 
     return size;
@@ -825,6 +830,7 @@ static void SetLinkPartnerMonData(u8 monId)
             SetMonData(&gPlayerParty[monId], MON_DATA_SPEED, &battlePokemon->speed);
             SetMonData(&gPlayerParty[monId], MON_DATA_SPATK, &battlePokemon->spAttack);
             SetMonData(&gPlayerParty[monId], MON_DATA_SPDEF, &battlePokemon->spDefense);
+            SetMonData(&gPlayerParty[monId], MON_DATA_NATURE, &battlePokemon->nature);
         }
         break;
     case REQUEST_SPECIES_BATTLE:
@@ -993,6 +999,9 @@ static void SetLinkPartnerMonData(u8 monId)
         break;
     case REQUEST_TOUGH_RIBBON_BATTLE:
         SetMonData(&gPlayerParty[monId], MON_DATA_TOUGH_RIBBON, &gBattleResources->bufferA[gActiveBattler][3]);
+        break;
+    case REQUEST_NATURE_BATTLE:
+        SetMonData(&gPlayerParty[monId], MON_DATA_NATURE, &gBattleResources->bufferA[gActiveBattler][3]);
         break;
     }
 
