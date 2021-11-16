@@ -3336,7 +3336,7 @@ const struct Item gItems[] =
     {
         .name = _("Upgrade"),
         .itemId = ITEM_UPGRADE,
-        .price = 2000,
+        .price = 2100,
         .holdEffect = HOLD_EFFECT_UP_GRADE,
         .description = sUpGradeDesc,
         .pocket = POCKET_ITEMS,

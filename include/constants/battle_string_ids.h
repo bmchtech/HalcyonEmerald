@@ -420,7 +420,7 @@
 #define STRINGID_HURLEDINTOTHEAIR                     416
 #define STRINGID_HELDITEMSLOSEEFFECTS                 417
 #define STRINGID_FELLSTRAIGHTDOWN                     418
-#define STRINGID_TRANSFORMEDINTOWATERTYPE             419
+#define STRINGID_TARGETCHANGEDTYPE                    419
 #define STRINGID_PKMNACQUIREDSIMPLE                   420
 #define STRINGID_EMPTYSTRING5                         421
 #define STRINGID_KINDOFFER                            422
@@ -602,10 +602,17 @@
 #define STRINGID_PASTELVEILPROTECTED                  599
 #define STRINGID_PASTELVEILENTERS                     600
 #define STRINGID_BATTLERTYPECHANGEDTO                 601
-#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER        602
-#define STRINGID_PLAYERPAIDPRIZEMONEY                 603
+#define STRINGID_BOTHCANNOLONGERESCAPE                602
+#define STRINGID_CANTESCAPEDUETOUSEDMOVE              603
+#define STRINGID_PKMNBECAMEWEAKERTOFIRE               604
+#define STRINGID_ABOUTTOUSEPOLTERGEIST                605
+#define STRINGID_CANTESCAPEBECAUSEOFCURRENTMOVE       606
+#define STRINGID_NEUTRALIZINGGASENTERS                607
+#define STRINGID_NEUTRALIZINGGASOVER                  608
+#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER        609
+#define STRINGID_PLAYERPAIDPRIZEMONEY                 610
 
-#define BATTLESTRINGS_COUNT                           604
+#define BATTLESTRINGS_COUNT                           611
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
@@ -841,6 +848,7 @@
 #define B_MSG_SWITCHIN_ASONE            13
 #define B_MSG_SWITCHIN_CURIOUS_MEDICINE 14
 #define B_MSG_SWITCHIN_PASTEL_VEIL      15
+#define B_MSG_SWITCHIN_NEUTRALIZING_GAS 16
 
 // gMentalHerbCureStringIds
 #define B_MSG_MENTALHERBCURE_INFATUATION       0
