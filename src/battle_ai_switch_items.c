@@ -537,7 +537,7 @@ static u32 CalculateHazardDamage(void)
 static u8 PredictFoesMoveType(u32 opposingBattler)
 {
     int i;
-    u16 species = GetMonData(gActiveBattler, MON_DATA_SPECIES);
+    u16 species = gBattleMons[gActiveBattler].species;
     u32 typeDmg1, typeDmg2, typeDmg3, bestTypeDmg = UQ_4_12(1.0);
     u16 *moves = GetMovesArray(opposingBattler);
 
