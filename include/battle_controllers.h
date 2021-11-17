@@ -63,6 +63,7 @@ enum
     REQUEST_CUTE_RIBBON_BATTLE,
     REQUEST_SMART_RIBBON_BATTLE,
     REQUEST_TOUGH_RIBBON_BATTLE,
+    REQUEST_NATURE_BATTLE,
 };
 
 // Special arguments for Battle Controller functions.

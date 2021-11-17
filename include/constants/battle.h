@@ -355,7 +355,8 @@
 #define MOVE_EFFECT_CORE_ENFORCER       0x42
 #define MOVE_EFFECT_THROAT_CHOP         0x43
 #define MOVE_EFFECT_RELIC_SONG          0x44
-#define NUM_MOVE_EFFECTS                0x45
+#define MOVE_EFFECT_TRAP_BOTH           0x45
+#define NUM_MOVE_EFFECTS                0x46
 
 #define MOVE_EFFECT_AFFECTS_USER        0x4000
 #define MOVE_EFFECT_CERTAIN             0x8000

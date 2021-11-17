@@ -4718,11 +4718,11 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
          retVal = ((gSaveBlock1Ptr->dexCaught[index] & mask) != 0);
         break;
     case FLAG_SET_SEEN:
-        if (nationalDexNo < NUM_SPECIES)
+        if (nationalDexNo < POKEMON_SLOTS_NUMBER)
             gSaveBlock1Ptr->dexSeen[index] |= mask;
         break;
     case FLAG_SET_CAUGHT:
-        if (nationalDexNo < NUM_SPECIES)
+        if (nationalDexNo < POKEMON_SLOTS_NUMBER)
             gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     }
