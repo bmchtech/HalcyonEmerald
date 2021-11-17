@@ -3252,11 +3252,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
                     }
                     else if (gBattleMons[gBattlerAttacker].item != 0
-                    #ifdef ITEM_EXPANSION
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY_E_READER
-                    #else
                         || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
-                    #endif
                         || gBattleMons[gBattlerTarget].item == 0)
                     {
                         gBattlescriptCurrInstr++;
@@ -13597,17 +13593,7 @@ static void Cmd_handleballthrow(void)
         else
             catchRate = catchRate + ballAddition;
 
-        #ifdef POKEMON_EXPANSION
-        }
-        #endif
-
-        // catchRate is unsigned, which means that it may potentially overflow if sum is applied directly.
-        if (catchRate < 21 && ballAddition == -20)
-            catchRate = 1;
-        else
-            catchRate = catchRate + ballAddition;
-
-        odds = ((catchRate) * ballMultiplier / 10)
+        odds = (catchRate * ballMultiplier / 10)
             * (gBattleMons[gBattlerTarget].maxHP * 3 - gBattleMons[gBattlerTarget].hp * 2)
             / (3 * gBattleMons[gBattlerTarget].maxHP);
 
@@ -13641,24 +13627,6 @@ static void Cmd_handleballthrow(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = 0;
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-
-            if (gLastUsedItem == ITEM_HEAL_BALL)
-            {
-                MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
-                HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], gBattlerPartyIndexes[gBattlerTarget], STATUS1_ANY, gBattlerTarget);
-                gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
-                SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
-            }
-            if (gLastUsedItem == ITEM_DREAM_BALL) 
-            {   
-                u8 Ability = 2;
-                SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_ABILITY_NUM, &Ability);
-            }  
-            if (gLastUsedItem == ITEM_FRIEND_BALL) 
-            {   
-                u8 Friendship= 200;
-                SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_FRIENDSHIP, &Friendship);
-            }  
         }
         else // mon may be caught, calculate shakes
         {
@@ -13713,16 +13681,16 @@ static void Cmd_handleballthrow(void)
                     gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
                     SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
                 }
-                if (gLastUsedItem == ITEM_DREAM_BALL) // Give Pokemon their Hidden Ability when caught in a Dream Ball
-                {   
+                else if (gLastUsedItem == ITEM_DREAM_BALL) // Give Pokemon their Hidden Ability when caught in a Dream Ball
+                {
                     u8 Ability = 2;
                     SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_ABILITY_NUM, &Ability);
-                }  
-                if (gLastUsedItem == ITEM_FRIEND_BALL)
-                {   
+                }
+                else if (gLastUsedItem == ITEM_FRIEND_BALL)
+                {
                     u8 Friendship= 200;
                     SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_FRIENDSHIP, &Friendship);
-                }                 
+                }
             }
             else // not caught
             {
