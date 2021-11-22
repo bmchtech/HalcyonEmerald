@@ -15779,11 +15779,11 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 60,
         .baseSpDefense = 70,
         #ifdef REBALANCED_VERSION
-            .baseAttack    = 100,
-            .baseSpeed     = 95,
-        #else
             .baseAttack    = 110,
             .baseSpeed     = 105,
+        #else
+            .baseAttack    = 100,
+            .baseSpeed     = 95,
         #endif
         .type1 = TYPE_NORMAL,
         .type2 = TYPE_GRASS,
