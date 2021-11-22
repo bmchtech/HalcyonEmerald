@@ -16043,11 +16043,19 @@ static const struct TrainerMonItemCustomMoves sParty_Pablo4[] = {
     } */
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Brenda[] = { // UNEDITED
+static const struct TrainerMonItemCustomMoves sParty_Brenda[] = {
     {
-    .lvl = 34,
-    .species = SPECIES_GOLDEEN,
-    }
+    .lvl = -3,
+    .species = SPECIES_SEAKING,
+    .spread = SPREAD_31_IV_80_EV,
+    .moves = MOVE_WATERFALL, MOVE_POISON_JAB, MOVE_SOAK, MOVE_MEGAHORN
+    },
+    {
+    .lvl = -3,
+    .species = SPECIES_RAICHU,
+    .spread = SPREAD_31_IV_80_EV,
+    .moves = MOVE_THUNDERBOLT, MOVE_SURF, MOVE_NUZZLE, MOVE_CHARM
+    },
 };
 
 // Route 127
