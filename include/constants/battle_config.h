@@ -12,6 +12,9 @@
     #define GEN_8 5
 #endif
 
+// Mega Evolution settings
+#define B_MEGA_EVO_TURN_ORDER GEN_7 // In Gen7, a Pokémon's Speed after Mega Evolution is used to determine turn order, not its Speed before.
+
 // Calculation settings
 #define B_CRIT_CHANCE               GEN_7 // Chances of a critical hit landing. See CalcCritChanceStage.
 #define B_CRIT_MULTIPLIER           GEN_7 // In Gen6+, critical hits multiply damage by 1.5 instead of 2.
@@ -77,6 +80,7 @@
 #define B_SKILL_SWAP                GEN_7 // In Gen4+, Skill Swap triggers switch-in abilities after use.
 #define B_BRICK_BREAK               GEN_7 // In Gen4+, you can destroy your own side's screens. In Gen 5+, screens are not removed if the target is immune.
 #define B_WISH_HP_SOURCE            GEN_7 // In Gen5+, Wish heals half of the user's max HP instead of the target's.
+#define B_RAMPAGE_CANCELLING        GEN_7 // In Gen5+, a failed Thrash, etc, will cancel except on its last turn.
 
 // Ability settings
 #define B_ABILITY_WEATHER           GEN_3 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move.
@@ -108,6 +112,7 @@
 #define B_HEAVY_BALL_MODIFIER       GEN_7 // In Gen7+, Heavy Ball's ranges change. See Cmd_handleballthrow.
 #define B_DREAM_BALL_MODIFIER       GEN_8 // In Gen8, Dream Ball's catch multiplier is x4 when the target is asleep or has the ability Comatose.
 #define B_SERENE_GRACE_BOOST        GEN_7 // In Gen5+, Serene Grace boosts the added flinch chance of King's Rock and Razor Fang.
+#define B_LEEK_ALWAYS_CRIT          GEN_7 // In Gen6+, if a Farfetch'd or Sirfetch'd holding a Leek use a move with increased Critical Hit ratio, it will always result in a Critical Hit.
 
 // Flag settings
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
