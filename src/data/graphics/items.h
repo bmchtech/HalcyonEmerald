@@ -1792,6 +1792,9 @@ const u32 gItemIconPalette_UtilityUmbrella[] = INCBIN_U32("graphics/items/icon_p
 const u32 gItemIcon_WoodenCrown[] = INCBIN_U32("graphics/items/icons/wooden_crown.4bpp.lz");
 const u32 gItemIconPalette_WoodenCrown[] = INCBIN_U32("graphics/items/icon_palettes/wooden_crown.gbapal.lz");
 
+const u32 gItemIcon_EjectPack[] = INCBIN_U32("graphics/items/icons/eject_pack.4bpp.lz");
+const u32 gItemIconPalette_EjectPack[] = INCBIN_U32("graphics/items/icon_palettes/eject_pack.gbapal.lz");
+
 // Custom Items
 const u32 gItemIcon_TrainingBand[] = INCBIN_U32("graphics/items/icons/focus_sash.4bpp.lz");
 const u32 gItemIconPalette_TrainingBand[] = INCBIN_U32("graphics/items/icon_palettes/training_band.gbapal.lz");

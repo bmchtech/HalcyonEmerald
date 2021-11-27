@@ -8313,6 +8313,8 @@ extern const u32 gItemIcon_UtilityUmbrella[];
 extern const u32 gItemIconPalette_UtilityUmbrella[];
 extern const u32 gItemIcon_WoodenCrown[];
 extern const u32 gItemIconPalette_WoodenCrown[];
+extern const u32 gItemIcon_EjectPack[];
+extern const u32 gItemIconPalette_EjectPack[];
 
 // Custom items
 extern const u32 gItemIcon_TrainingBand[];

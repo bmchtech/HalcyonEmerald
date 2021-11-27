@@ -722,7 +722,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_REINS_OF_UNITY] = {gItemIcon_ReinsOfUnity, gItemIconPalette_ReinsOfUnity},
     [ITEM_RIBBON_SWEET] = {gItemIcon_RibbonSweet, gItemIconPalette_RibbonSweet},
     [ITEM_ROOM_SERVICE] = {gItemIcon_RoomService, gItemIconPalette_RoomService},
-    [ITEM_ROTOM_CATALOGUE] = {gItemIcon_RotomCatalog, gItemIconPalette_RotomCatalog},
+    [ITEM_ROTOM_CATALOG] = {gItemIcon_RotomCatalog, gItemIconPalette_RotomCatalog},
     [ITEM_RUSTED_SHIELD] = {gItemIcon_RustedShield, gItemIconPalette_RustedShield},
     [ITEM_RUSTED_SWORD] = {gItemIcon_RustedSword, gItemIconPalette_RustedSword},
     [ITEM_SHADEROOT_CARROT] = {gItemIcon_ShaderootCarrot, gItemIconPalette_ShaderootCarrot},
@@ -733,6 +733,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_THROAT_SPRAY] = {gItemIcon_ThroatSpray, gItemIconPalette_ThroatSpray},
     [ITEM_UTILITY_UMBRELLA] = {gItemIcon_UtilityUmbrella, gItemIconPalette_UtilityUmbrella},
     [ITEM_WOODEN_CROWN] = {gItemIcon_WoodenCrown, gItemIconPalette_WoodenCrown},
+    [ITEM_EJECT_PACK] = {gItemIcon_EjectPack, gItemIconPalette_EjectPack},
 
     // Custom Items
     [ITEM_TRAINING_BAND] = {gItemIcon_TrainingBand, gItemIconPalette_TrainingBand},
