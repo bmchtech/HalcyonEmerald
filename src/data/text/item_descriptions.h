@@ -3385,3 +3385,148 @@ static const u8 sTrainingBandDesc[] = _(
     "Massively boosts\n"
     "Exp. gain for\n"
     "weaker Pokémon.");
+
+static const u8 sBlunderPolicyDesc[] = _(
+    "Sharply raises\n"
+    "Speed if the\n"
+    "holder misses.");
+
+static const u8 sCatchingCharmDesc[] = _(
+    "Increases the\n"
+    "odds of getting a\n"
+    "critical catch.");
+
+static const u8 sCloverSweetDesc[] = _(
+    "A clover-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sCrackedPotDesc[] = _(
+    "A peculiar pot\n"
+    "that makes certain\n"
+    "Pokémon evolve.");
+
+static const u8 sEjectPackDesc[] = _(
+    "Switches out the\n"
+    "holder if its stats\n"
+    "are lowered.");
+
+static const u8 sExpCharmDesc[] = _(
+    "An odd charm that\n"
+    "boosts all Exp.\n"
+    "gain by 50%.");
+
+static const u8 sFlowerSweetDesc[] = _(
+    "A flower-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sFossilizedBirdDesc[] = _(
+    "The fossil of an\n"
+    "ancient Pokémon that\n"
+    "soared in the sky.");
+
+static const u8 sFossilizedDrakeDesc[] = _(
+    "The fossil of an\n"
+    "ancient Pokémon that\n"
+    "roamed the land.");
+
+static const u8 sFossilizedFishDesc[] = _(
+    "The fossil of an\n"
+    "ancient Pokémon that\n"
+    "lived in the sea.");
+
+static const u8 sGalaricaCuffDesc[] = _(
+    "A cuff made from\n"
+    "Galarica twigs.\n"
+    "Loved by Slowpoke.");
+
+static const u8 sGalaricaWreathDesc[] = _(
+    "A wreath made from\n"
+    "Galarica twigs.\n"
+    "Loved by Slowpoke.");
+
+static const u8 sHeavyDutyBootsDesc[] = _(
+    "These boots prevent\n"
+    "the effects of\n"
+    "traps in battle.");
+
+static const u8 sIcerootCarrotDesc[] = _(
+    "A strange carrot\n"
+    "that grew in a\n"
+    "snowy field.");
+
+static const u8 sLoveSweetDesc[] = _(
+    "A heart-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sReinsOfUnityDesc[] = _(
+    "Reins that unite\n"
+    "Calyrex with its\n"
+    "beloved steed.");
+
+static const u8 sRibbonSweetDesc[] = _(
+    "A ribbon-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sRoomServiceDesc[] = _(
+    "Held item that\n"
+    "lowers speed when\n"
+    "Trick Room is used.");
+
+static const u8 sRotomCatalogDesc[] = _(
+    "A list of devices\n"
+    "used to change\n"
+    "Rotom's form.");
+
+static const u8 sRustedShieldDesc[] = _(
+    "A rusty, worn\n"
+    "shield used by an\n"
+    "ancient hero.");
+
+static const u8 sRustedSwordDesc[] = _(
+    "A rusty, worn\n"
+    "sword used by an\n"
+    "ancient hero.");
+
+static const u8 sShaderootCarrotDesc[] = _(
+    "A strange carrot\n"
+    "that grew in a\n"
+    "gloomy field.");
+
+static const u8 sStarSweetDesc[] = _(
+    "A star-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sStrawberrySweetDesc[] = _(
+    "A strawberry-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sBerrySweetDesc[] = _(
+    "A berry-shaped\n"
+    "sweet that is\n"
+    "loved by Milcery.");
+
+static const u8 sSweetAppleDesc[] = _(
+    "A peculiar apple\n"
+    "that makes certain\n"
+    "Pokémon evolve.");
+
+static const u8 sThroatSprayDesc[] = _(
+    "Raises Sp. Atk when\n"
+    "the holder uses a\n"
+    "sound move.");
+
+static const u8 sUtilityUmbrellaDesc[] = _(
+    "Protects the holder\n"
+    "from the effects of\n"
+    "rain and harsh sun.");
+
+static const u8 sWoodenCrownDesc[] = _(
+    "A mysterious wooden\n"
+    "object. Is it meant\n"
+    "for something?");
