@@ -6374,7 +6374,7 @@ BattleScript_RoarSuccessSwitch::
 	setbyte sSWITCH_CASE, B_SWITCH_NORMAL
 	goto BattleScript_MoveEnd
 BattleScript_RoarSuccessSwitch_Ret:
-	swapattackerwithtarget	@ continuation of RedCardActivates
+	@ continuation of RedCardActivates
 	restoretarget
 	removeitem BS_TARGET
 	setbyte sSWITCH_CASE, B_SWITCH_NORMAL
