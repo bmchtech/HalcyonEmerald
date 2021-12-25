@@ -449,6 +449,10 @@ LittlerootTown_EventScript_PlayersHouseSignFemale::
 	msgbox LittlerootTown_Text_PlayersHouse, MSGBOX_DEFAULT
 	return
 
+LittlerootTown_EventScript_YahahaSign::
+	msgbox LittlerootTown_Text_YahahaYouFoundMe, MSGBOX_SIGN
+	end
+
 LittlerootTown_EventScript_GiveRunningShoesTrigger0::
 	lockall
 	setvar VAR_0x8008, 0
@@ -1070,3 +1074,5 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_Text_YahahaYouFoundMe:
+	.string "YAHAHA! You found me!$"
