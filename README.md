@@ -1,3 +1,14 @@
+# Pokemon Emerald (Salt Patch)
+
+For initial setup:
+```sh
+./build.sh
+```
+
+Subsequent builds for `pkem_salt.gba`:
+```sh
+make -j$(nproc) DDEBUGGING=1
+```
 
 # Pokémon Emerald
 
