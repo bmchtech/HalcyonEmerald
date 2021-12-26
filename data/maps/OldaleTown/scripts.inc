@@ -33,6 +33,11 @@ OldaleTown_EventScript_CitySign::
 	msgbox OldaleTown_Text_CitySign, MSGBOX_SIGN
 	end
 
+OldaleTown_EventScript_MagicSelfTrade::
+	msgbox OldaleTown_Text_MagicSelfTrade, MSGBOX_SIGN
+	goto SCRIPT_SelfTrade_V1
+	end
+
 OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
@@ -405,10 +410,13 @@ OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_Text_MagicSelfTrade:
+	.string "I am a very special sign.$"
+
 SCRIPT_SelfTrade_V1::
 	lock
 	faceplayer
-	msgbox SCRIPT_SelfTrade_Text_IllTradeIfYouWant, MSGBOX_YESNO
+	msgbox SCRIPT_SelfTrade_Text_OfferTrade, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
 	special ChoosePartyMon
@@ -427,7 +435,7 @@ SCRIPT_SelfTrade_V1::
 SCRIPT_SelfTrade_V2::
 	lock
 	faceplayer
-	msgbox SCRIPT_SelfTrade_Text_IllTradeIfYouWant, MSGBOX_YESNO
+	msgbox SCRIPT_SelfTrade_Text_OfferTrade, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
 	special ChoosePartyMon
@@ -448,18 +456,17 @@ SCRIPT_SelfTrade_V2::
 	end
 
 SCRIPT_SelfTrade_DeclineTrade::
-	msgbox SCRIPT_SelfTrade_Text_YouDontWantToThatsOkay, MSGBOX_DEFAULT
+	msgbox SCRIPT_SelfTrade_Text_DeclineTrade, MSGBOX_DEFAULT
 	release
 	end
 
-SCRIPT_SelfTrade_Text_IllTradeIfYouWant:
-	.string "I will help you to\n"
-	.string "trade a pokemon\p"
+SCRIPT_SelfTrade_Text_OfferTrade:
+	.string "I can help you trade a pokemon\n"
 	.string "with yourself!$"
 
 SCRIPT_SelfTrade_Text_ComeBack:
-	.string "Come back anytime.$"
+	.string "Come back any time.$"
 
-SCRIPT_SelfTrade_Text_YouDontWantToThatsOkay:
-	.string "You dont want to?\n"
-        .string "Okay come back anytime$"
+SCRIPT_SelfTrade_Text_DeclineTrade:
+	.string "Having second thoughts?\p"
+        .string "Then why are you still here?$"
