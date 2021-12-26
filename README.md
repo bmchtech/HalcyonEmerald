@@ -1,8 +1,12 @@
 # pokemon emerald (salted version)
 
 ## features
-- Day/Night
-- ...
+- day/night with real time clock
+- battle engine upgrade, item/pokemon expansion
+- tm/hm reusable and replaceable
+- self trading for evolution
+- various minor qol fixes
+
 ## build
 
 For initial setup:
