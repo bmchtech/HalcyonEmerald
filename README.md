@@ -4,8 +4,9 @@
 - day/night with real time clock
 - battle engine upgrade, item/pokemon expansion
 - tm/hm reusable and replaceable
-- self trading for evolution
-- various minor qol fixes
+- ingame helpers like self trading and iv checking
+- improved berry growth mechanics
+- various minor qol and bug fixes
 
 ## build
 
