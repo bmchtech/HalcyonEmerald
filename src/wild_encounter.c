@@ -26,7 +26,7 @@
 #include "constants/layouts.h"
 #include "constants/weather.h"
 
-#if DEBUGGING
+#if MGBA
 #include "printf.h"
 #include "mgba.h"
 #include "data.h"                 // for gSpeciesNames, which maps species number to species name.
@@ -415,7 +415,7 @@ static void CreateWildMon(u16 species, u8 level)
         return;
     }
 
-#if DEBUGGING
+#if MGBA
     mgba_printf(MGBA_LOG_INFO, "%d %s", species, ConvertToAscii(gSpeciesNames[species])); // debug log wild pokemon
 #endif
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
