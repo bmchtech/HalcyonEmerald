@@ -677,7 +677,8 @@ void InitHostRfuGameData(struct RfuGameData *data, u8 activity, bool32 startedAc
     data->compatibility.hasNews = FALSE;
     data->compatibility.hasCard = FALSE;
     data->compatibility.unknown = FALSE;
-    data->compatibility.isChampion = FlagGet(FLAG_IS_CHAMPION);
+    // data->compatibility.isChampion = FlagGet(FLAG_IS_CHAMPION);
+    data->compatibility.isChampion = TRUE; // allow trading with FRLG without being a champion
     data->compatibility.hasNationalDex = IsNationalPokedexEnabled();
     data->compatibility.gameClear = FlagGet(FLAG_SYS_GAME_CLEAR);
 }
