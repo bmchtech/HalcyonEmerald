@@ -36,13 +36,16 @@ else
 EXE :=
 endif
 
+ROM_HACK_NAME	:= pkem_salt
+ROM_HACK_VER 	:= v0.1a3
+
 TITLE       	:= POKEMON EMER
 GAME_CODE   	:= BPEE
-ROM_HACK_VER 	:= v0.1a3
-ROM_NAME_BASE	:= pkem_salt_$(ROM_HACK_VER)
 MAKER_CODE  	:= 01
 REVISION    	:= 0
 MODERN      	?= 0
+
+ROM_NAME_BASE	:= $(ROM_HACK_NAME)_$(ROM_HACK_VER)
 
 ifeq (modern,$(MAKECMDGOALS))
   MODERN := 1
