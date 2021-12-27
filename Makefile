@@ -36,11 +36,13 @@ else
 EXE :=
 endif
 
-TITLE       := POKEMON EMER
-GAME_CODE   := BPEE
-MAKER_CODE  := 01
-REVISION    := 0
-MODERN      ?= 0
+TITLE       	:= POKEMON EMER
+GAME_CODE   	:= BPEE
+ROM_HACK_VER 	:= v0.1a3
+ROM_NAME_BASE	:= pkem_salt_$(ROM_HACK_VER)
+MAKER_CODE  	:= 01
+REVISION    	:= 0
+MODERN      	?= 0
 
 ifeq (modern,$(MAKECMDGOALS))
   MODERN := 1
@@ -63,12 +65,12 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM_NAME := pkem_salt.gba
+ROM_NAME := $(ROM_NAME_BASE).gba
 ELF_NAME := $(ROM_NAME:.gba=.elf)
 MAP_NAME := $(ROM_NAME:.gba=.map)
 OBJ_DIR_NAME := build/emerald
 
-MODERN_ROM_NAME := pkem_salt_modern.gba
+MODERN_ROM_NAME := $(ROM_NAME_BASE)_modern.gba
 MODERN_ELF_NAME := $(MODERN_ROM_NAME:.gba=.elf)
 MODERN_MAP_NAME := $(MODERN_ROM_NAME:.gba=.map)
 MODERN_OBJ_DIR_NAME := build/modern
