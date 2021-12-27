@@ -333,6 +333,10 @@ SlateportCity_EventScript_NameRatersHouseSign::
 	msgbox SlateportCity_Text_NameRatersHouseSign, MSGBOX_SIGN
 	end
 
+SlateportCity_EventScript_IVCheckLass::
+	goto Script_IVChecker
+	end
+
 SlateportCity_EventScript_Maniac::
 	lock
 	faceplayer
@@ -1383,3 +1387,39 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+Script_IVChecker::
+	lock
+	faceplayer
+	bufferpartymonnick 0, 0
+	msgbox Text_IVChecker_1, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, GetHpIV
+	buffernumberstring 0, VAR_RESULT
+	specialvar VAR_RESULT, GetAtkIV
+	buffernumberstring 1, VAR_RESULT
+	specialvar VAR_RESULT, GetDefIV
+	buffernumberstring 2, VAR_RESULT
+	msgbox Text_IVChecker_2, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, GetSpAtkIV
+	buffernumberstring 0, VAR_RESULT
+	specialvar VAR_RESULT, GetSpDefIV
+	buffernumberstring 1, VAR_RESULT
+	specialvar VAR_RESULT, GetSpeedIV
+	buffernumberstring 2, VAR_RESULT
+	msgbox Text_IVChecker_3, MSGBOX_DEFAULT
+	release
+	end
+
+Text_IVChecker_1:
+	.string "Your {STR_VAR_1}...$"
+
+Text_IVChecker_2:
+	.string "Its HP IV is {STR_VAR_1}.\p"
+	.string "Its Attack IV is {STR_VAR_2}.\p"
+	.string "Its Defense IV is {STR_VAR_3}.$"
+
+Text_IVChecker_3:
+	.string "Its Special Attack IV is {STR_VAR_1}.\p"
+	.string "Its Special Defense IV is {STR_VAR_2}.\p"
+	.string "Its Speed IV is {STR_VAR_3}.\n"
+	.string "You're welcome.$"
