@@ -55,6 +55,8 @@ static void ResetMiniGamesRecords(void);
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
 EWRAM_DATA bool8 gEnableContestDebugging = FALSE;
 
+#define PLAYER_STARTING_MONEY 4000
+
 static const struct ContestWinner sContestWinnerPicDummy =
 {
     .monName = _(""),
@@ -169,7 +171,7 @@ void NewGameInitData(void)
     ResetGabbyAndTy();
     ClearSecretBases();
     ClearBerryTrees();
-    SetMoney(&gSaveBlock1Ptr->money, 3000);
+    SetMoney(&gSaveBlock1Ptr->money, PLAYER_STARTING_MONEY);
     SetCoins(0);
     ResetLinkContestBoolean();
     ResetGameStats();
