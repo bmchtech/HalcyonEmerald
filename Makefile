@@ -36,11 +36,16 @@ else
 EXE :=
 endif
 
-TITLE       := POKEMON EMER
-GAME_CODE   := BPEE
-MAKER_CODE  := 01
-REVISION    := 0
-MODERN      ?= 0
+ROM_HACK_NAME	:= pkem_salt
+ROM_HACK_VER 	:= v0.1a3
+
+TITLE       	:= POKEMON EMER
+GAME_CODE   	:= BPEE
+MAKER_CODE  	:= 01
+REVISION    	:= 0
+MODERN      	?= 0
+
+ROM_NAME_BASE	:= $(ROM_HACK_NAME)_$(ROM_HACK_VER)
 
 ifeq (modern,$(MAKECMDGOALS))
   MODERN := 1
@@ -63,12 +68,12 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM_NAME := pkem_salt.gba
+ROM_NAME := $(ROM_NAME_BASE).gba
 ELF_NAME := $(ROM_NAME:.gba=.elf)
 MAP_NAME := $(ROM_NAME:.gba=.map)
 OBJ_DIR_NAME := build/emerald
 
-MODERN_ROM_NAME := pkem_salt_modern.gba
+MODERN_ROM_NAME := $(ROM_NAME_BASE)_modern.gba
 MODERN_ELF_NAME := $(MODERN_ROM_NAME:.gba=.elf)
 MODERN_MAP_NAME := $(MODERN_ROM_NAME:.gba=.map)
 MODERN_OBJ_DIR_NAME := build/modern
@@ -311,6 +316,12 @@ endif
 ifeq ($(DDEBUGGING),1)
 override ASFLAGS += --defsym DEBUGGING=1
 override CPPFLAGS += -D DEBUGGING=1
+endif
+
+# MGBA support
+ifeq ($(DMGBA),1)
+override ASFLAGS += --defsym MGBA=1
+override CPPFLAGS += -D MGBA=1
 endif
 
 # The dep rules have to be explicit or else missing files won't be reported.

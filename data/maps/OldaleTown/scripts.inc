@@ -33,6 +33,11 @@ OldaleTown_EventScript_CitySign::
 	msgbox OldaleTown_Text_CitySign, MSGBOX_SIGN
 	end
 
+OldaleTown_EventScript_MagicSelfTrade::
+	msgbox OldaleTown_Text_MagicSelfTrade, MSGBOX_SIGN
+	goto SCRIPT_SelfTrade_V1
+	end
+
 OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
@@ -76,8 +81,7 @@ OldaleTown_EventScript_GoToMartEast::
 OldaleTown_EventScript_ExplainPokemonMart::
 	msgbox OldaleTown_Text_ThisIsAPokemonMart, MSGBOX_DEFAULT
 	giveitem ITEM_POTION
-	compare VAR_RESULT, FALSE
-	goto_if_eq OldaleTown_EventScript_BagIsFull
+	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_POTION_OLDALE
 	fadedefaultbgm
@@ -103,7 +107,7 @@ OldaleTown_Movement_EmployeeEast:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_fastest_down
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Movement_EmployeeSouth:
@@ -116,7 +120,7 @@ OldaleTown_Movement_EmployeeSouth:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_fastest_down
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Movement_EmployeeNorth:
@@ -127,7 +131,7 @@ OldaleTown_Movement_EmployeeNorth:
 	walk_up
 	walk_up
 	walk_up
-	walk_in_place_fastest_down
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Movement_Unknown1:
@@ -143,7 +147,7 @@ OldaleTown_Movement_Unknown1:
 	walk_up
 	walk_up
 	delay_8
-	walk_in_place_fastest_down
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Movement_PlayerEast:
@@ -232,7 +236,7 @@ OldaleTown_EventScript_RivalTrigger1::
 	lockall
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer1
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_0x8009, 1
 	goto OldaleTown_EventScript_ShowRivalMessage
@@ -242,7 +246,7 @@ OldaleTown_EventScript_RivalTrigger2::
 	lockall
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer2
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_0x8009, 1
 	goto OldaleTown_EventScript_ShowRivalMessage
@@ -252,7 +256,7 @@ OldaleTown_EventScript_RivalTrigger3::
 	lockall
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer3
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_0x8009, 1
 	goto OldaleTown_EventScript_ShowRivalMessage
@@ -260,10 +264,8 @@ OldaleTown_EventScript_RivalTrigger3::
 
 OldaleTown_EventScript_ShowRivalMessage::
 	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq OldaleTown_EventScript_ShowMayMessage
-	compare VAR_RESULT, FEMALE
-	goto_if_eq OldaleTown_EventScript_ShowBrendanMessage
+	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
+	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
 	end
 
 OldaleTown_EventScript_ShowMayMessage::
@@ -278,10 +280,8 @@ OldaleTown_EventScript_ShowBrendanMessage::
 
 OldaleTown_EventScript_RivalFinish::
 	closemessage
-	compare VAR_0x8009, 0
-	call_if_eq OldaleTown_EventScript_DoExitMovement1
-	compare VAR_0x8009, 1
-	call_if_eq OldaleTown_EventScript_DoExitMovement2
+	call_if_eq VAR_0x8009, 0, OldaleTown_EventScript_DoExitMovement1
+	call_if_eq VAR_0x8009, 1, OldaleTown_EventScript_DoExitMovement2
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
 	waitmovement 0
 	removeobject LOCALID_RIVAL
@@ -291,8 +291,7 @@ OldaleTown_EventScript_RivalFinish::
 	end
 
 OldaleTown_EventScript_DoExitMovement1::
-	compare VAR_FACING, DIR_SOUTH
-	goto_if_ne OldaleTown_EventScript_DoExitMovement2
+	goto_if_ne VAR_FACING, DIR_SOUTH, OldaleTown_EventScript_DoExitMovement2
 	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
 	waitmovement 0
 	return
@@ -328,7 +327,7 @@ OldaleTown_Movement_RivalExit:
 OldaleTown_Movement_WatchRivalExit:
 	delay_8
 	delay_4
-	walk_in_place_fastest_down
+	walk_in_place_faster_down
 	step_end
 
 OldaleTown_Movement_PlayerStepBack:
@@ -338,7 +337,7 @@ OldaleTown_Movement_PlayerStepBack:
 
 OldaleTown_Movement_BackUp:
 	walk_fast_up
-	walk_in_place_fastest_left
+	walk_in_place_faster_left
 	lock_facing_direction
 	walk_right
 	unlock_facing_direction
@@ -405,3 +404,63 @@ OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_Text_MagicSelfTrade:
+	.string "I am a very special sign.$"
+
+SCRIPT_SelfTrade_V1::
+	lock
+	faceplayer
+	msgbox SCRIPT_SelfTrade_Text_OfferTrade, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x8004
+	setvar VAR_0x8004, 6
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox SCRIPT_SelfTrade_Text_ComeBack, MSGBOX_DEFAULT
+	release
+	end
+
+SCRIPT_SelfTrade_V2::
+	lock
+	faceplayer
+	msgbox SCRIPT_SelfTrade_Text_OfferTrade, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq SCRIPT_SelfTrade_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x8004
+	setvar VAR_0x8004, 7
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	setvar VAR_0x8004, 8
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox SCRIPT_SelfTrade_Text_ComeBack, MSGBOX_DEFAULT
+	release
+	end
+
+SCRIPT_SelfTrade_DeclineTrade::
+	msgbox SCRIPT_SelfTrade_Text_DeclineTrade, MSGBOX_DEFAULT
+	release
+	end
+
+SCRIPT_SelfTrade_Text_OfferTrade:
+	.string "I can help you trade a pokemon\n"
+	.string "with yourself!$"
+
+SCRIPT_SelfTrade_Text_ComeBack:
+	.string "Come back any time.$"
+
+SCRIPT_SelfTrade_Text_DeclineTrade:
+	.string "Having second thoughts?\p"
+        .string "Then why are you still here?$"
