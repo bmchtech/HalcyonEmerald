@@ -1,4 +1,4 @@
-# pokemon emerald (salted version)
+# pokemon emerald (salted rom base)
 
 ## features
 - day/night with real time clock
