@@ -505,9 +505,15 @@ static void SetShopItemsForSale(const u16 *items)
     u8 badgeCount = GetNumberOfBadges();
 
     if (items == NULL)
+    {
+        // if the item list is set to 0 ("pokemart 0" in script), then we set inventory by badge count
         sMartInfo.itemList = sShopInventories[badgeCount];
+    }
     else
+    {
+        // set from predetermined list
         sMartInfo.itemList = items;
+    }
 
     sMartInfo.itemCount = 0;
     while (sMartInfo.itemList[i])
