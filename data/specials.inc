@@ -542,3 +542,9 @@ gSpecials::
 	def_special GetSpAtkIV
 	def_special GetSpDefIV
 	def_special GetSpeedIV
+	def_special CheckHpEvs
+	def_special CheckAtkEvs
+	def_special CheckDefEvs
+	def_special CheckSpdEvs
+	def_special CheckSpAtkEvs
+	def_special CheckSpDefEvs
