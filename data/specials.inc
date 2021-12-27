@@ -536,3 +536,9 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
+	def_special GetHpIV
+	def_special GetAtkIV
+	def_special GetDefIV
+	def_special GetSpAtkIV
+	def_special GetSpDefIV
+	def_special GetSpeedIV
