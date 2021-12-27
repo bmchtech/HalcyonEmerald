@@ -26,6 +26,13 @@
 #include "constants/layouts.h"
 #include "constants/weather.h"
 
+#if DEBUGGING
+#include "printf.h"
+#include "mgba.h"
+#include "data.h"                 // for gSpeciesNames, which maps species number to species name.
+#include "../gflib/string_util.h" // for ConvertToAscii()
+#endif
+
 extern const u8 EventScript_RepelWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
@@ -408,6 +415,9 @@ static void CreateWildMon(u16 species, u8 level)
         return;
     }
 
+#if DEBUGGING
+    mgba_printf(MGBA_LOG_INFO, "%d %s", species, ConvertToAscii(gSpeciesNames[species])); // debug log wild pokemon
+#endif
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
 }
 
