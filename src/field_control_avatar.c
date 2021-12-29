@@ -38,6 +38,8 @@
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPreviousPlayerMetatileBehavior = 0;
+static EWRAM_DATA u8 sCurrentDirection = 0;
+static EWRAM_DATA u8 sPreviousDirection = 0;
 
 u8 gSelectedObjectEvent;
 
@@ -69,6 +71,8 @@ static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
 static bool8 UpdatePoisonStepCounter(void);
+static u8 GetDirectionFromBitfield(u8 bitfield);
+static void SetDirectionFromHeldKeys(u16 heldKeys);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -122,14 +126,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->checkStandardWildEncounter = TRUE;
     }
 
-    if (heldKeys & DPAD_UP)
-        input->dpadDirection = DIR_NORTH;
-    else if (heldKeys & DPAD_DOWN)
-        input->dpadDirection = DIR_SOUTH;
-    else if (heldKeys & DPAD_LEFT)
-        input->dpadDirection = DIR_WEST;
-    else if (heldKeys & DPAD_RIGHT)
-        input->dpadDirection = DIR_EAST;
+    SetDirectionFromHeldKeys(heldKeys);
+    input->dpadDirection = sCurrentDirection;
     
 #if DEBUGGING
     if ((heldKeys & R_BUTTON) && input->pressedStartButton)
@@ -1020,4 +1018,54 @@ int SetCableClubWarp(void)
     MapGridGetMetatileBehaviorAt(position.x, position.y);  //unnecessary
     SetupWarp(&gMapHeader, GetWarpEventAtMapPosition(&gMapHeader, &position), &position);
     return 0;
+}
+
+u8 GetDirectionFromBitfield(u8 bitfield)
+{
+    u8 direction = 0;
+    while (bitfield >>= 1) direction++;
+    return direction;
+}
+
+void SetDirectionFromHeldKeys(u16 heldKeys)
+{
+    u8 dpadDirections = 0;
+
+    if (heldKeys & DPAD_UP)
+        dpadDirections |= (1 << DIR_NORTH);
+    if (heldKeys & DPAD_DOWN)
+        dpadDirections |= (1 << DIR_SOUTH);
+    if (heldKeys & DPAD_LEFT)
+        dpadDirections |= (1 << DIR_WEST);
+    if (heldKeys & DPAD_RIGHT)
+        dpadDirections |= (1 << DIR_EAST);
+
+    if (dpadDirections == 0) // no dir is pushed
+    {
+        sCurrentDirection = DIR_NONE;
+        sPreviousDirection = DIR_NONE;
+        return;
+    }
+
+    if ((dpadDirections & (dpadDirections - 1)) == 0) // only 1 dir is pushed
+    {
+        // simply set currDir to that dir
+        sCurrentDirection = GetDirectionFromBitfield(dpadDirections);
+        sPreviousDirection = DIR_NONE;
+        return;
+    }
+
+    if (((dpadDirections >> sCurrentDirection) & 1) == 0) // none of the multiple dirs pushed is currDir
+    {
+        sCurrentDirection = DIR_NONE;
+        sPreviousDirection = DIR_NONE;
+    }
+    else if ((sPreviousDirection == DIR_NONE) || (((dpadDirections >> sPreviousDirection) & 1) == 0))
+    {
+        // turn
+        sCurrentDirection = GetDirectionFromBitfield(dpadDirections & ~(1 << sCurrentDirection));
+        sPreviousDirection = sCurrentDirection;
+    }
+    // else, currDir and prevDir are the dirs pushed
+    // do nothing (keep the same currDir and prevDir)
 }
