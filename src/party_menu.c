@@ -2546,18 +2546,19 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                if (sFieldMoves[j] != MOVE_FLY) // If Mon already knows FLY, prevent it from being added to action list
-                    if (sFieldMoves[j] != MOVE_FLASH) // If Mon already knows FLASH, prevent it from being added to action list
-                        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                        break;
+                if (sFieldMoves[j] != MOVE_FLY // If Mon already knows FLY, prevent it from being added to action list
+                 && sFieldMoves[j] != MOVE_FLASH) // If Mon already knows FLASH, prevent it from being added to action list
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    break;
             }
         }
     }
 
-    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01)) // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
+    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM02_FLY))) // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
-    if (sPartyMenuInternal->numActions < 5 && CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01)) // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
+    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM05_FLASH))) // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+    
     if (!InBattlePike())
     {
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)

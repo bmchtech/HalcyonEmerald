@@ -8,6 +8,7 @@
 #include "constants/map_groups.h"
 
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
+#define TMHM_ID(tmhm) (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH - ((ITEM_##tmhm > ITEM_TM100) ? 50 : 0)) // utility function to get TMHM ID; NOTE: dependent on item expansion having TM 1-100
 
 struct PokemonSubstruct0
 {
