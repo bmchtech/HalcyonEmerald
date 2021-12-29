@@ -2546,18 +2546,22 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
-                if (sFieldMoves[j] != MOVE_FLY // If Mon already knows FLY, prevent it from being added to action list
-                 && sFieldMoves[j] != MOVE_FLASH) // If Mon already knows FLASH, prevent it from being added to action list
+                if (sFieldMoves[j] != MOVE_FLY // Prevent adding FLY to list if already known
+                 && sFieldMoves[j] != MOVE_STRENGTH  // Prevent adding STRENGTH to list if already known
+                 && sFieldMoves[j] != MOVE_FLASH) // Prevent adding FLASH to list if already known
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                     break;
             }
         }
     }
 
-    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM02_FLY))) // If Mon can learn HM02 and action list consists of < 4 moves, add FLY to action list
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES);
-    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM05_FLASH))) // If Mon can learn HM05 and action list consists of < 4 moves, add FLASH to action list
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
+    // make sure there are less than 4 move actions already listed so we don't overflow the list
+    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM02_FLY))) // If HM02 compatible, add FLY to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES); // offset based on index in sFieldMoves
+    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM05_FLASH))) // If HM05 compatible, add FLASH to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES); // offset based on index in sFieldMoves
+    if (sPartyMenuInternal->numActions < 4 && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM04_STRENGTH))) // If HM02 compatible, add STRENGTH to action list
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 3 + MENU_FIELD_MOVES); // offset based on index in sFieldMoves
     
     if (!InBattlePike())
     {
