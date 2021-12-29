@@ -57,6 +57,7 @@ bool8 CheckFreePokemonStorageSpace(void);
 bool32 CheckBoxMonSanityAt(u32 boxId, u32 boxPosition);
 u32 CountStorageNonEggMons(void);
 u32 CountAllStorageMons(void);
+u8 CountPartyNonEggMons(void);
 bool32 AnyStorageMonWithMove(u16 moveId);
 
 void ResetWaldaWallpaper(void);
