@@ -2391,8 +2391,10 @@ static const u8 sProtectivePadsDesc[] = _(
     "from contact move\n"
     "effects.");
 
-static const u8 sThroatSprayDesc[] = _( // Todo
-    "?????");
+static const u8 sMegaStoneWDesc[] = _( // Romhack item
+    "This stone enables\n"
+    "the holder to Mega\n"
+    "Evolve in battle.");
 
 static const u8 sEjectPackDesc[] = _( // Todo
     "?????");

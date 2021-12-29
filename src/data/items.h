@@ -6385,12 +6385,13 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_THROAT_SPRAY] = // Todo
+    [ITEM_MEGA_STONE_W] = // Romhack item
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Mega Stone W"),
+        .itemId = ITEM_MEGA_STONE_W,
         .price = 0,
-        .description = sDummyDesc,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMegaStoneWDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
