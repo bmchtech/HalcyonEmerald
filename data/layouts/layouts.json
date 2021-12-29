@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SootopolisCity_MegaHouse/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MegaHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DENIM_TOWN",
+      "name": "DenimTown_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/DenimTown/border.bin",
+      "blockdata_filepath": "data/layouts/DenimTown/map.bin"
     }
   ]
 }

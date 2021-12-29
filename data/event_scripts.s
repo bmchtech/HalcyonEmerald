@@ -1060,3 +1060,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/SootopolisCity_MegaHouse/scripts.inc"
+
+	.include "data/maps/DenimTown/scripts.inc"

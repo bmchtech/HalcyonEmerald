@@ -199,6 +199,10 @@ static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
 static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
 static const u8 sMapName_TrainerHill[] = _("TRAINER HILL");
 
+// Romhack
+static const u8 sMapName_DenimTown[] = _("DENIM TOWN");
+static const u8 sMapName_Route400[] = _("ROUTE 400");
+
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
     [MAPSEC_OLDALE_TOWN]                = { 4,  9, 1, 1, sMapName_OldaleTown},
@@ -299,8 +303,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_CINNABAR_ISLAND]            = { 0,  0, 1, 1, sMapName_CinnabarIsland},
     [MAPSEC_INDIGO_PLATEAU]             = { 0,  0, 1, 1, sMapName_IndigoPlateau},
     [MAPSEC_SAFFRON_CITY]               = { 0,  0, 1, 1, sMapName_SaffronCity},
-    [MAPSEC_ROUTE_4_FLYDUP]             = { 0,  0, 1, 1, sMapName_Route4},
-    [MAPSEC_ROUTE_10_FLYDUP]            = { 0,  0, 1, 1, sMapName_Route10},
+    [MAPSEC_DENIM_TOWN]                 = { 0,  0, 1, 1, sMapName_DenimTown},
+    [MAPSEC_ROUTE_400]                  = { 0,  0, 1, 1, sMapName_Route400},
     [MAPSEC_ROUTE_1]                    = { 0,  0, 1, 1, sMapName_Route1},
     [MAPSEC_ROUTE_2]                    = { 0,  0, 1, 1, sMapName_Route2},
     [MAPSEC_ROUTE_3]                    = { 0,  0, 1, 1, sMapName_Route3},
@@ -413,6 +417,9 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ALTERING_CAVE]              = { 6,  8, 1, 1, sMapName_AlteringCave},
     [MAPSEC_NAVEL_ROCK]                 = { 0,  0, 1, 1, sMapName_NavelRock},
     [MAPSEC_TRAINER_HILL]               = { 8,  4, 1, 1, sMapName_TrainerHill}
+
+    // romhack
+    
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

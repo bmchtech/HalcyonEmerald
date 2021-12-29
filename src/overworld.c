@@ -446,8 +446,6 @@ static const u8 sMapsecToRegion[] = {
     [MAPSEC_CINNABAR_ISLAND]            = REGION_KANTO,
     [MAPSEC_INDIGO_PLATEAU]             = REGION_KANTO,
     [MAPSEC_SAFFRON_CITY]               = REGION_KANTO,
-    [MAPSEC_ROUTE_4_FLYDUP]             = REGION_KANTO,
-    [MAPSEC_ROUTE_10_FLYDUP]            = REGION_KANTO,
     [MAPSEC_ROUTE_1]                    = REGION_KANTO,
     [MAPSEC_ROUTE_2]                    = REGION_KANTO,
     [MAPSEC_ROUTE_3]                    = REGION_KANTO,
@@ -559,7 +557,11 @@ static const u8 sMapsecToRegion[] = {
     [MAPSEC_DESERT_UNDERPASS]           = REGION_HOENN,
     [MAPSEC_ALTERING_CAVE]              = REGION_HOENN,
     [MAPSEC_NAVEL_ROCK]                 = REGION_SEVII,
-    [MAPSEC_TRAINER_HILL]               = REGION_HOENN
+    [MAPSEC_TRAINER_HILL]               = REGION_HOENN,
+
+    // Romhack
+    [MAPSEC_DENIM_TOWN]                 = REGION_HOENN,
+    [MAPSEC_ROUTE_400]                  = REGION_HOENN,
 };
 
 static void MovementStatusHandler_EnterFreeMode(struct LinkPlayerObjectEvent *, struct ObjectEvent *);
