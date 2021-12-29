@@ -2547,9 +2547,9 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
                 if (sFieldMoves[j] != MOVE_FLY // Prevent adding FLY to list if already known
-                 && sFieldMoves[j] != MOVE_STRENGTH  // Prevent adding STRENGTH to list if already known
-                 && sFieldMoves[j] != MOVE_ROCK_SMASH  // Prevent adding ROCK SMASH to list if already known
-                 && sFieldMoves[j] != MOVE_SURF  // Prevent adding SURF to list if already known
+                //  && sFieldMoves[j] != MOVE_STRENGTH  // Prevent adding STRENGTH to list if already known
+                //  && sFieldMoves[j] != MOVE_ROCK_SMASH  // Prevent adding ROCK SMASH to list if already known
+                //  && sFieldMoves[j] != MOVE_SURF  // Prevent adding SURF to list if already known
                  && sFieldMoves[j] != MOVE_CUT  // Prevent adding CUT to list if already known
                  && sFieldMoves[j] != MOVE_FLASH) // Prevent adding FLASH to list if already known
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
@@ -2564,14 +2564,14 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 5 + MENU_FIELD_MOVES); // offset based on index in sFieldMoves
     if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM05, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM05_FLASH)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 1 + MENU_FIELD_MOVES);
-    if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM04, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM04_STRENGTH)))
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 3 + MENU_FIELD_MOVES);
-    if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM06, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM06_ROCK_SMASH)))
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 2 + MENU_FIELD_MOVES);
+    // if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM04, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM04_STRENGTH)))
+    //     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 3 + MENU_FIELD_MOVES);
+    // if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM06, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM06_ROCK_SMASH)))
+    //     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 2 + MENU_FIELD_MOVES);
     if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM01, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM01_CUT)))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 0 + MENU_FIELD_MOVES);
-    if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM03, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM03_SURF)))
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 4 + MENU_FIELD_MOVES);
+    // if (sPartyMenuInternal->numActions < maxMoveActions && CheckBagHasItem(ITEM_HM03, 1) && CanMonLearnTMHM(&mons[slotId], TMHM_ID(HM03_SURF)))
+    //     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, 4 + MENU_FIELD_MOVES);
     
     if (!InBattlePike())
     {
