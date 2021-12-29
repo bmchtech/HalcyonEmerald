@@ -1062,3 +1062,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SootopolisCity_MegaHouse/scripts.inc"
 
 	.include "data/maps/DenimTown/scripts.inc"
+
+	.include "data/maps/Route400/scripts.inc"

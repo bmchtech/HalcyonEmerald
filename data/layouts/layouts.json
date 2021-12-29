@@ -4424,12 +4424,22 @@
     {
       "id": "LAYOUT_DENIM_TOWN",
       "name": "DenimTown_Layout",
-      "width": 32,
-      "height": 32,
+      "width": 36,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/DenimTown/border.bin",
       "blockdata_filepath": "data/layouts/DenimTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE400",
+      "name": "Route400_Layout",
+      "width": 20,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/Route400/border.bin",
+      "blockdata_filepath": "data/layouts/Route400/map.bin"
     }
   ]
 }

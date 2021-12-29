@@ -1,12 +1,12 @@
 {
-  "id": "MAP_DENIM_TOWN",
-  "name": "DenimTown",
-  "layout": "LAYOUT_DENIM_TOWN",
-  "music": "MUS_LILYCOVE",
-  "region_map_section": "MAPSEC_DENIM_TOWN",
+  "id": "MAP_ROUTE400",
+  "name": "Route400",
+  "layout": "LAYOUT_ROUTE400",
+  "music": "MUS_ROUTE122",
+  "region_map_section": "MAPSEC_ROUTE_400",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_CITY",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -15,8 +15,13 @@
   "connections": [
     {
       "direction": "up",
-      "offset": 6,
-      "map": "MAP_ROUTE400"
+      "offset": -21,
+      "map": "MAP_ROUTE123"
+    },
+    {
+      "direction": "down",
+      "offset": -6,
+      "map": "MAP_DENIM_TOWN"
     }
   ],
   "object_events": [
