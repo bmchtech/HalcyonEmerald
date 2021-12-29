@@ -9108,7 +9108,8 @@ u16 GetMegaEvolutionSpecies(u16 preEvoSpecies, u16 heldItemId)
     {
         if ((gEvolutionTable[preEvoSpecies][i].method == EVO_MEGA_EVOLUTION
          || gEvolutionTable[preEvoSpecies][i].method == EVO_PRIMAL_REVERSION)
-         && gEvolutionTable[preEvoSpecies][i].param == heldItemId)
+         && (gEvolutionTable[preEvoSpecies][i].param == heldItemId
+          || heldItemId == ITEM_MEGA_STONE_W)) // mega stone w lets you mega evolve anything
             return gEvolutionTable[preEvoSpecies][i].targetSpecies;
     }
     return SPECIES_NONE;
