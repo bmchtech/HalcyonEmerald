@@ -1,6 +1,10 @@
 SootopolisCity_MegaHouse_MapScripts::
 	.byte 0
 
+SootopolisCity_MegaHouse_EventScript_ItemMegaStoneW::
+	finditem ITEM_MEGA_STONE_W
+	end
+
 SootopolisCity_MegaHouse_EventScript_Zeppeli::
 	goto_if_set FLAG_RECEIVED_MEGA_BRACELET, SootopolisCity_MegaHouse_EventScript_ReceivedMegaThing1
 	msgbox SootopolisCity_MegaHouse_Text_IAmZeppeli, MSGBOX_NPC
