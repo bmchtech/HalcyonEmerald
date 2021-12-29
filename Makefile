@@ -37,7 +37,7 @@ EXE :=
 endif
 
 ROM_HACK_NAME	:= pkem_salt
-ROM_HACK_VER 	:= v0.1a3
+ROM_HACK_VER 	:= v0.1a4
 
 TITLE       	:= POKEMON EMER
 GAME_CODE   	:= BPEE
