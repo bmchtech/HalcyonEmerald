@@ -7171,6 +7171,7 @@ static const struct LevelUpMove sAbsolLevelUpLearnset[] = {
     LEVEL_UP_MOVE(49, MOVE_RAZOR_WIND),
     LEVEL_UP_MOVE(53, MOVE_FUTURE_SIGHT),
     LEVEL_UP_MOVE(57, MOVE_PERISH_SONG),
+    LEVEL_UP_MOVE(61, MOVE_SUPERPOWER),
     LEVEL_UP_END
 };
 
