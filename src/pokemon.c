@@ -8133,3 +8133,28 @@ u16 GetSpeedIV(void)
 {
 	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_IV, NULL);
 }
+
+u16 GetHpEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP_EV, NULL);
+}
+u16 GetAtkEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ATK_EV, NULL);
+}
+u16 GetDefEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_DEF_EV, NULL);
+}
+u16 GetSpAtkEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPATK_EV, NULL);
+}
+u16 GetSpDefEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPDEF_EV, NULL);
+}
+u16 GetSpeedEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_EV, NULL);
+}

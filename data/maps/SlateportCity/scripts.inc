@@ -337,6 +337,10 @@ SlateportCity_EventScript_IVCheckLass::
 	goto Script_IVChecker
 	end
 
+SlateportCity_EventScript_EVCheckLass::
+	goto Script_EVChecker
+	end
+
 SlateportCity_EventScript_Maniac::
 	lock
 	faceplayer
@@ -1423,3 +1427,39 @@ Text_IVChecker_3:
 	.string "Its Special Defense IV is {STR_VAR_2}.\p"
 	.string "Its Speed IV is {STR_VAR_3}.\n"
 	.string "You're welcome.$"
+
+Script_EVChecker::
+	lock
+	faceplayer
+	bufferpartymonnick 0, 0
+	msgbox Text_EVChecker_1, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, GetHpEV
+	buffernumberstring 0, VAR_RESULT
+	specialvar VAR_RESULT, GetAtkEV
+	buffernumberstring 1, VAR_RESULT
+	specialvar VAR_RESULT, GetDefEV
+	buffernumberstring 2, VAR_RESULT
+	msgbox Text_EVChecker_2, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, GetSpAtkEV
+	buffernumberstring 0, VAR_RESULT
+	specialvar VAR_RESULT, GetSpDefEV
+	buffernumberstring 1, VAR_RESULT
+	specialvar VAR_RESULT, GetSpeedEV
+	buffernumberstring 2, VAR_RESULT
+	msgbox Text_EVChecker_3, MSGBOX_DEFAULT
+	release
+	end
+
+Text_EVChecker_1:
+	.string "Your {STR_VAR_1}...$"
+
+Text_EVChecker_2:
+	.string "Its HP EV is {STR_VAR_1}.\p"
+	.string "Its Attack EV is {STR_VAR_2}.\p"
+	.string "Its Defense EV is {STR_VAR_3}.$"
+
+Text_EVChecker_3:
+	.string "Its Special Attack EV is {STR_VAR_1}.\p"
+	.string "Its Special Defense EV is {STR_VAR_2}.\p"
+	.string "Its Speed EV is {STR_VAR_3}.\n"
+	.string "Don't mention it.$"
