@@ -26686,12 +26686,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        // .abilities = {ABILITY_PRISM_SCALES, ABILITY_PRISM_SCALES, ABILITY_PRISM_SCALES}, // not implemented
-        #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_MARVEL_SCALE, ABILITY_COMPETITIVE, ABILITY_CUTE_CHARM},
-        #else
-            .abilities = {ABILITY_MARVEL_SCALE, ABILITY_NONE, ABILITY_CUTE_CHARM},
-        #endif
+        .abilities = {ABILITY_PRISM_SCALES, ABILITY_PRISM_SCALES, ABILITY_PRISM_SCALES},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
@@ -26746,12 +26741,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        // .abilities = {ABILITY_POWER_FISTS, ABILITY_POWER_FISTS, ABILITY_POWER_FISTS}, // not implemented
-        #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST},
-        #else
-            .abilities = {ABILITY_GUTS, ABILITY_NONE},
-        #endif
+        .abilities = {ABILITY_POWER_FISTS, ABILITY_POWER_FISTS, ABILITY_POWER_FISTS},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },
@@ -26837,8 +26827,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        // .abilities = {ABILITY_SAND_SONG, ABILITY_SAND_SONG, ABILITY_SAND_SONG}, // not implemented
-        .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE},
+        .abilities = {ABILITY_SAND_SONG, ABILITY_SAND_SONG, ABILITY_SAND_SONG},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
