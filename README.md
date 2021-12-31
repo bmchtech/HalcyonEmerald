@@ -1,4 +1,4 @@
-# pokemon emerald (salted rom base)
+# pokemon halcyon emerald (salted rom base)
 
 ## features
 - day/night with real time clock
@@ -7,6 +7,7 @@
 - ingame helpers like self trading and iv checking
 - improved berry growth mechanics
 - various minor qol and bug fixes
+- todo
 
 ## build
 

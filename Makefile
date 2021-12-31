@@ -36,7 +36,7 @@ else
 EXE :=
 endif
 
-ROM_HACK_NAME	:= pkem_salt
+ROM_HACK_NAME	:= pk_halcyon_emerald
 ROM_HACK_VER 	:= v0.1a4
 
 TITLE       	:= POKEMON EMER
