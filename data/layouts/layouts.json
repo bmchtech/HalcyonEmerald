@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SootopolisCity_MegaHouse/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MegaHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_MOSSDEEP_CITY_AVDOLS_HOUSE",
+      "name": "MossdeepCity_AvdolsHouse_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/MossdeepCity_AvdolsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MossdeepCity_AvdolsHouse/map.bin"
     }
   ]
 }
