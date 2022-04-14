@@ -20,5 +20,5 @@ jobs:
       - name: Package Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: pkhe_rom_${{ github.head_ref }}.${{ github.sha }}
+          name: pkhe_rom_${{ github.sha }}
           path: ./*.gba
