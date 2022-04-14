@@ -10,17 +10,10 @@ jobs:
     steps:
       - name: Install Ubuntu Build Deps
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt install -y python3 make build-essential wget curl git
+        run: sudo apt install -y python3 make build-essential wget curl git podman
       - uses: actions/checkout@v2
-      - name: Install DevkitARM
-        run: |
-          wget https://github.com/devkitPro/pacman/releases/download/v1.0.2/devkitpro-pacman.amd64.deb -O /tmp/dkp_pacman.deb
-          sudo apt install -y /tmp/dkp_pacman.deb
-          sudo dkp-pacman -Sy
-          sudo dkp-pacman -S --noconfirm gba-dev
       - name: Build PokeEmerald ROM
         run: |
-          source /etc/profile.d/devkit-env.sh
-          ./build.sh
+          podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c './build.sh'
       - name: Check PokeEmerald ROM
         run: true
