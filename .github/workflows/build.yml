@@ -18,7 +18,7 @@ jobs:
       - name: Check PokeEmerald ROM
         run: ls *.gba
       - name: Package Artifacts
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: pkhe_rom
           path: ./*.gba
