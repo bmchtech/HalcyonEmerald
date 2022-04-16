@@ -36,8 +36,8 @@ else
 EXE :=
 endif
 
-ROM_HACK_NAME	:= pk_halcyon_emerald
-ROM_HACK_VER 	:= v0.2b0
+ROM_HACK_NAME	:= PokeHalcyonEmerald
+ROM_HACK_VER 	:= v0.2.1
 
 TITLE       	:= POKEMON EMER
 GAME_CODE   	:= BPEE
