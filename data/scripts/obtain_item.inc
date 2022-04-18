@@ -2,6 +2,7 @@
 .set AMOUNT, VAR_0x8001
 
 Std_ObtainItem::
+	copyvar VAR_0x8006, VAR_0x8000
 	additem ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT
 	call EventScript_ObtainItemMessage
@@ -51,8 +52,11 @@ EventScript_BufferBerriesPocket::
 
 EventScript_ObtainedItem::
 	message gText_ObtainedTheItem
+    delay 10
+    showitemdesc
 	waitfanfare
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
+    hideitemdesc
 	setvar VAR_RESULT, TRUE
 	return
 
