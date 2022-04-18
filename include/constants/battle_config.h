@@ -249,4 +249,7 @@
 
 #define B_ENABLE_DEBUG                  TRUE     // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
 
+// Halcyon Emerald settings
+#define B_TRADED_MON_BONUS_XP           150     // Sets the percentage multiplier for traded Pokémon's gained XP.
+
 #endif // GUARD_CONSTANTS_BATTLE_CONFIG_H

@@ -4001,7 +4001,8 @@ static void Cmd_getexp(void)
                         }
                         else
                         {
-                            gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
+                            // this pokemon is traded, so it gains bonus xp
+                            gBattleMoveDamage = (gBattleMoveDamage * B_TRADED_MON_BONUS_XP) / 100;
                             i = STRINGID_ABOOSTED;
                         }
                     }
