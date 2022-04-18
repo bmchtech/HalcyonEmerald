@@ -59,6 +59,8 @@ LilycoveCity_DepartmentStore_4F_Pokemart_EvoStones:
 	.2byte ITEM_SHINY_STONE  @ Shiny Stone
 	.2byte ITEM_DUSK_STONE  @ Dusk Stone
 	.2byte ITEM_DAWN_STONE  @ Dawn Stone
+	.2byte ITEM_UPGRADE
+	.2byte ITEM_DUBIOUS_DISC
 	.2byte ITEM_NONE
 	release
 	end
