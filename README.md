@@ -1,35 +1,41 @@
-# pokemon halcyon emerald (salted rom base)
+# halcyon emerald
+
+Pokemon **Halcyon Emerald**, built on my "Salted Rom Base"
+
+This project is essentially a large upgrade to the Pokemon Emerald base game. Its intention is to provide a souped up Emerald game ROM with an upgraded engine, that can then be modified to add new content/story while keeping all the new features.
 
 ## features
 
-- game content
-- qol
-- fixes
-
-- day/night with real time clock
-- battle engine upgrade, item/pokemon expansion
-- tm/hm reusable and replaceable
-- ingame helpers like self trading and iv/ev checking
-- improved berry growth mechanics
-- various minor qol and bug fixes
-- moveset balance tweaks from gen 7+
-- eggs hatch sooner to reduce grind
-- mega stone w, as a master trigger for mega evolutions
-- more mega evolutions (ported from inclement emerald)
-- fixes to movement directions in overworld
-- much faster text scrolling
-- some hm's like fly and flash can be used as long as your party has a pokemon compatible with them
-- access to legendaries gated behind events or tickets
-- todo
++ game content
+    + battle engine upgrade, item/pokemon expansion
+    + day/night with real time clock
+    + access to legendaries gated behind events or tickets
+    + mega stone w, as a master trigger for mega evolutions
+    + more mega evolutions (ported from inclement emerald)
+    + infinite move tutors
+    + ingame helpers like self trading and iv/ev checking
+    + moveset balance tweaks from gen 7+
++ qol
+    + much faster text scrolling
+    + some hm's like fly and flash can be used as long as your party has a pokemon compatible with them
+    + eggs hatch sooner to reduce grind
+    + tm/hm reusable and replaceable
+    + various minor qol and bug fixes
++ fixes
+    + fixes to movement directions in overworld
+    + improved berry growth mechanics
 
 ## build
 
-For initial setup:
+for initial setup:
 ```sh
 ./build.sh
 ```
+this will build `agbcc` and set up the build environment to work with make.
 
-Subsequent builds for `pkem_salt.gba`:
+subsequent builds for `PokeHalcyonEmerald_va.b.c`:
 ```sh
-make -j$(nproc) DDEBUGGING=1
+make -j$(nproc)
 ```
+
+to enable debug logging:  `DDEBUGGING=1`
