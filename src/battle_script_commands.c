@@ -1325,7 +1325,8 @@ static const u16 sBadgeFlags[8] = {
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
 };
 
-static const u16 sWhiteOutBadgeMoney[9] = { 8, 16, 24, 36, 48, 60, 80, 100, 120 };
+// static const u16 sWhiteOutBadgeMoney[9] = { 8, 16, 24, 36, 48, 60, 80, 100, 120 }; // Newer gen values
+static const u16 sWhiteOutBadgeMoney[9] = { 2, 4, 8, 12, 16, 24, 36, 48, 56 }; // Reduced values
 
 static bool32 NoTargetPresent(u32 move)
 {
