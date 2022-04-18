@@ -16,7 +16,9 @@ jobs:
         run: |
           podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c 'apt install -y libpng-dev && ./build.sh && make -j$(nproc)'
       - name: Check PokeEmerald ROM
-        run: ls *.gba
+        run: |
+          ls *.gba
+          sha1sum *.gba
       - name: Package Artifacts
         uses: actions/upload-artifact@v3
         with:
