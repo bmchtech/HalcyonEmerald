@@ -6659,7 +6659,13 @@ u8 ReturnTMHMId(u16 move)
 
     for (i = 0; i < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; i++) {
         if (sTMHMMoves[i] == move) {
-            return i;
+            if (IsMoveHm(move)) {
+                // there are space for 100 TMs, but only 50 are used in learnsets
+                // that means, if the move is an HM, we have to subtract 50 to get the raw ID for learnsets
+                return i - 50;
+            } else {
+                return i;
+            }
         }
     }
 
