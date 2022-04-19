@@ -45,5 +45,8 @@ to enable debug logging:  `DDEBUGGING=1`
 ### containerized build
 
 ```sh
-podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c 'apt install -y libpng-dev && ./build.sh && make -j$(nproc)'
+podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c '\
+    apt install -y libpng-dev \
+    && ./build.sh \
+    && make -j$(nproc)'
 ```
