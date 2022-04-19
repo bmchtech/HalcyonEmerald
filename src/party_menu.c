@@ -6652,3 +6652,25 @@ void IsLastMonThatKnowsSurf(void)
             gSpecialVar_Result = TRUE;
     }
 }
+
+u8 ReturnTMHMId(u16 move)
+{
+    u8 i;
+    if (IsMoveHm(move))
+    {
+	for (i = 0; i < NUM_HIDDEN_MACHINES; i++)
+	{
+	    if (sTMHMMoves[i + NUM_TECHNICAL_MACHINES] == move)
+	        return i + NUM_TECHNICAL_MACHINES;
+	}
+    }
+    else
+    {
+	for (i = 0; i < NUM_TECHNICAL_MACHINES; i++)
+	{
+	    if (sTMHMMoves[i] == move)
+		return i;
+	    }
+	}    
+    return FALSE;
+}
