@@ -27,6 +27,8 @@ This project is essentially a large upgrade to the Pokemon Emerald base game. It
 
 ## build
 
+### standard build
+
 for initial setup:
 ```sh
 ./build.sh
@@ -39,3 +41,9 @@ make -j$(nproc)
 ```
 
 to enable debug logging:  `DDEBUGGING=1`
+
+### containerized build
+
+```sh
+podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c 'apt install -y libpng-dev && ./build.sh && make -j$(nproc)'
+```
