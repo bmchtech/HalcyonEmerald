@@ -50,6 +50,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "pokemon.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1727,11 +1728,15 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
     
     for (i = 0; i < PARTY_SIZE; i++)
     {
+        u32 can_learn_move;
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
+        
+        can_learn_move = CanMonLearnTMHM(&gPlayerParty[i], tmId);
+
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
-            && (MonKnowsMove(&gPlayerParty[i], moveId) == TRUE || CanSpeciesLearnTMHM(species, tmId)))
+            && (MonKnowsMove(&gPlayerParty[i], moveId) == TRUE || can_learn_move))
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
