@@ -167,8 +167,18 @@ static bool8 CheckFeebas(void)
         spotId = GetFeebasFishingSpotId(x, y, route119Section);
         for (i = 0; i < NUM_FEEBAS_SPOTS; i++)
         {
-            if (spotId == feebasSpots[i])
+#if MGBA
+            mgba_printf(MGBA_LOG_INFO,"feebas spots are: %hu, %hu, %hu, %hu, %hu, %hu",
+                feebasSpots[0], feebasSpots[1], feebasSpots[2], feebasSpots[3],
+                feebasSpots[4], feebasSpots[5]);
+            mgba_printf(MGBA_LOG_INFO,"current spot is: %hu", spotId);
+#endif
+            if (spotId == feebasSpots[i]) {
+#if MGBA
+                mgba_printf(MGBA_LOG_ERROR, "FOUND feebas spot at %d (%d, %d)", spotId, x, y);
+#endif
                 return TRUE;
+            }
         }
     }
     return FALSE;
