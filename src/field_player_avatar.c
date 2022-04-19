@@ -1277,6 +1277,8 @@ u8 GetPlayerAvatarGenderByGraphicsId(u8 gfxId)
 bool8 PartyHasMonWithSurf(void)
 {
     u8 i;
+    u8 mon_knows_surf;
+    u32 mon_can_learn_surf;
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
@@ -1284,8 +1286,14 @@ bool8 PartyHasMonWithSurf(void)
         {
             if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
                 break;
-            if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
+            
+            // check if mon knows surf
+            // or if the mon can learn surf
+            mon_knows_surf = MonKnowsMove(&gPlayerParty[i], MOVE_SURF);
+            mon_can_learn_surf = CanMonLearnTMHM(&gPlayerParty[i], TMHM_ID(HM03_SURF));
+            if (mon_knows_surf || mon_can_learn_surf) {
                 return TRUE;
+            }
         }
     }
     return FALSE;
