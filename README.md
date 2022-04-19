@@ -17,7 +17,7 @@ This project is essentially a large upgrade to the Pokemon Emerald base game. It
     + moveset balance tweaks from gen 7+
 + qol
     + much faster text scrolling
-    + some hm's like fly and flash can be used as long as your party has a pokemon compatible with them
+    + hm can be used as long as a party pokemon can learn it
     + eggs hatch sooner to reduce grind
     + tm/hm reusable and replaceable
     + various minor qol and bug fixes
