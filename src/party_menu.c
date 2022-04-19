@@ -1966,7 +1966,7 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
     {
         if (item > ITEM_TM50 && item < ITEM_HM01)
             return CANNOT_LEARN_MOVE;
-        else if (!CanMonLearnTMHM(mon, item - ITEM_TM01 - ((item > ITEM_TM100) ? 50 : 0)))
+        else if (!CanMonLearnTMHM(mon, item - ITEM_TM01_FOCUS_PUNCH))
             return CANNOT_LEARN_MOVE;
         else
             move = ItemIdToBattleMoveId(item);
@@ -6656,21 +6656,12 @@ void IsLastMonThatKnowsSurf(void)
 u8 ReturnTMHMId(u16 move)
 {
     u8 i;
-    if (IsMoveHm(move))
-    {
-	for (i = 0; i < NUM_HIDDEN_MACHINES; i++)
-	{
-	    if (sTMHMMoves[i + NUM_TECHNICAL_MACHINES] == move)
-	        return i + NUM_TECHNICAL_MACHINES;
-	}
+
+    for (i = 0; i < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; i++) {
+        if (sTMHMMoves[i] == move) {
+            return i;
+        }
     }
-    else
-    {
-	for (i = 0; i < NUM_TECHNICAL_MACHINES; i++)
-	{
-	    if (sTMHMMoves[i] == move)
-		return i;
-	    }
-	}    
+
     return FALSE;
 }
