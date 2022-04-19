@@ -9792,22 +9792,22 @@
                 {
                   "min_level": 10,
                   "max_level": 30,
-                  "species": "SPECIES_CARVANHA"
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
-                  "min_level": 25,
-                  "max_level": 30,
-                  "species": "SPECIES_CARVANHA"
+                  "min_level": 5,
+                  "max_level": 20,
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
-                  "min_level": 30,
-                  "max_level": 35,
-                  "species": "SPECIES_CARVANHA"
+                  "min_level": 10,
+                  "max_level": 15,
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
                   "min_level": 20,
                   "max_level": 25,
-                  "species": "SPECIES_CARVANHA"
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
                   "min_level": 35,
@@ -9859,7 +9859,7 @@
                 {
                   "min_level": 20,
                   "max_level": 25,
-                  "species": "SPECIES_CARVANHA"
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
                   "min_level": 35,
@@ -9911,7 +9911,7 @@
                 {
                   "min_level": 20,
                   "max_level": 25,
-                  "species": "SPECIES_CARVANHA"
+                  "species": "SPECIES_FEEBAS"
                 },
                 {
                   "min_level": 35,
