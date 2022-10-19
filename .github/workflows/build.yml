@@ -10,11 +10,11 @@ jobs:
     steps:
       - name: Install Ubuntu Build Deps
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt update && sudo apt -y upgrade && sudo apt install -y python3 make build-essential wget curl git podman
+        run: sudo apt install -y python3 make build-essential wget curl git podman
       - uses: actions/checkout@v2
       - name: Build PokeEmerald ROM
         run: |
-          podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c 'apt install -y libpng-dev && ./build.sh && make -j$(nproc)'
+          podman run --rm -it -v $(pwd):/source docker.io/xdrie/dkarm_base:v0.6 -l -c 'apt update && apt -y upgrade && apt install -y libpng-dev && ./build.sh && make -j$(nproc)'
       - name: Check PokeEmerald ROM
         run: |
           ls *.gba
