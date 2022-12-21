@@ -34,6 +34,4 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/* && apt autoremove -y && apt clean
 
 # set up main to run bash
-ENTRYPOINT ["/bin/bash"]
-# default arguments to run inside bash
-CMD ["-l", "-c", "cd /prj && git submodule update --init --recursive && ./build.sh && make -j$(nproc)"]
+CMD ["/bin/bash", "-l"]
